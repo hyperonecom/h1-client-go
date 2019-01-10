@@ -1,0 +1,26 @@
+# Netgw
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Services** | [**[]ContainerServices**](container_services.md) |  | [optional] 
+**Flavour** | **string** |  | [optional] 
+**ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
+**ModifiedBy** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
+**CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
+**Processing** | **string** |  | [optional] 
+**Created** | **string** |  | [optional] 
+**Queue** | [**[]Event**](event.md) |  | [optional] 
+**State** | **string** |  | [optional] 
+**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Project** | **string** |  | [optional] 
+**PrimaryIP** | [**NetgwPrimaryIp**](netgw_primaryIP.md) |  | [optional] 
+**Network** | [**NetgwNetwork**](netgw_network.md) |  | [optional] 
+**Vpn** | [**NetgwVpn**](netgw_vpn.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
