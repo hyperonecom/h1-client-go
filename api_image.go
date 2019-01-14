@@ -32,12 +32,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param optional nil or *ActionImageTransferOpts - Optional Parameters:
- * @param "InlineObject23" (optional.Interface of InlineObject23) - 
+ * @param "InlineObject25" (optional.Interface of InlineObject25) - 
 @return Image
 */
 
 type ActionImageTransferOpts struct {
-	InlineObject23 optional.Interface
+	InlineObject25 optional.Interface
 }
 
 func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId string, localVarOptionals *ActionImageTransferOpts) (Image, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId strin
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject23.IsSet() {
-		localVarOptionalInlineObject23, localVarOptionalInlineObject23ok := localVarOptionals.InlineObject23.Value().(InlineObject23)
-		if !localVarOptionalInlineObject23ok {
-			return localVarReturnValue, nil, reportError("inlineObject23 should be InlineObject23")
+	if localVarOptionals != nil && localVarOptionals.InlineObject25.IsSet() {
+		localVarOptionalInlineObject25, localVarOptionalInlineObject25ok := localVarOptionals.InlineObject25.Value().(InlineObject25)
+		if !localVarOptionalInlineObject25ok {
+			return localVarReturnValue, nil, reportError("inlineObject25 should be InlineObject25")
 		}
-		localVarPostBody = &localVarOptionalInlineObject23
+		localVarPostBody = &localVarOptionalInlineObject25
 	}
 
 	if ctx != nil {
@@ -174,12 +174,12 @@ ImageApiService Create
 Create image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateImageOpts - Optional Parameters:
- * @param "InlineObject21" (optional.Interface of InlineObject21) - 
+ * @param "InlineObject23" (optional.Interface of InlineObject23) - 
 @return Image
 */
 
 type CreateImageOpts struct {
-	InlineObject21 optional.Interface
+	InlineObject23 optional.Interface
 }
 
 func (a *ImageApiService) CreateImage(ctx context.Context, localVarOptionals *CreateImageOpts) (Image, *http.Response, error) {
@@ -217,12 +217,12 @@ func (a *ImageApiService) CreateImage(ctx context.Context, localVarOptionals *Cr
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject21.IsSet() {
-		localVarOptionalInlineObject21, localVarOptionalInlineObject21ok := localVarOptionals.InlineObject21.Value().(InlineObject21)
-		if !localVarOptionalInlineObject21ok {
-			return localVarReturnValue, nil, reportError("inlineObject21 should be InlineObject21")
+	if localVarOptionals != nil && localVarOptionals.InlineObject23.IsSet() {
+		localVarOptionalInlineObject23, localVarOptionalInlineObject23ok := localVarOptionals.InlineObject23.Value().(InlineObject23)
+		if !localVarOptionalInlineObject23ok {
+			return localVarReturnValue, nil, reportError("inlineObject23 should be InlineObject23")
 		}
-		localVarPostBody = &localVarOptionalInlineObject21
+		localVarPostBody = &localVarOptionalInlineObject23
 	}
 
 	if ctx != nil {
@@ -693,16 +693,16 @@ ImageApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ImageApiService) OperationImageDeletetagKey(ctx context.Context, imageId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) OperationImageDeletetagKey(ctx context.Context, imageId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -792,7 +792,7 @@ func (a *ImageApiService) OperationImageDeletetagKey(ctx context.Context, imageI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -948,16 +948,16 @@ func (a *ImageApiService) OperationImageGetservicesServiceId(ctx context.Context
 ImageApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId string) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1046,7 +1046,7 @@ func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1452,23 +1452,17 @@ func (a *ImageApiService) OperationImageListservices(ctx context.Context, imageI
 ImageApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param optional nil or *OperationImagePatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationImagePatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId string, localVarOptionals *OperationImagePatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1497,10 +1491,7 @@ func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1562,7 +1553,7 @@ func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1591,12 +1582,12 @@ ImageApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param optional nil or *OperationImagePostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject24" (optional.Interface of InlineObject24) - 
+ * @param "InlineObject26" (optional.Interface of InlineObject26) - 
 @return string
 */
 
 type OperationImagePostaccessrightsOpts struct {
-	InlineObject24 optional.Interface
+	InlineObject26 optional.Interface
 }
 
 func (a *ImageApiService) OperationImagePostaccessrights(ctx context.Context, imageId string, localVarOptionals *OperationImagePostaccessrightsOpts) (string, *http.Response, error) {
@@ -1635,12 +1626,12 @@ func (a *ImageApiService) OperationImagePostaccessrights(ctx context.Context, im
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject24.IsSet() {
-		localVarOptionalInlineObject24, localVarOptionalInlineObject24ok := localVarOptionals.InlineObject24.Value().(InlineObject24)
-		if !localVarOptionalInlineObject24ok {
-			return localVarReturnValue, nil, reportError("inlineObject24 should be InlineObject24")
+	if localVarOptionals != nil && localVarOptionals.InlineObject26.IsSet() {
+		localVarOptionalInlineObject26, localVarOptionalInlineObject26ok := localVarOptionals.InlineObject26.Value().(InlineObject26)
+		if !localVarOptionalInlineObject26ok {
+			return localVarReturnValue, nil, reportError("inlineObject26 should be InlineObject26")
 		}
-		localVarPostBody = &localVarOptionalInlineObject24
+		localVarPostBody = &localVarOptionalInlineObject26
 	}
 
 	if ctx != nil {
@@ -1861,12 +1852,12 @@ Returns modified image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param optional nil or *UpdateImageOpts - Optional Parameters:
- * @param "InlineObject22" (optional.Interface of InlineObject22) - 
+ * @param "InlineObject24" (optional.Interface of InlineObject24) - 
 @return Image
 */
 
 type UpdateImageOpts struct {
-	InlineObject22 optional.Interface
+	InlineObject24 optional.Interface
 }
 
 func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, localVarOptionals *UpdateImageOpts) (Image, *http.Response, error) {
@@ -1905,12 +1896,12 @@ func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject22.IsSet() {
-		localVarOptionalInlineObject22, localVarOptionalInlineObject22ok := localVarOptionals.InlineObject22.Value().(InlineObject22)
-		if !localVarOptionalInlineObject22ok {
-			return localVarReturnValue, nil, reportError("inlineObject22 should be InlineObject22")
+	if localVarOptionals != nil && localVarOptionals.InlineObject24.IsSet() {
+		localVarOptionalInlineObject24, localVarOptionalInlineObject24ok := localVarOptionals.InlineObject24.Value().(InlineObject24)
+		if !localVarOptionalInlineObject24ok {
+			return localVarReturnValue, nil, reportError("inlineObject24 should be InlineObject24")
 		}
-		localVarPostBody = &localVarOptionalInlineObject22
+		localVarPostBody = &localVarOptionalInlineObject24
 	}
 
 	if ctx != nil {

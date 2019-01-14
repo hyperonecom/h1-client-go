@@ -10,26 +10,26 @@
 package openapi
 
 type NetgwNetwork struct {
-	Id           string `json:"_id,omitempty"`
-	Name         string `json:"name,omitempty"`
-	Services     string `json:"services,omitempty"`
-	Flavour      string `json:"flavour,omitempty"`
-	ModifiedOn   string `json:"modifiedOn,omitempty"`
-	ModifiedBy   string `json:"modifiedBy,omitempty"`
-	CreatedBy    string `json:"createdBy,omitempty"`
-	CreatedOn    string `json:"createdOn,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services string `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn string `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn string `json:"createdOn,omitempty"`
 	AccessRights string `json:"accessRights,omitempty"`
-	Processing   string `json:"processing,omitempty"`
-	Created      string `json:"created,omitempty"`
-	Queue        string `json:"queue,omitempty"`
-	State        string `json:"state,omitempty"`
-	Tag          string `json:"tag,omitempty"`
-	Project      string `json:"project,omitempty"`
-	Address      string `json:"address,omitempty"`
-	Broadcast    string `json:"broadcast,omitempty"`
-	Gateway      string `json:"gateway,omitempty"`
-	Type         string `json:"type,omitempty"`
-	Vm           string `json:"vm,omitempty"`
-	Dns          string `json:"dns,omitempty"`
-	Netgw        string `json:"netgw,omitempty"`
+	Processing string `json:"processing,omitempty"`
+	Created string `json:"created,omitempty"`
+	Queue string `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag string `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	Address string `json:"address,omitempty"`
+	Broadcast string `json:"broadcast,omitempty"`
+	Gateway string `json:"gateway,omitempty"`
+	Type string `json:"type,omitempty"`
+	Vm string `json:"vm,omitempty"`
+	Dns string `json:"dns,omitempty"`
+	Netgw string `json:"netgw,omitempty"`
 }

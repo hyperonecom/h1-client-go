@@ -10,6 +10,6 @@
 package openapi
 
 type NetgwVpnL2tpUser struct {
-	Id       string `json:"_id,omitempty"`
+	Id string `json:"_id,omitempty"`
 	Username string `json:"username,omitempty"`
 }

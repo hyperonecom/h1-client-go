@@ -10,6 +10,8 @@
 package openapi
 
 type InlineObject16 struct {
-	Address string                 `json:"address,omitempty"`
-	Tag     map[string]interface{} `json:"tag,omitempty"`
+	Name string `json:"name,omitempty"`
+	Address string `json:"address,omitempty"`
+	Gateway string `json:"gateway,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

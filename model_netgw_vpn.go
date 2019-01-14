@@ -10,6 +10,6 @@
 package openapi
 
 type NetgwVpn struct {
-	Ipsec string       `json:"ipsec,omitempty"`
-	L2tp  NetgwVpnL2tp `json:"l2tp,omitempty"`
+	Ipsec string `json:"ipsec,omitempty"`
+	L2tp NetgwVpnL2tp `json:"l2tp,omitempty"`
 }

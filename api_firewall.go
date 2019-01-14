@@ -286,12 +286,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *ActionFirewallTransferOpts - Optional Parameters:
- * @param "InlineObject10" (optional.Interface of InlineObject10) - 
+ * @param "InlineObject12" (optional.Interface of InlineObject12) - 
 @return Firewall
 */
 
 type ActionFirewallTransferOpts struct {
-	InlineObject10 optional.Interface
+	InlineObject12 optional.Interface
 }
 
 func (a *FirewallApiService) ActionFirewallTransfer(ctx context.Context, firewallId string, localVarOptionals *ActionFirewallTransferOpts) (Firewall, *http.Response, error) {
@@ -330,12 +330,12 @@ func (a *FirewallApiService) ActionFirewallTransfer(ctx context.Context, firewal
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject10.IsSet() {
-		localVarOptionalInlineObject10, localVarOptionalInlineObject10ok := localVarOptionals.InlineObject10.Value().(InlineObject10)
-		if !localVarOptionalInlineObject10ok {
-			return localVarReturnValue, nil, reportError("inlineObject10 should be InlineObject10")
+	if localVarOptionals != nil && localVarOptionals.InlineObject12.IsSet() {
+		localVarOptionalInlineObject12, localVarOptionalInlineObject12ok := localVarOptionals.InlineObject12.Value().(InlineObject12)
+		if !localVarOptionalInlineObject12ok {
+			return localVarReturnValue, nil, reportError("inlineObject12 should be InlineObject12")
 		}
-		localVarPostBody = &localVarOptionalInlineObject10
+		localVarPostBody = &localVarOptionalInlineObject12
 	}
 
 	if ctx != nil {
@@ -428,12 +428,12 @@ FirewallApiService Create
 Create firewall
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateFirewallOpts - Optional Parameters:
- * @param "InlineObject8" (optional.Interface of InlineObject8) - 
+ * @param "InlineObject10" (optional.Interface of InlineObject10) - 
 @return Firewall
 */
 
 type CreateFirewallOpts struct {
-	InlineObject8 optional.Interface
+	InlineObject10 optional.Interface
 }
 
 func (a *FirewallApiService) CreateFirewall(ctx context.Context, localVarOptionals *CreateFirewallOpts) (Firewall, *http.Response, error) {
@@ -471,12 +471,12 @@ func (a *FirewallApiService) CreateFirewall(ctx context.Context, localVarOptiona
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject8.IsSet() {
-		localVarOptionalInlineObject8, localVarOptionalInlineObject8ok := localVarOptionals.InlineObject8.Value().(InlineObject8)
-		if !localVarOptionalInlineObject8ok {
-			return localVarReturnValue, nil, reportError("inlineObject8 should be InlineObject8")
+	if localVarOptionals != nil && localVarOptionals.InlineObject10.IsSet() {
+		localVarOptionalInlineObject10, localVarOptionalInlineObject10ok := localVarOptionals.InlineObject10.Value().(InlineObject10)
+		if !localVarOptionalInlineObject10ok {
+			return localVarReturnValue, nil, reportError("inlineObject10 should be InlineObject10")
 		}
-		localVarPostBody = &localVarOptionalInlineObject8
+		localVarPostBody = &localVarOptionalInlineObject10
 	}
 
 	if ctx != nil {
@@ -1203,16 +1203,16 @@ FirewallApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *FirewallApiService) OperationFirewallDeletetagKey(ctx context.Context, firewallId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *FirewallApiService) OperationFirewallDeletetagKey(ctx context.Context, firewallId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1302,7 +1302,7 @@ func (a *FirewallApiService) OperationFirewallDeletetagKey(ctx context.Context, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1714,16 +1714,16 @@ func (a *FirewallApiService) OperationFirewallGetservicesServiceId(ctx context.C
 FirewallApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *FirewallApiService) OperationFirewallGettag(ctx context.Context, firewallId string) (map[string]interface{}, *http.Response, error) {
+func (a *FirewallApiService) OperationFirewallGettag(ctx context.Context, firewallId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1812,7 +1812,7 @@ func (a *FirewallApiService) OperationFirewallGettag(ctx context.Context, firewa
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2470,23 +2470,17 @@ func (a *FirewallApiService) OperationFirewallListservices(ctx context.Context, 
 FirewallApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
- * @param optional nil or *OperationFirewallPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationFirewallPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *FirewallApiService) OperationFirewallPatchtag(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *FirewallApiService) OperationFirewallPatchtag(ctx context.Context, firewallId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -2515,10 +2509,7 @@ func (a *FirewallApiService) OperationFirewallPatchtag(ctx context.Context, fire
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2580,7 +2571,7 @@ func (a *FirewallApiService) OperationFirewallPatchtag(ctx context.Context, fire
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2609,12 +2600,12 @@ FirewallApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *OperationFirewallPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject13" (optional.Interface of InlineObject13) - 
+ * @param "InlineObject15" (optional.Interface of InlineObject15) - 
 @return string
 */
 
 type OperationFirewallPostaccessrightsOpts struct {
-	InlineObject13 optional.Interface
+	InlineObject15 optional.Interface
 }
 
 func (a *FirewallApiService) OperationFirewallPostaccessrights(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPostaccessrightsOpts) (string, *http.Response, error) {
@@ -2653,12 +2644,12 @@ func (a *FirewallApiService) OperationFirewallPostaccessrights(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject13.IsSet() {
-		localVarOptionalInlineObject13, localVarOptionalInlineObject13ok := localVarOptionals.InlineObject13.Value().(InlineObject13)
-		if !localVarOptionalInlineObject13ok {
-			return localVarReturnValue, nil, reportError("inlineObject13 should be InlineObject13")
+	if localVarOptionals != nil && localVarOptionals.InlineObject15.IsSet() {
+		localVarOptionalInlineObject15, localVarOptionalInlineObject15ok := localVarOptionals.InlineObject15.Value().(InlineObject15)
+		if !localVarOptionalInlineObject15ok {
+			return localVarReturnValue, nil, reportError("inlineObject15 should be InlineObject15")
 		}
-		localVarPostBody = &localVarOptionalInlineObject13
+		localVarPostBody = &localVarOptionalInlineObject15
 	}
 
 	if ctx != nil {
@@ -2751,12 +2742,12 @@ FirewallApiService /egress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *OperationFirewallPostegressOpts - Optional Parameters:
- * @param "InlineObject12" (optional.Interface of InlineObject12) - 
+ * @param "InlineObject14" (optional.Interface of InlineObject14) - 
 @return InlineResponse200
 */
 
 type OperationFirewallPostegressOpts struct {
-	InlineObject12 optional.Interface
+	InlineObject14 optional.Interface
 }
 
 func (a *FirewallApiService) OperationFirewallPostegress(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPostegressOpts) (InlineResponse200, *http.Response, error) {
@@ -2795,12 +2786,12 @@ func (a *FirewallApiService) OperationFirewallPostegress(ctx context.Context, fi
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject12.IsSet() {
-		localVarOptionalInlineObject12, localVarOptionalInlineObject12ok := localVarOptionals.InlineObject12.Value().(InlineObject12)
-		if !localVarOptionalInlineObject12ok {
-			return localVarReturnValue, nil, reportError("inlineObject12 should be InlineObject12")
+	if localVarOptionals != nil && localVarOptionals.InlineObject14.IsSet() {
+		localVarOptionalInlineObject14, localVarOptionalInlineObject14ok := localVarOptionals.InlineObject14.Value().(InlineObject14)
+		if !localVarOptionalInlineObject14ok {
+			return localVarReturnValue, nil, reportError("inlineObject14 should be InlineObject14")
 		}
-		localVarPostBody = &localVarOptionalInlineObject12
+		localVarPostBody = &localVarOptionalInlineObject14
 	}
 
 	if ctx != nil {
@@ -2893,12 +2884,12 @@ FirewallApiService /ingress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *OperationFirewallPostingressOpts - Optional Parameters:
- * @param "InlineObject11" (optional.Interface of InlineObject11) - 
+ * @param "InlineObject13" (optional.Interface of InlineObject13) - 
 @return InlineResponse200
 */
 
 type OperationFirewallPostingressOpts struct {
-	InlineObject11 optional.Interface
+	InlineObject13 optional.Interface
 }
 
 func (a *FirewallApiService) OperationFirewallPostingress(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPostingressOpts) (InlineResponse200, *http.Response, error) {
@@ -2937,12 +2928,12 @@ func (a *FirewallApiService) OperationFirewallPostingress(ctx context.Context, f
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject11.IsSet() {
-		localVarOptionalInlineObject11, localVarOptionalInlineObject11ok := localVarOptionals.InlineObject11.Value().(InlineObject11)
-		if !localVarOptionalInlineObject11ok {
-			return localVarReturnValue, nil, reportError("inlineObject11 should be InlineObject11")
+	if localVarOptionals != nil && localVarOptionals.InlineObject13.IsSet() {
+		localVarOptionalInlineObject13, localVarOptionalInlineObject13ok := localVarOptionals.InlineObject13.Value().(InlineObject13)
+		if !localVarOptionalInlineObject13ok {
+			return localVarReturnValue, nil, reportError("inlineObject13 should be InlineObject13")
 		}
-		localVarPostBody = &localVarOptionalInlineObject11
+		localVarPostBody = &localVarOptionalInlineObject13
 	}
 
 	if ctx != nil {
@@ -3163,12 +3154,12 @@ Returns modified firewall
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *UpdateFirewallOpts - Optional Parameters:
- * @param "InlineObject9" (optional.Interface of InlineObject9) - 
+ * @param "InlineObject11" (optional.Interface of InlineObject11) - 
 @return Firewall
 */
 
 type UpdateFirewallOpts struct {
-	InlineObject9 optional.Interface
+	InlineObject11 optional.Interface
 }
 
 func (a *FirewallApiService) UpdateFirewall(ctx context.Context, firewallId string, localVarOptionals *UpdateFirewallOpts) (Firewall, *http.Response, error) {
@@ -3207,12 +3198,12 @@ func (a *FirewallApiService) UpdateFirewall(ctx context.Context, firewallId stri
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject9.IsSet() {
-		localVarOptionalInlineObject9, localVarOptionalInlineObject9ok := localVarOptionals.InlineObject9.Value().(InlineObject9)
-		if !localVarOptionalInlineObject9ok {
-			return localVarReturnValue, nil, reportError("inlineObject9 should be InlineObject9")
+	if localVarOptionals != nil && localVarOptionals.InlineObject11.IsSet() {
+		localVarOptionalInlineObject11, localVarOptionalInlineObject11ok := localVarOptionals.InlineObject11.Value().(InlineObject11)
+		if !localVarOptionalInlineObject11ok {
+			return localVarReturnValue, nil, reportError("inlineObject11 should be InlineObject11")
 		}
-		localVarPostBody = &localVarOptionalInlineObject9
+		localVarPostBody = &localVarOptionalInlineObject11
 	}
 
 	if ctx != nil {

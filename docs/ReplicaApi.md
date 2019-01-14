@@ -40,7 +40,7 @@ Optional parameters are passed through a pointer to a ActionReplicaImageOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject72** | [**optional.Interface of InlineObject72**](InlineObject72.md)|  | 
+ **inlineObject75** | [**optional.Interface of InlineObject75**](InlineObject75.md)|  | 
 
 ### Return type
 
@@ -75,7 +75,7 @@ Optional parameters are passed through a pointer to a CreateReplicaOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject71** | [**optional.Interface of InlineObject71**](InlineObject71.md)|  | 
+ **inlineObject74** | [**optional.Interface of InlineObject74**](InlineObject74.md)|  | 
 
 ### Return type
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationReplicaDeletetagKey**
-> map[string]interface{} OperationReplicaDeletetagKey(ctx, replicaId, key)
+> map[string]string OperationReplicaDeletetagKey(ctx, replicaId, key)
 /tag/:key
 
 ### Required Parameters
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationReplicaGettag**
-> map[string]interface{} OperationReplicaGettag(ctx, replicaId)
+> map[string]string OperationReplicaGettag(ctx, replicaId)
 /tag/
 
 ### Required Parameters
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationReplicaPatchtag**
-> map[string]interface{} OperationReplicaPatchtag(ctx, replicaId, optional)
+> map[string]string OperationReplicaPatchtag(ctx, replicaId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -348,19 +348,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
- **optional** | ***OperationReplicaPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationReplicaPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -391,7 +383,7 @@ Optional parameters are passed through a pointer to a OperationReplicaPostaccess
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject73** | [**optional.Interface of InlineObject73**](InlineObject73.md)|  | 
+ **inlineObject76** | [**optional.Interface of InlineObject76**](InlineObject76.md)|  | 
 
 ### Return type
 

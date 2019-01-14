@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject39 struct {
-	Identity string `json:"identity,omitempty"`
+	Disk string `json:"disk"`
+	ControllerType string `json:"controllerType,omitempty"`
 }

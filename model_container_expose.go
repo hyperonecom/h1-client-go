@@ -11,5 +11,5 @@ package openapi
 
 type ContainerExpose struct {
 	Port float32 `json:"port,omitempty"`
-	Host string  `json:"host,omitempty"`
+	Host string `json:"host,omitempty"`
 }

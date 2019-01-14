@@ -540,12 +540,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param optional nil or *ActionIpTransferOpts - Optional Parameters:
- * @param "InlineObject42" (optional.Interface of InlineObject42) - 
+ * @param "InlineObject44" (optional.Interface of InlineObject44) - 
 @return Ip
 */
 
 type ActionIpTransferOpts struct {
-	InlineObject42 optional.Interface
+	InlineObject44 optional.Interface
 }
 
 func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, localVarOptionals *ActionIpTransferOpts) (Ip, *http.Response, error) {
@@ -584,12 +584,12 @@ func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject42.IsSet() {
-		localVarOptionalInlineObject42, localVarOptionalInlineObject42ok := localVarOptionals.InlineObject42.Value().(InlineObject42)
-		if !localVarOptionalInlineObject42ok {
-			return localVarReturnValue, nil, reportError("inlineObject42 should be InlineObject42")
+	if localVarOptionals != nil && localVarOptionals.InlineObject44.IsSet() {
+		localVarOptionalInlineObject44, localVarOptionalInlineObject44ok := localVarOptionals.InlineObject44.Value().(InlineObject44)
+		if !localVarOptionalInlineObject44ok {
+			return localVarReturnValue, nil, reportError("inlineObject44 should be InlineObject44")
 		}
-		localVarPostBody = &localVarOptionalInlineObject42
+		localVarPostBody = &localVarOptionalInlineObject44
 	}
 
 	if ctx != nil {
@@ -682,12 +682,12 @@ IpApiService Create
 Create ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateIpOpts - Optional Parameters:
- * @param "InlineObject40" (optional.Interface of InlineObject40) - 
+ * @param "InlineObject42" (optional.Interface of InlineObject42) - 
 @return Ip
 */
 
 type CreateIpOpts struct {
-	InlineObject40 optional.Interface
+	InlineObject42 optional.Interface
 }
 
 func (a *IpApiService) CreateIp(ctx context.Context, localVarOptionals *CreateIpOpts) (Ip, *http.Response, error) {
@@ -725,12 +725,12 @@ func (a *IpApiService) CreateIp(ctx context.Context, localVarOptionals *CreateIp
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject40.IsSet() {
-		localVarOptionalInlineObject40, localVarOptionalInlineObject40ok := localVarOptionals.InlineObject40.Value().(InlineObject40)
-		if !localVarOptionalInlineObject40ok {
-			return localVarReturnValue, nil, reportError("inlineObject40 should be InlineObject40")
+	if localVarOptionals != nil && localVarOptionals.InlineObject42.IsSet() {
+		localVarOptionalInlineObject42, localVarOptionalInlineObject42ok := localVarOptionals.InlineObject42.Value().(InlineObject42)
+		if !localVarOptionalInlineObject42ok {
+			return localVarReturnValue, nil, reportError("inlineObject42 should be InlineObject42")
 		}
-		localVarPostBody = &localVarOptionalInlineObject40
+		localVarPostBody = &localVarOptionalInlineObject42
 	}
 
 	if ctx != nil {
@@ -1201,16 +1201,16 @@ IpApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IpApiService) OperationIpDeletetagKey(ctx context.Context, ipId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) OperationIpDeletetagKey(ctx context.Context, ipId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1300,7 +1300,7 @@ func (a *IpApiService) OperationIpDeletetagKey(ctx context.Context, ipId string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1456,16 +1456,16 @@ func (a *IpApiService) OperationIpGetservicesServiceId(ctx context.Context, ipId
 IpApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1554,7 +1554,7 @@ func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1960,23 +1960,17 @@ func (a *IpApiService) OperationIpListservices(ctx context.Context, ipId string)
 IpApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param optional nil or *OperationIpPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationIpPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, localVarOptionals *OperationIpPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -2005,10 +1999,7 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, loc
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2070,7 +2061,7 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, loc
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2099,12 +2090,12 @@ IpApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param optional nil or *OperationIpPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject43" (optional.Interface of InlineObject43) - 
+ * @param "InlineObject45" (optional.Interface of InlineObject45) - 
 @return string
 */
 
 type OperationIpPostaccessrightsOpts struct {
-	InlineObject43 optional.Interface
+	InlineObject45 optional.Interface
 }
 
 func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId string, localVarOptionals *OperationIpPostaccessrightsOpts) (string, *http.Response, error) {
@@ -2143,12 +2134,12 @@ func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject43.IsSet() {
-		localVarOptionalInlineObject43, localVarOptionalInlineObject43ok := localVarOptionals.InlineObject43.Value().(InlineObject43)
-		if !localVarOptionalInlineObject43ok {
-			return localVarReturnValue, nil, reportError("inlineObject43 should be InlineObject43")
+	if localVarOptionals != nil && localVarOptionals.InlineObject45.IsSet() {
+		localVarOptionalInlineObject45, localVarOptionalInlineObject45ok := localVarOptionals.InlineObject45.Value().(InlineObject45)
+		if !localVarOptionalInlineObject45ok {
+			return localVarReturnValue, nil, reportError("inlineObject45 should be InlineObject45")
 		}
-		localVarPostBody = &localVarOptionalInlineObject43
+		localVarPostBody = &localVarOptionalInlineObject45
 	}
 
 	if ctx != nil {
@@ -2369,12 +2360,12 @@ Returns modified ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param optional nil or *UpdateIpOpts - Optional Parameters:
- * @param "InlineObject41" (optional.Interface of InlineObject41) - 
+ * @param "InlineObject43" (optional.Interface of InlineObject43) - 
 @return Ip
 */
 
 type UpdateIpOpts struct {
-	InlineObject41 optional.Interface
+	InlineObject43 optional.Interface
 }
 
 func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOptionals *UpdateIpOpts) (Ip, *http.Response, error) {
@@ -2413,12 +2404,12 @@ func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject41.IsSet() {
-		localVarOptionalInlineObject41, localVarOptionalInlineObject41ok := localVarOptionals.InlineObject41.Value().(InlineObject41)
-		if !localVarOptionalInlineObject41ok {
-			return localVarReturnValue, nil, reportError("inlineObject41 should be InlineObject41")
+	if localVarOptionals != nil && localVarOptionals.InlineObject43.IsSet() {
+		localVarOptionalInlineObject43, localVarOptionalInlineObject43ok := localVarOptionals.InlineObject43.Value().(InlineObject43)
+		if !localVarOptionalInlineObject43ok {
+			return localVarReturnValue, nil, reportError("inlineObject43 should be InlineObject43")
 		}
-		localVarPostBody = &localVarOptionalInlineObject41
+		localVarPostBody = &localVarOptionalInlineObject43
 	}
 
 	if ctx != nil {

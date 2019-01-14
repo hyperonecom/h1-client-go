@@ -412,12 +412,12 @@ ContainerApiService Create
 Create container
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateContainerOpts - Optional Parameters:
- * @param "InlineObject5" (optional.Interface of InlineObject5) - 
+ * @param "InlineObject7" (optional.Interface of InlineObject7) - 
 @return Container
 */
 
 type CreateContainerOpts struct {
-	InlineObject5 optional.Interface
+	InlineObject7 optional.Interface
 }
 
 func (a *ContainerApiService) CreateContainer(ctx context.Context, localVarOptionals *CreateContainerOpts) (Container, *http.Response, error) {
@@ -455,12 +455,12 @@ func (a *ContainerApiService) CreateContainer(ctx context.Context, localVarOptio
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject5.IsSet() {
-		localVarOptionalInlineObject5, localVarOptionalInlineObject5ok := localVarOptionals.InlineObject5.Value().(InlineObject5)
-		if !localVarOptionalInlineObject5ok {
-			return localVarReturnValue, nil, reportError("inlineObject5 should be InlineObject5")
+	if localVarOptionals != nil && localVarOptionals.InlineObject7.IsSet() {
+		localVarOptionalInlineObject7, localVarOptionalInlineObject7ok := localVarOptionals.InlineObject7.Value().(InlineObject7)
+		if !localVarOptionalInlineObject7ok {
+			return localVarReturnValue, nil, reportError("inlineObject7 should be InlineObject7")
 		}
-		localVarPostBody = &localVarOptionalInlineObject5
+		localVarPostBody = &localVarOptionalInlineObject7
 	}
 
 	if ctx != nil {
@@ -931,16 +931,16 @@ ContainerApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ContainerApiService) OperationContainerDeletetagKey(ctx context.Context, containerId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) OperationContainerDeletetagKey(ctx context.Context, containerId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1030,7 +1030,7 @@ func (a *ContainerApiService) OperationContainerDeletetagKey(ctx context.Context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1186,16 +1186,16 @@ func (a *ContainerApiService) OperationContainerGetservicesServiceId(ctx context
 ContainerApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, containerId string) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, containerId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1284,7 +1284,7 @@ func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, cont
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1690,23 +1690,17 @@ func (a *ContainerApiService) OperationContainerListservices(ctx context.Context
 ContainerApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
- * @param optional nil or *OperationContainerPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationContainerPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, containerId string, localVarOptionals *OperationContainerPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1735,10 +1729,7 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1800,7 +1791,7 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1829,12 +1820,12 @@ ContainerApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param optional nil or *OperationContainerPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject7" (optional.Interface of InlineObject7) - 
+ * @param "InlineObject9" (optional.Interface of InlineObject9) - 
 @return string
 */
 
 type OperationContainerPostaccessrightsOpts struct {
-	InlineObject7 optional.Interface
+	InlineObject9 optional.Interface
 }
 
 func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Context, containerId string, localVarOptionals *OperationContainerPostaccessrightsOpts) (string, *http.Response, error) {
@@ -1873,12 +1864,12 @@ func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Con
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject7.IsSet() {
-		localVarOptionalInlineObject7, localVarOptionalInlineObject7ok := localVarOptionals.InlineObject7.Value().(InlineObject7)
-		if !localVarOptionalInlineObject7ok {
-			return localVarReturnValue, nil, reportError("inlineObject7 should be InlineObject7")
+	if localVarOptionals != nil && localVarOptionals.InlineObject9.IsSet() {
+		localVarOptionalInlineObject9, localVarOptionalInlineObject9ok := localVarOptionals.InlineObject9.Value().(InlineObject9)
+		if !localVarOptionalInlineObject9ok {
+			return localVarReturnValue, nil, reportError("inlineObject9 should be InlineObject9")
 		}
-		localVarPostBody = &localVarOptionalInlineObject7
+		localVarPostBody = &localVarOptionalInlineObject9
 	}
 
 	if ctx != nil {
@@ -2099,12 +2090,12 @@ Returns modified container
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param optional nil or *UpdateContainerOpts - Optional Parameters:
- * @param "InlineObject6" (optional.Interface of InlineObject6) - 
+ * @param "InlineObject8" (optional.Interface of InlineObject8) - 
 @return Container
 */
 
 type UpdateContainerOpts struct {
-	InlineObject6 optional.Interface
+	InlineObject8 optional.Interface
 }
 
 func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId string, localVarOptionals *UpdateContainerOpts) (Container, *http.Response, error) {
@@ -2143,12 +2134,12 @@ func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId s
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject6.IsSet() {
-		localVarOptionalInlineObject6, localVarOptionalInlineObject6ok := localVarOptionals.InlineObject6.Value().(InlineObject6)
-		if !localVarOptionalInlineObject6ok {
-			return localVarReturnValue, nil, reportError("inlineObject6 should be InlineObject6")
+	if localVarOptionals != nil && localVarOptionals.InlineObject8.IsSet() {
+		localVarOptionalInlineObject8, localVarOptionalInlineObject8ok := localVarOptionals.InlineObject8.Value().(InlineObject8)
+		if !localVarOptionalInlineObject8ok {
+			return localVarReturnValue, nil, reportError("inlineObject8 should be InlineObject8")
 		}
-		localVarPostBody = &localVarOptionalInlineObject6
+		localVarPostBody = &localVarOptionalInlineObject8
 	}
 
 	if ctx != nil {

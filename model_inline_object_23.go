@@ -10,5 +10,10 @@
 package openapi
 
 type InlineObject23 struct {
-	Project string `json:"project"`
+	Name string `json:"name"`
+	Vm string `json:"vm,omitempty"`
+	Replica string `json:"replica,omitempty"`
+	Service string `json:"service"`
+	Description string `json:"description,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

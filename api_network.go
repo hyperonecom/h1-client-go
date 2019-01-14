@@ -31,12 +31,12 @@ NetworkApiService Create
 Create network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateNetworkOpts - Optional Parameters:
- * @param "InlineObject14" (optional.Interface of InlineObject14) - 
+ * @param "InlineObject16" (optional.Interface of InlineObject16) - 
 @return Network
 */
 
 type CreateNetworkOpts struct {
-	InlineObject14 optional.Interface
+	InlineObject16 optional.Interface
 }
 
 func (a *NetworkApiService) CreateNetwork(ctx context.Context, localVarOptionals *CreateNetworkOpts) (Network, *http.Response, error) {
@@ -74,12 +74,12 @@ func (a *NetworkApiService) CreateNetwork(ctx context.Context, localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject14.IsSet() {
-		localVarOptionalInlineObject14, localVarOptionalInlineObject14ok := localVarOptionals.InlineObject14.Value().(InlineObject14)
-		if !localVarOptionalInlineObject14ok {
-			return localVarReturnValue, nil, reportError("inlineObject14 should be InlineObject14")
+	if localVarOptionals != nil && localVarOptionals.InlineObject16.IsSet() {
+		localVarOptionalInlineObject16, localVarOptionalInlineObject16ok := localVarOptionals.InlineObject16.Value().(InlineObject16)
+		if !localVarOptionalInlineObject16ok {
+			return localVarReturnValue, nil, reportError("inlineObject16 should be InlineObject16")
 		}
-		localVarPostBody = &localVarOptionalInlineObject14
+		localVarPostBody = &localVarOptionalInlineObject16
 	}
 
 	if ctx != nil {
@@ -676,16 +676,16 @@ NetworkApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetworkApiService) OperationNetworkDeletetagKey(ctx context.Context, networkId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *NetworkApiService) OperationNetworkDeletetagKey(ctx context.Context, networkId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -775,7 +775,7 @@ func (a *NetworkApiService) OperationNetworkDeletetagKey(ctx context.Context, ne
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1057,16 +1057,16 @@ func (a *NetworkApiService) OperationNetworkGetservicesServiceId(ctx context.Con
 NetworkApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetworkApiService) OperationNetworkGettag(ctx context.Context, networkId string) (map[string]interface{}, *http.Response, error) {
+func (a *NetworkApiService) OperationNetworkGettag(ctx context.Context, networkId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1155,7 +1155,7 @@ func (a *NetworkApiService) OperationNetworkGettag(ctx context.Context, networkI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1687,23 +1687,17 @@ func (a *NetworkApiService) OperationNetworkListservices(ctx context.Context, ne
 NetworkApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
- * @param optional nil or *OperationNetworkPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationNetworkPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *NetworkApiService) OperationNetworkPatchtag(ctx context.Context, networkId string, localVarOptionals *OperationNetworkPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *NetworkApiService) OperationNetworkPatchtag(ctx context.Context, networkId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1732,10 +1726,7 @@ func (a *NetworkApiService) OperationNetworkPatchtag(ctx context.Context, networ
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1797,7 +1788,7 @@ func (a *NetworkApiService) OperationNetworkPatchtag(ctx context.Context, networ
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1826,12 +1817,12 @@ NetworkApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param optional nil or *OperationNetworkPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject17" (optional.Interface of InlineObject17) - 
+ * @param "InlineObject19" (optional.Interface of InlineObject19) - 
 @return string
 */
 
 type OperationNetworkPostaccessrightsOpts struct {
-	InlineObject17 optional.Interface
+	InlineObject19 optional.Interface
 }
 
 func (a *NetworkApiService) OperationNetworkPostaccessrights(ctx context.Context, networkId string, localVarOptionals *OperationNetworkPostaccessrightsOpts) (string, *http.Response, error) {
@@ -1870,12 +1861,12 @@ func (a *NetworkApiService) OperationNetworkPostaccessrights(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject17.IsSet() {
-		localVarOptionalInlineObject17, localVarOptionalInlineObject17ok := localVarOptionals.InlineObject17.Value().(InlineObject17)
-		if !localVarOptionalInlineObject17ok {
-			return localVarReturnValue, nil, reportError("inlineObject17 should be InlineObject17")
+	if localVarOptionals != nil && localVarOptionals.InlineObject19.IsSet() {
+		localVarOptionalInlineObject19, localVarOptionalInlineObject19ok := localVarOptionals.InlineObject19.Value().(InlineObject19)
+		if !localVarOptionalInlineObject19ok {
+			return localVarReturnValue, nil, reportError("inlineObject19 should be InlineObject19")
 		}
-		localVarPostBody = &localVarOptionalInlineObject17
+		localVarPostBody = &localVarOptionalInlineObject19
 	}
 
 	if ctx != nil {
@@ -1968,12 +1959,12 @@ NetworkApiService /ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param optional nil or *OperationNetworkPostipOpts - Optional Parameters:
- * @param "InlineObject16" (optional.Interface of InlineObject16) - 
+ * @param "InlineObject18" (optional.Interface of InlineObject18) - 
 @return Ip
 */
 
 type OperationNetworkPostipOpts struct {
-	InlineObject16 optional.Interface
+	InlineObject18 optional.Interface
 }
 
 func (a *NetworkApiService) OperationNetworkPostip(ctx context.Context, networkId string, localVarOptionals *OperationNetworkPostipOpts) (Ip, *http.Response, error) {
@@ -2012,12 +2003,12 @@ func (a *NetworkApiService) OperationNetworkPostip(ctx context.Context, networkI
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject16.IsSet() {
-		localVarOptionalInlineObject16, localVarOptionalInlineObject16ok := localVarOptionals.InlineObject16.Value().(InlineObject16)
-		if !localVarOptionalInlineObject16ok {
-			return localVarReturnValue, nil, reportError("inlineObject16 should be InlineObject16")
+	if localVarOptionals != nil && localVarOptionals.InlineObject18.IsSet() {
+		localVarOptionalInlineObject18, localVarOptionalInlineObject18ok := localVarOptionals.InlineObject18.Value().(InlineObject18)
+		if !localVarOptionalInlineObject18ok {
+			return localVarReturnValue, nil, reportError("inlineObject18 should be InlineObject18")
 		}
-		localVarPostBody = &localVarOptionalInlineObject16
+		localVarPostBody = &localVarOptionalInlineObject18
 	}
 
 	if ctx != nil {
@@ -2238,12 +2229,12 @@ Returns modified network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param optional nil or *UpdateNetworkOpts - Optional Parameters:
- * @param "InlineObject15" (optional.Interface of InlineObject15) - 
+ * @param "InlineObject17" (optional.Interface of InlineObject17) - 
 @return Network
 */
 
 type UpdateNetworkOpts struct {
-	InlineObject15 optional.Interface
+	InlineObject17 optional.Interface
 }
 
 func (a *NetworkApiService) UpdateNetwork(ctx context.Context, networkId string, localVarOptionals *UpdateNetworkOpts) (Network, *http.Response, error) {
@@ -2282,12 +2273,12 @@ func (a *NetworkApiService) UpdateNetwork(ctx context.Context, networkId string,
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject15.IsSet() {
-		localVarOptionalInlineObject15, localVarOptionalInlineObject15ok := localVarOptionals.InlineObject15.Value().(InlineObject15)
-		if !localVarOptionalInlineObject15ok {
-			return localVarReturnValue, nil, reportError("inlineObject15 should be InlineObject15")
+	if localVarOptionals != nil && localVarOptionals.InlineObject17.IsSet() {
+		localVarOptionalInlineObject17, localVarOptionalInlineObject17ok := localVarOptionals.InlineObject17.Value().(InlineObject17)
+		if !localVarOptionalInlineObject17ok {
+			return localVarReturnValue, nil, reportError("inlineObject17 should be InlineObject17")
 		}
-		localVarPostBody = &localVarOptionalInlineObject15
+		localVarPostBody = &localVarOptionalInlineObject17
 	}
 
 	if ctx != nil {

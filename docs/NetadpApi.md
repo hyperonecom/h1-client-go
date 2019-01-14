@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetadpDeletetagKey**
-> map[string]interface{} OperationNetadpDeletetagKey(ctx, netadpId, key)
+> map[string]string OperationNetadpDeletetagKey(ctx, netadpId, key)
 /tag/:key
 
 ### Required Parameters
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetadpGettag**
-> map[string]interface{} OperationNetadpGettag(ctx, netadpId)
+> map[string]string OperationNetadpGettag(ctx, netadpId)
 /tag/
 
 ### Required Parameters
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetadpPatchtag**
-> map[string]interface{} OperationNetadpPatchtag(ctx, netadpId, optional)
+> map[string]string OperationNetadpPatchtag(ctx, netadpId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -248,19 +248,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netadpId** | **string**| ID of netadp | 
- **optional** | ***OperationNetadpPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetadpPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -291,7 +283,7 @@ Optional parameters are passed through a pointer to a OperationNetadpPostaccessr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject44** | [**optional.Interface of InlineObject44**](InlineObject44.md)|  | 
+ **inlineObject46** | [**optional.Interface of InlineObject46**](InlineObject46.md)|  | 
 
 ### Return type
 

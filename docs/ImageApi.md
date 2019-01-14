@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionImageTransferOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
+ **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
 
 ### Return type
 
@@ -76,7 +76,7 @@ Optional parameters are passed through a pointer to a CreateImageOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
+ **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
 
 ### Return type
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationImageDeletetagKey**
-> map[string]interface{} OperationImageDeletetagKey(ctx, imageId, key)
+> map[string]string OperationImageDeletetagKey(ctx, imageId, key)
 /tag/:key
 
 ### Required Parameters
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationImageGettag**
-> map[string]interface{} OperationImageGettag(ctx, imageId)
+> map[string]string OperationImageGettag(ctx, imageId)
 /tag/
 
 ### Required Parameters
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationImagePatchtag**
-> map[string]interface{} OperationImagePatchtag(ctx, imageId, optional)
+> map[string]string OperationImagePatchtag(ctx, imageId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -349,19 +349,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
- **optional** | ***OperationImagePatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationImagePatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -392,7 +384,7 @@ Optional parameters are passed through a pointer to a OperationImagePostaccessri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
+ **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
 
 ### Return type
 
@@ -457,7 +449,7 @@ Optional parameters are passed through a pointer to a UpdateImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
+ **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
 
 ### Return type
 

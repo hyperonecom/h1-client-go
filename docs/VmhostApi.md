@@ -43,7 +43,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveDiskOpts s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject67** | [**optional.Interface of InlineObject67**](InlineObject67.md)|  | 
+ **inlineObject70** | [**optional.Interface of InlineObject70**](InlineObject70.md)|  | 
 
 ### Return type
 
@@ -80,7 +80,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveISOOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject68** | [**optional.Interface of InlineObject68**](InlineObject68.md)|  | 
+ **inlineObject71** | [**optional.Interface of InlineObject71**](InlineObject71.md)|  | 
 
 ### Return type
 
@@ -117,7 +117,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveImageOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject69** | [**optional.Interface of InlineObject69**](InlineObject69.md)|  | 
+ **inlineObject72** | [**optional.Interface of InlineObject72**](InlineObject72.md)|  | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveVMOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject66** | [**optional.Interface of InlineObject66**](InlineObject66.md)|  | 
+ **inlineObject69** | [**optional.Interface of InlineObject69**](InlineObject69.md)|  | 
 
 ### Return type
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmhostDeletetagKey**
-> map[string]interface{} OperationVmhostDeletetagKey(ctx, vmhostId, key)
+> map[string]string OperationVmhostDeletetagKey(ctx, vmhostId, key)
 /tag/:key
 
 ### Required Parameters
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmhostGettag**
-> map[string]interface{} OperationVmhostGettag(ctx, vmhostId)
+> map[string]string OperationVmhostGettag(ctx, vmhostId)
 /tag/
 
 ### Required Parameters
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmhostPatchtag**
-> map[string]interface{} OperationVmhostPatchtag(ctx, vmhostId, optional)
+> map[string]string OperationVmhostPatchtag(ctx, vmhostId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -427,19 +427,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***OperationVmhostPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVmhostPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -470,7 +462,7 @@ Optional parameters are passed through a pointer to a OperationVmhostPostaccessr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject70** | [**optional.Interface of InlineObject70**](InlineObject70.md)|  | 
+ **inlineObject73** | [**optional.Interface of InlineObject73**](InlineObject73.md)|  | 
 
 ### Return type
 
@@ -535,7 +527,7 @@ Optional parameters are passed through a pointer to a UpdateVmhostOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject65** | [**optional.Interface of InlineObject65**](InlineObject65.md)|  | 
+ **inlineObject68** | [**optional.Interface of InlineObject68**](InlineObject68.md)|  | 
 
 ### Return type
 

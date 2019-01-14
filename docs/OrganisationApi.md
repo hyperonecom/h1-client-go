@@ -7,6 +7,13 @@ Method | HTTP request | Description
 [**ActionOrganisationTransferAccept**](OrganisationApi.md#ActionOrganisationTransferAccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 [**CreateOrganisation**](OrganisationApi.md#CreateOrganisation) | **Post** /organisation | Create
 [**ListOrganisation**](OrganisationApi.md#ListOrganisation) | **Get** /organisation | List
+[**OperationOrganisationDeleteaccessrightsIdentity**](OrganisationApi.md#OperationOrganisationDeleteaccessrightsIdentity) | **Delete** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+[**OperationOrganisationDeletetagKey**](OrganisationApi.md#OperationOrganisationDeletetagKey) | **Delete** /organisation/{organisationId}/tag/{key} | /tag/:key
+[**OperationOrganisationGettag**](OrganisationApi.md#OperationOrganisationGettag) | **Get** /organisation/{organisationId}/tag/ | /tag/
+[**OperationOrganisationListaccessrights**](OrganisationApi.md#OperationOrganisationListaccessrights) | **Get** /organisation/{organisationId}/accessrights/ | /accessrights/
+[**OperationOrganisationListqueue**](OrganisationApi.md#OperationOrganisationListqueue) | **Get** /organisation/{organisationId}/queue/ | /queue/
+[**OperationOrganisationPatchtag**](OrganisationApi.md#OperationOrganisationPatchtag) | **Patch** /organisation/{organisationId}/tag/ | /tag/
+[**OperationOrganisationPostaccessrights**](OrganisationApi.md#OperationOrganisationPostaccessrights) | **Post** /organisation/{organisationId}/accessrights/ | /accessrights/
 [**ShowOrganisation**](OrganisationApi.md#ShowOrganisation) | **Get** /organisation/{organisationId} | Get
 [**UpdateOrganisation**](OrganisationApi.md#UpdateOrganisation) | **Patch** /organisation/{organisationId} | Update
 
@@ -31,7 +38,7 @@ Optional parameters are passed through a pointer to a ActionOrganisationTransfer
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
+ **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -66,7 +73,7 @@ Optional parameters are passed through a pointer to a CreateOrganisationOpts str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
+ **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 
@@ -121,6 +128,200 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **OperationOrganisationDeleteaccessrightsIdentity**
+> Organisation OperationOrganisationDeleteaccessrightsIdentity(ctx, organisationId, identity)
+/accessrights/:identity
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+  **identity** | **string**| identity | 
+
+### Return type
+
+[**Organisation**](organisation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationDeletetagKey**
+> map[string]string OperationOrganisationDeletetagKey(ctx, organisationId, key)
+/tag/:key
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+  **key** | **string**| key | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationGettag**
+> map[string]string OperationOrganisationGettag(ctx, organisationId)
+/tag/
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationListaccessrights**
+> []OrganisationAccessRights OperationOrganisationListaccessrights(ctx, organisationId)
+/accessrights/
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+
+### Return type
+
+[**[]OrganisationAccessRights**](organisation.accessRights.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationListqueue**
+> []Event OperationOrganisationListqueue(ctx, organisationId)
+/queue/
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+
+### Return type
+
+[**[]Event**](event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationPatchtag**
+> map[string]string OperationOrganisationPatchtag(ctx, organisationId, requestBody)
+/tag/
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OperationOrganisationPostaccessrights**
+> OrganisationAccessRights OperationOrganisationPostaccessrights(ctx, organisationId, optional)
+/accessrights/
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+ **optional** | ***OperationOrganisationPostaccessrightsOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a OperationOrganisationPostaccessrightsOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+
+### Return type
+
+[**OrganisationAccessRights**](organisation.accessRights.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ShowOrganisation**
 > Organisation ShowOrganisation(ctx, organisationId)
 Get
@@ -169,7 +370,7 @@ Optional parameters are passed through a pointer to a UpdateOrganisationOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
+ **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 

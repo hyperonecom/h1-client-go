@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject17 struct {
-	Identity string `json:"identity,omitempty"`
+	Name string `json:"name,omitempty"`
+	Gateway string `json:"gateway,omitempty"`
 }

@@ -210,11 +210,26 @@ Class | Method | HTTP request | Description
 *OrganisationApi* | [**ActionOrganisationTransferAccept**](docs/OrganisationApi.md#actionorganisationtransferaccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 *OrganisationApi* | [**CreateOrganisation**](docs/OrganisationApi.md#createorganisation) | **Post** /organisation | Create
 *OrganisationApi* | [**ListOrganisation**](docs/OrganisationApi.md#listorganisation) | **Get** /organisation | List
+*OrganisationApi* | [**OperationOrganisationDeleteaccessrightsIdentity**](docs/OrganisationApi.md#operationorganisationdeleteaccessrightsidentity) | **Delete** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+*OrganisationApi* | [**OperationOrganisationDeletetagKey**](docs/OrganisationApi.md#operationorganisationdeletetagkey) | **Delete** /organisation/{organisationId}/tag/{key} | /tag/:key
+*OrganisationApi* | [**OperationOrganisationGettag**](docs/OrganisationApi.md#operationorganisationgettag) | **Get** /organisation/{organisationId}/tag/ | /tag/
+*OrganisationApi* | [**OperationOrganisationListaccessrights**](docs/OrganisationApi.md#operationorganisationlistaccessrights) | **Get** /organisation/{organisationId}/accessrights/ | /accessrights/
+*OrganisationApi* | [**OperationOrganisationListqueue**](docs/OrganisationApi.md#operationorganisationlistqueue) | **Get** /organisation/{organisationId}/queue/ | /queue/
+*OrganisationApi* | [**OperationOrganisationPatchtag**](docs/OrganisationApi.md#operationorganisationpatchtag) | **Patch** /organisation/{organisationId}/tag/ | /tag/
+*OrganisationApi* | [**OperationOrganisationPostaccessrights**](docs/OrganisationApi.md#operationorganisationpostaccessrights) | **Post** /organisation/{organisationId}/accessrights/ | /accessrights/
 *OrganisationApi* | [**ShowOrganisation**](docs/OrganisationApi.md#showorganisation) | **Get** /organisation/{organisationId} | Get
 *OrganisationApi* | [**UpdateOrganisation**](docs/OrganisationApi.md#updateorganisation) | **Patch** /organisation/{organisationId} | Update
 *ProjectApi* | [**CreateProject**](docs/ProjectApi.md#createproject) | **Post** /project | Create
 *ProjectApi* | [**ListProject**](docs/ProjectApi.md#listproject) | **Get** /project | List
+*ProjectApi* | [**OperationProjectDeleteaccessrightsIdentity**](docs/ProjectApi.md#operationprojectdeleteaccessrightsidentity) | **Delete** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
+*ProjectApi* | [**OperationProjectDeletetagKey**](docs/ProjectApi.md#operationprojectdeletetagkey) | **Delete** /project/{projectId}/tag/{key} | /tag/:key
+*ProjectApi* | [**OperationProjectGetservicesServiceId**](docs/ProjectApi.md#operationprojectgetservicesserviceid) | **Get** /project/{projectId}/services/{serviceId} | /services/:serviceId
+*ProjectApi* | [**OperationProjectGettag**](docs/ProjectApi.md#operationprojectgettag) | **Get** /project/{projectId}/tag/ | /tag/
+*ProjectApi* | [**OperationProjectListaccessrights**](docs/ProjectApi.md#operationprojectlistaccessrights) | **Get** /project/{projectId}/accessrights/ | /accessrights/
 *ProjectApi* | [**OperationProjectListqueue**](docs/ProjectApi.md#operationprojectlistqueue) | **Get** /project/{projectId}/queue/ | /queue/
+*ProjectApi* | [**OperationProjectListservices**](docs/ProjectApi.md#operationprojectlistservices) | **Get** /project/{projectId}/services/ | /services/
+*ProjectApi* | [**OperationProjectPatchtag**](docs/ProjectApi.md#operationprojectpatchtag) | **Patch** /project/{projectId}/tag/ | /tag/
+*ProjectApi* | [**OperationProjectPostaccessrights**](docs/ProjectApi.md#operationprojectpostaccessrights) | **Post** /project/{projectId}/accessrights/ | /accessrights/
 *ProjectApi* | [**ShowProject**](docs/ProjectApi.md#showproject) | **Get** /project/{projectId} | Get
 *ProjectApi* | [**UpdateProject**](docs/ProjectApi.md#updateproject) | **Patch** /project/{projectId} | Update
 *ReplicaApi* | [**ActionReplicaImage**](docs/ReplicaApi.md#actionreplicaimage) | **Post** /replica/{replicaId}/actions/image | /actions/image
@@ -237,6 +252,15 @@ Class | Method | HTTP request | Description
 *ReservationApi* | [**CreateReservation**](docs/ReservationApi.md#createreservation) | **Post** /reservation | Create
 *ReservationApi* | [**DeleteReservation**](docs/ReservationApi.md#deletereservation) | **Delete** /reservation/{reservationId} | Delete
 *ReservationApi* | [**ListReservation**](docs/ReservationApi.md#listreservation) | **Get** /reservation | List
+*ReservationApi* | [**OperationReservationDeleteaccessrightsIdentity**](docs/ReservationApi.md#operationreservationdeleteaccessrightsidentity) | **Delete** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
+*ReservationApi* | [**OperationReservationDeletetagKey**](docs/ReservationApi.md#operationreservationdeletetagkey) | **Delete** /reservation/{reservationId}/tag/{key} | /tag/:key
+*ReservationApi* | [**OperationReservationGetservicesServiceId**](docs/ReservationApi.md#operationreservationgetservicesserviceid) | **Get** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
+*ReservationApi* | [**OperationReservationGettag**](docs/ReservationApi.md#operationreservationgettag) | **Get** /reservation/{reservationId}/tag/ | /tag/
+*ReservationApi* | [**OperationReservationListaccessrights**](docs/ReservationApi.md#operationreservationlistaccessrights) | **Get** /reservation/{reservationId}/accessrights/ | /accessrights/
+*ReservationApi* | [**OperationReservationListqueue**](docs/ReservationApi.md#operationreservationlistqueue) | **Get** /reservation/{reservationId}/queue/ | /queue/
+*ReservationApi* | [**OperationReservationListservices**](docs/ReservationApi.md#operationreservationlistservices) | **Get** /reservation/{reservationId}/services/ | /services/
+*ReservationApi* | [**OperationReservationPatchtag**](docs/ReservationApi.md#operationreservationpatchtag) | **Patch** /reservation/{reservationId}/tag/ | /tag/
+*ReservationApi* | [**OperationReservationPostaccessrights**](docs/ReservationApi.md#operationreservationpostaccessrights) | **Post** /reservation/{reservationId}/accessrights/ | /accessrights/
 *ReservationApi* | [**ShowReservation**](docs/ReservationApi.md#showreservation) | **Get** /reservation/{reservationId} | Get
 *ReservationApi* | [**UpdateReservation**](docs/ReservationApi.md#updatereservation) | **Patch** /reservation/{reservationId} | Update
 *SnapshotApi* | [**CreateSnapshot**](docs/SnapshotApi.md#createsnapshot) | **Post** /snapshot | Create
@@ -425,6 +449,9 @@ Class | Method | HTTP request | Description
  - [InlineObject71](docs/InlineObject71.md)
  - [InlineObject72](docs/InlineObject72.md)
  - [InlineObject73](docs/InlineObject73.md)
+ - [InlineObject74](docs/InlineObject74.md)
+ - [InlineObject75](docs/InlineObject75.md)
+ - [InlineObject76](docs/InlineObject76.md)
  - [InlineObject8](docs/InlineObject8.md)
  - [InlineObject9](docs/InlineObject9.md)
  - [InlineResponse200](docs/InlineResponse200.md)
@@ -455,24 +482,35 @@ Class | Method | HTTP request | Description
  - [OrganisationBilling](docs/OrganisationBilling.md)
  - [OrganisationBilling1](docs/OrganisationBilling1.md)
  - [OrganisationBillingAddress](docs/OrganisationBillingAddress.md)
+ - [OrganisationLimit](docs/OrganisationLimit.md)
+ - [OrganisationLimitOrganisation](docs/OrganisationLimitOrganisation.md)
  - [OrganisationTransfer](docs/OrganisationTransfer.md)
  - [OrganisationorganisationIdBilling](docs/OrganisationorganisationIdBilling.md)
  - [OrganisationorganisationIdBillingAddress](docs/OrganisationorganisationIdBillingAddress.md)
  - [Project](docs/Project.md)
+ - [ProjectAccess](docs/ProjectAccess.md)
  - [ProjectAccessRights](docs/ProjectAccessRights.md)
  - [ProjectAccessRights1](docs/ProjectAccessRights1.md)
  - [ProjectBilling](docs/ProjectBilling.md)
  - [ProjectCompliance](docs/ProjectCompliance.md)
  - [ProjectInvoices](docs/ProjectInvoices.md)
  - [ProjectInvoicesDuplicate](docs/ProjectInvoicesDuplicate.md)
+ - [ProjectLimit](docs/ProjectLimit.md)
+ - [ProjectLimitDisk](docs/ProjectLimitDisk.md)
+ - [ProjectLimitDomain](docs/ProjectLimitDomain.md)
+ - [ProjectLimitIso](docs/ProjectLimitIso.md)
+ - [ProjectLimitVm](docs/ProjectLimitVm.md)
  - [ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
  - [ProjectPayments](docs/ProjectPayments.md)
+ - [ProjectRoles](docs/ProjectRoles.md)
+ - [ProjectServices](docs/ProjectServices.md)
  - [ProjectThreshold](docs/ProjectThreshold.md)
  - [ProjectThresholdCredits](docs/ProjectThresholdCredits.md)
  - [ProjectTransfer](docs/ProjectTransfer.md)
  - [Replica](docs/Replica.md)
  - [ReplicaServices](docs/ReplicaServices.md)
  - [Reservation](docs/Reservation.md)
+ - [ReservationServices](docs/ReservationServices.md)
  - [Snapshot](docs/Snapshot.md)
  - [SnapshotServices](docs/SnapshotServices.md)
  - [Vault](docs/Vault.md)

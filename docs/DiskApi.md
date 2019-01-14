@@ -70,7 +70,7 @@ Optional parameters are passed through a pointer to a ActionDiskTransferOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
+ **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
 
 ### Return type
 
@@ -105,7 +105,7 @@ Optional parameters are passed through a pointer to a CreateDiskOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
+ **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
 
 ### Return type
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationDiskDeletetagKey**
-> map[string]interface{} OperationDiskDeletetagKey(ctx, diskId, key)
+> map[string]string OperationDiskDeletetagKey(ctx, diskId, key)
 /tag/:key
 
 ### Required Parameters
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationDiskGettag**
-> map[string]interface{} OperationDiskGettag(ctx, diskId)
+> map[string]string OperationDiskGettag(ctx, diskId)
 /tag/
 
 ### Required Parameters
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationDiskPatchtag**
-> map[string]interface{} OperationDiskPatchtag(ctx, diskId, optional)
+> map[string]string OperationDiskPatchtag(ctx, diskId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -378,19 +378,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
- **optional** | ***OperationDiskPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationDiskPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -421,7 +413,7 @@ Optional parameters are passed through a pointer to a OperationDiskPostaccessrig
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
+ **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
 
 ### Return type
 
@@ -486,7 +478,7 @@ Optional parameters are passed through a pointer to a UpdateDiskOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
+ **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
 
 ### Return type
 

@@ -10,9 +10,7 @@
 package openapi
 
 type InlineObject38 struct {
-	Service string                 `json:"service,omitempty"`
-	Network string                 `json:"network,omitempty"`
-	Ip      string                 `json:"ip,omitempty"`
-	Tag     map[string]interface{} `json:"tag,omitempty"`
-	VlanIds string                 `json:"vlanIds,omitempty"`
+	Service string `json:"service"`
+	Description string `json:"description,omitempty"`
+	Name string `json:"name,omitempty"`
 }

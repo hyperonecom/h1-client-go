@@ -8,24 +8,27 @@
  */
 
 package openapi
+import (
+	"time"
+)
 
 type Reservation struct {
-	Id            string `json:"_id,omitempty"`
-	Name          string `json:"name,omitempty"`
-	Services      string `json:"services,omitempty"`
-	Flavour       string `json:"flavour,omitempty"`
-	ModifiedOn    string `json:"modifiedOn,omitempty"`
-	ModifiedBy    string `json:"modifiedBy,omitempty"`
-	CreatedBy     string `json:"createdBy,omitempty"`
-	CreatedOn     string `json:"createdOn,omitempty"`
-	AccessRights  string `json:"accessRights,omitempty"`
-	Processing    string `json:"processing,omitempty"`
-	Created       string `json:"created,omitempty"`
-	Queue         string `json:"queue,omitempty"`
-	State         string `json:"state,omitempty"`
-	Tag           string `json:"tag,omitempty"`
-	Project       string `json:"project,omitempty"`
-	Resource      string `json:"resource,omitempty"`
-	Assigned      string `json:"assigned,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services []ProjectServices `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn time.Time `json:"createdOn,omitempty"`
+	AccessRights []string `json:"accessRights,omitempty"`
+	Processing bool `json:"processing,omitempty"`
+	Created bool `json:"created,omitempty"`
+	Queue []Event `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	Resource string `json:"resource,omitempty"`
+	Assigned string `json:"assigned,omitempty"`
 	SourceService string `json:"sourceService,omitempty"`
 }

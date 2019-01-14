@@ -8,34 +8,37 @@
  */
 
 package openapi
+import (
+	"time"
+)
 
 type Project struct {
-	Id           string               `json:"_id,omitempty"`
-	Name         string               `json:"name,omitempty"`
-	Services     string               `json:"services,omitempty"`
-	Flavour      string               `json:"flavour,omitempty"`
-	ModifiedOn   string               `json:"modifiedOn,omitempty"`
-	ModifiedBy   string               `json:"modifiedBy,omitempty"`
-	CreatedBy    string               `json:"createdBy,omitempty"`
-	CreatedOn    string               `json:"createdOn,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services []ProjectServices `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn time.Time `json:"createdOn,omitempty"`
 	AccessRights ProjectAccessRights1 `json:"accessRights,omitempty"`
-	Processing   string               `json:"processing,omitempty"`
-	Created      string               `json:"created,omitempty"`
-	Queue        []Event              `json:"queue,omitempty"`
-	State        string               `json:"state,omitempty"`
-	Tag          string               `json:"tag,omitempty"`
-	Project      string               `json:"project,omitempty"`
-	BankAccount  string               `json:"bankAccount,omitempty"`
-	Organisation string               `json:"organisation,omitempty"`
-	Billing      ProjectBilling       `json:"billing,omitempty"`
-	Invoices     ProjectInvoices      `json:"invoices,omitempty"`
-	Payments     ProjectPayments      `json:"payments,omitempty"`
-	Verified     string               `json:"verified,omitempty"`
-	Active       string               `json:"active,omitempty"`
-	Limit        string               `json:"limit,omitempty"`
-	Threshold    ProjectThreshold     `json:"threshold,omitempty"`
-	Roles        string               `json:"roles,omitempty"`
-	NetworkAcl   ProjectNetworkAcl    `json:"networkAcl,omitempty"`
-	Compliance   ProjectCompliance    `json:"compliance,omitempty"`
-	Transfer     ProjectTransfer      `json:"transfer,omitempty"`
+	Processing bool `json:"processing,omitempty"`
+	Created bool `json:"created,omitempty"`
+	Queue []Event `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	BankAccount string `json:"bankAccount,omitempty"`
+	Organisation string `json:"organisation,omitempty"`
+	Billing ProjectBilling `json:"billing,omitempty"`
+	Invoices ProjectInvoices `json:"invoices,omitempty"`
+	Payments ProjectPayments `json:"payments,omitempty"`
+	Verified string `json:"verified,omitempty"`
+	Active bool `json:"active,omitempty"`
+	Limit ProjectLimit `json:"limit,omitempty"`
+	Threshold ProjectThreshold `json:"threshold,omitempty"`
+	Roles []ProjectRoles `json:"roles,omitempty"`
+	NetworkAcl ProjectNetworkAcl `json:"networkAcl,omitempty"`
+	Compliance ProjectCompliance `json:"compliance,omitempty"`
+	Transfer ProjectTransfer `json:"transfer,omitempty"`
 }

@@ -10,8 +10,5 @@
 package openapi
 
 type InlineObject2 struct {
-	Name         string                     `json:"name,omitempty"`
-	Billing      OrganisationBilling        `json:"billing,omitempty"`
-	AccessRights []OrganisationAccessRights `json:"accessRights,omitempty"`
-	Tag          map[string]interface{}     `json:"tag,omitempty"`
+	Identity string `json:"identity,omitempty"`
 }

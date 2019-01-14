@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject70 struct {
-	Identity string `json:"identity,omitempty"`
+	Disk string `json:"disk"`
+	Vmhost string `json:"vmhost,omitempty"`
 }

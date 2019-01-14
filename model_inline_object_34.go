@@ -10,6 +10,5 @@
 package openapi
 
 type InlineObject34 struct {
-	UserMetadata string `json:"userMetadata,omitempty"`
-	Name         string `json:"name,omitempty"`
+	Identity string `json:"identity,omitempty"`
 }

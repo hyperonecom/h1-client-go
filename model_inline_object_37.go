@@ -10,6 +10,7 @@
 package openapi
 
 type InlineObject37 struct {
-	Disk           string `json:"disk"`
-	ControllerType string `json:"controllerType,omitempty"`
+	UserName string `json:"userName"`
+	Modulus string `json:"modulus"`
+	Exponent string `json:"exponent"`
 }

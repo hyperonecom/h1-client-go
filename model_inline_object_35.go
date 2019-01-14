@@ -10,7 +10,18 @@
 package openapi
 
 type InlineObject35 struct {
-	UserName string `json:"userName"`
-	Modulus  string `json:"modulus"`
-	Exponent string `json:"exponent"`
+	Name string `json:"name,omitempty"`
+	Image string `json:"image,omitempty"`
+	Iso string `json:"iso,omitempty"`
+	Service string `json:"service"`
+	Username string `json:"username,omitempty"`
+	Password VmPassword `json:"password,omitempty"`
+	// - user credential (by id or name) - project credential (by id or name) - raw openssh public key (starting with `ssh-rsa `)
+	SshKeys []string `json:"sshKeys,omitempty"`
+	UserMetadata string `json:"userMetadata,omitempty"`
+	Disk []VmDisk `json:"disk,omitempty"`
+	Netadp []VmNetadp `json:"netadp,omitempty"`
+	Boot bool `json:"boot,omitempty"`
+	Cloud string `json:"cloud,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

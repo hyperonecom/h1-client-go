@@ -10,9 +10,9 @@
 package openapi
 
 type Vmhost struct {
-	Id           string   `json:"_id,omitempty"`
-	Name         string   `json:"name,omitempty"`
-	State        string   `json:"state,omitempty"`
-	Created      string   `json:"created,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	State string `json:"state,omitempty"`
+	Created bool `json:"created,omitempty"`
 	AccessRights []string `json:"accessRights,omitempty"`
 }

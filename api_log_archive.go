@@ -32,12 +32,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *ActionLogArchiveTransferOpts - Optional Parameters:
- * @param "InlineObject59" (optional.Interface of InlineObject59) - 
+ * @param "InlineObject62" (optional.Interface of InlineObject62) - 
 @return LogArchive
 */
 
 type ActionLogArchiveTransferOpts struct {
-	InlineObject59 optional.Interface
+	InlineObject62 optional.Interface
 }
 
 func (a *LogArchiveApiService) ActionLogArchiveTransfer(ctx context.Context, logArchiveId string, localVarOptionals *ActionLogArchiveTransferOpts) (LogArchive, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *LogArchiveApiService) ActionLogArchiveTransfer(ctx context.Context, log
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject59.IsSet() {
-		localVarOptionalInlineObject59, localVarOptionalInlineObject59ok := localVarOptionals.InlineObject59.Value().(InlineObject59)
-		if !localVarOptionalInlineObject59ok {
-			return localVarReturnValue, nil, reportError("inlineObject59 should be InlineObject59")
+	if localVarOptionals != nil && localVarOptionals.InlineObject62.IsSet() {
+		localVarOptionalInlineObject62, localVarOptionalInlineObject62ok := localVarOptionals.InlineObject62.Value().(InlineObject62)
+		if !localVarOptionalInlineObject62ok {
+			return localVarReturnValue, nil, reportError("inlineObject62 should be InlineObject62")
 		}
-		localVarPostBody = &localVarOptionalInlineObject59
+		localVarPostBody = &localVarOptionalInlineObject62
 	}
 
 	if ctx != nil {
@@ -174,12 +174,12 @@ LogArchiveApiService Create
 Create logArchive
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateLogArchiveOpts - Optional Parameters:
- * @param "InlineObject57" (optional.Interface of InlineObject57) - 
+ * @param "InlineObject60" (optional.Interface of InlineObject60) - 
 @return LogArchive
 */
 
 type CreateLogArchiveOpts struct {
-	InlineObject57 optional.Interface
+	InlineObject60 optional.Interface
 }
 
 func (a *LogArchiveApiService) CreateLogArchive(ctx context.Context, localVarOptionals *CreateLogArchiveOpts) (LogArchive, *http.Response, error) {
@@ -217,12 +217,12 @@ func (a *LogArchiveApiService) CreateLogArchive(ctx context.Context, localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject57.IsSet() {
-		localVarOptionalInlineObject57, localVarOptionalInlineObject57ok := localVarOptionals.InlineObject57.Value().(InlineObject57)
-		if !localVarOptionalInlineObject57ok {
-			return localVarReturnValue, nil, reportError("inlineObject57 should be InlineObject57")
+	if localVarOptionals != nil && localVarOptionals.InlineObject60.IsSet() {
+		localVarOptionalInlineObject60, localVarOptionalInlineObject60ok := localVarOptionals.InlineObject60.Value().(InlineObject60)
+		if !localVarOptionalInlineObject60ok {
+			return localVarReturnValue, nil, reportError("inlineObject60 should be InlineObject60")
 		}
-		localVarPostBody = &localVarOptionalInlineObject57
+		localVarPostBody = &localVarOptionalInlineObject60
 	}
 
 	if ctx != nil {
@@ -969,16 +969,16 @@ LogArchiveApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *LogArchiveApiService) OperationLogArchiveDeletetagKey(ctx context.Context, logArchiveId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *LogArchiveApiService) OperationLogArchiveDeletetagKey(ctx context.Context, logArchiveId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1068,7 +1068,7 @@ func (a *LogArchiveApiService) OperationLogArchiveDeletetagKey(ctx context.Conte
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1480,16 +1480,16 @@ func (a *LogArchiveApiService) OperationLogArchiveGetservicesServiceId(ctx conte
 LogArchiveApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *LogArchiveApiService) OperationLogArchiveGettag(ctx context.Context, logArchiveId string) (map[string]interface{}, *http.Response, error) {
+func (a *LogArchiveApiService) OperationLogArchiveGettag(ctx context.Context, logArchiveId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1578,7 +1578,7 @@ func (a *LogArchiveApiService) OperationLogArchiveGettag(ctx context.Context, lo
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2238,12 +2238,12 @@ LogArchiveApiService /credential/certificate/:id
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param optional nil or *OperationLogArchivePatchcredentialcertificateIdOpts - Optional Parameters:
- * @param "InlineObject63" (optional.Interface of InlineObject63) - 
+ * @param "InlineObject66" (optional.Interface of InlineObject66) - 
 @return CredentialCertificate
 */
 
 type OperationLogArchivePatchcredentialcertificateIdOpts struct {
-	InlineObject63 optional.Interface
+	InlineObject66 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePatchcredentialcertificateId(ctx context.Context, logArchiveId string, id string, localVarOptionals *OperationLogArchivePatchcredentialcertificateIdOpts) (CredentialCertificate, *http.Response, error) {
@@ -2283,12 +2283,12 @@ func (a *LogArchiveApiService) OperationLogArchivePatchcredentialcertificateId(c
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject63.IsSet() {
-		localVarOptionalInlineObject63, localVarOptionalInlineObject63ok := localVarOptionals.InlineObject63.Value().(InlineObject63)
-		if !localVarOptionalInlineObject63ok {
-			return localVarReturnValue, nil, reportError("inlineObject63 should be InlineObject63")
+	if localVarOptionals != nil && localVarOptionals.InlineObject66.IsSet() {
+		localVarOptionalInlineObject66, localVarOptionalInlineObject66ok := localVarOptionals.InlineObject66.Value().(InlineObject66)
+		if !localVarOptionalInlineObject66ok {
+			return localVarReturnValue, nil, reportError("inlineObject66 should be InlineObject66")
 		}
-		localVarPostBody = &localVarOptionalInlineObject63
+		localVarPostBody = &localVarOptionalInlineObject66
 	}
 
 	if ctx != nil {
@@ -2382,12 +2382,12 @@ LogArchiveApiService /credential/password/:id
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param optional nil or *OperationLogArchivePatchcredentialpasswordIdOpts - Optional Parameters:
- * @param "InlineObject61" (optional.Interface of InlineObject61) - 
+ * @param "InlineObject64" (optional.Interface of InlineObject64) - 
 @return CredentialPassword
 */
 
 type OperationLogArchivePatchcredentialpasswordIdOpts struct {
-	InlineObject61 optional.Interface
+	InlineObject64 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePatchcredentialpasswordId(ctx context.Context, logArchiveId string, id string, localVarOptionals *OperationLogArchivePatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
@@ -2404,286 +2404,6 @@ func (a *LogArchiveApiService) OperationLogArchivePatchcredentialpasswordId(ctx 
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject61.IsSet() {
-		localVarOptionalInlineObject61, localVarOptionalInlineObject61ok := localVarOptionals.InlineObject61.Value().(InlineObject61)
-		if !localVarOptionalInlineObject61ok {
-			return localVarReturnValue, nil, reportError("inlineObject61 should be InlineObject61")
-		}
-		localVarPostBody = &localVarOptionalInlineObject61
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v CredentialPassword
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
-LogArchiveApiService /tag/
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param logArchiveId ID of logArchive
- * @param optional nil or *OperationLogArchivePatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
-*/
-
-type OperationLogArchivePatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *LogArchiveApiService) OperationLogArchivePatchtag(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePatchtagOpts) (map[string]interface{}, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/tag/"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
-LogArchiveApiService /accessrights/
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param logArchiveId ID of logArchive
- * @param optional nil or *OperationLogArchivePostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject64" (optional.Interface of InlineObject64) - 
-@return string
-*/
-
-type OperationLogArchivePostaccessrightsOpts struct {
-	InlineObject64 optional.Interface
-}
-
-func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostaccessrightsOpts) (string, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  string
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/accessrights/"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2776,6 +2496,277 @@ func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.C
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
+			var v CredentialPassword
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+LogArchiveApiService /tag/
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param logArchiveId ID of logArchive
+ * @param requestBody
+@return map[string]string
+*/
+func (a *LogArchiveApiService) OperationLogArchivePatchtag(ctx context.Context, logArchiveId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  map[string]string
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/tag/"
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &requestBody
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v map[string]string
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+LogArchiveApiService /accessrights/
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param logArchiveId ID of logArchive
+ * @param optional nil or *OperationLogArchivePostaccessrightsOpts - Optional Parameters:
+ * @param "InlineObject67" (optional.Interface of InlineObject67) - 
+@return string
+*/
+
+type OperationLogArchivePostaccessrightsOpts struct {
+	InlineObject67 optional.Interface
+}
+
+func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostaccessrightsOpts) (string, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  string
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/accessrights/"
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	if localVarOptionals != nil && localVarOptionals.InlineObject67.IsSet() {
+		localVarOptionalInlineObject67, localVarOptionalInlineObject67ok := localVarOptionals.InlineObject67.Value().(InlineObject67)
+		if !localVarOptionalInlineObject67ok {
+			return localVarReturnValue, nil, reportError("inlineObject67 should be InlineObject67")
+		}
+		localVarPostBody = &localVarOptionalInlineObject67
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
 			var v string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2805,12 +2796,12 @@ LogArchiveApiService /credential/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *OperationLogArchivePostcredentialcertificateOpts - Optional Parameters:
- * @param "InlineObject62" (optional.Interface of InlineObject62) - 
+ * @param "InlineObject65" (optional.Interface of InlineObject65) - 
 @return CredentialCertificate
 */
 
 type OperationLogArchivePostcredentialcertificateOpts struct {
-	InlineObject62 optional.Interface
+	InlineObject65 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePostcredentialcertificate(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
@@ -2849,12 +2840,12 @@ func (a *LogArchiveApiService) OperationLogArchivePostcredentialcertificate(ctx 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject62.IsSet() {
-		localVarOptionalInlineObject62, localVarOptionalInlineObject62ok := localVarOptionals.InlineObject62.Value().(InlineObject62)
-		if !localVarOptionalInlineObject62ok {
-			return localVarReturnValue, nil, reportError("inlineObject62 should be InlineObject62")
+	if localVarOptionals != nil && localVarOptionals.InlineObject65.IsSet() {
+		localVarOptionalInlineObject65, localVarOptionalInlineObject65ok := localVarOptionals.InlineObject65.Value().(InlineObject65)
+		if !localVarOptionalInlineObject65ok {
+			return localVarReturnValue, nil, reportError("inlineObject65 should be InlineObject65")
 		}
-		localVarPostBody = &localVarOptionalInlineObject62
+		localVarPostBody = &localVarOptionalInlineObject65
 	}
 
 	if ctx != nil {
@@ -2947,12 +2938,12 @@ LogArchiveApiService /credential/password
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *OperationLogArchivePostcredentialpasswordOpts - Optional Parameters:
- * @param "InlineObject60" (optional.Interface of InlineObject60) - 
+ * @param "InlineObject63" (optional.Interface of InlineObject63) - 
 @return CredentialPassword
 */
 
 type OperationLogArchivePostcredentialpasswordOpts struct {
-	InlineObject60 optional.Interface
+	InlineObject63 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePostcredentialpassword(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostcredentialpasswordOpts) (CredentialPassword, *http.Response, error) {
@@ -2991,12 +2982,12 @@ func (a *LogArchiveApiService) OperationLogArchivePostcredentialpassword(ctx con
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject60.IsSet() {
-		localVarOptionalInlineObject60, localVarOptionalInlineObject60ok := localVarOptionals.InlineObject60.Value().(InlineObject60)
-		if !localVarOptionalInlineObject60ok {
-			return localVarReturnValue, nil, reportError("inlineObject60 should be InlineObject60")
+	if localVarOptionals != nil && localVarOptionals.InlineObject63.IsSet() {
+		localVarOptionalInlineObject63, localVarOptionalInlineObject63ok := localVarOptionals.InlineObject63.Value().(InlineObject63)
+		if !localVarOptionalInlineObject63ok {
+			return localVarReturnValue, nil, reportError("inlineObject63 should be InlineObject63")
 		}
-		localVarPostBody = &localVarOptionalInlineObject60
+		localVarPostBody = &localVarOptionalInlineObject63
 	}
 
 	if ctx != nil {
@@ -3217,12 +3208,12 @@ Returns modified logArchive
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *UpdateLogArchiveOpts - Optional Parameters:
- * @param "InlineObject58" (optional.Interface of InlineObject58) - 
+ * @param "InlineObject61" (optional.Interface of InlineObject61) - 
 @return LogArchive
 */
 
 type UpdateLogArchiveOpts struct {
-	InlineObject58 optional.Interface
+	InlineObject61 optional.Interface
 }
 
 func (a *LogArchiveApiService) UpdateLogArchive(ctx context.Context, logArchiveId string, localVarOptionals *UpdateLogArchiveOpts) (LogArchive, *http.Response, error) {
@@ -3261,12 +3252,12 @@ func (a *LogArchiveApiService) UpdateLogArchive(ctx context.Context, logArchiveI
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject58.IsSet() {
-		localVarOptionalInlineObject58, localVarOptionalInlineObject58ok := localVarOptionals.InlineObject58.Value().(InlineObject58)
-		if !localVarOptionalInlineObject58ok {
-			return localVarReturnValue, nil, reportError("inlineObject58 should be InlineObject58")
+	if localVarOptionals != nil && localVarOptionals.InlineObject61.IsSet() {
+		localVarOptionalInlineObject61, localVarOptionalInlineObject61ok := localVarOptionals.InlineObject61.Value().(InlineObject61)
+		if !localVarOptionalInlineObject61ok {
+			return localVarReturnValue, nil, reportError("inlineObject61 should be InlineObject61")
 		}
-		localVarPostBody = &localVarOptionalInlineObject58
+		localVarPostBody = &localVarOptionalInlineObject61
 	}
 
 	if ctx != nil {

@@ -10,6 +10,5 @@
 package openapi
 
 type InlineObject68 struct {
-	Iso    string `json:"iso"`
-	Vmhost string `json:"vmhost,omitempty"`
+	EnabledServices VmhostvmhostIdEnabledServices `json:"enabledServices,omitempty"`
 }

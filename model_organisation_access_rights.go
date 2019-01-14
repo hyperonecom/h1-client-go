@@ -10,6 +10,6 @@
 package openapi
 
 type OrganisationAccessRights struct {
-	Id   string `json:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 	Role string `json:"role,omitempty"`
 }

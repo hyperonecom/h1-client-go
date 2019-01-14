@@ -11,5 +11,5 @@ package openapi
 
 type ProjectInvoicesDuplicate struct {
 	CreatedOn string `json:"createdOn,omitempty"`
-	Id        string `json:"_id,omitempty"`
+	Id string `json:"_id,omitempty"`
 }

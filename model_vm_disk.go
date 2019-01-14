@@ -10,9 +10,9 @@
 package openapi
 
 type VmDisk struct {
-	Id      string  `json:"id,omitempty"`
-	Size    float32 `json:"size,omitempty"`
-	Service string  `json:"service,omitempty"`
-	Name    string  `json:"name,omitempty"`
-	Cloud   string  `json:"cloud,omitempty"`
+	Id string `json:"id,omitempty"`
+	Size float32 `json:"size,omitempty"`
+	Service string `json:"service,omitempty"`
+	Name string `json:"name,omitempty"`
+	Cloud string `json:"cloud,omitempty"`
 }

@@ -10,6 +10,6 @@
 package openapi
 
 type NetgwPrimaryIpAssociated struct {
-	Ip  string `json:"ip,omitempty"`
+	Ip string `json:"ip,omitempty"`
 	Fip string `json:"fip,omitempty"`
 }

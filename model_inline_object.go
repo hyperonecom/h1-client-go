@@ -10,8 +10,8 @@
 package openapi
 
 type InlineObject struct {
-	Name         string                 `json:"name"`
-	AccessRights []ProjectAccessRights  `json:"accessRights,omitempty"`
-	Organisation string                 `json:"organisation"`
-	Tag          map[string]interface{} `json:"tag,omitempty"`
+	Name string `json:"name"`
+	AccessRights []ProjectAccessRights `json:"accessRights,omitempty"`
+	Organisation string `json:"organisation"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

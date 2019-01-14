@@ -10,5 +10,10 @@
 package openapi
 
 type InlineObject27 struct {
-	Project string `json:"project"`
+	Service string `json:"service"`
+	Name string `json:"name,omitempty"`
+	Size float32 `json:"size,omitempty"`
+	Cloud string `json:"cloud,omitempty"`
+	Metadata DiskMetadata `json:"metadata,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

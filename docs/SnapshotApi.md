@@ -38,7 +38,7 @@ Optional parameters are passed through a pointer to a CreateSnapshotOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject52** | [**optional.Interface of InlineObject52**](InlineObject52.md)|  | 
+ **inlineObject54** | [**optional.Interface of InlineObject54**](InlineObject54.md)|  | 
 
 ### Return type
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationSnapshotDeletetagKey**
-> map[string]interface{} OperationSnapshotDeletetagKey(ctx, snapshotId, key)
+> map[string]string OperationSnapshotDeletetagKey(ctx, snapshotId, key)
 /tag/:key
 
 ### Required Parameters
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationSnapshotGettag**
-> map[string]interface{} OperationSnapshotGettag(ctx, snapshotId)
+> map[string]string OperationSnapshotGettag(ctx, snapshotId)
 /tag/
 
 ### Required Parameters
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationSnapshotPatchtag**
-> map[string]interface{} OperationSnapshotPatchtag(ctx, snapshotId, optional)
+> map[string]string OperationSnapshotPatchtag(ctx, snapshotId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -312,19 +312,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
- **optional** | ***OperationSnapshotPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationSnapshotPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -355,7 +347,7 @@ Optional parameters are passed through a pointer to a OperationSnapshotPostacces
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject54** | [**optional.Interface of InlineObject54**](InlineObject54.md)|  | 
+ **inlineObject56** | [**optional.Interface of InlineObject56**](InlineObject56.md)|  | 
 
 ### Return type
 
@@ -420,7 +412,7 @@ Optional parameters are passed through a pointer to a UpdateSnapshotOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject53** | [**optional.Interface of InlineObject53**](InlineObject53.md)|  | 
+ **inlineObject55** | [**optional.Interface of InlineObject55**](InlineObject55.md)|  | 
 
 ### Return type
 

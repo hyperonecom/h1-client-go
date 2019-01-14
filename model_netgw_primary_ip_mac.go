@@ -10,7 +10,7 @@
 package openapi
 
 type NetgwPrimaryIpMac struct {
-	Id         string `json:"_id,omitempty"`
+	Id string `json:"_id,omitempty"`
 	Macaddress string `json:"macaddress,omitempty"`
-	Vm         string `json:"vm,omitempty"`
+	Vm string `json:"vm,omitempty"`
 }

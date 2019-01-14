@@ -107,7 +107,7 @@ Optional parameters are passed through a pointer to a ActionFirewallTransferOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
+ **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 
@@ -142,7 +142,7 @@ Optional parameters are passed through a pointer to a CreateFirewallOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
+ **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationFirewallDeletetagKey**
-> map[string]interface{} OperationFirewallDeletetagKey(ctx, firewallId, key)
+> map[string]string OperationFirewallDeletetagKey(ctx, firewallId, key)
 /tag/:key
 
 ### Required Parameters
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationFirewallGettag**
-> map[string]interface{} OperationFirewallGettag(ctx, firewallId)
+> map[string]string OperationFirewallGettag(ctx, firewallId)
 /tag/
 
 ### Required Parameters
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationFirewallPatchtag**
-> map[string]interface{} OperationFirewallPatchtag(ctx, firewallId, optional)
+> map[string]string OperationFirewallPatchtag(ctx, firewallId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -575,19 +575,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***OperationFirewallPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationFirewallPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -618,7 +610,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostacces
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
+ **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
 
 ### Return type
 
@@ -653,7 +645,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostegres
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
+ **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -688,7 +680,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostingre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
+ **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 
@@ -753,7 +745,7 @@ Optional parameters are passed through a pointer to a UpdateFirewallOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
+ **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 

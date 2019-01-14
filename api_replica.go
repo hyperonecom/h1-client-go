@@ -32,12 +32,12 @@ Action image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param optional nil or *ActionReplicaImageOpts - Optional Parameters:
- * @param "InlineObject72" (optional.Interface of InlineObject72) - 
+ * @param "InlineObject75" (optional.Interface of InlineObject75) - 
 @return Replica
 */
 
 type ActionReplicaImageOpts struct {
-	InlineObject72 optional.Interface
+	InlineObject75 optional.Interface
 }
 
 func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId string, localVarOptionals *ActionReplicaImageOpts) (Replica, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject72.IsSet() {
-		localVarOptionalInlineObject72, localVarOptionalInlineObject72ok := localVarOptionals.InlineObject72.Value().(InlineObject72)
-		if !localVarOptionalInlineObject72ok {
-			return localVarReturnValue, nil, reportError("inlineObject72 should be InlineObject72")
+	if localVarOptionals != nil && localVarOptionals.InlineObject75.IsSet() {
+		localVarOptionalInlineObject75, localVarOptionalInlineObject75ok := localVarOptionals.InlineObject75.Value().(InlineObject75)
+		if !localVarOptionalInlineObject75ok {
+			return localVarReturnValue, nil, reportError("inlineObject75 should be InlineObject75")
 		}
-		localVarPostBody = &localVarOptionalInlineObject72
+		localVarPostBody = &localVarOptionalInlineObject75
 	}
 
 	if ctx != nil {
@@ -174,12 +174,12 @@ ReplicaApiService Create
 Create replica
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateReplicaOpts - Optional Parameters:
- * @param "InlineObject71" (optional.Interface of InlineObject71) - 
+ * @param "InlineObject74" (optional.Interface of InlineObject74) - 
 @return Replica
 */
 
 type CreateReplicaOpts struct {
-	InlineObject71 optional.Interface
+	InlineObject74 optional.Interface
 }
 
 func (a *ReplicaApiService) CreateReplica(ctx context.Context, localVarOptionals *CreateReplicaOpts) (Replica, *http.Response, error) {
@@ -217,12 +217,12 @@ func (a *ReplicaApiService) CreateReplica(ctx context.Context, localVarOptionals
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject71.IsSet() {
-		localVarOptionalInlineObject71, localVarOptionalInlineObject71ok := localVarOptionals.InlineObject71.Value().(InlineObject71)
-		if !localVarOptionalInlineObject71ok {
-			return localVarReturnValue, nil, reportError("inlineObject71 should be InlineObject71")
+	if localVarOptionals != nil && localVarOptionals.InlineObject74.IsSet() {
+		localVarOptionalInlineObject74, localVarOptionalInlineObject74ok := localVarOptionals.InlineObject74.Value().(InlineObject74)
+		if !localVarOptionalInlineObject74ok {
+			return localVarReturnValue, nil, reportError("inlineObject74 should be InlineObject74")
 		}
-		localVarPostBody = &localVarOptionalInlineObject71
+		localVarPostBody = &localVarOptionalInlineObject74
 	}
 
 	if ctx != nil {
@@ -693,16 +693,16 @@ ReplicaApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ReplicaApiService) OperationReplicaDeletetagKey(ctx context.Context, replicaId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) OperationReplicaDeletetagKey(ctx context.Context, replicaId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -792,7 +792,7 @@ func (a *ReplicaApiService) OperationReplicaDeletetagKey(ctx context.Context, re
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -948,16 +948,16 @@ func (a *ReplicaApiService) OperationReplicaGetservicesServiceId(ctx context.Con
 ReplicaApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ReplicaApiService) OperationReplicaGettag(ctx context.Context, replicaId string) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) OperationReplicaGettag(ctx context.Context, replicaId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1046,7 +1046,7 @@ func (a *ReplicaApiService) OperationReplicaGettag(ctx context.Context, replicaI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1452,23 +1452,17 @@ func (a *ReplicaApiService) OperationReplicaListservices(ctx context.Context, re
 ReplicaApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
- * @param optional nil or *OperationReplicaPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationReplicaPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *ReplicaApiService) OperationReplicaPatchtag(ctx context.Context, replicaId string, localVarOptionals *OperationReplicaPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) OperationReplicaPatchtag(ctx context.Context, replicaId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1497,10 +1491,7 @@ func (a *ReplicaApiService) OperationReplicaPatchtag(ctx context.Context, replic
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1562,7 +1553,7 @@ func (a *ReplicaApiService) OperationReplicaPatchtag(ctx context.Context, replic
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1591,12 +1582,12 @@ ReplicaApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param optional nil or *OperationReplicaPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject73" (optional.Interface of InlineObject73) - 
+ * @param "InlineObject76" (optional.Interface of InlineObject76) - 
 @return string
 */
 
 type OperationReplicaPostaccessrightsOpts struct {
-	InlineObject73 optional.Interface
+	InlineObject76 optional.Interface
 }
 
 func (a *ReplicaApiService) OperationReplicaPostaccessrights(ctx context.Context, replicaId string, localVarOptionals *OperationReplicaPostaccessrightsOpts) (string, *http.Response, error) {
@@ -1635,12 +1626,12 @@ func (a *ReplicaApiService) OperationReplicaPostaccessrights(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject73.IsSet() {
-		localVarOptionalInlineObject73, localVarOptionalInlineObject73ok := localVarOptionals.InlineObject73.Value().(InlineObject73)
-		if !localVarOptionalInlineObject73ok {
-			return localVarReturnValue, nil, reportError("inlineObject73 should be InlineObject73")
+	if localVarOptionals != nil && localVarOptionals.InlineObject76.IsSet() {
+		localVarOptionalInlineObject76, localVarOptionalInlineObject76ok := localVarOptionals.InlineObject76.Value().(InlineObject76)
+		if !localVarOptionalInlineObject76ok {
+			return localVarReturnValue, nil, reportError("inlineObject76 should be InlineObject76")
 		}
-		localVarPostBody = &localVarOptionalInlineObject73
+		localVarPostBody = &localVarOptionalInlineObject76
 	}
 
 	if ctx != nil {

@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject42 struct {
-	Project string `json:"project"`
+	Service string `json:"service"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

@@ -10,7 +10,7 @@
 package openapi
 
 type OrganisationorganisationIdBillingAddress struct {
-	City    string `json:"city,omitempty"`
+	City string `json:"city,omitempty"`
 	Zipcode string `json:"zipcode,omitempty"`
-	Street  string `json:"street,omitempty"`
+	Street string `json:"street,omitempty"`
 }

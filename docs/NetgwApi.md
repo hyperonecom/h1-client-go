@@ -96,7 +96,7 @@ Optional parameters are passed through a pointer to a CreateNetgwOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
+ **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
 
 ### Return type
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetgwDeletetagKey**
-> map[string]interface{} OperationNetgwDeletetagKey(ctx, netgwId, key)
+> map[string]string OperationNetgwDeletetagKey(ctx, netgwId, key)
 /tag/:key
 
 ### Required Parameters
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetgwGettag**
-> map[string]interface{} OperationNetgwGettag(ctx, netgwId)
+> map[string]string OperationNetgwGettag(ctx, netgwId)
 /tag/
 
 ### Required Parameters
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetgwPatchtag**
-> map[string]interface{} OperationNetgwPatchtag(ctx, netgwId, optional)
+> map[string]string OperationNetgwPatchtag(ctx, netgwId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -369,19 +369,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netgwId** | **string**| ID of netgw | 
- **optional** | ***OperationNetgwPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetgwPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -412,7 +404,7 @@ Optional parameters are passed through a pointer to a OperationNetgwPostaccessri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
+ **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
 
 ### Return type
 
@@ -477,7 +469,7 @@ Optional parameters are passed through a pointer to a UpdateNetgwOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
+ **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
 
 ### Return type
 

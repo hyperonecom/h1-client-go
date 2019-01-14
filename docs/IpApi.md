@@ -157,7 +157,7 @@ Optional parameters are passed through a pointer to a ActionIpTransferOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
+ **inlineObject44** | [**optional.Interface of InlineObject44**](InlineObject44.md)|  | 
 
 ### Return type
 
@@ -192,7 +192,7 @@ Optional parameters are passed through a pointer to a CreateIpOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
+ **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
 
 ### Return type
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIpDeletetagKey**
-> map[string]interface{} OperationIpDeletetagKey(ctx, ipId, key)
+> map[string]string OperationIpDeletetagKey(ctx, ipId, key)
 /tag/:key
 
 ### Required Parameters
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIpGettag**
-> map[string]interface{} OperationIpGettag(ctx, ipId)
+> map[string]string OperationIpGettag(ctx, ipId)
 /tag/
 
 ### Required Parameters
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIpPatchtag**
-> map[string]interface{} OperationIpPatchtag(ctx, ipId, optional)
+> map[string]string OperationIpPatchtag(ctx, ipId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -465,19 +465,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
- **optional** | ***OperationIpPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationIpPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -508,7 +500,7 @@ Optional parameters are passed through a pointer to a OperationIpPostaccessright
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject43** | [**optional.Interface of InlineObject43**](InlineObject43.md)|  | 
+ **inlineObject45** | [**optional.Interface of InlineObject45**](InlineObject45.md)|  | 
 
 ### Return type
 
@@ -573,7 +565,7 @@ Optional parameters are passed through a pointer to a UpdateIpOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
+ **inlineObject43** | [**optional.Interface of InlineObject43**](InlineObject43.md)|  | 
 
 ### Return type
 

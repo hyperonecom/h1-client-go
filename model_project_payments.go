@@ -10,24 +10,24 @@
 package openapi
 
 type ProjectPayments struct {
-	Id           string `json:"_id,omitempty"`
-	Name         string `json:"name,omitempty"`
-	Services     string `json:"services,omitempty"`
-	Flavour      string `json:"flavour,omitempty"`
-	ModifiedOn   string `json:"modifiedOn,omitempty"`
-	ModifiedBy   string `json:"modifiedBy,omitempty"`
-	CreatedBy    string `json:"createdBy,omitempty"`
-	CreatedOn    string `json:"createdOn,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services string `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn string `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn string `json:"createdOn,omitempty"`
 	AccessRights string `json:"accessRights,omitempty"`
-	Processing   string `json:"processing,omitempty"`
-	Created      string `json:"created,omitempty"`
-	Queue        string `json:"queue,omitempty"`
-	State        string `json:"state,omitempty"`
-	Tag          string `json:"tag,omitempty"`
-	Project      string `json:"project,omitempty"`
-	CreditsFree  string `json:"creditsFree,omitempty"`
-	Credits      string `json:"credits,omitempty"`
-	Channel      string `json:"channel,omitempty"`
-	Amount       string `json:"amount,omitempty"`
-	Type         string `json:"type,omitempty"`
+	Processing string `json:"processing,omitempty"`
+	Created string `json:"created,omitempty"`
+	Queue string `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag string `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	CreditsFree string `json:"creditsFree,omitempty"`
+	Credits string `json:"credits,omitempty"`
+	Channel string `json:"channel,omitempty"`
+	Amount string `json:"amount,omitempty"`
+	Type string `json:"type,omitempty"`
 }

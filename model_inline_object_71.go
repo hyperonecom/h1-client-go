@@ -10,6 +10,6 @@
 package openapi
 
 type InlineObject71 struct {
-	Hostname string `json:"hostname"`
-	Secret   string `json:"secret"`
+	Iso string `json:"iso"`
+	Vmhost string `json:"vmhost,omitempty"`
 }

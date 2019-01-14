@@ -10,9 +10,9 @@
 package openapi
 
 type OrganisationBilling struct {
-	Nip      string                     `json:"nip,omitempty"`
-	Email    string                     `json:"email,omitempty"`
-	Company  string                     `json:"company,omitempty"`
-	Currency string                     `json:"currency,omitempty"`
-	Address  OrganisationBillingAddress `json:"address,omitempty"`
+	Nip string `json:"nip,omitempty"`
+	Email string `json:"email,omitempty"`
+	Company string `json:"company,omitempty"`
+	Currency string `json:"currency,omitempty"`
+	Address OrganisationBillingAddress `json:"address,omitempty"`
 }

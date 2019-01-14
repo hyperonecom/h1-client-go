@@ -10,7 +10,7 @@
 package openapi
 
 type VmNetadp struct {
-	Service string   `json:"service,omitempty"`
-	Network string   `json:"network,omitempty"`
-	Ip      []string `json:"ip,omitempty"`
+	Service string `json:"service,omitempty"`
+	Network string `json:"network,omitempty"`
+	Ip []string `json:"ip,omitempty"`
 }

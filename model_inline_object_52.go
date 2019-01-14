@@ -10,8 +10,5 @@
 package openapi
 
 type InlineObject52 struct {
-	Vault   string                 `json:"vault"`
-	Service string                 `json:"service"`
-	Name    string                 `json:"name"`
-	Tag     map[string]interface{} `json:"tag,omitempty"`
+	Name string `json:"name,omitempty"`
 }

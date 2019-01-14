@@ -539,12 +539,12 @@ VaultApiService Create
 Create vault
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateVaultOpts - Optional Parameters:
- * @param "InlineObject45" (optional.Interface of InlineObject45) - 
+ * @param "InlineObject47" (optional.Interface of InlineObject47) - 
 @return Vault
 */
 
 type CreateVaultOpts struct {
-	InlineObject45 optional.Interface
+	InlineObject47 optional.Interface
 }
 
 func (a *VaultApiService) CreateVault(ctx context.Context, localVarOptionals *CreateVaultOpts) (Vault, *http.Response, error) {
@@ -582,12 +582,12 @@ func (a *VaultApiService) CreateVault(ctx context.Context, localVarOptionals *Cr
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject45.IsSet() {
-		localVarOptionalInlineObject45, localVarOptionalInlineObject45ok := localVarOptionals.InlineObject45.Value().(InlineObject45)
-		if !localVarOptionalInlineObject45ok {
-			return localVarReturnValue, nil, reportError("inlineObject45 should be InlineObject45")
+	if localVarOptionals != nil && localVarOptionals.InlineObject47.IsSet() {
+		localVarOptionalInlineObject47, localVarOptionalInlineObject47ok := localVarOptionals.InlineObject47.Value().(InlineObject47)
+		if !localVarOptionalInlineObject47ok {
+			return localVarReturnValue, nil, reportError("inlineObject47 should be InlineObject47")
 		}
-		localVarPostBody = &localVarOptionalInlineObject45
+		localVarPostBody = &localVarOptionalInlineObject47
 	}
 
 	if ctx != nil {
@@ -1334,16 +1334,16 @@ VaultApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *VaultApiService) OperationVaultDeletetagKey(ctx context.Context, vaultId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *VaultApiService) OperationVaultDeletetagKey(ctx context.Context, vaultId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1433,7 +1433,7 @@ func (a *VaultApiService) OperationVaultDeletetagKey(ctx context.Context, vaultI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1845,16 +1845,16 @@ func (a *VaultApiService) OperationVaultGetservicesServiceId(ctx context.Context
 VaultApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId string) (map[string]interface{}, *http.Response, error) {
+func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1943,7 +1943,7 @@ func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2603,12 +2603,12 @@ VaultApiService /credential/certificate/:id
  * @param vaultId ID of vault
  * @param id id
  * @param optional nil or *OperationVaultPatchcredentialcertificateIdOpts - Optional Parameters:
- * @param "InlineObject50" (optional.Interface of InlineObject50) - 
+ * @param "InlineObject52" (optional.Interface of InlineObject52) - 
 @return CredentialCertificate
 */
 
 type OperationVaultPatchcredentialcertificateIdOpts struct {
-	InlineObject50 optional.Interface
+	InlineObject52 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialcertificateIdOpts) (CredentialCertificate, *http.Response, error) {
@@ -2623,6 +2623,150 @@ func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/credential/certificate/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	if localVarOptionals != nil && localVarOptionals.InlineObject52.IsSet() {
+		localVarOptionalInlineObject52, localVarOptionalInlineObject52ok := localVarOptionals.InlineObject52.Value().(InlineObject52)
+		if !localVarOptionalInlineObject52ok {
+			return localVarReturnValue, nil, reportError("inlineObject52 should be InlineObject52")
+		}
+		localVarPostBody = &localVarOptionalInlineObject52
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v CredentialCertificate
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+VaultApiService /credential/password/:id
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param vaultId ID of vault
+ * @param id id
+ * @param optional nil or *OperationVaultPatchcredentialpasswordIdOpts - Optional Parameters:
+ * @param "InlineObject50" (optional.Interface of InlineObject50) - 
+@return CredentialPassword
+*/
+
+type OperationVaultPatchcredentialpasswordIdOpts struct {
+	InlineObject50 optional.Interface
+}
+
+func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  CredentialPassword
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/credential/password/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
@@ -2717,150 +2861,6 @@ func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v CredentialCertificate
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
-VaultApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param vaultId ID of vault
- * @param id id
- * @param optional nil or *OperationVaultPatchcredentialpasswordIdOpts - Optional Parameters:
- * @param "InlineObject48" (optional.Interface of InlineObject48) - 
-@return CredentialPassword
-*/
-
-type OperationVaultPatchcredentialpasswordIdOpts struct {
-	InlineObject48 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  CredentialPassword
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/credential/password/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject48.IsSet() {
-		localVarOptionalInlineObject48, localVarOptionalInlineObject48ok := localVarOptionals.InlineObject48.Value().(InlineObject48)
-		if !localVarOptionalInlineObject48ok {
-			return localVarReturnValue, nil, reportError("inlineObject48 should be InlineObject48")
-		}
-		localVarPostBody = &localVarOptionalInlineObject48
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialPassword
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -2889,23 +2889,17 @@ func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Co
 VaultApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param optional nil or *OperationVaultPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationVaultPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -2934,8 +2928,147 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
+	localVarPostBody = &requestBody
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v map[string]string
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+VaultApiService /accessrights/
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param vaultId ID of vault
+ * @param optional nil or *OperationVaultPostaccessrightsOpts - Optional Parameters:
+ * @param "InlineObject53" (optional.Interface of InlineObject53) - 
+@return string
+*/
+
+type OperationVaultPostaccessrightsOpts struct {
+	InlineObject53 optional.Interface
+}
+
+func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostaccessrightsOpts) (string, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  string
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights/"
+	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	if localVarOptionals != nil && localVarOptionals.InlineObject53.IsSet() {
+		localVarOptionalInlineObject53, localVarOptionalInlineObject53ok := localVarOptionals.InlineObject53.Value().(InlineObject53)
+		if !localVarOptionalInlineObject53ok {
+			return localVarReturnValue, nil, reportError("inlineObject53 should be InlineObject53")
+		}
+		localVarPostBody = &localVarOptionalInlineObject53
 	}
 
 	if ctx != nil {
@@ -2999,7 +3132,7 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3024,30 +3157,30 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 }
 
 /*
-VaultApiService /accessrights/
+VaultApiService /credential/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param optional nil or *OperationVaultPostaccessrightsOpts - Optional Parameters:
+ * @param optional nil or *OperationVaultPostcredentialcertificateOpts - Optional Parameters:
  * @param "InlineObject51" (optional.Interface of InlineObject51) - 
-@return string
+@return CredentialCertificate
 */
 
-type OperationVaultPostaccessrightsOpts struct {
+type OperationVaultPostcredentialcertificateOpts struct {
 	InlineObject51 optional.Interface
 }
 
-func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/credential/certificate"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3141,148 +3274,6 @@ func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, va
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
-VaultApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param vaultId ID of vault
- * @param optional nil or *OperationVaultPostcredentialcertificateOpts - Optional Parameters:
- * @param "InlineObject49" (optional.Interface of InlineObject49) - 
-@return CredentialCertificate
-*/
-
-type OperationVaultPostcredentialcertificateOpts struct {
-	InlineObject49 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  CredentialCertificate
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/credential/certificate"
-	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject49.IsSet() {
-		localVarOptionalInlineObject49, localVarOptionalInlineObject49ok := localVarOptionals.InlineObject49.Value().(InlineObject49)
-		if !localVarOptionalInlineObject49ok {
-			return localVarReturnValue, nil, reportError("inlineObject49 should be InlineObject49")
-		}
-		localVarPostBody = &localVarOptionalInlineObject49
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
@@ -3312,12 +3303,12 @@ VaultApiService /credential/password
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param optional nil or *OperationVaultPostcredentialpasswordOpts - Optional Parameters:
- * @param "InlineObject47" (optional.Interface of InlineObject47) - 
+ * @param "InlineObject49" (optional.Interface of InlineObject49) - 
 @return CredentialPassword
 */
 
 type OperationVaultPostcredentialpasswordOpts struct {
-	InlineObject47 optional.Interface
+	InlineObject49 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialpasswordOpts) (CredentialPassword, *http.Response, error) {
@@ -3356,12 +3347,12 @@ func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject47.IsSet() {
-		localVarOptionalInlineObject47, localVarOptionalInlineObject47ok := localVarOptionals.InlineObject47.Value().(InlineObject47)
-		if !localVarOptionalInlineObject47ok {
-			return localVarReturnValue, nil, reportError("inlineObject47 should be InlineObject47")
+	if localVarOptionals != nil && localVarOptionals.InlineObject49.IsSet() {
+		localVarOptionalInlineObject49, localVarOptionalInlineObject49ok := localVarOptionals.InlineObject49.Value().(InlineObject49)
+		if !localVarOptionalInlineObject49ok {
+			return localVarReturnValue, nil, reportError("inlineObject49 should be InlineObject49")
 		}
-		localVarPostBody = &localVarOptionalInlineObject47
+		localVarPostBody = &localVarOptionalInlineObject49
 	}
 
 	if ctx != nil {
@@ -3582,12 +3573,12 @@ Returns modified vault
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param optional nil or *UpdateVaultOpts - Optional Parameters:
- * @param "InlineObject46" (optional.Interface of InlineObject46) - 
+ * @param "InlineObject48" (optional.Interface of InlineObject48) - 
 @return Vault
 */
 
 type UpdateVaultOpts struct {
-	InlineObject46 optional.Interface
+	InlineObject48 optional.Interface
 }
 
 func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, localVarOptionals *UpdateVaultOpts) (Vault, *http.Response, error) {
@@ -3626,12 +3617,12 @@ func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject46.IsSet() {
-		localVarOptionalInlineObject46, localVarOptionalInlineObject46ok := localVarOptionals.InlineObject46.Value().(InlineObject46)
-		if !localVarOptionalInlineObject46ok {
-			return localVarReturnValue, nil, reportError("inlineObject46 should be InlineObject46")
+	if localVarOptionals != nil && localVarOptionals.InlineObject48.IsSet() {
+		localVarOptionalInlineObject48, localVarOptionalInlineObject48ok := localVarOptionals.InlineObject48.Value().(InlineObject48)
+		if !localVarOptionalInlineObject48ok {
+			return localVarReturnValue, nil, reportError("inlineObject48 should be InlineObject48")
 		}
-		localVarPostBody = &localVarOptionalInlineObject46
+		localVarPostBody = &localVarOptionalInlineObject48
 	}
 
 	if ctx != nil {

@@ -10,6 +10,6 @@
 package openapi
 
 type VaultCredential struct {
-	Password    []VaultCredentialPassword    `json:"password,omitempty"`
+	Password []VaultCredentialPassword `json:"password,omitempty"`
 	Certificate []VaultCredentialCertificate `json:"certificate,omitempty"`
 }

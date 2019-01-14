@@ -8,27 +8,30 @@
  */
 
 package openapi
+import (
+	"time"
+)
 
 type Organisation struct {
-	Id           string               `json:"_id,omitempty"`
-	Name         string               `json:"name,omitempty"`
-	Services     string               `json:"services,omitempty"`
-	Flavour      string               `json:"flavour,omitempty"`
-	ModifiedOn   string               `json:"modifiedOn,omitempty"`
-	ModifiedBy   string               `json:"modifiedBy,omitempty"`
-	CreatedBy    string               `json:"createdBy,omitempty"`
-	CreatedOn    string               `json:"createdOn,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services string `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn time.Time `json:"createdOn,omitempty"`
 	AccessRights ProjectAccessRights1 `json:"accessRights,omitempty"`
-	Processing   string               `json:"processing,omitempty"`
-	Created      string               `json:"created,omitempty"`
-	Queue        string               `json:"queue,omitempty"`
-	State        string               `json:"state,omitempty"`
-	Tag          string               `json:"tag,omitempty"`
-	Project      string               `json:"project,omitempty"`
-	Billing      OrganisationBilling1 `json:"billing,omitempty"`
-	Verified     string               `json:"verified,omitempty"`
-	Limit        string               `json:"limit,omitempty"`
-	Roles        string               `json:"roles,omitempty"`
-	Transfer     OrganisationTransfer `json:"transfer,omitempty"`
-	BankAccount  string               `json:"bankAccount,omitempty"`
+	Processing bool `json:"processing,omitempty"`
+	Created bool `json:"created,omitempty"`
+	Queue []Event `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	Billing OrganisationBilling1 `json:"billing,omitempty"`
+	Verified float32 `json:"verified,omitempty"`
+	Limit OrganisationLimit `json:"limit,omitempty"`
+	Roles []ProjectRoles `json:"roles,omitempty"`
+	Transfer OrganisationTransfer `json:"transfer,omitempty"`
+	BankAccount string `json:"bankAccount,omitempty"`
 }

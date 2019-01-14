@@ -10,8 +10,8 @@
 package openapi
 
 type ProjectNetworkAcl struct {
-	Type  string `json:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 	Value string `json:"value,omitempty"`
-	Name  string `json:"name,omitempty"`
-	Id    string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Id string `json:"_id,omitempty"`
 }

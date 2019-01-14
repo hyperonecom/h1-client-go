@@ -3,8 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Iso** | **string** |  | 
-**Vmhost** | **string** |  | [optional] 
+**EnabledServices** | [**VmhostvmhostIdEnabledServices**](vmhostvmhostId_enabledServices.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

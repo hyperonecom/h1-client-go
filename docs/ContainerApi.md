@@ -125,7 +125,7 @@ Optional parameters are passed through a pointer to a CreateContainerOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
+ **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
 
 ### Return type
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationContainerDeletetagKey**
-> map[string]interface{} OperationContainerDeletetagKey(ctx, containerId, key)
+> map[string]string OperationContainerDeletetagKey(ctx, containerId, key)
 /tag/:key
 
 ### Required Parameters
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationContainerGettag**
-> map[string]interface{} OperationContainerGettag(ctx, containerId)
+> map[string]string OperationContainerGettag(ctx, containerId)
 /tag/
 
 ### Required Parameters
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationContainerPatchtag**
-> map[string]interface{} OperationContainerPatchtag(ctx, containerId, optional)
+> map[string]string OperationContainerPatchtag(ctx, containerId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -398,19 +398,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **containerId** | **string**| ID of container | 
- **optional** | ***OperationContainerPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationContainerPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -441,7 +433,7 @@ Optional parameters are passed through a pointer to a OperationContainerPostacce
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
+ **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 
@@ -506,7 +498,7 @@ Optional parameters are passed through a pointer to a UpdateContainerOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+ **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
 
 ### Return type
 

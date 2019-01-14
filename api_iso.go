@@ -32,12 +32,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param optional nil or *ActionIsoTransferOpts - Optional Parameters:
- * @param "InlineObject31" (optional.Interface of InlineObject31) - 
+ * @param "InlineObject33" (optional.Interface of InlineObject33) - 
 @return Iso
 */
 
 type ActionIsoTransferOpts struct {
-	InlineObject31 optional.Interface
+	InlineObject33 optional.Interface
 }
 
 func (a *IsoApiService) ActionIsoTransfer(ctx context.Context, isoId string, localVarOptionals *ActionIsoTransferOpts) (Iso, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *IsoApiService) ActionIsoTransfer(ctx context.Context, isoId string, loc
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject31.IsSet() {
-		localVarOptionalInlineObject31, localVarOptionalInlineObject31ok := localVarOptionals.InlineObject31.Value().(InlineObject31)
-		if !localVarOptionalInlineObject31ok {
-			return localVarReturnValue, nil, reportError("inlineObject31 should be InlineObject31")
+	if localVarOptionals != nil && localVarOptionals.InlineObject33.IsSet() {
+		localVarOptionalInlineObject33, localVarOptionalInlineObject33ok := localVarOptionals.InlineObject33.Value().(InlineObject33)
+		if !localVarOptionalInlineObject33ok {
+			return localVarReturnValue, nil, reportError("inlineObject33 should be InlineObject33")
 		}
-		localVarPostBody = &localVarOptionalInlineObject31
+		localVarPostBody = &localVarOptionalInlineObject33
 	}
 
 	if ctx != nil {
@@ -174,12 +174,12 @@ IsoApiService Create
 Create iso
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *CreateIsoOpts - Optional Parameters:
- * @param "InlineObject29" (optional.Interface of InlineObject29) - 
+ * @param "InlineObject31" (optional.Interface of InlineObject31) - 
 @return Iso
 */
 
 type CreateIsoOpts struct {
-	InlineObject29 optional.Interface
+	InlineObject31 optional.Interface
 }
 
 func (a *IsoApiService) CreateIso(ctx context.Context, localVarOptionals *CreateIsoOpts) (Iso, *http.Response, error) {
@@ -217,12 +217,12 @@ func (a *IsoApiService) CreateIso(ctx context.Context, localVarOptionals *Create
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject29.IsSet() {
-		localVarOptionalInlineObject29, localVarOptionalInlineObject29ok := localVarOptionals.InlineObject29.Value().(InlineObject29)
-		if !localVarOptionalInlineObject29ok {
-			return localVarReturnValue, nil, reportError("inlineObject29 should be InlineObject29")
+	if localVarOptionals != nil && localVarOptionals.InlineObject31.IsSet() {
+		localVarOptionalInlineObject31, localVarOptionalInlineObject31ok := localVarOptionals.InlineObject31.Value().(InlineObject31)
+		if !localVarOptionalInlineObject31ok {
+			return localVarReturnValue, nil, reportError("inlineObject31 should be InlineObject31")
 		}
-		localVarPostBody = &localVarOptionalInlineObject29
+		localVarPostBody = &localVarOptionalInlineObject31
 	}
 
 	if ctx != nil {
@@ -693,16 +693,16 @@ IsoApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IsoApiService) OperationIsoDeletetagKey(ctx context.Context, isoId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) OperationIsoDeletetagKey(ctx context.Context, isoId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -792,7 +792,7 @@ func (a *IsoApiService) OperationIsoDeletetagKey(ctx context.Context, isoId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -948,16 +948,16 @@ func (a *IsoApiService) OperationIsoGetservicesServiceId(ctx context.Context, is
 IsoApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1046,7 +1046,7 @@ func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (m
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1452,23 +1452,17 @@ func (a *IsoApiService) OperationIsoListservices(ctx context.Context, isoId stri
 IsoApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param optional nil or *OperationIsoPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationIsoPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, localVarOptionals *OperationIsoPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1497,10 +1491,7 @@ func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1562,7 +1553,7 @@ func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1591,12 +1582,12 @@ IsoApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param optional nil or *OperationIsoPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject32" (optional.Interface of InlineObject32) - 
+ * @param "InlineObject34" (optional.Interface of InlineObject34) - 
 @return string
 */
 
 type OperationIsoPostaccessrightsOpts struct {
-	InlineObject32 optional.Interface
+	InlineObject34 optional.Interface
 }
 
 func (a *IsoApiService) OperationIsoPostaccessrights(ctx context.Context, isoId string, localVarOptionals *OperationIsoPostaccessrightsOpts) (string, *http.Response, error) {
@@ -1635,12 +1626,12 @@ func (a *IsoApiService) OperationIsoPostaccessrights(ctx context.Context, isoId 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject32.IsSet() {
-		localVarOptionalInlineObject32, localVarOptionalInlineObject32ok := localVarOptionals.InlineObject32.Value().(InlineObject32)
-		if !localVarOptionalInlineObject32ok {
-			return localVarReturnValue, nil, reportError("inlineObject32 should be InlineObject32")
+	if localVarOptionals != nil && localVarOptionals.InlineObject34.IsSet() {
+		localVarOptionalInlineObject34, localVarOptionalInlineObject34ok := localVarOptionals.InlineObject34.Value().(InlineObject34)
+		if !localVarOptionalInlineObject34ok {
+			return localVarReturnValue, nil, reportError("inlineObject34 should be InlineObject34")
 		}
-		localVarPostBody = &localVarOptionalInlineObject32
+		localVarPostBody = &localVarOptionalInlineObject34
 	}
 
 	if ctx != nil {
@@ -1861,12 +1852,12 @@ Returns modified iso
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param optional nil or *UpdateIsoOpts - Optional Parameters:
- * @param "InlineObject30" (optional.Interface of InlineObject30) - 
+ * @param "InlineObject32" (optional.Interface of InlineObject32) - 
 @return Iso
 */
 
 type UpdateIsoOpts struct {
-	InlineObject30 optional.Interface
+	InlineObject32 optional.Interface
 }
 
 func (a *IsoApiService) UpdateIso(ctx context.Context, isoId string, localVarOptionals *UpdateIsoOpts) (Iso, *http.Response, error) {
@@ -1905,12 +1896,12 @@ func (a *IsoApiService) UpdateIso(ctx context.Context, isoId string, localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject30.IsSet() {
-		localVarOptionalInlineObject30, localVarOptionalInlineObject30ok := localVarOptionals.InlineObject30.Value().(InlineObject30)
-		if !localVarOptionalInlineObject30ok {
-			return localVarReturnValue, nil, reportError("inlineObject30 should be InlineObject30")
+	if localVarOptionals != nil && localVarOptionals.InlineObject32.IsSet() {
+		localVarOptionalInlineObject32, localVarOptionalInlineObject32ok := localVarOptionals.InlineObject32.Value().(InlineObject32)
+		if !localVarOptionalInlineObject32ok {
+			return localVarReturnValue, nil, reportError("inlineObject32 should be InlineObject32")
 		}
-		localVarPostBody = &localVarOptionalInlineObject30
+		localVarPostBody = &localVarOptionalInlineObject32
 	}
 
 	if ctx != nil {

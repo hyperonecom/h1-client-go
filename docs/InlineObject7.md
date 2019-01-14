@@ -3,7 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Identity** | **string** |  | [optional] 
+**Name** | **string** |  | 
+**Image** | **string** |  | 
+**Registry** | [**ContainerRegistry**](container_registry.md) |  | [optional] 
+**Service** | **string** |  | 
+**Expose** | [**ContainerExpose**](container_expose.md) |  | [optional] 
+**Env** | **[]string** |  | [optional] 
+**Command** | **string** |  | [optional] 
+**Volumes** | [**[]ContainerVolumes**](container_volumes.md) |  | [optional] 
+**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

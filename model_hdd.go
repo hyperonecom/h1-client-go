@@ -10,10 +10,10 @@
 package openapi
 
 type Hdd struct {
-	MaximumIOPS        string  `json:"maximumIOPS,omitempty"`
-	ControllerType     string  `json:"controllerType,omitempty"`
-	ControllerNumber   string  `json:"controllerNumber,omitempty"`
-	ControllerLocation string  `json:"controllerLocation,omitempty"`
-	Disk               HddDisk `json:"disk,omitempty"`
-	Id                 string  `json:"_id,omitempty"`
+	MaximumIOPS string `json:"maximumIOPS,omitempty"`
+	ControllerType string `json:"controllerType,omitempty"`
+	ControllerNumber string `json:"controllerNumber,omitempty"`
+	ControllerLocation string `json:"controllerLocation,omitempty"`
+	Disk HddDisk `json:"disk,omitempty"`
+	Id string `json:"_id,omitempty"`
 }

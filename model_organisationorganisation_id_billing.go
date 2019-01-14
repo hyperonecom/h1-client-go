@@ -10,7 +10,7 @@
 package openapi
 
 type OrganisationorganisationIdBilling struct {
-	Email   string                                   `json:"email,omitempty"`
-	Company string                                   `json:"company,omitempty"`
+	Email string `json:"email,omitempty"`
+	Company string `json:"company,omitempty"`
 	Address OrganisationorganisationIdBillingAddress `json:"address,omitempty"`
 }

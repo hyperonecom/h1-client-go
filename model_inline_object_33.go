@@ -10,17 +10,5 @@
 package openapi
 
 type InlineObject33 struct {
-	Name         string                 `json:"name,omitempty"`
-	Image        string                 `json:"image,omitempty"`
-	Iso          string                 `json:"iso,omitempty"`
-	Service      string                 `json:"service"`
-	Username     string                 `json:"username,omitempty"`
-	Password     VmPassword             `json:"password,omitempty"`
-	SshKeys      []string               `json:"sshKeys,omitempty"`
-	UserMetadata string                 `json:"userMetadata,omitempty"`
-	Disk         []VmDisk               `json:"disk,omitempty"`
-	Netadp       []VmNetadp             `json:"netadp,omitempty"`
-	Boot         bool                   `json:"boot,omitempty"`
-	Cloud        string                 `json:"cloud,omitempty"`
-	Tag          map[string]interface{} `json:"tag,omitempty"`
+	Project string `json:"project"`
 }

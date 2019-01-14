@@ -11,5 +11,5 @@ package openapi
 
 type ProjectAccessRights1 struct {
 	Role string `json:"role,omitempty"`
-	Id   string `json:"id,omitempty"`
+	Id string `json:"id,omitempty"`
 }

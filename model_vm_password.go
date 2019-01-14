@@ -10,6 +10,6 @@
 package openapi
 
 type VmPassword struct {
-	Type  string `json:"type,omitempty"`
+	Type string `json:"type,omitempty"`
 	Value string `json:"value,omitempty"`
 }

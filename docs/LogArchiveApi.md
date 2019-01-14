@@ -51,7 +51,7 @@ Optional parameters are passed through a pointer to a ActionLogArchiveTransferOp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject59** | [**optional.Interface of InlineObject59**](InlineObject59.md)|  | 
+ **inlineObject62** | [**optional.Interface of InlineObject62**](InlineObject62.md)|  | 
 
 ### Return type
 
@@ -86,7 +86,7 @@ Optional parameters are passed through a pointer to a CreateLogArchiveOpts struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject57** | [**optional.Interface of InlineObject57**](InlineObject57.md)|  | 
+ **inlineObject60** | [**optional.Interface of InlineObject60**](InlineObject60.md)|  | 
 
 ### Return type
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationLogArchiveDeletetagKey**
-> map[string]interface{} OperationLogArchiveDeletetagKey(ctx, logArchiveId, key)
+> map[string]string OperationLogArchiveDeletetagKey(ctx, logArchiveId, key)
 /tag/:key
 
 ### Required Parameters
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationLogArchiveGettag**
-> map[string]interface{} OperationLogArchiveGettag(ctx, logArchiveId)
+> map[string]string OperationLogArchiveGettag(ctx, logArchiveId)
 /tag/
 
 ### Required Parameters
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject63** | [**optional.Interface of InlineObject63**](InlineObject63.md)|  | 
+ **inlineObject66** | [**optional.Interface of InlineObject66**](InlineObject66.md)|  | 
 
 ### Return type
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject61** | [**optional.Interface of InlineObject61**](InlineObject61.md)|  | 
+ **inlineObject64** | [**optional.Interface of InlineObject64**](InlineObject64.md)|  | 
 
 ### Return type
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationLogArchivePatchtag**
-> map[string]interface{} OperationLogArchivePatchtag(ctx, logArchiveId, optional)
+> map[string]string OperationLogArchivePatchtag(ctx, logArchiveId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -593,19 +593,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
- **optional** | ***OperationLogArchivePatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -636,7 +628,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostacc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject64** | [**optional.Interface of InlineObject64**](InlineObject64.md)|  | 
+ **inlineObject67** | [**optional.Interface of InlineObject67**](InlineObject67.md)|  | 
 
 ### Return type
 
@@ -671,7 +663,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject62** | [**optional.Interface of InlineObject62**](InlineObject62.md)|  | 
+ **inlineObject65** | [**optional.Interface of InlineObject65**](InlineObject65.md)|  | 
 
 ### Return type
 
@@ -706,7 +698,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject60** | [**optional.Interface of InlineObject60**](InlineObject60.md)|  | 
+ **inlineObject63** | [**optional.Interface of InlineObject63**](InlineObject63.md)|  | 
 
 ### Return type
 
@@ -771,7 +763,7 @@ Optional parameters are passed through a pointer to a UpdateLogArchiveOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject58** | [**optional.Interface of InlineObject58**](InlineObject58.md)|  | 
+ **inlineObject61** | [**optional.Interface of InlineObject61**](InlineObject61.md)|  | 
 
 ### Return type
 

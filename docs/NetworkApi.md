@@ -42,7 +42,7 @@ Optional parameters are passed through a pointer to a CreateNetworkOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
+ **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
 
 ### Return type
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetworkDeletetagKey**
-> map[string]interface{} OperationNetworkDeletetagKey(ctx, networkId, key)
+> map[string]string OperationNetworkDeletetagKey(ctx, networkId, key)
 /tag/:key
 
 ### Required Parameters
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetworkGettag**
-> map[string]interface{} OperationNetworkGettag(ctx, networkId)
+> map[string]string OperationNetworkGettag(ctx, networkId)
 /tag/
 
 ### Required Parameters
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetworkPatchtag**
-> map[string]interface{} OperationNetworkPatchtag(ctx, networkId, optional)
+> map[string]string OperationNetworkPatchtag(ctx, networkId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -393,19 +393,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
- **optional** | ***OperationNetworkPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetworkPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -436,7 +428,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostaccess
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
+ **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
 
 ### Return type
 
@@ -471,7 +463,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostipOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
+ **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
 
 ### Return type
 
@@ -536,7 +528,7 @@ Optional parameters are passed through a pointer to a UpdateNetworkOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
+ **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
 
 ### Return type
 

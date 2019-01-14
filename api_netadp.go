@@ -309,16 +309,16 @@ NetadpApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetadpApiService) OperationNetadpDeletetagKey(ctx context.Context, netadpId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *NetadpApiService) OperationNetadpDeletetagKey(ctx context.Context, netadpId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -408,7 +408,7 @@ func (a *NetadpApiService) OperationNetadpDeletetagKey(ctx context.Context, neta
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -564,16 +564,16 @@ func (a *NetadpApiService) OperationNetadpGetservicesServiceId(ctx context.Conte
 NetadpApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetadpApiService) OperationNetadpGettag(ctx context.Context, netadpId string) (map[string]interface{}, *http.Response, error) {
+func (a *NetadpApiService) OperationNetadpGettag(ctx context.Context, netadpId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -662,7 +662,7 @@ func (a *NetadpApiService) OperationNetadpGettag(ctx context.Context, netadpId s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1068,23 +1068,17 @@ func (a *NetadpApiService) OperationNetadpListservices(ctx context.Context, neta
 NetadpApiService /tag/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
- * @param optional nil or *OperationNetadpPatchtagOpts - Optional Parameters:
- * @param "Body" (optional.Map[string]interface{}) - 
-@return map[string]interface{}
+ * @param requestBody
+@return map[string]string
 */
-
-type OperationNetadpPatchtagOpts struct {
-	Body optional.Map[string]interface{}
-}
-
-func (a *NetadpApiService) OperationNetadpPatchtag(ctx context.Context, netadpId string, localVarOptionals *OperationNetadpPatchtagOpts) (map[string]interface{}, *http.Response, error) {
+func (a *NetadpApiService) OperationNetadpPatchtag(ctx context.Context, netadpId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1113,10 +1107,7 @@ func (a *NetadpApiService) OperationNetadpPatchtag(ctx context.Context, netadpId
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
-		localVarPostBody = localVarOptionals.Body.Value()
-	}
-
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1178,7 +1169,7 @@ func (a *NetadpApiService) OperationNetadpPatchtag(ctx context.Context, netadpId
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1207,12 +1198,12 @@ NetadpApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param optional nil or *OperationNetadpPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject44" (optional.Interface of InlineObject44) - 
+ * @param "InlineObject46" (optional.Interface of InlineObject46) - 
 @return string
 */
 
 type OperationNetadpPostaccessrightsOpts struct {
-	InlineObject44 optional.Interface
+	InlineObject46 optional.Interface
 }
 
 func (a *NetadpApiService) OperationNetadpPostaccessrights(ctx context.Context, netadpId string, localVarOptionals *OperationNetadpPostaccessrightsOpts) (string, *http.Response, error) {
@@ -1251,12 +1242,12 @@ func (a *NetadpApiService) OperationNetadpPostaccessrights(ctx context.Context, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject44.IsSet() {
-		localVarOptionalInlineObject44, localVarOptionalInlineObject44ok := localVarOptionals.InlineObject44.Value().(InlineObject44)
-		if !localVarOptionalInlineObject44ok {
-			return localVarReturnValue, nil, reportError("inlineObject44 should be InlineObject44")
+	if localVarOptionals != nil && localVarOptionals.InlineObject46.IsSet() {
+		localVarOptionalInlineObject46, localVarOptionalInlineObject46ok := localVarOptionals.InlineObject46.Value().(InlineObject46)
+		if !localVarOptionalInlineObject46ok {
+			return localVarReturnValue, nil, reportError("inlineObject46 should be InlineObject46")
 		}
-		localVarPostBody = &localVarOptionalInlineObject44
+		localVarPostBody = &localVarOptionalInlineObject46
 	}
 
 	if ctx != nil {

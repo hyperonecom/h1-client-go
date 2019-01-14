@@ -10,6 +10,6 @@
 package openapi
 
 type InlineObject72 struct {
-	Service     string `json:"service"`
-	Description string `json:"description,omitempty"`
+	Image string `json:"image"`
+	Vmhost string `json:"vmhost,omitempty"`
 }

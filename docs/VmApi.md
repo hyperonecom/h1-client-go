@@ -82,7 +82,7 @@ Optional parameters are passed through a pointer to a ActionVmImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject36** | [**optional.Interface of InlineObject36**](InlineObject36.md)|  | 
+ **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
 
 ### Return type
 
@@ -119,7 +119,7 @@ Optional parameters are passed through a pointer to a ActionVmPasswordResetOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
+ **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
 
 ### Return type
 
@@ -294,7 +294,7 @@ Optional parameters are passed through a pointer to a CreateVmOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
+ **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
 
 ### Return type
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmDeletetagKey**
-> map[string]interface{} OperationVmDeletetagKey(ctx, vmId, key)
+> map[string]string OperationVmDeletetagKey(ctx, vmId, key)
 /tag/:key
 
 ### Required Parameters
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmGettag**
-> map[string]interface{} OperationVmGettag(ctx, vmId)
+> map[string]string OperationVmGettag(ctx, vmId)
 /tag/
 
 ### Required Parameters
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmPatchtag**
-> map[string]interface{} OperationVmPatchtag(ctx, vmId, optional)
+> map[string]string OperationVmPatchtag(ctx, vmId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -672,19 +672,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***OperationVmPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVmPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -715,7 +707,7 @@ Optional parameters are passed through a pointer to a OperationVmPostaccessright
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
+ **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
 
 ### Return type
 
@@ -750,7 +742,7 @@ Optional parameters are passed through a pointer to a OperationVmPosthddOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
+ **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
 
 ### Return type
 
@@ -785,7 +777,7 @@ Optional parameters are passed through a pointer to a OperationVmPostnetadpOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
+ **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
 
 ### Return type
 
@@ -850,7 +842,7 @@ Optional parameters are passed through a pointer to a UpdateVmOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
+ **inlineObject36** | [**optional.Interface of InlineObject36**](InlineObject36.md)|  | 
 
 ### Return type
 

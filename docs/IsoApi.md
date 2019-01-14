@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionIsoTransferOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject31** | [**optional.Interface of InlineObject31**](InlineObject31.md)|  | 
+ **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
 
 ### Return type
 
@@ -76,7 +76,7 @@ Optional parameters are passed through a pointer to a CreateIsoOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
+ **inlineObject31** | [**optional.Interface of InlineObject31**](InlineObject31.md)|  | 
 
 ### Return type
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIsoDeletetagKey**
-> map[string]interface{} OperationIsoDeletetagKey(ctx, isoId, key)
+> map[string]string OperationIsoDeletetagKey(ctx, isoId, key)
 /tag/:key
 
 ### Required Parameters
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIsoGettag**
-> map[string]interface{} OperationIsoGettag(ctx, isoId)
+> map[string]string OperationIsoGettag(ctx, isoId)
 /tag/
 
 ### Required Parameters
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIsoPatchtag**
-> map[string]interface{} OperationIsoPatchtag(ctx, isoId, optional)
+> map[string]string OperationIsoPatchtag(ctx, isoId, requestBody)
 /tag/
 
 ### Required Parameters
@@ -349,19 +349,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
- **optional** | ***OperationIsoPatchtagOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationIsoPatchtagOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **optional.Map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -392,7 +384,7 @@ Optional parameters are passed through a pointer to a OperationIsoPostaccessrigh
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
+ **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
 
 ### Return type
 
@@ -457,7 +449,7 @@ Optional parameters are passed through a pointer to a UpdateIsoOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
+ **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
 
 ### Return type
 

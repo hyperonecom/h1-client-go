@@ -10,7 +10,7 @@
 package openapi
 
 type ProjectBilling struct {
-	Credits      string `json:"credits,omitempty"`
+	Credits string `json:"credits,omitempty"`
 	CreditsBonus string `json:"creditsBonus,omitempty"`
-	CreditLimit  string `json:"creditLimit,omitempty"`
+	CreditLimit string `json:"creditLimit,omitempty"`
 }

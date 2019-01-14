@@ -10,6 +10,6 @@
 package openapi
 
 type ImageDisksDisk struct {
-	Id   string `json:"_id,omitempty"`
+	Id string `json:"_id,omitempty"`
 	Name string `json:"name,omitempty"`
 }

@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject20 struct {
-	Identity string `json:"identity,omitempty"`
+	Name string `json:"name,omitempty"`
+	Public NetgwPublic `json:"public,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
 }

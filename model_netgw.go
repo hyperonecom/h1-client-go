@@ -8,27 +8,26 @@
  */
 
 package openapi
-
 import (
 	"time"
 )
 
 type Netgw struct {
-	Id         string                 `json:"_id,omitempty"`
-	Name       string                 `json:"name,omitempty"`
-	Services   []ContainerServices    `json:"services,omitempty"`
-	Flavour    string                 `json:"flavour,omitempty"`
-	ModifiedOn time.Time              `json:"modifiedOn,omitempty"`
-	ModifiedBy string                 `json:"modifiedBy,omitempty"`
-	CreatedBy  string                 `json:"createdBy,omitempty"`
-	CreatedOn  time.Time              `json:"createdOn,omitempty"`
-	Processing string                 `json:"processing,omitempty"`
-	Created    string                 `json:"created,omitempty"`
-	Queue      []Event                `json:"queue,omitempty"`
-	State      string                 `json:"state,omitempty"`
-	Tag        map[string]interface{} `json:"tag,omitempty"`
-	Project    string                 `json:"project,omitempty"`
-	PrimaryIP  NetgwPrimaryIp         `json:"primaryIP,omitempty"`
-	Network    NetgwNetwork           `json:"network,omitempty"`
-	Vpn        NetgwVpn               `json:"vpn,omitempty"`
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Services []ProjectServices `json:"services,omitempty"`
+	Flavour string `json:"flavour,omitempty"`
+	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	CreatedOn time.Time `json:"createdOn,omitempty"`
+	Processing bool `json:"processing,omitempty"`
+	Created bool `json:"created,omitempty"`
+	Queue []Event `json:"queue,omitempty"`
+	State string `json:"state,omitempty"`
+	Tag map[string]interface{} `json:"tag,omitempty"`
+	Project string `json:"project,omitempty"`
+	PrimaryIP NetgwPrimaryIp `json:"primaryIP,omitempty"`
+	Network NetgwNetwork `json:"network,omitempty"`
+	Vpn NetgwVpn `json:"vpn,omitempty"`
 }

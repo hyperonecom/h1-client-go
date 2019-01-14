@@ -10,5 +10,5 @@
 package openapi
 
 type InlineObject59 struct {
-	Project string `json:"project"`
+	Identity string `json:"identity,omitempty"`
 }
