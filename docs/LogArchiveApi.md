@@ -51,7 +51,7 @@ Optional parameters are passed through a pointer to a ActionLogArchiveTransferOp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject62** | [**optional.Interface of InlineObject62**](InlineObject62.md)|  | 
+ **inlineObject47** | [**optional.Interface of InlineObject47**](InlineObject47.md)|  | 
 
 ### Return type
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateLogArchive**
-> LogArchive CreateLogArchive(ctx, optional)
+> LogArchive CreateLogArchive(ctx, logArchiveCreate)
 Create
 
 Create logArchive
@@ -79,14 +79,7 @@ Create logArchive
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateLogArchiveOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateLogArchiveOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject60** | [**optional.Interface of InlineObject60**](InlineObject60.md)|  | 
+  **logArchiveCreate** | [**LogArchiveCreate**](LogArchiveCreate.md)|  | 
 
 ### Return type
 
@@ -529,7 +522,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject66** | [**optional.Interface of InlineObject66**](InlineObject66.md)|  | 
+ **inlineObject51** | [**optional.Interface of InlineObject51**](InlineObject51.md)|  | 
 
 ### Return type
 
@@ -566,7 +559,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject64** | [**optional.Interface of InlineObject64**](InlineObject64.md)|  | 
+ **inlineObject49** | [**optional.Interface of InlineObject49**](InlineObject49.md)|  | 
 
 ### Return type
 
@@ -628,7 +621,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostacc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject67** | [**optional.Interface of InlineObject67**](InlineObject67.md)|  | 
+ **inlineObject52** | [**optional.Interface of InlineObject52**](InlineObject52.md)|  | 
 
 ### Return type
 
@@ -663,7 +656,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject65** | [**optional.Interface of InlineObject65**](InlineObject65.md)|  | 
+ **inlineObject50** | [**optional.Interface of InlineObject50**](InlineObject50.md)|  | 
 
 ### Return type
 
@@ -698,7 +691,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject63** | [**optional.Interface of InlineObject63**](InlineObject63.md)|  | 
+ **inlineObject48** | [**optional.Interface of InlineObject48**](InlineObject48.md)|  | 
 
 ### Return type
 
@@ -763,7 +756,7 @@ Optional parameters are passed through a pointer to a UpdateLogArchiveOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject61** | [**optional.Interface of InlineObject61**](InlineObject61.md)|  | 
+ **inlineObject46** | [**optional.Interface of InlineObject46**](InlineObject46.md)|  | 
 
 ### Return type
 

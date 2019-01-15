@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **CreateSnapshot**
-> Snapshot CreateSnapshot(ctx, optional)
+> Snapshot CreateSnapshot(ctx, snapshotCreate)
 Create
 
 Create snapshot
@@ -31,14 +31,7 @@ Create snapshot
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateSnapshotOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateSnapshotOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject54** | [**optional.Interface of InlineObject54**](InlineObject54.md)|  | 
+  **snapshotCreate** | [**SnapshotCreate**](SnapshotCreate.md)|  | 
 
 ### Return type
 
@@ -347,7 +340,7 @@ Optional parameters are passed through a pointer to a OperationSnapshotPostacces
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject56** | [**optional.Interface of InlineObject56**](InlineObject56.md)|  | 
+ **inlineObject43** | [**optional.Interface of InlineObject43**](InlineObject43.md)|  | 
 
 ### Return type
 
@@ -412,7 +405,7 @@ Optional parameters are passed through a pointer to a UpdateSnapshotOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject55** | [**optional.Interface of InlineObject55**](InlineObject55.md)|  | 
+ **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
 
 ### Return type
 

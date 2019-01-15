@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **SourceImage** | [**VmSourceImage**](vm_sourceImage.md) |  | [optional] 
 **UserMetadata** | **string** |  | [optional] 
 **Cpu** | **float32** |  | [optional] 
-**Memory** | **string** |  | [optional] 
+**Memory** | **float32** |  | [optional] 
 **Data** | [**VmData**](vm_data.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

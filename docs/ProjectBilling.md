@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Credits** | **string** |  | [optional] 
-**CreditsBonus** | **string** |  | [optional] 
-**CreditLimit** | **string** |  | [optional] 
+**Credits** | **float32** |  | [optional] 
+**CreditsBonus** | **float32** |  | [optional] 
+**CreditLimit** | **float32** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

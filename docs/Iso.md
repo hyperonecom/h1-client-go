@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
-**Size** | **string** |  | [optional] 
-**Metadata** | [**DiskMetadata1**](disk_metadata_1.md) |  | [optional] 
+**Size** | **float32** |  | [optional] 
+**Metadata** | [**DiskMetadata**](disk_metadata.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

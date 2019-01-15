@@ -70,7 +70,7 @@ Optional parameters are passed through a pointer to a ActionDiskTransferOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
+ **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateDisk**
-> Disk CreateDisk(ctx, optional)
+> Disk CreateDisk(ctx, diskCreate)
 Create
 
 Create disk
@@ -98,14 +98,7 @@ Create disk
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateDiskOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateDiskOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
+  **diskCreate** | [**DiskCreate**](DiskCreate.md)|  | 
 
 ### Return type
 
@@ -413,7 +406,7 @@ Optional parameters are passed through a pointer to a OperationDiskPostaccessrig
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
+ **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
 
 ### Return type
 
@@ -478,7 +471,7 @@ Optional parameters are passed through a pointer to a UpdateDiskOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
+ **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
 
 ### Return type
 

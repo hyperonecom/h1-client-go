@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionIsoTransferOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
+ **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
 
 ### Return type
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateIso**
-> Iso CreateIso(ctx, optional)
+> Iso CreateIso(ctx, isoCreate)
 Create
 
 Create iso
@@ -69,14 +69,7 @@ Create iso
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateIsoOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateIsoOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject31** | [**optional.Interface of InlineObject31**](InlineObject31.md)|  | 
+  **isoCreate** | [**IsoCreate**](IsoCreate.md)|  | 
 
 ### Return type
 
@@ -384,7 +377,7 @@ Optional parameters are passed through a pointer to a OperationIsoPostaccessrigh
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
+ **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
 
 ### Return type
 
@@ -449,7 +442,7 @@ Optional parameters are passed through a pointer to a UpdateIsoOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
+ **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
 
 ### Return type
 

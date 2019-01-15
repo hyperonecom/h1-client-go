@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionImageTransferOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
+ **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
 
 ### Return type
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateImage**
-> Image CreateImage(ctx, optional)
+> Image CreateImage(ctx, imageCreate)
 Create
 
 Create image
@@ -69,14 +69,7 @@ Create image
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
+  **imageCreate** | [**ImageCreate**](ImageCreate.md)|  | 
 
 ### Return type
 
@@ -384,7 +377,7 @@ Optional parameters are passed through a pointer to a OperationImagePostaccessri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
+ **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
 
 ### Return type
 
@@ -449,7 +442,7 @@ Optional parameters are passed through a pointer to a UpdateImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
+ **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
 
 ### Return type
 

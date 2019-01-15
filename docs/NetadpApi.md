@@ -283,7 +283,7 @@ Optional parameters are passed through a pointer to a OperationNetadpPostaccessr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject46** | [**optional.Interface of InlineObject46**](InlineObject46.md)|  | 
+ **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
 
 ### Return type
 

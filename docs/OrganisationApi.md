@@ -38,7 +38,7 @@ Optional parameters are passed through a pointer to a ActionOrganisationTransfer
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
+ **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateOrganisation**
-> Organisation CreateOrganisation(ctx, optional)
+> Organisation CreateOrganisation(ctx, organisationCreate)
 Create
 
 Create organisation
@@ -66,14 +66,7 @@ Create organisation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateOrganisationOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateOrganisationOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
+  **organisationCreate** | [**OrganisationCreate**](OrganisationCreate.md)|  | 
 
 ### Return type
 
@@ -305,7 +298,7 @@ Optional parameters are passed through a pointer to a OperationOrganisationPosta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+ **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 
@@ -370,7 +363,7 @@ Optional parameters are passed through a pointer to a UpdateOrganisationOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
+ **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 

@@ -40,7 +40,7 @@ Optional parameters are passed through a pointer to a ActionReplicaImageOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject75** | [**optional.Interface of InlineObject75**](InlineObject75.md)|  | 
+ **inlineObject59** | [**optional.Interface of InlineObject59**](InlineObject59.md)|  | 
 
 ### Return type
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateReplica**
-> Replica CreateReplica(ctx, optional)
+> Replica CreateReplica(ctx, replicaCreate)
 Create
 
 Create replica
@@ -68,14 +68,7 @@ Create replica
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateReplicaOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateReplicaOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject74** | [**optional.Interface of InlineObject74**](InlineObject74.md)|  | 
+  **replicaCreate** | [**ReplicaCreate**](ReplicaCreate.md)|  | 
 
 ### Return type
 
@@ -383,7 +376,7 @@ Optional parameters are passed through a pointer to a OperationReplicaPostaccess
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject76** | [**optional.Interface of InlineObject76**](InlineObject76.md)|  | 
+ **inlineObject60** | [**optional.Interface of InlineObject60**](InlineObject60.md)|  | 
 
 ### Return type
 

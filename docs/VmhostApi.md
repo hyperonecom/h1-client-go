@@ -43,7 +43,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveDiskOpts s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject70** | [**optional.Interface of InlineObject70**](InlineObject70.md)|  | 
+ **inlineObject55** | [**optional.Interface of InlineObject55**](InlineObject55.md)|  | 
 
 ### Return type
 
@@ -80,7 +80,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveISOOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject71** | [**optional.Interface of InlineObject71**](InlineObject71.md)|  | 
+ **inlineObject56** | [**optional.Interface of InlineObject56**](InlineObject56.md)|  | 
 
 ### Return type
 
@@ -117,7 +117,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveImageOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject72** | [**optional.Interface of InlineObject72**](InlineObject72.md)|  | 
+ **inlineObject57** | [**optional.Interface of InlineObject57**](InlineObject57.md)|  | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveVMOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject69** | [**optional.Interface of InlineObject69**](InlineObject69.md)|  | 
+ **inlineObject54** | [**optional.Interface of InlineObject54**](InlineObject54.md)|  | 
 
 ### Return type
 
@@ -462,7 +462,7 @@ Optional parameters are passed through a pointer to a OperationVmhostPostaccessr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject73** | [**optional.Interface of InlineObject73**](InlineObject73.md)|  | 
+ **inlineObject58** | [**optional.Interface of InlineObject58**](InlineObject58.md)|  | 
 
 ### Return type
 
@@ -527,7 +527,7 @@ Optional parameters are passed through a pointer to a UpdateVmhostOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject68** | [**optional.Interface of InlineObject68**](InlineObject68.md)|  | 
+ **inlineObject53** | [**optional.Interface of InlineObject53**](InlineObject53.md)|  | 
 
 ### Return type
 

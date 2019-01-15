@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **CreateNetwork**
-> Network CreateNetwork(ctx, optional)
+> Network CreateNetwork(ctx, networkCreate)
 Create
 
 Create network
@@ -35,14 +35,7 @@ Create network
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateNetworkOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateNetworkOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
+  **networkCreate** | [**NetworkCreate**](NetworkCreate.md)|  | 
 
 ### Return type
 
@@ -428,7 +421,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostaccess
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
+ **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -463,7 +456,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostipOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
+ **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 
@@ -528,7 +521,7 @@ Optional parameters are passed through a pointer to a UpdateNetworkOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
+ **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 

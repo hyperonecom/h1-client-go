@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Project** | **string** |  | [optional] 
 **Size** | **float32** |  | [optional] 
 **SizeUsed** | **float32** |  | [optional] 
-**Credential** | [**VaultCredential1**](vault_credential_1.md) |  | [optional] 
+**Credential** | [**VaultCredential**](vault_credential.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

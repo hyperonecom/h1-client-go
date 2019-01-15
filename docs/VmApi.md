@@ -82,7 +82,7 @@ Optional parameters are passed through a pointer to a ActionVmImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
+ **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
 
 ### Return type
 
@@ -119,7 +119,7 @@ Optional parameters are passed through a pointer to a ActionVmPasswordResetOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
+ **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
 
 ### Return type
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateVm**
-> Vm CreateVm(ctx, optional)
+> Vm CreateVm(ctx, vmCreate)
 Create
 
 Create vm
@@ -287,14 +287,7 @@ Create vm
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateVmOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateVmOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
+  **vmCreate** | [**VmCreate**](VmCreate.md)|  | 
 
 ### Return type
 
@@ -707,7 +700,7 @@ Optional parameters are passed through a pointer to a OperationVmPostaccessright
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
+ **inlineObject31** | [**optional.Interface of InlineObject31**](InlineObject31.md)|  | 
 
 ### Return type
 
@@ -742,7 +735,7 @@ Optional parameters are passed through a pointer to a OperationVmPosthddOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
+ **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
 
 ### Return type
 
@@ -777,7 +770,7 @@ Optional parameters are passed through a pointer to a OperationVmPostnetadpOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
+ **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
 
 ### Return type
 
@@ -842,7 +835,7 @@ Optional parameters are passed through a pointer to a UpdateVmOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject36** | [**optional.Interface of InlineObject36**](InlineObject36.md)|  | 
+ **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
 
 ### Return type
 

@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: HyperOne API
-  version: "1"
+  version: 1.0.0
 servers:
 - description: HyperOne API
   url: https://api.hyperone.com/v1
@@ -72,25 +72,10 @@ paths:
       description: Create project
       operationId: create_project
       requestBody:
-        $ref: '#/components/requestBodies/inline_object'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                accessRights:
-                  items:
-                    $ref: '#/components/schemas/project_accessRights'
-                  type: array
-                organisation:
-                  type: string
-                tag:
-                  type: object
-              required:
-              - name
-              - organisation
-              type: object
+              $ref: '#/components/schemas/projectCreate'
         required: true
       responses:
         202:
@@ -156,7 +141,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_1'
+        $ref: '#/components/requestBodies/inline_object'
         content:
           application/json:
             schema:
@@ -229,7 +214,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_2'
+        $ref: '#/components/requestBodies/inline_object_1'
         content:
           application/json:
             schema:
@@ -577,22 +562,10 @@ paths:
       description: Create organisation
       operationId: create_organisation
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_3'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                billing:
-                  $ref: '#/components/schemas/organisation_billing'
-                accessRights:
-                  items:
-                    $ref: '#/components/schemas/organisation_accessRights'
-                  type: array
-                tag:
-                  type: object
-              type: object
+              $ref: '#/components/schemas/organisationCreate'
         required: true
       responses:
         202:
@@ -658,7 +631,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_4'
+        $ref: '#/components/requestBodies/inline_object_2'
         content:
           application/json:
             schema:
@@ -702,7 +675,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_5'
+        $ref: '#/components/requestBodies/inline_object_3'
         content:
           application/json:
             schema:
@@ -780,7 +753,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_6'
+        $ref: '#/components/requestBodies/inline_object_4'
         content:
           application/json:
             schema:
@@ -1032,39 +1005,10 @@ paths:
       description: Create container
       operationId: create_container
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_7'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                image:
-                  type: string
-                registry:
-                  $ref: '#/components/schemas/container_registry'
-                service:
-                  format: ObjectId
-                  type: string
-                expose:
-                  $ref: '#/components/schemas/container_expose'
-                env:
-                  items:
-                    type: string
-                  type: array
-                command:
-                  type: string
-                volumes:
-                  items:
-                    $ref: '#/components/schemas/container_volumes'
-                  type: array
-                tag:
-                  type: object
-              required:
-              - image
-              - name
-              - service
-              type: object
+              $ref: '#/components/schemas/containerCreate'
         required: true
       responses:
         202:
@@ -1154,7 +1098,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_8'
+        $ref: '#/components/requestBodies/inline_object_5'
         content:
           application/json:
             schema:
@@ -1323,7 +1267,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_9'
+        $ref: '#/components/requestBodies/inline_object_6'
         content:
           application/json:
             schema:
@@ -1647,21 +1591,10 @@ paths:
       description: Create firewall
       operationId: create_firewall
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_10'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                tag:
-                  type: object
-                service:
-                  format: ObjectId
-                  type: string
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/firewallCreate'
         required: true
       responses:
         202:
@@ -1751,7 +1684,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_11'
+        $ref: '#/components/requestBodies/inline_object_7'
         content:
           application/json:
             schema:
@@ -1857,7 +1790,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_12'
+        $ref: '#/components/requestBodies/inline_object_8'
         content:
           application/json:
             schema:
@@ -1932,7 +1865,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_13'
+        $ref: '#/components/requestBodies/inline_object_9'
         content:
           application/json:
             schema:
@@ -2098,7 +2031,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_14'
+        $ref: '#/components/requestBodies/inline_object_10'
         content:
           application/json:
             schema:
@@ -2264,7 +2197,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_15'
+        $ref: '#/components/requestBodies/inline_object_11'
         content:
           application/json:
             schema:
@@ -2588,20 +2521,10 @@ paths:
       description: Create network
       operationId: create_network
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                address:
-                  type: string
-                gateway:
-                  type: string
-                tag:
-                  type: object
-              type: object
+              $ref: '#/components/schemas/networkCreate'
         required: true
       responses:
         202:
@@ -2691,7 +2614,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_17'
+        $ref: '#/components/requestBodies/inline_object_12'
         content:
           application/json:
             schema:
@@ -2766,7 +2689,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_18'
+        $ref: '#/components/requestBodies/inline_object_13'
         content:
           application/json:
             schema:
@@ -2902,7 +2825,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_19'
+        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
@@ -3226,18 +3149,10 @@ paths:
       description: Create netgw
       operationId: create_netgw
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_20'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                public:
-                  $ref: '#/components/schemas/netgw_public'
-                tag:
-                  type: object
-              type: object
+              $ref: '#/components/schemas/netgwCreate'
         required: true
       responses:
         202:
@@ -3327,7 +3242,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_21'
+        $ref: '#/components/requestBodies/inline_object_15'
         content:
           application/json:
             schema:
@@ -3464,7 +3379,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_22'
+        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
@@ -3788,28 +3703,10 @@ paths:
       description: Create image
       operationId: create_image
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                vm:
-                  type: string
-                replica:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                description:
-                  type: string
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              type: object
+              $ref: '#/components/schemas/imageCreate'
         required: true
       responses:
         202:
@@ -3899,7 +3796,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_24'
+        $ref: '#/components/requestBodies/inline_object_17'
         content:
           application/json:
             schema:
@@ -3943,7 +3840,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_25'
+        $ref: '#/components/requestBodies/inline_object_18'
         content:
           application/json:
             schema:
@@ -4018,7 +3915,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_26'
+        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
@@ -4342,27 +4239,10 @@ paths:
       description: Create disk
       operationId: create_disk
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_27'
         content:
           application/json:
             schema:
-              properties:
-                service:
-                  format: ObjectId
-                  type: string
-                name:
-                  type: string
-                size:
-                  type: number
-                cloud:
-                  type: string
-                metadata:
-                  $ref: '#/components/schemas/disk_metadata'
-                tag:
-                  type: object
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/diskCreate'
         required: true
       responses:
         202:
@@ -4452,7 +4332,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_28'
+        $ref: '#/components/requestBodies/inline_object_20'
         content:
           application/json:
             schema:
@@ -4526,7 +4406,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_29'
+        $ref: '#/components/requestBodies/inline_object_21'
         content:
           application/json:
             schema:
@@ -4601,7 +4481,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_30'
+        $ref: '#/components/requestBodies/inline_object_22'
         content:
           application/json:
             schema:
@@ -4925,30 +4805,10 @@ paths:
       description: Create iso
       operationId: create_iso
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_31'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                size:
-                  type: number
-                source:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                cloud:
-                  type: string
-                metadata:
-                  $ref: '#/components/schemas/disk_metadata'
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              type: object
+              $ref: '#/components/schemas/isoCreate'
         required: true
       responses:
         202:
@@ -5038,7 +4898,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_32'
+        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
@@ -5080,7 +4940,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_33'
+        $ref: '#/components/requestBodies/inline_object_24'
         content:
           application/json:
             schema:
@@ -5155,7 +5015,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_34'
+        $ref: '#/components/requestBodies/inline_object_25'
         content:
           application/json:
             schema:
@@ -5479,51 +5339,10 @@ paths:
       description: Create vm
       operationId: create_vm
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_35'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                image:
-                  type: string
-                iso:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                username:
-                  type: string
-                password:
-                  $ref: '#/components/schemas/vm_password'
-                sshKeys:
-                  description: |-
-                    - user credential (by id or name)
-                    - project credential (by id or name)
-                    - raw openssh public key (starting with `ssh-rsa `)
-                  items:
-                    type: string
-                  type: array
-                userMetadata:
-                  type: string
-                disk:
-                  items:
-                    $ref: '#/components/schemas/vm_disk'
-                  type: array
-                netadp:
-                  items:
-                    $ref: '#/components/schemas/vm_netadp'
-                  type: array
-                boot:
-                  type: boolean
-                cloud:
-                  type: string
-                tag:
-                  type: object
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/vmCreate'
         required: true
       responses:
         202:
@@ -5613,7 +5432,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_36'
+        $ref: '#/components/requestBodies/inline_object_26'
         content:
           application/json:
             schema:
@@ -5817,7 +5636,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_37'
+        $ref: '#/components/requestBodies/inline_object_27'
         content:
           application/json:
             schema:
@@ -5867,7 +5686,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_38'
+        $ref: '#/components/requestBodies/inline_object_28'
         content:
           application/json:
             schema:
@@ -5979,7 +5798,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_39'
+        $ref: '#/components/requestBodies/inline_object_29'
         content:
           application/json:
             schema:
@@ -6143,7 +5962,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_40'
+        $ref: '#/components/requestBodies/inline_object_30'
         content:
           application/json:
             schema:
@@ -6231,7 +6050,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_41'
+        $ref: '#/components/requestBodies/inline_object_31'
         content:
           application/json:
             schema:
@@ -6555,19 +6374,10 @@ paths:
       description: Create ip
       operationId: create_ip
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_42'
         content:
           application/json:
             schema:
-              properties:
-                service:
-                  format: ObjectId
-                  type: string
-                tag:
-                  type: object
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/ipCreate'
         required: true
       responses:
         202:
@@ -6657,7 +6467,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_43'
+        $ref: '#/components/requestBodies/inline_object_32'
         content:
           application/json:
             schema:
@@ -6827,7 +6637,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_44'
+        $ref: '#/components/requestBodies/inline_object_33'
         content:
           application/json:
             schema:
@@ -6902,7 +6712,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_45'
+        $ref: '#/components/requestBodies/inline_object_34'
         content:
           application/json:
             schema:
@@ -7307,7 +7117,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_46'
+        $ref: '#/components/requestBodies/inline_object_35'
         content:
           application/json:
             schema:
@@ -7631,29 +7441,10 @@ paths:
       description: Create vault
       operationId: create_vault
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_47'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                size:
-                  type: number
-                service:
-                  format: ObjectId
-                  type: string
-                credential:
-                  $ref: '#/components/schemas/vault_credential'
-                snapshot:
-                  type: string
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              - size
-              type: object
+              $ref: '#/components/schemas/vaultCreate'
         required: true
       responses:
         202:
@@ -7743,7 +7534,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_48'
+        $ref: '#/components/requestBodies/inline_object_36'
         content:
           application/json:
             schema:
@@ -7944,7 +7735,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_49'
+        $ref: '#/components/requestBodies/inline_object_37'
         content:
           application/json:
             schema:
@@ -8083,7 +7874,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_50'
+        $ref: '#/components/requestBodies/inline_object_38'
         content:
           application/json:
             schema:
@@ -8156,7 +7947,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_51'
+        $ref: '#/components/requestBodies/inline_object_39'
         content:
           application/json:
             schema:
@@ -8291,7 +8082,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_52'
+        $ref: '#/components/requestBodies/inline_object_40'
         content:
           application/json:
             schema:
@@ -8364,7 +8155,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_53'
+        $ref: '#/components/requestBodies/inline_object_41'
         content:
           application/json:
             schema:
@@ -8696,25 +8487,10 @@ paths:
       description: Create snapshot
       operationId: create_snapshot
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_54'
         content:
           application/json:
             schema:
-              properties:
-                vault:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                name:
-                  type: string
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              - vault
-              type: object
+              $ref: '#/components/schemas/snapshotCreate'
         required: true
       responses:
         202:
@@ -8804,7 +8580,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_55'
+        $ref: '#/components/requestBodies/inline_object_42'
         content:
           application/json:
             schema:
@@ -8877,7 +8653,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_56'
+        $ref: '#/components/requestBodies/inline_object_43'
         content:
           application/json:
             schema:
@@ -9201,22 +8977,10 @@ paths:
       description: Create reservation
       operationId: create_reservation
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_57'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              type: object
+              $ref: '#/components/schemas/reservationCreate'
         required: true
       responses:
         202:
@@ -9306,7 +9070,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_58'
+        $ref: '#/components/requestBodies/inline_object_44'
         content:
           application/json:
             schema:
@@ -9475,7 +9239,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_59'
+        $ref: '#/components/requestBodies/inline_object_45'
         content:
           application/json:
             schema:
@@ -9799,26 +9563,10 @@ paths:
       description: Create logArchive
       operationId: create_logArchive
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_60'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                service:
-                  format: ObjectId
-                  type: string
-                credential:
-                  $ref: '#/components/schemas/vault_credential'
-                retention:
-                  type: number
-                tag:
-                  type: object
-              required:
-              - name
-              - service
-              type: object
+              $ref: '#/components/schemas/logArchiveCreate'
         required: true
       responses:
         202:
@@ -9908,7 +9656,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_61'
+        $ref: '#/components/requestBodies/inline_object_46'
         content:
           application/json:
             schema:
@@ -9950,7 +9698,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_62'
+        $ref: '#/components/requestBodies/inline_object_47'
         content:
           application/json:
             schema:
@@ -10025,7 +9773,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_63'
+        $ref: '#/components/requestBodies/inline_object_48'
         content:
           application/json:
             schema:
@@ -10164,7 +9912,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_64'
+        $ref: '#/components/requestBodies/inline_object_49'
         content:
           application/json:
             schema:
@@ -10237,7 +9985,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_65'
+        $ref: '#/components/requestBodies/inline_object_50'
         content:
           application/json:
             schema:
@@ -10372,7 +10120,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_66'
+        $ref: '#/components/requestBodies/inline_object_51'
         content:
           application/json:
             schema:
@@ -10445,7 +10193,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_67'
+        $ref: '#/components/requestBodies/inline_object_52'
         content:
           application/json:
             schema:
@@ -10834,7 +10582,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_68'
+        $ref: '#/components/requestBodies/inline_object_53'
         content:
           application/json:
             schema:
@@ -10876,7 +10624,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_69'
+        $ref: '#/components/requestBodies/inline_object_54'
         content:
           application/json:
             schema:
@@ -10922,7 +10670,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_70'
+        $ref: '#/components/requestBodies/inline_object_55'
         content:
           application/json:
             schema:
@@ -10968,7 +10716,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_71'
+        $ref: '#/components/requestBodies/inline_object_56'
         content:
           application/json:
             schema:
@@ -11014,7 +10762,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_72'
+        $ref: '#/components/requestBodies/inline_object_57'
         content:
           application/json:
             schema:
@@ -11091,7 +10839,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_73'
+        $ref: '#/components/requestBodies/inline_object_58'
         content:
           application/json:
             schema:
@@ -11415,19 +11163,10 @@ paths:
       description: Create replica
       operationId: create_replica
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_74'
         content:
           application/json:
             schema:
-              properties:
-                hostname:
-                  type: string
-                secret:
-                  type: string
-              required:
-              - hostname
-              - secret
-              type: object
+              $ref: '#/components/schemas/replicaCreate'
         required: true
       responses:
         202:
@@ -11518,7 +11257,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_75'
+        $ref: '#/components/requestBodies/inline_object_59'
         content:
           application/json:
             schema:
@@ -11596,7 +11335,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_76'
+        $ref: '#/components/requestBodies/inline_object_60'
         content:
           application/json:
             schema:
@@ -12024,56 +11763,21 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_39'
-    inline_object_70:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_70'
-    inline_object_72:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_72'
-    inline_object_71:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_71'
     inline_object_30:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_30'
-    inline_object_74:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_74'
-    inline_object_73:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_73'
     inline_object_32:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_32'
-    inline_object_76:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_76'
     inline_object_31:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_31'
-    inline_object_75:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_75'
     inline_object_34:
       content:
         application/json:
@@ -12119,26 +11823,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_1'
-    inline_object_61:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_61'
     inline_object_60:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_60'
-    inline_object_63:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_63'
-    inline_object_62:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_62'
     inline_object_9:
       content:
         application/json:
@@ -12149,11 +11838,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_21'
-    inline_object_65:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_65'
     inline_object_8:
       content:
         application/json:
@@ -12164,11 +11848,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_20'
-    inline_object_64:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_64'
     inline_object_7:
       content:
         application/json:
@@ -12179,11 +11858,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_23'
-    inline_object_67:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_67'
     inline_object_6:
       content:
         application/json:
@@ -12194,11 +11868,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_22'
-    inline_object_66:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_66'
     inline_object_5:
       content:
         application/json:
@@ -12209,11 +11878,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_25'
-    inline_object_69:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_69'
     inline_object_4:
       content:
         application/json:
@@ -12224,11 +11888,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_24'
-    inline_object_68:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_68'
     inline_object_3:
       content:
         application/json:
@@ -12405,8 +12064,8 @@ components:
           createdOn: createdOn
           modifiedOn: modifiedOn
           createdBy: createdBy
-          credits: credits
-          creditsFree: creditsFree
+          credits: 2.3021358869347654518833223846741020679473876953125
+          creditsFree: 5.63737665663332876420099637471139430999755859375
           name: name
           processing: processing
           modifiedBy: modifiedBy
@@ -12414,7 +12073,25 @@ components:
           accessRights: accessRights
           state: state
           tag: tag
-          queue: queue
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
         roles:
         - access:
           - path: path
@@ -12435,9 +12112,9 @@ components:
             levels: levels
         createdOn: 2000-01-23T04:56:07.000+00:00
         billing:
-          creditsBonus: creditsBonus
-          credits: credits
-          creditLimit: creditLimit
+          creditsBonus: 1.46581298050294517310021547018550336360931396484375
+          credits: 6.02745618307040320615897144307382404804229736328125
+          creditLimit: 5.962133916683182377482808078639209270477294921875
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         invoices:
           summary: summary
@@ -12451,35 +12128,35 @@ components:
           issueDate: issueDate
         limit:
           image:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           iso:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           ip:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           network:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           netgw:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           disk:
-            size: 5.63737665663332876420099637471139430999755859375
-            count: 5.962133916683182377482808078639209270477294921875
+            size: 2.027123023002321833274663731572218239307403564453125
+            count: 3.61607674925191080461672754609026014804840087890625
           firewall:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           vm:
-            memory: 1.46581298050294517310021547018550336360931396484375
-            count: 6.02745618307040320615897144307382404804229736328125
-          domain:
-            record: 9.301444243932575517419536481611430644989013671875
+            memory: 9.301444243932575517419536481611430644989013671875
             count: 7.061401241503109105224211816675961017608642578125
+          domain:
+            record: 1.231513536777255612975068288506008684635162353515625
+            count: 7.3862819483858839220147274318151175975799560546875
           reservation:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           logArchive:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           vault:
-            size: 5.63737665663332876420099637471139430999755859375
-            count: 5.962133916683182377482808078639209270477294921875
+            size: 2.027123023002321833274663731572218239307403564453125
+            count: 3.61607674925191080461672754609026014804840087890625
           snapshot:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
         modifiedBy: modifiedBy
         state: Active
         tag: '{}'
@@ -12556,7 +12233,7 @@ components:
           format: date-time
           type: string
         accessRights:
-          $ref: '#/components/schemas/project_accessRights_1'
+          $ref: '#/components/schemas/project_accessRights'
         processing:
           type: boolean
         created:
@@ -12692,38 +12369,38 @@ components:
         limit:
           organisation:
             project:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
           project:
             image:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             iso:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             ip:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             network:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             netgw:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             disk:
-              size: 5.63737665663332876420099637471139430999755859375
-              count: 5.962133916683182377482808078639209270477294921875
+              size: 2.027123023002321833274663731572218239307403564453125
+              count: 3.61607674925191080461672754609026014804840087890625
             firewall:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             vm:
-              memory: 1.46581298050294517310021547018550336360931396484375
-              count: 6.02745618307040320615897144307382404804229736328125
-            domain:
-              record: 9.301444243932575517419536481611430644989013671875
+              memory: 9.301444243932575517419536481611430644989013671875
               count: 7.061401241503109105224211816675961017608642578125
+            domain:
+              record: 1.231513536777255612975068288506008684635162353515625
+              count: 7.3862819483858839220147274318151175975799560546875
             reservation:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             logArchive:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
             vault:
-              size: 5.63737665663332876420099637471139430999755859375
-              count: 5.962133916683182377482808078639209270477294921875
+              size: 2.027123023002321833274663731572218239307403564453125
+              count: 3.61607674925191080461672754609026014804840087890625
             snapshot:
-              count: 2.3021358869347654518833223846741020679473876953125
+              count: 4.1456080298839363962315474054776132106781005859375
         processing: true
         modifiedBy: modifiedBy
         _id: _id
@@ -12772,7 +12449,7 @@ components:
           format: date-time
           type: string
         accessRights:
-          $ref: '#/components/schemas/project_accessRights_1'
+          $ref: '#/components/schemas/project_accessRights'
         processing:
           type: boolean
         created:
@@ -12792,7 +12469,7 @@ components:
         project:
           type: string
         billing:
-          $ref: '#/components/schemas/organisation_billing_1'
+          $ref: '#/components/schemas/organisation_billing'
         verified:
           type: number
         limit:
@@ -13291,7 +12968,25 @@ components:
           accessRights: accessRights
           state: state
           tag: tag
-          queue: queue
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
           gateway: gateway
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
@@ -13331,7 +13026,25 @@ components:
           state: state
           tag: tag
           persistent: persistent
-          queue: queue
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
         processing: true
         modifiedBy: modifiedBy
         _id: _id
@@ -13713,7 +13426,7 @@ components:
         downloadUrl:
           type: string
         metadata:
-          $ref: '#/components/schemas/disk_metadata_1'
+          $ref: '#/components/schemas/disk_metadata'
       type: object
     disk.accessRights:
       type: string
@@ -13772,7 +13485,7 @@ components:
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
-        size: size
+        size: 0.80082819046101150206595775671303272247314453125
         createdBy: createdBy
         name: name
         processing: true
@@ -13848,9 +13561,9 @@ components:
           format: ObjectId
           type: string
         size:
-          type: string
+          type: number
         metadata:
-          $ref: '#/components/schemas/disk_metadata_1'
+          $ref: '#/components/schemas/disk_metadata'
       type: object
     iso.accessRights:
       type: string
@@ -13887,7 +13600,7 @@ components:
       type: object
     vm:
       example:
-        memory: memory
+        memory: 6.02745618307040320615897144307382404804229736328125
         flavour: flavour
         data:
           username: username
@@ -14019,7 +13732,7 @@ components:
         cpu:
           type: number
         memory:
-          type: string
+          type: number
         data:
           $ref: '#/components/schemas/vm_data'
       type: object
@@ -14240,7 +13953,25 @@ components:
           state: state
           tag: tag
           persistent: persistent
-          queue: queue
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
         project: project
         services:
         - quantity: 0.80082819046101150206595775671303272247314453125
@@ -14280,7 +14011,25 @@ components:
           accessRights: accessRights
           state: state
           tag: tag
-          queue: queue
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
           gateway: gateway
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
@@ -14523,7 +14272,7 @@ components:
         sizeUsed:
           type: number
         credential:
-          $ref: '#/components/schemas/vault_credential_1'
+          $ref: '#/components/schemas/vault_credential'
       type: object
     vault.accessRights:
       type: string
@@ -14950,7 +14699,7 @@ components:
           format: ObjectId
           type: string
         credential:
-          $ref: '#/components/schemas/vault_credential_1'
+          $ref: '#/components/schemas/vault_credential'
         sizeUsed:
           type: number
         retention:
@@ -15189,22 +14938,13 @@ components:
       additionalProperties:
         type: string
       type: object
-    project_accessRights:
-      properties:
-        id:
-          type: string
-        role:
-          type: string
-      required:
-      - id
-      - role
-    inline_object:
+    projectCreate:
       properties:
         name:
           type: string
         accessRights:
           items:
-            $ref: '#/components/schemas/project_accessRights'
+            $ref: '#/components/schemas/projectCreate_accessRights'
           type: array
         organisation:
           type: string
@@ -15214,56 +14954,276 @@ components:
       - name
       - organisation
       type: object
-    inline_object_1:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_2:
-      properties:
-        identity:
-          type: string
-      type: object
-    organisation_billing_address:
-      properties:
-        country:
-          type: string
-        city:
-          type: string
-        zipcode:
-          type: string
-        street:
-          type: string
-    organisation_billing:
-      properties:
-        nip:
-          type: string
-        email:
-          type: string
-        company:
-          type: string
-        currency:
-          type: string
-        address:
-          $ref: '#/components/schemas/organisation_billing_address'
-    organisation_accessRights:
-      properties:
-        id:
-          type: string
-        role:
-          type: string
-    inline_object_3:
+    organisationCreate:
       properties:
         name:
           type: string
         billing:
-          $ref: '#/components/schemas/organisation_billing'
+          $ref: '#/components/schemas/organisationCreate_billing'
         accessRights:
           items:
-            $ref: '#/components/schemas/organisation_accessRights'
+            $ref: '#/components/schemas/organisationCreate_accessRights'
           type: array
         tag:
           type: object
+      type: object
+    containerCreate:
+      properties:
+        name:
+          type: string
+        image:
+          type: string
+        registry:
+          $ref: '#/components/schemas/containerCreate_registry'
+        service:
+          format: ObjectId
+          type: string
+        expose:
+          $ref: '#/components/schemas/containerCreate_expose'
+        env:
+          items:
+            type: string
+          type: array
+        command:
+          type: string
+        volumes:
+          items:
+            $ref: '#/components/schemas/containerCreate_volumes'
+          type: array
+        tag:
+          type: object
+      required:
+      - image
+      - name
+      - service
+      type: object
+    firewallCreate:
+      properties:
+        name:
+          type: string
+        tag:
+          type: object
+        service:
+          format: ObjectId
+          type: string
+      required:
+      - service
+      type: object
+    networkCreate:
+      properties:
+        name:
+          type: string
+        address:
+          type: string
+        gateway:
+          type: string
+        tag:
+          type: object
+      type: object
+    netgwCreate:
+      properties:
+        name:
+          type: string
+        public:
+          $ref: '#/components/schemas/netgwCreate_public'
+        tag:
+          type: object
+      type: object
+    imageCreate:
+      properties:
+        name:
+          type: string
+        vm:
+          type: string
+        replica:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        description:
+          type: string
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    diskCreate:
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        size:
+          type: number
+        cloud:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/diskCreate_metadata'
+        tag:
+          type: object
+      required:
+      - service
+      type: object
+    isoCreate:
+      properties:
+        name:
+          type: string
+        size:
+          type: number
+        source:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        cloud:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/diskCreate_metadata'
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    vmCreate:
+      properties:
+        name:
+          type: string
+        image:
+          type: string
+        iso:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        username:
+          type: string
+        password:
+          $ref: '#/components/schemas/vmCreate_password'
+        sshKeys:
+          description: |-
+            - user credential (by id or name)
+            - project credential (by id or name)
+            - raw openssh public key (starting with `ssh-rsa `)
+          items:
+            type: string
+          type: array
+        userMetadata:
+          type: string
+        disk:
+          items:
+            $ref: '#/components/schemas/vmCreate_disk'
+          type: array
+        netadp:
+          items:
+            $ref: '#/components/schemas/vmCreate_netadp'
+          type: array
+        boot:
+          type: boolean
+        cloud:
+          type: string
+        tag:
+          type: object
+      required:
+      - service
+      type: object
+    ipCreate:
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        tag:
+          type: object
+      required:
+      - service
+      type: object
+    vaultCreate:
+      properties:
+        name:
+          type: string
+        size:
+          type: number
+        service:
+          format: ObjectId
+          type: string
+        credential:
+          $ref: '#/components/schemas/vaultCreate_credential'
+        snapshot:
+          type: string
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      - size
+      type: object
+    snapshotCreate:
+      properties:
+        vault:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      - vault
+      type: object
+    reservationCreate:
+      properties:
+        name:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    logArchiveCreate:
+      properties:
+        name:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        credential:
+          $ref: '#/components/schemas/vaultCreate_credential'
+        retention:
+          type: number
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    replicaCreate:
+      properties:
+        hostname:
+          type: string
+        secret:
+          type: string
+      required:
+      - hostname
+      - secret
+      type: object
+    inline_object:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_1:
+      properties:
+        identity:
+          type: string
       type: object
     organisationorganisationId_billing_address:
       properties:
@@ -15281,14 +15241,14 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/organisationorganisationId_billing_address'
-    inline_object_4:
+    inline_object_2:
       properties:
         name:
           type: string
         billing:
           $ref: '#/components/schemas/organisationorganisationId_billing'
       type: object
-    inline_object_5:
+    inline_object_3:
       properties:
         payment:
           type: string
@@ -15298,92 +15258,27 @@ components:
       - payment
       - project
       type: object
+    inline_object_4:
+      properties:
+        identity:
+          type: string
+      type: object
+    inline_object_5:
+      properties:
+        name:
+          type: string
+      type: object
     inline_object_6:
       properties:
         identity:
           type: string
       type: object
-    container_registry:
-      properties:
-        username:
-          type: string
-        password:
-          type: string
-    container_expose:
-      properties:
-        port:
-          type: number
-        host:
-          type: string
-    container_volumes:
-      properties:
-        source:
-          type: string
-        sourcePath:
-          type: string
-        target:
-          type: string
-      required:
-      - source
-      - target
     inline_object_7:
       properties:
         name:
           type: string
-        image:
-          type: string
-        registry:
-          $ref: '#/components/schemas/container_registry'
-        service:
-          format: ObjectId
-          type: string
-        expose:
-          $ref: '#/components/schemas/container_expose'
-        env:
-          items:
-            type: string
-          type: array
-        command:
-          type: string
-        volumes:
-          items:
-            $ref: '#/components/schemas/container_volumes'
-          type: array
-        tag:
-          type: object
-      required:
-      - image
-      - name
-      - service
       type: object
     inline_object_8:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_9:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_10:
-      properties:
-        name:
-          type: string
-        tag:
-          type: object
-        service:
-          format: ObjectId
-          type: string
-      required:
-      - service
-      type: object
-    inline_object_11:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_12:
       properties:
         project:
           type: string
@@ -15446,7 +15341,7 @@ components:
       required:
       - action
       - priority
-    inline_object_13:
+    inline_object_9:
       properties:
         name:
           type: string
@@ -15467,7 +15362,7 @@ components:
             type: string
           type: array
       type: object
-    inline_object_14:
+    inline_object_10:
       properties:
         name:
           type: string
@@ -15488,60 +15383,70 @@ components:
             type: string
           type: array
       type: object
-    inline_object_15:
+    inline_object_11:
       properties:
         identity:
           type: string
       type: object
-    inline_object_16:
+    inline_object_12:
       properties:
         name:
           type: string
-        address:
-          type: string
         gateway:
+          type: string
+      type: object
+    inline_object_13:
+      properties:
+        address:
           type: string
         tag:
           type: object
+      type: object
+    inline_object_14:
+      properties:
+        identity:
+          type: string
+      type: object
+    inline_object_15:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_16:
+      properties:
+        identity:
+          type: string
       type: object
     inline_object_17:
       properties:
         name:
           type: string
-        gateway:
+        description:
           type: string
       type: object
     inline_object_18:
       properties:
-        address:
+        project:
           type: string
-        tag:
-          type: object
+      required:
+      - project
       type: object
     inline_object_19:
       properties:
         identity:
           type: string
       type: object
-    netgw_public:
-      properties:
-        ip:
-          type: string
-      required:
-      - ip
     inline_object_20:
       properties:
         name:
           type: string
-        public:
-          $ref: '#/components/schemas/netgw_public'
-        tag:
-          type: object
       type: object
     inline_object_21:
       properties:
-        name:
+        project:
           type: string
+      required:
+      - project
       type: object
     inline_object_22:
       properties:
@@ -15552,109 +15457,82 @@ components:
       properties:
         name:
           type: string
-        vm:
-          type: string
-        replica:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        description:
-          type: string
-        tag:
-          type: object
-      required:
-      - name
-      - service
       type: object
     inline_object_24:
       properties:
-        name:
-          type: string
-        description:
-          type: string
-      type: object
-    inline_object_25:
-      properties:
         project:
           type: string
       required:
       - project
       type: object
-    inline_object_26:
+    inline_object_25:
       properties:
         identity:
           type: string
       type: object
-    disk_metadata_source:
+    inline_object_26:
       properties:
-        filename:
+        userMetadata:
           type: string
-        size:
-          type: number
-    disk_metadata:
-      properties:
-        source:
-          $ref: '#/components/schemas/disk_metadata_source'
+        name:
+          type: string
+      type: object
     inline_object_27:
+      properties:
+        userName:
+          type: string
+        modulus:
+          type: string
+        exponent:
+          type: string
+      required:
+      - exponent
+      - modulus
+      - userName
+      type: object
+    inline_object_28:
       properties:
         service:
           format: ObjectId
           type: string
+        description:
+          type: string
         name:
           type: string
-        size:
-          type: number
-        cloud:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/disk_metadata'
-        tag:
-          type: object
       required:
       - service
       type: object
-    inline_object_28:
-      properties:
-        name:
-          type: string
-      type: object
     inline_object_29:
       properties:
-        project:
+        disk:
+          type: string
+        controllerType:
           type: string
       required:
-      - project
+      - disk
       type: object
     inline_object_30:
       properties:
-        identity:
+        service:
+          format: ObjectId
+          type: string
+        network:
+          type: string
+        ip:
+          type: string
+        tag:
+          type: object
+        vlanIds:
           type: string
       type: object
     inline_object_31:
       properties:
-        name:
+        identity:
           type: string
-        size:
-          type: number
-        source:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        cloud:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/disk_metadata'
-        tag:
-          type: object
-      required:
-      - name
-      - service
       type: object
     inline_object_32:
       properties:
-        name:
+        ptrRecord:
           type: string
       type: object
     inline_object_33:
@@ -15669,134 +15547,46 @@ components:
         identity:
           type: string
       type: object
-    vm_password:
-      properties:
-        type:
-          enum:
-          - plain
-          - unix
-          type: string
-        value:
-          type: string
-    vm_disk:
-      properties:
-        id:
-          type: string
-        size:
-          type: number
-        service:
-          format: ObjectId
-          type: string
-        name:
-          type: string
-        cloud:
-          type: string
-    vm_netadp:
-      properties:
-        service:
-          format: ObjectId
-          type: string
-        network:
-          type: string
-        ip:
-          items:
-            type: string
-          type: array
     inline_object_35:
       properties:
-        name:
+        identity:
           type: string
-        image:
-          type: string
-        iso:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        username:
-          type: string
-        password:
-          $ref: '#/components/schemas/vm_password'
-        sshKeys:
-          description: |-
-            - user credential (by id or name)
-            - project credential (by id or name)
-            - raw openssh public key (starting with `ssh-rsa `)
-          items:
-            type: string
-          type: array
-        userMetadata:
-          type: string
-        disk:
-          items:
-            $ref: '#/components/schemas/vm_disk'
-          type: array
-        netadp:
-          items:
-            $ref: '#/components/schemas/vm_netadp'
-          type: array
-        boot:
-          type: boolean
-        cloud:
-          type: string
-        tag:
-          type: object
-      required:
-      - service
       type: object
     inline_object_36:
       properties:
-        userMetadata:
-          type: string
         name:
           type: string
       type: object
     inline_object_37:
       properties:
-        userName:
+        name:
           type: string
-        modulus:
+        type:
           type: string
-        exponent:
+        value:
           type: string
       required:
-      - exponent
-      - modulus
-      - userName
+      - name
+      - type
+      - value
       type: object
     inline_object_38:
       properties:
-        service:
-          format: ObjectId
-          type: string
-        description:
-          type: string
         name:
           type: string
-      required:
-      - service
       type: object
     inline_object_39:
       properties:
-        disk:
+        name:
           type: string
-        controllerType:
+        type:
           type: string
-      required:
-      - disk
+        value:
+          type: string
       type: object
     inline_object_40:
       properties:
-        service:
-          format: ObjectId
-          type: string
-        network:
-          type: string
-        ip:
-          type: string
-        tag:
-          type: object
-        vlanIds:
+        name:
           type: string
       type: object
     inline_object_41:
@@ -15806,25 +15596,18 @@ components:
       type: object
     inline_object_42:
       properties:
-        service:
-          format: ObjectId
+        name:
           type: string
-        tag:
-          type: object
-      required:
-      - service
       type: object
     inline_object_43:
       properties:
-        ptrRecord:
+        identity:
           type: string
       type: object
     inline_object_44:
       properties:
-        project:
+        name:
           type: string
-      required:
-      - project
       type: object
     inline_object_45:
       properties:
@@ -15833,180 +15616,17 @@ components:
       type: object
     inline_object_46:
       properties:
-        identity:
+        name:
           type: string
       type: object
-    vault_credential_password:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-    vault_credential_certificate:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-    vault_credential:
-      properties:
-        password:
-          items:
-            $ref: '#/components/schemas/vault_credential_password'
-          type: array
-        certificate:
-          items:
-            $ref: '#/components/schemas/vault_credential_certificate'
-          type: array
     inline_object_47:
-      properties:
-        name:
-          type: string
-        size:
-          type: number
-        service:
-          format: ObjectId
-          type: string
-        credential:
-          $ref: '#/components/schemas/vault_credential'
-        snapshot:
-          type: string
-        tag:
-          type: object
-      required:
-      - name
-      - service
-      - size
-      type: object
-    inline_object_48:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_49:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_50:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_51:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_52:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_53:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_54:
-      properties:
-        vault:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        name:
-          type: string
-        tag:
-          type: object
-      required:
-      - name
-      - service
-      - vault
-      type: object
-    inline_object_55:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_56:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_57:
-      properties:
-        name:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        tag:
-          type: object
-      required:
-      - name
-      - service
-      type: object
-    inline_object_58:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_59:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_60:
-      properties:
-        name:
-          type: string
-        service:
-          format: ObjectId
-          type: string
-        credential:
-          $ref: '#/components/schemas/vault_credential'
-        retention:
-          type: number
-        tag:
-          type: object
-      required:
-      - name
-      - service
-      type: object
-    inline_object_61:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_62:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    inline_object_63:
+    inline_object_48:
       properties:
         name:
           type: string
@@ -16019,12 +15639,12 @@ components:
       - type
       - value
       type: object
-    inline_object_64:
+    inline_object_49:
       properties:
         name:
           type: string
       type: object
-    inline_object_65:
+    inline_object_50:
       properties:
         name:
           type: string
@@ -16033,12 +15653,12 @@ components:
         value:
           type: string
       type: object
-    inline_object_66:
+    inline_object_51:
       properties:
         name:
           type: string
       type: object
-    inline_object_67:
+    inline_object_52:
       properties:
         identity:
           type: string
@@ -16047,12 +15667,12 @@ components:
       properties:
         0:
           type: string
-    inline_object_68:
+    inline_object_53:
       properties:
         enabledServices:
           $ref: '#/components/schemas/vmhostvmhostId_enabledServices'
       type: object
-    inline_object_69:
+    inline_object_54:
       properties:
         vm:
           type: string
@@ -16061,7 +15681,7 @@ components:
       required:
       - vm
       type: object
-    inline_object_70:
+    inline_object_55:
       properties:
         disk:
           type: string
@@ -16070,7 +15690,7 @@ components:
       required:
       - disk
       type: object
-    inline_object_71:
+    inline_object_56:
       properties:
         iso:
           type: string
@@ -16079,7 +15699,7 @@ components:
       required:
       - iso
       type: object
-    inline_object_72:
+    inline_object_57:
       properties:
         image:
           type: string
@@ -16088,22 +15708,12 @@ components:
       required:
       - image
       type: object
-    inline_object_73:
+    inline_object_58:
       properties:
         identity:
           type: string
       type: object
-    inline_object_74:
-      properties:
-        hostname:
-          type: string
-        secret:
-          type: string
-      required:
-      - hostname
-      - secret
-      type: object
-    inline_object_75:
+    inline_object_59:
       properties:
         service:
           format: ObjectId
@@ -16113,7 +15723,7 @@ components:
       required:
       - service
       type: object
-    inline_object_76:
+    inline_object_60:
       properties:
         identity:
           type: string
@@ -16184,7 +15794,7 @@ components:
           type: string
         quantity:
           type: number
-    project_accessRights_1:
+    project_accessRights:
       example:
         role: role
         id: id
@@ -16195,16 +15805,16 @@ components:
           type: string
     project_billing:
       example:
-        creditsBonus: creditsBonus
-        credits: credits
-        creditLimit: creditLimit
+        creditsBonus: 1.46581298050294517310021547018550336360931396484375
+        credits: 6.02745618307040320615897144307382404804229736328125
+        creditLimit: 5.962133916683182377482808078639209270477294921875
       properties:
         credits:
-          type: string
+          type: number
         creditsBonus:
-          type: string
+          type: number
         creditLimit:
-          type: string
+          type: number
     project_invoices_duplicate:
       example:
         _id: _id
@@ -16252,8 +15862,8 @@ components:
         createdOn: createdOn
         modifiedOn: modifiedOn
         createdBy: createdBy
-        credits: credits
-        creditsFree: creditsFree
+        credits: 2.3021358869347654518833223846741020679473876953125
+        creditsFree: 5.63737665663332876420099637471139430999755859375
         name: name
         processing: processing
         modifiedBy: modifiedBy
@@ -16261,7 +15871,25 @@ components:
         accessRights: accessRights
         state: state
         tag: tag
-        queue: queue
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
       properties:
         _id:
           type: string
@@ -16286,7 +15914,9 @@ components:
         created:
           type: string
         queue:
-          type: string
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
         state:
           type: string
         tag:
@@ -16294,9 +15924,9 @@ components:
         project:
           type: string
         creditsFree:
-          type: string
+          type: number
         credits:
-          type: string
+          type: number
         channel:
           type: string
         amount:
@@ -16305,8 +15935,8 @@ components:
           type: string
     project_limit_vm:
       example:
-        memory: 1.46581298050294517310021547018550336360931396484375
-        count: 6.02745618307040320615897144307382404804229736328125
+        memory: 9.301444243932575517419536481611430644989013671875
+        count: 7.061401241503109105224211816675961017608642578125
       properties:
         count:
           type: number
@@ -16317,8 +15947,8 @@ components:
       - memory
     project_limit_disk:
       example:
-        size: 5.63737665663332876420099637471139430999755859375
-        count: 5.962133916683182377482808078639209270477294921875
+        size: 2.027123023002321833274663731572218239307403564453125
+        count: 3.61607674925191080461672754609026014804840087890625
       properties:
         count:
           type: number
@@ -16329,7 +15959,7 @@ components:
       - size
     project_limit_iso:
       example:
-        count: 2.3021358869347654518833223846741020679473876953125
+        count: 4.1456080298839363962315474054776132106781005859375
       properties:
         count:
           type: number
@@ -16337,8 +15967,8 @@ components:
       - count
     project_limit_domain:
       example:
-        record: 9.301444243932575517419536481611430644989013671875
-        count: 7.061401241503109105224211816675961017608642578125
+        record: 1.231513536777255612975068288506008684635162353515625
+        count: 7.3862819483858839220147274318151175975799560546875
       properties:
         count:
           type: number
@@ -16350,35 +15980,35 @@ components:
     project_limit:
       example:
         image:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         iso:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         ip:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         network:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         netgw:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         disk:
-          size: 5.63737665663332876420099637471139430999755859375
-          count: 5.962133916683182377482808078639209270477294921875
+          size: 2.027123023002321833274663731572218239307403564453125
+          count: 3.61607674925191080461672754609026014804840087890625
         firewall:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         vm:
-          memory: 1.46581298050294517310021547018550336360931396484375
-          count: 6.02745618307040320615897144307382404804229736328125
-        domain:
-          record: 9.301444243932575517419536481611430644989013671875
+          memory: 9.301444243932575517419536481611430644989013671875
           count: 7.061401241503109105224211816675961017608642578125
+        domain:
+          record: 1.231513536777255612975068288506008684635162353515625
+          count: 7.3862819483858839220147274318151175975799560546875
         reservation:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         logArchive:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
         vault:
-          size: 5.63737665663332876420099637471139430999755859375
-          count: 5.962133916683182377482808078639209270477294921875
+          size: 2.027123023002321833274663731572218239307403564453125
+          count: 3.61607674925191080461672754609026014804840087890625
         snapshot:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
       properties:
         vm:
           $ref: '#/components/schemas/project_limit_vm'
@@ -16481,7 +16111,7 @@ components:
       properties:
         organisation:
           type: string
-    organisation_billing_1:
+    organisation_billing:
       example:
         address: address
         nip: nip
@@ -16502,7 +16132,7 @@ components:
     organisation_limit_organisation:
       example:
         project:
-          count: 2.3021358869347654518833223846741020679473876953125
+          count: 4.1456080298839363962315474054776132106781005859375
       properties:
         project:
           $ref: '#/components/schemas/project_limit_iso'
@@ -16510,38 +16140,38 @@ components:
       example:
         organisation:
           project:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
         project:
           image:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           iso:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           ip:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           network:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           netgw:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           disk:
-            size: 5.63737665663332876420099637471139430999755859375
-            count: 5.962133916683182377482808078639209270477294921875
+            size: 2.027123023002321833274663731572218239307403564453125
+            count: 3.61607674925191080461672754609026014804840087890625
           firewall:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           vm:
-            memory: 1.46581298050294517310021547018550336360931396484375
-            count: 6.02745618307040320615897144307382404804229736328125
-          domain:
-            record: 9.301444243932575517419536481611430644989013671875
+            memory: 9.301444243932575517419536481611430644989013671875
             count: 7.061401241503109105224211816675961017608642578125
+          domain:
+            record: 1.231513536777255612975068288506008684635162353515625
+            count: 7.3862819483858839220147274318151175975799560546875
           reservation:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           logArchive:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
           vault:
-            size: 5.63737665663332876420099637471139430999755859375
-            count: 5.962133916683182377482808078639209270477294921875
+            size: 2.027123023002321833274663731572218239307403564453125
+            count: 3.61607674925191080461672754609026014804840087890625
           snapshot:
-            count: 2.3021358869347654518833223846741020679473876953125
+            count: 4.1456080298839363962315474054776132106781005859375
       properties:
         organisation:
           $ref: '#/components/schemas/organisation_limit_organisation'
@@ -16614,7 +16244,25 @@ components:
         state: state
         tag: tag
         persistent: persistent
-        queue: queue
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
       properties:
         _id:
           type: string
@@ -16639,7 +16287,9 @@ components:
         created:
           type: string
         queue:
-          type: string
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
         state:
           type: string
         tag:
@@ -16680,7 +16330,25 @@ components:
         accessRights: accessRights
         state: state
         tag: tag
-        queue: queue
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
         gateway: gateway
       properties:
         _id:
@@ -16706,7 +16374,9 @@ components:
         created:
           type: string
         queue:
-          type: string
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
         state:
           type: string
         tag:
@@ -16812,7 +16482,7 @@ components:
           type: string
         id:
           type: string
-    disk_metadata_1:
+    disk_metadata:
       example:
         source: source
       properties:
@@ -16843,7 +16513,7 @@ components:
           type: string
         id:
           type: string
-    vault_credential_1_password:
+    vault_credential_password:
       example:
         createdBy: createdBy
         name: name
@@ -16864,7 +16534,7 @@ components:
           type: string
         value:
           type: string
-    vault_credential_1:
+    vault_credential:
       example:
         password:
           createdBy: createdBy
@@ -16882,9 +16552,148 @@ components:
           value: value
       properties:
         password:
-          $ref: '#/components/schemas/vault_credential_1_password'
+          $ref: '#/components/schemas/vault_credential_password'
         certificate:
-          $ref: '#/components/schemas/vault_credential_1_password'
+          $ref: '#/components/schemas/vault_credential_password'
+    projectCreate_accessRights:
+      properties:
+        id:
+          type: string
+        role:
+          type: string
+      required:
+      - id
+      - role
+    organisationCreate_billing_address:
+      properties:
+        country:
+          type: string
+        city:
+          type: string
+        zipcode:
+          type: string
+        street:
+          type: string
+    organisationCreate_billing:
+      properties:
+        nip:
+          type: string
+        email:
+          type: string
+        company:
+          type: string
+        currency:
+          type: string
+        address:
+          $ref: '#/components/schemas/organisationCreate_billing_address'
+    organisationCreate_accessRights:
+      properties:
+        id:
+          type: string
+        role:
+          type: string
+    containerCreate_registry:
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    containerCreate_expose:
+      properties:
+        port:
+          type: number
+        host:
+          type: string
+    containerCreate_volumes:
+      properties:
+        source:
+          type: string
+        sourcePath:
+          type: string
+        target:
+          type: string
+      required:
+      - source
+      - target
+    netgwCreate_public:
+      properties:
+        ip:
+          type: string
+      required:
+      - ip
+    diskCreate_metadata_source:
+      properties:
+        filename:
+          type: string
+        size:
+          type: number
+    diskCreate_metadata:
+      properties:
+        source:
+          $ref: '#/components/schemas/diskCreate_metadata_source'
+    vmCreate_password:
+      properties:
+        type:
+          enum:
+          - plain
+          - unix
+          type: string
+        value:
+          type: string
+    vmCreate_disk:
+      properties:
+        id:
+          type: string
+        size:
+          type: number
+        service:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        cloud:
+          type: string
+    vmCreate_netadp:
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        network:
+          type: string
+        ip:
+          items:
+            type: string
+          type: array
+    vaultCreate_credential_password:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
+    vaultCreate_credential_certificate:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+    vaultCreate_credential:
+      properties:
+        password:
+          items:
+            $ref: '#/components/schemas/vaultCreate_credential_password'
+          type: array
+        certificate:
+          items:
+            $ref: '#/components/schemas/vaultCreate_credential_certificate'
+          type: array
   securitySchemes:
     Session:
       in: header

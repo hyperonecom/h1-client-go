@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateNetgw**
-> Netgw CreateNetgw(ctx, optional)
+> Netgw CreateNetgw(ctx, netgwCreate)
 Create
 
 Create netgw
@@ -89,14 +89,7 @@ Create netgw
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateNetgwOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateNetgwOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
+  **netgwCreate** | [**NetgwCreate**](NetgwCreate.md)|  | 
 
 ### Return type
 
@@ -404,7 +397,7 @@ Optional parameters are passed through a pointer to a OperationNetgwPostaccessri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
+ **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
 
 ### Return type
 
@@ -469,7 +462,7 @@ Optional parameters are passed through a pointer to a UpdateNetgwOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
+ **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
 
 ### Return type
 

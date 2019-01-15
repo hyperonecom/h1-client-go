@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **CreateProject**
-> Project CreateProject(ctx, optional)
+> Project CreateProject(ctx, projectCreate)
 Create
 
 Create project
@@ -30,14 +30,7 @@ Create project
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateProjectOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateProjectOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject** | [**optional.Interface of InlineObject**](InlineObject.md)|  | 
+  **projectCreate** | [**ProjectCreate**](ProjectCreate.md)|  | 
 
 ### Return type
 
@@ -322,7 +315,7 @@ Optional parameters are passed through a pointer to a OperationProjectPostaccess
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
+ **inlineObject1** | [**optional.Interface of InlineObject1**](InlineObject1.md)|  | 
 
 ### Return type
 
@@ -387,7 +380,7 @@ Optional parameters are passed through a pointer to a UpdateProjectOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject1** | [**optional.Interface of InlineObject1**](InlineObject1.md)|  | 
+ **inlineObject** | [**optional.Interface of InlineObject**](InlineObject.md)|  | 
 
 ### Return type
 

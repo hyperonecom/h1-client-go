@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateVault**
-> Vault CreateVault(ctx, optional)
+> Vault CreateVault(ctx, vaultCreate)
 Create
 
 Create vault
@@ -157,14 +157,7 @@ Create vault
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateVaultOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateVaultOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject47** | [**optional.Interface of InlineObject47**](InlineObject47.md)|  | 
+  **vaultCreate** | [**VaultCreate**](VaultCreate.md)|  | 
 
 ### Return type
 
@@ -607,7 +600,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject52** | [**optional.Interface of InlineObject52**](InlineObject52.md)|  | 
+ **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
 
 ### Return type
 
@@ -644,7 +637,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject50** | [**optional.Interface of InlineObject50**](InlineObject50.md)|  | 
+ **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
 
 ### Return type
 
@@ -706,7 +699,7 @@ Optional parameters are passed through a pointer to a OperationVaultPostaccessri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject53** | [**optional.Interface of InlineObject53**](InlineObject53.md)|  | 
+ **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
 
 ### Return type
 
@@ -741,7 +734,7 @@ Optional parameters are passed through a pointer to a OperationVaultPostcredenti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject51** | [**optional.Interface of InlineObject51**](InlineObject51.md)|  | 
+ **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
 
 ### Return type
 
@@ -776,7 +769,7 @@ Optional parameters are passed through a pointer to a OperationVaultPostcredenti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject49** | [**optional.Interface of InlineObject49**](InlineObject49.md)|  | 
+ **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
 
 ### Return type
 
@@ -841,7 +834,7 @@ Optional parameters are passed through a pointer to a UpdateVaultOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject48** | [**optional.Interface of InlineObject48**](InlineObject48.md)|  | 
+ **inlineObject36** | [**optional.Interface of InlineObject36**](InlineObject36.md)|  | 
 
 ### Return type
 

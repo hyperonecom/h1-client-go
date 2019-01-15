@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateReservation**
-> Reservation CreateReservation(ctx, optional)
+> Reservation CreateReservation(ctx, reservationCreate)
 Create
 
 Create reservation
@@ -118,14 +118,7 @@ Create reservation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateReservationOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateReservationOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject57** | [**optional.Interface of InlineObject57**](InlineObject57.md)|  | 
+  **reservationCreate** | [**ReservationCreate**](ReservationCreate.md)|  | 
 
 ### Return type
 
@@ -433,7 +426,7 @@ Optional parameters are passed through a pointer to a OperationReservationPostac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject59** | [**optional.Interface of InlineObject59**](InlineObject59.md)|  | 
+ **inlineObject45** | [**optional.Interface of InlineObject45**](InlineObject45.md)|  | 
 
 ### Return type
 
@@ -498,7 +491,7 @@ Optional parameters are passed through a pointer to a UpdateReservationOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject58** | [**optional.Interface of InlineObject58**](InlineObject58.md)|  | 
+ **inlineObject44** | [**optional.Interface of InlineObject44**](InlineObject44.md)|  | 
 
 ### Return type
 

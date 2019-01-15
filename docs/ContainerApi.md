@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateContainer**
-> Container CreateContainer(ctx, optional)
+> Container CreateContainer(ctx, containerCreate)
 Create
 
 Create container
@@ -118,14 +118,7 @@ Create container
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateContainerOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateContainerOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
+  **containerCreate** | [**ContainerCreate**](ContainerCreate.md)|  | 
 
 ### Return type
 
@@ -433,7 +426,7 @@ Optional parameters are passed through a pointer to a OperationContainerPostacce
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
+ **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
 
 ### Return type
 
@@ -498,7 +491,7 @@ Optional parameters are passed through a pointer to a UpdateContainerOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
+ **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 

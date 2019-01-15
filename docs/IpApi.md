@@ -157,7 +157,7 @@ Optional parameters are passed through a pointer to a ActionIpTransferOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject44** | [**optional.Interface of InlineObject44**](InlineObject44.md)|  | 
+ **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
 
 ### Return type
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateIp**
-> Ip CreateIp(ctx, optional)
+> Ip CreateIp(ctx, ipCreate)
 Create
 
 Create ip
@@ -185,14 +185,7 @@ Create ip
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***CreateIpOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a CreateIpOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
+  **ipCreate** | [**IpCreate**](IpCreate.md)|  | 
 
 ### Return type
 
@@ -500,7 +493,7 @@ Optional parameters are passed through a pointer to a OperationIpPostaccessright
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject45** | [**optional.Interface of InlineObject45**](InlineObject45.md)|  | 
+ **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
 
 ### Return type
 
@@ -565,7 +558,7 @@ Optional parameters are passed through a pointer to a UpdateIpOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject43** | [**optional.Interface of InlineObject43**](InlineObject43.md)|  | 
+ **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
 
 ### Return type
 
