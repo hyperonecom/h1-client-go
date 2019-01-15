@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **ActionOrganisationTransferAccept**
-> Organisation ActionOrganisationTransferAccept(ctx, organisationId, optional)
+> Organisation ActionOrganisationTransferAccept(ctx, organisationId, organisationTransferAccept)
 /actions/transfer_accept
 
 Action transfer_accept
@@ -30,15 +30,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **organisationId** | **string**| ID of organisation | 
- **optional** | ***ActionOrganisationTransferAcceptOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionOrganisationTransferAcceptOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
+  **organisationTransferAccept** | [**OrganisationTransferAccept**](OrganisationTransferAccept.md)|  | 
 
 ### Return type
 

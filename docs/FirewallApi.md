@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionFirewallTransfer**
-> Firewall ActionFirewallTransfer(ctx, firewallId, optional)
+> Firewall ActionFirewallTransfer(ctx, firewallId, firewallTransfer)
 /actions/transfer
 
 Action transfer
@@ -99,15 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***ActionFirewallTransferOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionFirewallTransferOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
+  **firewallTransfer** | [**FirewallTransfer**](FirewallTransfer.md)|  | 
 
 ### Return type
 
@@ -630,7 +622,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostegres
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
+ **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -665,7 +657,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostingre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+ **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 
@@ -730,7 +722,7 @@ Optional parameters are passed through a pointer to a UpdateFirewallOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
+ **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 

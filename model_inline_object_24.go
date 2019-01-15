@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject24 struct {
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
+	Type string `json:"type"`
+	Value string `json:"value"`
 }

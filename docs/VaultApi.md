@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
+ **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
 
 ### Return type
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
+ **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
 
 ### Return type
 
@@ -726,7 +726,7 @@ Optional parameters are passed through a pointer to a OperationVaultPostcredenti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
+ **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
 
 ### Return type
 
@@ -761,7 +761,7 @@ Optional parameters are passed through a pointer to a OperationVaultPostcredenti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
+ **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
 
 ### Return type
 
@@ -826,7 +826,7 @@ Optional parameters are passed through a pointer to a UpdateVaultOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
+ **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
 
 ### Return type
 

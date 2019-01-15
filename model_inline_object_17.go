@@ -10,6 +10,7 @@
 package openapi
 
 type InlineObject17 struct {
-	UserMetadata string `json:"userMetadata,omitempty"`
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
+	Type string `json:"type"`
+	Value string `json:"value"`
 }

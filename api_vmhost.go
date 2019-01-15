@@ -31,16 +31,10 @@ VmhostApiService /actions/moveDisk
 Action moveDisk
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
- * @param optional nil or *ActionVmhostMoveDiskOpts - Optional Parameters:
- * @param "InlineObject39" (optional.Interface of InlineObject39) - 
+ * @param vmhostMoveDisk
 @return Vmhost
 */
-
-type ActionVmhostMoveDiskOpts struct {
-	InlineObject39 optional.Interface
-}
-
-func (a *VmhostApiService) ActionVmhostMoveDisk(ctx context.Context, vmhostId string, localVarOptionals *ActionVmhostMoveDiskOpts) (Vmhost, *http.Response, error) {
+func (a *VmhostApiService) ActionVmhostMoveDisk(ctx context.Context, vmhostId string, vmhostMoveDisk VmhostMoveDisk) (Vmhost, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -76,14 +70,7 @@ func (a *VmhostApiService) ActionVmhostMoveDisk(ctx context.Context, vmhostId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject39.IsSet() {
-		localVarOptionalInlineObject39, localVarOptionalInlineObject39ok := localVarOptionals.InlineObject39.Value().(InlineObject39)
-		if !localVarOptionalInlineObject39ok {
-			return localVarReturnValue, nil, reportError("inlineObject39 should be InlineObject39")
-		}
-		localVarPostBody = &localVarOptionalInlineObject39
-	}
-
+	localVarPostBody = &vmhostMoveDisk
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -174,16 +161,10 @@ VmhostApiService /actions/moveISO
 Action moveISO
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
- * @param optional nil or *ActionVmhostMoveISOOpts - Optional Parameters:
- * @param "InlineObject40" (optional.Interface of InlineObject40) - 
+ * @param vmhostMoveIso
 @return Vmhost
 */
-
-type ActionVmhostMoveISOOpts struct {
-	InlineObject40 optional.Interface
-}
-
-func (a *VmhostApiService) ActionVmhostMoveISO(ctx context.Context, vmhostId string, localVarOptionals *ActionVmhostMoveISOOpts) (Vmhost, *http.Response, error) {
+func (a *VmhostApiService) ActionVmhostMoveISO(ctx context.Context, vmhostId string, vmhostMoveIso VmhostMoveIso) (Vmhost, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -219,14 +200,7 @@ func (a *VmhostApiService) ActionVmhostMoveISO(ctx context.Context, vmhostId str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject40.IsSet() {
-		localVarOptionalInlineObject40, localVarOptionalInlineObject40ok := localVarOptionals.InlineObject40.Value().(InlineObject40)
-		if !localVarOptionalInlineObject40ok {
-			return localVarReturnValue, nil, reportError("inlineObject40 should be InlineObject40")
-		}
-		localVarPostBody = &localVarOptionalInlineObject40
-	}
-
+	localVarPostBody = &vmhostMoveIso
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -317,16 +291,10 @@ VmhostApiService /actions/moveImage
 Action moveImage
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
- * @param optional nil or *ActionVmhostMoveImageOpts - Optional Parameters:
- * @param "InlineObject41" (optional.Interface of InlineObject41) - 
+ * @param vmhostMoveImage
 @return Vmhost
 */
-
-type ActionVmhostMoveImageOpts struct {
-	InlineObject41 optional.Interface
-}
-
-func (a *VmhostApiService) ActionVmhostMoveImage(ctx context.Context, vmhostId string, localVarOptionals *ActionVmhostMoveImageOpts) (Vmhost, *http.Response, error) {
+func (a *VmhostApiService) ActionVmhostMoveImage(ctx context.Context, vmhostId string, vmhostMoveImage VmhostMoveImage) (Vmhost, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -362,14 +330,7 @@ func (a *VmhostApiService) ActionVmhostMoveImage(ctx context.Context, vmhostId s
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject41.IsSet() {
-		localVarOptionalInlineObject41, localVarOptionalInlineObject41ok := localVarOptionals.InlineObject41.Value().(InlineObject41)
-		if !localVarOptionalInlineObject41ok {
-			return localVarReturnValue, nil, reportError("inlineObject41 should be InlineObject41")
-		}
-		localVarPostBody = &localVarOptionalInlineObject41
-	}
-
+	localVarPostBody = &vmhostMoveImage
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -460,16 +421,10 @@ VmhostApiService /actions/moveVM
 Action moveVM
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
- * @param optional nil or *ActionVmhostMoveVMOpts - Optional Parameters:
- * @param "InlineObject38" (optional.Interface of InlineObject38) - 
+ * @param vmhostMoveVm
 @return Vmhost
 */
-
-type ActionVmhostMoveVMOpts struct {
-	InlineObject38 optional.Interface
-}
-
-func (a *VmhostApiService) ActionVmhostMoveVM(ctx context.Context, vmhostId string, localVarOptionals *ActionVmhostMoveVMOpts) (Vmhost, *http.Response, error) {
+func (a *VmhostApiService) ActionVmhostMoveVM(ctx context.Context, vmhostId string, vmhostMoveVm VmhostMoveVm) (Vmhost, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -505,14 +460,7 @@ func (a *VmhostApiService) ActionVmhostMoveVM(ctx context.Context, vmhostId stri
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject38.IsSet() {
-		localVarOptionalInlineObject38, localVarOptionalInlineObject38ok := localVarOptionals.InlineObject38.Value().(InlineObject38)
-		if !localVarOptionalInlineObject38ok {
-			return localVarReturnValue, nil, reportError("inlineObject38 should be InlineObject38")
-		}
-		localVarPostBody = &localVarOptionalInlineObject38
-	}
-
+	localVarPostBody = &vmhostMoveVm
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2127,12 +2075,12 @@ Returns modified vmhost
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
  * @param optional nil or *UpdateVmhostOpts - Optional Parameters:
- * @param "InlineObject37" (optional.Interface of InlineObject37) - 
+ * @param "InlineObject28" (optional.Interface of InlineObject28) - 
 @return Vmhost
 */
 
 type UpdateVmhostOpts struct {
-	InlineObject37 optional.Interface
+	InlineObject28 optional.Interface
 }
 
 func (a *VmhostApiService) UpdateVmhost(ctx context.Context, vmhostId string, localVarOptionals *UpdateVmhostOpts) (Vmhost, *http.Response, error) {
@@ -2171,12 +2119,12 @@ func (a *VmhostApiService) UpdateVmhost(ctx context.Context, vmhostId string, lo
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject37.IsSet() {
-		localVarOptionalInlineObject37, localVarOptionalInlineObject37ok := localVarOptionals.InlineObject37.Value().(InlineObject37)
-		if !localVarOptionalInlineObject37ok {
-			return localVarReturnValue, nil, reportError("inlineObject37 should be InlineObject37")
+	if localVarOptionals != nil && localVarOptionals.InlineObject28.IsSet() {
+		localVarOptionalInlineObject28, localVarOptionalInlineObject28ok := localVarOptionals.InlineObject28.Value().(InlineObject28)
+		if !localVarOptionalInlineObject28ok {
+			return localVarReturnValue, nil, reportError("inlineObject28 should be InlineObject28")
 		}
-		localVarPostBody = &localVarOptionalInlineObject37
+		localVarPostBody = &localVarOptionalInlineObject28
 	}
 
 	if ctx != nil {

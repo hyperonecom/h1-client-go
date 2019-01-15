@@ -397,7 +397,7 @@ Optional parameters are passed through a pointer to a UpdateSnapshotOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
+ **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
 
 ### Return type
 

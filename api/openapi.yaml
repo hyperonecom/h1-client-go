@@ -671,19 +671,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_2'
         content:
           application/json:
             schema:
-              properties:
-                payment:
-                  type: string
-                project:
-                  type: string
-              required:
-              - payment
-              - project
-              type: object
+              $ref: '#/components/schemas/organisation.transfer_accept'
         required: true
       responses:
         202:
@@ -1090,7 +1081,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_3'
+        $ref: '#/components/requestBodies/inline_object_2'
         content:
           application/json:
             schema:
@@ -1672,7 +1663,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_4'
+        $ref: '#/components/requestBodies/inline_object_3'
         content:
           application/json:
             schema:
@@ -1778,16 +1769,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_5'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/firewall.transfer'
         required: true
       responses:
         202:
@@ -1853,7 +1838,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_6'
+        $ref: '#/components/requestBodies/inline_object_4'
         content:
           application/json:
             schema:
@@ -2019,7 +2004,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_7'
+        $ref: '#/components/requestBodies/inline_object_5'
         content:
           application/json:
             schema:
@@ -2598,7 +2583,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_8'
+        $ref: '#/components/requestBodies/inline_object_6'
         content:
           application/json:
             schema:
@@ -2673,7 +2658,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_9'
+        $ref: '#/components/requestBodies/inline_object_7'
         content:
           application/json:
             schema:
@@ -3222,7 +3207,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_10'
+        $ref: '#/components/requestBodies/inline_object_8'
         content:
           application/json:
             schema:
@@ -3772,7 +3757,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_11'
+        $ref: '#/components/requestBodies/inline_object_9'
         content:
           application/json:
             schema:
@@ -3816,16 +3801,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_12'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/image.transfer'
         required: true
       responses:
         202:
@@ -4304,7 +4283,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_13'
+        $ref: '#/components/requestBodies/inline_object_10'
         content:
           application/json:
             schema:
@@ -4378,16 +4357,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/disk.transfer'
         required: true
       responses:
         202:
@@ -4866,7 +4839,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_15'
+        $ref: '#/components/requestBodies/inline_object_11'
         content:
           application/json:
             schema:
@@ -4908,16 +4881,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/iso.transfer'
         required: true
       responses:
         202:
@@ -5396,7 +5363,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_17'
+        $ref: '#/components/requestBodies/inline_object_12'
         content:
           application/json:
             schema:
@@ -5600,22 +5567,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_18'
         content:
           application/json:
             schema:
-              properties:
-                userName:
-                  type: string
-                modulus:
-                  type: string
-                exponent:
-                  type: string
-              required:
-              - exponent
-              - modulus
-              - userName
-              type: object
+              $ref: '#/components/schemas/vm.password_reset'
         required: true
       responses:
         202:
@@ -5650,21 +5605,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
-              properties:
-                service:
-                  format: ObjectId
-                  type: string
-                description:
-                  type: string
-                name:
-                  type: string
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/vm.image'
         required: true
       responses:
         202:
@@ -5762,7 +5706,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_20'
+        $ref: '#/components/requestBodies/inline_object_13'
         content:
           application/json:
             schema:
@@ -5926,7 +5870,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_21'
+        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
@@ -6427,7 +6371,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_22'
+        $ref: '#/components/requestBodies/inline_object_15'
         content:
           application/json:
             schema:
@@ -6597,16 +6541,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/ip.transfer'
         required: true
       responses:
         202:
@@ -7486,7 +7424,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_24'
+        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
@@ -7687,7 +7625,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_25'
+        $ref: '#/components/requestBodies/inline_object_17'
         content:
           application/json:
             schema:
@@ -7826,7 +7764,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_26'
+        $ref: '#/components/requestBodies/inline_object_18'
         content:
           application/json:
             schema:
@@ -7899,7 +7837,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_27'
+        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
@@ -8034,7 +7972,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_28'
+        $ref: '#/components/requestBodies/inline_object_20'
         content:
           application/json:
             schema:
@@ -8528,7 +8466,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_29'
+        $ref: '#/components/requestBodies/inline_object_21'
         content:
           application/json:
             schema:
@@ -9014,7 +8952,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_30'
+        $ref: '#/components/requestBodies/inline_object_22'
         content:
           application/json:
             schema:
@@ -9596,7 +9534,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_31'
+        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
@@ -9638,16 +9576,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_32'
         content:
           application/json:
             schema:
-              properties:
-                project:
-                  type: string
-              required:
-              - project
-              type: object
+              $ref: '#/components/schemas/logArchive.transfer'
         required: true
       responses:
         202:
@@ -9713,7 +9645,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_33'
+        $ref: '#/components/requestBodies/inline_object_24'
         content:
           application/json:
             schema:
@@ -9852,7 +9784,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_34'
+        $ref: '#/components/requestBodies/inline_object_25'
         content:
           application/json:
             schema:
@@ -9925,7 +9857,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_35'
+        $ref: '#/components/requestBodies/inline_object_26'
         content:
           application/json:
             schema:
@@ -10060,7 +9992,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_36'
+        $ref: '#/components/requestBodies/inline_object_27'
         content:
           application/json:
             schema:
@@ -10518,7 +10450,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_37'
+        $ref: '#/components/requestBodies/inline_object_28'
         content:
           application/json:
             schema:
@@ -10560,18 +10492,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_38'
         content:
           application/json:
             schema:
-              properties:
-                vm:
-                  type: string
-                vmhost:
-                  type: string
-              required:
-              - vm
-              type: object
+              $ref: '#/components/schemas/vmhost.moveVM'
         required: true
       responses:
         202:
@@ -10606,18 +10530,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_39'
         content:
           application/json:
             schema:
-              properties:
-                disk:
-                  type: string
-                vmhost:
-                  type: string
-              required:
-              - disk
-              type: object
+              $ref: '#/components/schemas/vmhost.moveDisk'
         required: true
       responses:
         202:
@@ -10652,18 +10568,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_40'
         content:
           application/json:
             schema:
-              properties:
-                iso:
-                  type: string
-                vmhost:
-                  type: string
-              required:
-              - iso
-              type: object
+              $ref: '#/components/schemas/vmhost.moveISO'
         required: true
       responses:
         202:
@@ -10698,18 +10606,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_41'
         content:
           application/json:
             schema:
-              properties:
-                image:
-                  type: string
-                vmhost:
-                  type: string
-              required:
-              - image
-              type: object
+              $ref: '#/components/schemas/vmhost.moveImage'
         required: true
       responses:
         202:
@@ -11189,19 +11089,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_42'
         content:
           application/json:
             schema:
-              properties:
-                service:
-                  format: ObjectId
-                  type: string
-                description:
-                  type: string
-              required:
-              - service
-              type: object
+              $ref: '#/components/schemas/replica.image'
         required: true
       responses:
         202:
@@ -11551,91 +11442,41 @@ paths:
       - replica
 components:
   requestBodies:
-    inline_object_30:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_30'
     inline_object_10:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_10'
-    inline_object_32:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_32'
-    inline_object_31:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_31'
     inline_object_12:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_12'
-    inline_object_34:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_34'
     inline_object_11:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_11'
-    inline_object_33:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_33'
     inline_object_14:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_14'
-    inline_object_36:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_36'
     inline_object_13:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_13'
-    inline_object_35:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_35'
     inline_object_16:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_16'
-    inline_object_38:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_38'
     inline_object_15:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_15'
-    inline_object_37:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_37'
-    inline_object_29:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_29'
     inline_object_28:
       content:
         application/json:
@@ -11646,16 +11487,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_1'
-    inline_object_41:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_41'
-    inline_object_40:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_40'
     inline_object_9:
       content:
         application/json:
@@ -11676,11 +11507,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_20'
-    inline_object_42:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_42'
     inline_object_7:
       content:
         application/json:
@@ -11751,11 +11577,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_17'
-    inline_object_39:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_39'
     inline_object_19:
       content:
         application/json:
@@ -14810,6 +14631,17 @@ components:
         tag:
           type: object
       type: object
+    organisation.transfer_accept:
+      description: Request body for action transfer_accept on organisation
+      properties:
+        payment:
+          type: string
+        project:
+          type: string
+      required:
+      - payment
+      - project
+      type: object
     containerCreate:
       properties:
         name:
@@ -14852,6 +14684,14 @@ components:
       required:
       - service
       type: object
+    firewall.transfer:
+      description: Request body for action transfer on firewall
+      properties:
+        project:
+          type: string
+      required:
+      - project
+      type: object
     networkCreate:
       properties:
         name:
@@ -14891,6 +14731,14 @@ components:
       - name
       - service
       type: object
+    image.transfer:
+      description: Request body for action transfer on image
+      properties:
+        project:
+          type: string
+      required:
+      - project
+      type: object
     diskCreate:
       properties:
         service:
@@ -14908,6 +14756,14 @@ components:
           type: object
       required:
       - service
+      type: object
+    disk.transfer:
+      description: Request body for action transfer on disk
+      properties:
+        project:
+          type: string
+      required:
+      - project
       type: object
     isoCreate:
       properties:
@@ -14929,6 +14785,14 @@ components:
       required:
       - name
       - service
+      type: object
+    iso.transfer:
+      description: Request body for action transfer on iso
+      properties:
+        project:
+          type: string
+      required:
+      - project
       type: object
     vmCreate:
       properties:
@@ -14972,6 +14836,33 @@ components:
       required:
       - service
       type: object
+    vm.password_reset:
+      description: Request body for action password_reset on vm
+      properties:
+        userName:
+          type: string
+        modulus:
+          type: string
+        exponent:
+          type: string
+      required:
+      - exponent
+      - modulus
+      - userName
+      type: object
+    vm.image:
+      description: Request body for action image on vm
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        description:
+          type: string
+        name:
+          type: string
+      required:
+      - service
+      type: object
     ipCreate:
       properties:
         service:
@@ -14981,6 +14872,14 @@ components:
           type: object
       required:
       - service
+      type: object
+    ip.transfer:
+      description: Request body for action transfer on ip
+      properties:
+        project:
+          type: string
+      required:
+      - project
       type: object
     vaultCreate:
       properties:
@@ -15048,6 +14947,54 @@ components:
       - name
       - service
       type: object
+    logArchive.transfer:
+      description: Request body for action transfer on logArchive
+      properties:
+        project:
+          type: string
+      required:
+      - project
+      type: object
+    vmhost.moveVM:
+      description: Request body for action moveVM on vmhost
+      properties:
+        vm:
+          type: string
+        vmhost:
+          type: string
+      required:
+      - vm
+      type: object
+    vmhost.moveDisk:
+      description: Request body for action moveDisk on vmhost
+      properties:
+        disk:
+          type: string
+        vmhost:
+          type: string
+      required:
+      - disk
+      type: object
+    vmhost.moveISO:
+      description: Request body for action moveISO on vmhost
+      properties:
+        iso:
+          type: string
+        vmhost:
+          type: string
+      required:
+      - iso
+      type: object
+    vmhost.moveImage:
+      description: Request body for action moveImage on vmhost
+      properties:
+        image:
+          type: string
+        vmhost:
+          type: string
+      required:
+      - image
+      type: object
     replicaCreate:
       properties:
         hostname:
@@ -15057,6 +15004,17 @@ components:
       required:
       - hostname
       - secret
+      type: object
+    replica.image:
+      description: Request body for action image on replica
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        description:
+          type: string
+      required:
+      - service
       type: object
     inline_object:
       properties:
@@ -15088,30 +15046,13 @@ components:
       type: object
     inline_object_2:
       properties:
-        payment:
+        name:
           type: string
-        project:
-          type: string
-      required:
-      - payment
-      - project
       type: object
     inline_object_3:
       properties:
         name:
           type: string
-      type: object
-    inline_object_4:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_5:
-      properties:
-        project:
-          type: string
-      required:
-      - project
       type: object
     inline_response_200:
       example:
@@ -15169,61 +15110,73 @@ components:
       required:
       - action
       - priority
+    inline_object_4:
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+        priority:
+          type: number
+        filter:
+          items:
+            type: string
+          type: array
+        external:
+          items:
+            type: string
+          type: array
+        internal:
+          items:
+            type: string
+          type: array
+      type: object
+    inline_object_5:
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+        priority:
+          type: number
+        filter:
+          items:
+            type: string
+          type: array
+        external:
+          items:
+            type: string
+          type: array
+        internal:
+          items:
+            type: string
+          type: array
+      type: object
     inline_object_6:
-      properties:
-        name:
-          type: string
-        action:
-          type: string
-        priority:
-          type: number
-        filter:
-          items:
-            type: string
-          type: array
-        external:
-          items:
-            type: string
-          type: array
-        internal:
-          items:
-            type: string
-          type: array
-      type: object
-    inline_object_7:
-      properties:
-        name:
-          type: string
-        action:
-          type: string
-        priority:
-          type: number
-        filter:
-          items:
-            type: string
-          type: array
-        external:
-          items:
-            type: string
-          type: array
-        internal:
-          items:
-            type: string
-          type: array
-      type: object
-    inline_object_8:
       properties:
         name:
           type: string
         gateway:
           type: string
       type: object
-    inline_object_9:
+    inline_object_7:
       properties:
         address:
           type: string
         tag:
           type: object
+      type: object
+    inline_object_8:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_9:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
       type: object
     inline_object_10:
       properties:
@@ -15234,73 +15187,15 @@ components:
       properties:
         name:
           type: string
-        description:
-          type: string
       type: object
     inline_object_12:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_13:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_14:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_15:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_16:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_17:
       properties:
         userMetadata:
           type: string
         name:
           type: string
       type: object
-    inline_object_18:
-      properties:
-        userName:
-          type: string
-        modulus:
-          type: string
-        exponent:
-          type: string
-      required:
-      - exponent
-      - modulus
-      - userName
-      type: object
-    inline_object_19:
-      properties:
-        service:
-          format: ObjectId
-          type: string
-        description:
-          type: string
-        name:
-          type: string
-      required:
-      - service
-      type: object
-    inline_object_20:
+    inline_object_13:
       properties:
         disk:
           type: string
@@ -15309,7 +15204,7 @@ components:
       required:
       - disk
       type: object
-    inline_object_21:
+    inline_object_14:
       properties:
         service:
           format: ObjectId
@@ -15323,105 +15218,91 @@ components:
         vlanIds:
           type: string
       type: object
-    inline_object_22:
+    inline_object_15:
       properties:
         ptrRecord:
           type: string
       type: object
-    inline_object_23:
+    inline_object_16:
       properties:
-        project:
+        name:
+          type: string
+      type: object
+    inline_object_17:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
           type: string
       required:
-      - project
+      - name
+      - type
+      - value
+      type: object
+    inline_object_18:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_19:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    inline_object_20:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_21:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_22:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_23:
+      properties:
+        name:
+          type: string
       type: object
     inline_object_24:
       properties:
         name:
           type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
       type: object
     inline_object_25:
       properties:
         name:
           type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
       type: object
     inline_object_26:
       properties:
         name:
           type: string
+        type:
+          type: string
+        value:
+          type: string
       type: object
     inline_object_27:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_28:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_29:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_30:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_31:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_32:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_33:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_34:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_35:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_36:
       properties:
         name:
           type: string
@@ -15430,56 +15311,10 @@ components:
       properties:
         0:
           type: string
-    inline_object_37:
+    inline_object_28:
       properties:
         enabledServices:
           $ref: '#/components/schemas/vmhostvmhostId_enabledServices'
-      type: object
-    inline_object_38:
-      properties:
-        vm:
-          type: string
-        vmhost:
-          type: string
-      required:
-      - vm
-      type: object
-    inline_object_39:
-      properties:
-        disk:
-          type: string
-        vmhost:
-          type: string
-      required:
-      - disk
-      type: object
-    inline_object_40:
-      properties:
-        iso:
-          type: string
-        vmhost:
-          type: string
-      required:
-      - iso
-      type: object
-    inline_object_41:
-      properties:
-        image:
-          type: string
-        vmhost:
-          type: string
-      required:
-      - image
-      type: object
-    inline_object_42:
-      properties:
-        service:
-          format: ObjectId
-          type: string
-        description:
-          type: string
-      required:
-      - service
       type: object
     event_resource:
       example:

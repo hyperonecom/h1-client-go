@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionIpTransfer**
-> Ip ActionIpTransfer(ctx, ipId, optional)
+> Ip ActionIpTransfer(ctx, ipId, ipTransfer)
 /actions/transfer
 
 Action transfer
@@ -149,15 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
- **optional** | ***ActionIpTransferOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionIpTransferOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
+  **ipTransfer** | [**IpTransfer**](IpTransfer.md)|  | 
 
 ### Return type
 
@@ -550,7 +542,7 @@ Optional parameters are passed through a pointer to a UpdateIpOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
+ **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
 
 ### Return type
 

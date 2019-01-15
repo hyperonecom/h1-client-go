@@ -2590,12 +2590,12 @@ VaultApiService /credential/certificate/:id
  * @param vaultId ID of vault
  * @param id id
  * @param optional nil or *OperationVaultPatchcredentialcertificateIdOpts - Optional Parameters:
- * @param "InlineObject28" (optional.Interface of InlineObject28) - 
+ * @param "InlineObject20" (optional.Interface of InlineObject20) - 
 @return CredentialCertificate
 */
 
 type OperationVaultPatchcredentialcertificateIdOpts struct {
-	InlineObject28 optional.Interface
+	InlineObject20 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialcertificateIdOpts) (CredentialCertificate, *http.Response, error) {
@@ -2635,12 +2635,12 @@ func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject28.IsSet() {
-		localVarOptionalInlineObject28, localVarOptionalInlineObject28ok := localVarOptionals.InlineObject28.Value().(InlineObject28)
-		if !localVarOptionalInlineObject28ok {
-			return localVarReturnValue, nil, reportError("inlineObject28 should be InlineObject28")
+	if localVarOptionals != nil && localVarOptionals.InlineObject20.IsSet() {
+		localVarOptionalInlineObject20, localVarOptionalInlineObject20ok := localVarOptionals.InlineObject20.Value().(InlineObject20)
+		if !localVarOptionalInlineObject20ok {
+			return localVarReturnValue, nil, reportError("inlineObject20 should be InlineObject20")
 		}
-		localVarPostBody = &localVarOptionalInlineObject28
+		localVarPostBody = &localVarOptionalInlineObject20
 	}
 
 	if ctx != nil {
@@ -2734,12 +2734,12 @@ VaultApiService /credential/password/:id
  * @param vaultId ID of vault
  * @param id id
  * @param optional nil or *OperationVaultPatchcredentialpasswordIdOpts - Optional Parameters:
- * @param "InlineObject26" (optional.Interface of InlineObject26) - 
+ * @param "InlineObject18" (optional.Interface of InlineObject18) - 
 @return CredentialPassword
 */
 
 type OperationVaultPatchcredentialpasswordIdOpts struct {
-	InlineObject26 optional.Interface
+	InlineObject18 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
@@ -2779,12 +2779,12 @@ func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject26.IsSet() {
-		localVarOptionalInlineObject26, localVarOptionalInlineObject26ok := localVarOptionals.InlineObject26.Value().(InlineObject26)
-		if !localVarOptionalInlineObject26ok {
-			return localVarReturnValue, nil, reportError("inlineObject26 should be InlineObject26")
+	if localVarOptionals != nil && localVarOptionals.InlineObject18.IsSet() {
+		localVarOptionalInlineObject18, localVarOptionalInlineObject18ok := localVarOptionals.InlineObject18.Value().(InlineObject18)
+		if !localVarOptionalInlineObject18ok {
+			return localVarReturnValue, nil, reportError("inlineObject18 should be InlineObject18")
 		}
-		localVarPostBody = &localVarOptionalInlineObject26
+		localVarPostBody = &localVarOptionalInlineObject18
 	}
 
 	if ctx != nil {
@@ -3135,12 +3135,12 @@ VaultApiService /credential/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param optional nil or *OperationVaultPostcredentialcertificateOpts - Optional Parameters:
- * @param "InlineObject27" (optional.Interface of InlineObject27) - 
+ * @param "InlineObject19" (optional.Interface of InlineObject19) - 
 @return CredentialCertificate
 */
 
 type OperationVaultPostcredentialcertificateOpts struct {
-	InlineObject27 optional.Interface
+	InlineObject19 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
@@ -3179,12 +3179,12 @@ func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject27.IsSet() {
-		localVarOptionalInlineObject27, localVarOptionalInlineObject27ok := localVarOptionals.InlineObject27.Value().(InlineObject27)
-		if !localVarOptionalInlineObject27ok {
-			return localVarReturnValue, nil, reportError("inlineObject27 should be InlineObject27")
+	if localVarOptionals != nil && localVarOptionals.InlineObject19.IsSet() {
+		localVarOptionalInlineObject19, localVarOptionalInlineObject19ok := localVarOptionals.InlineObject19.Value().(InlineObject19)
+		if !localVarOptionalInlineObject19ok {
+			return localVarReturnValue, nil, reportError("inlineObject19 should be InlineObject19")
 		}
-		localVarPostBody = &localVarOptionalInlineObject27
+		localVarPostBody = &localVarOptionalInlineObject19
 	}
 
 	if ctx != nil {
@@ -3277,12 +3277,12 @@ VaultApiService /credential/password
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param optional nil or *OperationVaultPostcredentialpasswordOpts - Optional Parameters:
- * @param "InlineObject25" (optional.Interface of InlineObject25) - 
+ * @param "InlineObject17" (optional.Interface of InlineObject17) - 
 @return CredentialPassword
 */
 
 type OperationVaultPostcredentialpasswordOpts struct {
-	InlineObject25 optional.Interface
+	InlineObject17 optional.Interface
 }
 
 func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialpasswordOpts) (CredentialPassword, *http.Response, error) {
@@ -3321,12 +3321,12 @@ func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject25.IsSet() {
-		localVarOptionalInlineObject25, localVarOptionalInlineObject25ok := localVarOptionals.InlineObject25.Value().(InlineObject25)
-		if !localVarOptionalInlineObject25ok {
-			return localVarReturnValue, nil, reportError("inlineObject25 should be InlineObject25")
+	if localVarOptionals != nil && localVarOptionals.InlineObject17.IsSet() {
+		localVarOptionalInlineObject17, localVarOptionalInlineObject17ok := localVarOptionals.InlineObject17.Value().(InlineObject17)
+		if !localVarOptionalInlineObject17ok {
+			return localVarReturnValue, nil, reportError("inlineObject17 should be InlineObject17")
 		}
-		localVarPostBody = &localVarOptionalInlineObject25
+		localVarPostBody = &localVarOptionalInlineObject17
 	}
 
 	if ctx != nil {
@@ -3547,12 +3547,12 @@ Returns modified vault
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param optional nil or *UpdateVaultOpts - Optional Parameters:
- * @param "InlineObject24" (optional.Interface of InlineObject24) - 
+ * @param "InlineObject16" (optional.Interface of InlineObject16) - 
 @return Vault
 */
 
 type UpdateVaultOpts struct {
-	InlineObject24 optional.Interface
+	InlineObject16 optional.Interface
 }
 
 func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, localVarOptionals *UpdateVaultOpts) (Vault, *http.Response, error) {
@@ -3591,12 +3591,12 @@ func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject24.IsSet() {
-		localVarOptionalInlineObject24, localVarOptionalInlineObject24ok := localVarOptionals.InlineObject24.Value().(InlineObject24)
-		if !localVarOptionalInlineObject24ok {
-			return localVarReturnValue, nil, reportError("inlineObject24 should be InlineObject24")
+	if localVarOptionals != nil && localVarOptionals.InlineObject16.IsSet() {
+		localVarOptionalInlineObject16, localVarOptionalInlineObject16ok := localVarOptionals.InlineObject16.Value().(InlineObject16)
+		if !localVarOptionalInlineObject16ok {
+			return localVarReturnValue, nil, reportError("inlineObject16 should be InlineObject16")
 		}
-		localVarPostBody = &localVarOptionalInlineObject24
+		localVarPostBody = &localVarOptionalInlineObject16
 	}
 
 	if ctx != nil {

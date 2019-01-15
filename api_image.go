@@ -31,16 +31,10 @@ ImageApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param optional nil or *ActionImageTransferOpts - Optional Parameters:
- * @param "InlineObject12" (optional.Interface of InlineObject12) - 
+ * @param imageTransfer
 @return Image
 */
-
-type ActionImageTransferOpts struct {
-	InlineObject12 optional.Interface
-}
-
-func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId string, localVarOptionals *ActionImageTransferOpts) (Image, *http.Response, error) {
+func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId string, imageTransfer ImageTransfer) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -76,14 +70,7 @@ func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId strin
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject12.IsSet() {
-		localVarOptionalInlineObject12, localVarOptionalInlineObject12ok := localVarOptionals.InlineObject12.Value().(InlineObject12)
-		if !localVarOptionalInlineObject12ok {
-			return localVarReturnValue, nil, reportError("inlineObject12 should be InlineObject12")
-		}
-		localVarPostBody = &localVarOptionalInlineObject12
-	}
-
+	localVarPostBody = &imageTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1826,12 +1813,12 @@ Returns modified image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param optional nil or *UpdateImageOpts - Optional Parameters:
- * @param "InlineObject11" (optional.Interface of InlineObject11) - 
+ * @param "InlineObject9" (optional.Interface of InlineObject9) - 
 @return Image
 */
 
 type UpdateImageOpts struct {
-	InlineObject11 optional.Interface
+	InlineObject9 optional.Interface
 }
 
 func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, localVarOptionals *UpdateImageOpts) (Image, *http.Response, error) {
@@ -1870,12 +1857,12 @@ func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject11.IsSet() {
-		localVarOptionalInlineObject11, localVarOptionalInlineObject11ok := localVarOptionals.InlineObject11.Value().(InlineObject11)
-		if !localVarOptionalInlineObject11ok {
-			return localVarReturnValue, nil, reportError("inlineObject11 should be InlineObject11")
+	if localVarOptionals != nil && localVarOptionals.InlineObject9.IsSet() {
+		localVarOptionalInlineObject9, localVarOptionalInlineObject9ok := localVarOptionals.InlineObject9.Value().(InlineObject9)
+		if !localVarOptionalInlineObject9ok {
+			return localVarReturnValue, nil, reportError("inlineObject9 should be InlineObject9")
 		}
-		localVarPostBody = &localVarOptionalInlineObject11
+		localVarPostBody = &localVarOptionalInlineObject9
 	}
 
 	if ctx != nil {

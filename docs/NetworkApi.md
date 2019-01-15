@@ -448,7 +448,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostipOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
+ **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
 
 ### Return type
 
@@ -513,7 +513,7 @@ Optional parameters are passed through a pointer to a UpdateNetworkOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
+ **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
 
 ### Return type
 

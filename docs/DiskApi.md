@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionDiskTransfer**
-> Disk ActionDiskTransfer(ctx, diskId, optional)
+> Disk ActionDiskTransfer(ctx, diskId, diskTransfer)
 /actions/transfer
 
 Action transfer
@@ -62,15 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
- **optional** | ***ActionDiskTransferOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionDiskTransferOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
+  **diskTransfer** | [**DiskTransfer**](DiskTransfer.md)|  | 
 
 ### Return type
 
@@ -463,7 +455,7 @@ Optional parameters are passed through a pointer to a UpdateDiskOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
+ **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 

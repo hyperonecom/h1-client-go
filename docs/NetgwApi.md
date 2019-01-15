@@ -454,7 +454,7 @@ Optional parameters are passed through a pointer to a UpdateNetgwOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
+ **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
 
 ### Return type
 

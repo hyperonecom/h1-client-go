@@ -1937,12 +1937,12 @@ Returns modified netgw
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param optional nil or *UpdateNetgwOpts - Optional Parameters:
- * @param "InlineObject10" (optional.Interface of InlineObject10) - 
+ * @param "InlineObject8" (optional.Interface of InlineObject8) - 
 @return Netgw
 */
 
 type UpdateNetgwOpts struct {
-	InlineObject10 optional.Interface
+	InlineObject8 optional.Interface
 }
 
 func (a *NetgwApiService) UpdateNetgw(ctx context.Context, netgwId string, localVarOptionals *UpdateNetgwOpts) (Netgw, *http.Response, error) {
@@ -1981,12 +1981,12 @@ func (a *NetgwApiService) UpdateNetgw(ctx context.Context, netgwId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject10.IsSet() {
-		localVarOptionalInlineObject10, localVarOptionalInlineObject10ok := localVarOptionals.InlineObject10.Value().(InlineObject10)
-		if !localVarOptionalInlineObject10ok {
-			return localVarReturnValue, nil, reportError("inlineObject10 should be InlineObject10")
+	if localVarOptionals != nil && localVarOptionals.InlineObject8.IsSet() {
+		localVarOptionalInlineObject8, localVarOptionalInlineObject8ok := localVarOptionals.InlineObject8.Value().(InlineObject8)
+		if !localVarOptionalInlineObject8ok {
+			return localVarReturnValue, nil, reportError("inlineObject8 should be InlineObject8")
 		}
-		localVarPostBody = &localVarOptionalInlineObject10
+		localVarPostBody = &localVarOptionalInlineObject8
 	}
 
 	if ctx != nil {

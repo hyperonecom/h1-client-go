@@ -285,16 +285,10 @@ FirewallApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
- * @param optional nil or *ActionFirewallTransferOpts - Optional Parameters:
- * @param "InlineObject5" (optional.Interface of InlineObject5) - 
+ * @param firewallTransfer
 @return Firewall
 */
-
-type ActionFirewallTransferOpts struct {
-	InlineObject5 optional.Interface
-}
-
-func (a *FirewallApiService) ActionFirewallTransfer(ctx context.Context, firewallId string, localVarOptionals *ActionFirewallTransferOpts) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) ActionFirewallTransfer(ctx context.Context, firewallId string, firewallTransfer FirewallTransfer) (Firewall, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -330,14 +324,7 @@ func (a *FirewallApiService) ActionFirewallTransfer(ctx context.Context, firewal
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject5.IsSet() {
-		localVarOptionalInlineObject5, localVarOptionalInlineObject5ok := localVarOptionals.InlineObject5.Value().(InlineObject5)
-		if !localVarOptionalInlineObject5ok {
-			return localVarReturnValue, nil, reportError("inlineObject5 should be InlineObject5")
-		}
-		localVarPostBody = &localVarOptionalInlineObject5
-	}
-
+	localVarPostBody = &firewallTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2716,12 +2703,12 @@ FirewallApiService /egress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *OperationFirewallPostegressOpts - Optional Parameters:
- * @param "InlineObject7" (optional.Interface of InlineObject7) - 
+ * @param "InlineObject5" (optional.Interface of InlineObject5) - 
 @return InlineResponse200
 */
 
 type OperationFirewallPostegressOpts struct {
-	InlineObject7 optional.Interface
+	InlineObject5 optional.Interface
 }
 
 func (a *FirewallApiService) OperationFirewallPostegress(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPostegressOpts) (InlineResponse200, *http.Response, error) {
@@ -2760,12 +2747,12 @@ func (a *FirewallApiService) OperationFirewallPostegress(ctx context.Context, fi
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject7.IsSet() {
-		localVarOptionalInlineObject7, localVarOptionalInlineObject7ok := localVarOptionals.InlineObject7.Value().(InlineObject7)
-		if !localVarOptionalInlineObject7ok {
-			return localVarReturnValue, nil, reportError("inlineObject7 should be InlineObject7")
+	if localVarOptionals != nil && localVarOptionals.InlineObject5.IsSet() {
+		localVarOptionalInlineObject5, localVarOptionalInlineObject5ok := localVarOptionals.InlineObject5.Value().(InlineObject5)
+		if !localVarOptionalInlineObject5ok {
+			return localVarReturnValue, nil, reportError("inlineObject5 should be InlineObject5")
 		}
-		localVarPostBody = &localVarOptionalInlineObject7
+		localVarPostBody = &localVarOptionalInlineObject5
 	}
 
 	if ctx != nil {
@@ -2858,12 +2845,12 @@ FirewallApiService /ingress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *OperationFirewallPostingressOpts - Optional Parameters:
- * @param "InlineObject6" (optional.Interface of InlineObject6) - 
+ * @param "InlineObject4" (optional.Interface of InlineObject4) - 
 @return InlineResponse200
 */
 
 type OperationFirewallPostingressOpts struct {
-	InlineObject6 optional.Interface
+	InlineObject4 optional.Interface
 }
 
 func (a *FirewallApiService) OperationFirewallPostingress(ctx context.Context, firewallId string, localVarOptionals *OperationFirewallPostingressOpts) (InlineResponse200, *http.Response, error) {
@@ -2902,12 +2889,12 @@ func (a *FirewallApiService) OperationFirewallPostingress(ctx context.Context, f
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject6.IsSet() {
-		localVarOptionalInlineObject6, localVarOptionalInlineObject6ok := localVarOptionals.InlineObject6.Value().(InlineObject6)
-		if !localVarOptionalInlineObject6ok {
-			return localVarReturnValue, nil, reportError("inlineObject6 should be InlineObject6")
+	if localVarOptionals != nil && localVarOptionals.InlineObject4.IsSet() {
+		localVarOptionalInlineObject4, localVarOptionalInlineObject4ok := localVarOptionals.InlineObject4.Value().(InlineObject4)
+		if !localVarOptionalInlineObject4ok {
+			return localVarReturnValue, nil, reportError("inlineObject4 should be InlineObject4")
 		}
-		localVarPostBody = &localVarOptionalInlineObject6
+		localVarPostBody = &localVarOptionalInlineObject4
 	}
 
 	if ctx != nil {
@@ -3128,12 +3115,12 @@ Returns modified firewall
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param optional nil or *UpdateFirewallOpts - Optional Parameters:
- * @param "InlineObject4" (optional.Interface of InlineObject4) - 
+ * @param "InlineObject3" (optional.Interface of InlineObject3) - 
 @return Firewall
 */
 
 type UpdateFirewallOpts struct {
-	InlineObject4 optional.Interface
+	InlineObject3 optional.Interface
 }
 
 func (a *FirewallApiService) UpdateFirewall(ctx context.Context, firewallId string, localVarOptionals *UpdateFirewallOpts) (Firewall, *http.Response, error) {
@@ -3172,12 +3159,12 @@ func (a *FirewallApiService) UpdateFirewall(ctx context.Context, firewallId stri
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject4.IsSet() {
-		localVarOptionalInlineObject4, localVarOptionalInlineObject4ok := localVarOptionals.InlineObject4.Value().(InlineObject4)
-		if !localVarOptionalInlineObject4ok {
-			return localVarReturnValue, nil, reportError("inlineObject4 should be InlineObject4")
+	if localVarOptionals != nil && localVarOptionals.InlineObject3.IsSet() {
+		localVarOptionalInlineObject3, localVarOptionalInlineObject3ok := localVarOptionals.InlineObject3.Value().(InlineObject3)
+		if !localVarOptionalInlineObject3ok {
+			return localVarReturnValue, nil, reportError("inlineObject3 should be InlineObject3")
 		}
-		localVarPostBody = &localVarOptionalInlineObject4
+		localVarPostBody = &localVarOptionalInlineObject3
 	}
 
 	if ctx != nil {

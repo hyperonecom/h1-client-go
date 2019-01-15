@@ -483,7 +483,7 @@ Optional parameters are passed through a pointer to a UpdateContainerOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
+ **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 

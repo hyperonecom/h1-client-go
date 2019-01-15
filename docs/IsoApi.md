@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **ActionIsoTransfer**
-> Iso ActionIsoTransfer(ctx, isoId, optional)
+> Iso ActionIsoTransfer(ctx, isoId, isoTransfer)
 /actions/transfer
 
 Action transfer
@@ -33,15 +33,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
- **optional** | ***ActionIsoTransferOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionIsoTransferOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
+  **isoTransfer** | [**IsoTransfer**](IsoTransfer.md)|  | 
 
 ### Return type
 
@@ -434,7 +426,7 @@ Optional parameters are passed through a pointer to a UpdateIsoOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
+ **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 

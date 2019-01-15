@@ -1933,12 +1933,12 @@ NetworkApiService /ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param optional nil or *OperationNetworkPostipOpts - Optional Parameters:
- * @param "InlineObject9" (optional.Interface of InlineObject9) - 
+ * @param "InlineObject7" (optional.Interface of InlineObject7) - 
 @return Ip
 */
 
 type OperationNetworkPostipOpts struct {
-	InlineObject9 optional.Interface
+	InlineObject7 optional.Interface
 }
 
 func (a *NetworkApiService) OperationNetworkPostip(ctx context.Context, networkId string, localVarOptionals *OperationNetworkPostipOpts) (Ip, *http.Response, error) {
@@ -1977,12 +1977,12 @@ func (a *NetworkApiService) OperationNetworkPostip(ctx context.Context, networkI
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject9.IsSet() {
-		localVarOptionalInlineObject9, localVarOptionalInlineObject9ok := localVarOptionals.InlineObject9.Value().(InlineObject9)
-		if !localVarOptionalInlineObject9ok {
-			return localVarReturnValue, nil, reportError("inlineObject9 should be InlineObject9")
+	if localVarOptionals != nil && localVarOptionals.InlineObject7.IsSet() {
+		localVarOptionalInlineObject7, localVarOptionalInlineObject7ok := localVarOptionals.InlineObject7.Value().(InlineObject7)
+		if !localVarOptionalInlineObject7ok {
+			return localVarReturnValue, nil, reportError("inlineObject7 should be InlineObject7")
 		}
-		localVarPostBody = &localVarOptionalInlineObject9
+		localVarPostBody = &localVarOptionalInlineObject7
 	}
 
 	if ctx != nil {
@@ -2203,12 +2203,12 @@ Returns modified network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param optional nil or *UpdateNetworkOpts - Optional Parameters:
- * @param "InlineObject8" (optional.Interface of InlineObject8) - 
+ * @param "InlineObject6" (optional.Interface of InlineObject6) - 
 @return Network
 */
 
 type UpdateNetworkOpts struct {
-	InlineObject8 optional.Interface
+	InlineObject6 optional.Interface
 }
 
 func (a *NetworkApiService) UpdateNetwork(ctx context.Context, networkId string, localVarOptionals *UpdateNetworkOpts) (Network, *http.Response, error) {
@@ -2247,12 +2247,12 @@ func (a *NetworkApiService) UpdateNetwork(ctx context.Context, networkId string,
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject8.IsSet() {
-		localVarOptionalInlineObject8, localVarOptionalInlineObject8ok := localVarOptionals.InlineObject8.Value().(InlineObject8)
-		if !localVarOptionalInlineObject8ok {
-			return localVarReturnValue, nil, reportError("inlineObject8 should be InlineObject8")
+	if localVarOptionals != nil && localVarOptionals.InlineObject6.IsSet() {
+		localVarOptionalInlineObject6, localVarOptionalInlineObject6ok := localVarOptionals.InlineObject6.Value().(InlineObject6)
+		if !localVarOptionalInlineObject6ok {
+			return localVarReturnValue, nil, reportError("inlineObject6 should be InlineObject6")
 		}
-		localVarPostBody = &localVarOptionalInlineObject8
+		localVarPostBody = &localVarOptionalInlineObject6
 	}
 
 	if ctx != nil {

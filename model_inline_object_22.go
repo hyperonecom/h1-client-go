@@ -10,5 +10,5 @@
 package openapi
 
 type InlineObject22 struct {
-	PtrRecord string `json:"ptrRecord,omitempty"`
+	Name string `json:"name,omitempty"`
 }

@@ -158,16 +158,10 @@ DiskApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
- * @param optional nil or *ActionDiskTransferOpts - Optional Parameters:
- * @param "InlineObject14" (optional.Interface of InlineObject14) - 
+ * @param diskTransfer
 @return Disk
 */
-
-type ActionDiskTransferOpts struct {
-	InlineObject14 optional.Interface
-}
-
-func (a *DiskApiService) ActionDiskTransfer(ctx context.Context, diskId string, localVarOptionals *ActionDiskTransferOpts) (Disk, *http.Response, error) {
+func (a *DiskApiService) ActionDiskTransfer(ctx context.Context, diskId string, diskTransfer DiskTransfer) (Disk, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -203,14 +197,7 @@ func (a *DiskApiService) ActionDiskTransfer(ctx context.Context, diskId string, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject14.IsSet() {
-		localVarOptionalInlineObject14, localVarOptionalInlineObject14ok := localVarOptionals.InlineObject14.Value().(InlineObject14)
-		if !localVarOptionalInlineObject14ok {
-			return localVarReturnValue, nil, reportError("inlineObject14 should be InlineObject14")
-		}
-		localVarPostBody = &localVarOptionalInlineObject14
-	}
-
+	localVarPostBody = &diskTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1953,12 +1940,12 @@ Returns modified disk
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param optional nil or *UpdateDiskOpts - Optional Parameters:
- * @param "InlineObject13" (optional.Interface of InlineObject13) - 
+ * @param "InlineObject10" (optional.Interface of InlineObject10) - 
 @return Disk
 */
 
 type UpdateDiskOpts struct {
-	InlineObject13 optional.Interface
+	InlineObject10 optional.Interface
 }
 
 func (a *DiskApiService) UpdateDisk(ctx context.Context, diskId string, localVarOptionals *UpdateDiskOpts) (Disk, *http.Response, error) {
@@ -1997,12 +1984,12 @@ func (a *DiskApiService) UpdateDisk(ctx context.Context, diskId string, localVar
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject13.IsSet() {
-		localVarOptionalInlineObject13, localVarOptionalInlineObject13ok := localVarOptionals.InlineObject13.Value().(InlineObject13)
-		if !localVarOptionalInlineObject13ok {
-			return localVarReturnValue, nil, reportError("inlineObject13 should be InlineObject13")
+	if localVarOptionals != nil && localVarOptionals.InlineObject10.IsSet() {
+		localVarOptionalInlineObject10, localVarOptionalInlineObject10ok := localVarOptionals.InlineObject10.Value().(InlineObject10)
+		if !localVarOptionalInlineObject10ok {
+			return localVarReturnValue, nil, reportError("inlineObject10 should be InlineObject10")
 		}
-		localVarPostBody = &localVarOptionalInlineObject13
+		localVarPostBody = &localVarOptionalInlineObject10
 	}
 
 	if ctx != nil {

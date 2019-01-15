@@ -10,6 +10,6 @@
 package openapi
 
 type InlineObject9 struct {
-	Address string `json:"address,omitempty"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
+	Name string `json:"name,omitempty"`
+	Description string `json:"description,omitempty"`
 }

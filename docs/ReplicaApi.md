@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **ActionReplicaImage**
-> Replica ActionReplicaImage(ctx, replicaId, optional)
+> Replica ActionReplicaImage(ctx, replicaId, replicaImage)
 /actions/image
 
 Action image
@@ -32,15 +32,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
- **optional** | ***ActionReplicaImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionReplicaImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
+  **replicaImage** | [**ReplicaImage**](ReplicaImage.md)|  | 
 
 ### Return type
 

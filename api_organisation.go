@@ -31,16 +31,10 @@ OrganisationApiService /actions/transfer_accept
 Action transfer_accept
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param optional nil or *ActionOrganisationTransferAcceptOpts - Optional Parameters:
- * @param "InlineObject2" (optional.Interface of InlineObject2) - 
+ * @param organisationTransferAccept
 @return Organisation
 */
-
-type ActionOrganisationTransferAcceptOpts struct {
-	InlineObject2 optional.Interface
-}
-
-func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Context, organisationId string, localVarOptionals *ActionOrganisationTransferAcceptOpts) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Context, organisationId string, organisationTransferAccept OrganisationTransferAccept) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -76,14 +70,7 @@ func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject2.IsSet() {
-		localVarOptionalInlineObject2, localVarOptionalInlineObject2ok := localVarOptionals.InlineObject2.Value().(InlineObject2)
-		if !localVarOptionalInlineObject2ok {
-			return localVarReturnValue, nil, reportError("inlineObject2 should be InlineObject2")
-		}
-		localVarPostBody = &localVarOptionalInlineObject2
-	}
-
+	localVarPostBody = &organisationTransferAccept
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

@@ -31,16 +31,10 @@ ReplicaApiService /actions/image
 Action image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
- * @param optional nil or *ActionReplicaImageOpts - Optional Parameters:
- * @param "InlineObject42" (optional.Interface of InlineObject42) - 
+ * @param replicaImage
 @return Replica
 */
-
-type ActionReplicaImageOpts struct {
-	InlineObject42 optional.Interface
-}
-
-func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId string, localVarOptionals *ActionReplicaImageOpts) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId string, replicaImage ReplicaImage) (Replica, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -76,14 +70,7 @@ func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject42.IsSet() {
-		localVarOptionalInlineObject42, localVarOptionalInlineObject42ok := localVarOptionals.InlineObject42.Value().(InlineObject42)
-		if !localVarOptionalInlineObject42ok {
-			return localVarReturnValue, nil, reportError("inlineObject42 should be InlineObject42")
-		}
-		localVarPostBody = &localVarOptionalInlineObject42
-	}
-
+	localVarPostBody = &replicaImage
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

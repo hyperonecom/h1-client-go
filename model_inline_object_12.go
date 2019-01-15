@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject12 struct {
-	Project string `json:"project"`
+	UserMetadata string `json:"userMetadata,omitempty"`
+	Name string `json:"name,omitempty"`
 }

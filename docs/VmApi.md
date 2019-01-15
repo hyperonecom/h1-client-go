@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionVmImage**
-> Vm ActionVmImage(ctx, vmId, optional)
+> Vm ActionVmImage(ctx, vmId, vmImage)
 /actions/image
 
 Action image
@@ -74,15 +74,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***ActionVmImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
+  **vmImage** | [**VmImage**](VmImage.md)|  | 
 
 ### Return type
 
@@ -100,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionVmPasswordReset**
-> Vm ActionVmPasswordReset(ctx, vmId, optional)
+> Vm ActionVmPasswordReset(ctx, vmId, vmPasswordReset)
 /actions/password_reset
 
 Action password_reset
@@ -111,15 +103,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***ActionVmPasswordResetOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmPasswordResetOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
+  **vmPasswordReset** | [**VmPasswordReset**](VmPasswordReset.md)|  | 
 
 ### Return type
 
@@ -727,7 +711,7 @@ Optional parameters are passed through a pointer to a OperationVmPosthddOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
+ **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 
@@ -762,7 +746,7 @@ Optional parameters are passed through a pointer to a OperationVmPostnetadpOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
+ **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -827,7 +811,7 @@ Optional parameters are passed through a pointer to a UpdateVmOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
+ **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 

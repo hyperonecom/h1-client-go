@@ -10,6 +10,5 @@
 package openapi
 
 type InlineObject2 struct {
-	Payment string `json:"payment"`
-	Project string `json:"project"`
+	Name string `json:"name,omitempty"`
 }

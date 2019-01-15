@@ -10,5 +10,10 @@
 package openapi
 
 type InlineObject5 struct {
-	Project string `json:"project"`
+	Name string `json:"name,omitempty"`
+	Action string `json:"action,omitempty"`
+	Priority float32 `json:"priority,omitempty"`
+	Filter []string `json:"filter,omitempty"`
+	External []string `json:"external,omitempty"`
+	Internal []string `json:"internal,omitempty"`
 }

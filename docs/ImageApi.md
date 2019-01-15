@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **ActionImageTransfer**
-> Image ActionImageTransfer(ctx, imageId, optional)
+> Image ActionImageTransfer(ctx, imageId, imageTransfer)
 /actions/transfer
 
 Action transfer
@@ -33,15 +33,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
- **optional** | ***ActionImageTransferOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionImageTransferOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
+  **imageTransfer** | [**ImageTransfer**](ImageTransfer.md)|  | 
 
 ### Return type
 
@@ -434,7 +426,7 @@ Optional parameters are passed through a pointer to a UpdateImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
+ **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 

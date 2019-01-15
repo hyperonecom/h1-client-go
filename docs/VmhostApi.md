@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **ActionVmhostMoveDisk**
-> Vmhost ActionVmhostMoveDisk(ctx, vmhostId, optional)
+> Vmhost ActionVmhostMoveDisk(ctx, vmhostId, vmhostMoveDisk)
 /actions/moveDisk
 
 Action moveDisk
@@ -35,15 +35,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***ActionVmhostMoveDiskOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmhostMoveDiskOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
+  **vmhostMoveDisk** | [**VmhostMoveDisk**](VmhostMoveDisk.md)|  | 
 
 ### Return type
 
@@ -61,7 +53,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionVmhostMoveISO**
-> Vmhost ActionVmhostMoveISO(ctx, vmhostId, optional)
+> Vmhost ActionVmhostMoveISO(ctx, vmhostId, vmhostMoveIso)
 /actions/moveISO
 
 Action moveISO
@@ -72,15 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***ActionVmhostMoveISOOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmhostMoveISOOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
+  **vmhostMoveIso** | [**VmhostMoveIso**](VmhostMoveIso.md)|  | 
 
 ### Return type
 
@@ -98,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionVmhostMoveImage**
-> Vmhost ActionVmhostMoveImage(ctx, vmhostId, optional)
+> Vmhost ActionVmhostMoveImage(ctx, vmhostId, vmhostMoveImage)
 /actions/moveImage
 
 Action moveImage
@@ -109,15 +93,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***ActionVmhostMoveImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmhostMoveImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
+  **vmhostMoveImage** | [**VmhostMoveImage**](VmhostMoveImage.md)|  | 
 
 ### Return type
 
@@ -135,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ActionVmhostMoveVM**
-> Vmhost ActionVmhostMoveVM(ctx, vmhostId, optional)
+> Vmhost ActionVmhostMoveVM(ctx, vmhostId, vmhostMoveVm)
 /actions/moveVM
 
 Action moveVM
@@ -146,15 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***ActionVmhostMoveVMOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ActionVmhostMoveVMOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
+  **vmhostMoveVm** | [**VmhostMoveVm**](VmhostMoveVm.md)|  | 
 
 ### Return type
 
@@ -519,7 +487,7 @@ Optional parameters are passed through a pointer to a UpdateVmhostOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
+ **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
 
 ### Return type
 

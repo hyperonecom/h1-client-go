@@ -2064,12 +2064,12 @@ Returns modified container
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param optional nil or *UpdateContainerOpts - Optional Parameters:
- * @param "InlineObject3" (optional.Interface of InlineObject3) - 
+ * @param "InlineObject2" (optional.Interface of InlineObject2) - 
 @return Container
 */
 
 type UpdateContainerOpts struct {
-	InlineObject3 optional.Interface
+	InlineObject2 optional.Interface
 }
 
 func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId string, localVarOptionals *UpdateContainerOpts) (Container, *http.Response, error) {
@@ -2108,12 +2108,12 @@ func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId s
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject3.IsSet() {
-		localVarOptionalInlineObject3, localVarOptionalInlineObject3ok := localVarOptionals.InlineObject3.Value().(InlineObject3)
-		if !localVarOptionalInlineObject3ok {
-			return localVarReturnValue, nil, reportError("inlineObject3 should be InlineObject3")
+	if localVarOptionals != nil && localVarOptionals.InlineObject2.IsSet() {
+		localVarOptionalInlineObject2, localVarOptionalInlineObject2ok := localVarOptionals.InlineObject2.Value().(InlineObject2)
+		if !localVarOptionalInlineObject2ok {
+			return localVarReturnValue, nil, reportError("inlineObject2 should be InlineObject2")
 		}
-		localVarPostBody = &localVarOptionalInlineObject3
+		localVarPostBody = &localVarOptionalInlineObject2
 	}
 
 	if ctx != nil {

@@ -483,7 +483,7 @@ Optional parameters are passed through a pointer to a UpdateReservationOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
+ **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
 
 ### Return type
 
