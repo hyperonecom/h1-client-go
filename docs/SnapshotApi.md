@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationSnapshotPostaccessrights**
-> string OperationSnapshotPostaccessrights(ctx, snapshotId, optional)
+> string OperationSnapshotPostaccessrights(ctx, snapshotId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -332,15 +332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
- **optional** | ***OperationSnapshotPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationSnapshotPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject43** | [**optional.Interface of InlineObject43**](InlineObject43.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -405,7 +397,7 @@ Optional parameters are passed through a pointer to a UpdateSnapshotOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
+ **inlineObject29** | [**optional.Interface of InlineObject29**](InlineObject29.md)|  | 
 
 ### Return type
 

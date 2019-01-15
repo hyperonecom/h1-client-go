@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionImageTransferOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
+ **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationImagePostaccessrights**
-> string OperationImagePostaccessrights(ctx, imageId, optional)
+> string OperationImagePostaccessrights(ctx, imageId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -369,15 +369,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
- **optional** | ***OperationImagePostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationImagePostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -442,7 +434,7 @@ Optional parameters are passed through a pointer to a UpdateImageOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
+ **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 

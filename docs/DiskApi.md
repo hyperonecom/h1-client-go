@@ -70,7 +70,7 @@ Optional parameters are passed through a pointer to a ActionDiskTransferOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
+ **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationDiskPostaccessrights**
-> string OperationDiskPostaccessrights(ctx, diskId, optional)
+> string OperationDiskPostaccessrights(ctx, diskId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -398,15 +398,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
- **optional** | ***OperationDiskPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationDiskPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -471,7 +463,7 @@ Optional parameters are passed through a pointer to a UpdateDiskOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
+ **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 

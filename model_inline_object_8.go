@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject8 struct {
-	Project string `json:"project"`
+	Name string `json:"name,omitempty"`
+	Gateway string `json:"gateway,omitempty"`
 }

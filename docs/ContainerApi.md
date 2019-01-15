@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationContainerPostaccessrights**
-> string OperationContainerPostaccessrights(ctx, containerId, optional)
+> string OperationContainerPostaccessrights(ctx, containerId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -418,15 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **containerId** | **string**| ID of container | 
- **optional** | ***OperationContainerPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationContainerPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -491,7 +483,7 @@ Optional parameters are passed through a pointer to a UpdateContainerOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
+ **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 

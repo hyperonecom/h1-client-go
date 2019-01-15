@@ -40,7 +40,7 @@ Optional parameters are passed through a pointer to a ActionReplicaImageOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject59** | [**optional.Interface of InlineObject59**](InlineObject59.md)|  | 
+ **inlineObject42** | [**optional.Interface of InlineObject42**](InlineObject42.md)|  | 
 
 ### Return type
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationReplicaPostaccessrights**
-> string OperationReplicaPostaccessrights(ctx, replicaId, optional)
+> string OperationReplicaPostaccessrights(ctx, replicaId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -368,15 +368,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
- **optional** | ***OperationReplicaPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationReplicaPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject60** | [**optional.Interface of InlineObject60**](InlineObject60.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 

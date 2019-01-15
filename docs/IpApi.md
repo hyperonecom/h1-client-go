@@ -157,7 +157,7 @@ Optional parameters are passed through a pointer to a ActionIpTransferOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
+ **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
 
 ### Return type
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIpPostaccessrights**
-> string OperationIpPostaccessrights(ctx, ipId, optional)
+> string OperationIpPostaccessrights(ctx, ipId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -485,15 +485,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
- **optional** | ***OperationIpPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationIpPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -558,7 +550,7 @@ Optional parameters are passed through a pointer to a UpdateIpOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
+ **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
 
 ### Return type
 

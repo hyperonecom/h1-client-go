@@ -10,7 +10,7 @@
 package openapi
 
 type InlineObject27 struct {
-	UserName string `json:"userName"`
-	Modulus string `json:"modulus"`
-	Exponent string `json:"exponent"`
+	Name string `json:"name,omitempty"`
+	Type string `json:"type,omitempty"`
+	Value string `json:"value,omitempty"`
 }

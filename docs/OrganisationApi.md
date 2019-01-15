@@ -38,7 +38,7 @@ Optional parameters are passed through a pointer to a ActionOrganisationTransfer
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
+ **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationOrganisationPostaccessrights**
-> OrganisationAccessRights OperationOrganisationPostaccessrights(ctx, organisationId, optional)
+> OrganisationAccessRights OperationOrganisationPostaccessrights(ctx, organisationId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -290,15 +290,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **organisationId** | **string**| ID of organisation | 
- **optional** | ***OperationOrganisationPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationOrganisationPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -363,7 +355,7 @@ Optional parameters are passed through a pointer to a UpdateOrganisationOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
+ **inlineObject1** | [**optional.Interface of InlineObject1**](InlineObject1.md)|  | 
 
 ### Return type
 

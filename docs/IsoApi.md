@@ -41,7 +41,7 @@ Optional parameters are passed through a pointer to a ActionIsoTransferOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
+ **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
 
 ### Return type
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationIsoPostaccessrights**
-> string OperationIsoPostaccessrights(ctx, isoId, optional)
+> string OperationIsoPostaccessrights(ctx, isoId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -369,15 +369,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
- **optional** | ***OperationIsoPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationIsoPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -442,7 +434,7 @@ Optional parameters are passed through a pointer to a UpdateIsoOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
+ **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
 
 ### Return type
 

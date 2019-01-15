@@ -43,7 +43,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveDiskOpts s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject55** | [**optional.Interface of InlineObject55**](InlineObject55.md)|  | 
+ **inlineObject39** | [**optional.Interface of InlineObject39**](InlineObject39.md)|  | 
 
 ### Return type
 
@@ -80,7 +80,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveISOOpts st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject56** | [**optional.Interface of InlineObject56**](InlineObject56.md)|  | 
+ **inlineObject40** | [**optional.Interface of InlineObject40**](InlineObject40.md)|  | 
 
 ### Return type
 
@@ -117,7 +117,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveImageOpts 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject57** | [**optional.Interface of InlineObject57**](InlineObject57.md)|  | 
+ **inlineObject41** | [**optional.Interface of InlineObject41**](InlineObject41.md)|  | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ Optional parameters are passed through a pointer to a ActionVmhostMoveVMOpts str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject54** | [**optional.Interface of InlineObject54**](InlineObject54.md)|  | 
+ **inlineObject38** | [**optional.Interface of InlineObject38**](InlineObject38.md)|  | 
 
 ### Return type
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationVmhostPostaccessrights**
-> string OperationVmhostPostaccessrights(ctx, vmhostId, optional)
+> string OperationVmhostPostaccessrights(ctx, vmhostId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -454,15 +454,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***OperationVmhostPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVmhostPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject58** | [**optional.Interface of InlineObject58**](InlineObject58.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -527,7 +519,7 @@ Optional parameters are passed through a pointer to a UpdateVmhostOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject53** | [**optional.Interface of InlineObject53**](InlineObject53.md)|  | 
+ **inlineObject37** | [**optional.Interface of InlineObject37**](InlineObject37.md)|  | 
 
 ### Return type
 

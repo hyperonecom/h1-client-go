@@ -1197,16 +1197,10 @@ func (a *NetadpApiService) OperationNetadpPatchtag(ctx context.Context, netadpId
 NetadpApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
- * @param optional nil or *OperationNetadpPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject35" (optional.Interface of InlineObject35) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationNetadpPostaccessrightsOpts struct {
-	InlineObject35 optional.Interface
-}
-
-func (a *NetadpApiService) OperationNetadpPostaccessrights(ctx context.Context, netadpId string, localVarOptionals *OperationNetadpPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *NetadpApiService) OperationNetadpPostaccessrights(ctx context.Context, netadpId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1242,14 +1236,7 @@ func (a *NetadpApiService) OperationNetadpPostaccessrights(ctx context.Context, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject35.IsSet() {
-		localVarOptionalInlineObject35, localVarOptionalInlineObject35ok := localVarOptionals.InlineObject35.Value().(InlineObject35)
-		if !localVarOptionalInlineObject35ok {
-			return localVarReturnValue, nil, reportError("inlineObject35 should be InlineObject35")
-		}
-		localVarPostBody = &localVarOptionalInlineObject35
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

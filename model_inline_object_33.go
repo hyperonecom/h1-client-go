@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject33 struct {
-	Project string `json:"project"`
+	Name string `json:"name"`
+	Type string `json:"type"`
+	Value string `json:"value"`
 }

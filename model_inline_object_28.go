@@ -10,7 +10,5 @@
 package openapi
 
 type InlineObject28 struct {
-	Service string `json:"service"`
-	Description string `json:"description,omitempty"`
 	Name string `json:"name,omitempty"`
 }

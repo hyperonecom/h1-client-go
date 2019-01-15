@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetworkPostaccessrights**
-> string OperationNetworkPostaccessrights(ctx, networkId, optional)
+> string OperationNetworkPostaccessrights(ctx, networkId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -413,15 +413,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
- **optional** | ***OperationNetworkPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetworkPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -456,7 +448,7 @@ Optional parameters are passed through a pointer to a OperationNetworkPostipOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
+ **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 
@@ -521,7 +513,7 @@ Optional parameters are passed through a pointer to a UpdateNetworkOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
+ **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
 
 ### Return type
 

@@ -1806,16 +1806,10 @@ func (a *ReservationApiService) OperationReservationPatchtag(ctx context.Context
 ReservationApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
- * @param optional nil or *OperationReservationPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject45" (optional.Interface of InlineObject45) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationReservationPostaccessrightsOpts struct {
-	InlineObject45 optional.Interface
-}
-
-func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context.Context, reservationId string, localVarOptionals *OperationReservationPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context.Context, reservationId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1851,14 +1845,7 @@ func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject45.IsSet() {
-		localVarOptionalInlineObject45, localVarOptionalInlineObject45ok := localVarOptionals.InlineObject45.Value().(InlineObject45)
-		if !localVarOptionalInlineObject45ok {
-			return localVarReturnValue, nil, reportError("inlineObject45 should be InlineObject45")
-		}
-		localVarPostBody = &localVarOptionalInlineObject45
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2077,12 +2064,12 @@ Returns modified reservation
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
  * @param optional nil or *UpdateReservationOpts - Optional Parameters:
- * @param "InlineObject44" (optional.Interface of InlineObject44) - 
+ * @param "InlineObject30" (optional.Interface of InlineObject30) - 
 @return Reservation
 */
 
 type UpdateReservationOpts struct {
-	InlineObject44 optional.Interface
+	InlineObject30 optional.Interface
 }
 
 func (a *ReservationApiService) UpdateReservation(ctx context.Context, reservationId string, localVarOptionals *UpdateReservationOpts) (Reservation, *http.Response, error) {
@@ -2121,12 +2108,12 @@ func (a *ReservationApiService) UpdateReservation(ctx context.Context, reservati
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject44.IsSet() {
-		localVarOptionalInlineObject44, localVarOptionalInlineObject44ok := localVarOptionals.InlineObject44.Value().(InlineObject44)
-		if !localVarOptionalInlineObject44ok {
-			return localVarReturnValue, nil, reportError("inlineObject44 should be InlineObject44")
+	if localVarOptionals != nil && localVarOptionals.InlineObject30.IsSet() {
+		localVarOptionalInlineObject30, localVarOptionalInlineObject30ok := localVarOptionals.InlineObject30.Value().(InlineObject30)
+		if !localVarOptionalInlineObject30ok {
+			return localVarReturnValue, nil, reportError("inlineObject30 should be InlineObject30")
 		}
-		localVarPostBody = &localVarOptionalInlineObject44
+		localVarPostBody = &localVarOptionalInlineObject30
 	}
 
 	if ctx != nil {

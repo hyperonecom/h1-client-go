@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject35 struct {
-	Identity string `json:"identity,omitempty"`
+	Name string `json:"name,omitempty"`
+	Type string `json:"type,omitempty"`
+	Value string `json:"value,omitempty"`
 }

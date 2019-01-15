@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationProjectPostaccessrights**
-> ProjectAccessRights OperationProjectPostaccessrights(ctx, projectId, optional)
+> ProjectAccessRights OperationProjectPostaccessrights(ctx, projectId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -307,15 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **projectId** | **string**| ID of project | 
- **optional** | ***OperationProjectPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationProjectPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject1** | [**optional.Interface of InlineObject1**](InlineObject1.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 

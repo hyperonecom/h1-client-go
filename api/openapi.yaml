@@ -214,14 +214,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_1'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -631,7 +627,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_2'
+        $ref: '#/components/requestBodies/inline_object_1'
         content:
           application/json:
             schema:
@@ -675,7 +671,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_3'
+        $ref: '#/components/requestBodies/inline_object_2'
         content:
           application/json:
             schema:
@@ -753,14 +749,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_4'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -1098,7 +1090,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_5'
+        $ref: '#/components/requestBodies/inline_object_3'
         content:
           application/json:
             schema:
@@ -1267,14 +1259,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_6'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -1684,7 +1672,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_7'
+        $ref: '#/components/requestBodies/inline_object_4'
         content:
           application/json:
             schema:
@@ -1790,7 +1778,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_8'
+        $ref: '#/components/requestBodies/inline_object_5'
         content:
           application/json:
             schema:
@@ -1865,7 +1853,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_9'
+        $ref: '#/components/requestBodies/inline_object_6'
         content:
           application/json:
             schema:
@@ -2031,7 +2019,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_10'
+        $ref: '#/components/requestBodies/inline_object_7'
         content:
           application/json:
             schema:
@@ -2197,14 +2185,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_11'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -2614,7 +2598,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_12'
+        $ref: '#/components/requestBodies/inline_object_8'
         content:
           application/json:
             schema:
@@ -2689,7 +2673,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_13'
+        $ref: '#/components/requestBodies/inline_object_9'
         content:
           application/json:
             schema:
@@ -2825,14 +2809,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -3242,7 +3222,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_15'
+        $ref: '#/components/requestBodies/inline_object_10'
         content:
           application/json:
             schema:
@@ -3379,14 +3359,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -3796,7 +3772,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_17'
+        $ref: '#/components/requestBodies/inline_object_11'
         content:
           application/json:
             schema:
@@ -3840,7 +3816,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_18'
+        $ref: '#/components/requestBodies/inline_object_12'
         content:
           application/json:
             schema:
@@ -3915,14 +3891,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -4332,7 +4304,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_20'
+        $ref: '#/components/requestBodies/inline_object_13'
         content:
           application/json:
             schema:
@@ -4406,7 +4378,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_21'
+        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
@@ -4481,14 +4453,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_22'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -4898,7 +4866,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_23'
+        $ref: '#/components/requestBodies/inline_object_15'
         content:
           application/json:
             schema:
@@ -4940,7 +4908,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_24'
+        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
@@ -5015,14 +4983,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_25'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -5432,7 +5396,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_26'
+        $ref: '#/components/requestBodies/inline_object_17'
         content:
           application/json:
             schema:
@@ -5636,7 +5600,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_27'
+        $ref: '#/components/requestBodies/inline_object_18'
         content:
           application/json:
             schema:
@@ -5686,7 +5650,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_28'
+        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
@@ -5798,7 +5762,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_29'
+        $ref: '#/components/requestBodies/inline_object_20'
         content:
           application/json:
             schema:
@@ -5962,7 +5926,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_30'
+        $ref: '#/components/requestBodies/inline_object_21'
         content:
           application/json:
             schema:
@@ -6050,14 +6014,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_31'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -6467,7 +6427,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_32'
+        $ref: '#/components/requestBodies/inline_object_22'
         content:
           application/json:
             schema:
@@ -6637,7 +6597,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_33'
+        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
@@ -6712,14 +6672,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_34'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -7117,14 +7073,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_35'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -7534,7 +7486,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_36'
+        $ref: '#/components/requestBodies/inline_object_24'
         content:
           application/json:
             schema:
@@ -7735,7 +7687,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_37'
+        $ref: '#/components/requestBodies/inline_object_25'
         content:
           application/json:
             schema:
@@ -7874,7 +7826,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_38'
+        $ref: '#/components/requestBodies/inline_object_26'
         content:
           application/json:
             schema:
@@ -7947,7 +7899,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_39'
+        $ref: '#/components/requestBodies/inline_object_27'
         content:
           application/json:
             schema:
@@ -8082,7 +8034,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_40'
+        $ref: '#/components/requestBodies/inline_object_28'
         content:
           application/json:
             schema:
@@ -8155,14 +8107,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_41'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -8580,7 +8528,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_42'
+        $ref: '#/components/requestBodies/inline_object_29'
         content:
           application/json:
             schema:
@@ -8653,14 +8601,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_43'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -9070,7 +9014,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_44'
+        $ref: '#/components/requestBodies/inline_object_30'
         content:
           application/json:
             schema:
@@ -9239,14 +9183,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_45'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -9656,7 +9596,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_46'
+        $ref: '#/components/requestBodies/inline_object_31'
         content:
           application/json:
             schema:
@@ -9698,7 +9638,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_47'
+        $ref: '#/components/requestBodies/inline_object_32'
         content:
           application/json:
             schema:
@@ -9773,7 +9713,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_48'
+        $ref: '#/components/requestBodies/inline_object_33'
         content:
           application/json:
             schema:
@@ -9912,7 +9852,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_49'
+        $ref: '#/components/requestBodies/inline_object_34'
         content:
           application/json:
             schema:
@@ -9985,7 +9925,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_50'
+        $ref: '#/components/requestBodies/inline_object_35'
         content:
           application/json:
             schema:
@@ -10120,7 +10060,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_51'
+        $ref: '#/components/requestBodies/inline_object_36'
         content:
           application/json:
             schema:
@@ -10193,14 +10133,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_52'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -10582,7 +10518,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_53'
+        $ref: '#/components/requestBodies/inline_object_37'
         content:
           application/json:
             schema:
@@ -10624,7 +10560,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_54'
+        $ref: '#/components/requestBodies/inline_object_38'
         content:
           application/json:
             schema:
@@ -10670,7 +10606,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_55'
+        $ref: '#/components/requestBodies/inline_object_39'
         content:
           application/json:
             schema:
@@ -10716,7 +10652,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_56'
+        $ref: '#/components/requestBodies/inline_object_40'
         content:
           application/json:
             schema:
@@ -10762,7 +10698,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_57'
+        $ref: '#/components/requestBodies/inline_object_41'
         content:
           application/json:
             schema:
@@ -10839,14 +10775,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_58'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -11257,7 +11189,7 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_59'
+        $ref: '#/components/requestBodies/inline_object_42'
         content:
           application/json:
             schema:
@@ -11335,14 +11267,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_60'
         content:
           application/json:
             schema:
-              properties:
-                identity:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/resource.accessRight'
         required: true
       responses:
         200:
@@ -11623,151 +11551,16 @@ paths:
       - replica
 components:
   requestBodies:
-    inline_object_50:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_50'
-    inline_object_52:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_52'
-    inline_object_51:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_51'
-    inline_object_10:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_10'
-    inline_object_54:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_54'
-    inline_object_53:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_53'
-    inline_object_12:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_12'
-    inline_object_56:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_56'
-    inline_object_11:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_11'
-    inline_object_55:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_55'
-    inline_object_14:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_14'
-    inline_object_58:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_58'
-    inline_object_13:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_13'
-    inline_object_57:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_57'
-    inline_object_16:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_16'
-    inline_object_15:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_15'
-    inline_object_59:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_59'
-    inline_object_41:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_41'
-    inline_object_40:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_40'
-    inline_object_43:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_43'
-    inline_object_42:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_42'
-    inline_object_45:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_45'
-    inline_object_44:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_44'
-    inline_object_47:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_47'
-    inline_object_46:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_46'
-    inline_object_49:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_49'
-    inline_object_48:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_48'
-    inline_object_39:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_39'
     inline_object_30:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_30'
+    inline_object_10:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_10'
     inline_object_32:
       content:
         application/json:
@@ -11778,31 +11571,61 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_31'
+    inline_object_12:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_12'
     inline_object_34:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_34'
+    inline_object_11:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_11'
     inline_object_33:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_33'
+    inline_object_14:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_14'
     inline_object_36:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_36'
+    inline_object_13:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_13'
     inline_object_35:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_35'
+    inline_object_16:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_16'
     inline_object_38:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_38'
+    inline_object_15:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_15'
     inline_object_37:
       content:
         application/json:
@@ -11823,11 +11646,16 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_1'
-    inline_object_60:
+    inline_object_41:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/inline_object_60'
+            $ref: '#/components/schemas/inline_object_41'
+    inline_object_40:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_40'
     inline_object_9:
       content:
         application/json:
@@ -11848,6 +11676,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_20'
+    inline_object_42:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_42'
     inline_object_7:
       content:
         application/json:
@@ -11918,6 +11751,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/inline_object_17'
+    inline_object_39:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object_39'
     inline_object_19:
       content:
         application/json:
@@ -14954,6 +14792,11 @@ components:
       - name
       - organisation
       type: object
+    resource.accessRight:
+      properties:
+        identity:
+          type: string
+      type: object
     organisationCreate:
       properties:
         name:
@@ -15220,11 +15063,6 @@ components:
         name:
           type: string
       type: object
-    inline_object_1:
-      properties:
-        identity:
-          type: string
-      type: object
     organisationorganisationId_billing_address:
       properties:
         city:
@@ -15241,14 +15079,14 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/organisationorganisationId_billing_address'
-    inline_object_2:
+    inline_object_1:
       properties:
         name:
           type: string
         billing:
           $ref: '#/components/schemas/organisationorganisationId_billing'
       type: object
-    inline_object_3:
+    inline_object_2:
       properties:
         payment:
           type: string
@@ -15258,27 +15096,17 @@ components:
       - payment
       - project
       type: object
+    inline_object_3:
+      properties:
+        name:
+          type: string
+      type: object
     inline_object_4:
       properties:
-        identity:
+        name:
           type: string
       type: object
     inline_object_5:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_6:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_7:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_8:
       properties:
         project:
           type: string
@@ -15341,7 +15169,7 @@ components:
       required:
       - action
       - priority
-    inline_object_9:
+    inline_object_6:
       properties:
         name:
           type: string
@@ -15362,7 +15190,7 @@ components:
             type: string
           type: array
       type: object
-    inline_object_10:
+    inline_object_7:
       properties:
         name:
           type: string
@@ -15383,29 +15211,50 @@ components:
             type: string
           type: array
       type: object
-    inline_object_11:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_12:
+    inline_object_8:
       properties:
         name:
           type: string
         gateway:
           type: string
       type: object
-    inline_object_13:
+    inline_object_9:
       properties:
         address:
           type: string
         tag:
           type: object
       type: object
+    inline_object_10:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_11:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+      type: object
+    inline_object_12:
+      properties:
+        project:
+          type: string
+      required:
+      - project
+      type: object
+    inline_object_13:
+      properties:
+        name:
+          type: string
+      type: object
     inline_object_14:
       properties:
-        identity:
+        project:
           type: string
+      required:
+      - project
       type: object
     inline_object_15:
       properties:
@@ -15414,70 +15263,19 @@ components:
       type: object
     inline_object_16:
       properties:
-        identity:
+        project:
           type: string
+      required:
+      - project
       type: object
     inline_object_17:
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-      type: object
-    inline_object_18:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_19:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_20:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_21:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_22:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_23:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_24:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_25:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_26:
       properties:
         userMetadata:
           type: string
         name:
           type: string
       type: object
-    inline_object_27:
+    inline_object_18:
       properties:
         userName:
           type: string
@@ -15490,7 +15288,7 @@ components:
       - modulus
       - userName
       type: object
-    inline_object_28:
+    inline_object_19:
       properties:
         service:
           format: ObjectId
@@ -15502,7 +15300,7 @@ components:
       required:
       - service
       type: object
-    inline_object_29:
+    inline_object_20:
       properties:
         disk:
           type: string
@@ -15511,7 +15309,7 @@ components:
       required:
       - disk
       type: object
-    inline_object_30:
+    inline_object_21:
       properties:
         service:
           format: ObjectId
@@ -15525,31 +15323,102 @@ components:
         vlanIds:
           type: string
       type: object
-    inline_object_31:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_32:
+    inline_object_22:
       properties:
         ptrRecord:
           type: string
       type: object
-    inline_object_33:
+    inline_object_23:
       properties:
         project:
           type: string
       required:
       - project
       type: object
+    inline_object_24:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_25:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    inline_object_26:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_27:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    inline_object_28:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_29:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_30:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_31:
+      properties:
+        name:
+          type: string
+      type: object
+    inline_object_32:
+      properties:
+        project:
+          type: string
+      required:
+      - project
+      type: object
+    inline_object_33:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
     inline_object_34:
       properties:
-        identity:
+        name:
           type: string
       type: object
     inline_object_35:
       properties:
-        identity:
+        name:
+          type: string
+        type:
+          type: string
+        value:
           type: string
       type: object
     inline_object_36:
@@ -15557,122 +15426,16 @@ components:
         name:
           type: string
       type: object
-    inline_object_37:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_38:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_39:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_40:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_41:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_42:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_43:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_44:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_45:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_46:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_47:
-      properties:
-        project:
-          type: string
-      required:
-      - project
-      type: object
-    inline_object_48:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_49:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_50:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_51:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_52:
-      properties:
-        identity:
-          type: string
-      type: object
     vmhostvmhostId_enabledServices:
       properties:
         0:
           type: string
-    inline_object_53:
+    inline_object_37:
       properties:
         enabledServices:
           $ref: '#/components/schemas/vmhostvmhostId_enabledServices'
       type: object
-    inline_object_54:
+    inline_object_38:
       properties:
         vm:
           type: string
@@ -15681,7 +15444,7 @@ components:
       required:
       - vm
       type: object
-    inline_object_55:
+    inline_object_39:
       properties:
         disk:
           type: string
@@ -15690,7 +15453,7 @@ components:
       required:
       - disk
       type: object
-    inline_object_56:
+    inline_object_40:
       properties:
         iso:
           type: string
@@ -15699,7 +15462,7 @@ components:
       required:
       - iso
       type: object
-    inline_object_57:
+    inline_object_41:
       properties:
         image:
           type: string
@@ -15708,12 +15471,7 @@ components:
       required:
       - image
       type: object
-    inline_object_58:
-      properties:
-        identity:
-          type: string
-      type: object
-    inline_object_59:
+    inline_object_42:
       properties:
         service:
           format: ObjectId
@@ -15722,11 +15480,6 @@ components:
           type: string
       required:
       - service
-      type: object
-    inline_object_60:
-      properties:
-        identity:
-          type: string
       type: object
     event_resource:
       example:

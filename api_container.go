@@ -1806,16 +1806,10 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 ContainerApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
- * @param optional nil or *OperationContainerPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject6" (optional.Interface of InlineObject6) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationContainerPostaccessrightsOpts struct {
-	InlineObject6 optional.Interface
-}
-
-func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Context, containerId string, localVarOptionals *OperationContainerPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Context, containerId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1851,14 +1845,7 @@ func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Con
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject6.IsSet() {
-		localVarOptionalInlineObject6, localVarOptionalInlineObject6ok := localVarOptionals.InlineObject6.Value().(InlineObject6)
-		if !localVarOptionalInlineObject6ok {
-			return localVarReturnValue, nil, reportError("inlineObject6 should be InlineObject6")
-		}
-		localVarPostBody = &localVarOptionalInlineObject6
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2077,12 +2064,12 @@ Returns modified container
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param optional nil or *UpdateContainerOpts - Optional Parameters:
- * @param "InlineObject5" (optional.Interface of InlineObject5) - 
+ * @param "InlineObject3" (optional.Interface of InlineObject3) - 
 @return Container
 */
 
 type UpdateContainerOpts struct {
-	InlineObject5 optional.Interface
+	InlineObject3 optional.Interface
 }
 
 func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId string, localVarOptionals *UpdateContainerOpts) (Container, *http.Response, error) {
@@ -2121,12 +2108,12 @@ func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId s
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject5.IsSet() {
-		localVarOptionalInlineObject5, localVarOptionalInlineObject5ok := localVarOptionals.InlineObject5.Value().(InlineObject5)
-		if !localVarOptionalInlineObject5ok {
-			return localVarReturnValue, nil, reportError("inlineObject5 should be InlineObject5")
+	if localVarOptionals != nil && localVarOptionals.InlineObject3.IsSet() {
+		localVarOptionalInlineObject3, localVarOptionalInlineObject3ok := localVarOptionals.InlineObject3.Value().(InlineObject3)
+		if !localVarOptionalInlineObject3ok {
+			return localVarReturnValue, nil, reportError("inlineObject3 should be InlineObject3")
 		}
-		localVarPostBody = &localVarOptionalInlineObject5
+		localVarPostBody = &localVarOptionalInlineObject3
 	}
 
 	if ctx != nil {

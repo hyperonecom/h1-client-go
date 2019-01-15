@@ -10,5 +10,6 @@
 package openapi
 
 type InlineObject40 struct {
-	Name string `json:"name,omitempty"`
+	Iso string `json:"iso"`
+	Vmhost string `json:"vmhost,omitempty"`
 }

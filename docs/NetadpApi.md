@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetadpPostaccessrights**
-> string OperationNetadpPostaccessrights(ctx, netadpId, optional)
+> string OperationNetadpPostaccessrights(ctx, netadpId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -275,15 +275,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netadpId** | **string**| ID of netadp | 
- **optional** | ***OperationNetadpPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetadpPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 

@@ -32,12 +32,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *ActionLogArchiveTransferOpts - Optional Parameters:
- * @param "InlineObject47" (optional.Interface of InlineObject47) - 
+ * @param "InlineObject32" (optional.Interface of InlineObject32) - 
 @return LogArchive
 */
 
 type ActionLogArchiveTransferOpts struct {
-	InlineObject47 optional.Interface
+	InlineObject32 optional.Interface
 }
 
 func (a *LogArchiveApiService) ActionLogArchiveTransfer(ctx context.Context, logArchiveId string, localVarOptionals *ActionLogArchiveTransferOpts) (LogArchive, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *LogArchiveApiService) ActionLogArchiveTransfer(ctx context.Context, log
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject47.IsSet() {
-		localVarOptionalInlineObject47, localVarOptionalInlineObject47ok := localVarOptionals.InlineObject47.Value().(InlineObject47)
-		if !localVarOptionalInlineObject47ok {
-			return localVarReturnValue, nil, reportError("inlineObject47 should be InlineObject47")
+	if localVarOptionals != nil && localVarOptionals.InlineObject32.IsSet() {
+		localVarOptionalInlineObject32, localVarOptionalInlineObject32ok := localVarOptionals.InlineObject32.Value().(InlineObject32)
+		if !localVarOptionalInlineObject32ok {
+			return localVarReturnValue, nil, reportError("inlineObject32 should be InlineObject32")
 		}
-		localVarPostBody = &localVarOptionalInlineObject47
+		localVarPostBody = &localVarOptionalInlineObject32
 	}
 
 	if ctx != nil {
@@ -2225,12 +2225,12 @@ LogArchiveApiService /credential/certificate/:id
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param optional nil or *OperationLogArchivePatchcredentialcertificateIdOpts - Optional Parameters:
- * @param "InlineObject51" (optional.Interface of InlineObject51) - 
+ * @param "InlineObject36" (optional.Interface of InlineObject36) - 
 @return CredentialCertificate
 */
 
 type OperationLogArchivePatchcredentialcertificateIdOpts struct {
-	InlineObject51 optional.Interface
+	InlineObject36 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePatchcredentialcertificateId(ctx context.Context, logArchiveId string, id string, localVarOptionals *OperationLogArchivePatchcredentialcertificateIdOpts) (CredentialCertificate, *http.Response, error) {
@@ -2270,12 +2270,12 @@ func (a *LogArchiveApiService) OperationLogArchivePatchcredentialcertificateId(c
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject51.IsSet() {
-		localVarOptionalInlineObject51, localVarOptionalInlineObject51ok := localVarOptionals.InlineObject51.Value().(InlineObject51)
-		if !localVarOptionalInlineObject51ok {
-			return localVarReturnValue, nil, reportError("inlineObject51 should be InlineObject51")
+	if localVarOptionals != nil && localVarOptionals.InlineObject36.IsSet() {
+		localVarOptionalInlineObject36, localVarOptionalInlineObject36ok := localVarOptionals.InlineObject36.Value().(InlineObject36)
+		if !localVarOptionalInlineObject36ok {
+			return localVarReturnValue, nil, reportError("inlineObject36 should be InlineObject36")
 		}
-		localVarPostBody = &localVarOptionalInlineObject51
+		localVarPostBody = &localVarOptionalInlineObject36
 	}
 
 	if ctx != nil {
@@ -2369,12 +2369,12 @@ LogArchiveApiService /credential/password/:id
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param optional nil or *OperationLogArchivePatchcredentialpasswordIdOpts - Optional Parameters:
- * @param "InlineObject49" (optional.Interface of InlineObject49) - 
+ * @param "InlineObject34" (optional.Interface of InlineObject34) - 
 @return CredentialPassword
 */
 
 type OperationLogArchivePatchcredentialpasswordIdOpts struct {
-	InlineObject49 optional.Interface
+	InlineObject34 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePatchcredentialpasswordId(ctx context.Context, logArchiveId string, id string, localVarOptionals *OperationLogArchivePatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
@@ -2414,12 +2414,12 @@ func (a *LogArchiveApiService) OperationLogArchivePatchcredentialpasswordId(ctx 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject49.IsSet() {
-		localVarOptionalInlineObject49, localVarOptionalInlineObject49ok := localVarOptionals.InlineObject49.Value().(InlineObject49)
-		if !localVarOptionalInlineObject49ok {
-			return localVarReturnValue, nil, reportError("inlineObject49 should be InlineObject49")
+	if localVarOptionals != nil && localVarOptionals.InlineObject34.IsSet() {
+		localVarOptionalInlineObject34, localVarOptionalInlineObject34ok := localVarOptionals.InlineObject34.Value().(InlineObject34)
+		if !localVarOptionalInlineObject34ok {
+			return localVarReturnValue, nil, reportError("inlineObject34 should be InlineObject34")
 		}
-		localVarPostBody = &localVarOptionalInlineObject49
+		localVarPostBody = &localVarOptionalInlineObject34
 	}
 
 	if ctx != nil {
@@ -2640,16 +2640,10 @@ func (a *LogArchiveApiService) OperationLogArchivePatchtag(ctx context.Context, 
 LogArchiveApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
- * @param optional nil or *OperationLogArchivePostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject52" (optional.Interface of InlineObject52) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationLogArchivePostaccessrightsOpts struct {
-	InlineObject52 optional.Interface
-}
-
-func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostaccessrightsOpts) (string, *http.Response, error) {
+func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.Context, logArchiveId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -2685,14 +2679,7 @@ func (a *LogArchiveApiService) OperationLogArchivePostaccessrights(ctx context.C
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject52.IsSet() {
-		localVarOptionalInlineObject52, localVarOptionalInlineObject52ok := localVarOptionals.InlineObject52.Value().(InlineObject52)
-		if !localVarOptionalInlineObject52ok {
-			return localVarReturnValue, nil, reportError("inlineObject52 should be InlineObject52")
-		}
-		localVarPostBody = &localVarOptionalInlineObject52
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2783,12 +2770,12 @@ LogArchiveApiService /credential/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *OperationLogArchivePostcredentialcertificateOpts - Optional Parameters:
- * @param "InlineObject50" (optional.Interface of InlineObject50) - 
+ * @param "InlineObject35" (optional.Interface of InlineObject35) - 
 @return CredentialCertificate
 */
 
 type OperationLogArchivePostcredentialcertificateOpts struct {
-	InlineObject50 optional.Interface
+	InlineObject35 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePostcredentialcertificate(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
@@ -2827,12 +2814,12 @@ func (a *LogArchiveApiService) OperationLogArchivePostcredentialcertificate(ctx 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject50.IsSet() {
-		localVarOptionalInlineObject50, localVarOptionalInlineObject50ok := localVarOptionals.InlineObject50.Value().(InlineObject50)
-		if !localVarOptionalInlineObject50ok {
-			return localVarReturnValue, nil, reportError("inlineObject50 should be InlineObject50")
+	if localVarOptionals != nil && localVarOptionals.InlineObject35.IsSet() {
+		localVarOptionalInlineObject35, localVarOptionalInlineObject35ok := localVarOptionals.InlineObject35.Value().(InlineObject35)
+		if !localVarOptionalInlineObject35ok {
+			return localVarReturnValue, nil, reportError("inlineObject35 should be InlineObject35")
 		}
-		localVarPostBody = &localVarOptionalInlineObject50
+		localVarPostBody = &localVarOptionalInlineObject35
 	}
 
 	if ctx != nil {
@@ -2925,12 +2912,12 @@ LogArchiveApiService /credential/password
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *OperationLogArchivePostcredentialpasswordOpts - Optional Parameters:
- * @param "InlineObject48" (optional.Interface of InlineObject48) - 
+ * @param "InlineObject33" (optional.Interface of InlineObject33) - 
 @return CredentialPassword
 */
 
 type OperationLogArchivePostcredentialpasswordOpts struct {
-	InlineObject48 optional.Interface
+	InlineObject33 optional.Interface
 }
 
 func (a *LogArchiveApiService) OperationLogArchivePostcredentialpassword(ctx context.Context, logArchiveId string, localVarOptionals *OperationLogArchivePostcredentialpasswordOpts) (CredentialPassword, *http.Response, error) {
@@ -2969,12 +2956,12 @@ func (a *LogArchiveApiService) OperationLogArchivePostcredentialpassword(ctx con
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject48.IsSet() {
-		localVarOptionalInlineObject48, localVarOptionalInlineObject48ok := localVarOptionals.InlineObject48.Value().(InlineObject48)
-		if !localVarOptionalInlineObject48ok {
-			return localVarReturnValue, nil, reportError("inlineObject48 should be InlineObject48")
+	if localVarOptionals != nil && localVarOptionals.InlineObject33.IsSet() {
+		localVarOptionalInlineObject33, localVarOptionalInlineObject33ok := localVarOptionals.InlineObject33.Value().(InlineObject33)
+		if !localVarOptionalInlineObject33ok {
+			return localVarReturnValue, nil, reportError("inlineObject33 should be InlineObject33")
 		}
-		localVarPostBody = &localVarOptionalInlineObject48
+		localVarPostBody = &localVarOptionalInlineObject33
 	}
 
 	if ctx != nil {
@@ -3195,12 +3182,12 @@ Returns modified logArchive
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param optional nil or *UpdateLogArchiveOpts - Optional Parameters:
- * @param "InlineObject46" (optional.Interface of InlineObject46) - 
+ * @param "InlineObject31" (optional.Interface of InlineObject31) - 
 @return LogArchive
 */
 
 type UpdateLogArchiveOpts struct {
-	InlineObject46 optional.Interface
+	InlineObject31 optional.Interface
 }
 
 func (a *LogArchiveApiService) UpdateLogArchive(ctx context.Context, logArchiveId string, localVarOptionals *UpdateLogArchiveOpts) (LogArchive, *http.Response, error) {
@@ -3239,12 +3226,12 @@ func (a *LogArchiveApiService) UpdateLogArchive(ctx context.Context, logArchiveI
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject46.IsSet() {
-		localVarOptionalInlineObject46, localVarOptionalInlineObject46ok := localVarOptionals.InlineObject46.Value().(InlineObject46)
-		if !localVarOptionalInlineObject46ok {
-			return localVarReturnValue, nil, reportError("inlineObject46 should be InlineObject46")
+	if localVarOptionals != nil && localVarOptionals.InlineObject31.IsSet() {
+		localVarOptionalInlineObject31, localVarOptionalInlineObject31ok := localVarOptionals.InlineObject31.Value().(InlineObject31)
+		if !localVarOptionalInlineObject31ok {
+			return localVarReturnValue, nil, reportError("inlineObject31 should be InlineObject31")
 		}
-		localVarPostBody = &localVarOptionalInlineObject46
+		localVarPostBody = &localVarOptionalInlineObject31
 	}
 
 	if ctx != nil {

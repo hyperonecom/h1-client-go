@@ -107,7 +107,7 @@ Optional parameters are passed through a pointer to a ActionFirewallTransferOpts
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
+ **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationFirewallPostaccessrights**
-> string OperationFirewallPostaccessrights(ctx, firewallId, optional)
+> string OperationFirewallPostaccessrights(ctx, firewallId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -595,15 +595,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***OperationFirewallPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationFirewallPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -638,7 +630,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostegres
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
+ **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
 
 ### Return type
 
@@ -673,7 +665,7 @@ Optional parameters are passed through a pointer to a OperationFirewallPostingre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
+ **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
 
 ### Return type
 
@@ -738,7 +730,7 @@ Optional parameters are passed through a pointer to a UpdateFirewallOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
+ **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 

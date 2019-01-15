@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationNetgwPostaccessrights**
-> string OperationNetgwPostaccessrights(ctx, netgwId, optional)
+> string OperationNetgwPostaccessrights(ctx, netgwId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -389,15 +389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netgwId** | **string**| ID of netgw | 
- **optional** | ***OperationNetgwPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetgwPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -462,7 +454,7 @@ Optional parameters are passed through a pointer to a UpdateNetgwOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
+ **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 

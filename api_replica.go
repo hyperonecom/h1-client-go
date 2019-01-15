@@ -32,12 +32,12 @@ Action image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param optional nil or *ActionReplicaImageOpts - Optional Parameters:
- * @param "InlineObject59" (optional.Interface of InlineObject59) - 
+ * @param "InlineObject42" (optional.Interface of InlineObject42) - 
 @return Replica
 */
 
 type ActionReplicaImageOpts struct {
-	InlineObject59 optional.Interface
+	InlineObject42 optional.Interface
 }
 
 func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId string, localVarOptionals *ActionReplicaImageOpts) (Replica, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *ReplicaApiService) ActionReplicaImage(ctx context.Context, replicaId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject59.IsSet() {
-		localVarOptionalInlineObject59, localVarOptionalInlineObject59ok := localVarOptionals.InlineObject59.Value().(InlineObject59)
-		if !localVarOptionalInlineObject59ok {
-			return localVarReturnValue, nil, reportError("inlineObject59 should be InlineObject59")
+	if localVarOptionals != nil && localVarOptionals.InlineObject42.IsSet() {
+		localVarOptionalInlineObject42, localVarOptionalInlineObject42ok := localVarOptionals.InlineObject42.Value().(InlineObject42)
+		if !localVarOptionalInlineObject42ok {
+			return localVarReturnValue, nil, reportError("inlineObject42 should be InlineObject42")
 		}
-		localVarPostBody = &localVarOptionalInlineObject59
+		localVarPostBody = &localVarOptionalInlineObject42
 	}
 
 	if ctx != nil {
@@ -1568,16 +1568,10 @@ func (a *ReplicaApiService) OperationReplicaPatchtag(ctx context.Context, replic
 ReplicaApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
- * @param optional nil or *OperationReplicaPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject60" (optional.Interface of InlineObject60) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationReplicaPostaccessrightsOpts struct {
-	InlineObject60 optional.Interface
-}
-
-func (a *ReplicaApiService) OperationReplicaPostaccessrights(ctx context.Context, replicaId string, localVarOptionals *OperationReplicaPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *ReplicaApiService) OperationReplicaPostaccessrights(ctx context.Context, replicaId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1613,14 +1607,7 @@ func (a *ReplicaApiService) OperationReplicaPostaccessrights(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject60.IsSet() {
-		localVarOptionalInlineObject60, localVarOptionalInlineObject60ok := localVarOptionals.InlineObject60.Value().(InlineObject60)
-		if !localVarOptionalInlineObject60ok {
-			return localVarReturnValue, nil, reportError("inlineObject60 should be InlineObject60")
-		}
-		localVarPostBody = &localVarOptionalInlineObject60
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

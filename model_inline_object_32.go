@@ -10,5 +10,5 @@
 package openapi
 
 type InlineObject32 struct {
-	PtrRecord string `json:"ptrRecord,omitempty"`
+	Project string `json:"project"`
 }

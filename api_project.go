@@ -1335,16 +1335,10 @@ func (a *ProjectApiService) OperationProjectPatchtag(ctx context.Context, projec
 ProjectApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param optional nil or *OperationProjectPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject1" (optional.Interface of InlineObject1) - 
+ * @param resourceAccessRight
 @return ProjectAccessRights
 */
-
-type OperationProjectPostaccessrightsOpts struct {
-	InlineObject1 optional.Interface
-}
-
-func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context, projectId string, localVarOptionals *OperationProjectPostaccessrightsOpts) (ProjectAccessRights, *http.Response, error) {
+func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context, projectId string, resourceAccessRight ResourceAccessRight) (ProjectAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1380,14 +1374,7 @@ func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject1.IsSet() {
-		localVarOptionalInlineObject1, localVarOptionalInlineObject1ok := localVarOptionals.InlineObject1.Value().(InlineObject1)
-		if !localVarOptionalInlineObject1ok {
-			return localVarReturnValue, nil, reportError("inlineObject1 should be InlineObject1")
-		}
-		localVarPostBody = &localVarOptionalInlineObject1
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

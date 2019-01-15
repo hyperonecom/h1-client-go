@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject18 struct {
-	Project string `json:"project"`
+	UserName string `json:"userName"`
+	Modulus string `json:"modulus"`
+	Exponent string `json:"exponent"`
 }

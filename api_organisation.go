@@ -32,12 +32,12 @@ Action transfer_accept
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param optional nil or *ActionOrganisationTransferAcceptOpts - Optional Parameters:
- * @param "InlineObject3" (optional.Interface of InlineObject3) - 
+ * @param "InlineObject2" (optional.Interface of InlineObject2) - 
 @return Organisation
 */
 
 type ActionOrganisationTransferAcceptOpts struct {
-	InlineObject3 optional.Interface
+	InlineObject2 optional.Interface
 }
 
 func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Context, organisationId string, localVarOptionals *ActionOrganisationTransferAcceptOpts) (Organisation, *http.Response, error) {
@@ -76,12 +76,12 @@ func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject3.IsSet() {
-		localVarOptionalInlineObject3, localVarOptionalInlineObject3ok := localVarOptionals.InlineObject3.Value().(InlineObject3)
-		if !localVarOptionalInlineObject3ok {
-			return localVarReturnValue, nil, reportError("inlineObject3 should be InlineObject3")
+	if localVarOptionals != nil && localVarOptionals.InlineObject2.IsSet() {
+		localVarOptionalInlineObject2, localVarOptionalInlineObject2ok := localVarOptionals.InlineObject2.Value().(InlineObject2)
+		if !localVarOptionalInlineObject2ok {
+			return localVarReturnValue, nil, reportError("inlineObject2 should be InlineObject2")
 		}
-		localVarPostBody = &localVarOptionalInlineObject3
+		localVarPostBody = &localVarOptionalInlineObject2
 	}
 
 	if ctx != nil {
@@ -1224,16 +1224,10 @@ func (a *OrganisationApiService) OperationOrganisationPatchtag(ctx context.Conte
 OrganisationApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param optional nil or *OperationOrganisationPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject4" (optional.Interface of InlineObject4) - 
+ * @param resourceAccessRight
 @return OrganisationAccessRights
 */
-
-type OperationOrganisationPostaccessrightsOpts struct {
-	InlineObject4 optional.Interface
-}
-
-func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx context.Context, organisationId string, localVarOptionals *OperationOrganisationPostaccessrightsOpts) (OrganisationAccessRights, *http.Response, error) {
+func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx context.Context, organisationId string, resourceAccessRight ResourceAccessRight) (OrganisationAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1269,14 +1263,7 @@ func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject4.IsSet() {
-		localVarOptionalInlineObject4, localVarOptionalInlineObject4ok := localVarOptionals.InlineObject4.Value().(InlineObject4)
-		if !localVarOptionalInlineObject4ok {
-			return localVarReturnValue, nil, reportError("inlineObject4 should be InlineObject4")
-		}
-		localVarPostBody = &localVarOptionalInlineObject4
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1495,12 +1482,12 @@ Returns modified organisation
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param optional nil or *UpdateOrganisationOpts - Optional Parameters:
- * @param "InlineObject2" (optional.Interface of InlineObject2) - 
+ * @param "InlineObject1" (optional.Interface of InlineObject1) - 
 @return Organisation
 */
 
 type UpdateOrganisationOpts struct {
-	InlineObject2 optional.Interface
+	InlineObject1 optional.Interface
 }
 
 func (a *OrganisationApiService) UpdateOrganisation(ctx context.Context, organisationId string, localVarOptionals *UpdateOrganisationOpts) (Organisation, *http.Response, error) {
@@ -1539,12 +1526,12 @@ func (a *OrganisationApiService) UpdateOrganisation(ctx context.Context, organis
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject2.IsSet() {
-		localVarOptionalInlineObject2, localVarOptionalInlineObject2ok := localVarOptionals.InlineObject2.Value().(InlineObject2)
-		if !localVarOptionalInlineObject2ok {
-			return localVarReturnValue, nil, reportError("inlineObject2 should be InlineObject2")
+	if localVarOptionals != nil && localVarOptionals.InlineObject1.IsSet() {
+		localVarOptionalInlineObject1, localVarOptionalInlineObject1ok := localVarOptionals.InlineObject1.Value().(InlineObject1)
+		if !localVarOptionalInlineObject1ok {
+			return localVarReturnValue, nil, reportError("inlineObject1 should be InlineObject1")
 		}
-		localVarPostBody = &localVarOptionalInlineObject2
+		localVarPostBody = &localVarOptionalInlineObject1
 	}
 
 	if ctx != nil {

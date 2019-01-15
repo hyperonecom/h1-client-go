@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationReservationPostaccessrights**
-> string OperationReservationPostaccessrights(ctx, reservationId, optional)
+> string OperationReservationPostaccessrights(ctx, reservationId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -418,15 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **reservationId** | **string**| ID of reservation | 
- **optional** | ***OperationReservationPostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationReservationPostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject45** | [**optional.Interface of InlineObject45**](InlineObject45.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -491,7 +483,7 @@ Optional parameters are passed through a pointer to a UpdateReservationOpts stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject44** | [**optional.Interface of InlineObject44**](InlineObject44.md)|  | 
+ **inlineObject30** | [**optional.Interface of InlineObject30**](InlineObject30.md)|  | 
 
 ### Return type
 

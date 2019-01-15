@@ -51,7 +51,7 @@ Optional parameters are passed through a pointer to a ActionLogArchiveTransferOp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject47** | [**optional.Interface of InlineObject47**](InlineObject47.md)|  | 
+ **inlineObject32** | [**optional.Interface of InlineObject32**](InlineObject32.md)|  | 
 
 ### Return type
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject51** | [**optional.Interface of InlineObject51**](InlineObject51.md)|  | 
+ **inlineObject36** | [**optional.Interface of InlineObject36**](InlineObject36.md)|  | 
 
 ### Return type
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **inlineObject49** | [**optional.Interface of InlineObject49**](InlineObject49.md)|  | 
+ **inlineObject34** | [**optional.Interface of InlineObject34**](InlineObject34.md)|  | 
 
 ### Return type
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OperationLogArchivePostaccessrights**
-> string OperationLogArchivePostaccessrights(ctx, logArchiveId, optional)
+> string OperationLogArchivePostaccessrights(ctx, logArchiveId, resourceAccessRight)
 /accessrights/
 
 ### Required Parameters
@@ -613,15 +613,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
- **optional** | ***OperationLogArchivePostaccessrightsOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePostaccessrightsOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject52** | [**optional.Interface of InlineObject52**](InlineObject52.md)|  | 
+  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
 
 ### Return type
 
@@ -656,7 +648,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject50** | [**optional.Interface of InlineObject50**](InlineObject50.md)|  | 
+ **inlineObject35** | [**optional.Interface of InlineObject35**](InlineObject35.md)|  | 
 
 ### Return type
 
@@ -691,7 +683,7 @@ Optional parameters are passed through a pointer to a OperationLogArchivePostcre
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject48** | [**optional.Interface of InlineObject48**](InlineObject48.md)|  | 
+ **inlineObject33** | [**optional.Interface of InlineObject33**](InlineObject33.md)|  | 
 
 ### Return type
 
@@ -756,7 +748,7 @@ Optional parameters are passed through a pointer to a UpdateLogArchiveOpts struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **inlineObject46** | [**optional.Interface of InlineObject46**](InlineObject46.md)|  | 
+ **inlineObject31** | [**optional.Interface of InlineObject31**](InlineObject31.md)|  | 
 
 ### Return type
 

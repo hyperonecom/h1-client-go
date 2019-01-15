@@ -1430,16 +1430,10 @@ func (a *SnapshotApiService) OperationSnapshotPatchtag(ctx context.Context, snap
 SnapshotApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
- * @param optional nil or *OperationSnapshotPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject43" (optional.Interface of InlineObject43) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationSnapshotPostaccessrightsOpts struct {
-	InlineObject43 optional.Interface
-}
-
-func (a *SnapshotApiService) OperationSnapshotPostaccessrights(ctx context.Context, snapshotId string, localVarOptionals *OperationSnapshotPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *SnapshotApiService) OperationSnapshotPostaccessrights(ctx context.Context, snapshotId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1475,14 +1469,7 @@ func (a *SnapshotApiService) OperationSnapshotPostaccessrights(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject43.IsSet() {
-		localVarOptionalInlineObject43, localVarOptionalInlineObject43ok := localVarOptionals.InlineObject43.Value().(InlineObject43)
-		if !localVarOptionalInlineObject43ok {
-			return localVarReturnValue, nil, reportError("inlineObject43 should be InlineObject43")
-		}
-		localVarPostBody = &localVarOptionalInlineObject43
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1701,12 +1688,12 @@ Returns modified snapshot
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param optional nil or *UpdateSnapshotOpts - Optional Parameters:
- * @param "InlineObject42" (optional.Interface of InlineObject42) - 
+ * @param "InlineObject29" (optional.Interface of InlineObject29) - 
 @return Snapshot
 */
 
 type UpdateSnapshotOpts struct {
-	InlineObject42 optional.Interface
+	InlineObject29 optional.Interface
 }
 
 func (a *SnapshotApiService) UpdateSnapshot(ctx context.Context, snapshotId string, localVarOptionals *UpdateSnapshotOpts) (Snapshot, *http.Response, error) {
@@ -1745,12 +1732,12 @@ func (a *SnapshotApiService) UpdateSnapshot(ctx context.Context, snapshotId stri
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject42.IsSet() {
-		localVarOptionalInlineObject42, localVarOptionalInlineObject42ok := localVarOptionals.InlineObject42.Value().(InlineObject42)
-		if !localVarOptionalInlineObject42ok {
-			return localVarReturnValue, nil, reportError("inlineObject42 should be InlineObject42")
+	if localVarOptionals != nil && localVarOptionals.InlineObject29.IsSet() {
+		localVarOptionalInlineObject29, localVarOptionalInlineObject29ok := localVarOptionals.InlineObject29.Value().(InlineObject29)
+		if !localVarOptionalInlineObject29ok {
+			return localVarReturnValue, nil, reportError("inlineObject29 should be InlineObject29")
 		}
-		localVarPostBody = &localVarOptionalInlineObject42
+		localVarPostBody = &localVarOptionalInlineObject29
 	}
 
 	if ctx != nil {

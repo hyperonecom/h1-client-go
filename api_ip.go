@@ -540,12 +540,12 @@ Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param optional nil or *ActionIpTransferOpts - Optional Parameters:
- * @param "InlineObject33" (optional.Interface of InlineObject33) - 
+ * @param "InlineObject23" (optional.Interface of InlineObject23) - 
 @return Ip
 */
 
 type ActionIpTransferOpts struct {
-	InlineObject33 optional.Interface
+	InlineObject23 optional.Interface
 }
 
 func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, localVarOptionals *ActionIpTransferOpts) (Ip, *http.Response, error) {
@@ -584,12 +584,12 @@ func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, localV
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject33.IsSet() {
-		localVarOptionalInlineObject33, localVarOptionalInlineObject33ok := localVarOptionals.InlineObject33.Value().(InlineObject33)
-		if !localVarOptionalInlineObject33ok {
-			return localVarReturnValue, nil, reportError("inlineObject33 should be InlineObject33")
+	if localVarOptionals != nil && localVarOptionals.InlineObject23.IsSet() {
+		localVarOptionalInlineObject23, localVarOptionalInlineObject23ok := localVarOptionals.InlineObject23.Value().(InlineObject23)
+		if !localVarOptionalInlineObject23ok {
+			return localVarReturnValue, nil, reportError("inlineObject23 should be InlineObject23")
 		}
-		localVarPostBody = &localVarOptionalInlineObject33
+		localVarPostBody = &localVarOptionalInlineObject23
 	}
 
 	if ctx != nil {
@@ -2076,16 +2076,10 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, req
 IpApiService /accessrights/
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param optional nil or *OperationIpPostaccessrightsOpts - Optional Parameters:
- * @param "InlineObject34" (optional.Interface of InlineObject34) - 
+ * @param resourceAccessRight
 @return string
 */
-
-type OperationIpPostaccessrightsOpts struct {
-	InlineObject34 optional.Interface
-}
-
-func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId string, localVarOptionals *OperationIpPostaccessrightsOpts) (string, *http.Response, error) {
+func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -2121,14 +2115,7 @@ func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject34.IsSet() {
-		localVarOptionalInlineObject34, localVarOptionalInlineObject34ok := localVarOptionals.InlineObject34.Value().(InlineObject34)
-		if !localVarOptionalInlineObject34ok {
-			return localVarReturnValue, nil, reportError("inlineObject34 should be InlineObject34")
-		}
-		localVarPostBody = &localVarOptionalInlineObject34
-	}
-
+	localVarPostBody = &resourceAccessRight
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2347,12 +2334,12 @@ Returns modified ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param optional nil or *UpdateIpOpts - Optional Parameters:
- * @param "InlineObject32" (optional.Interface of InlineObject32) - 
+ * @param "InlineObject22" (optional.Interface of InlineObject22) - 
 @return Ip
 */
 
 type UpdateIpOpts struct {
-	InlineObject32 optional.Interface
+	InlineObject22 optional.Interface
 }
 
 func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOptionals *UpdateIpOpts) (Ip, *http.Response, error) {
@@ -2391,12 +2378,12 @@ func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject32.IsSet() {
-		localVarOptionalInlineObject32, localVarOptionalInlineObject32ok := localVarOptionals.InlineObject32.Value().(InlineObject32)
-		if !localVarOptionalInlineObject32ok {
-			return localVarReturnValue, nil, reportError("inlineObject32 should be InlineObject32")
+	if localVarOptionals != nil && localVarOptionals.InlineObject22.IsSet() {
+		localVarOptionalInlineObject22, localVarOptionalInlineObject22ok := localVarOptionals.InlineObject22.Value().(InlineObject22)
+		if !localVarOptionalInlineObject22ok {
+			return localVarReturnValue, nil, reportError("inlineObject22 should be InlineObject22")
 		}
-		localVarPostBody = &localVarOptionalInlineObject32
+		localVarPostBody = &localVarOptionalInlineObject22
 	}
 
 	if ctx != nil {

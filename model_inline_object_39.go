@@ -10,7 +10,6 @@
 package openapi
 
 type InlineObject39 struct {
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-	Value string `json:"value,omitempty"`
+	Disk string `json:"disk"`
+	Vmhost string `json:"vmhost,omitempty"`
 }

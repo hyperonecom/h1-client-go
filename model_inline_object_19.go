@@ -10,5 +10,7 @@
 package openapi
 
 type InlineObject19 struct {
-	Identity string `json:"identity,omitempty"`
+	Service string `json:"service"`
+	Description string `json:"description,omitempty"`
+	Name string `json:"name,omitempty"`
 }
