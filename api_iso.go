@@ -31,10 +31,10 @@ IsoApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param isoTransfer
+ * @param isoActionTransfer
 @return Iso
 */
-func (a *IsoApiService) ActionIsoTransfer(ctx context.Context, isoId string, isoTransfer IsoTransfer) (Iso, *http.Response, error) {
+func (a *IsoApiService) IsoActionTransfer(ctx context.Context, isoId string, isoActionTransfer IsoActionTransfer) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *IsoApiService) ActionIsoTransfer(ctx context.Context, isoId string, iso
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &isoTransfer
+	localVarPostBody = &isoActionTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -163,7 +163,7 @@ Create iso
  * @param isoCreate
 @return Iso
 */
-func (a *IsoApiService) CreateIso(ctx context.Context, isoCreate IsoCreate) (Iso, *http.Response, error) {
+func (a *IsoApiService) IsoCreate(ctx context.Context, isoCreate IsoCreate) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -289,7 +289,7 @@ IsoApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
 */
-func (a *IsoApiService) DeleteIso(ctx context.Context, isoId string) (*http.Response, error) {
+func (a *IsoApiService) IsoDelete(ctx context.Context, isoId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -390,148 +390,13 @@ func (a *IsoApiService) DeleteIso(ctx context.Context, isoId string) (*http.Resp
 }
 
 /*
-IsoApiService List
-List iso
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListIsoOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Iso
-*/
-
-type ListIsoOpts struct {
-	Name optional.String
-}
-
-func (a *IsoApiService) ListIso(ctx context.Context, localVarOptionals *ListIsoOpts) ([]Iso, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Iso
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Iso
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 IsoApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param identity identity
 @return Iso
 */
-func (a *IsoApiService) OperationIsoDeleteaccessrightsIdentity(ctx context.Context, isoId string, identity string) (Iso, *http.Response, error) {
+func (a *IsoApiService) IsoDeleteAccessrightsIdentity(ctx context.Context, isoId string, identity string) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -667,16 +532,16 @@ IsoApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *IsoApiService) OperationIsoDeletetagKey(ctx context.Context, isoId string, key string) (map[string]string, *http.Response, error) {
+func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -766,7 +631,7 @@ func (a *IsoApiService) OperationIsoDeletetagKey(ctx context.Context, isoId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -797,7 +662,7 @@ IsoApiService /services/:serviceId
  * @param serviceId serviceId
 @return IsoServices
 */
-func (a *IsoApiService) OperationIsoGetservicesServiceId(ctx context.Context, isoId string, serviceId string) (IsoServices, *http.Response, error) {
+func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId string, serviceId string) (IsoServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -919,23 +784,23 @@ func (a *IsoApiService) OperationIsoGetservicesServiceId(ctx context.Context, is
 }
 
 /*
-IsoApiService /tag/
+IsoApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (map[string]string, *http.Response, error) {
+func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1020,7 +885,7 @@ func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (m
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1045,12 +910,147 @@ func (a *IsoApiService) OperationIsoGettag(ctx context.Context, isoId string) (m
 }
 
 /*
-IsoApiService /accessrights/
+IsoApiService List
+List iso
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *IsoListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Iso
+*/
+
+type IsoListOpts struct {
+	Name optional.String
+}
+
+func (a *IsoApiService) IsoList(ctx context.Context, localVarOptionals *IsoListOpts) ([]Iso, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Iso
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/iso"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Iso
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+IsoApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
 @return []string
 */
-func (a *IsoApiService) OperationIsoListaccessrights(ctx context.Context, isoId string) ([]string, *http.Response, error) {
+func (a *IsoApiService) IsoListAccessrights(ctx context.Context, isoId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1061,7 +1061,7 @@ func (a *IsoApiService) OperationIsoListaccessrights(ctx context.Context, isoId 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1171,12 +1171,12 @@ func (a *IsoApiService) OperationIsoListaccessrights(ctx context.Context, isoId 
 }
 
 /*
-IsoApiService /queue/
+IsoApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
 @return []Event
 */
-func (a *IsoApiService) OperationIsoListqueue(ctx context.Context, isoId string) ([]Event, *http.Response, error) {
+func (a *IsoApiService) IsoListQueue(ctx context.Context, isoId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1187,7 +1187,7 @@ func (a *IsoApiService) OperationIsoListqueue(ctx context.Context, isoId string)
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1297,12 +1297,12 @@ func (a *IsoApiService) OperationIsoListqueue(ctx context.Context, isoId string)
 }
 
 /*
-IsoApiService /services/
+IsoApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
 @return []IsoServices
 */
-func (a *IsoApiService) OperationIsoListservices(ctx context.Context, isoId string) ([]IsoServices, *http.Response, error) {
+func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]IsoServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1313,7 +1313,7 @@ func (a *IsoApiService) OperationIsoListservices(ctx context.Context, isoId stri
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1423,24 +1423,24 @@ func (a *IsoApiService) OperationIsoListservices(ctx context.Context, isoId stri
 }
 
 /*
-IsoApiService /tag/
+IsoApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1465,7 +1465,7 @@ func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1527,7 +1527,7 @@ func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1552,13 +1552,13 @@ func (a *IsoApiService) OperationIsoPatchtag(ctx context.Context, isoId string, 
 }
 
 /*
-IsoApiService /accessrights/
+IsoApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param resourceAccessRight
+ * @param isoPostAccessrights
 @return string
 */
-func (a *IsoApiService) OperationIsoPostaccessrights(ctx context.Context, isoId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, isoPostAccessrights IsoPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1569,7 +1569,7 @@ func (a *IsoApiService) OperationIsoPostaccessrights(ctx context.Context, isoId 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/iso/{isoId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"isoId"+"}", fmt.Sprintf("%v", isoId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1594,7 +1594,7 @@ func (a *IsoApiService) OperationIsoPostaccessrights(ctx context.Context, isoId 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &isoPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1687,7 +1687,7 @@ Returns a single iso
  * @param isoId ID of iso
 @return Iso
 */
-func (a *IsoApiService) ShowIso(ctx context.Context, isoId string) (Iso, *http.Response, error) {
+func (a *IsoApiService) IsoShow(ctx context.Context, isoId string) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1812,16 +1812,10 @@ IsoApiService Update
 Returns modified iso
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param optional nil or *UpdateIsoOpts - Optional Parameters:
- * @param "InlineObject11" (optional.Interface of InlineObject11) - 
+ * @param isoUpdate
 @return Iso
 */
-
-type UpdateIsoOpts struct {
-	InlineObject11 optional.Interface
-}
-
-func (a *IsoApiService) UpdateIso(ctx context.Context, isoId string, localVarOptionals *UpdateIsoOpts) (Iso, *http.Response, error) {
+func (a *IsoApiService) IsoUpdate(ctx context.Context, isoId string, isoUpdate IsoUpdate) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1857,14 +1851,7 @@ func (a *IsoApiService) UpdateIso(ctx context.Context, isoId string, localVarOpt
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject11.IsSet() {
-		localVarOptionalInlineObject11, localVarOptionalInlineObject11ok := localVarOptionals.InlineObject11.Value().(InlineObject11)
-		if !localVarOptionalInlineObject11ok {
-			return localVarReturnValue, nil, reportError("inlineObject11 should be InlineObject11")
-		}
-		localVarPostBody = &localVarOptionalInlineObject11
-	}
-
+	localVarPostBody = &isoUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

@@ -31,10 +31,10 @@ ImageApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param imageTransfer
+ * @param imageActionTransfer
 @return Image
 */
-func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId string, imageTransfer ImageTransfer) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId string, imageActionTransfer ImageActionTransfer) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *ImageApiService) ActionImageTransfer(ctx context.Context, imageId strin
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &imageTransfer
+	localVarPostBody = &imageActionTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -163,7 +163,7 @@ Create image
  * @param imageCreate
 @return Image
 */
-func (a *ImageApiService) CreateImage(ctx context.Context, imageCreate ImageCreate) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCreate) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -289,7 +289,7 @@ ImageApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 */
-func (a *ImageApiService) DeleteImage(ctx context.Context, imageId string) (*http.Response, error) {
+func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -390,148 +390,13 @@ func (a *ImageApiService) DeleteImage(ctx context.Context, imageId string) (*htt
 }
 
 /*
-ImageApiService List
-List image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListImageOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Image
-*/
-
-type ListImageOpts struct {
-	Name optional.String
-}
-
-func (a *ImageApiService) ListImage(ctx context.Context, localVarOptionals *ListImageOpts) ([]Image, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Image
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Image
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 ImageApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param identity identity
 @return Image
 */
-func (a *ImageApiService) OperationImageDeleteaccessrightsIdentity(ctx context.Context, imageId string, identity string) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, imageId string, identity string) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -667,16 +532,16 @@ ImageApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ImageApiService) OperationImageDeletetagKey(ctx context.Context, imageId string, key string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -766,7 +631,7 @@ func (a *ImageApiService) OperationImageDeletetagKey(ctx context.Context, imageI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -797,7 +662,7 @@ ImageApiService /services/:serviceId
  * @param serviceId serviceId
 @return ImageServices
 */
-func (a *ImageApiService) OperationImageGetservicesServiceId(ctx context.Context, imageId string, serviceId string) (ImageServices, *http.Response, error) {
+func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId string, serviceId string) (ImageServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -919,23 +784,23 @@ func (a *ImageApiService) OperationImageGetservicesServiceId(ctx context.Context
 }
 
 /*
-ImageApiService /tag/
+ImageApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1020,7 +885,7 @@ func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1045,12 +910,147 @@ func (a *ImageApiService) OperationImageGettag(ctx context.Context, imageId stri
 }
 
 /*
-ImageApiService /accessrights/
+ImageApiService List
+List image
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *ImageListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Image
+*/
+
+type ImageListOpts struct {
+	Name optional.String
+}
+
+func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *ImageListOpts) ([]Image, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Image
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/image"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Image
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+ImageApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []string
 */
-func (a *ImageApiService) OperationImageListaccessrights(ctx context.Context, imageId string) ([]string, *http.Response, error) {
+func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1061,7 +1061,7 @@ func (a *ImageApiService) OperationImageListaccessrights(ctx context.Context, im
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1171,12 +1171,12 @@ func (a *ImageApiService) OperationImageListaccessrights(ctx context.Context, im
 }
 
 /*
-ImageApiService /queue/
+ImageApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []Event
 */
-func (a *ImageApiService) OperationImageListqueue(ctx context.Context, imageId string) ([]Event, *http.Response, error) {
+func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1187,7 +1187,7 @@ func (a *ImageApiService) OperationImageListqueue(ctx context.Context, imageId s
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1297,12 +1297,12 @@ func (a *ImageApiService) OperationImageListqueue(ctx context.Context, imageId s
 }
 
 /*
-ImageApiService /services/
+ImageApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []ImageServices
 */
-func (a *ImageApiService) OperationImageListservices(ctx context.Context, imageId string) ([]ImageServices, *http.Response, error) {
+func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string) ([]ImageServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1313,7 +1313,7 @@ func (a *ImageApiService) OperationImageListservices(ctx context.Context, imageI
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1423,24 +1423,24 @@ func (a *ImageApiService) OperationImageListservices(ctx context.Context, imageI
 }
 
 /*
-ImageApiService /tag/
+ImageApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1465,7 +1465,7 @@ func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1527,7 +1527,7 @@ func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1552,13 +1552,13 @@ func (a *ImageApiService) OperationImagePatchtag(ctx context.Context, imageId st
 }
 
 /*
-ImageApiService /accessrights/
+ImageApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param resourceAccessRight
+ * @param imagePostAccessrights
 @return string
 */
-func (a *ImageApiService) OperationImagePostaccessrights(ctx context.Context, imageId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1569,7 +1569,7 @@ func (a *ImageApiService) OperationImagePostaccessrights(ctx context.Context, im
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/image/{imageId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1594,7 +1594,7 @@ func (a *ImageApiService) OperationImagePostaccessrights(ctx context.Context, im
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &imagePostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1687,7 +1687,7 @@ Returns a single image
  * @param imageId ID of image
 @return Image
 */
-func (a *ImageApiService) ShowImage(ctx context.Context, imageId string) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1812,16 +1812,10 @@ ImageApiService Update
 Returns modified image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param optional nil or *UpdateImageOpts - Optional Parameters:
- * @param "InlineObject9" (optional.Interface of InlineObject9) - 
+ * @param imageUpdate
 @return Image
 */
-
-type UpdateImageOpts struct {
-	InlineObject9 optional.Interface
-}
-
-func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, localVarOptionals *UpdateImageOpts) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, imageUpdate ImageUpdate) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1857,14 +1851,7 @@ func (a *ImageApiService) UpdateImage(ctx context.Context, imageId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject9.IsSet() {
-		localVarOptionalInlineObject9, localVarOptionalInlineObject9ok := localVarOptionals.InlineObject9.Value().(InlineObject9)
-		if !localVarOptionalInlineObject9ok {
-			return localVarReturnValue, nil, reportError("inlineObject9 should be InlineObject9")
-		}
-		localVarPostBody = &localVarOptionalInlineObject9
-	}
-
+	localVarPostBody = &imageUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

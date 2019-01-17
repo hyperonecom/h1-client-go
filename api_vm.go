@@ -33,7 +33,7 @@ Action flavour
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmFlavour(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -158,10 +158,10 @@ VmApiService /actions/image
 Action image
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param vmImage
+ * @param vmActionImage
 @return Vm
 */
-func (a *VmApiService) ActionVmImage(ctx context.Context, vmId string, vmImage VmImage) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionImage VmActionImage) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -197,7 +197,7 @@ func (a *VmApiService) ActionVmImage(ctx context.Context, vmId string, vmImage V
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &vmImage
+	localVarPostBody = &vmActionImage
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -288,10 +288,10 @@ VmApiService /actions/password_reset
 Action password_reset
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param vmPasswordReset
+ * @param vmActionPasswordReset
 @return Vm
 */
-func (a *VmApiService) ActionVmPasswordReset(ctx context.Context, vmId string, vmPasswordReset VmPasswordReset) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, vmActionPasswordReset VmActionPasswordReset) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -327,7 +327,7 @@ func (a *VmApiService) ActionVmPasswordReset(ctx context.Context, vmId string, v
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &vmPasswordReset
+	localVarPostBody = &vmActionPasswordReset
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -420,7 +420,7 @@ Action rename
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmRename(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionRename(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -547,7 +547,7 @@ Action restart
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmRestart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -674,7 +674,7 @@ Action start
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmStart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -801,7 +801,7 @@ Action stop
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmStop(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -928,7 +928,7 @@ Action turnoff
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ActionVmTurnoff(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1055,7 +1055,7 @@ Create vm
  * @param vmCreate
 @return Vm
 */
-func (a *VmApiService) CreateVm(ctx context.Context, vmCreate VmCreate) (Vm, *http.Response, error) {
+func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1181,7 +1181,7 @@ VmApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 */
-func (a *VmApiService) DeleteVm(ctx context.Context, vmId string) (*http.Response, error) {
+func (a *VmApiService) VmDelete(ctx context.Context, vmId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1282,148 +1282,13 @@ func (a *VmApiService) DeleteVm(ctx context.Context, vmId string) (*http.Respons
 }
 
 /*
-VmApiService List
-List vm
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListVmOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Vm
-*/
-
-type ListVmOpts struct {
-	Name optional.String
-}
-
-func (a *VmApiService) ListVm(ctx context.Context, localVarOptionals *ListVmOpts) ([]Vm, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Vm
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Vm
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 VmApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param identity identity
 @return Vm
 */
-func (a *VmApiService) OperationVmDeleteaccessrightsIdentity(ctx context.Context, vmId string, identity string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId string, identity string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1561,7 +1426,7 @@ VmApiService /hdd/:diskId
  * @param diskId diskId
 @return Vm
 */
-func (a *VmApiService) OperationVmDeletehddDiskId(ctx context.Context, vmId string, diskId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1698,7 +1563,7 @@ VmApiService /netadp
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) OperationVmDeletenetadp(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteNetadp(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1833,16 +1698,16 @@ VmApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *VmApiService) OperationVmDeletetagKey(ctx context.Context, vmId string, key string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -1932,7 +1797,7 @@ func (a *VmApiService) OperationVmDeletetagKey(ctx context.Context, vmId string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1963,7 +1828,7 @@ VmApiService /services/:serviceId
  * @param serviceId serviceId
 @return VmServices
 */
-func (a *VmApiService) OperationVmGetservicesServiceId(ctx context.Context, vmId string, serviceId string) (VmServices, *http.Response, error) {
+func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, serviceId string) (VmServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2085,23 +1950,23 @@ func (a *VmApiService) OperationVmGetservicesServiceId(ctx context.Context, vmId
 }
 
 /*
-VmApiService /tag/
+VmApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *VmApiService) OperationVmGettag(ctx context.Context, vmId string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2186,7 +2051,7 @@ func (a *VmApiService) OperationVmGettag(ctx context.Context, vmId string) (map[
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2211,12 +2076,147 @@ func (a *VmApiService) OperationVmGettag(ctx context.Context, vmId string) (map[
 }
 
 /*
-VmApiService /accessrights/
+VmApiService List
+List vm
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *VmListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Vm
+*/
+
+type VmListOpts struct {
+	Name optional.String
+}
+
+func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts) ([]Vm, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Vm
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/vm"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+VmApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []string
 */
-func (a *VmApiService) OperationVmListaccessrights(ctx context.Context, vmId string) ([]string, *http.Response, error) {
+func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2227,7 +2227,7 @@ func (a *VmApiService) OperationVmListaccessrights(ctx context.Context, vmId str
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2342,7 +2342,7 @@ VmApiService /hdd
  * @param vmId ID of vm
 @return []Hdd
 */
-func (a *VmApiService) OperationVmListhdd(ctx context.Context, vmId string) ([]Hdd, *http.Response, error) {
+func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2468,7 +2468,7 @@ VmApiService /netadp
  * @param vmId ID of vm
 @return []Netadp
 */
-func (a *VmApiService) OperationVmListnetadp(ctx context.Context, vmId string) ([]Netadp, *http.Response, error) {
+func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2589,12 +2589,12 @@ func (a *VmApiService) OperationVmListnetadp(ctx context.Context, vmId string) (
 }
 
 /*
-VmApiService /queue/
+VmApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []Event
 */
-func (a *VmApiService) OperationVmListqueue(ctx context.Context, vmId string) ([]Event, *http.Response, error) {
+func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2605,7 +2605,7 @@ func (a *VmApiService) OperationVmListqueue(ctx context.Context, vmId string) ([
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2715,12 +2715,12 @@ func (a *VmApiService) OperationVmListqueue(ctx context.Context, vmId string) ([
 }
 
 /*
-VmApiService /services/
+VmApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []VmServices
 */
-func (a *VmApiService) OperationVmListservices(ctx context.Context, vmId string) ([]VmServices, *http.Response, error) {
+func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2731,7 +2731,7 @@ func (a *VmApiService) OperationVmListservices(ctx context.Context, vmId string)
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2841,24 +2841,24 @@ func (a *VmApiService) OperationVmListservices(ctx context.Context, vmId string)
 }
 
 /*
-VmApiService /tag/
+VmApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *VmApiService) OperationVmPatchtag(ctx context.Context, vmId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2883,7 +2883,7 @@ func (a *VmApiService) OperationVmPatchtag(ctx context.Context, vmId string, req
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2945,7 +2945,7 @@ func (a *VmApiService) OperationVmPatchtag(ctx context.Context, vmId string, req
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2970,13 +2970,13 @@ func (a *VmApiService) OperationVmPatchtag(ctx context.Context, vmId string, req
 }
 
 /*
-VmApiService /accessrights/
+VmApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param resourceAccessRight
+ * @param vmPostAccessrights
 @return string
 */
-func (a *VmApiService) OperationVmPostaccessrights(ctx context.Context, vmId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -2987,7 +2987,7 @@ func (a *VmApiService) OperationVmPostaccessrights(ctx context.Context, vmId str
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/vm/{vmId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3012,7 +3012,7 @@ func (a *VmApiService) OperationVmPostaccessrights(ctx context.Context, vmId str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &vmPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3102,16 +3102,10 @@ func (a *VmApiService) OperationVmPostaccessrights(ctx context.Context, vmId str
 VmApiService /hdd
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param optional nil or *OperationVmPosthddOpts - Optional Parameters:
- * @param "InlineObject13" (optional.Interface of InlineObject13) - 
+ * @param vmPostHdd
 @return Vm
 */
-
-type OperationVmPosthddOpts struct {
-	InlineObject13 optional.Interface
-}
-
-func (a *VmApiService) OperationVmPosthdd(ctx context.Context, vmId string, localVarOptionals *OperationVmPosthddOpts) (Vm, *http.Response, error) {
+func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmPostHdd) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -3147,14 +3141,7 @@ func (a *VmApiService) OperationVmPosthdd(ctx context.Context, vmId string, loca
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject13.IsSet() {
-		localVarOptionalInlineObject13, localVarOptionalInlineObject13ok := localVarOptionals.InlineObject13.Value().(InlineObject13)
-		if !localVarOptionalInlineObject13ok {
-			return localVarReturnValue, nil, reportError("inlineObject13 should be InlineObject13")
-		}
-		localVarPostBody = &localVarOptionalInlineObject13
-	}
-
+	localVarPostBody = &vmPostHdd
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3254,16 +3241,10 @@ func (a *VmApiService) OperationVmPosthdd(ctx context.Context, vmId string, loca
 VmApiService /netadp
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param optional nil or *OperationVmPostnetadpOpts - Optional Parameters:
- * @param "InlineObject14" (optional.Interface of InlineObject14) - 
+ * @param vmPostNetadp
 @return Vm
 */
-
-type OperationVmPostnetadpOpts struct {
-	InlineObject14 optional.Interface
-}
-
-func (a *VmApiService) OperationVmPostnetadp(ctx context.Context, vmId string, localVarOptionals *OperationVmPostnetadpOpts) (Vm, *http.Response, error) {
+func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNetadp VmPostNetadp) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -3299,14 +3280,7 @@ func (a *VmApiService) OperationVmPostnetadp(ctx context.Context, vmId string, l
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject14.IsSet() {
-		localVarOptionalInlineObject14, localVarOptionalInlineObject14ok := localVarOptionals.InlineObject14.Value().(InlineObject14)
-		if !localVarOptionalInlineObject14ok {
-			return localVarReturnValue, nil, reportError("inlineObject14 should be InlineObject14")
-		}
-		localVarPostBody = &localVarOptionalInlineObject14
-	}
-
+	localVarPostBody = &vmPostNetadp
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3409,7 +3383,7 @@ Returns a single vm
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) ShowVm(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -3534,16 +3508,10 @@ VmApiService Update
 Returns modified vm
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
- * @param optional nil or *UpdateVmOpts - Optional Parameters:
- * @param "InlineObject12" (optional.Interface of InlineObject12) - 
+ * @param vmUpdate
 @return Vm
 */
-
-type UpdateVmOpts struct {
-	InlineObject12 optional.Interface
-}
-
-func (a *VmApiService) UpdateVm(ctx context.Context, vmId string, localVarOptionals *UpdateVmOpts) (Vm, *http.Response, error) {
+func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpdate) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -3579,14 +3547,7 @@ func (a *VmApiService) UpdateVm(ctx context.Context, vmId string, localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject12.IsSet() {
-		localVarOptionalInlineObject12, localVarOptionalInlineObject12ok := localVarOptionals.InlineObject12.Value().(InlineObject12)
-		if !localVarOptionalInlineObject12ok {
-			return localVarReturnValue, nil, reportError("inlineObject12 should be InlineObject12")
-		}
-		localVarPostBody = &localVarOptionalInlineObject12
-	}
-
+	localVarPostBody = &vmUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

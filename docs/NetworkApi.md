@@ -4,28 +4,28 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateNetwork**](NetworkApi.md#CreateNetwork) | **Post** /network | Create
-[**DeleteNetwork**](NetworkApi.md#DeleteNetwork) | **Delete** /network/{networkId} | Delete
-[**ListNetwork**](NetworkApi.md#ListNetwork) | **Get** /network | List
-[**OperationNetworkDeleteaccessrightsIdentity**](NetworkApi.md#OperationNetworkDeleteaccessrightsIdentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-[**OperationNetworkDeleteipIpId**](NetworkApi.md#OperationNetworkDeleteipIpId) | **Delete** /network/{networkId}/ip/:ipId | /ip/:ipId
-[**OperationNetworkDeletetagKey**](NetworkApi.md#OperationNetworkDeletetagKey) | **Delete** /network/{networkId}/tag/{key} | /tag/:key
-[**OperationNetworkGetipIpId**](NetworkApi.md#OperationNetworkGetipIpId) | **Get** /network/{networkId}/ip/:ipId | /ip/:ipId
-[**OperationNetworkGetservicesServiceId**](NetworkApi.md#OperationNetworkGetservicesServiceId) | **Get** /network/{networkId}/services/{serviceId} | /services/:serviceId
-[**OperationNetworkGettag**](NetworkApi.md#OperationNetworkGettag) | **Get** /network/{networkId}/tag/ | /tag/
-[**OperationNetworkListaccessrights**](NetworkApi.md#OperationNetworkListaccessrights) | **Get** /network/{networkId}/accessrights/ | /accessrights/
-[**OperationNetworkListip**](NetworkApi.md#OperationNetworkListip) | **Get** /network/{networkId}/ip | /ip
-[**OperationNetworkListqueue**](NetworkApi.md#OperationNetworkListqueue) | **Get** /network/{networkId}/queue/ | /queue/
-[**OperationNetworkListservices**](NetworkApi.md#OperationNetworkListservices) | **Get** /network/{networkId}/services/ | /services/
-[**OperationNetworkPatchtag**](NetworkApi.md#OperationNetworkPatchtag) | **Patch** /network/{networkId}/tag/ | /tag/
-[**OperationNetworkPostaccessrights**](NetworkApi.md#OperationNetworkPostaccessrights) | **Post** /network/{networkId}/accessrights/ | /accessrights/
-[**OperationNetworkPostip**](NetworkApi.md#OperationNetworkPostip) | **Post** /network/{networkId}/ip | /ip
-[**ShowNetwork**](NetworkApi.md#ShowNetwork) | **Get** /network/{networkId} | Get
-[**UpdateNetwork**](NetworkApi.md#UpdateNetwork) | **Patch** /network/{networkId} | Update
+[**NetworkCreate**](NetworkApi.md#NetworkCreate) | **Post** /network | Create
+[**NetworkDelete**](NetworkApi.md#NetworkDelete) | **Delete** /network/{networkId} | Delete
+[**NetworkDeleteAccessrightsIdentity**](NetworkApi.md#NetworkDeleteAccessrightsIdentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
+[**NetworkDeleteIpIpId**](NetworkApi.md#NetworkDeleteIpIpId) | **Delete** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**NetworkDeleteTagKey**](NetworkApi.md#NetworkDeleteTagKey) | **Delete** /network/{networkId}/tag/{key} | /tag/:key
+[**NetworkGetIpIpId**](NetworkApi.md#NetworkGetIpIpId) | **Get** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**NetworkGetServicesServiceId**](NetworkApi.md#NetworkGetServicesServiceId) | **Get** /network/{networkId}/services/{serviceId} | /services/:serviceId
+[**NetworkGetTag**](NetworkApi.md#NetworkGetTag) | **Get** /network/{networkId}/tag | /tag
+[**NetworkList**](NetworkApi.md#NetworkList) | **Get** /network | List
+[**NetworkListAccessrights**](NetworkApi.md#NetworkListAccessrights) | **Get** /network/{networkId}/accessrights | /accessrights
+[**NetworkListIp**](NetworkApi.md#NetworkListIp) | **Get** /network/{networkId}/ip | /ip
+[**NetworkListQueue**](NetworkApi.md#NetworkListQueue) | **Get** /network/{networkId}/queue | /queue
+[**NetworkListServices**](NetworkApi.md#NetworkListServices) | **Get** /network/{networkId}/services | /services
+[**NetworkPatchTag**](NetworkApi.md#NetworkPatchTag) | **Patch** /network/{networkId}/tag | /tag
+[**NetworkPostAccessrights**](NetworkApi.md#NetworkPostAccessrights) | **Post** /network/{networkId}/accessrights | /accessrights
+[**NetworkPostIp**](NetworkApi.md#NetworkPostIp) | **Post** /network/{networkId}/ip | /ip
+[**NetworkShow**](NetworkApi.md#NetworkShow) | **Get** /network/{networkId} | Get
+[**NetworkUpdate**](NetworkApi.md#NetworkUpdate) | **Patch** /network/{networkId} | Update
 
 
-# **CreateNetwork**
-> Network CreateNetwork(ctx, networkCreate)
+# **NetworkCreate**
+> Network NetworkCreate(ctx, networkCreate)
 Create
 
 Create network
@@ -52,8 +52,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteNetwork**
-> DeleteNetwork(ctx, networkId)
+# **NetworkDelete**
+> NetworkDelete(ctx, networkId)
 Delete
 
 ### Required Parameters
@@ -78,43 +78,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNetwork**
-> []Network ListNetwork(ctx, optional)
-List
-
-List network
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListNetworkOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListNetworkOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Network**](network.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationNetworkDeleteaccessrightsIdentity**
-> Network OperationNetworkDeleteaccessrightsIdentity(ctx, networkId, identity)
+# **NetworkDeleteAccessrightsIdentity**
+> Network NetworkDeleteAccessrightsIdentity(ctx, networkId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -140,8 +105,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkDeleteipIpId**
-> Ip OperationNetworkDeleteipIpId(ctx, networkId)
+# **NetworkDeleteIpIpId**
+> Ip NetworkDeleteIpIpId(ctx, networkId)
 /ip/:ipId
 
 ### Required Parameters
@@ -166,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkDeletetagKey**
-> map[string]string OperationNetworkDeletetagKey(ctx, networkId, key)
+# **NetworkDeleteTagKey**
+> map[string]interface{} NetworkDeleteTagKey(ctx, networkId, key)
 /tag/:key
 
 ### Required Parameters
@@ -180,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -193,8 +158,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkGetipIpId**
-> Ip OperationNetworkGetipIpId(ctx, networkId)
+# **NetworkGetIpIpId**
+> Ip NetworkGetIpIpId(ctx, networkId)
 /ip/:ipId
 
 ### Required Parameters
@@ -219,8 +184,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkGetservicesServiceId**
-> NetworkServices OperationNetworkGetservicesServiceId(ctx, networkId, serviceId)
+# **NetworkGetServicesServiceId**
+> NetworkServices NetworkGetServicesServiceId(ctx, networkId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -246,9 +211,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkGettag**
-> map[string]string OperationNetworkGettag(ctx, networkId)
-/tag/
+# **NetworkGetTag**
+> map[string]interface{} NetworkGetTag(ctx, networkId)
+/tag
 
 ### Required Parameters
 
@@ -259,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -272,9 +237,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkListaccessrights**
-> []string OperationNetworkListaccessrights(ctx, networkId)
-/accessrights/
+# **NetworkList**
+> []Network NetworkList(ctx, optional)
+List
+
+List network
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***NetworkListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a NetworkListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Network**](network.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **NetworkListAccessrights**
+> []string NetworkListAccessrights(ctx, networkId)
+/accessrights
 
 ### Required Parameters
 
@@ -298,8 +298,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkListip**
-> []Ip OperationNetworkListip(ctx, networkId)
+# **NetworkListIp**
+> []Ip NetworkListIp(ctx, networkId)
 /ip
 
 ### Required Parameters
@@ -324,9 +324,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkListqueue**
-> []Event OperationNetworkListqueue(ctx, networkId)
-/queue/
+# **NetworkListQueue**
+> []Event NetworkListQueue(ctx, networkId)
+/queue
 
 ### Required Parameters
 
@@ -350,9 +350,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkListservices**
-> []NetworkServices OperationNetworkListservices(ctx, networkId)
-/services/
+# **NetworkListServices**
+> []NetworkServices NetworkListServices(ctx, networkId)
+/services
 
 ### Required Parameters
 
@@ -376,9 +376,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkPatchtag**
-> map[string]string OperationNetworkPatchtag(ctx, networkId, requestBody)
-/tag/
+# **NetworkPatchTag**
+> map[string]interface{} NetworkPatchTag(ctx, networkId, body)
+/tag
 
 ### Required Parameters
 
@@ -386,11 +386,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -403,9 +403,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkPostaccessrights**
-> string OperationNetworkPostaccessrights(ctx, networkId, resourceAccessRight)
-/accessrights/
+# **NetworkPostAccessrights**
+> string NetworkPostAccessrights(ctx, networkId, networkPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **networkPostAccessrights** | [**NetworkPostAccessrights**](NetworkPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -430,8 +430,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetworkPostip**
-> Ip OperationNetworkPostip(ctx, networkId, optional)
+# **NetworkPostIp**
+> Ip NetworkPostIp(ctx, networkId, networkPostIp)
 /ip
 
 ### Required Parameters
@@ -440,15 +440,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
- **optional** | ***OperationNetworkPostipOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationNetworkPostipOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject7** | [**optional.Interface of InlineObject7**](InlineObject7.md)|  | 
+  **networkPostIp** | [**NetworkPostIp**](NetworkPostIp.md)|  | 
 
 ### Return type
 
@@ -465,8 +457,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowNetwork**
-> Network ShowNetwork(ctx, networkId)
+# **NetworkShow**
+> Network NetworkShow(ctx, networkId)
 Get
 
 Returns a single network
@@ -493,8 +485,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateNetwork**
-> Network UpdateNetwork(ctx, networkId, optional)
+# **NetworkUpdate**
+> Network NetworkUpdate(ctx, networkId, networkUpdate)
 Update
 
 Returns modified network
@@ -505,15 +497,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
- **optional** | ***UpdateNetworkOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateNetworkOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject6** | [**optional.Interface of InlineObject6**](InlineObject6.md)|  | 
+  **networkUpdate** | [**NetworkUpdate**](NetworkUpdate.md)|  | 
 
 ### Return type
 

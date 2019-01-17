@@ -28,7 +28,6 @@ type LogArchive struct {
 	State string `json:"state,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Project string `json:"project,omitempty"`
-	Credential VaultCredential `json:"credential,omitempty"`
 	SizeUsed float32 `json:"sizeUsed,omitempty"`
 	Retention float32 `json:"retention,omitempty"`
 }

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Size** | **float32** |  | 
 **Service** | **string** |  | 
-**Credential** | [**VaultCreateCredential**](vaultCreate_credential.md) |  | [optional] 
+**Credential** | [**VaultCreateCredential**](vault_create_credential.md) |  | [optional] 
 **Snapshot** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

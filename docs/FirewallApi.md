@@ -4,35 +4,35 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionFirewallAttach**](FirewallApi.md#ActionFirewallAttach) | **Post** /firewall/{firewallId}/actions/attach | /actions/attach
-[**ActionFirewallDetach**](FirewallApi.md#ActionFirewallDetach) | **Post** /firewall/{firewallId}/actions/detach | /actions/detach
-[**ActionFirewallTransfer**](FirewallApi.md#ActionFirewallTransfer) | **Post** /firewall/{firewallId}/actions/transfer | /actions/transfer
-[**CreateFirewall**](FirewallApi.md#CreateFirewall) | **Post** /firewall | Create
-[**DeleteFirewall**](FirewallApi.md#DeleteFirewall) | **Delete** /firewall/{firewallId} | Delete
-[**ListFirewall**](FirewallApi.md#ListFirewall) | **Get** /firewall | List
-[**OperationFirewallDeleteaccessrightsIdentity**](FirewallApi.md#OperationFirewallDeleteaccessrightsIdentity) | **Delete** /firewall/{firewallId}/accessrights/{identity} | /accessrights/:identity
-[**OperationFirewallDeleteegressRuleId**](FirewallApi.md#OperationFirewallDeleteegressRuleId) | **Delete** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
-[**OperationFirewallDeleteingressRuleId**](FirewallApi.md#OperationFirewallDeleteingressRuleId) | **Delete** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
-[**OperationFirewallDeletetagKey**](FirewallApi.md#OperationFirewallDeletetagKey) | **Delete** /firewall/{firewallId}/tag/{key} | /tag/:key
-[**OperationFirewallGetegressRuleId**](FirewallApi.md#OperationFirewallGetegressRuleId) | **Get** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
-[**OperationFirewallGetingressRuleId**](FirewallApi.md#OperationFirewallGetingressRuleId) | **Get** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
-[**OperationFirewallGetservicesServiceId**](FirewallApi.md#OperationFirewallGetservicesServiceId) | **Get** /firewall/{firewallId}/services/{serviceId} | /services/:serviceId
-[**OperationFirewallGettag**](FirewallApi.md#OperationFirewallGettag) | **Get** /firewall/{firewallId}/tag/ | /tag/
-[**OperationFirewallListaccessrights**](FirewallApi.md#OperationFirewallListaccessrights) | **Get** /firewall/{firewallId}/accessrights/ | /accessrights/
-[**OperationFirewallListegress**](FirewallApi.md#OperationFirewallListegress) | **Get** /firewall/{firewallId}/egress | /egress
-[**OperationFirewallListingress**](FirewallApi.md#OperationFirewallListingress) | **Get** /firewall/{firewallId}/ingress | /ingress
-[**OperationFirewallListqueue**](FirewallApi.md#OperationFirewallListqueue) | **Get** /firewall/{firewallId}/queue/ | /queue/
-[**OperationFirewallListservices**](FirewallApi.md#OperationFirewallListservices) | **Get** /firewall/{firewallId}/services/ | /services/
-[**OperationFirewallPatchtag**](FirewallApi.md#OperationFirewallPatchtag) | **Patch** /firewall/{firewallId}/tag/ | /tag/
-[**OperationFirewallPostaccessrights**](FirewallApi.md#OperationFirewallPostaccessrights) | **Post** /firewall/{firewallId}/accessrights/ | /accessrights/
-[**OperationFirewallPostegress**](FirewallApi.md#OperationFirewallPostegress) | **Post** /firewall/{firewallId}/egress | /egress
-[**OperationFirewallPostingress**](FirewallApi.md#OperationFirewallPostingress) | **Post** /firewall/{firewallId}/ingress | /ingress
-[**ShowFirewall**](FirewallApi.md#ShowFirewall) | **Get** /firewall/{firewallId} | Get
-[**UpdateFirewall**](FirewallApi.md#UpdateFirewall) | **Patch** /firewall/{firewallId} | Update
+[**FirewallActionAttach**](FirewallApi.md#FirewallActionAttach) | **Post** /firewall/{firewallId}/actions/attach | /actions/attach
+[**FirewallActionDetach**](FirewallApi.md#FirewallActionDetach) | **Post** /firewall/{firewallId}/actions/detach | /actions/detach
+[**FirewallActionTransfer**](FirewallApi.md#FirewallActionTransfer) | **Post** /firewall/{firewallId}/actions/transfer | /actions/transfer
+[**FirewallCreate**](FirewallApi.md#FirewallCreate) | **Post** /firewall | Create
+[**FirewallDelete**](FirewallApi.md#FirewallDelete) | **Delete** /firewall/{firewallId} | Delete
+[**FirewallDeleteAccessrightsIdentity**](FirewallApi.md#FirewallDeleteAccessrightsIdentity) | **Delete** /firewall/{firewallId}/accessrights/{identity} | /accessrights/:identity
+[**FirewallDeleteEgressRuleId**](FirewallApi.md#FirewallDeleteEgressRuleId) | **Delete** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
+[**FirewallDeleteIngressRuleId**](FirewallApi.md#FirewallDeleteIngressRuleId) | **Delete** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
+[**FirewallDeleteTagKey**](FirewallApi.md#FirewallDeleteTagKey) | **Delete** /firewall/{firewallId}/tag/{key} | /tag/:key
+[**FirewallGetEgressRuleId**](FirewallApi.md#FirewallGetEgressRuleId) | **Get** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
+[**FirewallGetIngressRuleId**](FirewallApi.md#FirewallGetIngressRuleId) | **Get** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
+[**FirewallGetServicesServiceId**](FirewallApi.md#FirewallGetServicesServiceId) | **Get** /firewall/{firewallId}/services/{serviceId} | /services/:serviceId
+[**FirewallGetTag**](FirewallApi.md#FirewallGetTag) | **Get** /firewall/{firewallId}/tag | /tag
+[**FirewallList**](FirewallApi.md#FirewallList) | **Get** /firewall | List
+[**FirewallListAccessrights**](FirewallApi.md#FirewallListAccessrights) | **Get** /firewall/{firewallId}/accessrights | /accessrights
+[**FirewallListEgress**](FirewallApi.md#FirewallListEgress) | **Get** /firewall/{firewallId}/egress | /egress
+[**FirewallListIngress**](FirewallApi.md#FirewallListIngress) | **Get** /firewall/{firewallId}/ingress | /ingress
+[**FirewallListQueue**](FirewallApi.md#FirewallListQueue) | **Get** /firewall/{firewallId}/queue | /queue
+[**FirewallListServices**](FirewallApi.md#FirewallListServices) | **Get** /firewall/{firewallId}/services | /services
+[**FirewallPatchTag**](FirewallApi.md#FirewallPatchTag) | **Patch** /firewall/{firewallId}/tag | /tag
+[**FirewallPostAccessrights**](FirewallApi.md#FirewallPostAccessrights) | **Post** /firewall/{firewallId}/accessrights | /accessrights
+[**FirewallPostEgress**](FirewallApi.md#FirewallPostEgress) | **Post** /firewall/{firewallId}/egress | /egress
+[**FirewallPostIngress**](FirewallApi.md#FirewallPostIngress) | **Post** /firewall/{firewallId}/ingress | /ingress
+[**FirewallShow**](FirewallApi.md#FirewallShow) | **Get** /firewall/{firewallId} | Get
+[**FirewallUpdate**](FirewallApi.md#FirewallUpdate) | **Patch** /firewall/{firewallId} | Update
 
 
-# **ActionFirewallAttach**
-> Firewall ActionFirewallAttach(ctx, firewallId)
+# **FirewallActionAttach**
+> Firewall FirewallActionAttach(ctx, firewallId)
 /actions/attach
 
 Action attach
@@ -59,8 +59,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionFirewallDetach**
-> Firewall ActionFirewallDetach(ctx, firewallId)
+# **FirewallActionDetach**
+> Firewall FirewallActionDetach(ctx, firewallId)
 /actions/detach
 
 Action detach
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionFirewallTransfer**
-> Firewall ActionFirewallTransfer(ctx, firewallId, firewallTransfer)
+# **FirewallActionTransfer**
+> Firewall FirewallActionTransfer(ctx, firewallId, firewallActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
-  **firewallTransfer** | [**FirewallTransfer**](FirewallTransfer.md)|  | 
+  **firewallActionTransfer** | [**FirewallActionTransfer**](FirewallActionTransfer.md)|  | 
 
 ### Return type
 
@@ -116,8 +116,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateFirewall**
-> Firewall CreateFirewall(ctx, firewallCreate)
+# **FirewallCreate**
+> Firewall FirewallCreate(ctx, firewallCreate)
 Create
 
 Create firewall
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteFirewall**
-> DeleteFirewall(ctx, firewallId)
+# **FirewallDelete**
+> FirewallDelete(ctx, firewallId)
 Delete
 
 ### Required Parameters
@@ -170,43 +170,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListFirewall**
-> []Firewall ListFirewall(ctx, optional)
-List
-
-List firewall
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListFirewallOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListFirewallOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Firewall**](firewall.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationFirewallDeleteaccessrightsIdentity**
-> Firewall OperationFirewallDeleteaccessrightsIdentity(ctx, firewallId, identity)
+# **FirewallDeleteAccessrightsIdentity**
+> Firewall FirewallDeleteAccessrightsIdentity(ctx, firewallId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -232,8 +197,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallDeleteegressRuleId**
-> InlineResponse200 OperationFirewallDeleteegressRuleId(ctx, firewallId, ruleId)
+# **FirewallDeleteEgressRuleId**
+> InlineResponse200 FirewallDeleteEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
@@ -259,8 +224,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallDeleteingressRuleId**
-> InlineResponse200 OperationFirewallDeleteingressRuleId(ctx, firewallId, ruleId)
+# **FirewallDeleteIngressRuleId**
+> InlineResponse200 FirewallDeleteIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
@@ -286,8 +251,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallDeletetagKey**
-> map[string]string OperationFirewallDeletetagKey(ctx, firewallId, key)
+# **FirewallDeleteTagKey**
+> map[string]interface{} FirewallDeleteTagKey(ctx, firewallId, key)
 /tag/:key
 
 ### Required Parameters
@@ -300,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -313,8 +278,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallGetegressRuleId**
-> InlineResponse200 OperationFirewallGetegressRuleId(ctx, firewallId, ruleId)
+# **FirewallGetEgressRuleId**
+> InlineResponse200 FirewallGetEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
@@ -340,8 +305,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallGetingressRuleId**
-> InlineResponse200 OperationFirewallGetingressRuleId(ctx, firewallId, ruleId)
+# **FirewallGetIngressRuleId**
+> InlineResponse200 FirewallGetIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
@@ -367,8 +332,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallGetservicesServiceId**
-> FirewallServices OperationFirewallGetservicesServiceId(ctx, firewallId, serviceId)
+# **FirewallGetServicesServiceId**
+> FirewallServices FirewallGetServicesServiceId(ctx, firewallId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -394,9 +359,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallGettag**
-> map[string]string OperationFirewallGettag(ctx, firewallId)
-/tag/
+# **FirewallGetTag**
+> map[string]interface{} FirewallGetTag(ctx, firewallId)
+/tag
 
 ### Required Parameters
 
@@ -407,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -420,9 +385,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallListaccessrights**
-> []string OperationFirewallListaccessrights(ctx, firewallId)
-/accessrights/
+# **FirewallList**
+> []Firewall FirewallList(ctx, optional)
+List
+
+List firewall
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***FirewallListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a FirewallListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Firewall**](firewall.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FirewallListAccessrights**
+> []string FirewallListAccessrights(ctx, firewallId)
+/accessrights
 
 ### Required Parameters
 
@@ -446,8 +446,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallListegress**
-> []InlineResponse200 OperationFirewallListegress(ctx, firewallId)
+# **FirewallListEgress**
+> []InlineResponse200 FirewallListEgress(ctx, firewallId)
 /egress
 
 ### Required Parameters
@@ -472,8 +472,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallListingress**
-> []InlineResponse200 OperationFirewallListingress(ctx, firewallId)
+# **FirewallListIngress**
+> []InlineResponse200 FirewallListIngress(ctx, firewallId)
 /ingress
 
 ### Required Parameters
@@ -498,9 +498,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallListqueue**
-> []Event OperationFirewallListqueue(ctx, firewallId)
-/queue/
+# **FirewallListQueue**
+> []Event FirewallListQueue(ctx, firewallId)
+/queue
 
 ### Required Parameters
 
@@ -524,9 +524,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallListservices**
-> []FirewallServices OperationFirewallListservices(ctx, firewallId)
-/services/
+# **FirewallListServices**
+> []FirewallServices FirewallListServices(ctx, firewallId)
+/services
 
 ### Required Parameters
 
@@ -550,9 +550,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallPatchtag**
-> map[string]string OperationFirewallPatchtag(ctx, firewallId, requestBody)
-/tag/
+# **FirewallPatchTag**
+> map[string]interface{} FirewallPatchTag(ctx, firewallId, body)
+/tag
 
 ### Required Parameters
 
@@ -560,11 +560,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -577,9 +577,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallPostaccessrights**
-> string OperationFirewallPostaccessrights(ctx, firewallId, resourceAccessRight)
-/accessrights/
+# **FirewallPostAccessrights**
+> string FirewallPostAccessrights(ctx, firewallId, firewallPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **firewallPostAccessrights** | [**FirewallPostAccessrights**](FirewallPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -604,8 +604,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallPostegress**
-> InlineResponse200 OperationFirewallPostegress(ctx, firewallId, optional)
+# **FirewallPostEgress**
+> InlineResponse200 FirewallPostEgress(ctx, firewallId, firewallPostEgress)
 /egress
 
 ### Required Parameters
@@ -614,15 +614,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***OperationFirewallPostegressOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationFirewallPostegressOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject5** | [**optional.Interface of InlineObject5**](InlineObject5.md)|  | 
+  **firewallPostEgress** | [**FirewallPostEgress**](FirewallPostEgress.md)|  | 
 
 ### Return type
 
@@ -639,8 +631,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationFirewallPostingress**
-> InlineResponse200 OperationFirewallPostingress(ctx, firewallId, optional)
+# **FirewallPostIngress**
+> InlineResponse200 FirewallPostIngress(ctx, firewallId, firewallPostIngress)
 /ingress
 
 ### Required Parameters
@@ -649,15 +641,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***OperationFirewallPostingressOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationFirewallPostingressOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject4** | [**optional.Interface of InlineObject4**](InlineObject4.md)|  | 
+  **firewallPostIngress** | [**FirewallPostIngress**](FirewallPostIngress.md)|  | 
 
 ### Return type
 
@@ -674,8 +658,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowFirewall**
-> Firewall ShowFirewall(ctx, firewallId)
+# **FirewallShow**
+> Firewall FirewallShow(ctx, firewallId)
 Get
 
 Returns a single firewall
@@ -702,8 +686,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateFirewall**
-> Firewall UpdateFirewall(ctx, firewallId, optional)
+# **FirewallUpdate**
+> Firewall FirewallUpdate(ctx, firewallId, firewallUpdate)
 Update
 
 Returns modified firewall
@@ -714,15 +698,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **firewallId** | **string**| ID of firewall | 
- **optional** | ***UpdateFirewallOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateFirewallOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject3** | [**optional.Interface of InlineObject3**](InlineObject3.md)|  | 
+  **firewallUpdate** | [**FirewallUpdate**](FirewallUpdate.md)|  | 
 
 ### Return type
 

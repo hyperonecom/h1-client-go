@@ -4,24 +4,24 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionReplicaImage**](ReplicaApi.md#ActionReplicaImage) | **Post** /replica/{replicaId}/actions/image | /actions/image
-[**CreateReplica**](ReplicaApi.md#CreateReplica) | **Post** /replica | Create
-[**DeleteReplica**](ReplicaApi.md#DeleteReplica) | **Delete** /replica/{replicaId} | Delete
-[**ListReplica**](ReplicaApi.md#ListReplica) | **Get** /replica | List
-[**OperationReplicaDeleteaccessrightsIdentity**](ReplicaApi.md#OperationReplicaDeleteaccessrightsIdentity) | **Delete** /replica/{replicaId}/accessrights/{identity} | /accessrights/:identity
-[**OperationReplicaDeletetagKey**](ReplicaApi.md#OperationReplicaDeletetagKey) | **Delete** /replica/{replicaId}/tag/{key} | /tag/:key
-[**OperationReplicaGetservicesServiceId**](ReplicaApi.md#OperationReplicaGetservicesServiceId) | **Get** /replica/{replicaId}/services/{serviceId} | /services/:serviceId
-[**OperationReplicaGettag**](ReplicaApi.md#OperationReplicaGettag) | **Get** /replica/{replicaId}/tag/ | /tag/
-[**OperationReplicaListaccessrights**](ReplicaApi.md#OperationReplicaListaccessrights) | **Get** /replica/{replicaId}/accessrights/ | /accessrights/
-[**OperationReplicaListqueue**](ReplicaApi.md#OperationReplicaListqueue) | **Get** /replica/{replicaId}/queue/ | /queue/
-[**OperationReplicaListservices**](ReplicaApi.md#OperationReplicaListservices) | **Get** /replica/{replicaId}/services/ | /services/
-[**OperationReplicaPatchtag**](ReplicaApi.md#OperationReplicaPatchtag) | **Patch** /replica/{replicaId}/tag/ | /tag/
-[**OperationReplicaPostaccessrights**](ReplicaApi.md#OperationReplicaPostaccessrights) | **Post** /replica/{replicaId}/accessrights/ | /accessrights/
-[**ShowReplica**](ReplicaApi.md#ShowReplica) | **Get** /replica/{replicaId} | Get
+[**ReplicaActionImage**](ReplicaApi.md#ReplicaActionImage) | **Post** /replica/{replicaId}/actions/image | /actions/image
+[**ReplicaCreate**](ReplicaApi.md#ReplicaCreate) | **Post** /replica | Create
+[**ReplicaDelete**](ReplicaApi.md#ReplicaDelete) | **Delete** /replica/{replicaId} | Delete
+[**ReplicaDeleteAccessrightsIdentity**](ReplicaApi.md#ReplicaDeleteAccessrightsIdentity) | **Delete** /replica/{replicaId}/accessrights/{identity} | /accessrights/:identity
+[**ReplicaDeleteTagKey**](ReplicaApi.md#ReplicaDeleteTagKey) | **Delete** /replica/{replicaId}/tag/{key} | /tag/:key
+[**ReplicaGetServicesServiceId**](ReplicaApi.md#ReplicaGetServicesServiceId) | **Get** /replica/{replicaId}/services/{serviceId} | /services/:serviceId
+[**ReplicaGetTag**](ReplicaApi.md#ReplicaGetTag) | **Get** /replica/{replicaId}/tag | /tag
+[**ReplicaList**](ReplicaApi.md#ReplicaList) | **Get** /replica | List
+[**ReplicaListAccessrights**](ReplicaApi.md#ReplicaListAccessrights) | **Get** /replica/{replicaId}/accessrights | /accessrights
+[**ReplicaListQueue**](ReplicaApi.md#ReplicaListQueue) | **Get** /replica/{replicaId}/queue | /queue
+[**ReplicaListServices**](ReplicaApi.md#ReplicaListServices) | **Get** /replica/{replicaId}/services | /services
+[**ReplicaPatchTag**](ReplicaApi.md#ReplicaPatchTag) | **Patch** /replica/{replicaId}/tag | /tag
+[**ReplicaPostAccessrights**](ReplicaApi.md#ReplicaPostAccessrights) | **Post** /replica/{replicaId}/accessrights | /accessrights
+[**ReplicaShow**](ReplicaApi.md#ReplicaShow) | **Get** /replica/{replicaId} | Get
 
 
-# **ActionReplicaImage**
-> Replica ActionReplicaImage(ctx, replicaId, replicaImage)
+# **ReplicaActionImage**
+> Replica ReplicaActionImage(ctx, replicaId, replicaActionImage)
 /actions/image
 
 Action image
@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
-  **replicaImage** | [**ReplicaImage**](ReplicaImage.md)|  | 
+  **replicaActionImage** | [**ReplicaActionImage**](ReplicaActionImage.md)|  | 
 
 ### Return type
 
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateReplica**
-> Replica CreateReplica(ctx, replicaCreate)
+# **ReplicaCreate**
+> Replica ReplicaCreate(ctx, replicaCreate)
 Create
 
 Create replica
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteReplica**
-> DeleteReplica(ctx, replicaId)
+# **ReplicaDelete**
+> ReplicaDelete(ctx, replicaId)
 Delete
 
 ### Required Parameters
@@ -103,43 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListReplica**
-> []Replica ListReplica(ctx, optional)
-List
-
-List replica
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListReplicaOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListReplicaOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Replica**](replica.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationReplicaDeleteaccessrightsIdentity**
-> Replica OperationReplicaDeleteaccessrightsIdentity(ctx, replicaId, identity)
+# **ReplicaDeleteAccessrightsIdentity**
+> Replica ReplicaDeleteAccessrightsIdentity(ctx, replicaId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -165,8 +130,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaDeletetagKey**
-> map[string]string OperationReplicaDeletetagKey(ctx, replicaId, key)
+# **ReplicaDeleteTagKey**
+> map[string]interface{} ReplicaDeleteTagKey(ctx, replicaId, key)
 /tag/:key
 
 ### Required Parameters
@@ -179,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -192,8 +157,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaGetservicesServiceId**
-> ReplicaServices OperationReplicaGetservicesServiceId(ctx, replicaId, serviceId)
+# **ReplicaGetServicesServiceId**
+> ReplicaServices ReplicaGetServicesServiceId(ctx, replicaId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -219,9 +184,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaGettag**
-> map[string]string OperationReplicaGettag(ctx, replicaId)
-/tag/
+# **ReplicaGetTag**
+> map[string]interface{} ReplicaGetTag(ctx, replicaId)
+/tag
 
 ### Required Parameters
 
@@ -232,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -245,9 +210,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaListaccessrights**
-> []string OperationReplicaListaccessrights(ctx, replicaId)
-/accessrights/
+# **ReplicaList**
+> []Replica ReplicaList(ctx, optional)
+List
+
+List replica
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***ReplicaListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a ReplicaListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Replica**](replica.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ReplicaListAccessrights**
+> []string ReplicaListAccessrights(ctx, replicaId)
+/accessrights
 
 ### Required Parameters
 
@@ -271,9 +271,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaListqueue**
-> []Event OperationReplicaListqueue(ctx, replicaId)
-/queue/
+# **ReplicaListQueue**
+> []Event ReplicaListQueue(ctx, replicaId)
+/queue
 
 ### Required Parameters
 
@@ -297,9 +297,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaListservices**
-> []ReplicaServices OperationReplicaListservices(ctx, replicaId)
-/services/
+# **ReplicaListServices**
+> []ReplicaServices ReplicaListServices(ctx, replicaId)
+/services
 
 ### Required Parameters
 
@@ -323,9 +323,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaPatchtag**
-> map[string]string OperationReplicaPatchtag(ctx, replicaId, requestBody)
-/tag/
+# **ReplicaPatchTag**
+> map[string]interface{} ReplicaPatchTag(ctx, replicaId, body)
+/tag
 
 ### Required Parameters
 
@@ -333,11 +333,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -350,9 +350,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReplicaPostaccessrights**
-> string OperationReplicaPostaccessrights(ctx, replicaId, resourceAccessRight)
-/accessrights/
+# **ReplicaPostAccessrights**
+> string ReplicaPostAccessrights(ctx, replicaId, replicaPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **replicaPostAccessrights** | [**ReplicaPostAccessrights**](ReplicaPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -377,8 +377,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowReplica**
-> Replica ShowReplica(ctx, replicaId)
+# **ReplicaShow**
+> Replica ReplicaShow(ctx, replicaId)
 Get
 
 Returns a single replica

@@ -4,25 +4,25 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionIsoTransfer**](IsoApi.md#ActionIsoTransfer) | **Post** /iso/{isoId}/actions/transfer | /actions/transfer
-[**CreateIso**](IsoApi.md#CreateIso) | **Post** /iso | Create
-[**DeleteIso**](IsoApi.md#DeleteIso) | **Delete** /iso/{isoId} | Delete
-[**ListIso**](IsoApi.md#ListIso) | **Get** /iso | List
-[**OperationIsoDeleteaccessrightsIdentity**](IsoApi.md#OperationIsoDeleteaccessrightsIdentity) | **Delete** /iso/{isoId}/accessrights/{identity} | /accessrights/:identity
-[**OperationIsoDeletetagKey**](IsoApi.md#OperationIsoDeletetagKey) | **Delete** /iso/{isoId}/tag/{key} | /tag/:key
-[**OperationIsoGetservicesServiceId**](IsoApi.md#OperationIsoGetservicesServiceId) | **Get** /iso/{isoId}/services/{serviceId} | /services/:serviceId
-[**OperationIsoGettag**](IsoApi.md#OperationIsoGettag) | **Get** /iso/{isoId}/tag/ | /tag/
-[**OperationIsoListaccessrights**](IsoApi.md#OperationIsoListaccessrights) | **Get** /iso/{isoId}/accessrights/ | /accessrights/
-[**OperationIsoListqueue**](IsoApi.md#OperationIsoListqueue) | **Get** /iso/{isoId}/queue/ | /queue/
-[**OperationIsoListservices**](IsoApi.md#OperationIsoListservices) | **Get** /iso/{isoId}/services/ | /services/
-[**OperationIsoPatchtag**](IsoApi.md#OperationIsoPatchtag) | **Patch** /iso/{isoId}/tag/ | /tag/
-[**OperationIsoPostaccessrights**](IsoApi.md#OperationIsoPostaccessrights) | **Post** /iso/{isoId}/accessrights/ | /accessrights/
-[**ShowIso**](IsoApi.md#ShowIso) | **Get** /iso/{isoId} | Get
-[**UpdateIso**](IsoApi.md#UpdateIso) | **Patch** /iso/{isoId} | Update
+[**IsoActionTransfer**](IsoApi.md#IsoActionTransfer) | **Post** /iso/{isoId}/actions/transfer | /actions/transfer
+[**IsoCreate**](IsoApi.md#IsoCreate) | **Post** /iso | Create
+[**IsoDelete**](IsoApi.md#IsoDelete) | **Delete** /iso/{isoId} | Delete
+[**IsoDeleteAccessrightsIdentity**](IsoApi.md#IsoDeleteAccessrightsIdentity) | **Delete** /iso/{isoId}/accessrights/{identity} | /accessrights/:identity
+[**IsoDeleteTagKey**](IsoApi.md#IsoDeleteTagKey) | **Delete** /iso/{isoId}/tag/{key} | /tag/:key
+[**IsoGetServicesServiceId**](IsoApi.md#IsoGetServicesServiceId) | **Get** /iso/{isoId}/services/{serviceId} | /services/:serviceId
+[**IsoGetTag**](IsoApi.md#IsoGetTag) | **Get** /iso/{isoId}/tag | /tag
+[**IsoList**](IsoApi.md#IsoList) | **Get** /iso | List
+[**IsoListAccessrights**](IsoApi.md#IsoListAccessrights) | **Get** /iso/{isoId}/accessrights | /accessrights
+[**IsoListQueue**](IsoApi.md#IsoListQueue) | **Get** /iso/{isoId}/queue | /queue
+[**IsoListServices**](IsoApi.md#IsoListServices) | **Get** /iso/{isoId}/services | /services
+[**IsoPatchTag**](IsoApi.md#IsoPatchTag) | **Patch** /iso/{isoId}/tag | /tag
+[**IsoPostAccessrights**](IsoApi.md#IsoPostAccessrights) | **Post** /iso/{isoId}/accessrights | /accessrights
+[**IsoShow**](IsoApi.md#IsoShow) | **Get** /iso/{isoId} | Get
+[**IsoUpdate**](IsoApi.md#IsoUpdate) | **Patch** /iso/{isoId} | Update
 
 
-# **ActionIsoTransfer**
-> Iso ActionIsoTransfer(ctx, isoId, isoTransfer)
+# **IsoActionTransfer**
+> Iso IsoActionTransfer(ctx, isoId, isoActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
-  **isoTransfer** | [**IsoTransfer**](IsoTransfer.md)|  | 
+  **isoActionTransfer** | [**IsoActionTransfer**](IsoActionTransfer.md)|  | 
 
 ### Return type
 
@@ -50,8 +50,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateIso**
-> Iso CreateIso(ctx, isoCreate)
+# **IsoCreate**
+> Iso IsoCreate(ctx, isoCreate)
 Create
 
 Create iso
@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteIso**
-> DeleteIso(ctx, isoId)
+# **IsoDelete**
+> IsoDelete(ctx, isoId)
 Delete
 
 ### Required Parameters
@@ -104,43 +104,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListIso**
-> []Iso ListIso(ctx, optional)
-List
-
-List iso
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListIsoOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListIsoOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Iso**](iso.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationIsoDeleteaccessrightsIdentity**
-> Iso OperationIsoDeleteaccessrightsIdentity(ctx, isoId, identity)
+# **IsoDeleteAccessrightsIdentity**
+> Iso IsoDeleteAccessrightsIdentity(ctx, isoId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -166,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoDeletetagKey**
-> map[string]string OperationIsoDeletetagKey(ctx, isoId, key)
+# **IsoDeleteTagKey**
+> map[string]interface{} IsoDeleteTagKey(ctx, isoId, key)
 /tag/:key
 
 ### Required Parameters
@@ -180,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -193,8 +158,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoGetservicesServiceId**
-> IsoServices OperationIsoGetservicesServiceId(ctx, isoId, serviceId)
+# **IsoGetServicesServiceId**
+> IsoServices IsoGetServicesServiceId(ctx, isoId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -220,9 +185,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoGettag**
-> map[string]string OperationIsoGettag(ctx, isoId)
-/tag/
+# **IsoGetTag**
+> map[string]interface{} IsoGetTag(ctx, isoId)
+/tag
 
 ### Required Parameters
 
@@ -233,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -246,9 +211,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoListaccessrights**
-> []string OperationIsoListaccessrights(ctx, isoId)
-/accessrights/
+# **IsoList**
+> []Iso IsoList(ctx, optional)
+List
+
+List iso
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***IsoListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a IsoListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Iso**](iso.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **IsoListAccessrights**
+> []string IsoListAccessrights(ctx, isoId)
+/accessrights
 
 ### Required Parameters
 
@@ -272,9 +272,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoListqueue**
-> []Event OperationIsoListqueue(ctx, isoId)
-/queue/
+# **IsoListQueue**
+> []Event IsoListQueue(ctx, isoId)
+/queue
 
 ### Required Parameters
 
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoListservices**
-> []IsoServices OperationIsoListservices(ctx, isoId)
-/services/
+# **IsoListServices**
+> []IsoServices IsoListServices(ctx, isoId)
+/services
 
 ### Required Parameters
 
@@ -324,9 +324,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoPatchtag**
-> map[string]string OperationIsoPatchtag(ctx, isoId, requestBody)
-/tag/
+# **IsoPatchTag**
+> map[string]interface{} IsoPatchTag(ctx, isoId, body)
+/tag
 
 ### Required Parameters
 
@@ -334,11 +334,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -351,9 +351,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIsoPostaccessrights**
-> string OperationIsoPostaccessrights(ctx, isoId, resourceAccessRight)
-/accessrights/
+# **IsoPostAccessrights**
+> string IsoPostAccessrights(ctx, isoId, isoPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **isoPostAccessrights** | [**IsoPostAccessrights**](IsoPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -378,8 +378,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowIso**
-> Iso ShowIso(ctx, isoId)
+# **IsoShow**
+> Iso IsoShow(ctx, isoId)
 Get
 
 Returns a single iso
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateIso**
-> Iso UpdateIso(ctx, isoId, optional)
+# **IsoUpdate**
+> Iso IsoUpdate(ctx, isoId, isoUpdate)
 Update
 
 Returns modified iso
@@ -418,15 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **isoId** | **string**| ID of iso | 
- **optional** | ***UpdateIsoOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateIsoOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject11** | [**optional.Interface of InlineObject11**](InlineObject11.md)|  | 
+  **isoUpdate** | [**IsoUpdate**](IsoUpdate.md)|  | 
 
 ### Return type
 

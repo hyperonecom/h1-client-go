@@ -4,26 +4,26 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionDiskResize**](DiskApi.md#ActionDiskResize) | **Post** /disk/{diskId}/actions/resize | /actions/resize
-[**ActionDiskTransfer**](DiskApi.md#ActionDiskTransfer) | **Post** /disk/{diskId}/actions/transfer | /actions/transfer
-[**CreateDisk**](DiskApi.md#CreateDisk) | **Post** /disk | Create
-[**DeleteDisk**](DiskApi.md#DeleteDisk) | **Delete** /disk/{diskId} | Delete
-[**ListDisk**](DiskApi.md#ListDisk) | **Get** /disk | List
-[**OperationDiskDeleteaccessrightsIdentity**](DiskApi.md#OperationDiskDeleteaccessrightsIdentity) | **Delete** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
-[**OperationDiskDeletetagKey**](DiskApi.md#OperationDiskDeletetagKey) | **Delete** /disk/{diskId}/tag/{key} | /tag/:key
-[**OperationDiskGetservicesServiceId**](DiskApi.md#OperationDiskGetservicesServiceId) | **Get** /disk/{diskId}/services/{serviceId} | /services/:serviceId
-[**OperationDiskGettag**](DiskApi.md#OperationDiskGettag) | **Get** /disk/{diskId}/tag/ | /tag/
-[**OperationDiskListaccessrights**](DiskApi.md#OperationDiskListaccessrights) | **Get** /disk/{diskId}/accessrights/ | /accessrights/
-[**OperationDiskListqueue**](DiskApi.md#OperationDiskListqueue) | **Get** /disk/{diskId}/queue/ | /queue/
-[**OperationDiskListservices**](DiskApi.md#OperationDiskListservices) | **Get** /disk/{diskId}/services/ | /services/
-[**OperationDiskPatchtag**](DiskApi.md#OperationDiskPatchtag) | **Patch** /disk/{diskId}/tag/ | /tag/
-[**OperationDiskPostaccessrights**](DiskApi.md#OperationDiskPostaccessrights) | **Post** /disk/{diskId}/accessrights/ | /accessrights/
-[**ShowDisk**](DiskApi.md#ShowDisk) | **Get** /disk/{diskId} | Get
-[**UpdateDisk**](DiskApi.md#UpdateDisk) | **Patch** /disk/{diskId} | Update
+[**DiskActionResize**](DiskApi.md#DiskActionResize) | **Post** /disk/{diskId}/actions/resize | /actions/resize
+[**DiskActionTransfer**](DiskApi.md#DiskActionTransfer) | **Post** /disk/{diskId}/actions/transfer | /actions/transfer
+[**DiskCreate**](DiskApi.md#DiskCreate) | **Post** /disk | Create
+[**DiskDelete**](DiskApi.md#DiskDelete) | **Delete** /disk/{diskId} | Delete
+[**DiskDeleteAccessrightsIdentity**](DiskApi.md#DiskDeleteAccessrightsIdentity) | **Delete** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
+[**DiskDeleteTagKey**](DiskApi.md#DiskDeleteTagKey) | **Delete** /disk/{diskId}/tag/{key} | /tag/:key
+[**DiskGetServicesServiceId**](DiskApi.md#DiskGetServicesServiceId) | **Get** /disk/{diskId}/services/{serviceId} | /services/:serviceId
+[**DiskGetTag**](DiskApi.md#DiskGetTag) | **Get** /disk/{diskId}/tag | /tag
+[**DiskList**](DiskApi.md#DiskList) | **Get** /disk | List
+[**DiskListAccessrights**](DiskApi.md#DiskListAccessrights) | **Get** /disk/{diskId}/accessrights | /accessrights
+[**DiskListQueue**](DiskApi.md#DiskListQueue) | **Get** /disk/{diskId}/queue | /queue
+[**DiskListServices**](DiskApi.md#DiskListServices) | **Get** /disk/{diskId}/services | /services
+[**DiskPatchTag**](DiskApi.md#DiskPatchTag) | **Patch** /disk/{diskId}/tag | /tag
+[**DiskPostAccessrights**](DiskApi.md#DiskPostAccessrights) | **Post** /disk/{diskId}/accessrights | /accessrights
+[**DiskShow**](DiskApi.md#DiskShow) | **Get** /disk/{diskId} | Get
+[**DiskUpdate**](DiskApi.md#DiskUpdate) | **Patch** /disk/{diskId} | Update
 
 
-# **ActionDiskResize**
-> Disk ActionDiskResize(ctx, diskId)
+# **DiskActionResize**
+> Disk DiskActionResize(ctx, diskId)
 /actions/resize
 
 Action resize
@@ -50,8 +50,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionDiskTransfer**
-> Disk ActionDiskTransfer(ctx, diskId, diskTransfer)
+# **DiskActionTransfer**
+> Disk DiskActionTransfer(ctx, diskId, diskActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
-  **diskTransfer** | [**DiskTransfer**](DiskTransfer.md)|  | 
+  **diskActionTransfer** | [**DiskActionTransfer**](DiskActionTransfer.md)|  | 
 
 ### Return type
 
@@ -79,8 +79,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateDisk**
-> Disk CreateDisk(ctx, diskCreate)
+# **DiskCreate**
+> Disk DiskCreate(ctx, diskCreate)
 Create
 
 Create disk
@@ -107,8 +107,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteDisk**
-> DeleteDisk(ctx, diskId)
+# **DiskDelete**
+> DiskDelete(ctx, diskId)
 Delete
 
 ### Required Parameters
@@ -133,43 +133,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListDisk**
-> []Disk ListDisk(ctx, optional)
-List
-
-List disk
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListDiskOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListDiskOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Disk**](disk.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationDiskDeleteaccessrightsIdentity**
-> Disk OperationDiskDeleteaccessrightsIdentity(ctx, diskId, identity)
+# **DiskDeleteAccessrightsIdentity**
+> Disk DiskDeleteAccessrightsIdentity(ctx, diskId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -195,8 +160,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskDeletetagKey**
-> map[string]string OperationDiskDeletetagKey(ctx, diskId, key)
+# **DiskDeleteTagKey**
+> map[string]interface{} DiskDeleteTagKey(ctx, diskId, key)
 /tag/:key
 
 ### Required Parameters
@@ -209,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -222,8 +187,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskGetservicesServiceId**
-> DiskServices OperationDiskGetservicesServiceId(ctx, diskId, serviceId)
+# **DiskGetServicesServiceId**
+> DiskServices DiskGetServicesServiceId(ctx, diskId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -249,9 +214,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskGettag**
-> map[string]string OperationDiskGettag(ctx, diskId)
-/tag/
+# **DiskGetTag**
+> map[string]interface{} DiskGetTag(ctx, diskId)
+/tag
 
 ### Required Parameters
 
@@ -262,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -275,9 +240,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskListaccessrights**
-> []string OperationDiskListaccessrights(ctx, diskId)
-/accessrights/
+# **DiskList**
+> []Disk DiskList(ctx, optional)
+List
+
+List disk
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***DiskListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a DiskListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Disk**](disk.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **DiskListAccessrights**
+> []string DiskListAccessrights(ctx, diskId)
+/accessrights
 
 ### Required Parameters
 
@@ -301,9 +301,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskListqueue**
-> []Event OperationDiskListqueue(ctx, diskId)
-/queue/
+# **DiskListQueue**
+> []Event DiskListQueue(ctx, diskId)
+/queue
 
 ### Required Parameters
 
@@ -327,9 +327,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskListservices**
-> []DiskServices OperationDiskListservices(ctx, diskId)
-/services/
+# **DiskListServices**
+> []DiskServices DiskListServices(ctx, diskId)
+/services
 
 ### Required Parameters
 
@@ -353,9 +353,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskPatchtag**
-> map[string]string OperationDiskPatchtag(ctx, diskId, requestBody)
-/tag/
+# **DiskPatchTag**
+> map[string]interface{} DiskPatchTag(ctx, diskId, body)
+/tag
 
 ### Required Parameters
 
@@ -363,11 +363,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -380,9 +380,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationDiskPostaccessrights**
-> string OperationDiskPostaccessrights(ctx, diskId, resourceAccessRight)
-/accessrights/
+# **DiskPostAccessrights**
+> string DiskPostAccessrights(ctx, diskId, diskPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **diskPostAccessrights** | [**DiskPostAccessrights**](DiskPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -407,8 +407,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowDisk**
-> Disk ShowDisk(ctx, diskId)
+# **DiskShow**
+> Disk DiskShow(ctx, diskId)
 Get
 
 Returns a single disk
@@ -435,8 +435,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateDisk**
-> Disk UpdateDisk(ctx, diskId, optional)
+# **DiskUpdate**
+> Disk DiskUpdate(ctx, diskId, diskUpdate)
 Update
 
 Returns modified disk
@@ -447,15 +447,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
- **optional** | ***UpdateDiskOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateDiskOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject10** | [**optional.Interface of InlineObject10**](InlineObject10.md)|  | 
+  **diskUpdate** | [**DiskUpdate**](DiskUpdate.md)|  | 
 
 ### Return type
 

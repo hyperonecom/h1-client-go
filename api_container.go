@@ -33,7 +33,7 @@ Action restart
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ActionContainerRestart(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ Action start
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ActionContainerStart(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ Action stop
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ActionContainerStop(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionStop(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -414,7 +414,7 @@ Create container
  * @param containerCreate
 @return Container
 */
-func (a *ContainerApiService) CreateContainer(ctx context.Context, containerCreate ContainerCreate) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCreate ContainerCreate) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -540,7 +540,7 @@ ContainerApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 */
-func (a *ContainerApiService) DeleteContainer(ctx context.Context, containerId string) (*http.Response, error) {
+func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -641,148 +641,13 @@ func (a *ContainerApiService) DeleteContainer(ctx context.Context, containerId s
 }
 
 /*
-ContainerApiService List
-List container
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListContainerOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Container
-*/
-
-type ListContainerOpts struct {
-	Name optional.String
-}
-
-func (a *ContainerApiService) ListContainer(ctx context.Context, localVarOptionals *ListContainerOpts) ([]Container, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Container
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Container
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 ContainerApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param identity identity
 @return Container
 */
-func (a *ContainerApiService) OperationContainerDeleteaccessrightsIdentity(ctx context.Context, containerId string, identity string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Context, containerId string, identity string) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -918,16 +783,16 @@ ContainerApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ContainerApiService) OperationContainerDeletetagKey(ctx context.Context, containerId string, key string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, containerId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -1017,7 +882,7 @@ func (a *ContainerApiService) OperationContainerDeletetagKey(ctx context.Context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1048,7 +913,7 @@ ContainerApiService /services/:serviceId
  * @param serviceId serviceId
 @return ContainerServices
 */
-func (a *ContainerApiService) OperationContainerGetservicesServiceId(ctx context.Context, containerId string, serviceId string) (ContainerServices, *http.Response, error) {
+func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context, containerId string, serviceId string) (ContainerServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1170,23 +1035,23 @@ func (a *ContainerApiService) OperationContainerGetservicesServiceId(ctx context
 }
 
 /*
-ContainerApiService /tag/
+ContainerApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, containerId string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1271,7 +1136,7 @@ func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, cont
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1296,12 +1161,147 @@ func (a *ContainerApiService) OperationContainerGettag(ctx context.Context, cont
 }
 
 /*
-ContainerApiService /accessrights/
+ContainerApiService List
+List container
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *ContainerListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Container
+*/
+
+type ContainerListOpts struct {
+	Name optional.String
+}
+
+func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptionals *ContainerListOpts) ([]Container, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Container
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/container"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Container
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+ContainerApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []string
 */
-func (a *ContainerApiService) OperationContainerListaccessrights(ctx context.Context, containerId string) ([]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, containerId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1312,7 +1312,7 @@ func (a *ContainerApiService) OperationContainerListaccessrights(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1422,12 +1422,12 @@ func (a *ContainerApiService) OperationContainerListaccessrights(ctx context.Con
 }
 
 /*
-ContainerApiService /queue/
+ContainerApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []Event
 */
-func (a *ContainerApiService) OperationContainerListqueue(ctx context.Context, containerId string) ([]Event, *http.Response, error) {
+func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1438,7 +1438,7 @@ func (a *ContainerApiService) OperationContainerListqueue(ctx context.Context, c
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1548,12 +1548,12 @@ func (a *ContainerApiService) OperationContainerListqueue(ctx context.Context, c
 }
 
 /*
-ContainerApiService /services/
+ContainerApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []ContainerServices
 */
-func (a *ContainerApiService) OperationContainerListservices(ctx context.Context, containerId string) ([]ContainerServices, *http.Response, error) {
+func (a *ContainerApiService) ContainerListServices(ctx context.Context, containerId string) ([]ContainerServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1564,7 +1564,7 @@ func (a *ContainerApiService) OperationContainerListservices(ctx context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1674,24 +1674,24 @@ func (a *ContainerApiService) OperationContainerListservices(ctx context.Context
 }
 
 /*
-ContainerApiService /tag/
+ContainerApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1716,7 +1716,7 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1778,7 +1778,7 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1803,13 +1803,13 @@ func (a *ContainerApiService) OperationContainerPatchtag(ctx context.Context, co
 }
 
 /*
-ContainerApiService /accessrights/
+ContainerApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
- * @param resourceAccessRight
+ * @param containerPostAccessrights
 @return string
 */
-func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Context, containerId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1820,7 +1820,7 @@ func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/container/{containerId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1845,7 +1845,7 @@ func (a *ContainerApiService) OperationContainerPostaccessrights(ctx context.Con
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &containerPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1938,7 +1938,7 @@ Returns a single container
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ShowContainer(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2063,16 +2063,10 @@ ContainerApiService Update
 Returns modified container
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
- * @param optional nil or *UpdateContainerOpts - Optional Parameters:
- * @param "InlineObject2" (optional.Interface of InlineObject2) - 
+ * @param containerUpdate
 @return Container
 */
-
-type UpdateContainerOpts struct {
-	InlineObject2 optional.Interface
-}
-
-func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId string, localVarOptionals *UpdateContainerOpts) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerUpdate(ctx context.Context, containerId string, containerUpdate ContainerUpdate) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -2108,14 +2102,7 @@ func (a *ContainerApiService) UpdateContainer(ctx context.Context, containerId s
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject2.IsSet() {
-		localVarOptionalInlineObject2, localVarOptionalInlineObject2ok := localVarOptionals.InlineObject2.Value().(InlineObject2)
-		if !localVarOptionalInlineObject2ok {
-			return localVarReturnValue, nil, reportError("inlineObject2 should be InlineObject2")
-		}
-		localVarPostBody = &localVarOptionalInlineObject2
-	}
-
+	localVarPostBody = &containerUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

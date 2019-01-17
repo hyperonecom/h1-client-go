@@ -4,24 +4,24 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSnapshot**](SnapshotApi.md#CreateSnapshot) | **Post** /snapshot | Create
-[**DeleteSnapshot**](SnapshotApi.md#DeleteSnapshot) | **Delete** /snapshot/{snapshotId} | Delete
-[**ListSnapshot**](SnapshotApi.md#ListSnapshot) | **Get** /snapshot | List
-[**OperationSnapshotDeleteaccessrightsIdentity**](SnapshotApi.md#OperationSnapshotDeleteaccessrightsIdentity) | **Delete** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
-[**OperationSnapshotDeletetagKey**](SnapshotApi.md#OperationSnapshotDeletetagKey) | **Delete** /snapshot/{snapshotId}/tag/{key} | /tag/:key
-[**OperationSnapshotGetservicesServiceId**](SnapshotApi.md#OperationSnapshotGetservicesServiceId) | **Get** /snapshot/{snapshotId}/services/{serviceId} | /services/:serviceId
-[**OperationSnapshotGettag**](SnapshotApi.md#OperationSnapshotGettag) | **Get** /snapshot/{snapshotId}/tag/ | /tag/
-[**OperationSnapshotListaccessrights**](SnapshotApi.md#OperationSnapshotListaccessrights) | **Get** /snapshot/{snapshotId}/accessrights/ | /accessrights/
-[**OperationSnapshotListqueue**](SnapshotApi.md#OperationSnapshotListqueue) | **Get** /snapshot/{snapshotId}/queue/ | /queue/
-[**OperationSnapshotListservices**](SnapshotApi.md#OperationSnapshotListservices) | **Get** /snapshot/{snapshotId}/services/ | /services/
-[**OperationSnapshotPatchtag**](SnapshotApi.md#OperationSnapshotPatchtag) | **Patch** /snapshot/{snapshotId}/tag/ | /tag/
-[**OperationSnapshotPostaccessrights**](SnapshotApi.md#OperationSnapshotPostaccessrights) | **Post** /snapshot/{snapshotId}/accessrights/ | /accessrights/
-[**ShowSnapshot**](SnapshotApi.md#ShowSnapshot) | **Get** /snapshot/{snapshotId} | Get
-[**UpdateSnapshot**](SnapshotApi.md#UpdateSnapshot) | **Patch** /snapshot/{snapshotId} | Update
+[**SnapshotCreate**](SnapshotApi.md#SnapshotCreate) | **Post** /snapshot | Create
+[**SnapshotDelete**](SnapshotApi.md#SnapshotDelete) | **Delete** /snapshot/{snapshotId} | Delete
+[**SnapshotDeleteAccessrightsIdentity**](SnapshotApi.md#SnapshotDeleteAccessrightsIdentity) | **Delete** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
+[**SnapshotDeleteTagKey**](SnapshotApi.md#SnapshotDeleteTagKey) | **Delete** /snapshot/{snapshotId}/tag/{key} | /tag/:key
+[**SnapshotGetServicesServiceId**](SnapshotApi.md#SnapshotGetServicesServiceId) | **Get** /snapshot/{snapshotId}/services/{serviceId} | /services/:serviceId
+[**SnapshotGetTag**](SnapshotApi.md#SnapshotGetTag) | **Get** /snapshot/{snapshotId}/tag | /tag
+[**SnapshotList**](SnapshotApi.md#SnapshotList) | **Get** /snapshot | List
+[**SnapshotListAccessrights**](SnapshotApi.md#SnapshotListAccessrights) | **Get** /snapshot/{snapshotId}/accessrights | /accessrights
+[**SnapshotListQueue**](SnapshotApi.md#SnapshotListQueue) | **Get** /snapshot/{snapshotId}/queue | /queue
+[**SnapshotListServices**](SnapshotApi.md#SnapshotListServices) | **Get** /snapshot/{snapshotId}/services | /services
+[**SnapshotPatchTag**](SnapshotApi.md#SnapshotPatchTag) | **Patch** /snapshot/{snapshotId}/tag | /tag
+[**SnapshotPostAccessrights**](SnapshotApi.md#SnapshotPostAccessrights) | **Post** /snapshot/{snapshotId}/accessrights | /accessrights
+[**SnapshotShow**](SnapshotApi.md#SnapshotShow) | **Get** /snapshot/{snapshotId} | Get
+[**SnapshotUpdate**](SnapshotApi.md#SnapshotUpdate) | **Patch** /snapshot/{snapshotId} | Update
 
 
-# **CreateSnapshot**
-> Snapshot CreateSnapshot(ctx, snapshotCreate)
+# **SnapshotCreate**
+> Snapshot SnapshotCreate(ctx, snapshotCreate)
 Create
 
 Create snapshot
@@ -48,8 +48,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteSnapshot**
-> DeleteSnapshot(ctx, snapshotId)
+# **SnapshotDelete**
+> SnapshotDelete(ctx, snapshotId)
 Delete
 
 ### Required Parameters
@@ -74,44 +74,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListSnapshot**
-> []Snapshot ListSnapshot(ctx, optional)
-List
-
-List snapshot
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListSnapshotOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListSnapshotOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
- **vault** | **optional.String**| Filter by vault | 
-
-### Return type
-
-[**[]Snapshot**](snapshot.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationSnapshotDeleteaccessrightsIdentity**
-> Snapshot OperationSnapshotDeleteaccessrightsIdentity(ctx, snapshotId, identity)
+# **SnapshotDeleteAccessrightsIdentity**
+> Snapshot SnapshotDeleteAccessrightsIdentity(ctx, snapshotId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -137,8 +101,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotDeletetagKey**
-> map[string]string OperationSnapshotDeletetagKey(ctx, snapshotId, key)
+# **SnapshotDeleteTagKey**
+> map[string]interface{} SnapshotDeleteTagKey(ctx, snapshotId, key)
 /tag/:key
 
 ### Required Parameters
@@ -151,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -164,8 +128,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotGetservicesServiceId**
-> SnapshotServices OperationSnapshotGetservicesServiceId(ctx, snapshotId, serviceId)
+# **SnapshotGetServicesServiceId**
+> SnapshotServices SnapshotGetServicesServiceId(ctx, snapshotId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -191,9 +155,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotGettag**
-> map[string]string OperationSnapshotGettag(ctx, snapshotId)
-/tag/
+# **SnapshotGetTag**
+> map[string]interface{} SnapshotGetTag(ctx, snapshotId)
+/tag
 
 ### Required Parameters
 
@@ -204,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -217,9 +181,45 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotListaccessrights**
-> []string OperationSnapshotListaccessrights(ctx, snapshotId)
-/accessrights/
+# **SnapshotList**
+> []Snapshot SnapshotList(ctx, optional)
+List
+
+List snapshot
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***SnapshotListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a SnapshotListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+ **vault** | **optional.String**| Filter by vault | 
+
+### Return type
+
+[**[]Snapshot**](snapshot.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SnapshotListAccessrights**
+> []string SnapshotListAccessrights(ctx, snapshotId)
+/accessrights
 
 ### Required Parameters
 
@@ -243,9 +243,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotListqueue**
-> []Event OperationSnapshotListqueue(ctx, snapshotId)
-/queue/
+# **SnapshotListQueue**
+> []Event SnapshotListQueue(ctx, snapshotId)
+/queue
 
 ### Required Parameters
 
@@ -269,9 +269,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotListservices**
-> []SnapshotServices OperationSnapshotListservices(ctx, snapshotId)
-/services/
+# **SnapshotListServices**
+> []SnapshotServices SnapshotListServices(ctx, snapshotId)
+/services
 
 ### Required Parameters
 
@@ -295,9 +295,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotPatchtag**
-> map[string]string OperationSnapshotPatchtag(ctx, snapshotId, requestBody)
-/tag/
+# **SnapshotPatchTag**
+> map[string]interface{} SnapshotPatchTag(ctx, snapshotId, body)
+/tag
 
 ### Required Parameters
 
@@ -305,11 +305,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -322,9 +322,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationSnapshotPostaccessrights**
-> string OperationSnapshotPostaccessrights(ctx, snapshotId, resourceAccessRight)
-/accessrights/
+# **SnapshotPostAccessrights**
+> string SnapshotPostAccessrights(ctx, snapshotId, snapshotPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **snapshotPostAccessrights** | [**SnapshotPostAccessrights**](SnapshotPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -349,8 +349,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowSnapshot**
-> Snapshot ShowSnapshot(ctx, snapshotId)
+# **SnapshotShow**
+> Snapshot SnapshotShow(ctx, snapshotId)
 Get
 
 Returns a single snapshot
@@ -377,8 +377,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateSnapshot**
-> Snapshot UpdateSnapshot(ctx, snapshotId, optional)
+# **SnapshotUpdate**
+> Snapshot SnapshotUpdate(ctx, snapshotId, snapshotUpdate)
 Update
 
 Returns modified snapshot
@@ -389,15 +389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
- **optional** | ***UpdateSnapshotOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateSnapshotOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject21** | [**optional.Interface of InlineObject21**](InlineObject21.md)|  | 
+  **snapshotUpdate** | [**SnapshotUpdate**](SnapshotUpdate.md)|  | 
 
 ### Return type
 

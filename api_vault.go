@@ -33,7 +33,7 @@ Action resize
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) ActionVaultResize(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ Action snapshot
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) ActionVaultSnapshot(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ Action start
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) ActionVaultStart(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -414,7 +414,7 @@ Action stop
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) ActionVaultStop(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -541,7 +541,7 @@ Create vault
  * @param vaultCreate
 @return Vault
 */
-func (a *VaultApiService) CreateVault(ctx context.Context, vaultCreate VaultCreate) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCreate) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -667,7 +667,7 @@ VaultApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 */
-func (a *VaultApiService) DeleteVault(ctx context.Context, vaultId string) (*http.Response, error) {
+func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -768,148 +768,13 @@ func (a *VaultApiService) DeleteVault(ctx context.Context, vaultId string) (*htt
 }
 
 /*
-VaultApiService List
-List vault
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListVaultOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Vault
-*/
-
-type ListVaultOpts struct {
-	Name optional.String
-}
-
-func (a *VaultApiService) ListVault(ctx context.Context, localVarOptionals *ListVaultOpts) ([]Vault, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Vault
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Vault
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 VaultApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param identity identity
 @return Vault
 */
-func (a *VaultApiService) OperationVaultDeleteaccessrightsIdentity(ctx context.Context, vaultId string, identity string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, vaultId string, identity string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1047,7 +912,7 @@ VaultApiService /credential/certificate/:id
  * @param id id
 @return Vault
 */
-func (a *VaultApiService) OperationVaultDeletecredentialcertificateId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1185,7 +1050,7 @@ VaultApiService /credential/password/:id
  * @param id id
 @return Vault
 */
-func (a *VaultApiService) OperationVaultDeletecredentialpasswordId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1321,16 +1186,16 @@ VaultApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *VaultApiService) OperationVaultDeletetagKey(ctx context.Context, vaultId string, key string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -1420,7 +1285,7 @@ func (a *VaultApiService) OperationVaultDeletetagKey(ctx context.Context, vaultI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1451,7 +1316,7 @@ VaultApiService /credential/certificate/:id
  * @param id id
 @return CredentialCertificate
 */
-func (a *VaultApiService) OperationVaultGetcredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1579,7 +1444,7 @@ VaultApiService /credential/password/:id
  * @param id id
 @return CredentialPassword
 */
-func (a *VaultApiService) OperationVaultGetcredentialpasswordId(ctx context.Context, vaultId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaultId string, id string) (CredentialPassword, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1707,7 +1572,7 @@ VaultApiService /services/:serviceId
  * @param serviceId serviceId
 @return VaultServices
 */
-func (a *VaultApiService) OperationVaultGetservicesServiceId(ctx context.Context, vaultId string, serviceId string) (VaultServices, *http.Response, error) {
+func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId string, serviceId string) (VaultServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1829,23 +1694,23 @@ func (a *VaultApiService) OperationVaultGetservicesServiceId(ctx context.Context
 }
 
 /*
-VaultApiService /tag/
+VaultApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1930,7 +1795,7 @@ func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1955,12 +1820,147 @@ func (a *VaultApiService) OperationVaultGettag(ctx context.Context, vaultId stri
 }
 
 /*
-VaultApiService /accessrights/
+VaultApiService List
+List vault
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *VaultListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Vault
+*/
+
+type VaultListOpts struct {
+	Name optional.String
+}
+
+func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *VaultListOpts) ([]Vault, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Vault
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/vault"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+VaultApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []string
 */
-func (a *VaultApiService) OperationVaultListaccessrights(ctx context.Context, vaultId string) ([]string, *http.Response, error) {
+func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1971,7 +1971,7 @@ func (a *VaultApiService) OperationVaultListaccessrights(ctx context.Context, va
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2086,7 +2086,7 @@ VaultApiService /credential/certificate
  * @param vaultId ID of vault
 @return []CredentialCertificate
 */
-func (a *VaultApiService) OperationVaultListcredentialcertificate(ctx context.Context, vaultId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, vaultId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2212,7 +2212,7 @@ VaultApiService /credential/password
  * @param vaultId ID of vault
 @return []CredentialPassword
 */
-func (a *VaultApiService) OperationVaultListcredentialpassword(ctx context.Context, vaultId string) ([]CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vaultId string) ([]CredentialPassword, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2333,12 +2333,12 @@ func (a *VaultApiService) OperationVaultListcredentialpassword(ctx context.Conte
 }
 
 /*
-VaultApiService /queue/
+VaultApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []Event
 */
-func (a *VaultApiService) OperationVaultListqueue(ctx context.Context, vaultId string) ([]Event, *http.Response, error) {
+func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2349,7 +2349,7 @@ func (a *VaultApiService) OperationVaultListqueue(ctx context.Context, vaultId s
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2459,12 +2459,12 @@ func (a *VaultApiService) OperationVaultListqueue(ctx context.Context, vaultId s
 }
 
 /*
-VaultApiService /services/
+VaultApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []VaultServices
 */
-func (a *VaultApiService) OperationVaultListservices(ctx context.Context, vaultId string) ([]VaultServices, *http.Response, error) {
+func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string) ([]VaultServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2475,7 +2475,7 @@ func (a *VaultApiService) OperationVaultListservices(ctx context.Context, vaultI
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2589,16 +2589,10 @@ VaultApiService /credential/certificate/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
- * @param optional nil or *OperationVaultPatchcredentialcertificateIdOpts - Optional Parameters:
- * @param "InlineObject20" (optional.Interface of InlineObject20) - 
+ * @param vaultPatchCredentialcertificateId
 @return CredentialCertificate
 */
-
-type OperationVaultPatchcredentialcertificateIdOpts struct {
-	InlineObject20 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialcertificateIdOpts) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context, vaultId string, id string, vaultPatchCredentialcertificateId VaultPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -2635,14 +2629,7 @@ func (a *VaultApiService) OperationVaultPatchcredentialcertificateId(ctx context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject20.IsSet() {
-		localVarOptionalInlineObject20, localVarOptionalInlineObject20ok := localVarOptionals.InlineObject20.Value().(InlineObject20)
-		if !localVarOptionalInlineObject20ok {
-			return localVarReturnValue, nil, reportError("inlineObject20 should be InlineObject20")
-		}
-		localVarPostBody = &localVarOptionalInlineObject20
-	}
-
+	localVarPostBody = &vaultPatchCredentialcertificateId
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2733,16 +2720,10 @@ VaultApiService /credential/password/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
- * @param optional nil or *OperationVaultPatchcredentialpasswordIdOpts - Optional Parameters:
- * @param "InlineObject18" (optional.Interface of InlineObject18) - 
+ * @param vaultPatchCredentialpasswordId
 @return CredentialPassword
 */
-
-type OperationVaultPatchcredentialpasswordIdOpts struct {
-	InlineObject18 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Context, vaultId string, id string, localVarOptionals *OperationVaultPatchcredentialpasswordIdOpts) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, vaultId string, id string, vaultPatchCredentialpasswordId VaultPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -2779,14 +2760,7 @@ func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject18.IsSet() {
-		localVarOptionalInlineObject18, localVarOptionalInlineObject18ok := localVarOptionals.InlineObject18.Value().(InlineObject18)
-		if !localVarOptionalInlineObject18ok {
-			return localVarReturnValue, nil, reportError("inlineObject18 should be InlineObject18")
-		}
-		localVarPostBody = &localVarOptionalInlineObject18
-	}
-
+	localVarPostBody = &vaultPatchCredentialpasswordId
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2873,24 +2847,24 @@ func (a *VaultApiService) OperationVaultPatchcredentialpasswordId(ctx context.Co
 }
 
 /*
-VaultApiService /tag/
+VaultApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2915,7 +2889,7 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2977,7 +2951,7 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3002,13 +2976,13 @@ func (a *VaultApiService) OperationVaultPatchtag(ctx context.Context, vaultId st
 }
 
 /*
-VaultApiService /accessrights/
+VaultApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param resourceAccessRight
+ * @param vaultPostAccessrights
 @return string
 */
-func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, vaultId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -3019,7 +2993,7 @@ func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, va
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/vault/{vaultId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3044,7 +3018,7 @@ func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, va
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &vaultPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3134,16 +3108,10 @@ func (a *VaultApiService) OperationVaultPostaccessrights(ctx context.Context, va
 VaultApiService /credential/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param optional nil or *OperationVaultPostcredentialcertificateOpts - Optional Parameters:
- * @param "InlineObject19" (optional.Interface of InlineObject19) - 
+ * @param vaultPostCredentialcertificate
 @return CredentialCertificate
 */
-
-type OperationVaultPostcredentialcertificateOpts struct {
-	InlineObject19 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialcertificateOpts) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, vaultId string, vaultPostCredentialcertificate VaultPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -3179,14 +3147,7 @@ func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject19.IsSet() {
-		localVarOptionalInlineObject19, localVarOptionalInlineObject19ok := localVarOptionals.InlineObject19.Value().(InlineObject19)
-		if !localVarOptionalInlineObject19ok {
-			return localVarReturnValue, nil, reportError("inlineObject19 should be InlineObject19")
-		}
-		localVarPostBody = &localVarOptionalInlineObject19
-	}
-
+	localVarPostBody = &vaultPostCredentialcertificate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3276,16 +3237,10 @@ func (a *VaultApiService) OperationVaultPostcredentialcertificate(ctx context.Co
 VaultApiService /credential/password
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param optional nil or *OperationVaultPostcredentialpasswordOpts - Optional Parameters:
- * @param "InlineObject17" (optional.Interface of InlineObject17) - 
+ * @param vaultPostCredentialpassword
 @return CredentialPassword
 */
-
-type OperationVaultPostcredentialpasswordOpts struct {
-	InlineObject17 optional.Interface
-}
-
-func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Context, vaultId string, localVarOptionals *OperationVaultPostcredentialpasswordOpts) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vaultId string, vaultPostCredentialpassword VaultPostCredentialpassword) (CredentialPassword, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -3321,14 +3276,7 @@ func (a *VaultApiService) OperationVaultPostcredentialpassword(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject17.IsSet() {
-		localVarOptionalInlineObject17, localVarOptionalInlineObject17ok := localVarOptionals.InlineObject17.Value().(InlineObject17)
-		if !localVarOptionalInlineObject17ok {
-			return localVarReturnValue, nil, reportError("inlineObject17 should be InlineObject17")
-		}
-		localVarPostBody = &localVarOptionalInlineObject17
-	}
-
+	localVarPostBody = &vaultPostCredentialpassword
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -3421,7 +3369,7 @@ Returns a single vault
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) ShowVault(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -3546,16 +3494,10 @@ VaultApiService Update
 Returns modified vault
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
- * @param optional nil or *UpdateVaultOpts - Optional Parameters:
- * @param "InlineObject16" (optional.Interface of InlineObject16) - 
+ * @param vaultUpdate
 @return Vault
 */
-
-type UpdateVaultOpts struct {
-	InlineObject16 optional.Interface
-}
-
-func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, localVarOptionals *UpdateVaultOpts) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vaultUpdate VaultUpdate) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -3591,14 +3533,7 @@ func (a *VaultApiService) UpdateVault(ctx context.Context, vaultId string, local
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject16.IsSet() {
-		localVarOptionalInlineObject16, localVarOptionalInlineObject16ok := localVarOptionals.InlineObject16.Value().(InlineObject16)
-		if !localVarOptionalInlineObject16ok {
-			return localVarReturnValue, nil, reportError("inlineObject16 should be InlineObject16")
-		}
-		localVarPostBody = &localVarOptionalInlineObject16
-	}
-
+	localVarPostBody = &vaultUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

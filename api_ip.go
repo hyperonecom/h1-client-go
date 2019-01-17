@@ -33,7 +33,7 @@ Action allocate
  * @param ipId ID of ip
 @return Ip
 */
-func (a *IpApiService) ActionIpAllocate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ Action associate
  * @param ipId ID of ip
 @return Ip
 */
-func (a *IpApiService) ActionIpAssociate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionAssociate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ Action disassociate
  * @param ipId ID of ip
 @return Ip
 */
-func (a *IpApiService) ActionIpDisassociate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionDisassociate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -414,7 +414,7 @@ Action release
  * @param ipId ID of ip
 @return Ip
 */
-func (a *IpApiService) ActionIpRelease(ctx context.Context, ipId string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionRelease(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -539,10 +539,10 @@ IpApiService /actions/transfer
 Action transfer
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param ipTransfer
+ * @param ipActionTransfer
 @return Ip
 */
-func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, ipTransfer IpTransfer) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionTransfer(ctx context.Context, ipId string, ipActionTransfer IpActionTransfer) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -578,7 +578,7 @@ func (a *IpApiService) ActionIpTransfer(ctx context.Context, ipId string, ipTran
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &ipTransfer
+	localVarPostBody = &ipActionTransfer
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -671,7 +671,7 @@ Create ip
  * @param ipCreate
 @return Ip
 */
-func (a *IpApiService) CreateIp(ctx context.Context, ipCreate IpCreate) (Ip, *http.Response, error) {
+func (a *IpApiService) IpCreate(ctx context.Context, ipCreate IpCreate) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -797,7 +797,7 @@ IpApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
 */
-func (a *IpApiService) DeleteIp(ctx context.Context, ipId string) (*http.Response, error) {
+func (a *IpApiService) IpDelete(ctx context.Context, ipId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -898,148 +898,13 @@ func (a *IpApiService) DeleteIp(ctx context.Context, ipId string) (*http.Respons
 }
 
 /*
-IpApiService List
-List ip
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListIpOpts - Optional Parameters:
- * @param "Mac" (optional.String) -  Filter by mac
-@return []Ip
-*/
-
-type ListIpOpts struct {
-	Mac optional.String
-}
-
-func (a *IpApiService) ListIp(ctx context.Context, localVarOptionals *ListIpOpts) ([]Ip, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Ip
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Mac.IsSet() {
-		localVarQueryParams.Add("mac", parameterToString(localVarOptionals.Mac.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Ip
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 IpApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param identity identity
 @return Ip
 */
-func (a *IpApiService) OperationIpDeleteaccessrightsIdentity(ctx context.Context, ipId string, identity string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpDeleteAccessrightsIdentity(ctx context.Context, ipId string, identity string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1175,16 +1040,16 @@ IpApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *IpApiService) OperationIpDeletetagKey(ctx context.Context, ipId string, key string) (map[string]string, *http.Response, error) {
+func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -1274,7 +1139,7 @@ func (a *IpApiService) OperationIpDeletetagKey(ctx context.Context, ipId string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1305,7 +1170,7 @@ IpApiService /services/:serviceId
  * @param serviceId serviceId
 @return IpServices
 */
-func (a *IpApiService) OperationIpGetservicesServiceId(ctx context.Context, ipId string, serviceId string) (IpServices, *http.Response, error) {
+func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, serviceId string) (IpServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1427,23 +1292,23 @@ func (a *IpApiService) OperationIpGetservicesServiceId(ctx context.Context, ipId
 }
 
 /*
-IpApiService /tag/
+IpApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[string]string, *http.Response, error) {
+func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1528,7 +1393,7 @@ func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1553,12 +1418,147 @@ func (a *IpApiService) OperationIpGettag(ctx context.Context, ipId string) (map[
 }
 
 /*
-IpApiService /accessrights/
+IpApiService List
+List ip
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *IpListOpts - Optional Parameters:
+ * @param "Mac" (optional.String) -  Filter by mac
+@return []Ip
+*/
+
+type IpListOpts struct {
+	Mac optional.String
+}
+
+func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts) ([]Ip, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Ip
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/ip"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Mac.IsSet() {
+		localVarQueryParams.Add("mac", parameterToString(localVarOptionals.Mac.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Ip
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+IpApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
 @return []string
 */
-func (a *IpApiService) OperationIpListaccessrights(ctx context.Context, ipId string) ([]string, *http.Response, error) {
+func (a *IpApiService) IpListAccessrights(ctx context.Context, ipId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1569,7 +1569,7 @@ func (a *IpApiService) OperationIpListaccessrights(ctx context.Context, ipId str
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1679,12 +1679,12 @@ func (a *IpApiService) OperationIpListaccessrights(ctx context.Context, ipId str
 }
 
 /*
-IpApiService /queue/
+IpApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
 @return []Event
 */
-func (a *IpApiService) OperationIpListqueue(ctx context.Context, ipId string) ([]Event, *http.Response, error) {
+func (a *IpApiService) IpListQueue(ctx context.Context, ipId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1695,7 +1695,7 @@ func (a *IpApiService) OperationIpListqueue(ctx context.Context, ipId string) ([
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1805,12 +1805,12 @@ func (a *IpApiService) OperationIpListqueue(ctx context.Context, ipId string) ([
 }
 
 /*
-IpApiService /services/
+IpApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
 @return []IpServices
 */
-func (a *IpApiService) OperationIpListservices(ctx context.Context, ipId string) ([]IpServices, *http.Response, error) {
+func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1821,7 +1821,7 @@ func (a *IpApiService) OperationIpListservices(ctx context.Context, ipId string)
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1931,24 +1931,24 @@ func (a *IpApiService) OperationIpListservices(ctx context.Context, ipId string)
 }
 
 /*
-IpApiService /tag/
+IpApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1973,7 +1973,7 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, req
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2035,7 +2035,7 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, req
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2060,13 +2060,13 @@ func (a *IpApiService) OperationIpPatchtag(ctx context.Context, ipId string, req
 }
 
 /*
-IpApiService /accessrights/
+IpApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param resourceAccessRight
+ * @param ipPostAccessrights
 @return string
 */
-func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *IpApiService) IpPostAccessrights(ctx context.Context, ipId string, ipPostAccessrights IpPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -2077,7 +2077,7 @@ func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId str
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/ip/{ipId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2102,7 +2102,7 @@ func (a *IpApiService) OperationIpPostaccessrights(ctx context.Context, ipId str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &ipPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2195,7 +2195,7 @@ Returns a single ip
  * @param ipId ID of ip
 @return Ip
 */
-func (a *IpApiService) ShowIp(ctx context.Context, ipId string) (Ip, *http.Response, error) {
+func (a *IpApiService) IpShow(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2320,16 +2320,10 @@ IpApiService Update
 Returns modified ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param optional nil or *UpdateIpOpts - Optional Parameters:
- * @param "InlineObject15" (optional.Interface of InlineObject15) - 
+ * @param ipUpdate
 @return Ip
 */
-
-type UpdateIpOpts struct {
-	InlineObject15 optional.Interface
-}
-
-func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOptionals *UpdateIpOpts) (Ip, *http.Response, error) {
+func (a *IpApiService) IpUpdate(ctx context.Context, ipId string, ipUpdate IpUpdate) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -2365,14 +2359,7 @@ func (a *IpApiService) UpdateIp(ctx context.Context, ipId string, localVarOption
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject15.IsSet() {
-		localVarOptionalInlineObject15, localVarOptionalInlineObject15ok := localVarOptionals.InlineObject15.Value().(InlineObject15)
-		if !localVarOptionalInlineObject15ok {
-			return localVarReturnValue, nil, reportError("inlineObject15 should be InlineObject15")
-		}
-		localVarPostBody = &localVarOptionalInlineObject15
-	}
-
+	localVarPostBody = &ipUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

@@ -4,25 +4,25 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionImageTransfer**](ImageApi.md#ActionImageTransfer) | **Post** /image/{imageId}/actions/transfer | /actions/transfer
-[**CreateImage**](ImageApi.md#CreateImage) | **Post** /image | Create
-[**DeleteImage**](ImageApi.md#DeleteImage) | **Delete** /image/{imageId} | Delete
-[**ListImage**](ImageApi.md#ListImage) | **Get** /image | List
-[**OperationImageDeleteaccessrightsIdentity**](ImageApi.md#OperationImageDeleteaccessrightsIdentity) | **Delete** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
-[**OperationImageDeletetagKey**](ImageApi.md#OperationImageDeletetagKey) | **Delete** /image/{imageId}/tag/{key} | /tag/:key
-[**OperationImageGetservicesServiceId**](ImageApi.md#OperationImageGetservicesServiceId) | **Get** /image/{imageId}/services/{serviceId} | /services/:serviceId
-[**OperationImageGettag**](ImageApi.md#OperationImageGettag) | **Get** /image/{imageId}/tag/ | /tag/
-[**OperationImageListaccessrights**](ImageApi.md#OperationImageListaccessrights) | **Get** /image/{imageId}/accessrights/ | /accessrights/
-[**OperationImageListqueue**](ImageApi.md#OperationImageListqueue) | **Get** /image/{imageId}/queue/ | /queue/
-[**OperationImageListservices**](ImageApi.md#OperationImageListservices) | **Get** /image/{imageId}/services/ | /services/
-[**OperationImagePatchtag**](ImageApi.md#OperationImagePatchtag) | **Patch** /image/{imageId}/tag/ | /tag/
-[**OperationImagePostaccessrights**](ImageApi.md#OperationImagePostaccessrights) | **Post** /image/{imageId}/accessrights/ | /accessrights/
-[**ShowImage**](ImageApi.md#ShowImage) | **Get** /image/{imageId} | Get
-[**UpdateImage**](ImageApi.md#UpdateImage) | **Patch** /image/{imageId} | Update
+[**ImageActionTransfer**](ImageApi.md#ImageActionTransfer) | **Post** /image/{imageId}/actions/transfer | /actions/transfer
+[**ImageCreate**](ImageApi.md#ImageCreate) | **Post** /image | Create
+[**ImageDelete**](ImageApi.md#ImageDelete) | **Delete** /image/{imageId} | Delete
+[**ImageDeleteAccessrightsIdentity**](ImageApi.md#ImageDeleteAccessrightsIdentity) | **Delete** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
+[**ImageDeleteTagKey**](ImageApi.md#ImageDeleteTagKey) | **Delete** /image/{imageId}/tag/{key} | /tag/:key
+[**ImageGetServicesServiceId**](ImageApi.md#ImageGetServicesServiceId) | **Get** /image/{imageId}/services/{serviceId} | /services/:serviceId
+[**ImageGetTag**](ImageApi.md#ImageGetTag) | **Get** /image/{imageId}/tag | /tag
+[**ImageList**](ImageApi.md#ImageList) | **Get** /image | List
+[**ImageListAccessrights**](ImageApi.md#ImageListAccessrights) | **Get** /image/{imageId}/accessrights | /accessrights
+[**ImageListQueue**](ImageApi.md#ImageListQueue) | **Get** /image/{imageId}/queue | /queue
+[**ImageListServices**](ImageApi.md#ImageListServices) | **Get** /image/{imageId}/services | /services
+[**ImagePatchTag**](ImageApi.md#ImagePatchTag) | **Patch** /image/{imageId}/tag | /tag
+[**ImagePostAccessrights**](ImageApi.md#ImagePostAccessrights) | **Post** /image/{imageId}/accessrights | /accessrights
+[**ImageShow**](ImageApi.md#ImageShow) | **Get** /image/{imageId} | Get
+[**ImageUpdate**](ImageApi.md#ImageUpdate) | **Patch** /image/{imageId} | Update
 
 
-# **ActionImageTransfer**
-> Image ActionImageTransfer(ctx, imageId, imageTransfer)
+# **ImageActionTransfer**
+> Image ImageActionTransfer(ctx, imageId, imageActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
-  **imageTransfer** | [**ImageTransfer**](ImageTransfer.md)|  | 
+  **imageActionTransfer** | [**ImageActionTransfer**](ImageActionTransfer.md)|  | 
 
 ### Return type
 
@@ -50,8 +50,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateImage**
-> Image CreateImage(ctx, imageCreate)
+# **ImageCreate**
+> Image ImageCreate(ctx, imageCreate)
 Create
 
 Create image
@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteImage**
-> DeleteImage(ctx, imageId)
+# **ImageDelete**
+> ImageDelete(ctx, imageId)
 Delete
 
 ### Required Parameters
@@ -104,43 +104,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListImage**
-> []Image ListImage(ctx, optional)
-List
-
-List image
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Image**](image.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationImageDeleteaccessrightsIdentity**
-> Image OperationImageDeleteaccessrightsIdentity(ctx, imageId, identity)
+# **ImageDeleteAccessrightsIdentity**
+> Image ImageDeleteAccessrightsIdentity(ctx, imageId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -166,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageDeletetagKey**
-> map[string]string OperationImageDeletetagKey(ctx, imageId, key)
+# **ImageDeleteTagKey**
+> map[string]interface{} ImageDeleteTagKey(ctx, imageId, key)
 /tag/:key
 
 ### Required Parameters
@@ -180,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -193,8 +158,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageGetservicesServiceId**
-> ImageServices OperationImageGetservicesServiceId(ctx, imageId, serviceId)
+# **ImageGetServicesServiceId**
+> ImageServices ImageGetServicesServiceId(ctx, imageId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -220,9 +185,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageGettag**
-> map[string]string OperationImageGettag(ctx, imageId)
-/tag/
+# **ImageGetTag**
+> map[string]interface{} ImageGetTag(ctx, imageId)
+/tag
 
 ### Required Parameters
 
@@ -233,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -246,9 +211,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageListaccessrights**
-> []string OperationImageListaccessrights(ctx, imageId)
-/accessrights/
+# **ImageList**
+> []Image ImageList(ctx, optional)
+List
+
+List image
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***ImageListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a ImageListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Image**](image.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ImageListAccessrights**
+> []string ImageListAccessrights(ctx, imageId)
+/accessrights
 
 ### Required Parameters
 
@@ -272,9 +272,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageListqueue**
-> []Event OperationImageListqueue(ctx, imageId)
-/queue/
+# **ImageListQueue**
+> []Event ImageListQueue(ctx, imageId)
+/queue
 
 ### Required Parameters
 
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImageListservices**
-> []ImageServices OperationImageListservices(ctx, imageId)
-/services/
+# **ImageListServices**
+> []ImageServices ImageListServices(ctx, imageId)
+/services
 
 ### Required Parameters
 
@@ -324,9 +324,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImagePatchtag**
-> map[string]string OperationImagePatchtag(ctx, imageId, requestBody)
-/tag/
+# **ImagePatchTag**
+> map[string]interface{} ImagePatchTag(ctx, imageId, body)
+/tag
 
 ### Required Parameters
 
@@ -334,11 +334,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -351,9 +351,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationImagePostaccessrights**
-> string OperationImagePostaccessrights(ctx, imageId, resourceAccessRight)
-/accessrights/
+# **ImagePostAccessrights**
+> string ImagePostAccessrights(ctx, imageId, imagePostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **imagePostAccessrights** | [**ImagePostAccessrights**](ImagePostAccessrights.md)|  | 
 
 ### Return type
 
@@ -378,8 +378,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowImage**
-> Image ShowImage(ctx, imageId)
+# **ImageShow**
+> Image ImageShow(ctx, imageId)
 Get
 
 Returns a single image
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateImage**
-> Image UpdateImage(ctx, imageId, optional)
+# **ImageUpdate**
+> Image ImageUpdate(ctx, imageId, imageUpdate)
 Update
 
 Returns modified image
@@ -418,15 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **imageId** | **string**| ID of image | 
- **optional** | ***UpdateImageOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateImageOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject9** | [**optional.Interface of InlineObject9**](InlineObject9.md)|  | 
+  **imageUpdate** | [**ImageUpdate**](ImageUpdate.md)|  | 
 
 ### Return type
 

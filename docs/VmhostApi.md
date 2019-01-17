@@ -4,27 +4,27 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionVmhostMoveDisk**](VmhostApi.md#ActionVmhostMoveDisk) | **Post** /vmhost/{vmhostId}/actions/moveDisk | /actions/moveDisk
-[**ActionVmhostMoveISO**](VmhostApi.md#ActionVmhostMoveISO) | **Post** /vmhost/{vmhostId}/actions/moveISO | /actions/moveISO
-[**ActionVmhostMoveImage**](VmhostApi.md#ActionVmhostMoveImage) | **Post** /vmhost/{vmhostId}/actions/moveImage | /actions/moveImage
-[**ActionVmhostMoveVM**](VmhostApi.md#ActionVmhostMoveVM) | **Post** /vmhost/{vmhostId}/actions/moveVM | /actions/moveVM
-[**DeleteVmhost**](VmhostApi.md#DeleteVmhost) | **Delete** /vmhost/{vmhostId} | Delete
-[**ListVmhost**](VmhostApi.md#ListVmhost) | **Get** /vmhost | List
-[**OperationVmhostDeleteaccessrightsIdentity**](VmhostApi.md#OperationVmhostDeleteaccessrightsIdentity) | **Delete** /vmhost/{vmhostId}/accessrights/{identity} | /accessrights/:identity
-[**OperationVmhostDeletetagKey**](VmhostApi.md#OperationVmhostDeletetagKey) | **Delete** /vmhost/{vmhostId}/tag/{key} | /tag/:key
-[**OperationVmhostGetservicesServiceId**](VmhostApi.md#OperationVmhostGetservicesServiceId) | **Get** /vmhost/{vmhostId}/services/{serviceId} | /services/:serviceId
-[**OperationVmhostGettag**](VmhostApi.md#OperationVmhostGettag) | **Get** /vmhost/{vmhostId}/tag/ | /tag/
-[**OperationVmhostListaccessrights**](VmhostApi.md#OperationVmhostListaccessrights) | **Get** /vmhost/{vmhostId}/accessrights/ | /accessrights/
-[**OperationVmhostListqueue**](VmhostApi.md#OperationVmhostListqueue) | **Get** /vmhost/{vmhostId}/queue/ | /queue/
-[**OperationVmhostListservices**](VmhostApi.md#OperationVmhostListservices) | **Get** /vmhost/{vmhostId}/services/ | /services/
-[**OperationVmhostPatchtag**](VmhostApi.md#OperationVmhostPatchtag) | **Patch** /vmhost/{vmhostId}/tag/ | /tag/
-[**OperationVmhostPostaccessrights**](VmhostApi.md#OperationVmhostPostaccessrights) | **Post** /vmhost/{vmhostId}/accessrights/ | /accessrights/
-[**ShowVmhost**](VmhostApi.md#ShowVmhost) | **Get** /vmhost/{vmhostId} | Get
-[**UpdateVmhost**](VmhostApi.md#UpdateVmhost) | **Patch** /vmhost/{vmhostId} | Update
+[**VmhostActionMoveDisk**](VmhostApi.md#VmhostActionMoveDisk) | **Post** /vmhost/{vmhostId}/actions/moveDisk | /actions/moveDisk
+[**VmhostActionMoveISO**](VmhostApi.md#VmhostActionMoveISO) | **Post** /vmhost/{vmhostId}/actions/moveISO | /actions/moveISO
+[**VmhostActionMoveImage**](VmhostApi.md#VmhostActionMoveImage) | **Post** /vmhost/{vmhostId}/actions/moveImage | /actions/moveImage
+[**VmhostActionMoveVM**](VmhostApi.md#VmhostActionMoveVM) | **Post** /vmhost/{vmhostId}/actions/moveVM | /actions/moveVM
+[**VmhostDelete**](VmhostApi.md#VmhostDelete) | **Delete** /vmhost/{vmhostId} | Delete
+[**VmhostDeleteAccessrightsIdentity**](VmhostApi.md#VmhostDeleteAccessrightsIdentity) | **Delete** /vmhost/{vmhostId}/accessrights/{identity} | /accessrights/:identity
+[**VmhostDeleteTagKey**](VmhostApi.md#VmhostDeleteTagKey) | **Delete** /vmhost/{vmhostId}/tag/{key} | /tag/:key
+[**VmhostGetServicesServiceId**](VmhostApi.md#VmhostGetServicesServiceId) | **Get** /vmhost/{vmhostId}/services/{serviceId} | /services/:serviceId
+[**VmhostGetTag**](VmhostApi.md#VmhostGetTag) | **Get** /vmhost/{vmhostId}/tag | /tag
+[**VmhostList**](VmhostApi.md#VmhostList) | **Get** /vmhost | List
+[**VmhostListAccessrights**](VmhostApi.md#VmhostListAccessrights) | **Get** /vmhost/{vmhostId}/accessrights | /accessrights
+[**VmhostListQueue**](VmhostApi.md#VmhostListQueue) | **Get** /vmhost/{vmhostId}/queue | /queue
+[**VmhostListServices**](VmhostApi.md#VmhostListServices) | **Get** /vmhost/{vmhostId}/services | /services
+[**VmhostPatchTag**](VmhostApi.md#VmhostPatchTag) | **Patch** /vmhost/{vmhostId}/tag | /tag
+[**VmhostPostAccessrights**](VmhostApi.md#VmhostPostAccessrights) | **Post** /vmhost/{vmhostId}/accessrights | /accessrights
+[**VmhostShow**](VmhostApi.md#VmhostShow) | **Get** /vmhost/{vmhostId} | Get
+[**VmhostUpdate**](VmhostApi.md#VmhostUpdate) | **Patch** /vmhost/{vmhostId} | Update
 
 
-# **ActionVmhostMoveDisk**
-> Vmhost ActionVmhostMoveDisk(ctx, vmhostId, vmhostMoveDisk)
+# **VmhostActionMoveDisk**
+> Vmhost VmhostActionMoveDisk(ctx, vmhostId, vmhostActionMoveDisk)
 /actions/moveDisk
 
 Action moveDisk
@@ -35,7 +35,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **vmhostMoveDisk** | [**VmhostMoveDisk**](VmhostMoveDisk.md)|  | 
+  **vmhostActionMoveDisk** | [**VmhostActionMoveDisk**](VmhostActionMoveDisk.md)|  | 
 
 ### Return type
 
@@ -52,8 +52,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmhostMoveISO**
-> Vmhost ActionVmhostMoveISO(ctx, vmhostId, vmhostMoveIso)
+# **VmhostActionMoveISO**
+> Vmhost VmhostActionMoveISO(ctx, vmhostId, vmhostActionMoveIso)
 /actions/moveISO
 
 Action moveISO
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **vmhostMoveIso** | [**VmhostMoveIso**](VmhostMoveIso.md)|  | 
+  **vmhostActionMoveIso** | [**VmhostActionMoveIso**](VmhostActionMoveIso.md)|  | 
 
 ### Return type
 
@@ -81,8 +81,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmhostMoveImage**
-> Vmhost ActionVmhostMoveImage(ctx, vmhostId, vmhostMoveImage)
+# **VmhostActionMoveImage**
+> Vmhost VmhostActionMoveImage(ctx, vmhostId, vmhostActionMoveImage)
 /actions/moveImage
 
 Action moveImage
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **vmhostMoveImage** | [**VmhostMoveImage**](VmhostMoveImage.md)|  | 
+  **vmhostActionMoveImage** | [**VmhostActionMoveImage**](VmhostActionMoveImage.md)|  | 
 
 ### Return type
 
@@ -110,8 +110,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmhostMoveVM**
-> Vmhost ActionVmhostMoveVM(ctx, vmhostId, vmhostMoveVm)
+# **VmhostActionMoveVM**
+> Vmhost VmhostActionMoveVM(ctx, vmhostId, vmhostActionMoveVm)
 /actions/moveVM
 
 Action moveVM
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **vmhostMoveVm** | [**VmhostMoveVm**](VmhostMoveVm.md)|  | 
+  **vmhostActionMoveVm** | [**VmhostActionMoveVm**](VmhostActionMoveVm.md)|  | 
 
 ### Return type
 
@@ -139,8 +139,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteVmhost**
-> DeleteVmhost(ctx, vmhostId)
+# **VmhostDelete**
+> VmhostDelete(ctx, vmhostId)
 Delete
 
 ### Required Parameters
@@ -165,43 +165,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListVmhost**
-> []Vmhost ListVmhost(ctx, optional)
-List
-
-List vmhost
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListVmhostOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListVmhostOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **enabledServices** | **optional.String**| Filter by enabledServices | 
-
-### Return type
-
-[**[]Vmhost**](vmhost.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationVmhostDeleteaccessrightsIdentity**
-> Vmhost OperationVmhostDeleteaccessrightsIdentity(ctx, vmhostId, identity)
+# **VmhostDeleteAccessrightsIdentity**
+> Vmhost VmhostDeleteAccessrightsIdentity(ctx, vmhostId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -227,8 +192,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostDeletetagKey**
-> map[string]string OperationVmhostDeletetagKey(ctx, vmhostId, key)
+# **VmhostDeleteTagKey**
+> map[string]interface{} VmhostDeleteTagKey(ctx, vmhostId, key)
 /tag/:key
 
 ### Required Parameters
@@ -241,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -254,8 +219,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostGetservicesServiceId**
-> VmhostServices OperationVmhostGetservicesServiceId(ctx, vmhostId, serviceId)
+# **VmhostGetServicesServiceId**
+> VmhostServices VmhostGetServicesServiceId(ctx, vmhostId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -281,9 +246,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostGettag**
-> map[string]string OperationVmhostGettag(ctx, vmhostId)
-/tag/
+# **VmhostGetTag**
+> map[string]interface{} VmhostGetTag(ctx, vmhostId)
+/tag
 
 ### Required Parameters
 
@@ -294,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -307,9 +272,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostListaccessrights**
-> []string OperationVmhostListaccessrights(ctx, vmhostId)
-/accessrights/
+# **VmhostList**
+> []Vmhost VmhostList(ctx, optional)
+List
+
+List vmhost
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***VmhostListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a VmhostListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enabledServices** | **optional.String**| Filter by enabledServices | 
+
+### Return type
+
+[**[]Vmhost**](vmhost.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **VmhostListAccessrights**
+> []string VmhostListAccessrights(ctx, vmhostId)
+/accessrights
 
 ### Required Parameters
 
@@ -333,9 +333,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostListqueue**
-> []Event OperationVmhostListqueue(ctx, vmhostId)
-/queue/
+# **VmhostListQueue**
+> []Event VmhostListQueue(ctx, vmhostId)
+/queue
 
 ### Required Parameters
 
@@ -359,9 +359,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostListservices**
-> []VmhostServices OperationVmhostListservices(ctx, vmhostId)
-/services/
+# **VmhostListServices**
+> []VmhostServices VmhostListServices(ctx, vmhostId)
+/services
 
 ### Required Parameters
 
@@ -385,9 +385,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostPatchtag**
-> map[string]string OperationVmhostPatchtag(ctx, vmhostId, requestBody)
-/tag/
+# **VmhostPatchTag**
+> map[string]interface{} VmhostPatchTag(ctx, vmhostId, body)
+/tag
 
 ### Required Parameters
 
@@ -395,11 +395,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -412,9 +412,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmhostPostaccessrights**
-> string OperationVmhostPostaccessrights(ctx, vmhostId, resourceAccessRight)
-/accessrights/
+# **VmhostPostAccessrights**
+> string VmhostPostAccessrights(ctx, vmhostId, vmhostPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **vmhostPostAccessrights** | [**VmhostPostAccessrights**](VmhostPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -439,8 +439,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowVmhost**
-> Vmhost ShowVmhost(ctx, vmhostId)
+# **VmhostShow**
+> Vmhost VmhostShow(ctx, vmhostId)
 Get
 
 Returns a single vmhost
@@ -467,8 +467,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateVmhost**
-> Vmhost UpdateVmhost(ctx, vmhostId, optional)
+# **VmhostUpdate**
+> Vmhost VmhostUpdate(ctx, vmhostId, vmhostUpdate)
 Update
 
 Returns modified vmhost
@@ -479,15 +479,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
- **optional** | ***UpdateVmhostOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateVmhostOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject28** | [**optional.Interface of InlineObject28**](InlineObject28.md)|  | 
+  **vmhostUpdate** | [**VmhostUpdate**](VmhostUpdate.md)|  | 
 
 ### Return type
 

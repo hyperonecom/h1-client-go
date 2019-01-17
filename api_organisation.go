@@ -31,10 +31,10 @@ OrganisationApiService /actions/transfer_accept
 Action transfer_accept
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param organisationTransferAccept
+ * @param organisationActionTransferAccept
 @return Organisation
 */
-func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Context, organisationId string, organisationTransferAccept OrganisationTransferAccept) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Context, organisationId string, organisationActionTransferAccept OrganisationActionTransferAccept) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -70,7 +70,7 @@ func (a *OrganisationApiService) ActionOrganisationTransferAccept(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationTransferAccept
+	localVarPostBody = &organisationActionTransferAccept
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -163,7 +163,7 @@ Create organisation
  * @param organisationCreate
 @return Organisation
 */
-func (a *OrganisationApiService) CreateOrganisation(ctx context.Context, organisationCreate OrganisationCreate) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organisationCreate OrganisationCreate) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -285,163 +285,13 @@ func (a *OrganisationApiService) CreateOrganisation(ctx context.Context, organis
 }
 
 /*
-OrganisationApiService List
-List organisation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListOrganisationOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
- * @param "BillingCompany" (optional.String) -  Filter by billing.company
- * @param "Limit" (optional.String) -  Filter by $limit
- * @param "Active" (optional.String) -  Filter by active
-@return []Organisation
-*/
-
-type ListOrganisationOpts struct {
-	Name optional.String
-	BillingCompany optional.String
-	Limit optional.String
-	Active optional.String
-}
-
-func (a *OrganisationApiService) ListOrganisation(ctx context.Context, localVarOptionals *ListOrganisationOpts) ([]Organisation, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Organisation
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.BillingCompany.IsSet() {
-		localVarQueryParams.Add("billing.company", parameterToString(localVarOptionals.BillingCompany.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
-		localVarQueryParams.Add("$limit", parameterToString(localVarOptionals.Limit.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
-		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Organisation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 OrganisationApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param identity identity
 @return Organisation
 */
-func (a *OrganisationApiService) OperationOrganisationDeleteaccessrightsIdentity(ctx context.Context, organisationId string, identity string) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteAccessrightsIdentity(ctx context.Context, organisationId string, identity string) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -577,16 +427,16 @@ OrganisationApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *OrganisationApiService) OperationOrganisationDeletetagKey(ctx context.Context, organisationId string, key string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, organisationId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -676,7 +526,7 @@ func (a *OrganisationApiService) OperationOrganisationDeletetagKey(ctx context.C
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -701,23 +551,23 @@ func (a *OrganisationApiService) OperationOrganisationDeletetagKey(ctx context.C
 }
 
 /*
-OrganisationApiService /tag/
+OrganisationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *OrganisationApiService) OperationOrganisationGettag(ctx context.Context, organisationId string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organisationId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -802,7 +652,7 @@ func (a *OrganisationApiService) OperationOrganisationGettag(ctx context.Context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -827,12 +677,162 @@ func (a *OrganisationApiService) OperationOrganisationGettag(ctx context.Context
 }
 
 /*
-OrganisationApiService /accessrights/
+OrganisationApiService List
+List organisation
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *OrganisationListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+ * @param "BillingCompany" (optional.String) -  Filter by billing.company
+ * @param "Limit" (optional.String) -  Filter by $limit
+ * @param "Active" (optional.String) -  Filter by active
+@return []Organisation
+*/
+
+type OrganisationListOpts struct {
+	Name optional.String
+	BillingCompany optional.String
+	Limit optional.String
+	Active optional.String
+}
+
+func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Organisation
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/organisation"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.BillingCompany.IsSet() {
+		localVarQueryParams.Add("billing.company", parameterToString(localVarOptionals.BillingCompany.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
+		localVarQueryParams.Add("$limit", parameterToString(localVarOptionals.Limit.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
+		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+OrganisationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return []OrganisationAccessRights
 */
-func (a *OrganisationApiService) OperationOrganisationListaccessrights(ctx context.Context, organisationId string) ([]OrganisationAccessRights, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Context, organisationId string) ([]OrganisationAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -843,7 +843,7 @@ func (a *OrganisationApiService) OperationOrganisationListaccessrights(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -953,12 +953,12 @@ func (a *OrganisationApiService) OperationOrganisationListaccessrights(ctx conte
 }
 
 /*
-OrganisationApiService /queue/
+OrganisationApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return []Event
 */
-func (a *OrganisationApiService) OperationOrganisationListqueue(ctx context.Context, organisationId string) ([]Event, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, organisationId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -969,7 +969,7 @@ func (a *OrganisationApiService) OperationOrganisationListqueue(ctx context.Cont
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1079,24 +1079,24 @@ func (a *OrganisationApiService) OperationOrganisationListqueue(ctx context.Cont
 }
 
 /*
-OrganisationApiService /tag/
+OrganisationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *OrganisationApiService) OperationOrganisationPatchtag(ctx context.Context, organisationId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organisationId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1121,7 +1121,7 @@ func (a *OrganisationApiService) OperationOrganisationPatchtag(ctx context.Conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1183,7 +1183,7 @@ func (a *OrganisationApiService) OperationOrganisationPatchtag(ctx context.Conte
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1208,13 +1208,13 @@ func (a *OrganisationApiService) OperationOrganisationPatchtag(ctx context.Conte
 }
 
 /*
-OrganisationApiService /accessrights/
+OrganisationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param resourceAccessRight
+ * @param organisationPostAccessrights
 @return OrganisationAccessRights
 */
-func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx context.Context, organisationId string, resourceAccessRight ResourceAccessRight) (OrganisationAccessRights, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (OrganisationAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1225,7 +1225,7 @@ func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1250,7 +1250,7 @@ func (a *OrganisationApiService) OperationOrganisationPostaccessrights(ctx conte
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &organisationPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1343,7 +1343,7 @@ Returns a single organisation
  * @param organisationId ID of organisation
 @return Organisation
 */
-func (a *OrganisationApiService) ShowOrganisation(ctx context.Context, organisationId string) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisationId string) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1468,16 +1468,10 @@ OrganisationApiService Update
 Returns modified organisation
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param optional nil or *UpdateOrganisationOpts - Optional Parameters:
- * @param "InlineObject1" (optional.Interface of InlineObject1) - 
+ * @param organisationUpdate
 @return Organisation
 */
-
-type UpdateOrganisationOpts struct {
-	InlineObject1 optional.Interface
-}
-
-func (a *OrganisationApiService) UpdateOrganisation(ctx context.Context, organisationId string, localVarOptionals *UpdateOrganisationOpts) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organisationId string, organisationUpdate OrganisationUpdate) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1513,14 +1507,7 @@ func (a *OrganisationApiService) UpdateOrganisation(ctx context.Context, organis
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject1.IsSet() {
-		localVarOptionalInlineObject1, localVarOptionalInlineObject1ok := localVarOptionals.InlineObject1.Value().(InlineObject1)
-		if !localVarOptionalInlineObject1ok {
-			return localVarReturnValue, nil, reportError("inlineObject1 should be InlineObject1")
-		}
-		localVarPostBody = &localVarOptionalInlineObject1
-	}
-
+	localVarPostBody = &organisationUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

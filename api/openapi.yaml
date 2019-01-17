@@ -13,7 +13,7 @@ paths:
   /project:
     get:
       description: List project
-      operationId: list_project
+      operationId: project_list
       parameters:
       - description: Filter by name
         explode: true
@@ -70,12 +70,12 @@ paths:
       - project
     post:
       description: Create project
-      operationId: create_project
+      operationId: project_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/projectCreate'
+              $ref: '#/components/schemas/project_create'
         required: true
       responses:
         202:
@@ -99,7 +99,7 @@ paths:
   /project/{projectId}:
     get:
       description: Returns a single project
-      operationId: show_project
+      operationId: project_show
       parameters:
       - description: ID of project
         explode: false
@@ -130,7 +130,7 @@ paths:
       - project
     patch:
       description: Returns modified project
-      operationId: update_project
+      operationId: project_update
       parameters:
       - description: ID of project
         explode: false
@@ -141,14 +141,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/project_update'
         required: true
       responses:
         200:
@@ -169,9 +165,9 @@ paths:
       summary: Update
       tags:
       - project
-  /project/{projectId}/accessrights/:
+  /project/{projectId}/accessrights:
     get:
-      operationId: operation_project_list_/accessrights/
+      operationId: project_list_accessrights
       parameters:
       - description: ID of project
         explode: false
@@ -199,11 +195,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - project
     post:
-      operationId: operation_project_post_/accessrights/
+      operationId: project_post_accessrights
       parameters:
       - description: ID of project
         explode: false
@@ -217,7 +213,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/project_post_accessrights'
         required: true
       responses:
         200:
@@ -235,12 +231,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - project
   /project/{projectId}/accessrights/{identity}:
     delete:
-      operationId: operation_project_delete_/accessrights/:identity
+      operationId: project_delete_accessrights:identity
       parameters:
       - description: ID of project
         explode: false
@@ -283,9 +279,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - project
-  /project/{projectId}/services/:
+  /project/{projectId}/services:
     get:
-      operationId: operation_project_list_/services/
+      operationId: project_list_services
       parameters:
       - description: ID of project
         explode: false
@@ -313,12 +309,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - project
   /project/{projectId}/services/{serviceId}:
     get:
-      operationId: operation_project_get_/services/:serviceId
+      operationId: project_get_services:serviceId
       parameters:
       - description: ID of project
         explode: false
@@ -355,9 +351,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - project
-  /project/{projectId}/tag/:
+  /project/{projectId}/tag:
     get:
-      operationId: operation_project_get_/tag/
+      operationId: project_get_tag
       parameters:
       - description: ID of project
         explode: false
@@ -383,11 +379,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - project
     patch:
-      operationId: operation_project_patch_/tag/
+      operationId: project_patch_tag
       parameters:
       - description: ID of project
         explode: false
@@ -401,9 +397,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/project_patch_tag'
         required: true
       responses:
         200:
@@ -421,12 +415,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - project
   /project/{projectId}/tag/{key}:
     delete:
-      operationId: operation_project_delete_/tag/:key
+      operationId: project_delete_tag:key
       parameters:
       - description: ID of project
         explode: false
@@ -463,9 +457,9 @@ paths:
       summary: /tag/:key
       tags:
       - project
-  /project/{projectId}/queue/:
+  /project/{projectId}/queue:
     get:
-      operationId: operation_project_list_/queue/
+      operationId: project_list_queue
       parameters:
       - description: ID of project
         explode: false
@@ -493,13 +487,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - project
   /organisation:
     get:
       description: List organisation
-      operationId: list_organisation
+      operationId: organisation_list
       parameters:
       - description: Filter by name
         explode: true
@@ -556,12 +550,12 @@ paths:
       - organisation
     post:
       description: Create organisation
-      operationId: create_organisation
+      operationId: organisation_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisationCreate'
+              $ref: '#/components/schemas/organisation_create'
         required: true
       responses:
         202:
@@ -585,7 +579,7 @@ paths:
   /organisation/{organisationId}:
     get:
       description: Returns a single organisation
-      operationId: show_organisation
+      operationId: organisation_show
       parameters:
       - description: ID of organisation
         explode: false
@@ -616,7 +610,7 @@ paths:
       - organisation
     patch:
       description: Returns modified organisation
-      operationId: update_organisation
+      operationId: organisation_update
       parameters:
       - description: ID of organisation
         explode: false
@@ -627,16 +621,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_1'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                billing:
-                  $ref: '#/components/schemas/organisationorganisationId_billing'
-              type: object
+              $ref: '#/components/schemas/organisation_update'
         required: true
       responses:
         200:
@@ -660,7 +648,7 @@ paths:
   /organisation/{organisationId}/actions/transfer_accept:
     post:
       description: Action transfer_accept
-      operationId: action_organisation_transfer_accept
+      operationId: organisation_action_transfer_accept
       parameters:
       - description: ID of organisation
         explode: false
@@ -674,7 +662,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation.transfer_accept'
+              $ref: '#/components/schemas/organisation_action_transfer_accept'
         required: true
       responses:
         202:
@@ -695,9 +683,9 @@ paths:
       summary: /actions/transfer_accept
       tags:
       - organisation
-  /organisation/{organisationId}/accessrights/:
+  /organisation/{organisationId}/accessrights:
     get:
-      operationId: operation_organisation_list_/accessrights/
+      operationId: organisation_list_accessrights
       parameters:
       - description: ID of organisation
         explode: false
@@ -725,11 +713,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - organisation
     post:
-      operationId: operation_organisation_post_/accessrights/
+      operationId: organisation_post_accessrights
       parameters:
       - description: ID of organisation
         explode: false
@@ -743,7 +731,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/organisation_post_accessrights'
         required: true
       responses:
         200:
@@ -761,12 +749,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - organisation
   /organisation/{organisationId}/accessrights/{identity}:
     delete:
-      operationId: operation_organisation_delete_/accessrights/:identity
+      operationId: organisation_delete_accessrights:identity
       parameters:
       - description: ID of organisation
         explode: false
@@ -809,9 +797,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - organisation
-  /organisation/{organisationId}/tag/:
+  /organisation/{organisationId}/tag:
     get:
-      operationId: operation_organisation_get_/tag/
+      operationId: organisation_get_tag
       parameters:
       - description: ID of organisation
         explode: false
@@ -837,11 +825,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - organisation
     patch:
-      operationId: operation_organisation_patch_/tag/
+      operationId: organisation_patch_tag
       parameters:
       - description: ID of organisation
         explode: false
@@ -855,9 +843,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/organisation_patch_tag'
         required: true
       responses:
         200:
@@ -875,12 +861,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - organisation
   /organisation/{organisationId}/tag/{key}:
     delete:
-      operationId: operation_organisation_delete_/tag/:key
+      operationId: organisation_delete_tag:key
       parameters:
       - description: ID of organisation
         explode: false
@@ -917,9 +903,9 @@ paths:
       summary: /tag/:key
       tags:
       - organisation
-  /organisation/{organisationId}/queue/:
+  /organisation/{organisationId}/queue:
     get:
-      operationId: operation_organisation_list_/queue/
+      operationId: organisation_list_queue
       parameters:
       - description: ID of organisation
         explode: false
@@ -947,13 +933,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - organisation
   /container:
     get:
       description: List container
-      operationId: list_container
+      operationId: container_list
       parameters:
       - description: Filter by name
         explode: true
@@ -986,12 +972,12 @@ paths:
       - container
     post:
       description: Create container
-      operationId: create_container
+      operationId: container_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/containerCreate'
+              $ref: '#/components/schemas/container_create'
         required: true
       responses:
         202:
@@ -1014,7 +1000,7 @@ paths:
       - container
   /container/{containerId}:
     delete:
-      operationId: delete_container
+      operationId: container_delete
       parameters:
       - description: ID of container
         explode: false
@@ -1039,7 +1025,7 @@ paths:
       - container
     get:
       description: Returns a single container
-      operationId: show_container
+      operationId: container_show
       parameters:
       - description: ID of container
         explode: false
@@ -1070,7 +1056,7 @@ paths:
       - container
     patch:
       description: Returns modified container
-      operationId: update_container
+      operationId: container_update
       parameters:
       - description: ID of container
         explode: false
@@ -1081,14 +1067,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_2'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/container_update'
         required: true
       responses:
         200:
@@ -1112,7 +1094,7 @@ paths:
   /container/{containerId}/actions/start:
     post:
       description: Action start
-      operationId: action_container_start
+      operationId: container_action_start
       parameters:
       - description: ID of container
         explode: false
@@ -1144,7 +1126,7 @@ paths:
   /container/{containerId}/actions/stop:
     post:
       description: Action stop
-      operationId: action_container_stop
+      operationId: container_action_stop
       parameters:
       - description: ID of container
         explode: false
@@ -1176,7 +1158,7 @@ paths:
   /container/{containerId}/actions/restart:
     post:
       description: Action restart
-      operationId: action_container_restart
+      operationId: container_action_restart
       parameters:
       - description: ID of container
         explode: false
@@ -1205,9 +1187,9 @@ paths:
       summary: /actions/restart
       tags:
       - container
-  /container/{containerId}/accessrights/:
+  /container/{containerId}/accessrights:
     get:
-      operationId: operation_container_list_/accessrights/
+      operationId: container_list_accessrights
       parameters:
       - description: ID of container
         explode: false
@@ -1235,11 +1217,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - container
     post:
-      operationId: operation_container_post_/accessrights/
+      operationId: container_post_accessrights
       parameters:
       - description: ID of container
         explode: false
@@ -1253,7 +1235,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/container_post_accessrights'
         required: true
       responses:
         200:
@@ -1271,12 +1253,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - container
   /container/{containerId}/accessrights/{identity}:
     delete:
-      operationId: operation_container_delete_/accessrights/:identity
+      operationId: container_delete_accessrights:identity
       parameters:
       - description: ID of container
         explode: false
@@ -1319,9 +1301,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - container
-  /container/{containerId}/services/:
+  /container/{containerId}/services:
     get:
-      operationId: operation_container_list_/services/
+      operationId: container_list_services
       parameters:
       - description: ID of container
         explode: false
@@ -1349,12 +1331,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - container
   /container/{containerId}/services/{serviceId}:
     get:
-      operationId: operation_container_get_/services/:serviceId
+      operationId: container_get_services:serviceId
       parameters:
       - description: ID of container
         explode: false
@@ -1391,9 +1373,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - container
-  /container/{containerId}/tag/:
+  /container/{containerId}/tag:
     get:
-      operationId: operation_container_get_/tag/
+      operationId: container_get_tag
       parameters:
       - description: ID of container
         explode: false
@@ -1419,11 +1401,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - container
     patch:
-      operationId: operation_container_patch_/tag/
+      operationId: container_patch_tag
       parameters:
       - description: ID of container
         explode: false
@@ -1437,9 +1419,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/container_patch_tag'
         required: true
       responses:
         200:
@@ -1457,12 +1437,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - container
   /container/{containerId}/tag/{key}:
     delete:
-      operationId: operation_container_delete_/tag/:key
+      operationId: container_delete_tag:key
       parameters:
       - description: ID of container
         explode: false
@@ -1499,9 +1479,9 @@ paths:
       summary: /tag/:key
       tags:
       - container
-  /container/{containerId}/queue/:
+  /container/{containerId}/queue:
     get:
-      operationId: operation_container_list_/queue/
+      operationId: container_list_queue
       parameters:
       - description: ID of container
         explode: false
@@ -1529,13 +1509,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - container
   /firewall:
     get:
       description: List firewall
-      operationId: list_firewall
+      operationId: firewall_list
       parameters:
       - description: Filter by name
         explode: true
@@ -1568,12 +1548,12 @@ paths:
       - firewall
     post:
       description: Create firewall
-      operationId: create_firewall
+      operationId: firewall_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/firewallCreate'
+              $ref: '#/components/schemas/firewall_create'
         required: true
       responses:
         202:
@@ -1596,7 +1576,7 @@ paths:
       - firewall
   /firewall/{firewallId}:
     delete:
-      operationId: delete_firewall
+      operationId: firewall_delete
       parameters:
       - description: ID of firewall
         explode: false
@@ -1621,7 +1601,7 @@ paths:
       - firewall
     get:
       description: Returns a single firewall
-      operationId: show_firewall
+      operationId: firewall_show
       parameters:
       - description: ID of firewall
         explode: false
@@ -1652,7 +1632,7 @@ paths:
       - firewall
     patch:
       description: Returns modified firewall
-      operationId: update_firewall
+      operationId: firewall_update
       parameters:
       - description: ID of firewall
         explode: false
@@ -1663,14 +1643,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_3'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/firewall_update'
         required: true
       responses:
         200:
@@ -1694,7 +1670,7 @@ paths:
   /firewall/{firewallId}/actions/attach:
     post:
       description: Action attach
-      operationId: action_firewall_attach
+      operationId: firewall_action_attach
       parameters:
       - description: ID of firewall
         explode: false
@@ -1726,7 +1702,7 @@ paths:
   /firewall/{firewallId}/actions/detach:
     post:
       description: Action detach
-      operationId: action_firewall_detach
+      operationId: firewall_action_detach
       parameters:
       - description: ID of firewall
         explode: false
@@ -1758,7 +1734,7 @@ paths:
   /firewall/{firewallId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_firewall_transfer
+      operationId: firewall_action_transfer
       parameters:
       - description: ID of firewall
         explode: false
@@ -1772,7 +1748,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/firewall.transfer'
+              $ref: '#/components/schemas/firewall_action_transfer'
         required: true
       responses:
         202:
@@ -1795,7 +1771,7 @@ paths:
       - firewall
   /firewall/{firewallId}/ingress:
     get:
-      operationId: operation_firewall_list_/ingress
+      operationId: firewall_list_ingress
       parameters:
       - description: ID of firewall
         explode: false
@@ -1827,7 +1803,7 @@ paths:
       tags:
       - firewall
     post:
-      operationId: operation_firewall_post_/ingress
+      operationId: firewall_post_ingress
       parameters:
       - description: ID of firewall
         explode: false
@@ -1838,30 +1814,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_4'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                action:
-                  type: string
-                priority:
-                  type: number
-                filter:
-                  items:
-                    type: string
-                  type: array
-                external:
-                  items:
-                    type: string
-                  type: array
-                internal:
-                  items:
-                    type: string
-                  type: array
-              type: object
+              $ref: '#/components/schemas/firewall_post_ingress'
         required: true
       responses:
         200:
@@ -1884,7 +1840,7 @@ paths:
       - firewall
   /firewall/{firewallId}/ingress/{ruleId}:
     delete:
-      operationId: operation_firewall_delete_/ingress/:ruleId
+      operationId: firewall_delete_ingress:ruleId
       parameters:
       - description: ID of firewall
         explode: false
@@ -1922,7 +1878,7 @@ paths:
       tags:
       - firewall
     get:
-      operationId: operation_firewall_get_/ingress/:ruleId
+      operationId: firewall_get_ingress:ruleId
       parameters:
       - description: ID of firewall
         explode: false
@@ -1961,7 +1917,7 @@ paths:
       - firewall
   /firewall/{firewallId}/egress:
     get:
-      operationId: operation_firewall_list_/egress
+      operationId: firewall_list_egress
       parameters:
       - description: ID of firewall
         explode: false
@@ -1993,7 +1949,7 @@ paths:
       tags:
       - firewall
     post:
-      operationId: operation_firewall_post_/egress
+      operationId: firewall_post_egress
       parameters:
       - description: ID of firewall
         explode: false
@@ -2004,30 +1960,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_5'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                action:
-                  type: string
-                priority:
-                  type: number
-                filter:
-                  items:
-                    type: string
-                  type: array
-                external:
-                  items:
-                    type: string
-                  type: array
-                internal:
-                  items:
-                    type: string
-                  type: array
-              type: object
+              $ref: '#/components/schemas/firewall_post_egress'
         required: true
       responses:
         200:
@@ -2050,7 +1986,7 @@ paths:
       - firewall
   /firewall/{firewallId}/egress/{ruleId}:
     delete:
-      operationId: operation_firewall_delete_/egress/:ruleId
+      operationId: firewall_delete_egress:ruleId
       parameters:
       - description: ID of firewall
         explode: false
@@ -2088,7 +2024,7 @@ paths:
       tags:
       - firewall
     get:
-      operationId: operation_firewall_get_/egress/:ruleId
+      operationId: firewall_get_egress:ruleId
       parameters:
       - description: ID of firewall
         explode: false
@@ -2125,9 +2061,9 @@ paths:
       summary: /egress/:ruleId
       tags:
       - firewall
-  /firewall/{firewallId}/accessrights/:
+  /firewall/{firewallId}/accessrights:
     get:
-      operationId: operation_firewall_list_/accessrights/
+      operationId: firewall_list_accessrights
       parameters:
       - description: ID of firewall
         explode: false
@@ -2155,11 +2091,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - firewall
     post:
-      operationId: operation_firewall_post_/accessrights/
+      operationId: firewall_post_accessrights
       parameters:
       - description: ID of firewall
         explode: false
@@ -2173,7 +2109,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/firewall_post_accessrights'
         required: true
       responses:
         200:
@@ -2191,12 +2127,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - firewall
   /firewall/{firewallId}/accessrights/{identity}:
     delete:
-      operationId: operation_firewall_delete_/accessrights/:identity
+      operationId: firewall_delete_accessrights:identity
       parameters:
       - description: ID of firewall
         explode: false
@@ -2239,9 +2175,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - firewall
-  /firewall/{firewallId}/services/:
+  /firewall/{firewallId}/services:
     get:
-      operationId: operation_firewall_list_/services/
+      operationId: firewall_list_services
       parameters:
       - description: ID of firewall
         explode: false
@@ -2269,12 +2205,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - firewall
   /firewall/{firewallId}/services/{serviceId}:
     get:
-      operationId: operation_firewall_get_/services/:serviceId
+      operationId: firewall_get_services:serviceId
       parameters:
       - description: ID of firewall
         explode: false
@@ -2311,9 +2247,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - firewall
-  /firewall/{firewallId}/tag/:
+  /firewall/{firewallId}/tag:
     get:
-      operationId: operation_firewall_get_/tag/
+      operationId: firewall_get_tag
       parameters:
       - description: ID of firewall
         explode: false
@@ -2339,11 +2275,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - firewall
     patch:
-      operationId: operation_firewall_patch_/tag/
+      operationId: firewall_patch_tag
       parameters:
       - description: ID of firewall
         explode: false
@@ -2357,9 +2293,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/firewall_patch_tag'
         required: true
       responses:
         200:
@@ -2377,12 +2311,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - firewall
   /firewall/{firewallId}/tag/{key}:
     delete:
-      operationId: operation_firewall_delete_/tag/:key
+      operationId: firewall_delete_tag:key
       parameters:
       - description: ID of firewall
         explode: false
@@ -2419,9 +2353,9 @@ paths:
       summary: /tag/:key
       tags:
       - firewall
-  /firewall/{firewallId}/queue/:
+  /firewall/{firewallId}/queue:
     get:
-      operationId: operation_firewall_list_/queue/
+      operationId: firewall_list_queue
       parameters:
       - description: ID of firewall
         explode: false
@@ -2449,13 +2383,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - firewall
   /network:
     get:
       description: List network
-      operationId: list_network
+      operationId: network_list
       parameters:
       - description: Filter by name
         explode: true
@@ -2488,12 +2422,12 @@ paths:
       - network
     post:
       description: Create network
-      operationId: create_network
+      operationId: network_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/networkCreate'
+              $ref: '#/components/schemas/network_create'
         required: true
       responses:
         202:
@@ -2516,7 +2450,7 @@ paths:
       - network
   /network/{networkId}:
     delete:
-      operationId: delete_network
+      operationId: network_delete
       parameters:
       - description: ID of network
         explode: false
@@ -2541,7 +2475,7 @@ paths:
       - network
     get:
       description: Returns a single network
-      operationId: show_network
+      operationId: network_show
       parameters:
       - description: ID of network
         explode: false
@@ -2572,7 +2506,7 @@ paths:
       - network
     patch:
       description: Returns modified network
-      operationId: update_network
+      operationId: network_update
       parameters:
       - description: ID of network
         explode: false
@@ -2583,16 +2517,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_6'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                gateway:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/network_update'
         required: true
       responses:
         200:
@@ -2615,7 +2543,7 @@ paths:
       - network
   /network/{networkId}/ip:
     get:
-      operationId: operation_network_list_/ip
+      operationId: network_list_ip
       parameters:
       - description: ID of network
         explode: false
@@ -2647,7 +2575,7 @@ paths:
       tags:
       - network
     post:
-      operationId: operation_network_post_/ip
+      operationId: network_post_ip
       parameters:
       - description: ID of network
         explode: false
@@ -2658,16 +2586,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_7'
         content:
           application/json:
             schema:
-              properties:
-                address:
-                  type: string
-                tag:
-                  type: object
-              type: object
+              $ref: '#/components/schemas/network_post_ip'
         required: true
       responses:
         200:
@@ -2690,7 +2612,7 @@ paths:
       - network
   /network/{networkId}/ip/:ipId:
     delete:
-      operationId: operation_network_delete_/ip/:ipId
+      operationId: network_delete_ip:ipId
       parameters:
       - description: ID of network
         explode: false
@@ -2720,7 +2642,7 @@ paths:
       tags:
       - network
     get:
-      operationId: operation_network_get_/ip/:ipId
+      operationId: network_get_ip:ipId
       parameters:
       - description: ID of network
         explode: false
@@ -2749,9 +2671,9 @@ paths:
       summary: /ip/:ipId
       tags:
       - network
-  /network/{networkId}/accessrights/:
+  /network/{networkId}/accessrights:
     get:
-      operationId: operation_network_list_/accessrights/
+      operationId: network_list_accessrights
       parameters:
       - description: ID of network
         explode: false
@@ -2779,11 +2701,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - network
     post:
-      operationId: operation_network_post_/accessrights/
+      operationId: network_post_accessrights
       parameters:
       - description: ID of network
         explode: false
@@ -2797,7 +2719,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/network_post_accessrights'
         required: true
       responses:
         200:
@@ -2815,12 +2737,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - network
   /network/{networkId}/accessrights/{identity}:
     delete:
-      operationId: operation_network_delete_/accessrights/:identity
+      operationId: network_delete_accessrights:identity
       parameters:
       - description: ID of network
         explode: false
@@ -2863,9 +2785,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - network
-  /network/{networkId}/services/:
+  /network/{networkId}/services:
     get:
-      operationId: operation_network_list_/services/
+      operationId: network_list_services
       parameters:
       - description: ID of network
         explode: false
@@ -2893,12 +2815,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - network
   /network/{networkId}/services/{serviceId}:
     get:
-      operationId: operation_network_get_/services/:serviceId
+      operationId: network_get_services:serviceId
       parameters:
       - description: ID of network
         explode: false
@@ -2935,9 +2857,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - network
-  /network/{networkId}/tag/:
+  /network/{networkId}/tag:
     get:
-      operationId: operation_network_get_/tag/
+      operationId: network_get_tag
       parameters:
       - description: ID of network
         explode: false
@@ -2963,11 +2885,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - network
     patch:
-      operationId: operation_network_patch_/tag/
+      operationId: network_patch_tag
       parameters:
       - description: ID of network
         explode: false
@@ -2981,9 +2903,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/network_patch_tag'
         required: true
       responses:
         200:
@@ -3001,12 +2921,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - network
   /network/{networkId}/tag/{key}:
     delete:
-      operationId: operation_network_delete_/tag/:key
+      operationId: network_delete_tag:key
       parameters:
       - description: ID of network
         explode: false
@@ -3043,9 +2963,9 @@ paths:
       summary: /tag/:key
       tags:
       - network
-  /network/{networkId}/queue/:
+  /network/{networkId}/queue:
     get:
-      operationId: operation_network_list_/queue/
+      operationId: network_list_queue
       parameters:
       - description: ID of network
         explode: false
@@ -3073,13 +2993,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - network
   /netgw:
     get:
       description: List netgw
-      operationId: list_netgw
+      operationId: netgw_list
       parameters:
       - description: Filter by name
         explode: true
@@ -3112,12 +3032,12 @@ paths:
       - netgw
     post:
       description: Create netgw
-      operationId: create_netgw
+      operationId: netgw_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/netgwCreate'
+              $ref: '#/components/schemas/netgw_create'
         required: true
       responses:
         202:
@@ -3140,7 +3060,7 @@ paths:
       - netgw
   /netgw/{netgwId}:
     delete:
-      operationId: delete_netgw
+      operationId: netgw_delete
       parameters:
       - description: ID of netgw
         explode: false
@@ -3165,7 +3085,7 @@ paths:
       - netgw
     get:
       description: Returns a single netgw
-      operationId: show_netgw
+      operationId: netgw_show
       parameters:
       - description: ID of netgw
         explode: false
@@ -3196,7 +3116,7 @@ paths:
       - netgw
     patch:
       description: Returns modified netgw
-      operationId: update_netgw
+      operationId: netgw_update
       parameters:
       - description: ID of netgw
         explode: false
@@ -3207,14 +3127,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_8'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/netgw_update'
         required: true
       responses:
         200:
@@ -3238,7 +3154,7 @@ paths:
   /netgw/{netgwId}/actions/attach:
     post:
       description: Action attach
-      operationId: action_netgw_attach
+      operationId: netgw_action_attach
       parameters:
       - description: ID of netgw
         explode: false
@@ -3270,7 +3186,7 @@ paths:
   /netgw/{netgwId}/actions/detach:
     post:
       description: Action detach
-      operationId: action_netgw_detach
+      operationId: netgw_action_detach
       parameters:
       - description: ID of netgw
         explode: false
@@ -3299,9 +3215,9 @@ paths:
       summary: /actions/detach
       tags:
       - netgw
-  /netgw/{netgwId}/accessrights/:
+  /netgw/{netgwId}/accessrights:
     get:
-      operationId: operation_netgw_list_/accessrights/
+      operationId: netgw_list_accessrights
       parameters:
       - description: ID of netgw
         explode: false
@@ -3329,11 +3245,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - netgw
     post:
-      operationId: operation_netgw_post_/accessrights/
+      operationId: netgw_post_accessrights
       parameters:
       - description: ID of netgw
         explode: false
@@ -3347,7 +3263,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/netgw_post_accessrights'
         required: true
       responses:
         200:
@@ -3365,12 +3281,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - netgw
   /netgw/{netgwId}/accessrights/{identity}:
     delete:
-      operationId: operation_netgw_delete_/accessrights/:identity
+      operationId: netgw_delete_accessrights:identity
       parameters:
       - description: ID of netgw
         explode: false
@@ -3413,9 +3329,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - netgw
-  /netgw/{netgwId}/services/:
+  /netgw/{netgwId}/services:
     get:
-      operationId: operation_netgw_list_/services/
+      operationId: netgw_list_services
       parameters:
       - description: ID of netgw
         explode: false
@@ -3443,12 +3359,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - netgw
   /netgw/{netgwId}/services/{serviceId}:
     get:
-      operationId: operation_netgw_get_/services/:serviceId
+      operationId: netgw_get_services:serviceId
       parameters:
       - description: ID of netgw
         explode: false
@@ -3485,9 +3401,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - netgw
-  /netgw/{netgwId}/tag/:
+  /netgw/{netgwId}/tag:
     get:
-      operationId: operation_netgw_get_/tag/
+      operationId: netgw_get_tag
       parameters:
       - description: ID of netgw
         explode: false
@@ -3513,11 +3429,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - netgw
     patch:
-      operationId: operation_netgw_patch_/tag/
+      operationId: netgw_patch_tag
       parameters:
       - description: ID of netgw
         explode: false
@@ -3531,9 +3447,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/netgw_patch_tag'
         required: true
       responses:
         200:
@@ -3551,12 +3465,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - netgw
   /netgw/{netgwId}/tag/{key}:
     delete:
-      operationId: operation_netgw_delete_/tag/:key
+      operationId: netgw_delete_tag:key
       parameters:
       - description: ID of netgw
         explode: false
@@ -3593,9 +3507,9 @@ paths:
       summary: /tag/:key
       tags:
       - netgw
-  /netgw/{netgwId}/queue/:
+  /netgw/{netgwId}/queue:
     get:
-      operationId: operation_netgw_list_/queue/
+      operationId: netgw_list_queue
       parameters:
       - description: ID of netgw
         explode: false
@@ -3623,13 +3537,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - netgw
   /image:
     get:
       description: List image
-      operationId: list_image
+      operationId: image_list
       parameters:
       - description: Filter by name
         explode: true
@@ -3662,12 +3576,12 @@ paths:
       - image
     post:
       description: Create image
-      operationId: create_image
+      operationId: image_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/imageCreate'
+              $ref: '#/components/schemas/image_create'
         required: true
       responses:
         202:
@@ -3690,7 +3604,7 @@ paths:
       - image
   /image/{imageId}:
     delete:
-      operationId: delete_image
+      operationId: image_delete
       parameters:
       - description: ID of image
         explode: false
@@ -3715,7 +3629,7 @@ paths:
       - image
     get:
       description: Returns a single image
-      operationId: show_image
+      operationId: image_show
       parameters:
       - description: ID of image
         explode: false
@@ -3746,7 +3660,7 @@ paths:
       - image
     patch:
       description: Returns modified image
-      operationId: update_image
+      operationId: image_update
       parameters:
       - description: ID of image
         explode: false
@@ -3757,16 +3671,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_9'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                description:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/image_update'
         required: true
       responses:
         200:
@@ -3790,7 +3698,7 @@ paths:
   /image/{imageId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_image_transfer
+      operationId: image_action_transfer
       parameters:
       - description: ID of image
         explode: false
@@ -3804,7 +3712,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/image.transfer'
+              $ref: '#/components/schemas/image_action_transfer'
         required: true
       responses:
         202:
@@ -3825,9 +3733,9 @@ paths:
       summary: /actions/transfer
       tags:
       - image
-  /image/{imageId}/accessrights/:
+  /image/{imageId}/accessrights:
     get:
-      operationId: operation_image_list_/accessrights/
+      operationId: image_list_accessrights
       parameters:
       - description: ID of image
         explode: false
@@ -3855,11 +3763,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - image
     post:
-      operationId: operation_image_post_/accessrights/
+      operationId: image_post_accessrights
       parameters:
       - description: ID of image
         explode: false
@@ -3873,7 +3781,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/image_post_accessrights'
         required: true
       responses:
         200:
@@ -3891,12 +3799,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - image
   /image/{imageId}/accessrights/{identity}:
     delete:
-      operationId: operation_image_delete_/accessrights/:identity
+      operationId: image_delete_accessrights:identity
       parameters:
       - description: ID of image
         explode: false
@@ -3939,9 +3847,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - image
-  /image/{imageId}/services/:
+  /image/{imageId}/services:
     get:
-      operationId: operation_image_list_/services/
+      operationId: image_list_services
       parameters:
       - description: ID of image
         explode: false
@@ -3969,12 +3877,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - image
   /image/{imageId}/services/{serviceId}:
     get:
-      operationId: operation_image_get_/services/:serviceId
+      operationId: image_get_services:serviceId
       parameters:
       - description: ID of image
         explode: false
@@ -4011,9 +3919,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - image
-  /image/{imageId}/tag/:
+  /image/{imageId}/tag:
     get:
-      operationId: operation_image_get_/tag/
+      operationId: image_get_tag
       parameters:
       - description: ID of image
         explode: false
@@ -4039,11 +3947,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - image
     patch:
-      operationId: operation_image_patch_/tag/
+      operationId: image_patch_tag
       parameters:
       - description: ID of image
         explode: false
@@ -4057,9 +3965,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/image_patch_tag'
         required: true
       responses:
         200:
@@ -4077,12 +3983,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - image
   /image/{imageId}/tag/{key}:
     delete:
-      operationId: operation_image_delete_/tag/:key
+      operationId: image_delete_tag:key
       parameters:
       - description: ID of image
         explode: false
@@ -4119,9 +4025,9 @@ paths:
       summary: /tag/:key
       tags:
       - image
-  /image/{imageId}/queue/:
+  /image/{imageId}/queue:
     get:
-      operationId: operation_image_list_/queue/
+      operationId: image_list_queue
       parameters:
       - description: ID of image
         explode: false
@@ -4149,13 +4055,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - image
   /disk:
     get:
       description: List disk
-      operationId: list_disk
+      operationId: disk_list
       parameters:
       - description: Filter by name
         explode: true
@@ -4188,12 +4094,12 @@ paths:
       - disk
     post:
       description: Create disk
-      operationId: create_disk
+      operationId: disk_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/diskCreate'
+              $ref: '#/components/schemas/disk_create'
         required: true
       responses:
         202:
@@ -4216,7 +4122,7 @@ paths:
       - disk
   /disk/{diskId}:
     delete:
-      operationId: delete_disk
+      operationId: disk_delete
       parameters:
       - description: ID of disk
         explode: false
@@ -4241,7 +4147,7 @@ paths:
       - disk
     get:
       description: Returns a single disk
-      operationId: show_disk
+      operationId: disk_show
       parameters:
       - description: ID of disk
         explode: false
@@ -4272,7 +4178,7 @@ paths:
       - disk
     patch:
       description: Returns modified disk
-      operationId: update_disk
+      operationId: disk_update
       parameters:
       - description: ID of disk
         explode: false
@@ -4283,14 +4189,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_10'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/disk_update'
         required: true
       responses:
         200:
@@ -4314,7 +4216,7 @@ paths:
   /disk/{diskId}/actions/resize:
     post:
       description: Action resize
-      operationId: action_disk_resize
+      operationId: disk_action_resize
       parameters:
       - description: ID of disk
         explode: false
@@ -4346,7 +4248,7 @@ paths:
   /disk/{diskId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_disk_transfer
+      operationId: disk_action_transfer
       parameters:
       - description: ID of disk
         explode: false
@@ -4360,7 +4262,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/disk.transfer'
+              $ref: '#/components/schemas/disk_action_transfer'
         required: true
       responses:
         202:
@@ -4381,9 +4283,9 @@ paths:
       summary: /actions/transfer
       tags:
       - disk
-  /disk/{diskId}/accessrights/:
+  /disk/{diskId}/accessrights:
     get:
-      operationId: operation_disk_list_/accessrights/
+      operationId: disk_list_accessrights
       parameters:
       - description: ID of disk
         explode: false
@@ -4411,11 +4313,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - disk
     post:
-      operationId: operation_disk_post_/accessrights/
+      operationId: disk_post_accessrights
       parameters:
       - description: ID of disk
         explode: false
@@ -4429,7 +4331,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/disk_post_accessrights'
         required: true
       responses:
         200:
@@ -4447,12 +4349,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - disk
   /disk/{diskId}/accessrights/{identity}:
     delete:
-      operationId: operation_disk_delete_/accessrights/:identity
+      operationId: disk_delete_accessrights:identity
       parameters:
       - description: ID of disk
         explode: false
@@ -4495,9 +4397,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - disk
-  /disk/{diskId}/services/:
+  /disk/{diskId}/services:
     get:
-      operationId: operation_disk_list_/services/
+      operationId: disk_list_services
       parameters:
       - description: ID of disk
         explode: false
@@ -4525,12 +4427,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - disk
   /disk/{diskId}/services/{serviceId}:
     get:
-      operationId: operation_disk_get_/services/:serviceId
+      operationId: disk_get_services:serviceId
       parameters:
       - description: ID of disk
         explode: false
@@ -4567,9 +4469,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - disk
-  /disk/{diskId}/tag/:
+  /disk/{diskId}/tag:
     get:
-      operationId: operation_disk_get_/tag/
+      operationId: disk_get_tag
       parameters:
       - description: ID of disk
         explode: false
@@ -4595,11 +4497,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - disk
     patch:
-      operationId: operation_disk_patch_/tag/
+      operationId: disk_patch_tag
       parameters:
       - description: ID of disk
         explode: false
@@ -4613,9 +4515,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/disk_patch_tag'
         required: true
       responses:
         200:
@@ -4633,12 +4533,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - disk
   /disk/{diskId}/tag/{key}:
     delete:
-      operationId: operation_disk_delete_/tag/:key
+      operationId: disk_delete_tag:key
       parameters:
       - description: ID of disk
         explode: false
@@ -4675,9 +4575,9 @@ paths:
       summary: /tag/:key
       tags:
       - disk
-  /disk/{diskId}/queue/:
+  /disk/{diskId}/queue:
     get:
-      operationId: operation_disk_list_/queue/
+      operationId: disk_list_queue
       parameters:
       - description: ID of disk
         explode: false
@@ -4705,13 +4605,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - disk
   /iso:
     get:
       description: List iso
-      operationId: list_iso
+      operationId: iso_list
       parameters:
       - description: Filter by name
         explode: true
@@ -4744,12 +4644,12 @@ paths:
       - iso
     post:
       description: Create iso
-      operationId: create_iso
+      operationId: iso_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/isoCreate'
+              $ref: '#/components/schemas/iso_create'
         required: true
       responses:
         202:
@@ -4772,7 +4672,7 @@ paths:
       - iso
   /iso/{isoId}:
     delete:
-      operationId: delete_iso
+      operationId: iso_delete
       parameters:
       - description: ID of iso
         explode: false
@@ -4797,7 +4697,7 @@ paths:
       - iso
     get:
       description: Returns a single iso
-      operationId: show_iso
+      operationId: iso_show
       parameters:
       - description: ID of iso
         explode: false
@@ -4828,7 +4728,7 @@ paths:
       - iso
     patch:
       description: Returns modified iso
-      operationId: update_iso
+      operationId: iso_update
       parameters:
       - description: ID of iso
         explode: false
@@ -4839,14 +4739,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_11'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/iso_update'
         required: true
       responses:
         200:
@@ -4870,7 +4766,7 @@ paths:
   /iso/{isoId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_iso_transfer
+      operationId: iso_action_transfer
       parameters:
       - description: ID of iso
         explode: false
@@ -4884,7 +4780,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/iso.transfer'
+              $ref: '#/components/schemas/iso_action_transfer'
         required: true
       responses:
         202:
@@ -4905,9 +4801,9 @@ paths:
       summary: /actions/transfer
       tags:
       - iso
-  /iso/{isoId}/accessrights/:
+  /iso/{isoId}/accessrights:
     get:
-      operationId: operation_iso_list_/accessrights/
+      operationId: iso_list_accessrights
       parameters:
       - description: ID of iso
         explode: false
@@ -4935,11 +4831,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - iso
     post:
-      operationId: operation_iso_post_/accessrights/
+      operationId: iso_post_accessrights
       parameters:
       - description: ID of iso
         explode: false
@@ -4953,7 +4849,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/iso_post_accessrights'
         required: true
       responses:
         200:
@@ -4971,12 +4867,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - iso
   /iso/{isoId}/accessrights/{identity}:
     delete:
-      operationId: operation_iso_delete_/accessrights/:identity
+      operationId: iso_delete_accessrights:identity
       parameters:
       - description: ID of iso
         explode: false
@@ -5019,9 +4915,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - iso
-  /iso/{isoId}/services/:
+  /iso/{isoId}/services:
     get:
-      operationId: operation_iso_list_/services/
+      operationId: iso_list_services
       parameters:
       - description: ID of iso
         explode: false
@@ -5049,12 +4945,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - iso
   /iso/{isoId}/services/{serviceId}:
     get:
-      operationId: operation_iso_get_/services/:serviceId
+      operationId: iso_get_services:serviceId
       parameters:
       - description: ID of iso
         explode: false
@@ -5091,9 +4987,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - iso
-  /iso/{isoId}/tag/:
+  /iso/{isoId}/tag:
     get:
-      operationId: operation_iso_get_/tag/
+      operationId: iso_get_tag
       parameters:
       - description: ID of iso
         explode: false
@@ -5119,11 +5015,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - iso
     patch:
-      operationId: operation_iso_patch_/tag/
+      operationId: iso_patch_tag
       parameters:
       - description: ID of iso
         explode: false
@@ -5137,9 +5033,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/iso_patch_tag'
         required: true
       responses:
         200:
@@ -5157,12 +5051,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - iso
   /iso/{isoId}/tag/{key}:
     delete:
-      operationId: operation_iso_delete_/tag/:key
+      operationId: iso_delete_tag:key
       parameters:
       - description: ID of iso
         explode: false
@@ -5199,9 +5093,9 @@ paths:
       summary: /tag/:key
       tags:
       - iso
-  /iso/{isoId}/queue/:
+  /iso/{isoId}/queue:
     get:
-      operationId: operation_iso_list_/queue/
+      operationId: iso_list_queue
       parameters:
       - description: ID of iso
         explode: false
@@ -5229,13 +5123,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - iso
   /vm:
     get:
       description: List vm
-      operationId: list_vm
+      operationId: vm_list
       parameters:
       - description: Filter by name
         explode: true
@@ -5268,12 +5162,12 @@ paths:
       - vm
     post:
       description: Create vm
-      operationId: create_vm
+      operationId: vm_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vmCreate'
+              $ref: '#/components/schemas/vm_create'
         required: true
       responses:
         202:
@@ -5296,7 +5190,7 @@ paths:
       - vm
   /vm/{vmId}:
     delete:
-      operationId: delete_vm
+      operationId: vm_delete
       parameters:
       - description: ID of vm
         explode: false
@@ -5321,7 +5215,7 @@ paths:
       - vm
     get:
       description: Returns a single vm
-      operationId: show_vm
+      operationId: vm_show
       parameters:
       - description: ID of vm
         explode: false
@@ -5352,7 +5246,7 @@ paths:
       - vm
     patch:
       description: Returns modified vm
-      operationId: update_vm
+      operationId: vm_update
       parameters:
       - description: ID of vm
         explode: false
@@ -5363,16 +5257,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_12'
         content:
           application/json:
             schema:
-              properties:
-                userMetadata:
-                  type: string
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vm_update'
         required: true
       responses:
         200:
@@ -5396,7 +5284,7 @@ paths:
   /vm/{vmId}/actions/start:
     post:
       description: Action start
-      operationId: action_vm_start
+      operationId: vm_action_start
       parameters:
       - description: ID of vm
         explode: false
@@ -5428,7 +5316,7 @@ paths:
   /vm/{vmId}/actions/restart:
     post:
       description: Action restart
-      operationId: action_vm_restart
+      operationId: vm_action_restart
       parameters:
       - description: ID of vm
         explode: false
@@ -5460,7 +5348,7 @@ paths:
   /vm/{vmId}/actions/stop:
     post:
       description: Action stop
-      operationId: action_vm_stop
+      operationId: vm_action_stop
       parameters:
       - description: ID of vm
         explode: false
@@ -5492,7 +5380,7 @@ paths:
   /vm/{vmId}/actions/turnoff:
     post:
       description: Action turnoff
-      operationId: action_vm_turnoff
+      operationId: vm_action_turnoff
       parameters:
       - description: ID of vm
         explode: false
@@ -5524,7 +5412,7 @@ paths:
   /vm/{vmId}/actions/rename:
     post:
       description: Action rename
-      operationId: action_vm_rename
+      operationId: vm_action_rename
       parameters:
       - description: ID of vm
         explode: false
@@ -5556,7 +5444,7 @@ paths:
   /vm/{vmId}/actions/password_reset:
     post:
       description: Action password_reset
-      operationId: action_vm_password_reset
+      operationId: vm_action_password_reset
       parameters:
       - description: ID of vm
         explode: false
@@ -5570,7 +5458,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vm.password_reset'
+              $ref: '#/components/schemas/vm_action_password_reset'
         required: true
       responses:
         202:
@@ -5594,7 +5482,7 @@ paths:
   /vm/{vmId}/actions/image:
     post:
       description: Action image
-      operationId: action_vm_image
+      operationId: vm_action_image
       parameters:
       - description: ID of vm
         explode: false
@@ -5608,7 +5496,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vm.image'
+              $ref: '#/components/schemas/vm_action_image'
         required: true
       responses:
         202:
@@ -5632,7 +5520,7 @@ paths:
   /vm/{vmId}/actions/flavour:
     post:
       description: Action flavour
-      operationId: action_vm_flavour
+      operationId: vm_action_flavour
       parameters:
       - description: ID of vm
         explode: false
@@ -5663,7 +5551,7 @@ paths:
       - vm
   /vm/{vmId}/hdd:
     get:
-      operationId: operation_vm_list_/hdd
+      operationId: vm_list_hdd
       parameters:
       - description: ID of vm
         explode: false
@@ -5695,7 +5583,7 @@ paths:
       tags:
       - vm
     post:
-      operationId: operation_vm_post_/hdd
+      operationId: vm_post_hdd
       parameters:
       - description: ID of vm
         explode: false
@@ -5706,18 +5594,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_13'
         content:
           application/json:
             schema:
-              properties:
-                disk:
-                  type: string
-                controllerType:
-                  type: string
-              required:
-              - disk
-              type: object
+              $ref: '#/components/schemas/vm_post_hdd'
         required: true
       responses:
         200:
@@ -5746,7 +5626,7 @@ paths:
       - vm
   /vm/{vmId}/hdd/{diskId}:
     delete:
-      operationId: operation_vm_delete_/hdd/:diskId
+      operationId: vm_delete_hdd:diskId
       parameters:
       - description: ID of vm
         explode: false
@@ -5791,7 +5671,7 @@ paths:
       - vm
   /vm/{vmId}/netadp:
     delete:
-      operationId: operation_vm_delete_/netadp
+      operationId: vm_delete_netadp
       parameters:
       - description: ID of vm
         explode: false
@@ -5827,7 +5707,7 @@ paths:
       tags:
       - vm
     get:
-      operationId: operation_vm_list_/netadp
+      operationId: vm_list_netadp
       parameters:
       - description: ID of vm
         explode: false
@@ -5859,7 +5739,7 @@ paths:
       tags:
       - vm
     post:
-      operationId: operation_vm_post_/netadp
+      operationId: vm_post_netadp
       parameters:
       - description: ID of vm
         explode: false
@@ -5870,23 +5750,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_14'
         content:
           application/json:
             schema:
-              properties:
-                service:
-                  format: ObjectId
-                  type: string
-                network:
-                  type: string
-                ip:
-                  type: string
-                tag:
-                  type: object
-                vlanIds:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vm_post_netadp'
         required: true
       responses:
         200:
@@ -5913,9 +5780,9 @@ paths:
       summary: /netadp
       tags:
       - vm
-  /vm/{vmId}/accessrights/:
+  /vm/{vmId}/accessrights:
     get:
-      operationId: operation_vm_list_/accessrights/
+      operationId: vm_list_accessrights
       parameters:
       - description: ID of vm
         explode: false
@@ -5943,11 +5810,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vm
     post:
-      operationId: operation_vm_post_/accessrights/
+      operationId: vm_post_accessrights
       parameters:
       - description: ID of vm
         explode: false
@@ -5961,7 +5828,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/vm_post_accessrights'
         required: true
       responses:
         200:
@@ -5979,12 +5846,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vm
   /vm/{vmId}/accessrights/{identity}:
     delete:
-      operationId: operation_vm_delete_/accessrights/:identity
+      operationId: vm_delete_accessrights:identity
       parameters:
       - description: ID of vm
         explode: false
@@ -6027,9 +5894,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - vm
-  /vm/{vmId}/services/:
+  /vm/{vmId}/services:
     get:
-      operationId: operation_vm_list_/services/
+      operationId: vm_list_services
       parameters:
       - description: ID of vm
         explode: false
@@ -6057,12 +5924,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - vm
   /vm/{vmId}/services/{serviceId}:
     get:
-      operationId: operation_vm_get_/services/:serviceId
+      operationId: vm_get_services:serviceId
       parameters:
       - description: ID of vm
         explode: false
@@ -6099,9 +5966,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - vm
-  /vm/{vmId}/tag/:
+  /vm/{vmId}/tag:
     get:
-      operationId: operation_vm_get_/tag/
+      operationId: vm_get_tag
       parameters:
       - description: ID of vm
         explode: false
@@ -6127,11 +5994,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vm
     patch:
-      operationId: operation_vm_patch_/tag/
+      operationId: vm_patch_tag
       parameters:
       - description: ID of vm
         explode: false
@@ -6145,9 +6012,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/vm_patch_tag'
         required: true
       responses:
         200:
@@ -6165,12 +6030,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vm
   /vm/{vmId}/tag/{key}:
     delete:
-      operationId: operation_vm_delete_/tag/:key
+      operationId: vm_delete_tag:key
       parameters:
       - description: ID of vm
         explode: false
@@ -6207,9 +6072,9 @@ paths:
       summary: /tag/:key
       tags:
       - vm
-  /vm/{vmId}/queue/:
+  /vm/{vmId}/queue:
     get:
-      operationId: operation_vm_list_/queue/
+      operationId: vm_list_queue
       parameters:
       - description: ID of vm
         explode: false
@@ -6237,13 +6102,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - vm
   /ip:
     get:
       description: List ip
-      operationId: list_ip
+      operationId: ip_list
       parameters:
       - description: Filter by mac
         explode: true
@@ -6276,12 +6141,12 @@ paths:
       - ip
     post:
       description: Create ip
-      operationId: create_ip
+      operationId: ip_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ipCreate'
+              $ref: '#/components/schemas/ip_create'
         required: true
       responses:
         202:
@@ -6304,7 +6169,7 @@ paths:
       - ip
   /ip/{ipId}:
     delete:
-      operationId: delete_ip
+      operationId: ip_delete
       parameters:
       - description: ID of ip
         explode: false
@@ -6329,7 +6194,7 @@ paths:
       - ip
     get:
       description: Returns a single ip
-      operationId: show_ip
+      operationId: ip_show
       parameters:
       - description: ID of ip
         explode: false
@@ -6360,7 +6225,7 @@ paths:
       - ip
     patch:
       description: Returns modified ip
-      operationId: update_ip
+      operationId: ip_update
       parameters:
       - description: ID of ip
         explode: false
@@ -6371,14 +6236,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_15'
         content:
           application/json:
             schema:
-              properties:
-                ptrRecord:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/ip_update'
         required: true
       responses:
         200:
@@ -6402,7 +6263,7 @@ paths:
   /ip/{ipId}/actions/release:
     post:
       description: Action release
-      operationId: action_ip_release
+      operationId: ip_action_release
       parameters:
       - description: ID of ip
         explode: false
@@ -6434,7 +6295,7 @@ paths:
   /ip/{ipId}/actions/allocate:
     post:
       description: Action allocate
-      operationId: action_ip_allocate
+      operationId: ip_action_allocate
       parameters:
       - description: ID of ip
         explode: false
@@ -6466,7 +6327,7 @@ paths:
   /ip/{ipId}/actions/associate:
     post:
       description: Action associate
-      operationId: action_ip_associate
+      operationId: ip_action_associate
       parameters:
       - description: ID of ip
         explode: false
@@ -6498,7 +6359,7 @@ paths:
   /ip/{ipId}/actions/disassociate:
     post:
       description: Action disassociate
-      operationId: action_ip_disassociate
+      operationId: ip_action_disassociate
       parameters:
       - description: ID of ip
         explode: false
@@ -6530,7 +6391,7 @@ paths:
   /ip/{ipId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_ip_transfer
+      operationId: ip_action_transfer
       parameters:
       - description: ID of ip
         explode: false
@@ -6544,7 +6405,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ip.transfer'
+              $ref: '#/components/schemas/ip_action_transfer'
         required: true
       responses:
         202:
@@ -6565,9 +6426,9 @@ paths:
       summary: /actions/transfer
       tags:
       - ip
-  /ip/{ipId}/accessrights/:
+  /ip/{ipId}/accessrights:
     get:
-      operationId: operation_ip_list_/accessrights/
+      operationId: ip_list_accessrights
       parameters:
       - description: ID of ip
         explode: false
@@ -6595,11 +6456,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - ip
     post:
-      operationId: operation_ip_post_/accessrights/
+      operationId: ip_post_accessrights
       parameters:
       - description: ID of ip
         explode: false
@@ -6613,7 +6474,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/ip_post_accessrights'
         required: true
       responses:
         200:
@@ -6631,12 +6492,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - ip
   /ip/{ipId}/accessrights/{identity}:
     delete:
-      operationId: operation_ip_delete_/accessrights/:identity
+      operationId: ip_delete_accessrights:identity
       parameters:
       - description: ID of ip
         explode: false
@@ -6679,9 +6540,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - ip
-  /ip/{ipId}/services/:
+  /ip/{ipId}/services:
     get:
-      operationId: operation_ip_list_/services/
+      operationId: ip_list_services
       parameters:
       - description: ID of ip
         explode: false
@@ -6709,12 +6570,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - ip
   /ip/{ipId}/services/{serviceId}:
     get:
-      operationId: operation_ip_get_/services/:serviceId
+      operationId: ip_get_services:serviceId
       parameters:
       - description: ID of ip
         explode: false
@@ -6751,9 +6612,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - ip
-  /ip/{ipId}/tag/:
+  /ip/{ipId}/tag:
     get:
-      operationId: operation_ip_get_/tag/
+      operationId: ip_get_tag
       parameters:
       - description: ID of ip
         explode: false
@@ -6779,11 +6640,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - ip
     patch:
-      operationId: operation_ip_patch_/tag/
+      operationId: ip_patch_tag
       parameters:
       - description: ID of ip
         explode: false
@@ -6797,9 +6658,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/ip_patch_tag'
         required: true
       responses:
         200:
@@ -6817,12 +6676,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - ip
   /ip/{ipId}/tag/{key}:
     delete:
-      operationId: operation_ip_delete_/tag/:key
+      operationId: ip_delete_tag:key
       parameters:
       - description: ID of ip
         explode: false
@@ -6859,9 +6718,9 @@ paths:
       summary: /tag/:key
       tags:
       - ip
-  /ip/{ipId}/queue/:
+  /ip/{ipId}/queue:
     get:
-      operationId: operation_ip_list_/queue/
+      operationId: ip_list_queue
       parameters:
       - description: ID of ip
         explode: false
@@ -6889,13 +6748,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - ip
   /netadp:
     get:
       description: List netadp
-      operationId: list_netadp
+      operationId: netadp_list
       parameters:
       - description: Filter by assigned.resource
         explode: true
@@ -6937,7 +6796,7 @@ paths:
   /netadp/{netadpId}:
     get:
       description: Returns a single netadp
-      operationId: show_netadp
+      operationId: netadp_show
       parameters:
       - description: ID of netadp
         explode: false
@@ -6966,9 +6825,9 @@ paths:
       summary: Get
       tags:
       - netadp
-  /netadp/{netadpId}/accessrights/:
+  /netadp/{netadpId}/accessrights:
     get:
-      operationId: operation_netadp_list_/accessrights/
+      operationId: netadp_list_accessrights
       parameters:
       - description: ID of netadp
         explode: false
@@ -6996,11 +6855,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - netadp
     post:
-      operationId: operation_netadp_post_/accessrights/
+      operationId: netadp_post_accessrights
       parameters:
       - description: ID of netadp
         explode: false
@@ -7014,7 +6873,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/netadp_post_accessrights'
         required: true
       responses:
         200:
@@ -7032,12 +6891,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - netadp
   /netadp/{netadpId}/accessrights/{identity}:
     delete:
-      operationId: operation_netadp_delete_/accessrights/:identity
+      operationId: netadp_delete_accessrights:identity
       parameters:
       - description: ID of netadp
         explode: false
@@ -7080,9 +6939,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - netadp
-  /netadp/{netadpId}/services/:
+  /netadp/{netadpId}/services:
     get:
-      operationId: operation_netadp_list_/services/
+      operationId: netadp_list_services
       parameters:
       - description: ID of netadp
         explode: false
@@ -7110,12 +6969,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - netadp
   /netadp/{netadpId}/services/{serviceId}:
     get:
-      operationId: operation_netadp_get_/services/:serviceId
+      operationId: netadp_get_services:serviceId
       parameters:
       - description: ID of netadp
         explode: false
@@ -7152,9 +7011,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - netadp
-  /netadp/{netadpId}/tag/:
+  /netadp/{netadpId}/tag:
     get:
-      operationId: operation_netadp_get_/tag/
+      operationId: netadp_get_tag
       parameters:
       - description: ID of netadp
         explode: false
@@ -7180,11 +7039,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - netadp
     patch:
-      operationId: operation_netadp_patch_/tag/
+      operationId: netadp_patch_tag
       parameters:
       - description: ID of netadp
         explode: false
@@ -7198,9 +7057,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/netadp_patch_tag'
         required: true
       responses:
         200:
@@ -7218,12 +7075,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - netadp
   /netadp/{netadpId}/tag/{key}:
     delete:
-      operationId: operation_netadp_delete_/tag/:key
+      operationId: netadp_delete_tag:key
       parameters:
       - description: ID of netadp
         explode: false
@@ -7260,9 +7117,9 @@ paths:
       summary: /tag/:key
       tags:
       - netadp
-  /netadp/{netadpId}/queue/:
+  /netadp/{netadpId}/queue:
     get:
-      operationId: operation_netadp_list_/queue/
+      operationId: netadp_list_queue
       parameters:
       - description: ID of netadp
         explode: false
@@ -7290,13 +7147,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - netadp
   /vault:
     get:
       description: List vault
-      operationId: list_vault
+      operationId: vault_list
       parameters:
       - description: Filter by name
         explode: true
@@ -7329,12 +7186,12 @@ paths:
       - vault
     post:
       description: Create vault
-      operationId: create_vault
+      operationId: vault_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vaultCreate'
+              $ref: '#/components/schemas/vault_create'
         required: true
       responses:
         202:
@@ -7357,7 +7214,7 @@ paths:
       - vault
   /vault/{vaultId}:
     delete:
-      operationId: delete_vault
+      operationId: vault_delete
       parameters:
       - description: ID of vault
         explode: false
@@ -7382,7 +7239,7 @@ paths:
       - vault
     get:
       description: Returns a single vault
-      operationId: show_vault
+      operationId: vault_show
       parameters:
       - description: ID of vault
         explode: false
@@ -7413,7 +7270,7 @@ paths:
       - vault
     patch:
       description: Returns modified vault
-      operationId: update_vault
+      operationId: vault_update
       parameters:
       - description: ID of vault
         explode: false
@@ -7424,14 +7281,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_16'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vault_update'
         required: true
       responses:
         200:
@@ -7455,7 +7308,7 @@ paths:
   /vault/{vaultId}/actions/start:
     post:
       description: Action start
-      operationId: action_vault_start
+      operationId: vault_action_start
       parameters:
       - description: ID of vault
         explode: false
@@ -7487,7 +7340,7 @@ paths:
   /vault/{vaultId}/actions/stop:
     post:
       description: Action stop
-      operationId: action_vault_stop
+      operationId: vault_action_stop
       parameters:
       - description: ID of vault
         explode: false
@@ -7519,7 +7372,7 @@ paths:
   /vault/{vaultId}/actions/resize:
     post:
       description: Action resize
-      operationId: action_vault_resize
+      operationId: vault_action_resize
       parameters:
       - description: ID of vault
         explode: false
@@ -7551,7 +7404,7 @@ paths:
   /vault/{vaultId}/actions/snapshot:
     post:
       description: Action snapshot
-      operationId: action_vault_snapshot
+      operationId: vault_action_snapshot
       parameters:
       - description: ID of vault
         explode: false
@@ -7582,7 +7435,7 @@ paths:
       - vault
   /vault/{vaultId}/credential/password:
     get:
-      operationId: operation_vault_list_/credential/password
+      operationId: vault_list_credentialpassword
       parameters:
       - description: ID of vault
         explode: false
@@ -7614,7 +7467,7 @@ paths:
       tags:
       - vault
     post:
-      operationId: operation_vault_post_/credential/password
+      operationId: vault_post_credentialpassword
       parameters:
       - description: ID of vault
         explode: false
@@ -7625,22 +7478,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_17'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                type:
-                  type: string
-                value:
-                  type: string
-              required:
-              - name
-              - type
-              - value
-              type: object
+              $ref: '#/components/schemas/vault_post_credentialpassword'
         required: true
       responses:
         200:
@@ -7663,7 +7504,7 @@ paths:
       - vault
   /vault/{vaultId}/credential/password/{id}:
     delete:
-      operationId: operation_vault_delete_/credential/password/:id
+      operationId: vault_delete_credentialpassword_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7707,7 +7548,7 @@ paths:
       tags:
       - vault
     get:
-      operationId: operation_vault_get_/credential/password/:id
+      operationId: vault_get_credentialpassword_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7745,7 +7586,7 @@ paths:
       tags:
       - vault
     patch:
-      operationId: operation_vault_patch_/credential/password/:id
+      operationId: vault_patch_credentialpassword_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7764,14 +7605,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_18'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vault_patch_credentialpassword_id'
         required: true
       responses:
         200:
@@ -7794,7 +7631,7 @@ paths:
       - vault
   /vault/{vaultId}/credential/certificate:
     get:
-      operationId: operation_vault_list_/credential/certificate
+      operationId: vault_list_credentialcertificate
       parameters:
       - description: ID of vault
         explode: false
@@ -7826,7 +7663,7 @@ paths:
       tags:
       - vault
     post:
-      operationId: operation_vault_post_/credential/certificate
+      operationId: vault_post_credentialcertificate
       parameters:
       - description: ID of vault
         explode: false
@@ -7837,18 +7674,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_19'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                type:
-                  type: string
-                value:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vault_post_credentialcertificate'
         required: true
       responses:
         200:
@@ -7871,7 +7700,7 @@ paths:
       - vault
   /vault/{vaultId}/credential/certificate/{id}:
     delete:
-      operationId: operation_vault_delete_/credential/certificate/:id
+      operationId: vault_delete_credentialcertificate_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7915,7 +7744,7 @@ paths:
       tags:
       - vault
     get:
-      operationId: operation_vault_get_/credential/certificate/:id
+      operationId: vault_get_credentialcertificate_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7953,7 +7782,7 @@ paths:
       tags:
       - vault
     patch:
-      operationId: operation_vault_patch_/credential/certificate/:id
+      operationId: vault_patch_credentialcertificate_id
       parameters:
       - description: ID of vault
         explode: false
@@ -7972,14 +7801,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_20'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/vault_patch_credentialcertificate_id'
         required: true
       responses:
         200:
@@ -8000,9 +7825,9 @@ paths:
       summary: /credential/certificate/:id
       tags:
       - vault
-  /vault/{vaultId}/accessrights/:
+  /vault/{vaultId}/accessrights:
     get:
-      operationId: operation_vault_list_/accessrights/
+      operationId: vault_list_accessrights
       parameters:
       - description: ID of vault
         explode: false
@@ -8030,11 +7855,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vault
     post:
-      operationId: operation_vault_post_/accessrights/
+      operationId: vault_post_accessrights
       parameters:
       - description: ID of vault
         explode: false
@@ -8048,7 +7873,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/vault_post_accessrights'
         required: true
       responses:
         200:
@@ -8066,12 +7891,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vault
   /vault/{vaultId}/accessrights/{identity}:
     delete:
-      operationId: operation_vault_delete_/accessrights/:identity
+      operationId: vault_delete_accessrights:identity
       parameters:
       - description: ID of vault
         explode: false
@@ -8114,9 +7939,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - vault
-  /vault/{vaultId}/services/:
+  /vault/{vaultId}/services:
     get:
-      operationId: operation_vault_list_/services/
+      operationId: vault_list_services
       parameters:
       - description: ID of vault
         explode: false
@@ -8144,12 +7969,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - vault
   /vault/{vaultId}/services/{serviceId}:
     get:
-      operationId: operation_vault_get_/services/:serviceId
+      operationId: vault_get_services:serviceId
       parameters:
       - description: ID of vault
         explode: false
@@ -8186,9 +8011,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - vault
-  /vault/{vaultId}/tag/:
+  /vault/{vaultId}/tag:
     get:
-      operationId: operation_vault_get_/tag/
+      operationId: vault_get_tag
       parameters:
       - description: ID of vault
         explode: false
@@ -8214,11 +8039,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vault
     patch:
-      operationId: operation_vault_patch_/tag/
+      operationId: vault_patch_tag
       parameters:
       - description: ID of vault
         explode: false
@@ -8232,9 +8057,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/vault_patch_tag'
         required: true
       responses:
         200:
@@ -8252,12 +8075,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vault
   /vault/{vaultId}/tag/{key}:
     delete:
-      operationId: operation_vault_delete_/tag/:key
+      operationId: vault_delete_tag:key
       parameters:
       - description: ID of vault
         explode: false
@@ -8294,9 +8117,9 @@ paths:
       summary: /tag/:key
       tags:
       - vault
-  /vault/{vaultId}/queue/:
+  /vault/{vaultId}/queue:
     get:
-      operationId: operation_vault_list_/queue/
+      operationId: vault_list_queue
       parameters:
       - description: ID of vault
         explode: false
@@ -8324,13 +8147,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - vault
   /snapshot:
     get:
       description: List snapshot
-      operationId: list_snapshot
+      operationId: snapshot_list
       parameters:
       - description: Filter by name
         explode: true
@@ -8371,12 +8194,12 @@ paths:
       - snapshot
     post:
       description: Create snapshot
-      operationId: create_snapshot
+      operationId: snapshot_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/snapshotCreate'
+              $ref: '#/components/schemas/snapshot_create'
         required: true
       responses:
         202:
@@ -8399,7 +8222,7 @@ paths:
       - snapshot
   /snapshot/{snapshotId}:
     delete:
-      operationId: delete_snapshot
+      operationId: snapshot_delete
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8424,7 +8247,7 @@ paths:
       - snapshot
     get:
       description: Returns a single snapshot
-      operationId: show_snapshot
+      operationId: snapshot_show
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8455,7 +8278,7 @@ paths:
       - snapshot
     patch:
       description: Returns modified snapshot
-      operationId: update_snapshot
+      operationId: snapshot_update
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8466,14 +8289,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_21'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/snapshot_update'
         required: true
       responses:
         200:
@@ -8494,9 +8313,9 @@ paths:
       summary: Update
       tags:
       - snapshot
-  /snapshot/{snapshotId}/accessrights/:
+  /snapshot/{snapshotId}/accessrights:
     get:
-      operationId: operation_snapshot_list_/accessrights/
+      operationId: snapshot_list_accessrights
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8524,11 +8343,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - snapshot
     post:
-      operationId: operation_snapshot_post_/accessrights/
+      operationId: snapshot_post_accessrights
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8542,7 +8361,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/snapshot_post_accessrights'
         required: true
       responses:
         200:
@@ -8560,12 +8379,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - snapshot
   /snapshot/{snapshotId}/accessrights/{identity}:
     delete:
-      operationId: operation_snapshot_delete_/accessrights/:identity
+      operationId: snapshot_delete_accessrights:identity
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8608,9 +8427,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - snapshot
-  /snapshot/{snapshotId}/services/:
+  /snapshot/{snapshotId}/services:
     get:
-      operationId: operation_snapshot_list_/services/
+      operationId: snapshot_list_services
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8638,12 +8457,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - snapshot
   /snapshot/{snapshotId}/services/{serviceId}:
     get:
-      operationId: operation_snapshot_get_/services/:serviceId
+      operationId: snapshot_get_services:serviceId
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8680,9 +8499,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - snapshot
-  /snapshot/{snapshotId}/tag/:
+  /snapshot/{snapshotId}/tag:
     get:
-      operationId: operation_snapshot_get_/tag/
+      operationId: snapshot_get_tag
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8708,11 +8527,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - snapshot
     patch:
-      operationId: operation_snapshot_patch_/tag/
+      operationId: snapshot_patch_tag
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8726,9 +8545,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/snapshot_patch_tag'
         required: true
       responses:
         200:
@@ -8746,12 +8563,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - snapshot
   /snapshot/{snapshotId}/tag/{key}:
     delete:
-      operationId: operation_snapshot_delete_/tag/:key
+      operationId: snapshot_delete_tag:key
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8788,9 +8605,9 @@ paths:
       summary: /tag/:key
       tags:
       - snapshot
-  /snapshot/{snapshotId}/queue/:
+  /snapshot/{snapshotId}/queue:
     get:
-      operationId: operation_snapshot_list_/queue/
+      operationId: snapshot_list_queue
       parameters:
       - description: ID of snapshot
         explode: false
@@ -8818,13 +8635,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - snapshot
   /reservation:
     get:
       description: List reservation
-      operationId: list_reservation
+      operationId: reservation_list
       parameters:
       - description: Filter by name
         explode: true
@@ -8857,12 +8674,12 @@ paths:
       - reservation
     post:
       description: Create reservation
-      operationId: create_reservation
+      operationId: reservation_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/reservationCreate'
+              $ref: '#/components/schemas/reservation_create'
         required: true
       responses:
         202:
@@ -8885,7 +8702,7 @@ paths:
       - reservation
   /reservation/{reservationId}:
     delete:
-      operationId: delete_reservation
+      operationId: reservation_delete
       parameters:
       - description: ID of reservation
         explode: false
@@ -8910,7 +8727,7 @@ paths:
       - reservation
     get:
       description: Returns a single reservation
-      operationId: show_reservation
+      operationId: reservation_show
       parameters:
       - description: ID of reservation
         explode: false
@@ -8941,7 +8758,7 @@ paths:
       - reservation
     patch:
       description: Returns modified reservation
-      operationId: update_reservation
+      operationId: reservation_update
       parameters:
       - description: ID of reservation
         explode: false
@@ -8952,14 +8769,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_22'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/reservation_update'
         required: true
       responses:
         200:
@@ -8983,7 +8796,7 @@ paths:
   /reservation/{reservationId}/actions/assign:
     post:
       description: Action assign
-      operationId: action_reservation_assign
+      operationId: reservation_action_assign
       parameters:
       - description: ID of reservation
         explode: false
@@ -9015,7 +8828,7 @@ paths:
   /reservation/{reservationId}/actions/extend:
     post:
       description: Action extend
-      operationId: action_reservation_extend
+      operationId: reservation_action_extend
       parameters:
       - description: ID of reservation
         explode: false
@@ -9047,7 +8860,7 @@ paths:
   /reservation/{reservationId}/actions/unassign:
     post:
       description: Action unassign
-      operationId: action_reservation_unassign
+      operationId: reservation_action_unassign
       parameters:
       - description: ID of reservation
         explode: false
@@ -9076,9 +8889,9 @@ paths:
       summary: /actions/unassign
       tags:
       - reservation
-  /reservation/{reservationId}/accessrights/:
+  /reservation/{reservationId}/accessrights:
     get:
-      operationId: operation_reservation_list_/accessrights/
+      operationId: reservation_list_accessrights
       parameters:
       - description: ID of reservation
         explode: false
@@ -9106,11 +8919,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - reservation
     post:
-      operationId: operation_reservation_post_/accessrights/
+      operationId: reservation_post_accessrights
       parameters:
       - description: ID of reservation
         explode: false
@@ -9124,7 +8937,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/reservation_post_accessrights'
         required: true
       responses:
         200:
@@ -9142,12 +8955,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - reservation
   /reservation/{reservationId}/accessrights/{identity}:
     delete:
-      operationId: operation_reservation_delete_/accessrights/:identity
+      operationId: reservation_delete_accessrights:identity
       parameters:
       - description: ID of reservation
         explode: false
@@ -9190,9 +9003,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - reservation
-  /reservation/{reservationId}/services/:
+  /reservation/{reservationId}/services:
     get:
-      operationId: operation_reservation_list_/services/
+      operationId: reservation_list_services
       parameters:
       - description: ID of reservation
         explode: false
@@ -9220,12 +9033,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - reservation
   /reservation/{reservationId}/services/{serviceId}:
     get:
-      operationId: operation_reservation_get_/services/:serviceId
+      operationId: reservation_get_services:serviceId
       parameters:
       - description: ID of reservation
         explode: false
@@ -9262,9 +9075,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - reservation
-  /reservation/{reservationId}/tag/:
+  /reservation/{reservationId}/tag:
     get:
-      operationId: operation_reservation_get_/tag/
+      operationId: reservation_get_tag
       parameters:
       - description: ID of reservation
         explode: false
@@ -9290,11 +9103,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - reservation
     patch:
-      operationId: operation_reservation_patch_/tag/
+      operationId: reservation_patch_tag
       parameters:
       - description: ID of reservation
         explode: false
@@ -9308,9 +9121,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/reservation_patch_tag'
         required: true
       responses:
         200:
@@ -9328,12 +9139,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - reservation
   /reservation/{reservationId}/tag/{key}:
     delete:
-      operationId: operation_reservation_delete_/tag/:key
+      operationId: reservation_delete_tag:key
       parameters:
       - description: ID of reservation
         explode: false
@@ -9370,9 +9181,9 @@ paths:
       summary: /tag/:key
       tags:
       - reservation
-  /reservation/{reservationId}/queue/:
+  /reservation/{reservationId}/queue:
     get:
-      operationId: operation_reservation_list_/queue/
+      operationId: reservation_list_queue
       parameters:
       - description: ID of reservation
         explode: false
@@ -9400,13 +9211,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - reservation
   /logArchive:
     get:
       description: List logArchive
-      operationId: list_logArchive
+      operationId: logArchive_list
       parameters:
       - description: Filter by name
         explode: true
@@ -9439,12 +9250,12 @@ paths:
       - logArchive
     post:
       description: Create logArchive
-      operationId: create_logArchive
+      operationId: logArchive_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/logArchiveCreate'
+              $ref: '#/components/schemas/logArchive_create'
         required: true
       responses:
         202:
@@ -9467,7 +9278,7 @@ paths:
       - logArchive
   /logArchive/{logArchiveId}:
     delete:
-      operationId: delete_logArchive
+      operationId: logArchive_delete
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9492,7 +9303,7 @@ paths:
       - logArchive
     get:
       description: Returns a single logArchive
-      operationId: show_logArchive
+      operationId: logArchive_show
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9523,7 +9334,7 @@ paths:
       - logArchive
     patch:
       description: Returns modified logArchive
-      operationId: update_logArchive
+      operationId: logArchive_update
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9534,14 +9345,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_23'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/logArchive_update'
         required: true
       responses:
         200:
@@ -9565,7 +9372,7 @@ paths:
   /logArchive/{logArchiveId}/actions/transfer:
     post:
       description: Action transfer
-      operationId: action_logArchive_transfer
+      operationId: logArchive_action_transfer
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9579,7 +9386,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/logArchive.transfer'
+              $ref: '#/components/schemas/logArchive_action_transfer'
         required: true
       responses:
         202:
@@ -9602,7 +9409,7 @@ paths:
       - logArchive
   /logArchive/{logArchiveId}/credential/password:
     get:
-      operationId: operation_logArchive_list_/credential/password
+      operationId: logArchive_list_credentialpassword
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9634,7 +9441,7 @@ paths:
       tags:
       - logArchive
     post:
-      operationId: operation_logArchive_post_/credential/password
+      operationId: logArchive_post_credentialpassword
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9645,22 +9452,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_24'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                type:
-                  type: string
-                value:
-                  type: string
-              required:
-              - name
-              - type
-              - value
-              type: object
+              $ref: '#/components/schemas/logArchive_post_credentialpassword'
         required: true
       responses:
         200:
@@ -9683,7 +9478,7 @@ paths:
       - logArchive
   /logArchive/{logArchiveId}/credential/password/{id}:
     delete:
-      operationId: operation_logArchive_delete_/credential/password/:id
+      operationId: logArchive_delete_credentialpassword_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9727,7 +9522,7 @@ paths:
       tags:
       - logArchive
     get:
-      operationId: operation_logArchive_get_/credential/password/:id
+      operationId: logArchive_get_credentialpassword_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9765,7 +9560,7 @@ paths:
       tags:
       - logArchive
     patch:
-      operationId: operation_logArchive_patch_/credential/password/:id
+      operationId: logArchive_patch_credentialpassword_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9784,14 +9579,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_25'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/logArchive_patch_credentialpassword_id'
         required: true
       responses:
         200:
@@ -9814,7 +9605,7 @@ paths:
       - logArchive
   /logArchive/{logArchiveId}/credential/certificate:
     get:
-      operationId: operation_logArchive_list_/credential/certificate
+      operationId: logArchive_list_credentialcertificate
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9846,7 +9637,7 @@ paths:
       tags:
       - logArchive
     post:
-      operationId: operation_logArchive_post_/credential/certificate
+      operationId: logArchive_post_credentialcertificate
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9857,18 +9648,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_26'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-                type:
-                  type: string
-                value:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/logArchive_post_credentialcertificate'
         required: true
       responses:
         200:
@@ -9891,7 +9674,7 @@ paths:
       - logArchive
   /logArchive/{logArchiveId}/credential/certificate/{id}:
     delete:
-      operationId: operation_logArchive_delete_/credential/certificate/:id
+      operationId: logArchive_delete_credentialcertificate_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9935,7 +9718,7 @@ paths:
       tags:
       - logArchive
     get:
-      operationId: operation_logArchive_get_/credential/certificate/:id
+      operationId: logArchive_get_credentialcertificate_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9973,7 +9756,7 @@ paths:
       tags:
       - logArchive
     patch:
-      operationId: operation_logArchive_patch_/credential/certificate/:id
+      operationId: logArchive_patch_credentialcertificate_id
       parameters:
       - description: ID of logArchive
         explode: false
@@ -9992,14 +9775,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_27'
         content:
           application/json:
             schema:
-              properties:
-                name:
-                  type: string
-              type: object
+              $ref: '#/components/schemas/logArchive_patch_credentialcertificate_id'
         required: true
       responses:
         200:
@@ -10020,9 +9799,9 @@ paths:
       summary: /credential/certificate/:id
       tags:
       - logArchive
-  /logArchive/{logArchiveId}/accessrights/:
+  /logArchive/{logArchiveId}/accessrights:
     get:
-      operationId: operation_logArchive_list_/accessrights/
+      operationId: logArchive_list_accessrights
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10050,11 +9829,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - logArchive
     post:
-      operationId: operation_logArchive_post_/accessrights/
+      operationId: logArchive_post_accessrights
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10068,7 +9847,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/logArchive_post_accessrights'
         required: true
       responses:
         200:
@@ -10086,12 +9865,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - logArchive
   /logArchive/{logArchiveId}/accessrights/{identity}:
     delete:
-      operationId: operation_logArchive_delete_/accessrights/:identity
+      operationId: logArchive_delete_accessrights:identity
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10134,9 +9913,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - logArchive
-  /logArchive/{logArchiveId}/services/:
+  /logArchive/{logArchiveId}/services:
     get:
-      operationId: operation_logArchive_list_/services/
+      operationId: logArchive_list_services
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10164,12 +9943,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - logArchive
   /logArchive/{logArchiveId}/services/{serviceId}:
     get:
-      operationId: operation_logArchive_get_/services/:serviceId
+      operationId: logArchive_get_services:serviceId
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10206,9 +9985,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - logArchive
-  /logArchive/{logArchiveId}/tag/:
+  /logArchive/{logArchiveId}/tag:
     get:
-      operationId: operation_logArchive_get_/tag/
+      operationId: logArchive_get_tag
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10234,11 +10013,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - logArchive
     patch:
-      operationId: operation_logArchive_patch_/tag/
+      operationId: logArchive_patch_tag
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10252,9 +10031,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/logArchive_patch_tag'
         required: true
       responses:
         200:
@@ -10272,12 +10049,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - logArchive
   /logArchive/{logArchiveId}/tag/{key}:
     delete:
-      operationId: operation_logArchive_delete_/tag/:key
+      operationId: logArchive_delete_tag:key
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10314,9 +10091,9 @@ paths:
       summary: /tag/:key
       tags:
       - logArchive
-  /logArchive/{logArchiveId}/queue/:
+  /logArchive/{logArchiveId}/queue:
     get:
-      operationId: operation_logArchive_list_/queue/
+      operationId: logArchive_list_queue
       parameters:
       - description: ID of logArchive
         explode: false
@@ -10344,13 +10121,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - logArchive
   /vmhost:
     get:
       description: List vmhost
-      operationId: list_vmhost
+      operationId: vmhost_list
       parameters:
       - description: Filter by enabledServices
         explode: true
@@ -10383,7 +10160,7 @@ paths:
       - vmhost
   /vmhost/{vmhostId}:
     delete:
-      operationId: delete_vmhost
+      operationId: vmhost_delete
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10408,7 +10185,7 @@ paths:
       - vmhost
     get:
       description: Returns a single vmhost
-      operationId: show_vmhost
+      operationId: vmhost_show
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10439,7 +10216,7 @@ paths:
       - vmhost
     patch:
       description: Returns modified vmhost
-      operationId: update_vmhost
+      operationId: vmhost_update
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10450,14 +10227,10 @@ paths:
           type: string
         style: simple
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_28'
         content:
           application/json:
             schema:
-              properties:
-                enabledServices:
-                  $ref: '#/components/schemas/vmhostvmhostId_enabledServices'
-              type: object
+              $ref: '#/components/schemas/vmhost_update'
         required: true
       responses:
         200:
@@ -10481,7 +10254,7 @@ paths:
   /vmhost/{vmhostId}/actions/moveVM:
     post:
       description: Action moveVM
-      operationId: action_vmhost_moveVM
+      operationId: vmhost_action_moveVM
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10495,7 +10268,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vmhost.moveVM'
+              $ref: '#/components/schemas/vmhost_action_moveVM'
         required: true
       responses:
         202:
@@ -10519,7 +10292,7 @@ paths:
   /vmhost/{vmhostId}/actions/moveDisk:
     post:
       description: Action moveDisk
-      operationId: action_vmhost_moveDisk
+      operationId: vmhost_action_moveDisk
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10533,7 +10306,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vmhost.moveDisk'
+              $ref: '#/components/schemas/vmhost_action_moveDisk'
         required: true
       responses:
         202:
@@ -10557,7 +10330,7 @@ paths:
   /vmhost/{vmhostId}/actions/moveISO:
     post:
       description: Action moveISO
-      operationId: action_vmhost_moveISO
+      operationId: vmhost_action_moveISO
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10571,7 +10344,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vmhost.moveISO'
+              $ref: '#/components/schemas/vmhost_action_moveISO'
         required: true
       responses:
         202:
@@ -10595,7 +10368,7 @@ paths:
   /vmhost/{vmhostId}/actions/moveImage:
     post:
       description: Action moveImage
-      operationId: action_vmhost_moveImage
+      operationId: vmhost_action_moveImage
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10609,7 +10382,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/vmhost.moveImage'
+              $ref: '#/components/schemas/vmhost_action_moveImage'
         required: true
       responses:
         202:
@@ -10630,9 +10403,9 @@ paths:
       summary: /actions/moveImage
       tags:
       - vmhost
-  /vmhost/{vmhostId}/accessrights/:
+  /vmhost/{vmhostId}/accessrights:
     get:
-      operationId: operation_vmhost_list_/accessrights/
+      operationId: vmhost_list_accessrights
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10660,11 +10433,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vmhost
     post:
-      operationId: operation_vmhost_post_/accessrights/
+      operationId: vmhost_post_accessrights
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10678,7 +10451,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/vmhost_post_accessrights'
         required: true
       responses:
         200:
@@ -10696,12 +10469,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - vmhost
   /vmhost/{vmhostId}/accessrights/{identity}:
     delete:
-      operationId: operation_vmhost_delete_/accessrights/:identity
+      operationId: vmhost_delete_accessrights:identity
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10744,9 +10517,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - vmhost
-  /vmhost/{vmhostId}/services/:
+  /vmhost/{vmhostId}/services:
     get:
-      operationId: operation_vmhost_list_/services/
+      operationId: vmhost_list_services
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10774,12 +10547,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - vmhost
   /vmhost/{vmhostId}/services/{serviceId}:
     get:
-      operationId: operation_vmhost_get_/services/:serviceId
+      operationId: vmhost_get_services:serviceId
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10816,9 +10589,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - vmhost
-  /vmhost/{vmhostId}/tag/:
+  /vmhost/{vmhostId}/tag:
     get:
-      operationId: operation_vmhost_get_/tag/
+      operationId: vmhost_get_tag
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10844,11 +10617,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vmhost
     patch:
-      operationId: operation_vmhost_patch_/tag/
+      operationId: vmhost_patch_tag
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10862,9 +10635,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/vmhost_patch_tag'
         required: true
       responses:
         200:
@@ -10882,12 +10653,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - vmhost
   /vmhost/{vmhostId}/tag/{key}:
     delete:
-      operationId: operation_vmhost_delete_/tag/:key
+      operationId: vmhost_delete_tag:key
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10924,9 +10695,9 @@ paths:
       summary: /tag/:key
       tags:
       - vmhost
-  /vmhost/{vmhostId}/queue/:
+  /vmhost/{vmhostId}/queue:
     get:
-      operationId: operation_vmhost_list_/queue/
+      operationId: vmhost_list_queue
       parameters:
       - description: ID of vmhost
         explode: false
@@ -10954,13 +10725,13 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - vmhost
   /replica:
     get:
       description: List replica
-      operationId: list_replica
+      operationId: replica_list
       parameters:
       - description: Filter by name
         explode: true
@@ -10993,12 +10764,12 @@ paths:
       - replica
     post:
       description: Create replica
-      operationId: create_replica
+      operationId: replica_create
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/replicaCreate'
+              $ref: '#/components/schemas/replica_create'
         required: true
       responses:
         202:
@@ -11021,7 +10792,7 @@ paths:
       - replica
   /replica/{replicaId}:
     delete:
-      operationId: delete_replica
+      operationId: replica_delete
       parameters:
       - description: ID of replica
         explode: false
@@ -11046,7 +10817,7 @@ paths:
       - replica
     get:
       description: Returns a single replica
-      operationId: show_replica
+      operationId: replica_show
       parameters:
       - description: ID of replica
         explode: false
@@ -11078,7 +10849,7 @@ paths:
   /replica/{replicaId}/actions/image:
     post:
       description: Action image
-      operationId: action_replica_image
+      operationId: replica_action_image
       parameters:
       - description: ID of replica
         explode: false
@@ -11092,7 +10863,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/replica.image'
+              $ref: '#/components/schemas/replica_action_image'
         required: true
       responses:
         202:
@@ -11113,9 +10884,9 @@ paths:
       summary: /actions/image
       tags:
       - replica
-  /replica/{replicaId}/accessrights/:
+  /replica/{replicaId}/accessrights:
     get:
-      operationId: operation_replica_list_/accessrights/
+      operationId: replica_list_accessrights
       parameters:
       - description: ID of replica
         explode: false
@@ -11143,11 +10914,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - replica
     post:
-      operationId: operation_replica_post_/accessrights/
+      operationId: replica_post_accessrights
       parameters:
       - description: ID of replica
         explode: false
@@ -11161,7 +10932,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/resource.accessRight'
+              $ref: '#/components/schemas/replica_post_accessrights'
         required: true
       responses:
         200:
@@ -11179,12 +10950,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/
+      summary: /accessrights
       tags:
       - replica
   /replica/{replicaId}/accessrights/{identity}:
     delete:
-      operationId: operation_replica_delete_/accessrights/:identity
+      operationId: replica_delete_accessrights:identity
       parameters:
       - description: ID of replica
         explode: false
@@ -11227,9 +10998,9 @@ paths:
       summary: /accessrights/:identity
       tags:
       - replica
-  /replica/{replicaId}/services/:
+  /replica/{replicaId}/services:
     get:
-      operationId: operation_replica_list_/services/
+      operationId: replica_list_services
       parameters:
       - description: ID of replica
         explode: false
@@ -11257,12 +11028,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /services/
+      summary: /services
       tags:
       - replica
   /replica/{replicaId}/services/{serviceId}:
     get:
-      operationId: operation_replica_get_/services/:serviceId
+      operationId: replica_get_services:serviceId
       parameters:
       - description: ID of replica
         explode: false
@@ -11299,9 +11070,9 @@ paths:
       summary: /services/:serviceId
       tags:
       - replica
-  /replica/{replicaId}/tag/:
+  /replica/{replicaId}/tag:
     get:
-      operationId: operation_replica_get_/tag/
+      operationId: replica_get_tag
       parameters:
       - description: ID of replica
         explode: false
@@ -11327,11 +11098,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - replica
     patch:
-      operationId: operation_replica_patch_/tag/
+      operationId: replica_patch_tag
       parameters:
       - description: ID of replica
         explode: false
@@ -11345,9 +11116,7 @@ paths:
         content:
           application/json:
             schema:
-              additionalProperties:
-                type: string
-              type: object
+              $ref: '#/components/schemas/replica_patch_tag'
         required: true
       responses:
         200:
@@ -11365,12 +11134,12 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /tag/
+      summary: /tag
       tags:
       - replica
   /replica/{replicaId}/tag/{key}:
     delete:
-      operationId: operation_replica_delete_/tag/:key
+      operationId: replica_delete_tag:key
       parameters:
       - description: ID of replica
         explode: false
@@ -11407,9 +11176,9 @@ paths:
       summary: /tag/:key
       tags:
       - replica
-  /replica/{replicaId}/queue/:
+  /replica/{replicaId}/queue:
     get:
-      operationId: operation_replica_list_/queue/
+      operationId: replica_list_queue
       parameters:
       - description: ID of replica
         explode: false
@@ -11437,156 +11206,11 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /queue/
+      summary: /queue
       tags:
       - replica
 components:
-  requestBodies:
-    inline_object_10:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_10'
-    inline_object_12:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_12'
-    inline_object_11:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_11'
-    inline_object_14:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_14'
-    inline_object_13:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_13'
-    inline_object_16:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_16'
-    inline_object_15:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_15'
-    inline_object_28:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_28'
-    inline_object_1:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_1'
-    inline_object_9:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_9'
-    inline_object_21:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_21'
-    inline_object_8:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_8'
-    inline_object_20:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_20'
-    inline_object_7:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_7'
-    inline_object_23:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_23'
-    inline_object_6:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_6'
-    inline_object_22:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_22'
-    inline_object_5:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_5'
-    inline_object_25:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_25'
-    inline_object_4:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_4'
-    inline_object_24:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_24'
-    inline_object_3:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_3'
-    inline_object_27:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_27'
-    inline_object_2:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_2'
-    inline_object_26:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_26'
-    inline_object_18:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_18'
-    inline_object_17:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_17'
-    inline_object_19:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object_19'
-    inline_object:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/inline_object'
+  requestBodies: {}
   responses:
     UnauthorizedError:
       description: API key is missing or invalid
@@ -11988,8 +11612,6 @@ components:
           type: number
       type: object
     project.tag:
-      additionalProperties:
-        type: string
       type: object
     organisation:
       example:
@@ -12161,8 +11783,6 @@ components:
       - role
       type: object
     organisation.tag:
-      additionalProperties:
-        type: string
       type: object
     container:
       example:
@@ -12294,8 +11914,6 @@ components:
           type: number
       type: object
     container.tag:
-      additionalProperties:
-        type: string
       type: object
     firewall:
       example:
@@ -12428,8 +12046,6 @@ components:
           type: number
       type: object
     firewall.tag:
-      additionalProperties:
-        type: string
       type: object
     network:
       example:
@@ -12582,8 +12198,6 @@ components:
           type: number
       type: object
     network.tag:
-      additionalProperties:
-        type: string
       type: object
     netgw:
       example:
@@ -12806,8 +12420,6 @@ components:
           type: number
       type: object
     netgw.tag:
-      additionalProperties:
-        type: string
       type: object
     image:
       example:
@@ -12958,8 +12570,6 @@ components:
           type: number
       type: object
     image.tag:
-      additionalProperties:
-        type: string
       type: object
     disk:
       example:
@@ -13117,8 +12727,6 @@ components:
           type: number
       type: object
     disk.tag:
-      additionalProperties:
-        type: string
       type: object
     iso:
       example:
@@ -13254,8 +12862,6 @@ components:
           type: number
       type: object
     iso.tag:
-      additionalProperties:
-        type: string
       type: object
     vm:
       example:
@@ -13425,8 +13031,6 @@ components:
           type: number
       type: object
     vm.tag:
-      additionalProperties:
-        type: string
       type: object
     ip:
       example:
@@ -13579,8 +13183,6 @@ components:
           type: number
       type: object
     ip.tag:
-      additionalProperties:
-        type: string
       type: object
     netadp:
       example:
@@ -13810,8 +13412,6 @@ components:
           type: number
       type: object
     netadp.tag:
-      additionalProperties:
-        type: string
       type: object
     vault:
       example:
@@ -13837,21 +13437,6 @@ components:
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         size: 0.80082819046101150206595775671303272247314453125
-        credential:
-          password:
-            createdBy: createdBy
-            name: name
-            _id: _id
-            type: type
-            createdOn: createdOn
-            value: value
-          certificate:
-            createdBy: createdBy
-            name: name
-            _id: _id
-            type: type
-            createdOn: createdOn
-            value: value
         createdBy: createdBy
         name: name
         processing: true
@@ -13930,8 +13515,6 @@ components:
           type: number
         sizeUsed:
           type: number
-        credential:
-          $ref: '#/components/schemas/vault_credential'
       type: object
     vault.accessRights:
       type: string
@@ -13963,8 +13546,6 @@ components:
           type: number
       type: object
     vault.tag:
-      additionalProperties:
-        type: string
       type: object
     snapshot:
       example:
@@ -14099,8 +13680,6 @@ components:
           type: number
       type: object
     snapshot.tag:
-      additionalProperties:
-        type: string
       type: object
     reservation:
       example:
@@ -14242,8 +13821,6 @@ components:
           type: number
       type: object
     reservation.tag:
-      additionalProperties:
-        type: string
       type: object
     logArchive:
       example:
@@ -14268,21 +13845,6 @@ components:
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
-        credential:
-          password:
-            createdBy: createdBy
-            name: name
-            _id: _id
-            type: type
-            createdOn: createdOn
-            value: value
-          certificate:
-            createdBy: createdBy
-            name: name
-            _id: _id
-            type: type
-            createdOn: createdOn
-            value: value
         createdBy: createdBy
         name: name
         processing: true
@@ -14357,8 +13919,6 @@ components:
         project:
           format: ObjectId
           type: string
-        credential:
-          $ref: '#/components/schemas/vault_credential'
         sizeUsed:
           type: number
         retention:
@@ -14394,8 +13954,6 @@ components:
           type: number
       type: object
     logArchive.tag:
-      additionalProperties:
-        type: string
       type: object
     vmhost:
       example:
@@ -14454,8 +14012,6 @@ components:
           type: number
       type: object
     vmhost.tag:
-      additionalProperties:
-        type: string
       type: object
     replica:
       example:
@@ -14594,16 +14150,14 @@ components:
           type: number
       type: object
     replica.tag:
-      additionalProperties:
-        type: string
       type: object
-    projectCreate:
+    project_create:
       properties:
         name:
           type: string
         accessRights:
           items:
-            $ref: '#/components/schemas/projectCreate_accessRights'
+            $ref: '#/components/schemas/project_create_accessRights'
           type: array
         organisation:
           type: string
@@ -14613,26 +14167,39 @@ components:
       - name
       - organisation
       type: object
-    resource.accessRight:
+    project_update:
+      properties:
+        name:
+          type: string
+      type: object
+    project_post_accessrights:
       properties:
         identity:
           type: string
       type: object
-    organisationCreate:
+    project_patch_tag:
+      type: object
+    organisation_create:
       properties:
         name:
           type: string
         billing:
-          $ref: '#/components/schemas/organisationCreate_billing'
+          $ref: '#/components/schemas/organisation_create_billing'
         accessRights:
           items:
-            $ref: '#/components/schemas/organisationCreate_accessRights'
+            $ref: '#/components/schemas/organisation_create_accessRights'
           type: array
         tag:
           type: object
       type: object
-    organisation.transfer_accept:
-      description: Request body for action transfer_accept on organisation
+    organisation_update:
+      properties:
+        name:
+          type: string
+        billing:
+          $ref: '#/components/schemas/organisation_update_billing'
+      type: object
+    organisation_action_transfer_accept:
       properties:
         payment:
           type: string
@@ -14642,19 +14209,26 @@ components:
       - payment
       - project
       type: object
-    containerCreate:
+    organisation_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    organisation_patch_tag:
+      type: object
+    container_create:
       properties:
         name:
           type: string
         image:
           type: string
         registry:
-          $ref: '#/components/schemas/containerCreate_registry'
+          $ref: '#/components/schemas/container_create_registry'
         service:
           format: ObjectId
           type: string
         expose:
-          $ref: '#/components/schemas/containerCreate_expose'
+          $ref: '#/components/schemas/container_create_expose'
         env:
           items:
             type: string
@@ -14663,7 +14237,7 @@ components:
           type: string
         volumes:
           items:
-            $ref: '#/components/schemas/containerCreate_volumes'
+            $ref: '#/components/schemas/container_create_volumes'
           type: array
         tag:
           type: object
@@ -14672,7 +14246,19 @@ components:
       - name
       - service
       type: object
-    firewallCreate:
+    container_update:
+      properties:
+        name:
+          type: string
+      type: object
+    container_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    container_patch_tag:
+      type: object
+    firewall_create:
       properties:
         name:
           type: string
@@ -14684,15 +14270,68 @@ components:
       required:
       - service
       type: object
-    firewall.transfer:
-      description: Request body for action transfer on firewall
+    firewall_update:
+      properties:
+        name:
+          type: string
+      type: object
+    firewall_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    networkCreate:
+    firewall_post_ingress:
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+        priority:
+          type: number
+        filter:
+          items:
+            type: string
+          type: array
+        external:
+          items:
+            type: string
+          type: array
+        internal:
+          items:
+            type: string
+          type: array
+      type: object
+    firewall_post_egress:
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+        priority:
+          type: number
+        filter:
+          items:
+            type: string
+          type: array
+        external:
+          items:
+            type: string
+          type: array
+        internal:
+          items:
+            type: string
+          type: array
+      type: object
+    firewall_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    firewall_patch_tag:
+      type: object
+    network_create:
       properties:
         name:
           type: string
@@ -14703,16 +14342,49 @@ components:
         tag:
           type: object
       type: object
-    netgwCreate:
+    network_update:
+      properties:
+        name:
+          type: string
+        gateway:
+          type: string
+      type: object
+    network_post_ip:
+      properties:
+        address:
+          type: string
+        tag:
+          type: object
+      type: object
+    network_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    network_patch_tag:
+      type: object
+    netgw_create:
       properties:
         name:
           type: string
         public:
-          $ref: '#/components/schemas/netgwCreate_public'
+          $ref: '#/components/schemas/netgw_create_public'
         tag:
           type: object
       type: object
-    imageCreate:
+    netgw_update:
+      properties:
+        name:
+          type: string
+      type: object
+    netgw_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    netgw_patch_tag:
+      type: object
+    image_create:
       properties:
         name:
           type: string
@@ -14731,15 +14403,28 @@ components:
       - name
       - service
       type: object
-    image.transfer:
-      description: Request body for action transfer on image
+    image_update:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+      type: object
+    image_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    diskCreate:
+    image_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    image_patch_tag:
+      type: object
+    disk_create:
       properties:
         service:
           format: ObjectId
@@ -14751,21 +14436,32 @@ components:
         cloud:
           type: string
         metadata:
-          $ref: '#/components/schemas/diskCreate_metadata'
+          $ref: '#/components/schemas/disk_create_metadata'
         tag:
           type: object
       required:
       - service
       type: object
-    disk.transfer:
-      description: Request body for action transfer on disk
+    disk_update:
+      properties:
+        name:
+          type: string
+      type: object
+    disk_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    isoCreate:
+    disk_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    disk_patch_tag:
+      type: object
+    iso_create:
       properties:
         name:
           type: string
@@ -14779,22 +14475,33 @@ components:
         cloud:
           type: string
         metadata:
-          $ref: '#/components/schemas/diskCreate_metadata'
+          $ref: '#/components/schemas/disk_create_metadata'
         tag:
           type: object
       required:
       - name
       - service
       type: object
-    iso.transfer:
-      description: Request body for action transfer on iso
+    iso_update:
+      properties:
+        name:
+          type: string
+      type: object
+    iso_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    vmCreate:
+    iso_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    iso_patch_tag:
+      type: object
+    vm_create:
       properties:
         name:
           type: string
@@ -14808,7 +14515,7 @@ components:
         username:
           type: string
         password:
-          $ref: '#/components/schemas/vmCreate_password'
+          $ref: '#/components/schemas/vm_create_password'
         sshKeys:
           description: |-
             - user credential (by id or name)
@@ -14821,11 +14528,11 @@ components:
           type: string
         disk:
           items:
-            $ref: '#/components/schemas/vmCreate_disk'
+            $ref: '#/components/schemas/vm_create_disk'
           type: array
         netadp:
           items:
-            $ref: '#/components/schemas/vmCreate_netadp'
+            $ref: '#/components/schemas/vm_create_netadp'
           type: array
         boot:
           type: boolean
@@ -14836,8 +14543,14 @@ components:
       required:
       - service
       type: object
-    vm.password_reset:
-      description: Request body for action password_reset on vm
+    vm_update:
+      properties:
+        userMetadata:
+          type: string
+        name:
+          type: string
+      type: object
+    vm_action_password_reset:
       properties:
         userName:
           type: string
@@ -14850,8 +14563,7 @@ components:
       - modulus
       - userName
       type: object
-    vm.image:
-      description: Request body for action image on vm
+    vm_action_image:
       properties:
         service:
           format: ObjectId
@@ -14863,7 +14575,37 @@ components:
       required:
       - service
       type: object
-    ipCreate:
+    vm_post_hdd:
+      properties:
+        disk:
+          type: string
+        controllerType:
+          type: string
+      required:
+      - disk
+      type: object
+    vm_post_netadp:
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        network:
+          type: string
+        ip:
+          type: string
+        tag:
+          type: object
+        vlanIds:
+          type: string
+      type: object
+    vm_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    vm_patch_tag:
+      type: object
+    ip_create:
       properties:
         service:
           format: ObjectId
@@ -14873,15 +14615,33 @@ components:
       required:
       - service
       type: object
-    ip.transfer:
-      description: Request body for action transfer on ip
+    ip_update:
+      properties:
+        ptrRecord:
+          type: string
+      type: object
+    ip_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    vaultCreate:
+    ip_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    ip_patch_tag:
+      type: object
+    netadp_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    netadp_patch_tag:
+      type: object
+    vault_create:
       properties:
         name:
           type: string
@@ -14891,7 +14651,7 @@ components:
           format: ObjectId
           type: string
         credential:
-          $ref: '#/components/schemas/vaultCreate_credential'
+          $ref: '#/components/schemas/vault_create_credential'
         snapshot:
           type: string
         tag:
@@ -14901,7 +14661,51 @@ components:
       - service
       - size
       type: object
-    snapshotCreate:
+    vault_update:
+      properties:
+        name:
+          type: string
+      type: object
+    vault_post_credentialpassword:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    vault_patch_credentialpassword_id:
+      properties:
+        name:
+          type: string
+      type: object
+    vault_post_credentialcertificate:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    vault_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    vault_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    vault_patch_tag:
+      type: object
+    snapshot_create:
       properties:
         vault:
           type: string
@@ -14917,7 +14721,19 @@ components:
       - service
       - vault
       type: object
-    reservationCreate:
+    snapshot_update:
+      properties:
+        name:
+          type: string
+      type: object
+    snapshot_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    snapshot_patch_tag:
+      type: object
+    reservation_create:
       properties:
         name:
           type: string
@@ -14930,7 +14746,19 @@ components:
       - name
       - service
       type: object
-    logArchiveCreate:
+    reservation_update:
+      properties:
+        name:
+          type: string
+      type: object
+    reservation_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    reservation_patch_tag:
+      type: object
+    logArchive_create:
       properties:
         name:
           type: string
@@ -14938,7 +14766,7 @@ components:
           format: ObjectId
           type: string
         credential:
-          $ref: '#/components/schemas/vaultCreate_credential'
+          $ref: '#/components/schemas/vault_create_credential'
         retention:
           type: number
         tag:
@@ -14947,16 +14775,63 @@ components:
       - name
       - service
       type: object
-    logArchive.transfer:
-      description: Request body for action transfer on logArchive
+    logArchive_update:
+      properties:
+        name:
+          type: string
+      type: object
+    logArchive_action_transfer:
       properties:
         project:
           type: string
       required:
       - project
       type: object
-    vmhost.moveVM:
-      description: Request body for action moveVM on vmhost
+    logArchive_post_credentialpassword:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    logArchive_patch_credentialpassword_id:
+      properties:
+        name:
+          type: string
+      type: object
+    logArchive_post_credentialcertificate:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    logArchive_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    logArchive_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    logArchive_patch_tag:
+      type: object
+    vmhost_update:
+      properties:
+        enabledServices:
+          $ref: '#/components/schemas/vmhost_update_enabledServices'
+      type: object
+    vmhost_action_moveVM:
       properties:
         vm:
           type: string
@@ -14965,8 +14840,7 @@ components:
       required:
       - vm
       type: object
-    vmhost.moveDisk:
-      description: Request body for action moveDisk on vmhost
+    vmhost_action_moveDisk:
       properties:
         disk:
           type: string
@@ -14975,8 +14849,7 @@ components:
       required:
       - disk
       type: object
-    vmhost.moveISO:
-      description: Request body for action moveISO on vmhost
+    vmhost_action_moveISO:
       properties:
         iso:
           type: string
@@ -14985,8 +14858,7 @@ components:
       required:
       - iso
       type: object
-    vmhost.moveImage:
-      description: Request body for action moveImage on vmhost
+    vmhost_action_moveImage:
       properties:
         image:
           type: string
@@ -14995,7 +14867,14 @@ components:
       required:
       - image
       type: object
-    replicaCreate:
+    vmhost_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    vmhost_patch_tag:
+      type: object
+    replica_create:
       properties:
         hostname:
           type: string
@@ -15005,8 +14884,7 @@ components:
       - hostname
       - secret
       type: object
-    replica.image:
-      description: Request body for action image on replica
+    replica_action_image:
       properties:
         service:
           format: ObjectId
@@ -15016,43 +14894,12 @@ components:
       required:
       - service
       type: object
-    inline_object:
+    replica_post_accessrights:
       properties:
-        name:
+        identity:
           type: string
       type: object
-    organisationorganisationId_billing_address:
-      properties:
-        city:
-          type: string
-        zipcode:
-          type: string
-        street:
-          type: string
-    organisationorganisationId_billing:
-      properties:
-        email:
-          type: string
-        company:
-          type: string
-        address:
-          $ref: '#/components/schemas/organisationorganisationId_billing_address'
-    inline_object_1:
-      properties:
-        name:
-          type: string
-        billing:
-          $ref: '#/components/schemas/organisationorganisationId_billing'
-      type: object
-    inline_object_2:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_3:
-      properties:
-        name:
-          type: string
+    replica_patch_tag:
       type: object
     inline_response_200:
       example:
@@ -15110,212 +14957,6 @@ components:
       required:
       - action
       - priority
-    inline_object_4:
-      properties:
-        name:
-          type: string
-        action:
-          type: string
-        priority:
-          type: number
-        filter:
-          items:
-            type: string
-          type: array
-        external:
-          items:
-            type: string
-          type: array
-        internal:
-          items:
-            type: string
-          type: array
-      type: object
-    inline_object_5:
-      properties:
-        name:
-          type: string
-        action:
-          type: string
-        priority:
-          type: number
-        filter:
-          items:
-            type: string
-          type: array
-        external:
-          items:
-            type: string
-          type: array
-        internal:
-          items:
-            type: string
-          type: array
-      type: object
-    inline_object_6:
-      properties:
-        name:
-          type: string
-        gateway:
-          type: string
-      type: object
-    inline_object_7:
-      properties:
-        address:
-          type: string
-        tag:
-          type: object
-      type: object
-    inline_object_8:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_9:
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-      type: object
-    inline_object_10:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_11:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_12:
-      properties:
-        userMetadata:
-          type: string
-        name:
-          type: string
-      type: object
-    inline_object_13:
-      properties:
-        disk:
-          type: string
-        controllerType:
-          type: string
-      required:
-      - disk
-      type: object
-    inline_object_14:
-      properties:
-        service:
-          format: ObjectId
-          type: string
-        network:
-          type: string
-        ip:
-          type: string
-        tag:
-          type: object
-        vlanIds:
-          type: string
-      type: object
-    inline_object_15:
-      properties:
-        ptrRecord:
-          type: string
-      type: object
-    inline_object_16:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_17:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_18:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_19:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_20:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_21:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_22:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_23:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_24:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      required:
-      - name
-      - type
-      - value
-      type: object
-    inline_object_25:
-      properties:
-        name:
-          type: string
-      type: object
-    inline_object_26:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    inline_object_27:
-      properties:
-        name:
-          type: string
-      type: object
-    vmhostvmhostId_enabledServices:
-      properties:
-        0:
-          type: string
-    inline_object_28:
-      properties:
-        enabledServices:
-          $ref: '#/components/schemas/vmhostvmhostId_enabledServices'
-      type: object
     event_resource:
       example:
         id: id
@@ -16101,49 +15742,7 @@ components:
           type: string
         id:
           type: string
-    vault_credential_password:
-      example:
-        createdBy: createdBy
-        name: name
-        _id: _id
-        type: type
-        createdOn: createdOn
-        value: value
-      properties:
-        createdBy:
-          type: string
-        createdOn:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
-        _id:
-          type: string
-        value:
-          type: string
-    vault_credential:
-      example:
-        password:
-          createdBy: createdBy
-          name: name
-          _id: _id
-          type: type
-          createdOn: createdOn
-          value: value
-        certificate:
-          createdBy: createdBy
-          name: name
-          _id: _id
-          type: type
-          createdOn: createdOn
-          value: value
-      properties:
-        password:
-          $ref: '#/components/schemas/vault_credential_password'
-        certificate:
-          $ref: '#/components/schemas/vault_credential_password'
-    projectCreate_accessRights:
+    project_create_accessRights:
       properties:
         id:
           type: string
@@ -16152,7 +15751,7 @@ components:
       required:
       - id
       - role
-    organisationCreate_billing_address:
+    organisation_create_billing_address:
       properties:
         country:
           type: string
@@ -16162,7 +15761,7 @@ components:
           type: string
         street:
           type: string
-    organisationCreate_billing:
+    organisation_create_billing:
       properties:
         nip:
           type: string
@@ -16173,26 +15772,42 @@ components:
         currency:
           type: string
         address:
-          $ref: '#/components/schemas/organisationCreate_billing_address'
-    organisationCreate_accessRights:
+          $ref: '#/components/schemas/organisation_create_billing_address'
+    organisation_create_accessRights:
       properties:
         id:
           type: string
         role:
           type: string
-    containerCreate_registry:
+    organisation_update_billing_address:
+      properties:
+        city:
+          type: string
+        zipcode:
+          type: string
+        street:
+          type: string
+    organisation_update_billing:
+      properties:
+        email:
+          type: string
+        company:
+          type: string
+        address:
+          $ref: '#/components/schemas/organisation_update_billing_address'
+    container_create_registry:
       properties:
         username:
           type: string
         password:
           type: string
-    containerCreate_expose:
+    container_create_expose:
       properties:
         port:
           type: number
         host:
           type: string
-    containerCreate_volumes:
+    container_create_volumes:
       properties:
         source:
           type: string
@@ -16203,23 +15818,23 @@ components:
       required:
       - source
       - target
-    netgwCreate_public:
+    netgw_create_public:
       properties:
         ip:
           type: string
       required:
       - ip
-    diskCreate_metadata_source:
+    disk_create_metadata_source:
       properties:
         filename:
           type: string
         size:
           type: number
-    diskCreate_metadata:
+    disk_create_metadata:
       properties:
         source:
-          $ref: '#/components/schemas/diskCreate_metadata_source'
-    vmCreate_password:
+          $ref: '#/components/schemas/disk_create_metadata_source'
+    vm_create_password:
       properties:
         type:
           enum:
@@ -16228,7 +15843,7 @@ components:
           type: string
         value:
           type: string
-    vmCreate_disk:
+    vm_create_disk:
       properties:
         id:
           type: string
@@ -16241,7 +15856,7 @@ components:
           type: string
         cloud:
           type: string
-    vmCreate_netadp:
+    vm_create_netadp:
       properties:
         service:
           format: ObjectId
@@ -16252,7 +15867,7 @@ components:
           items:
             type: string
           type: array
-    vaultCreate_credential_password:
+    vault_create_credential_password:
       properties:
         name:
           type: string
@@ -16264,7 +15879,7 @@ components:
       - name
       - type
       - value
-    vaultCreate_credential_certificate:
+    vault_create_credential_certificate:
       properties:
         name:
           type: string
@@ -16272,16 +15887,20 @@ components:
           type: string
         value:
           type: string
-    vaultCreate_credential:
+    vault_create_credential:
       properties:
         password:
           items:
-            $ref: '#/components/schemas/vaultCreate_credential_password'
+            $ref: '#/components/schemas/vault_create_credential_password'
           type: array
         certificate:
           items:
-            $ref: '#/components/schemas/vaultCreate_credential_certificate'
+            $ref: '#/components/schemas/vault_create_credential_certificate'
           type: array
+    vmhost_update_enabledServices:
+      properties:
+        0:
+          type: string
   securitySchemes:
     Session:
       in: header

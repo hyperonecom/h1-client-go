@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**AccessRights** | [**[]ProjectCreateAccessRights**](projectCreate_accessRights.md) |  | [optional] 
+**AccessRights** | [**[]ProjectCreateAccessRights**](project_create_accessRights.md) |  | [optional] 
 **Organisation** | **string** |  | 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

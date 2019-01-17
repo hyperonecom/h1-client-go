@@ -4,29 +4,29 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionIpAllocate**](IpApi.md#ActionIpAllocate) | **Post** /ip/{ipId}/actions/allocate | /actions/allocate
-[**ActionIpAssociate**](IpApi.md#ActionIpAssociate) | **Post** /ip/{ipId}/actions/associate | /actions/associate
-[**ActionIpDisassociate**](IpApi.md#ActionIpDisassociate) | **Post** /ip/{ipId}/actions/disassociate | /actions/disassociate
-[**ActionIpRelease**](IpApi.md#ActionIpRelease) | **Post** /ip/{ipId}/actions/release | /actions/release
-[**ActionIpTransfer**](IpApi.md#ActionIpTransfer) | **Post** /ip/{ipId}/actions/transfer | /actions/transfer
-[**CreateIp**](IpApi.md#CreateIp) | **Post** /ip | Create
-[**DeleteIp**](IpApi.md#DeleteIp) | **Delete** /ip/{ipId} | Delete
-[**ListIp**](IpApi.md#ListIp) | **Get** /ip | List
-[**OperationIpDeleteaccessrightsIdentity**](IpApi.md#OperationIpDeleteaccessrightsIdentity) | **Delete** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
-[**OperationIpDeletetagKey**](IpApi.md#OperationIpDeletetagKey) | **Delete** /ip/{ipId}/tag/{key} | /tag/:key
-[**OperationIpGetservicesServiceId**](IpApi.md#OperationIpGetservicesServiceId) | **Get** /ip/{ipId}/services/{serviceId} | /services/:serviceId
-[**OperationIpGettag**](IpApi.md#OperationIpGettag) | **Get** /ip/{ipId}/tag/ | /tag/
-[**OperationIpListaccessrights**](IpApi.md#OperationIpListaccessrights) | **Get** /ip/{ipId}/accessrights/ | /accessrights/
-[**OperationIpListqueue**](IpApi.md#OperationIpListqueue) | **Get** /ip/{ipId}/queue/ | /queue/
-[**OperationIpListservices**](IpApi.md#OperationIpListservices) | **Get** /ip/{ipId}/services/ | /services/
-[**OperationIpPatchtag**](IpApi.md#OperationIpPatchtag) | **Patch** /ip/{ipId}/tag/ | /tag/
-[**OperationIpPostaccessrights**](IpApi.md#OperationIpPostaccessrights) | **Post** /ip/{ipId}/accessrights/ | /accessrights/
-[**ShowIp**](IpApi.md#ShowIp) | **Get** /ip/{ipId} | Get
-[**UpdateIp**](IpApi.md#UpdateIp) | **Patch** /ip/{ipId} | Update
+[**IpActionAllocate**](IpApi.md#IpActionAllocate) | **Post** /ip/{ipId}/actions/allocate | /actions/allocate
+[**IpActionAssociate**](IpApi.md#IpActionAssociate) | **Post** /ip/{ipId}/actions/associate | /actions/associate
+[**IpActionDisassociate**](IpApi.md#IpActionDisassociate) | **Post** /ip/{ipId}/actions/disassociate | /actions/disassociate
+[**IpActionRelease**](IpApi.md#IpActionRelease) | **Post** /ip/{ipId}/actions/release | /actions/release
+[**IpActionTransfer**](IpApi.md#IpActionTransfer) | **Post** /ip/{ipId}/actions/transfer | /actions/transfer
+[**IpCreate**](IpApi.md#IpCreate) | **Post** /ip | Create
+[**IpDelete**](IpApi.md#IpDelete) | **Delete** /ip/{ipId} | Delete
+[**IpDeleteAccessrightsIdentity**](IpApi.md#IpDeleteAccessrightsIdentity) | **Delete** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
+[**IpDeleteTagKey**](IpApi.md#IpDeleteTagKey) | **Delete** /ip/{ipId}/tag/{key} | /tag/:key
+[**IpGetServicesServiceId**](IpApi.md#IpGetServicesServiceId) | **Get** /ip/{ipId}/services/{serviceId} | /services/:serviceId
+[**IpGetTag**](IpApi.md#IpGetTag) | **Get** /ip/{ipId}/tag | /tag
+[**IpList**](IpApi.md#IpList) | **Get** /ip | List
+[**IpListAccessrights**](IpApi.md#IpListAccessrights) | **Get** /ip/{ipId}/accessrights | /accessrights
+[**IpListQueue**](IpApi.md#IpListQueue) | **Get** /ip/{ipId}/queue | /queue
+[**IpListServices**](IpApi.md#IpListServices) | **Get** /ip/{ipId}/services | /services
+[**IpPatchTag**](IpApi.md#IpPatchTag) | **Patch** /ip/{ipId}/tag | /tag
+[**IpPostAccessrights**](IpApi.md#IpPostAccessrights) | **Post** /ip/{ipId}/accessrights | /accessrights
+[**IpShow**](IpApi.md#IpShow) | **Get** /ip/{ipId} | Get
+[**IpUpdate**](IpApi.md#IpUpdate) | **Patch** /ip/{ipId} | Update
 
 
-# **ActionIpAllocate**
-> Ip ActionIpAllocate(ctx, ipId)
+# **IpActionAllocate**
+> Ip IpActionAllocate(ctx, ipId)
 /actions/allocate
 
 Action allocate
@@ -53,8 +53,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionIpAssociate**
-> Ip ActionIpAssociate(ctx, ipId)
+# **IpActionAssociate**
+> Ip IpActionAssociate(ctx, ipId)
 /actions/associate
 
 Action associate
@@ -81,8 +81,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionIpDisassociate**
-> Ip ActionIpDisassociate(ctx, ipId)
+# **IpActionDisassociate**
+> Ip IpActionDisassociate(ctx, ipId)
 /actions/disassociate
 
 Action disassociate
@@ -109,8 +109,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionIpRelease**
-> Ip ActionIpRelease(ctx, ipId)
+# **IpActionRelease**
+> Ip IpActionRelease(ctx, ipId)
 /actions/release
 
 Action release
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionIpTransfer**
-> Ip ActionIpTransfer(ctx, ipId, ipTransfer)
+# **IpActionTransfer**
+> Ip IpActionTransfer(ctx, ipId, ipActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
-  **ipTransfer** | [**IpTransfer**](IpTransfer.md)|  | 
+  **ipActionTransfer** | [**IpActionTransfer**](IpActionTransfer.md)|  | 
 
 ### Return type
 
@@ -166,8 +166,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateIp**
-> Ip CreateIp(ctx, ipCreate)
+# **IpCreate**
+> Ip IpCreate(ctx, ipCreate)
 Create
 
 Create ip
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteIp**
-> DeleteIp(ctx, ipId)
+# **IpDelete**
+> IpDelete(ctx, ipId)
 Delete
 
 ### Required Parameters
@@ -220,43 +220,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListIp**
-> []Ip ListIp(ctx, optional)
-List
-
-List ip
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListIpOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListIpOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mac** | **optional.String**| Filter by mac | 
-
-### Return type
-
-[**[]Ip**](ip.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationIpDeleteaccessrightsIdentity**
-> Ip OperationIpDeleteaccessrightsIdentity(ctx, ipId, identity)
+# **IpDeleteAccessrightsIdentity**
+> Ip IpDeleteAccessrightsIdentity(ctx, ipId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -282,8 +247,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpDeletetagKey**
-> map[string]string OperationIpDeletetagKey(ctx, ipId, key)
+# **IpDeleteTagKey**
+> map[string]interface{} IpDeleteTagKey(ctx, ipId, key)
 /tag/:key
 
 ### Required Parameters
@@ -296,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -309,8 +274,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpGetservicesServiceId**
-> IpServices OperationIpGetservicesServiceId(ctx, ipId, serviceId)
+# **IpGetServicesServiceId**
+> IpServices IpGetServicesServiceId(ctx, ipId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -336,9 +301,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpGettag**
-> map[string]string OperationIpGettag(ctx, ipId)
-/tag/
+# **IpGetTag**
+> map[string]interface{} IpGetTag(ctx, ipId)
+/tag
 
 ### Required Parameters
 
@@ -349,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -362,9 +327,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpListaccessrights**
-> []string OperationIpListaccessrights(ctx, ipId)
-/accessrights/
+# **IpList**
+> []Ip IpList(ctx, optional)
+List
+
+List ip
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***IpListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a IpListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mac** | **optional.String**| Filter by mac | 
+
+### Return type
+
+[**[]Ip**](ip.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **IpListAccessrights**
+> []string IpListAccessrights(ctx, ipId)
+/accessrights
 
 ### Required Parameters
 
@@ -388,9 +388,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpListqueue**
-> []Event OperationIpListqueue(ctx, ipId)
-/queue/
+# **IpListQueue**
+> []Event IpListQueue(ctx, ipId)
+/queue
 
 ### Required Parameters
 
@@ -414,9 +414,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpListservices**
-> []IpServices OperationIpListservices(ctx, ipId)
-/services/
+# **IpListServices**
+> []IpServices IpListServices(ctx, ipId)
+/services
 
 ### Required Parameters
 
@@ -440,9 +440,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpPatchtag**
-> map[string]string OperationIpPatchtag(ctx, ipId, requestBody)
-/tag/
+# **IpPatchTag**
+> map[string]interface{} IpPatchTag(ctx, ipId, body)
+/tag
 
 ### Required Parameters
 
@@ -450,11 +450,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -467,9 +467,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationIpPostaccessrights**
-> string OperationIpPostaccessrights(ctx, ipId, resourceAccessRight)
-/accessrights/
+# **IpPostAccessrights**
+> string IpPostAccessrights(ctx, ipId, ipPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **ipPostAccessrights** | [**IpPostAccessrights**](IpPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowIp**
-> Ip ShowIp(ctx, ipId)
+# **IpShow**
+> Ip IpShow(ctx, ipId)
 Get
 
 Returns a single ip
@@ -522,8 +522,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateIp**
-> Ip UpdateIp(ctx, ipId, optional)
+# **IpUpdate**
+> Ip IpUpdate(ctx, ipId, ipUpdate)
 Update
 
 Returns modified ip
@@ -534,15 +534,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
- **optional** | ***UpdateIpOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateIpOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject15** | [**optional.Interface of InlineObject15**](InlineObject15.md)|  | 
+  **ipUpdate** | [**IpUpdate**](IpUpdate.md)|  | 
 
 ### Return type
 

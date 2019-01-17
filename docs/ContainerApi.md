@@ -4,27 +4,27 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionContainerRestart**](ContainerApi.md#ActionContainerRestart) | **Post** /container/{containerId}/actions/restart | /actions/restart
-[**ActionContainerStart**](ContainerApi.md#ActionContainerStart) | **Post** /container/{containerId}/actions/start | /actions/start
-[**ActionContainerStop**](ContainerApi.md#ActionContainerStop) | **Post** /container/{containerId}/actions/stop | /actions/stop
-[**CreateContainer**](ContainerApi.md#CreateContainer) | **Post** /container | Create
-[**DeleteContainer**](ContainerApi.md#DeleteContainer) | **Delete** /container/{containerId} | Delete
-[**ListContainer**](ContainerApi.md#ListContainer) | **Get** /container | List
-[**OperationContainerDeleteaccessrightsIdentity**](ContainerApi.md#OperationContainerDeleteaccessrightsIdentity) | **Delete** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
-[**OperationContainerDeletetagKey**](ContainerApi.md#OperationContainerDeletetagKey) | **Delete** /container/{containerId}/tag/{key} | /tag/:key
-[**OperationContainerGetservicesServiceId**](ContainerApi.md#OperationContainerGetservicesServiceId) | **Get** /container/{containerId}/services/{serviceId} | /services/:serviceId
-[**OperationContainerGettag**](ContainerApi.md#OperationContainerGettag) | **Get** /container/{containerId}/tag/ | /tag/
-[**OperationContainerListaccessrights**](ContainerApi.md#OperationContainerListaccessrights) | **Get** /container/{containerId}/accessrights/ | /accessrights/
-[**OperationContainerListqueue**](ContainerApi.md#OperationContainerListqueue) | **Get** /container/{containerId}/queue/ | /queue/
-[**OperationContainerListservices**](ContainerApi.md#OperationContainerListservices) | **Get** /container/{containerId}/services/ | /services/
-[**OperationContainerPatchtag**](ContainerApi.md#OperationContainerPatchtag) | **Patch** /container/{containerId}/tag/ | /tag/
-[**OperationContainerPostaccessrights**](ContainerApi.md#OperationContainerPostaccessrights) | **Post** /container/{containerId}/accessrights/ | /accessrights/
-[**ShowContainer**](ContainerApi.md#ShowContainer) | **Get** /container/{containerId} | Get
-[**UpdateContainer**](ContainerApi.md#UpdateContainer) | **Patch** /container/{containerId} | Update
+[**ContainerActionRestart**](ContainerApi.md#ContainerActionRestart) | **Post** /container/{containerId}/actions/restart | /actions/restart
+[**ContainerActionStart**](ContainerApi.md#ContainerActionStart) | **Post** /container/{containerId}/actions/start | /actions/start
+[**ContainerActionStop**](ContainerApi.md#ContainerActionStop) | **Post** /container/{containerId}/actions/stop | /actions/stop
+[**ContainerCreate**](ContainerApi.md#ContainerCreate) | **Post** /container | Create
+[**ContainerDelete**](ContainerApi.md#ContainerDelete) | **Delete** /container/{containerId} | Delete
+[**ContainerDeleteAccessrightsIdentity**](ContainerApi.md#ContainerDeleteAccessrightsIdentity) | **Delete** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
+[**ContainerDeleteTagKey**](ContainerApi.md#ContainerDeleteTagKey) | **Delete** /container/{containerId}/tag/{key} | /tag/:key
+[**ContainerGetServicesServiceId**](ContainerApi.md#ContainerGetServicesServiceId) | **Get** /container/{containerId}/services/{serviceId} | /services/:serviceId
+[**ContainerGetTag**](ContainerApi.md#ContainerGetTag) | **Get** /container/{containerId}/tag | /tag
+[**ContainerList**](ContainerApi.md#ContainerList) | **Get** /container | List
+[**ContainerListAccessrights**](ContainerApi.md#ContainerListAccessrights) | **Get** /container/{containerId}/accessrights | /accessrights
+[**ContainerListQueue**](ContainerApi.md#ContainerListQueue) | **Get** /container/{containerId}/queue | /queue
+[**ContainerListServices**](ContainerApi.md#ContainerListServices) | **Get** /container/{containerId}/services | /services
+[**ContainerPatchTag**](ContainerApi.md#ContainerPatchTag) | **Patch** /container/{containerId}/tag | /tag
+[**ContainerPostAccessrights**](ContainerApi.md#ContainerPostAccessrights) | **Post** /container/{containerId}/accessrights | /accessrights
+[**ContainerShow**](ContainerApi.md#ContainerShow) | **Get** /container/{containerId} | Get
+[**ContainerUpdate**](ContainerApi.md#ContainerUpdate) | **Patch** /container/{containerId} | Update
 
 
-# **ActionContainerRestart**
-> Container ActionContainerRestart(ctx, containerId)
+# **ContainerActionRestart**
+> Container ContainerActionRestart(ctx, containerId)
 /actions/restart
 
 Action restart
@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionContainerStart**
-> Container ActionContainerStart(ctx, containerId)
+# **ContainerActionStart**
+> Container ContainerActionStart(ctx, containerId)
 /actions/start
 
 Action start
@@ -79,8 +79,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionContainerStop**
-> Container ActionContainerStop(ctx, containerId)
+# **ContainerActionStop**
+> Container ContainerActionStop(ctx, containerId)
 /actions/stop
 
 Action stop
@@ -107,8 +107,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateContainer**
-> Container CreateContainer(ctx, containerCreate)
+# **ContainerCreate**
+> Container ContainerCreate(ctx, containerCreate)
 Create
 
 Create container
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteContainer**
-> DeleteContainer(ctx, containerId)
+# **ContainerDelete**
+> ContainerDelete(ctx, containerId)
 Delete
 
 ### Required Parameters
@@ -161,43 +161,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListContainer**
-> []Container ListContainer(ctx, optional)
-List
-
-List container
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListContainerOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListContainerOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Container**](container.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationContainerDeleteaccessrightsIdentity**
-> Container OperationContainerDeleteaccessrightsIdentity(ctx, containerId, identity)
+# **ContainerDeleteAccessrightsIdentity**
+> Container ContainerDeleteAccessrightsIdentity(ctx, containerId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -223,8 +188,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerDeletetagKey**
-> map[string]string OperationContainerDeletetagKey(ctx, containerId, key)
+# **ContainerDeleteTagKey**
+> map[string]interface{} ContainerDeleteTagKey(ctx, containerId, key)
 /tag/:key
 
 ### Required Parameters
@@ -237,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -250,8 +215,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerGetservicesServiceId**
-> ContainerServices OperationContainerGetservicesServiceId(ctx, containerId, serviceId)
+# **ContainerGetServicesServiceId**
+> ContainerServices ContainerGetServicesServiceId(ctx, containerId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -277,9 +242,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerGettag**
-> map[string]string OperationContainerGettag(ctx, containerId)
-/tag/
+# **ContainerGetTag**
+> map[string]interface{} ContainerGetTag(ctx, containerId)
+/tag
 
 ### Required Parameters
 
@@ -290,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -303,9 +268,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerListaccessrights**
-> []string OperationContainerListaccessrights(ctx, containerId)
-/accessrights/
+# **ContainerList**
+> []Container ContainerList(ctx, optional)
+List
+
+List container
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***ContainerListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a ContainerListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Container**](container.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ContainerListAccessrights**
+> []string ContainerListAccessrights(ctx, containerId)
+/accessrights
 
 ### Required Parameters
 
@@ -329,9 +329,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerListqueue**
-> []Event OperationContainerListqueue(ctx, containerId)
-/queue/
+# **ContainerListQueue**
+> []Event ContainerListQueue(ctx, containerId)
+/queue
 
 ### Required Parameters
 
@@ -355,9 +355,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerListservices**
-> []ContainerServices OperationContainerListservices(ctx, containerId)
-/services/
+# **ContainerListServices**
+> []ContainerServices ContainerListServices(ctx, containerId)
+/services
 
 ### Required Parameters
 
@@ -381,9 +381,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerPatchtag**
-> map[string]string OperationContainerPatchtag(ctx, containerId, requestBody)
-/tag/
+# **ContainerPatchTag**
+> map[string]interface{} ContainerPatchTag(ctx, containerId, body)
+/tag
 
 ### Required Parameters
 
@@ -391,11 +391,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **containerId** | **string**| ID of container | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -408,9 +408,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationContainerPostaccessrights**
-> string OperationContainerPostaccessrights(ctx, containerId, resourceAccessRight)
-/accessrights/
+# **ContainerPostAccessrights**
+> string ContainerPostAccessrights(ctx, containerId, containerPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **containerId** | **string**| ID of container | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **containerPostAccessrights** | [**ContainerPostAccessrights**](ContainerPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -435,8 +435,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowContainer**
-> Container ShowContainer(ctx, containerId)
+# **ContainerShow**
+> Container ContainerShow(ctx, containerId)
 Get
 
 Returns a single container
@@ -463,8 +463,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateContainer**
-> Container UpdateContainer(ctx, containerId, optional)
+# **ContainerUpdate**
+> Container ContainerUpdate(ctx, containerId, containerUpdate)
 Update
 
 Returns modified container
@@ -475,15 +475,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **containerId** | **string**| ID of container | 
- **optional** | ***UpdateContainerOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateContainerOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject2** | [**optional.Interface of InlineObject2**](InlineObject2.md)|  | 
+  **containerUpdate** | [**ContainerUpdate**](ContainerUpdate.md)|  | 
 
 ### Return type
 

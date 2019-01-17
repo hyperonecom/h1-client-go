@@ -4,35 +4,35 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionLogArchiveTransfer**](LogArchiveApi.md#ActionLogArchiveTransfer) | **Post** /logArchive/{logArchiveId}/actions/transfer | /actions/transfer
-[**CreateLogArchive**](LogArchiveApi.md#CreateLogArchive) | **Post** /logArchive | Create
-[**DeleteLogArchive**](LogArchiveApi.md#DeleteLogArchive) | **Delete** /logArchive/{logArchiveId} | Delete
-[**ListLogArchive**](LogArchiveApi.md#ListLogArchive) | **Get** /logArchive | List
-[**OperationLogArchiveDeleteaccessrightsIdentity**](LogArchiveApi.md#OperationLogArchiveDeleteaccessrightsIdentity) | **Delete** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
-[**OperationLogArchiveDeletecredentialcertificateId**](LogArchiveApi.md#OperationLogArchiveDeletecredentialcertificateId) | **Delete** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationLogArchiveDeletecredentialpasswordId**](LogArchiveApi.md#OperationLogArchiveDeletecredentialpasswordId) | **Delete** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-[**OperationLogArchiveDeletetagKey**](LogArchiveApi.md#OperationLogArchiveDeletetagKey) | **Delete** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
-[**OperationLogArchiveGetcredentialcertificateId**](LogArchiveApi.md#OperationLogArchiveGetcredentialcertificateId) | **Get** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationLogArchiveGetcredentialpasswordId**](LogArchiveApi.md#OperationLogArchiveGetcredentialpasswordId) | **Get** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-[**OperationLogArchiveGetservicesServiceId**](LogArchiveApi.md#OperationLogArchiveGetservicesServiceId) | **Get** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
-[**OperationLogArchiveGettag**](LogArchiveApi.md#OperationLogArchiveGettag) | **Get** /logArchive/{logArchiveId}/tag/ | /tag/
-[**OperationLogArchiveListaccessrights**](LogArchiveApi.md#OperationLogArchiveListaccessrights) | **Get** /logArchive/{logArchiveId}/accessrights/ | /accessrights/
-[**OperationLogArchiveListcredentialcertificate**](LogArchiveApi.md#OperationLogArchiveListcredentialcertificate) | **Get** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
-[**OperationLogArchiveListcredentialpassword**](LogArchiveApi.md#OperationLogArchiveListcredentialpassword) | **Get** /logArchive/{logArchiveId}/credential/password | /credential/password
-[**OperationLogArchiveListqueue**](LogArchiveApi.md#OperationLogArchiveListqueue) | **Get** /logArchive/{logArchiveId}/queue/ | /queue/
-[**OperationLogArchiveListservices**](LogArchiveApi.md#OperationLogArchiveListservices) | **Get** /logArchive/{logArchiveId}/services/ | /services/
-[**OperationLogArchivePatchcredentialcertificateId**](LogArchiveApi.md#OperationLogArchivePatchcredentialcertificateId) | **Patch** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationLogArchivePatchcredentialpasswordId**](LogArchiveApi.md#OperationLogArchivePatchcredentialpasswordId) | **Patch** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-[**OperationLogArchivePatchtag**](LogArchiveApi.md#OperationLogArchivePatchtag) | **Patch** /logArchive/{logArchiveId}/tag/ | /tag/
-[**OperationLogArchivePostaccessrights**](LogArchiveApi.md#OperationLogArchivePostaccessrights) | **Post** /logArchive/{logArchiveId}/accessrights/ | /accessrights/
-[**OperationLogArchivePostcredentialcertificate**](LogArchiveApi.md#OperationLogArchivePostcredentialcertificate) | **Post** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
-[**OperationLogArchivePostcredentialpassword**](LogArchiveApi.md#OperationLogArchivePostcredentialpassword) | **Post** /logArchive/{logArchiveId}/credential/password | /credential/password
-[**ShowLogArchive**](LogArchiveApi.md#ShowLogArchive) | **Get** /logArchive/{logArchiveId} | Get
-[**UpdateLogArchive**](LogArchiveApi.md#UpdateLogArchive) | **Patch** /logArchive/{logArchiveId} | Update
+[**LogArchiveActionTransfer**](LogArchiveApi.md#LogArchiveActionTransfer) | **Post** /logArchive/{logArchiveId}/actions/transfer | /actions/transfer
+[**LogArchiveCreate**](LogArchiveApi.md#LogArchiveCreate) | **Post** /logArchive | Create
+[**LogArchiveDelete**](LogArchiveApi.md#LogArchiveDelete) | **Delete** /logArchive/{logArchiveId} | Delete
+[**LogArchiveDeleteAccessrightsIdentity**](LogArchiveApi.md#LogArchiveDeleteAccessrightsIdentity) | **Delete** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
+[**LogArchiveDeleteCredentialcertificateId**](LogArchiveApi.md#LogArchiveDeleteCredentialcertificateId) | **Delete** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+[**LogArchiveDeleteCredentialpasswordId**](LogArchiveApi.md#LogArchiveDeleteCredentialpasswordId) | **Delete** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+[**LogArchiveDeleteTagKey**](LogArchiveApi.md#LogArchiveDeleteTagKey) | **Delete** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
+[**LogArchiveGetCredentialcertificateId**](LogArchiveApi.md#LogArchiveGetCredentialcertificateId) | **Get** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+[**LogArchiveGetCredentialpasswordId**](LogArchiveApi.md#LogArchiveGetCredentialpasswordId) | **Get** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+[**LogArchiveGetServicesServiceId**](LogArchiveApi.md#LogArchiveGetServicesServiceId) | **Get** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
+[**LogArchiveGetTag**](LogArchiveApi.md#LogArchiveGetTag) | **Get** /logArchive/{logArchiveId}/tag | /tag
+[**LogArchiveList**](LogArchiveApi.md#LogArchiveList) | **Get** /logArchive | List
+[**LogArchiveListAccessrights**](LogArchiveApi.md#LogArchiveListAccessrights) | **Get** /logArchive/{logArchiveId}/accessrights | /accessrights
+[**LogArchiveListCredentialcertificate**](LogArchiveApi.md#LogArchiveListCredentialcertificate) | **Get** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
+[**LogArchiveListCredentialpassword**](LogArchiveApi.md#LogArchiveListCredentialpassword) | **Get** /logArchive/{logArchiveId}/credential/password | /credential/password
+[**LogArchiveListQueue**](LogArchiveApi.md#LogArchiveListQueue) | **Get** /logArchive/{logArchiveId}/queue | /queue
+[**LogArchiveListServices**](LogArchiveApi.md#LogArchiveListServices) | **Get** /logArchive/{logArchiveId}/services | /services
+[**LogArchivePatchCredentialcertificateId**](LogArchiveApi.md#LogArchivePatchCredentialcertificateId) | **Patch** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+[**LogArchivePatchCredentialpasswordId**](LogArchiveApi.md#LogArchivePatchCredentialpasswordId) | **Patch** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+[**LogArchivePatchTag**](LogArchiveApi.md#LogArchivePatchTag) | **Patch** /logArchive/{logArchiveId}/tag | /tag
+[**LogArchivePostAccessrights**](LogArchiveApi.md#LogArchivePostAccessrights) | **Post** /logArchive/{logArchiveId}/accessrights | /accessrights
+[**LogArchivePostCredentialcertificate**](LogArchiveApi.md#LogArchivePostCredentialcertificate) | **Post** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
+[**LogArchivePostCredentialpassword**](LogArchiveApi.md#LogArchivePostCredentialpassword) | **Post** /logArchive/{logArchiveId}/credential/password | /credential/password
+[**LogArchiveShow**](LogArchiveApi.md#LogArchiveShow) | **Get** /logArchive/{logArchiveId} | Get
+[**LogArchiveUpdate**](LogArchiveApi.md#LogArchiveUpdate) | **Patch** /logArchive/{logArchiveId} | Update
 
 
-# **ActionLogArchiveTransfer**
-> LogArchive ActionLogArchiveTransfer(ctx, logArchiveId, logArchiveTransfer)
+# **LogArchiveActionTransfer**
+> LogArchive LogArchiveActionTransfer(ctx, logArchiveId, logArchiveActionTransfer)
 /actions/transfer
 
 Action transfer
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
-  **logArchiveTransfer** | [**LogArchiveTransfer**](LogArchiveTransfer.md)|  | 
+  **logArchiveActionTransfer** | [**LogArchiveActionTransfer**](LogArchiveActionTransfer.md)|  | 
 
 ### Return type
 
@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateLogArchive**
-> LogArchive CreateLogArchive(ctx, logArchiveCreate)
+# **LogArchiveCreate**
+> LogArchive LogArchiveCreate(ctx, logArchiveCreate)
 Create
 
 Create logArchive
@@ -88,8 +88,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteLogArchive**
-> DeleteLogArchive(ctx, logArchiveId)
+# **LogArchiveDelete**
+> LogArchiveDelete(ctx, logArchiveId)
 Delete
 
 ### Required Parameters
@@ -114,43 +114,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListLogArchive**
-> []LogArchive ListLogArchive(ctx, optional)
-List
-
-List logArchive
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListLogArchiveOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListLogArchiveOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]LogArchive**](logArchive.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationLogArchiveDeleteaccessrightsIdentity**
-> LogArchive OperationLogArchiveDeleteaccessrightsIdentity(ctx, logArchiveId, identity)
+# **LogArchiveDeleteAccessrightsIdentity**
+> LogArchive LogArchiveDeleteAccessrightsIdentity(ctx, logArchiveId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -176,8 +141,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveDeletecredentialcertificateId**
-> LogArchive OperationLogArchiveDeletecredentialcertificateId(ctx, logArchiveId, id)
+# **LogArchiveDeleteCredentialcertificateId**
+> LogArchive LogArchiveDeleteCredentialcertificateId(ctx, logArchiveId, id)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -203,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveDeletecredentialpasswordId**
-> LogArchive OperationLogArchiveDeletecredentialpasswordId(ctx, logArchiveId, id)
+# **LogArchiveDeleteCredentialpasswordId**
+> LogArchive LogArchiveDeleteCredentialpasswordId(ctx, logArchiveId, id)
 /credential/password/:id
 
 ### Required Parameters
@@ -230,8 +195,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveDeletetagKey**
-> map[string]string OperationLogArchiveDeletetagKey(ctx, logArchiveId, key)
+# **LogArchiveDeleteTagKey**
+> map[string]interface{} LogArchiveDeleteTagKey(ctx, logArchiveId, key)
 /tag/:key
 
 ### Required Parameters
@@ -244,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -257,8 +222,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveGetcredentialcertificateId**
-> CredentialCertificate OperationLogArchiveGetcredentialcertificateId(ctx, logArchiveId, id)
+# **LogArchiveGetCredentialcertificateId**
+> CredentialCertificate LogArchiveGetCredentialcertificateId(ctx, logArchiveId, id)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -284,8 +249,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveGetcredentialpasswordId**
-> CredentialPassword OperationLogArchiveGetcredentialpasswordId(ctx, logArchiveId, id)
+# **LogArchiveGetCredentialpasswordId**
+> CredentialPassword LogArchiveGetCredentialpasswordId(ctx, logArchiveId, id)
 /credential/password/:id
 
 ### Required Parameters
@@ -311,8 +276,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveGetservicesServiceId**
-> LogArchiveServices OperationLogArchiveGetservicesServiceId(ctx, logArchiveId, serviceId)
+# **LogArchiveGetServicesServiceId**
+> LogArchiveServices LogArchiveGetServicesServiceId(ctx, logArchiveId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -338,9 +303,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveGettag**
-> map[string]string OperationLogArchiveGettag(ctx, logArchiveId)
-/tag/
+# **LogArchiveGetTag**
+> map[string]interface{} LogArchiveGetTag(ctx, logArchiveId)
+/tag
 
 ### Required Parameters
 
@@ -351,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -364,9 +329,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveListaccessrights**
-> []string OperationLogArchiveListaccessrights(ctx, logArchiveId)
-/accessrights/
+# **LogArchiveList**
+> []LogArchive LogArchiveList(ctx, optional)
+List
+
+List logArchive
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***LogArchiveListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a LogArchiveListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]LogArchive**](logArchive.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **LogArchiveListAccessrights**
+> []string LogArchiveListAccessrights(ctx, logArchiveId)
+/accessrights
 
 ### Required Parameters
 
@@ -390,8 +390,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveListcredentialcertificate**
-> []CredentialCertificate OperationLogArchiveListcredentialcertificate(ctx, logArchiveId)
+# **LogArchiveListCredentialcertificate**
+> []CredentialCertificate LogArchiveListCredentialcertificate(ctx, logArchiveId)
 /credential/certificate
 
 ### Required Parameters
@@ -416,8 +416,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveListcredentialpassword**
-> []CredentialPassword OperationLogArchiveListcredentialpassword(ctx, logArchiveId)
+# **LogArchiveListCredentialpassword**
+> []CredentialPassword LogArchiveListCredentialpassword(ctx, logArchiveId)
 /credential/password
 
 ### Required Parameters
@@ -442,9 +442,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveListqueue**
-> []Event OperationLogArchiveListqueue(ctx, logArchiveId)
-/queue/
+# **LogArchiveListQueue**
+> []Event LogArchiveListQueue(ctx, logArchiveId)
+/queue
 
 ### Required Parameters
 
@@ -468,9 +468,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchiveListservices**
-> []LogArchiveServices OperationLogArchiveListservices(ctx, logArchiveId)
-/services/
+# **LogArchiveListServices**
+> []LogArchiveServices LogArchiveListServices(ctx, logArchiveId)
+/services
 
 ### Required Parameters
 
@@ -494,8 +494,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePatchcredentialcertificateId**
-> CredentialCertificate OperationLogArchivePatchcredentialcertificateId(ctx, logArchiveId, id, optional)
+# **LogArchivePatchCredentialcertificateId**
+> CredentialCertificate LogArchivePatchCredentialcertificateId(ctx, logArchiveId, id, logArchivePatchCredentialcertificateId)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -505,16 +505,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
   **id** | **string**| id | 
- **optional** | ***OperationLogArchivePatchcredentialcertificateIdOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePatchcredentialcertificateIdOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **inlineObject27** | [**optional.Interface of InlineObject27**](InlineObject27.md)|  | 
+  **logArchivePatchCredentialcertificateId** | [**LogArchivePatchCredentialcertificateId**](LogArchivePatchCredentialcertificateId.md)|  | 
 
 ### Return type
 
@@ -531,8 +522,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePatchcredentialpasswordId**
-> CredentialPassword OperationLogArchivePatchcredentialpasswordId(ctx, logArchiveId, id, optional)
+# **LogArchivePatchCredentialpasswordId**
+> CredentialPassword LogArchivePatchCredentialpasswordId(ctx, logArchiveId, id, logArchivePatchCredentialpasswordId)
 /credential/password/:id
 
 ### Required Parameters
@@ -542,16 +533,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
   **id** | **string**| id | 
- **optional** | ***OperationLogArchivePatchcredentialpasswordIdOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePatchcredentialpasswordIdOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **inlineObject25** | [**optional.Interface of InlineObject25**](InlineObject25.md)|  | 
+  **logArchivePatchCredentialpasswordId** | [**LogArchivePatchCredentialpasswordId**](LogArchivePatchCredentialpasswordId.md)|  | 
 
 ### Return type
 
@@ -568,9 +550,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePatchtag**
-> map[string]string OperationLogArchivePatchtag(ctx, logArchiveId, requestBody)
-/tag/
+# **LogArchivePatchTag**
+> map[string]interface{} LogArchivePatchTag(ctx, logArchiveId, body)
+/tag
 
 ### Required Parameters
 
@@ -578,11 +560,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -595,9 +577,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePostaccessrights**
-> string OperationLogArchivePostaccessrights(ctx, logArchiveId, resourceAccessRight)
-/accessrights/
+# **LogArchivePostAccessrights**
+> string LogArchivePostAccessrights(ctx, logArchiveId, logArchivePostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -605,7 +587,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **logArchivePostAccessrights** | [**LogArchivePostAccessrights**](LogArchivePostAccessrights.md)|  | 
 
 ### Return type
 
@@ -622,8 +604,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePostcredentialcertificate**
-> CredentialCertificate OperationLogArchivePostcredentialcertificate(ctx, logArchiveId, optional)
+# **LogArchivePostCredentialcertificate**
+> CredentialCertificate LogArchivePostCredentialcertificate(ctx, logArchiveId, logArchivePostCredentialcertificate)
 /credential/certificate
 
 ### Required Parameters
@@ -632,15 +614,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
- **optional** | ***OperationLogArchivePostcredentialcertificateOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePostcredentialcertificateOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject26** | [**optional.Interface of InlineObject26**](InlineObject26.md)|  | 
+  **logArchivePostCredentialcertificate** | [**LogArchivePostCredentialcertificate**](LogArchivePostCredentialcertificate.md)|  | 
 
 ### Return type
 
@@ -657,8 +631,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationLogArchivePostcredentialpassword**
-> CredentialPassword OperationLogArchivePostcredentialpassword(ctx, logArchiveId, optional)
+# **LogArchivePostCredentialpassword**
+> CredentialPassword LogArchivePostCredentialpassword(ctx, logArchiveId, logArchivePostCredentialpassword)
 /credential/password
 
 ### Required Parameters
@@ -667,15 +641,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
- **optional** | ***OperationLogArchivePostcredentialpasswordOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationLogArchivePostcredentialpasswordOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject24** | [**optional.Interface of InlineObject24**](InlineObject24.md)|  | 
+  **logArchivePostCredentialpassword** | [**LogArchivePostCredentialpassword**](LogArchivePostCredentialpassword.md)|  | 
 
 ### Return type
 
@@ -692,8 +658,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowLogArchive**
-> LogArchive ShowLogArchive(ctx, logArchiveId)
+# **LogArchiveShow**
+> LogArchive LogArchiveShow(ctx, logArchiveId)
 Get
 
 Returns a single logArchive
@@ -720,8 +686,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateLogArchive**
-> LogArchive UpdateLogArchive(ctx, logArchiveId, optional)
+# **LogArchiveUpdate**
+> LogArchive LogArchiveUpdate(ctx, logArchiveId, logArchiveUpdate)
 Update
 
 Returns modified logArchive
@@ -732,15 +698,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **logArchiveId** | **string**| ID of logArchive | 
- **optional** | ***UpdateLogArchiveOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateLogArchiveOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject23** | [**optional.Interface of InlineObject23**](InlineObject23.md)|  | 
+  **logArchiveUpdate** | [**LogArchiveUpdate**](LogArchiveUpdate.md)|  | 
 
 ### Return type
 

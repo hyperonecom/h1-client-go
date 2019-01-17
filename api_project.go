@@ -33,7 +33,7 @@ Create project
  * @param projectCreate
 @return Project
 */
-func (a *ProjectApiService) CreateProject(ctx context.Context, projectCreate ProjectCreate) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate ProjectCreate) (Project, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -155,163 +155,13 @@ func (a *ProjectApiService) CreateProject(ctx context.Context, projectCreate Pro
 }
 
 /*
-ProjectApiService List
-List project
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListProjectOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
- * @param "Limit" (optional.String) -  Filter by $limit
- * @param "Active" (optional.String) -  Filter by active
- * @param "Organisation" (optional.String) -  Filter by organisation
-@return []Project
-*/
-
-type ListProjectOpts struct {
-	Name optional.String
-	Limit optional.String
-	Active optional.String
-	Organisation optional.String
-}
-
-func (a *ProjectApiService) ListProject(ctx context.Context, localVarOptionals *ListProjectOpts) ([]Project, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Project
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
-		localVarQueryParams.Add("$limit", parameterToString(localVarOptionals.Limit.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
-		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.Organisation.IsSet() {
-		localVarQueryParams.Add("organisation", parameterToString(localVarOptionals.Organisation.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Project
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 ProjectApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param identity identity
 @return Project
 */
-func (a *ProjectApiService) OperationProjectDeleteaccessrightsIdentity(ctx context.Context, projectId string, identity string) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteAccessrightsIdentity(ctx context.Context, projectId string, identity string) (Project, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -447,16 +297,16 @@ ProjectApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ProjectApiService) OperationProjectDeletetagKey(ctx context.Context, projectId string, key string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -546,7 +396,7 @@ func (a *ProjectApiService) OperationProjectDeletetagKey(ctx context.Context, pr
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -577,7 +427,7 @@ ProjectApiService /services/:serviceId
  * @param serviceId serviceId
 @return ProjectServices
 */
-func (a *ProjectApiService) OperationProjectGetservicesServiceId(ctx context.Context, projectId string, serviceId string) (ProjectServices, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, projectId string, serviceId string) (ProjectServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -699,23 +549,23 @@ func (a *ProjectApiService) OperationProjectGetservicesServiceId(ctx context.Con
 }
 
 /*
-ProjectApiService /tag/
+ProjectApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ProjectApiService) OperationProjectGettag(ctx context.Context, projectId string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -800,7 +650,7 @@ func (a *ProjectApiService) OperationProjectGettag(ctx context.Context, projectI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -825,12 +675,162 @@ func (a *ProjectApiService) OperationProjectGettag(ctx context.Context, projectI
 }
 
 /*
-ProjectApiService /accessrights/
+ProjectApiService List
+List project
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *ProjectListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+ * @param "Limit" (optional.String) -  Filter by $limit
+ * @param "Active" (optional.String) -  Filter by active
+ * @param "Organisation" (optional.String) -  Filter by organisation
+@return []Project
+*/
+
+type ProjectListOpts struct {
+	Name optional.String
+	Limit optional.String
+	Active optional.String
+	Organisation optional.String
+}
+
+func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *ProjectListOpts) ([]Project, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Project
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/project"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
+		localVarQueryParams.Add("$limit", parameterToString(localVarOptionals.Limit.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
+		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Organisation.IsSet() {
+		localVarQueryParams.Add("organisation", parameterToString(localVarOptionals.Organisation.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Project
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+ProjectApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []ProjectAccessRights
 */
-func (a *ProjectApiService) OperationProjectListaccessrights(ctx context.Context, projectId string) ([]ProjectAccessRights, *http.Response, error) {
+func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, projectId string) ([]ProjectAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -841,7 +841,7 @@ func (a *ProjectApiService) OperationProjectListaccessrights(ctx context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -951,12 +951,12 @@ func (a *ProjectApiService) OperationProjectListaccessrights(ctx context.Context
 }
 
 /*
-ProjectApiService /queue/
+ProjectApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []Event
 */
-func (a *ProjectApiService) OperationProjectListqueue(ctx context.Context, projectId string) ([]Event, *http.Response, error) {
+func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -967,7 +967,7 @@ func (a *ProjectApiService) OperationProjectListqueue(ctx context.Context, proje
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1077,12 +1077,12 @@ func (a *ProjectApiService) OperationProjectListqueue(ctx context.Context, proje
 }
 
 /*
-ProjectApiService /services/
+ProjectApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []ProjectServices
 */
-func (a *ProjectApiService) OperationProjectListservices(ctx context.Context, projectId string) ([]ProjectServices, *http.Response, error) {
+func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId string) ([]ProjectServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1093,7 +1093,7 @@ func (a *ProjectApiService) OperationProjectListservices(ctx context.Context, pr
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1203,24 +1203,24 @@ func (a *ProjectApiService) OperationProjectListservices(ctx context.Context, pr
 }
 
 /*
-ProjectApiService /tag/
+ProjectApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *ProjectApiService) OperationProjectPatchtag(ctx context.Context, projectId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1245,7 +1245,7 @@ func (a *ProjectApiService) OperationProjectPatchtag(ctx context.Context, projec
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1307,7 +1307,7 @@ func (a *ProjectApiService) OperationProjectPatchtag(ctx context.Context, projec
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1332,13 +1332,13 @@ func (a *ProjectApiService) OperationProjectPatchtag(ctx context.Context, projec
 }
 
 /*
-ProjectApiService /accessrights/
+ProjectApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param resourceAccessRight
+ * @param projectPostAccessrights
 @return ProjectAccessRights
 */
-func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context, projectId string, resourceAccessRight ResourceAccessRight) (ProjectAccessRights, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (ProjectAccessRights, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1349,7 +1349,7 @@ func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/project/{projectId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1374,7 +1374,7 @@ func (a *ProjectApiService) OperationProjectPostaccessrights(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &projectPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1467,7 +1467,7 @@ Returns a single project
  * @param projectId ID of project
 @return Project
 */
-func (a *ProjectApiService) ShowProject(ctx context.Context, projectId string) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (Project, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1592,16 +1592,10 @@ ProjectApiService Update
 Returns modified project
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param optional nil or *UpdateProjectOpts - Optional Parameters:
- * @param "InlineObject" (optional.Interface of InlineObject) - 
+ * @param projectUpdate
 @return Project
 */
-
-type UpdateProjectOpts struct {
-	InlineObject optional.Interface
-}
-
-func (a *ProjectApiService) UpdateProject(ctx context.Context, projectId string, localVarOptionals *UpdateProjectOpts) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string, projectUpdate ProjectUpdate) (Project, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1637,14 +1631,7 @@ func (a *ProjectApiService) UpdateProject(ctx context.Context, projectId string,
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject.IsSet() {
-		localVarOptionalInlineObject, localVarOptionalInlineObjectok := localVarOptionals.InlineObject.Value().(InlineObject)
-		if !localVarOptionalInlineObjectok {
-			return localVarReturnValue, nil, reportError("inlineObject should be InlineObject")
-		}
-		localVarPostBody = &localVarOptionalInlineObject
-	}
-
+	localVarPostBody = &projectUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

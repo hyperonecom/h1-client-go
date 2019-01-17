@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
-**Credential** | [**VaultCredential**](vault_credential.md) |  | [optional] 
 **SizeUsed** | **float32** |  | [optional] 
 **Retention** | **float32** |  | [optional] 
 

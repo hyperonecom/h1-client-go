@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Service** | **string** |  | 
-**Credential** | [**VaultCreateCredential**](vaultCreate_credential.md) |  | [optional] 
+**Credential** | [**VaultCreateCredential**](vault_create_credential.md) |  | [optional] 
 **Retention** | **float32** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

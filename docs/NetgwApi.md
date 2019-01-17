@@ -4,26 +4,26 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionNetgwAttach**](NetgwApi.md#ActionNetgwAttach) | **Post** /netgw/{netgwId}/actions/attach | /actions/attach
-[**ActionNetgwDetach**](NetgwApi.md#ActionNetgwDetach) | **Post** /netgw/{netgwId}/actions/detach | /actions/detach
-[**CreateNetgw**](NetgwApi.md#CreateNetgw) | **Post** /netgw | Create
-[**DeleteNetgw**](NetgwApi.md#DeleteNetgw) | **Delete** /netgw/{netgwId} | Delete
-[**ListNetgw**](NetgwApi.md#ListNetgw) | **Get** /netgw | List
-[**OperationNetgwDeleteaccessrightsIdentity**](NetgwApi.md#OperationNetgwDeleteaccessrightsIdentity) | **Delete** /netgw/{netgwId}/accessrights/{identity} | /accessrights/:identity
-[**OperationNetgwDeletetagKey**](NetgwApi.md#OperationNetgwDeletetagKey) | **Delete** /netgw/{netgwId}/tag/{key} | /tag/:key
-[**OperationNetgwGetservicesServiceId**](NetgwApi.md#OperationNetgwGetservicesServiceId) | **Get** /netgw/{netgwId}/services/{serviceId} | /services/:serviceId
-[**OperationNetgwGettag**](NetgwApi.md#OperationNetgwGettag) | **Get** /netgw/{netgwId}/tag/ | /tag/
-[**OperationNetgwListaccessrights**](NetgwApi.md#OperationNetgwListaccessrights) | **Get** /netgw/{netgwId}/accessrights/ | /accessrights/
-[**OperationNetgwListqueue**](NetgwApi.md#OperationNetgwListqueue) | **Get** /netgw/{netgwId}/queue/ | /queue/
-[**OperationNetgwListservices**](NetgwApi.md#OperationNetgwListservices) | **Get** /netgw/{netgwId}/services/ | /services/
-[**OperationNetgwPatchtag**](NetgwApi.md#OperationNetgwPatchtag) | **Patch** /netgw/{netgwId}/tag/ | /tag/
-[**OperationNetgwPostaccessrights**](NetgwApi.md#OperationNetgwPostaccessrights) | **Post** /netgw/{netgwId}/accessrights/ | /accessrights/
-[**ShowNetgw**](NetgwApi.md#ShowNetgw) | **Get** /netgw/{netgwId} | Get
-[**UpdateNetgw**](NetgwApi.md#UpdateNetgw) | **Patch** /netgw/{netgwId} | Update
+[**NetgwActionAttach**](NetgwApi.md#NetgwActionAttach) | **Post** /netgw/{netgwId}/actions/attach | /actions/attach
+[**NetgwActionDetach**](NetgwApi.md#NetgwActionDetach) | **Post** /netgw/{netgwId}/actions/detach | /actions/detach
+[**NetgwCreate**](NetgwApi.md#NetgwCreate) | **Post** /netgw | Create
+[**NetgwDelete**](NetgwApi.md#NetgwDelete) | **Delete** /netgw/{netgwId} | Delete
+[**NetgwDeleteAccessrightsIdentity**](NetgwApi.md#NetgwDeleteAccessrightsIdentity) | **Delete** /netgw/{netgwId}/accessrights/{identity} | /accessrights/:identity
+[**NetgwDeleteTagKey**](NetgwApi.md#NetgwDeleteTagKey) | **Delete** /netgw/{netgwId}/tag/{key} | /tag/:key
+[**NetgwGetServicesServiceId**](NetgwApi.md#NetgwGetServicesServiceId) | **Get** /netgw/{netgwId}/services/{serviceId} | /services/:serviceId
+[**NetgwGetTag**](NetgwApi.md#NetgwGetTag) | **Get** /netgw/{netgwId}/tag | /tag
+[**NetgwList**](NetgwApi.md#NetgwList) | **Get** /netgw | List
+[**NetgwListAccessrights**](NetgwApi.md#NetgwListAccessrights) | **Get** /netgw/{netgwId}/accessrights | /accessrights
+[**NetgwListQueue**](NetgwApi.md#NetgwListQueue) | **Get** /netgw/{netgwId}/queue | /queue
+[**NetgwListServices**](NetgwApi.md#NetgwListServices) | **Get** /netgw/{netgwId}/services | /services
+[**NetgwPatchTag**](NetgwApi.md#NetgwPatchTag) | **Patch** /netgw/{netgwId}/tag | /tag
+[**NetgwPostAccessrights**](NetgwApi.md#NetgwPostAccessrights) | **Post** /netgw/{netgwId}/accessrights | /accessrights
+[**NetgwShow**](NetgwApi.md#NetgwShow) | **Get** /netgw/{netgwId} | Get
+[**NetgwUpdate**](NetgwApi.md#NetgwUpdate) | **Patch** /netgw/{netgwId} | Update
 
 
-# **ActionNetgwAttach**
-> Netgw ActionNetgwAttach(ctx, netgwId)
+# **NetgwActionAttach**
+> Netgw NetgwActionAttach(ctx, netgwId)
 /actions/attach
 
 Action attach
@@ -50,8 +50,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionNetgwDetach**
-> Netgw ActionNetgwDetach(ctx, netgwId)
+# **NetgwActionDetach**
+> Netgw NetgwActionDetach(ctx, netgwId)
 /actions/detach
 
 Action detach
@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateNetgw**
-> Netgw CreateNetgw(ctx, netgwCreate)
+# **NetgwCreate**
+> Netgw NetgwCreate(ctx, netgwCreate)
 Create
 
 Create netgw
@@ -106,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteNetgw**
-> DeleteNetgw(ctx, netgwId)
+# **NetgwDelete**
+> NetgwDelete(ctx, netgwId)
 Delete
 
 ### Required Parameters
@@ -132,43 +132,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListNetgw**
-> []Netgw ListNetgw(ctx, optional)
-List
-
-List netgw
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListNetgwOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListNetgwOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Netgw**](netgw.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationNetgwDeleteaccessrightsIdentity**
-> Netgw OperationNetgwDeleteaccessrightsIdentity(ctx, netgwId, identity)
+# **NetgwDeleteAccessrightsIdentity**
+> Netgw NetgwDeleteAccessrightsIdentity(ctx, netgwId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -194,8 +159,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwDeletetagKey**
-> map[string]string OperationNetgwDeletetagKey(ctx, netgwId, key)
+# **NetgwDeleteTagKey**
+> map[string]interface{} NetgwDeleteTagKey(ctx, netgwId, key)
 /tag/:key
 
 ### Required Parameters
@@ -208,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -221,8 +186,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwGetservicesServiceId**
-> NetgwServices OperationNetgwGetservicesServiceId(ctx, netgwId, serviceId)
+# **NetgwGetServicesServiceId**
+> NetgwServices NetgwGetServicesServiceId(ctx, netgwId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -248,9 +213,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwGettag**
-> map[string]string OperationNetgwGettag(ctx, netgwId)
-/tag/
+# **NetgwGetTag**
+> map[string]interface{} NetgwGetTag(ctx, netgwId)
+/tag
 
 ### Required Parameters
 
@@ -261,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -274,9 +239,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwListaccessrights**
-> []string OperationNetgwListaccessrights(ctx, netgwId)
-/accessrights/
+# **NetgwList**
+> []Netgw NetgwList(ctx, optional)
+List
+
+List netgw
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***NetgwListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a NetgwListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Netgw**](netgw.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **NetgwListAccessrights**
+> []string NetgwListAccessrights(ctx, netgwId)
+/accessrights
 
 ### Required Parameters
 
@@ -300,9 +300,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwListqueue**
-> []Event OperationNetgwListqueue(ctx, netgwId)
-/queue/
+# **NetgwListQueue**
+> []Event NetgwListQueue(ctx, netgwId)
+/queue
 
 ### Required Parameters
 
@@ -326,9 +326,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwListservices**
-> []NetgwServices OperationNetgwListservices(ctx, netgwId)
-/services/
+# **NetgwListServices**
+> []NetgwServices NetgwListServices(ctx, netgwId)
+/services
 
 ### Required Parameters
 
@@ -352,9 +352,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwPatchtag**
-> map[string]string OperationNetgwPatchtag(ctx, netgwId, requestBody)
-/tag/
+# **NetgwPatchTag**
+> map[string]interface{} NetgwPatchTag(ctx, netgwId, body)
+/tag
 
 ### Required Parameters
 
@@ -362,11 +362,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netgwId** | **string**| ID of netgw | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -379,9 +379,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationNetgwPostaccessrights**
-> string OperationNetgwPostaccessrights(ctx, netgwId, resourceAccessRight)
-/accessrights/
+# **NetgwPostAccessrights**
+> string NetgwPostAccessrights(ctx, netgwId, netgwPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netgwId** | **string**| ID of netgw | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **netgwPostAccessrights** | [**NetgwPostAccessrights**](NetgwPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowNetgw**
-> Netgw ShowNetgw(ctx, netgwId)
+# **NetgwShow**
+> Netgw NetgwShow(ctx, netgwId)
 Get
 
 Returns a single netgw
@@ -434,8 +434,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateNetgw**
-> Netgw UpdateNetgw(ctx, netgwId, optional)
+# **NetgwUpdate**
+> Netgw NetgwUpdate(ctx, netgwId, netgwUpdate)
 Update
 
 Returns modified netgw
@@ -446,15 +446,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **netgwId** | **string**| ID of netgw | 
- **optional** | ***UpdateNetgwOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateNetgwOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject8** | [**optional.Interface of InlineObject8**](InlineObject8.md)|  | 
+  **netgwUpdate** | [**NetgwUpdate**](NetgwUpdate.md)|  | 
 
 ### Return type
 

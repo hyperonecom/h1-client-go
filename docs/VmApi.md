@@ -4,38 +4,38 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionVmFlavour**](VmApi.md#ActionVmFlavour) | **Post** /vm/{vmId}/actions/flavour | /actions/flavour
-[**ActionVmImage**](VmApi.md#ActionVmImage) | **Post** /vm/{vmId}/actions/image | /actions/image
-[**ActionVmPasswordReset**](VmApi.md#ActionVmPasswordReset) | **Post** /vm/{vmId}/actions/password_reset | /actions/password_reset
-[**ActionVmRename**](VmApi.md#ActionVmRename) | **Post** /vm/{vmId}/actions/rename | /actions/rename
-[**ActionVmRestart**](VmApi.md#ActionVmRestart) | **Post** /vm/{vmId}/actions/restart | /actions/restart
-[**ActionVmStart**](VmApi.md#ActionVmStart) | **Post** /vm/{vmId}/actions/start | /actions/start
-[**ActionVmStop**](VmApi.md#ActionVmStop) | **Post** /vm/{vmId}/actions/stop | /actions/stop
-[**ActionVmTurnoff**](VmApi.md#ActionVmTurnoff) | **Post** /vm/{vmId}/actions/turnoff | /actions/turnoff
-[**CreateVm**](VmApi.md#CreateVm) | **Post** /vm | Create
-[**DeleteVm**](VmApi.md#DeleteVm) | **Delete** /vm/{vmId} | Delete
-[**ListVm**](VmApi.md#ListVm) | **Get** /vm | List
-[**OperationVmDeleteaccessrightsIdentity**](VmApi.md#OperationVmDeleteaccessrightsIdentity) | **Delete** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
-[**OperationVmDeletehddDiskId**](VmApi.md#OperationVmDeletehddDiskId) | **Delete** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
-[**OperationVmDeletenetadp**](VmApi.md#OperationVmDeletenetadp) | **Delete** /vm/{vmId}/netadp | /netadp
-[**OperationVmDeletetagKey**](VmApi.md#OperationVmDeletetagKey) | **Delete** /vm/{vmId}/tag/{key} | /tag/:key
-[**OperationVmGetservicesServiceId**](VmApi.md#OperationVmGetservicesServiceId) | **Get** /vm/{vmId}/services/{serviceId} | /services/:serviceId
-[**OperationVmGettag**](VmApi.md#OperationVmGettag) | **Get** /vm/{vmId}/tag/ | /tag/
-[**OperationVmListaccessrights**](VmApi.md#OperationVmListaccessrights) | **Get** /vm/{vmId}/accessrights/ | /accessrights/
-[**OperationVmListhdd**](VmApi.md#OperationVmListhdd) | **Get** /vm/{vmId}/hdd | /hdd
-[**OperationVmListnetadp**](VmApi.md#OperationVmListnetadp) | **Get** /vm/{vmId}/netadp | /netadp
-[**OperationVmListqueue**](VmApi.md#OperationVmListqueue) | **Get** /vm/{vmId}/queue/ | /queue/
-[**OperationVmListservices**](VmApi.md#OperationVmListservices) | **Get** /vm/{vmId}/services/ | /services/
-[**OperationVmPatchtag**](VmApi.md#OperationVmPatchtag) | **Patch** /vm/{vmId}/tag/ | /tag/
-[**OperationVmPostaccessrights**](VmApi.md#OperationVmPostaccessrights) | **Post** /vm/{vmId}/accessrights/ | /accessrights/
-[**OperationVmPosthdd**](VmApi.md#OperationVmPosthdd) | **Post** /vm/{vmId}/hdd | /hdd
-[**OperationVmPostnetadp**](VmApi.md#OperationVmPostnetadp) | **Post** /vm/{vmId}/netadp | /netadp
-[**ShowVm**](VmApi.md#ShowVm) | **Get** /vm/{vmId} | Get
-[**UpdateVm**](VmApi.md#UpdateVm) | **Patch** /vm/{vmId} | Update
+[**VmActionFlavour**](VmApi.md#VmActionFlavour) | **Post** /vm/{vmId}/actions/flavour | /actions/flavour
+[**VmActionImage**](VmApi.md#VmActionImage) | **Post** /vm/{vmId}/actions/image | /actions/image
+[**VmActionPasswordReset**](VmApi.md#VmActionPasswordReset) | **Post** /vm/{vmId}/actions/password_reset | /actions/password_reset
+[**VmActionRename**](VmApi.md#VmActionRename) | **Post** /vm/{vmId}/actions/rename | /actions/rename
+[**VmActionRestart**](VmApi.md#VmActionRestart) | **Post** /vm/{vmId}/actions/restart | /actions/restart
+[**VmActionStart**](VmApi.md#VmActionStart) | **Post** /vm/{vmId}/actions/start | /actions/start
+[**VmActionStop**](VmApi.md#VmActionStop) | **Post** /vm/{vmId}/actions/stop | /actions/stop
+[**VmActionTurnoff**](VmApi.md#VmActionTurnoff) | **Post** /vm/{vmId}/actions/turnoff | /actions/turnoff
+[**VmCreate**](VmApi.md#VmCreate) | **Post** /vm | Create
+[**VmDelete**](VmApi.md#VmDelete) | **Delete** /vm/{vmId} | Delete
+[**VmDeleteAccessrightsIdentity**](VmApi.md#VmDeleteAccessrightsIdentity) | **Delete** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
+[**VmDeleteHddDiskId**](VmApi.md#VmDeleteHddDiskId) | **Delete** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
+[**VmDeleteNetadp**](VmApi.md#VmDeleteNetadp) | **Delete** /vm/{vmId}/netadp | /netadp
+[**VmDeleteTagKey**](VmApi.md#VmDeleteTagKey) | **Delete** /vm/{vmId}/tag/{key} | /tag/:key
+[**VmGetServicesServiceId**](VmApi.md#VmGetServicesServiceId) | **Get** /vm/{vmId}/services/{serviceId} | /services/:serviceId
+[**VmGetTag**](VmApi.md#VmGetTag) | **Get** /vm/{vmId}/tag | /tag
+[**VmList**](VmApi.md#VmList) | **Get** /vm | List
+[**VmListAccessrights**](VmApi.md#VmListAccessrights) | **Get** /vm/{vmId}/accessrights | /accessrights
+[**VmListHdd**](VmApi.md#VmListHdd) | **Get** /vm/{vmId}/hdd | /hdd
+[**VmListNetadp**](VmApi.md#VmListNetadp) | **Get** /vm/{vmId}/netadp | /netadp
+[**VmListQueue**](VmApi.md#VmListQueue) | **Get** /vm/{vmId}/queue | /queue
+[**VmListServices**](VmApi.md#VmListServices) | **Get** /vm/{vmId}/services | /services
+[**VmPatchTag**](VmApi.md#VmPatchTag) | **Patch** /vm/{vmId}/tag | /tag
+[**VmPostAccessrights**](VmApi.md#VmPostAccessrights) | **Post** /vm/{vmId}/accessrights | /accessrights
+[**VmPostHdd**](VmApi.md#VmPostHdd) | **Post** /vm/{vmId}/hdd | /hdd
+[**VmPostNetadp**](VmApi.md#VmPostNetadp) | **Post** /vm/{vmId}/netadp | /netadp
+[**VmShow**](VmApi.md#VmShow) | **Get** /vm/{vmId} | Get
+[**VmUpdate**](VmApi.md#VmUpdate) | **Patch** /vm/{vmId} | Update
 
 
-# **ActionVmFlavour**
-> Vm ActionVmFlavour(ctx, vmId)
+# **VmActionFlavour**
+> Vm VmActionFlavour(ctx, vmId)
 /actions/flavour
 
 Action flavour
@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmImage**
-> Vm ActionVmImage(ctx, vmId, vmImage)
+# **VmActionImage**
+> Vm VmActionImage(ctx, vmId, vmActionImage)
 /actions/image
 
 Action image
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
-  **vmImage** | [**VmImage**](VmImage.md)|  | 
+  **vmActionImage** | [**VmActionImage**](VmActionImage.md)|  | 
 
 ### Return type
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmPasswordReset**
-> Vm ActionVmPasswordReset(ctx, vmId, vmPasswordReset)
+# **VmActionPasswordReset**
+> Vm VmActionPasswordReset(ctx, vmId, vmActionPasswordReset)
 /actions/password_reset
 
 Action password_reset
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
-  **vmPasswordReset** | [**VmPasswordReset**](VmPasswordReset.md)|  | 
+  **vmActionPasswordReset** | [**VmActionPasswordReset**](VmActionPasswordReset.md)|  | 
 
 ### Return type
 
@@ -120,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmRename**
-> Vm ActionVmRename(ctx, vmId)
+# **VmActionRename**
+> Vm VmActionRename(ctx, vmId)
 /actions/rename
 
 Action rename
@@ -148,8 +148,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmRestart**
-> Vm ActionVmRestart(ctx, vmId)
+# **VmActionRestart**
+> Vm VmActionRestart(ctx, vmId)
 /actions/restart
 
 Action restart
@@ -176,8 +176,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmStart**
-> Vm ActionVmStart(ctx, vmId)
+# **VmActionStart**
+> Vm VmActionStart(ctx, vmId)
 /actions/start
 
 Action start
@@ -204,8 +204,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmStop**
-> Vm ActionVmStop(ctx, vmId)
+# **VmActionStop**
+> Vm VmActionStop(ctx, vmId)
 /actions/stop
 
 Action stop
@@ -232,8 +232,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVmTurnoff**
-> Vm ActionVmTurnoff(ctx, vmId)
+# **VmActionTurnoff**
+> Vm VmActionTurnoff(ctx, vmId)
 /actions/turnoff
 
 Action turnoff
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateVm**
-> Vm CreateVm(ctx, vmCreate)
+# **VmCreate**
+> Vm VmCreate(ctx, vmCreate)
 Create
 
 Create vm
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteVm**
-> DeleteVm(ctx, vmId)
+# **VmDelete**
+> VmDelete(ctx, vmId)
 Delete
 
 ### Required Parameters
@@ -314,43 +314,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListVm**
-> []Vm ListVm(ctx, optional)
-List
-
-List vm
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListVmOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListVmOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Vm**](vm.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationVmDeleteaccessrightsIdentity**
-> Vm OperationVmDeleteaccessrightsIdentity(ctx, vmId, identity)
+# **VmDeleteAccessrightsIdentity**
+> Vm VmDeleteAccessrightsIdentity(ctx, vmId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -376,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmDeletehddDiskId**
-> Vm OperationVmDeletehddDiskId(ctx, vmId, diskId)
+# **VmDeleteHddDiskId**
+> Vm VmDeleteHddDiskId(ctx, vmId, diskId)
 /hdd/:diskId
 
 ### Required Parameters
@@ -403,8 +368,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmDeletenetadp**
-> Vm OperationVmDeletenetadp(ctx, vmId)
+# **VmDeleteNetadp**
+> Vm VmDeleteNetadp(ctx, vmId)
 /netadp
 
 ### Required Parameters
@@ -429,8 +394,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmDeletetagKey**
-> map[string]string OperationVmDeletetagKey(ctx, vmId, key)
+# **VmDeleteTagKey**
+> map[string]interface{} VmDeleteTagKey(ctx, vmId, key)
 /tag/:key
 
 ### Required Parameters
@@ -443,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -456,8 +421,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmGetservicesServiceId**
-> VmServices OperationVmGetservicesServiceId(ctx, vmId, serviceId)
+# **VmGetServicesServiceId**
+> VmServices VmGetServicesServiceId(ctx, vmId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -483,9 +448,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmGettag**
-> map[string]string OperationVmGettag(ctx, vmId)
-/tag/
+# **VmGetTag**
+> map[string]interface{} VmGetTag(ctx, vmId)
+/tag
 
 ### Required Parameters
 
@@ -496,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -509,9 +474,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmListaccessrights**
-> []string OperationVmListaccessrights(ctx, vmId)
-/accessrights/
+# **VmList**
+> []Vm VmList(ctx, optional)
+List
+
+List vm
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***VmListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a VmListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Vm**](vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **VmListAccessrights**
+> []string VmListAccessrights(ctx, vmId)
+/accessrights
 
 ### Required Parameters
 
@@ -535,8 +535,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmListhdd**
-> []Hdd OperationVmListhdd(ctx, vmId)
+# **VmListHdd**
+> []Hdd VmListHdd(ctx, vmId)
 /hdd
 
 ### Required Parameters
@@ -561,8 +561,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmListnetadp**
-> []Netadp OperationVmListnetadp(ctx, vmId)
+# **VmListNetadp**
+> []Netadp VmListNetadp(ctx, vmId)
 /netadp
 
 ### Required Parameters
@@ -587,9 +587,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmListqueue**
-> []Event OperationVmListqueue(ctx, vmId)
-/queue/
+# **VmListQueue**
+> []Event VmListQueue(ctx, vmId)
+/queue
 
 ### Required Parameters
 
@@ -613,9 +613,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmListservices**
-> []VmServices OperationVmListservices(ctx, vmId)
-/services/
+# **VmListServices**
+> []VmServices VmListServices(ctx, vmId)
+/services
 
 ### Required Parameters
 
@@ -639,9 +639,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmPatchtag**
-> map[string]string OperationVmPatchtag(ctx, vmId, requestBody)
-/tag/
+# **VmPatchTag**
+> map[string]interface{} VmPatchTag(ctx, vmId, body)
+/tag
 
 ### Required Parameters
 
@@ -649,11 +649,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -666,9 +666,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmPostaccessrights**
-> string OperationVmPostaccessrights(ctx, vmId, resourceAccessRight)
-/accessrights/
+# **VmPostAccessrights**
+> string VmPostAccessrights(ctx, vmId, vmPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **vmPostAccessrights** | [**VmPostAccessrights**](VmPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -693,8 +693,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmPosthdd**
-> Vm OperationVmPosthdd(ctx, vmId, optional)
+# **VmPostHdd**
+> Vm VmPostHdd(ctx, vmId, vmPostHdd)
 /hdd
 
 ### Required Parameters
@@ -703,15 +703,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***OperationVmPosthddOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVmPosthddOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject13** | [**optional.Interface of InlineObject13**](InlineObject13.md)|  | 
+  **vmPostHdd** | [**VmPostHdd**](VmPostHdd.md)|  | 
 
 ### Return type
 
@@ -728,8 +720,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVmPostnetadp**
-> Vm OperationVmPostnetadp(ctx, vmId, optional)
+# **VmPostNetadp**
+> Vm VmPostNetadp(ctx, vmId, vmPostNetadp)
 /netadp
 
 ### Required Parameters
@@ -738,15 +730,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***OperationVmPostnetadpOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVmPostnetadpOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject14** | [**optional.Interface of InlineObject14**](InlineObject14.md)|  | 
+  **vmPostNetadp** | [**VmPostNetadp**](VmPostNetadp.md)|  | 
 
 ### Return type
 
@@ -763,8 +747,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowVm**
-> Vm ShowVm(ctx, vmId)
+# **VmShow**
+> Vm VmShow(ctx, vmId)
 Get
 
 Returns a single vm
@@ -791,8 +775,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateVm**
-> Vm UpdateVm(ctx, vmId, optional)
+# **VmUpdate**
+> Vm VmUpdate(ctx, vmId, vmUpdate)
 Update
 
 Returns modified vm
@@ -803,15 +787,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
- **optional** | ***UpdateVmOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateVmOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject12** | [**optional.Interface of InlineObject12**](InlineObject12.md)|  | 
+  **vmUpdate** | [**VmUpdate**](VmUpdate.md)|  | 
 
 ### Return type
 

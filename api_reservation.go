@@ -33,7 +33,7 @@ Action assign
  * @param reservationId ID of reservation
 @return Reservation
 */
-func (a *ReservationApiService) ActionReservationAssign(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationActionAssign(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ Action extend
  * @param reservationId ID of reservation
 @return Reservation
 */
-func (a *ReservationApiService) ActionReservationExtend(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationActionExtend(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -287,7 +287,7 @@ Action unassign
  * @param reservationId ID of reservation
 @return Reservation
 */
-func (a *ReservationApiService) ActionReservationUnassign(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationActionUnassign(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -414,7 +414,7 @@ Create reservation
  * @param reservationCreate
 @return Reservation
 */
-func (a *ReservationApiService) CreateReservation(ctx context.Context, reservationCreate ReservationCreate) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationCreate(ctx context.Context, reservationCreate ReservationCreate) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -540,7 +540,7 @@ ReservationApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
 */
-func (a *ReservationApiService) DeleteReservation(ctx context.Context, reservationId string) (*http.Response, error) {
+func (a *ReservationApiService) ReservationDelete(ctx context.Context, reservationId string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -641,148 +641,13 @@ func (a *ReservationApiService) DeleteReservation(ctx context.Context, reservati
 }
 
 /*
-ReservationApiService List
-List reservation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListReservationOpts - Optional Parameters:
- * @param "Name" (optional.String) -  Filter by name
-@return []Reservation
-*/
-
-type ListReservationOpts struct {
-	Name optional.String
-}
-
-func (a *ReservationApiService) ListReservation(ctx context.Context, localVarOptionals *ListReservationOpts) ([]Reservation, *http.Response, error) {
-	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
-		localVarPostBody     interface{}
-		localVarFormFileName string
-		localVarFileName     string
-		localVarFileBytes    []byte
-		localVarReturnValue  []Reservation
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
-		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
-	}
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-project"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v []Reservation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-
-/*
 ReservationApiService /accessrights/:identity
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
  * @param identity identity
 @return Reservation
 */
-func (a *ReservationApiService) OperationReservationDeleteaccessrightsIdentity(ctx context.Context, reservationId string, identity string) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationDeleteAccessrightsIdentity(ctx context.Context, reservationId string, identity string) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -918,16 +783,16 @@ ReservationApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
  * @param key key
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ReservationApiService) OperationReservationDeletetagKey(ctx context.Context, reservationId string, key string) (map[string]string, *http.Response, error) {
+func (a *ReservationApiService) ReservationDeleteTagKey(ctx context.Context, reservationId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
@@ -1017,7 +882,7 @@ func (a *ReservationApiService) OperationReservationDeletetagKey(ctx context.Con
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1048,7 +913,7 @@ ReservationApiService /services/:serviceId
  * @param serviceId serviceId
 @return ReservationServices
 */
-func (a *ReservationApiService) OperationReservationGetservicesServiceId(ctx context.Context, reservationId string, serviceId string) (ReservationServices, *http.Response, error) {
+func (a *ReservationApiService) ReservationGetServicesServiceId(ctx context.Context, reservationId string, serviceId string) (ReservationServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1170,23 +1035,23 @@ func (a *ReservationApiService) OperationReservationGetservicesServiceId(ctx con
 }
 
 /*
-ReservationApiService /tag/
+ReservationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
-@return map[string]string
+@return map[string]interface{}
 */
-func (a *ReservationApiService) OperationReservationGettag(ctx context.Context, reservationId string) (map[string]string, *http.Response, error) {
+func (a *ReservationApiService) ReservationGetTag(ctx context.Context, reservationId string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1271,7 +1136,7 @@ func (a *ReservationApiService) OperationReservationGettag(ctx context.Context, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1296,12 +1161,147 @@ func (a *ReservationApiService) OperationReservationGettag(ctx context.Context, 
 }
 
 /*
-ReservationApiService /accessrights/
+ReservationApiService List
+List reservation
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *ReservationListOpts - Optional Parameters:
+ * @param "Name" (optional.String) -  Filter by name
+@return []Reservation
+*/
+
+type ReservationListOpts struct {
+	Name optional.String
+}
+
+func (a *ReservationApiService) ReservationList(ctx context.Context, localVarOptionals *ReservationListOpts) ([]Reservation, *http.Response, error) {
+	var (
+		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Reservation
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/reservation"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
+		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-auth-token"] = key
+		}
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v []Reservation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+ReservationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
 @return []string
 */
-func (a *ReservationApiService) OperationReservationListaccessrights(ctx context.Context, reservationId string) ([]string, *http.Response, error) {
+func (a *ReservationApiService) ReservationListAccessrights(ctx context.Context, reservationId string) ([]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1312,7 +1312,7 @@ func (a *ReservationApiService) OperationReservationListaccessrights(ctx context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1422,12 +1422,12 @@ func (a *ReservationApiService) OperationReservationListaccessrights(ctx context
 }
 
 /*
-ReservationApiService /queue/
+ReservationApiService /queue
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
 @return []Event
 */
-func (a *ReservationApiService) OperationReservationListqueue(ctx context.Context, reservationId string) ([]Event, *http.Response, error) {
+func (a *ReservationApiService) ReservationListQueue(ctx context.Context, reservationId string) ([]Event, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1438,7 +1438,7 @@ func (a *ReservationApiService) OperationReservationListqueue(ctx context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/queue/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/queue"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1548,12 +1548,12 @@ func (a *ReservationApiService) OperationReservationListqueue(ctx context.Contex
 }
 
 /*
-ReservationApiService /services/
+ReservationApiService /services
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
 @return []ReservationServices
 */
-func (a *ReservationApiService) OperationReservationListservices(ctx context.Context, reservationId string) ([]ReservationServices, *http.Response, error) {
+func (a *ReservationApiService) ReservationListServices(ctx context.Context, reservationId string) ([]ReservationServices, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -1564,7 +1564,7 @@ func (a *ReservationApiService) OperationReservationListservices(ctx context.Con
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/services/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/services"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1674,24 +1674,24 @@ func (a *ReservationApiService) OperationReservationListservices(ctx context.Con
 }
 
 /*
-ReservationApiService /tag/
+ReservationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
- * @param requestBody
-@return map[string]string
+ * @param body
+@return map[string]interface{}
 */
-func (a *ReservationApiService) OperationReservationPatchtag(ctx context.Context, reservationId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ReservationApiService) ReservationPatchTag(ctx context.Context, reservationId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]string
+		localVarReturnValue  map[string]interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/tag/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1716,7 +1716,7 @@ func (a *ReservationApiService) OperationReservationPatchtag(ctx context.Context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &requestBody
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1778,7 +1778,7 @@ func (a *ReservationApiService) OperationReservationPatchtag(ctx context.Context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]string
+			var v map[string]interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1803,13 +1803,13 @@ func (a *ReservationApiService) OperationReservationPatchtag(ctx context.Context
 }
 
 /*
-ReservationApiService /accessrights/
+ReservationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
- * @param resourceAccessRight
+ * @param reservationPostAccessrights
 @return string
 */
-func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context.Context, reservationId string, resourceAccessRight ResourceAccessRight) (string, *http.Response, error) {
+func (a *ReservationApiService) ReservationPostAccessrights(ctx context.Context, reservationId string, reservationPostAccessrights ReservationPostAccessrights) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -1820,7 +1820,7 @@ func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/accessrights/"
+	localVarPath := a.client.cfg.BasePath + "/reservation/{reservationId}/accessrights"
 	localVarPath = strings.Replace(localVarPath, "{"+"reservationId"+"}", fmt.Sprintf("%v", reservationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1845,7 +1845,7 @@ func (a *ReservationApiService) OperationReservationPostaccessrights(ctx context
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &resourceAccessRight
+	localVarPostBody = &reservationPostAccessrights
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1938,7 +1938,7 @@ Returns a single reservation
  * @param reservationId ID of reservation
 @return Reservation
 */
-func (a *ReservationApiService) ShowReservation(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationShow(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -2063,16 +2063,10 @@ ReservationApiService Update
 Returns modified reservation
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param reservationId ID of reservation
- * @param optional nil or *UpdateReservationOpts - Optional Parameters:
- * @param "InlineObject22" (optional.Interface of InlineObject22) - 
+ * @param reservationUpdate
 @return Reservation
 */
-
-type UpdateReservationOpts struct {
-	InlineObject22 optional.Interface
-}
-
-func (a *ReservationApiService) UpdateReservation(ctx context.Context, reservationId string, localVarOptionals *UpdateReservationOpts) (Reservation, *http.Response, error) {
+func (a *ReservationApiService) ReservationUpdate(ctx context.Context, reservationId string, reservationUpdate ReservationUpdate) (Reservation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -2108,14 +2102,7 @@ func (a *ReservationApiService) UpdateReservation(ctx context.Context, reservati
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	if localVarOptionals != nil && localVarOptionals.InlineObject22.IsSet() {
-		localVarOptionalInlineObject22, localVarOptionalInlineObject22ok := localVarOptionals.InlineObject22.Value().(InlineObject22)
-		if !localVarOptionalInlineObject22ok {
-			return localVarReturnValue, nil, reportError("inlineObject22 should be InlineObject22")
-		}
-		localVarPostBody = &localVarOptionalInlineObject22
-	}
-
+	localVarPostBody = &reservationUpdate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

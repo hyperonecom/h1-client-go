@@ -4,27 +4,27 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionReservationAssign**](ReservationApi.md#ActionReservationAssign) | **Post** /reservation/{reservationId}/actions/assign | /actions/assign
-[**ActionReservationExtend**](ReservationApi.md#ActionReservationExtend) | **Post** /reservation/{reservationId}/actions/extend | /actions/extend
-[**ActionReservationUnassign**](ReservationApi.md#ActionReservationUnassign) | **Post** /reservation/{reservationId}/actions/unassign | /actions/unassign
-[**CreateReservation**](ReservationApi.md#CreateReservation) | **Post** /reservation | Create
-[**DeleteReservation**](ReservationApi.md#DeleteReservation) | **Delete** /reservation/{reservationId} | Delete
-[**ListReservation**](ReservationApi.md#ListReservation) | **Get** /reservation | List
-[**OperationReservationDeleteaccessrightsIdentity**](ReservationApi.md#OperationReservationDeleteaccessrightsIdentity) | **Delete** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
-[**OperationReservationDeletetagKey**](ReservationApi.md#OperationReservationDeletetagKey) | **Delete** /reservation/{reservationId}/tag/{key} | /tag/:key
-[**OperationReservationGetservicesServiceId**](ReservationApi.md#OperationReservationGetservicesServiceId) | **Get** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
-[**OperationReservationGettag**](ReservationApi.md#OperationReservationGettag) | **Get** /reservation/{reservationId}/tag/ | /tag/
-[**OperationReservationListaccessrights**](ReservationApi.md#OperationReservationListaccessrights) | **Get** /reservation/{reservationId}/accessrights/ | /accessrights/
-[**OperationReservationListqueue**](ReservationApi.md#OperationReservationListqueue) | **Get** /reservation/{reservationId}/queue/ | /queue/
-[**OperationReservationListservices**](ReservationApi.md#OperationReservationListservices) | **Get** /reservation/{reservationId}/services/ | /services/
-[**OperationReservationPatchtag**](ReservationApi.md#OperationReservationPatchtag) | **Patch** /reservation/{reservationId}/tag/ | /tag/
-[**OperationReservationPostaccessrights**](ReservationApi.md#OperationReservationPostaccessrights) | **Post** /reservation/{reservationId}/accessrights/ | /accessrights/
-[**ShowReservation**](ReservationApi.md#ShowReservation) | **Get** /reservation/{reservationId} | Get
-[**UpdateReservation**](ReservationApi.md#UpdateReservation) | **Patch** /reservation/{reservationId} | Update
+[**ReservationActionAssign**](ReservationApi.md#ReservationActionAssign) | **Post** /reservation/{reservationId}/actions/assign | /actions/assign
+[**ReservationActionExtend**](ReservationApi.md#ReservationActionExtend) | **Post** /reservation/{reservationId}/actions/extend | /actions/extend
+[**ReservationActionUnassign**](ReservationApi.md#ReservationActionUnassign) | **Post** /reservation/{reservationId}/actions/unassign | /actions/unassign
+[**ReservationCreate**](ReservationApi.md#ReservationCreate) | **Post** /reservation | Create
+[**ReservationDelete**](ReservationApi.md#ReservationDelete) | **Delete** /reservation/{reservationId} | Delete
+[**ReservationDeleteAccessrightsIdentity**](ReservationApi.md#ReservationDeleteAccessrightsIdentity) | **Delete** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
+[**ReservationDeleteTagKey**](ReservationApi.md#ReservationDeleteTagKey) | **Delete** /reservation/{reservationId}/tag/{key} | /tag/:key
+[**ReservationGetServicesServiceId**](ReservationApi.md#ReservationGetServicesServiceId) | **Get** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
+[**ReservationGetTag**](ReservationApi.md#ReservationGetTag) | **Get** /reservation/{reservationId}/tag | /tag
+[**ReservationList**](ReservationApi.md#ReservationList) | **Get** /reservation | List
+[**ReservationListAccessrights**](ReservationApi.md#ReservationListAccessrights) | **Get** /reservation/{reservationId}/accessrights | /accessrights
+[**ReservationListQueue**](ReservationApi.md#ReservationListQueue) | **Get** /reservation/{reservationId}/queue | /queue
+[**ReservationListServices**](ReservationApi.md#ReservationListServices) | **Get** /reservation/{reservationId}/services | /services
+[**ReservationPatchTag**](ReservationApi.md#ReservationPatchTag) | **Patch** /reservation/{reservationId}/tag | /tag
+[**ReservationPostAccessrights**](ReservationApi.md#ReservationPostAccessrights) | **Post** /reservation/{reservationId}/accessrights | /accessrights
+[**ReservationShow**](ReservationApi.md#ReservationShow) | **Get** /reservation/{reservationId} | Get
+[**ReservationUpdate**](ReservationApi.md#ReservationUpdate) | **Patch** /reservation/{reservationId} | Update
 
 
-# **ActionReservationAssign**
-> Reservation ActionReservationAssign(ctx, reservationId)
+# **ReservationActionAssign**
+> Reservation ReservationActionAssign(ctx, reservationId)
 /actions/assign
 
 Action assign
@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionReservationExtend**
-> Reservation ActionReservationExtend(ctx, reservationId)
+# **ReservationActionExtend**
+> Reservation ReservationActionExtend(ctx, reservationId)
 /actions/extend
 
 Action extend
@@ -79,8 +79,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionReservationUnassign**
-> Reservation ActionReservationUnassign(ctx, reservationId)
+# **ReservationActionUnassign**
+> Reservation ReservationActionUnassign(ctx, reservationId)
 /actions/unassign
 
 Action unassign
@@ -107,8 +107,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateReservation**
-> Reservation CreateReservation(ctx, reservationCreate)
+# **ReservationCreate**
+> Reservation ReservationCreate(ctx, reservationCreate)
 Create
 
 Create reservation
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteReservation**
-> DeleteReservation(ctx, reservationId)
+# **ReservationDelete**
+> ReservationDelete(ctx, reservationId)
 Delete
 
 ### Required Parameters
@@ -161,43 +161,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListReservation**
-> []Reservation ListReservation(ctx, optional)
-List
-
-List reservation
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListReservationOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListReservationOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Reservation**](reservation.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationReservationDeleteaccessrightsIdentity**
-> Reservation OperationReservationDeleteaccessrightsIdentity(ctx, reservationId, identity)
+# **ReservationDeleteAccessrightsIdentity**
+> Reservation ReservationDeleteAccessrightsIdentity(ctx, reservationId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -223,8 +188,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationDeletetagKey**
-> map[string]string OperationReservationDeletetagKey(ctx, reservationId, key)
+# **ReservationDeleteTagKey**
+> map[string]interface{} ReservationDeleteTagKey(ctx, reservationId, key)
 /tag/:key
 
 ### Required Parameters
@@ -237,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -250,8 +215,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationGetservicesServiceId**
-> ReservationServices OperationReservationGetservicesServiceId(ctx, reservationId, serviceId)
+# **ReservationGetServicesServiceId**
+> ReservationServices ReservationGetServicesServiceId(ctx, reservationId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -277,9 +242,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationGettag**
-> map[string]string OperationReservationGettag(ctx, reservationId)
-/tag/
+# **ReservationGetTag**
+> map[string]interface{} ReservationGetTag(ctx, reservationId)
+/tag
 
 ### Required Parameters
 
@@ -290,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -303,9 +268,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationListaccessrights**
-> []string OperationReservationListaccessrights(ctx, reservationId)
-/accessrights/
+# **ReservationList**
+> []Reservation ReservationList(ctx, optional)
+List
+
+List reservation
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***ReservationListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a ReservationListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Reservation**](reservation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ReservationListAccessrights**
+> []string ReservationListAccessrights(ctx, reservationId)
+/accessrights
 
 ### Required Parameters
 
@@ -329,9 +329,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationListqueue**
-> []Event OperationReservationListqueue(ctx, reservationId)
-/queue/
+# **ReservationListQueue**
+> []Event ReservationListQueue(ctx, reservationId)
+/queue
 
 ### Required Parameters
 
@@ -355,9 +355,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationListservices**
-> []ReservationServices OperationReservationListservices(ctx, reservationId)
-/services/
+# **ReservationListServices**
+> []ReservationServices ReservationListServices(ctx, reservationId)
+/services
 
 ### Required Parameters
 
@@ -381,9 +381,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationPatchtag**
-> map[string]string OperationReservationPatchtag(ctx, reservationId, requestBody)
-/tag/
+# **ReservationPatchTag**
+> map[string]interface{} ReservationPatchTag(ctx, reservationId, body)
+/tag
 
 ### Required Parameters
 
@@ -391,11 +391,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **reservationId** | **string**| ID of reservation | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -408,9 +408,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationReservationPostaccessrights**
-> string OperationReservationPostaccessrights(ctx, reservationId, resourceAccessRight)
-/accessrights/
+# **ReservationPostAccessrights**
+> string ReservationPostAccessrights(ctx, reservationId, reservationPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **reservationId** | **string**| ID of reservation | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **reservationPostAccessrights** | [**ReservationPostAccessrights**](ReservationPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -435,8 +435,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowReservation**
-> Reservation ShowReservation(ctx, reservationId)
+# **ReservationShow**
+> Reservation ReservationShow(ctx, reservationId)
 Get
 
 Returns a single reservation
@@ -463,8 +463,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateReservation**
-> Reservation UpdateReservation(ctx, reservationId, optional)
+# **ReservationUpdate**
+> Reservation ReservationUpdate(ctx, reservationId, reservationUpdate)
 Update
 
 Returns modified reservation
@@ -475,15 +475,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **reservationId** | **string**| ID of reservation | 
- **optional** | ***UpdateReservationOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateReservationOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject22** | [**optional.Interface of InlineObject22**](InlineObject22.md)|  | 
+  **reservationUpdate** | [**ReservationUpdate**](ReservationUpdate.md)|  | 
 
 ### Return type
 

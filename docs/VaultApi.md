@@ -4,38 +4,38 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActionVaultResize**](VaultApi.md#ActionVaultResize) | **Post** /vault/{vaultId}/actions/resize | /actions/resize
-[**ActionVaultSnapshot**](VaultApi.md#ActionVaultSnapshot) | **Post** /vault/{vaultId}/actions/snapshot | /actions/snapshot
-[**ActionVaultStart**](VaultApi.md#ActionVaultStart) | **Post** /vault/{vaultId}/actions/start | /actions/start
-[**ActionVaultStop**](VaultApi.md#ActionVaultStop) | **Post** /vault/{vaultId}/actions/stop | /actions/stop
-[**CreateVault**](VaultApi.md#CreateVault) | **Post** /vault | Create
-[**DeleteVault**](VaultApi.md#DeleteVault) | **Delete** /vault/{vaultId} | Delete
-[**ListVault**](VaultApi.md#ListVault) | **Get** /vault | List
-[**OperationVaultDeleteaccessrightsIdentity**](VaultApi.md#OperationVaultDeleteaccessrightsIdentity) | **Delete** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
-[**OperationVaultDeletecredentialcertificateId**](VaultApi.md#OperationVaultDeletecredentialcertificateId) | **Delete** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationVaultDeletecredentialpasswordId**](VaultApi.md#OperationVaultDeletecredentialpasswordId) | **Delete** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**OperationVaultDeletetagKey**](VaultApi.md#OperationVaultDeletetagKey) | **Delete** /vault/{vaultId}/tag/{key} | /tag/:key
-[**OperationVaultGetcredentialcertificateId**](VaultApi.md#OperationVaultGetcredentialcertificateId) | **Get** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationVaultGetcredentialpasswordId**](VaultApi.md#OperationVaultGetcredentialpasswordId) | **Get** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**OperationVaultGetservicesServiceId**](VaultApi.md#OperationVaultGetservicesServiceId) | **Get** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
-[**OperationVaultGettag**](VaultApi.md#OperationVaultGettag) | **Get** /vault/{vaultId}/tag/ | /tag/
-[**OperationVaultListaccessrights**](VaultApi.md#OperationVaultListaccessrights) | **Get** /vault/{vaultId}/accessrights/ | /accessrights/
-[**OperationVaultListcredentialcertificate**](VaultApi.md#OperationVaultListcredentialcertificate) | **Get** /vault/{vaultId}/credential/certificate | /credential/certificate
-[**OperationVaultListcredentialpassword**](VaultApi.md#OperationVaultListcredentialpassword) | **Get** /vault/{vaultId}/credential/password | /credential/password
-[**OperationVaultListqueue**](VaultApi.md#OperationVaultListqueue) | **Get** /vault/{vaultId}/queue/ | /queue/
-[**OperationVaultListservices**](VaultApi.md#OperationVaultListservices) | **Get** /vault/{vaultId}/services/ | /services/
-[**OperationVaultPatchcredentialcertificateId**](VaultApi.md#OperationVaultPatchcredentialcertificateId) | **Patch** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**OperationVaultPatchcredentialpasswordId**](VaultApi.md#OperationVaultPatchcredentialpasswordId) | **Patch** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**OperationVaultPatchtag**](VaultApi.md#OperationVaultPatchtag) | **Patch** /vault/{vaultId}/tag/ | /tag/
-[**OperationVaultPostaccessrights**](VaultApi.md#OperationVaultPostaccessrights) | **Post** /vault/{vaultId}/accessrights/ | /accessrights/
-[**OperationVaultPostcredentialcertificate**](VaultApi.md#OperationVaultPostcredentialcertificate) | **Post** /vault/{vaultId}/credential/certificate | /credential/certificate
-[**OperationVaultPostcredentialpassword**](VaultApi.md#OperationVaultPostcredentialpassword) | **Post** /vault/{vaultId}/credential/password | /credential/password
-[**ShowVault**](VaultApi.md#ShowVault) | **Get** /vault/{vaultId} | Get
-[**UpdateVault**](VaultApi.md#UpdateVault) | **Patch** /vault/{vaultId} | Update
+[**VaultActionResize**](VaultApi.md#VaultActionResize) | **Post** /vault/{vaultId}/actions/resize | /actions/resize
+[**VaultActionSnapshot**](VaultApi.md#VaultActionSnapshot) | **Post** /vault/{vaultId}/actions/snapshot | /actions/snapshot
+[**VaultActionStart**](VaultApi.md#VaultActionStart) | **Post** /vault/{vaultId}/actions/start | /actions/start
+[**VaultActionStop**](VaultApi.md#VaultActionStop) | **Post** /vault/{vaultId}/actions/stop | /actions/stop
+[**VaultCreate**](VaultApi.md#VaultCreate) | **Post** /vault | Create
+[**VaultDelete**](VaultApi.md#VaultDelete) | **Delete** /vault/{vaultId} | Delete
+[**VaultDeleteAccessrightsIdentity**](VaultApi.md#VaultDeleteAccessrightsIdentity) | **Delete** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
+[**VaultDeleteCredentialcertificateId**](VaultApi.md#VaultDeleteCredentialcertificateId) | **Delete** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**VaultDeleteCredentialpasswordId**](VaultApi.md#VaultDeleteCredentialpasswordId) | **Delete** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**VaultDeleteTagKey**](VaultApi.md#VaultDeleteTagKey) | **Delete** /vault/{vaultId}/tag/{key} | /tag/:key
+[**VaultGetCredentialcertificateId**](VaultApi.md#VaultGetCredentialcertificateId) | **Get** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**VaultGetCredentialpasswordId**](VaultApi.md#VaultGetCredentialpasswordId) | **Get** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**VaultGetServicesServiceId**](VaultApi.md#VaultGetServicesServiceId) | **Get** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
+[**VaultGetTag**](VaultApi.md#VaultGetTag) | **Get** /vault/{vaultId}/tag | /tag
+[**VaultList**](VaultApi.md#VaultList) | **Get** /vault | List
+[**VaultListAccessrights**](VaultApi.md#VaultListAccessrights) | **Get** /vault/{vaultId}/accessrights | /accessrights
+[**VaultListCredentialcertificate**](VaultApi.md#VaultListCredentialcertificate) | **Get** /vault/{vaultId}/credential/certificate | /credential/certificate
+[**VaultListCredentialpassword**](VaultApi.md#VaultListCredentialpassword) | **Get** /vault/{vaultId}/credential/password | /credential/password
+[**VaultListQueue**](VaultApi.md#VaultListQueue) | **Get** /vault/{vaultId}/queue | /queue
+[**VaultListServices**](VaultApi.md#VaultListServices) | **Get** /vault/{vaultId}/services | /services
+[**VaultPatchCredentialcertificateId**](VaultApi.md#VaultPatchCredentialcertificateId) | **Patch** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**VaultPatchCredentialpasswordId**](VaultApi.md#VaultPatchCredentialpasswordId) | **Patch** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**VaultPatchTag**](VaultApi.md#VaultPatchTag) | **Patch** /vault/{vaultId}/tag | /tag
+[**VaultPostAccessrights**](VaultApi.md#VaultPostAccessrights) | **Post** /vault/{vaultId}/accessrights | /accessrights
+[**VaultPostCredentialcertificate**](VaultApi.md#VaultPostCredentialcertificate) | **Post** /vault/{vaultId}/credential/certificate | /credential/certificate
+[**VaultPostCredentialpassword**](VaultApi.md#VaultPostCredentialpassword) | **Post** /vault/{vaultId}/credential/password | /credential/password
+[**VaultShow**](VaultApi.md#VaultShow) | **Get** /vault/{vaultId} | Get
+[**VaultUpdate**](VaultApi.md#VaultUpdate) | **Patch** /vault/{vaultId} | Update
 
 
-# **ActionVaultResize**
-> Vault ActionVaultResize(ctx, vaultId)
+# **VaultActionResize**
+> Vault VaultActionResize(ctx, vaultId)
 /actions/resize
 
 Action resize
@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVaultSnapshot**
-> Vault ActionVaultSnapshot(ctx, vaultId)
+# **VaultActionSnapshot**
+> Vault VaultActionSnapshot(ctx, vaultId)
 /actions/snapshot
 
 Action snapshot
@@ -90,8 +90,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVaultStart**
-> Vault ActionVaultStart(ctx, vaultId)
+# **VaultActionStart**
+> Vault VaultActionStart(ctx, vaultId)
 /actions/start
 
 Action start
@@ -118,8 +118,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ActionVaultStop**
-> Vault ActionVaultStop(ctx, vaultId)
+# **VaultActionStop**
+> Vault VaultActionStop(ctx, vaultId)
 /actions/stop
 
 Action stop
@@ -146,8 +146,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **CreateVault**
-> Vault CreateVault(ctx, vaultCreate)
+# **VaultCreate**
+> Vault VaultCreate(ctx, vaultCreate)
 Create
 
 Create vault
@@ -174,8 +174,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeleteVault**
-> DeleteVault(ctx, vaultId)
+# **VaultDelete**
+> VaultDelete(ctx, vaultId)
 Delete
 
 ### Required Parameters
@@ -200,43 +200,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ListVault**
-> []Vault ListVault(ctx, optional)
-List
-
-List vault
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ListVaultOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a ListVaultOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **optional.String**| Filter by name | 
-
-### Return type
-
-[**[]Vault**](vault.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OperationVaultDeleteaccessrightsIdentity**
-> Vault OperationVaultDeleteaccessrightsIdentity(ctx, vaultId, identity)
+# **VaultDeleteAccessrightsIdentity**
+> Vault VaultDeleteAccessrightsIdentity(ctx, vaultId, identity)
 /accessrights/:identity
 
 ### Required Parameters
@@ -262,8 +227,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultDeletecredentialcertificateId**
-> Vault OperationVaultDeletecredentialcertificateId(ctx, vaultId, id)
+# **VaultDeleteCredentialcertificateId**
+> Vault VaultDeleteCredentialcertificateId(ctx, vaultId, id)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -289,8 +254,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultDeletecredentialpasswordId**
-> Vault OperationVaultDeletecredentialpasswordId(ctx, vaultId, id)
+# **VaultDeleteCredentialpasswordId**
+> Vault VaultDeleteCredentialpasswordId(ctx, vaultId, id)
 /credential/password/:id
 
 ### Required Parameters
@@ -316,8 +281,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultDeletetagKey**
-> map[string]string OperationVaultDeletetagKey(ctx, vaultId, key)
+# **VaultDeleteTagKey**
+> map[string]interface{} VaultDeleteTagKey(ctx, vaultId, key)
 /tag/:key
 
 ### Required Parameters
@@ -330,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -343,8 +308,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultGetcredentialcertificateId**
-> CredentialCertificate OperationVaultGetcredentialcertificateId(ctx, vaultId, id)
+# **VaultGetCredentialcertificateId**
+> CredentialCertificate VaultGetCredentialcertificateId(ctx, vaultId, id)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -370,8 +335,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultGetcredentialpasswordId**
-> CredentialPassword OperationVaultGetcredentialpasswordId(ctx, vaultId, id)
+# **VaultGetCredentialpasswordId**
+> CredentialPassword VaultGetCredentialpasswordId(ctx, vaultId, id)
 /credential/password/:id
 
 ### Required Parameters
@@ -397,8 +362,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultGetservicesServiceId**
-> VaultServices OperationVaultGetservicesServiceId(ctx, vaultId, serviceId)
+# **VaultGetServicesServiceId**
+> VaultServices VaultGetServicesServiceId(ctx, vaultId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
@@ -424,9 +389,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultGettag**
-> map[string]string OperationVaultGettag(ctx, vaultId)
-/tag/
+# **VaultGetTag**
+> map[string]interface{} VaultGetTag(ctx, vaultId)
+/tag
 
 ### Required Parameters
 
@@ -437,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -450,9 +415,44 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultListaccessrights**
-> []string OperationVaultListaccessrights(ctx, vaultId)
-/accessrights/
+# **VaultList**
+> []Vault VaultList(ctx, optional)
+List
+
+List vault
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***VaultListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a VaultListOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **optional.String**| Filter by name | 
+
+### Return type
+
+[**[]Vault**](vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **VaultListAccessrights**
+> []string VaultListAccessrights(ctx, vaultId)
+/accessrights
 
 ### Required Parameters
 
@@ -476,8 +476,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultListcredentialcertificate**
-> []CredentialCertificate OperationVaultListcredentialcertificate(ctx, vaultId)
+# **VaultListCredentialcertificate**
+> []CredentialCertificate VaultListCredentialcertificate(ctx, vaultId)
 /credential/certificate
 
 ### Required Parameters
@@ -502,8 +502,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultListcredentialpassword**
-> []CredentialPassword OperationVaultListcredentialpassword(ctx, vaultId)
+# **VaultListCredentialpassword**
+> []CredentialPassword VaultListCredentialpassword(ctx, vaultId)
 /credential/password
 
 ### Required Parameters
@@ -528,9 +528,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultListqueue**
-> []Event OperationVaultListqueue(ctx, vaultId)
-/queue/
+# **VaultListQueue**
+> []Event VaultListQueue(ctx, vaultId)
+/queue
 
 ### Required Parameters
 
@@ -554,9 +554,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultListservices**
-> []VaultServices OperationVaultListservices(ctx, vaultId)
-/services/
+# **VaultListServices**
+> []VaultServices VaultListServices(ctx, vaultId)
+/services
 
 ### Required Parameters
 
@@ -580,8 +580,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPatchcredentialcertificateId**
-> CredentialCertificate OperationVaultPatchcredentialcertificateId(ctx, vaultId, id, optional)
+# **VaultPatchCredentialcertificateId**
+> CredentialCertificate VaultPatchCredentialcertificateId(ctx, vaultId, id, vaultPatchCredentialcertificateId)
 /credential/certificate/:id
 
 ### Required Parameters
@@ -591,16 +591,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
   **id** | **string**| id | 
- **optional** | ***OperationVaultPatchcredentialcertificateIdOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVaultPatchcredentialcertificateIdOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **inlineObject20** | [**optional.Interface of InlineObject20**](InlineObject20.md)|  | 
+  **vaultPatchCredentialcertificateId** | [**VaultPatchCredentialcertificateId**](VaultPatchCredentialcertificateId.md)|  | 
 
 ### Return type
 
@@ -617,8 +608,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPatchcredentialpasswordId**
-> CredentialPassword OperationVaultPatchcredentialpasswordId(ctx, vaultId, id, optional)
+# **VaultPatchCredentialpasswordId**
+> CredentialPassword VaultPatchCredentialpasswordId(ctx, vaultId, id, vaultPatchCredentialpasswordId)
 /credential/password/:id
 
 ### Required Parameters
@@ -628,16 +619,7 @@ Name | Type | Description  | Notes
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
   **id** | **string**| id | 
- **optional** | ***OperationVaultPatchcredentialpasswordIdOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVaultPatchcredentialpasswordIdOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **inlineObject18** | [**optional.Interface of InlineObject18**](InlineObject18.md)|  | 
+  **vaultPatchCredentialpasswordId** | [**VaultPatchCredentialpasswordId**](VaultPatchCredentialpasswordId.md)|  | 
 
 ### Return type
 
@@ -654,9 +636,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPatchtag**
-> map[string]string OperationVaultPatchtag(ctx, vaultId, requestBody)
-/tag/
+# **VaultPatchTag**
+> map[string]interface{} VaultPatchTag(ctx, vaultId, body)
+/tag
 
 ### Required Parameters
 
@@ -664,11 +646,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+  **body** | **map[string]interface{}**|  | 
 
 ### Return type
 
-**map[string]string**
+[**map[string]interface{}**](map[string]interface{}.md)
 
 ### Authorization
 
@@ -681,9 +663,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPostaccessrights**
-> string OperationVaultPostaccessrights(ctx, vaultId, resourceAccessRight)
-/accessrights/
+# **VaultPostAccessrights**
+> string VaultPostAccessrights(ctx, vaultId, vaultPostAccessrights)
+/accessrights
 
 ### Required Parameters
 
@@ -691,7 +673,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
-  **resourceAccessRight** | [**ResourceAccessRight**](ResourceAccessRight.md)|  | 
+  **vaultPostAccessrights** | [**VaultPostAccessrights**](VaultPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -708,8 +690,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPostcredentialcertificate**
-> CredentialCertificate OperationVaultPostcredentialcertificate(ctx, vaultId, optional)
+# **VaultPostCredentialcertificate**
+> CredentialCertificate VaultPostCredentialcertificate(ctx, vaultId, vaultPostCredentialcertificate)
 /credential/certificate
 
 ### Required Parameters
@@ -718,15 +700,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
- **optional** | ***OperationVaultPostcredentialcertificateOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVaultPostcredentialcertificateOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject19** | [**optional.Interface of InlineObject19**](InlineObject19.md)|  | 
+  **vaultPostCredentialcertificate** | [**VaultPostCredentialcertificate**](VaultPostCredentialcertificate.md)|  | 
 
 ### Return type
 
@@ -743,8 +717,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OperationVaultPostcredentialpassword**
-> CredentialPassword OperationVaultPostcredentialpassword(ctx, vaultId, optional)
+# **VaultPostCredentialpassword**
+> CredentialPassword VaultPostCredentialpassword(ctx, vaultId, vaultPostCredentialpassword)
 /credential/password
 
 ### Required Parameters
@@ -753,15 +727,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
- **optional** | ***OperationVaultPostcredentialpasswordOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a OperationVaultPostcredentialpasswordOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject17** | [**optional.Interface of InlineObject17**](InlineObject17.md)|  | 
+  **vaultPostCredentialpassword** | [**VaultPostCredentialpassword**](VaultPostCredentialpassword.md)|  | 
 
 ### Return type
 
@@ -778,8 +744,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ShowVault**
-> Vault ShowVault(ctx, vaultId)
+# **VaultShow**
+> Vault VaultShow(ctx, vaultId)
 Get
 
 Returns a single vault
@@ -806,8 +772,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UpdateVault**
-> Vault UpdateVault(ctx, vaultId, optional)
+# **VaultUpdate**
+> Vault VaultUpdate(ctx, vaultId, vaultUpdate)
 Update
 
 Returns modified vault
@@ -818,15 +784,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
- **optional** | ***UpdateVaultOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a pointer to a UpdateVaultOpts struct
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **inlineObject16** | [**optional.Interface of InlineObject16**](InlineObject16.md)|  | 
+  **vaultUpdate** | [**VaultUpdate**](VaultUpdate.md)|  | 
 
 ### Return type
 
