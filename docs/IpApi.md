@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **IpActionAllocate**
-> Ip IpActionAllocate(ctx, ipId)
+> Ip IpActionAllocate(ctx, ipId, ipActionAllocate)
 /actions/allocate
 
 Action allocate
@@ -37,6 +37,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
+  **ipActionAllocate** | [**IpActionAllocate**](IpActionAllocate.md)|  | 
 
 ### Return type
 
@@ -48,13 +49,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IpActionAssociate**
-> Ip IpActionAssociate(ctx, ipId)
+> Ip IpActionAssociate(ctx, ipId, ipActionAssociate)
 /actions/associate
 
 Action associate
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
+  **ipActionAssociate** | [**IpActionAssociate**](IpActionAssociate.md)|  | 
 
 ### Return type
 
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

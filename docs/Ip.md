@@ -19,11 +19,11 @@ Name | Type | Description | Notes
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
 **Address** | **string** |  | [optional] 
-**Mac** | [**NetgwPrimaryIpMac**](netgw_primaryIP_mac.md) |  | [optional] 
+**Mac** | [**IpMac**](ip_mac.md) |  | [optional] 
 **Network** | **string** |  | [optional] 
 **PtrRecord** | **string** |  | [optional] 
 **Persistent** | **string** |  | [optional] 
-**Associated** | [**NetgwPrimaryIpAssociated**](netgw_primaryIP_associated.md) |  | [optional] 
+**Associated** | [**IpAssociated**](ip_associated.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

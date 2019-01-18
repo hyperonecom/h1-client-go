@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Organisation** | **string** |  | [optional] 
 **Billing** | [**ProjectBilling**](project_billing.md) |  | [optional] 
 **Invoices** | [**ProjectInvoices**](project_invoices.md) |  | [optional] 
-**Payments** | [**ProjectPayments**](project_payments.md) |  | [optional] 
+**Payments** | [**Payment**](payment.md) |  | [optional] 
 **Verified** | **string** |  | [optional] 
 **Active** | **bool** |  | [optional] 
 **Limit** | [**ProjectLimit**](project_limit.md) |  | [optional] 

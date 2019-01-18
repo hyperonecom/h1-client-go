@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **ReservationActionAssign**
-> Reservation ReservationActionAssign(ctx, reservationId)
+> Reservation ReservationActionAssign(ctx, reservationId, reservationActionAssign)
 /actions/assign
 
 Action assign
@@ -35,6 +35,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **reservationId** | **string**| ID of reservation | 
+  **reservationActionAssign** | [**ReservationActionAssign**](ReservationActionAssign.md)|  | 
 
 ### Return type
 
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

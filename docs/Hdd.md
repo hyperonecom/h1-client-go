@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaximumIOPS** | **string** |  | [optional] 
+**MaximumIOPS** | **float32** |  | [optional] 
 **ControllerType** | **string** |  | [optional] 
 **ControllerNumber** | **string** |  | [optional] 
-**ControllerLocation** | **string** |  | [optional] 
+**ControllerLocation** | **float32** |  | [optional] 
 **Disk** | [**HddDisk**](hdd_disk.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
 

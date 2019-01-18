@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **DiskActionResize**
-> Disk DiskActionResize(ctx, diskId)
+> Disk DiskActionResize(ctx, diskId, diskActionResize)
 /actions/resize
 
 Action resize
@@ -34,6 +34,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
+  **diskActionResize** | [**DiskActionResize**](DiskActionResize.md)|  | 
 
 ### Return type
 
@@ -45,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

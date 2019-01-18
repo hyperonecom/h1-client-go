@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **VaultActionResize**
-> Vault VaultActionResize(ctx, vaultId)
+> Vault VaultActionResize(ctx, vaultId, vaultActionResize)
 /actions/resize
 
 Action resize
@@ -46,6 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
+  **vaultActionResize** | [**VaultActionResize**](VaultActionResize.md)|  | 
 
 ### Return type
 
@@ -57,13 +58,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VaultActionSnapshot**
-> Vault VaultActionSnapshot(ctx, vaultId)
+> Vault VaultActionSnapshot(ctx, vaultId, vaultActionSnapshot)
 /actions/snapshot
 
 Action snapshot
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vaultId** | **string**| ID of vault | 
+  **vaultActionSnapshot** | [**VaultActionSnapshot**](VaultActionSnapshot.md)|  | 
 
 ### Return type
 
@@ -85,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

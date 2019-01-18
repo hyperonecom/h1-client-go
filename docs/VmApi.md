@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**VmDelete**](VmApi.md#VmDelete) | **Delete** /vm/{vmId} | Delete
 [**VmDeleteAccessrightsIdentity**](VmApi.md#VmDeleteAccessrightsIdentity) | **Delete** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
 [**VmDeleteHddDiskId**](VmApi.md#VmDeleteHddDiskId) | **Delete** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
-[**VmDeleteNetadp**](VmApi.md#VmDeleteNetadp) | **Delete** /vm/{vmId}/netadp | /netadp
+[**VmDeleteNetadpNetadpId**](VmApi.md#VmDeleteNetadpNetadpId) | **Delete** /vm/{vmId}/netadp/{netadpId} | /netadp/:netadpId
 [**VmDeleteTagKey**](VmApi.md#VmDeleteTagKey) | **Delete** /vm/{vmId}/tag/{key} | /tag/:key
 [**VmGetServicesServiceId**](VmApi.md#VmGetServicesServiceId) | **Get** /vm/{vmId}/services/{serviceId} | /services/:serviceId
 [**VmGetTag**](VmApi.md#VmGetTag) | **Get** /vm/{vmId}/tag | /tag
@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **VmActionFlavour**
-> Vm VmActionFlavour(ctx, vmId)
+> Vm VmActionFlavour(ctx, vmId, vmActionFlavour)
 /actions/flavour
 
 Action flavour
@@ -46,6 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
+  **vmActionFlavour** | [**VmActionFlavour**](VmActionFlavour.md)|  | 
 
 ### Return type
 
@@ -57,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -121,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VmActionRename**
-> Vm VmActionRename(ctx, vmId)
+> Vm VmActionRename(ctx, vmId, vmActionRename)
 /actions/rename
 
 Action rename
@@ -132,6 +133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
+  **vmActionRename** | [**VmActionRename**](VmActionRename.md)|  | 
 
 ### Return type
 
@@ -143,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -368,9 +370,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **VmDeleteNetadp**
-> Vm VmDeleteNetadp(ctx, vmId)
-/netadp
+# **VmDeleteNetadpNetadpId**
+> Vm VmDeleteNetadpNetadpId(ctx, vmId, netadpId)
+/netadp/:netadpId
 
 ### Required Parameters
 
@@ -378,6 +380,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmId** | **string**| ID of vm | 
+  **netadpId** | **string**| netadpId | 
 
 ### Return type
 

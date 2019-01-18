@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **Project** | **string** |  | [optional] 
 **Macaddress** | **string** |  | [optional] 
 **Speed** | **float32** |  | [optional] 
-**Network** | [**NetgwNetwork**](netgw_network.md) |  | [optional] 
-**Ip** | [**NetgwPrimaryIp**](netgw_primaryIP.md) |  | [optional] 
+**Network** | [**Network**](network.md) |  | [optional] 
+**Ip** | [**Ip**](ip.md) |  | [optional] 
 **Assigned** | [**NetadpAssigned**](netadp_assigned.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

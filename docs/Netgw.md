@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
-**PrimaryIP** | [**NetgwPrimaryIp**](netgw_primaryIP.md) |  | [optional] 
-**Network** | [**NetgwNetwork**](netgw_network.md) |  | [optional] 
+**PrimaryIP** | [**Ip**](ip.md) |  | [optional] 
+**Network** | [**Network**](network.md) |  | [optional] 
 **Vpn** | [**NetgwVpn**](netgw_vpn.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
