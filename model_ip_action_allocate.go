@@ -10,5 +10,5 @@
 package openapi
 
 type IpActionAllocate struct {
-	Service string `json:"service"`
+	Service string `json:"service,omitempty"`
 }

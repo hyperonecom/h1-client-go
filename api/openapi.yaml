@@ -12298,10 +12298,9 @@ components:
         tag:
           type: object
         service:
+          default: 5bacaf7202deee0c100eda3b
           format: ObjectId
           type: string
-      required:
-      - service
       type: object
     firewall_update:
       properties:
@@ -12996,6 +12995,7 @@ components:
         replica:
           type: string
         service:
+          default: 564639bc052c084e2f2e3266
           format: ObjectId
           type: string
         description:
@@ -13004,7 +13004,6 @@ components:
           type: object
       required:
       - name
-      - service
       type: object
     image_update:
       properties:
@@ -13370,6 +13369,7 @@ components:
         source:
           type: string
         service:
+          default: 588890c1453a323588a27734
           format: ObjectId
           type: string
         cloud:
@@ -13380,7 +13380,6 @@ components:
           type: object
       required:
       - name
-      - service
       type: object
     iso_update:
       properties:
@@ -13642,14 +13641,13 @@ components:
     vm_action_image:
       properties:
         service:
+          default: 564639bc052c084e2f2e3266
           format: ObjectId
           type: string
         description:
           type: string
         name:
           type: string
-      required:
-      - service
       type: object
     vm_action_flavour:
       properties:
@@ -13844,12 +13842,11 @@ components:
     ip_create:
       properties:
         service:
+          default: 5721c6f59ce9da3f72e30fd1
           format: ObjectId
           type: string
         tag:
           type: object
-      required:
-      - service
       type: object
     ip_update:
       properties:
@@ -13859,10 +13856,9 @@ components:
     ip_action_allocate:
       properties:
         service:
+          default: 5721c6f59ce9da3f72e30fd1
           format: ObjectId
           type: string
-      required:
-      - service
       type: object
     ip_action_associate:
       properties:
@@ -14296,6 +14292,7 @@ components:
         size:
           type: number
         service:
+          default: 5a0332c4eb8f4ed95c206a12
           format: ObjectId
           type: string
         credential:
@@ -14306,7 +14303,6 @@ components:
           type: object
       required:
       - name
-      - service
       - size
       type: object
     vault_update:
@@ -14322,10 +14318,9 @@ components:
     vault_action_snapshot:
       properties:
         service:
+          default: 5badbeb585f66b3d085727eb
           format: ObjectId
           type: string
-      required:
-      - service
       type: object
     vault.accessRights:
       type: string
@@ -14505,6 +14500,7 @@ components:
         vault:
           type: string
         service:
+          default: 5badbeb585f66b3d085727eb
           format: ObjectId
           type: string
         name:
@@ -14513,7 +14509,6 @@ components:
           type: object
       required:
       - name
-      - service
       - vault
       type: object
     snapshot_update:
@@ -14837,6 +14832,7 @@ components:
         name:
           type: string
         service:
+          default: 5b4e074d1d34e82848ce7499
           format: ObjectId
           type: string
         credential:
@@ -14847,7 +14843,6 @@ components:
           type: object
       required:
       - name
-      - service
       type: object
     logArchive_update:
       properties:
@@ -15157,12 +15152,11 @@ components:
     replica_action_image:
       properties:
         service:
+          default: 564639bc052c084e2f2e3266
           format: ObjectId
           type: string
         description:
           type: string
-      required:
-      - service
       type: object
     replica.accessRights:
       type: string

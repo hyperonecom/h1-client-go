@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Vm** | **string** |  | [optional] 
 **Replica** | **string** |  | [optional] 
-**Service** | **string** |  | 
+**Service** | **string** |  | [optional] [default to 564639bc052c084e2f2e3266]
 **Description** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

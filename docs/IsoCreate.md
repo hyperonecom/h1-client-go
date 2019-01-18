@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Size** | **float32** |  | [optional] 
 **Source** | **string** |  | [optional] 
-**Service** | **string** |  | 
+**Service** | **string** |  | [optional] [default to 588890c1453a323588a27734]
 **Cloud** | **string** |  | [optional] 
 **Metadata** | [**DiskCreateMetadata**](disk_create_metadata.md) |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 

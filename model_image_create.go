@@ -13,7 +13,7 @@ type ImageCreate struct {
 	Name string `json:"name"`
 	Vm string `json:"vm,omitempty"`
 	Replica string `json:"replica,omitempty"`
-	Service string `json:"service"`
+	Service string `json:"service,omitempty"`
 	Description string `json:"description,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }
