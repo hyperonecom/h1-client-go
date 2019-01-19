@@ -9,6 +9,7 @@
 
 package openapi
 
-type VmhostUpdate struct {
-	EnabledServices []string `json:"enabledServices,omitempty"`
+type ImageDisk struct {
+	Id string `json:"_id,omitempty"`
+	Name string `json:"name,omitempty"`
 }

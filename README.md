@@ -389,9 +389,10 @@ Class | Method | HTTP request | Description
  - [HddDisk](docs/HddDisk.md)
  - [Image](docs/Image.md)
  - [ImageActionTransfer](docs/ImageActionTransfer.md)
+ - [ImageAttachedOn](docs/ImageAttachedOn.md)
  - [ImageCreate](docs/ImageCreate.md)
+ - [ImageDisk](docs/ImageDisk.md)
  - [ImageDisks](docs/ImageDisks.md)
- - [ImageDisksDisk](docs/ImageDisksDisk.md)
  - [ImagePostAccessrights](docs/ImagePostAccessrights.md)
  - [ImageServices](docs/ImageServices.md)
  - [ImageUpdate](docs/ImageUpdate.md)
@@ -537,7 +538,6 @@ Class | Method | HTTP request | Description
  - [VmhostPostAccessrights](docs/VmhostPostAccessrights.md)
  - [VmhostServices](docs/VmhostServices.md)
  - [VmhostUpdate](docs/VmhostUpdate.md)
- - [VmhostUpdateEnabledServices](docs/VmhostUpdateEnabledServices.md)
 
 
 ## Documentation For Authorization

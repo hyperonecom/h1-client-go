@@ -12871,12 +12871,26 @@ components:
       example:
         flavour: flavour
         disks:
-          attachedOn: attachedOn
+        - attachedOn:
+            controllerType: controllerType
+            controllerNumber: 5.962133916683182377482808078639209270477294921875
+            controllerLocation: 1.46581298050294517310021547018550336360931396484375
           disk:
             name: name
             _id: _id
-          size: size
-          fileSize: fileSize
+          size: 0.80082819046101150206595775671303272247314453125
+          fileSize: 6.02745618307040320615897144307382404804229736328125
+          downloadUrl: downloadUrl
+          type: type
+        - attachedOn:
+            controllerType: controllerType
+            controllerNumber: 5.962133916683182377482808078639209270477294921875
+            controllerLocation: 1.46581298050294517310021547018550336360931396484375
+          disk:
+            name: name
+            _id: _id
+          size: 0.80082819046101150206595775671303272247314453125
+          fileSize: 6.02745618307040320615897144307382404804229736328125
           downloadUrl: downloadUrl
           type: type
         created: true
@@ -12900,7 +12914,7 @@ components:
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
-        fileSize: 0.80082819046101150206595775671303272247314453125
+        fileSize: 5.63737665663332876420099637471139430999755859375
         vm:
           flavour: flavour
           name: name
@@ -12978,7 +12992,9 @@ components:
           format: ObjectId
           type: string
         disks:
-          $ref: '#/components/schemas/image_disks'
+          items:
+            $ref: '#/components/schemas/image_disks'
+          type: array
         fileSize:
           type: number
         vm:
@@ -14956,7 +14972,10 @@ components:
     vmhost_update:
       properties:
         enabledServices:
-          $ref: '#/components/schemas/vmhost_update_enabledServices'
+          items:
+            format: ObjectId
+            type: string
+          type: array
       type: object
     vmhost_action_moveVM:
       properties:
@@ -15766,7 +15785,23 @@ components:
           type: string
       required:
       - network
-    image_disks_disk:
+    image_attachedOn:
+      example:
+        controllerType: controllerType
+        controllerNumber: 5.962133916683182377482808078639209270477294921875
+        controllerLocation: 1.46581298050294517310021547018550336360931396484375
+      properties:
+        controllerLocation:
+          type: number
+        controllerNumber:
+          type: number
+        controllerType:
+          type: string
+      required:
+      - controllerLocation
+      - controllerNumber
+      - controllerType
+    image_disk:
       example:
         name: name
         _id: _id
@@ -15777,27 +15812,30 @@ components:
           type: string
     image_disks:
       example:
-        attachedOn: attachedOn
+        attachedOn:
+          controllerType: controllerType
+          controllerNumber: 5.962133916683182377482808078639209270477294921875
+          controllerLocation: 1.46581298050294517310021547018550336360931396484375
         disk:
           name: name
           _id: _id
-        size: size
-        fileSize: fileSize
+        size: 0.80082819046101150206595775671303272247314453125
+        fileSize: 6.02745618307040320615897144307382404804229736328125
         downloadUrl: downloadUrl
         type: type
       properties:
         type:
           type: string
         size:
-          type: string
+          type: number
         fileSize:
-          type: string
+          type: number
         attachedOn:
-          type: string
+          $ref: '#/components/schemas/image_attachedOn'
         downloadUrl:
           type: string
         disk:
-          $ref: '#/components/schemas/image_disks_disk'
+          $ref: '#/components/schemas/image_disk'
     image_vm:
       example:
         flavour: flavour
@@ -15935,10 +15973,6 @@ components:
           items:
             $ref: '#/components/schemas/vault_create_credential_certificate'
           type: array
-    vmhost_update_enabledServices:
-      properties:
-        0:
-          type: string
   securitySchemes:
     Session:
       in: header

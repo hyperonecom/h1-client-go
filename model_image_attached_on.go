@@ -9,6 +9,8 @@
 
 package openapi
 
-type VmhostUpdate struct {
-	EnabledServices []string `json:"enabledServices,omitempty"`
+type ImageAttachedOn struct {
+	ControllerLocation float32 `json:"controllerLocation"`
+	ControllerNumber float32 `json:"controllerNumber"`
+	ControllerType string `json:"controllerType"`
 }

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
-**Disks** | [**ImageDisks**](image_disks.md) |  | [optional] 
+**Disks** | [**[]ImageDisks**](image_disks.md) |  | [optional] 
 **FileSize** | **float32** |  | [optional] 
 **Vm** | [**ImageVm**](image_vm.md) |  | [optional] 
 **Description** | **string** |  | [optional] 

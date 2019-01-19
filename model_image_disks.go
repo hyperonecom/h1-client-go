@@ -11,9 +11,9 @@ package openapi
 
 type ImageDisks struct {
 	Type string `json:"type,omitempty"`
-	Size string `json:"size,omitempty"`
-	FileSize string `json:"fileSize,omitempty"`
-	AttachedOn string `json:"attachedOn,omitempty"`
+	Size float32 `json:"size,omitempty"`
+	FileSize float32 `json:"fileSize,omitempty"`
+	AttachedOn ImageAttachedOn `json:"attachedOn,omitempty"`
 	DownloadUrl string `json:"downloadUrl,omitempty"`
-	Disk ImageDisksDisk `json:"disk,omitempty"`
+	Disk ImageDisk `json:"disk,omitempty"`
 }

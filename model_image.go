@@ -28,7 +28,7 @@ type Image struct {
 	State string `json:"state,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Project string `json:"project,omitempty"`
-	Disks ImageDisks `json:"disks,omitempty"`
+	Disks []ImageDisks `json:"disks,omitempty"`
 	FileSize float32 `json:"fileSize,omitempty"`
 	Vm ImageVm `json:"vm,omitempty"`
 	Description string `json:"description,omitempty"`
