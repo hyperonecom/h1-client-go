@@ -9,7 +9,6 @@
 
 package openapi
 
-type OrganisationAccessRights struct {
-	Role string `json:"role,omitempty"`
-	Id string `json:"id,omitempty"`
+type VmDelete struct {
+	RemoveDisks []string `json:"removeDisks,omitempty"`
 }

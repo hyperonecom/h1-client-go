@@ -15,6 +15,6 @@ type IsoCreate struct {
 	Source string `json:"source,omitempty"`
 	Service string `json:"service,omitempty"`
 	Cloud string `json:"cloud,omitempty"`
-	Metadata DiskCreateMetadata `json:"metadata,omitempty"`
+	Metadata DiskMetadata `json:"metadata,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

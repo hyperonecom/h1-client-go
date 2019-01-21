@@ -13,6 +13,6 @@ type OrganisationBilling struct {
 	Currency string `json:"currency,omitempty"`
 	Company string `json:"company,omitempty"`
 	Email string `json:"email,omitempty"`
-	Address string `json:"address,omitempty"`
+	Address OrganisationBillingAddress `json:"address,omitempty"`
 	Nip string `json:"nip,omitempty"`
 }

@@ -31,6 +31,6 @@ type Netadp struct {
 	Macaddress string `json:"macaddress,omitempty"`
 	Speed float32 `json:"speed,omitempty"`
 	Network Network `json:"network,omitempty"`
-	Ip Ip `json:"ip,omitempty"`
+	Ip []Ip `json:"ip,omitempty"`
 	Assigned NetadpAssigned `json:"assigned,omitempty"`
 }

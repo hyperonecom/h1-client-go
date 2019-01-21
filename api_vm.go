@@ -1186,8 +1186,9 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 VmApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
+ * @param vmDelete
 */
-func (a *VmApiService) VmDelete(ctx context.Context, vmId string) (*http.Response, error) {
+func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDelete) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -1205,7 +1206,7 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string) (*http.Respons
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1221,6 +1222,8 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string) (*http.Respons
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	// body params
+	localVarPostBody = &vmDelete
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

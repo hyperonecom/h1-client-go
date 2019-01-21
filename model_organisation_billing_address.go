@@ -9,7 +9,9 @@
 
 package openapi
 
-type OrganisationAccessRights struct {
-	Role string `json:"role,omitempty"`
-	Id string `json:"id,omitempty"`
+type OrganisationBillingAddress struct {
+	Street string `json:"street"`
+	Zipcode string `json:"zipcode"`
+	City string `json:"city"`
+	Country string `json:"country"`
 }

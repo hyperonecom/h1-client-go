@@ -13,9 +13,7 @@ type HddDisk struct {
 	Id string `json:"_id,omitempty"`
 	Name string `json:"name,omitempty"`
 	Type string `json:"type,omitempty"`
-	Size string `json:"size,omitempty"`
-	Tags string `json:"tags,omitempty"`
-	Processing string `json:"processing,omitempty"`
-	Vm string `json:"vm,omitempty"`
-	Persistent string `json:"persistent,omitempty"`
+	Size float32 `json:"size,omitempty"`
+	Processing bool `json:"processing,omitempty"`
+	Persistent bool `json:"persistent,omitempty"`
 }

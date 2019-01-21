@@ -32,6 +32,6 @@ type Ip struct {
 	Mac IpMac `json:"mac,omitempty"`
 	Network string `json:"network,omitempty"`
 	PtrRecord string `json:"ptrRecord,omitempty"`
-	Persistent string `json:"persistent,omitempty"`
+	Persistent bool `json:"persistent,omitempty"`
 	Associated IpAssociated `json:"associated,omitempty"`
 }

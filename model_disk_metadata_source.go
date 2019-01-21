@@ -9,7 +9,7 @@
 
 package openapi
 
-type OrganisationAccessRights struct {
-	Role string `json:"role,omitempty"`
-	Id string `json:"id,omitempty"`
+type DiskMetadataSource struct {
+	Filename string `json:"filename,omitempty"`
+	Size float32 `json:"size,omitempty"`
 }

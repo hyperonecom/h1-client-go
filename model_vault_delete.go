@@ -9,7 +9,6 @@
 
 package openapi
 
-type OrganisationAccessRights struct {
-	Role string `json:"role,omitempty"`
-	Id string `json:"id,omitempty"`
+type VaultDelete struct {
+	RemoveAllSnapshots bool `json:"removeAllSnapshots,omitempty"`
 }

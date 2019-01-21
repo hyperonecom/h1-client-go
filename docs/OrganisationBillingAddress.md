@@ -1,9 +1,12 @@
-# DiskMetadata
+# OrganisationBillingAddress
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Source** | [**DiskMetadataSource**](disk_metadata_source.md) |  | [optional] 
+**Street** | **string** |  | 
+**Zipcode** | **string** |  | 
+**City** | **string** |  | 
+**Country** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

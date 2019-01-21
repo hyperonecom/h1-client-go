@@ -672,8 +672,9 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 VaultApiService Delete
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
+ * @param vaultDelete
 */
-func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string) (*http.Response, error) {
+func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vaultDelete VaultDelete) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -691,7 +692,7 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string) (*htt
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
+	localVarHttpContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -707,6 +708,8 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string) (*htt
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	// body params
+	localVarPostBody = &vaultDelete
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {

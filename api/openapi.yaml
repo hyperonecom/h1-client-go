@@ -5218,6 +5218,12 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/vm_delete'
+        required: true
       responses:
         401:
           description: API key is missing or invalid
@@ -7275,6 +7281,12 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/vault_delete'
+        required: true
       responses:
         401:
           description: API key is missing or invalid
@@ -11371,14 +11383,12 @@ components:
     hdd:
       example:
         disk:
-          size: size
-          vm: vm
+          size: 1.46581298050294517310021547018550336360931396484375
           name: name
-          processing: processing
+          processing: true
           _id: _id
           type: type
-          persistent: persistent
-          tags: tags
+          persistent: true
         controllerType: controllerType
         controllerNumber: controllerNumber
         controllerLocation: 6.02745618307040320615897144307382404804229736328125
@@ -11560,7 +11570,9 @@ components:
         organisation: organisation
         threshold:
           credits:
-            levels: levels
+            levels:
+            - 1.489415909854170383397331534069962799549102783203125
+            - 1.489415909854170383397331534069962799549102783203125
         createdOn: 2000-01-23T04:56:07.000+00:00
         billing:
           creditsBonus: 1.46581298050294517310021547018550336360931396484375
@@ -11743,6 +11755,7 @@ components:
             $ref: '#/components/schemas/project_create_accessRights'
           type: array
         organisation:
+          format: ObjectId
           type: string
         tag:
           type: object
@@ -11832,7 +11845,11 @@ components:
         services: services
         createdOn: 2000-01-23T04:56:07.000+00:00
         billing:
-          address: address
+          address:
+            zipcode: zipcode
+            country: country
+            city: city
+            street: street
           nip: nip
           currency: currency
           company: company
@@ -11882,7 +11899,9 @@ components:
         modifiedBy: modifiedBy
         _id: _id
         accessRights:
-          role: role
+        - role: owner
+          id: id
+        - role: owner
           id: id
         state: Active
         tag: '{}'
@@ -11926,7 +11945,9 @@ components:
           format: date-time
           type: string
         accessRights:
-          $ref: '#/components/schemas/project_accessRights'
+          items:
+            $ref: '#/components/schemas/organisation_accessRights'
+          type: array
         processing:
           type: boolean
         created:
@@ -12310,6 +12331,7 @@ components:
     firewall_action_attach:
       properties:
         network:
+          format: ObjectId
           type: string
       required:
       - network
@@ -12317,6 +12339,7 @@ components:
     firewall_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -12606,138 +12629,11 @@ components:
           sourceService: sourceService
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
-        network:
-          broadcast: broadcast
-          address: address
-          flavour: flavour
-          created: true
-          dns:
-            nameservers:
-            - nameservers
-            - nameservers
-          project: project
-          services:
-          - quantity: 0.80082819046101150206595775671303272247314453125
-            data: '{}'
-            name: name
-            type: type
-            oneTime: true
-            sourceService: sourceService
-            billing: billing
-          - quantity: 0.80082819046101150206595775671303272247314453125
-            data: '{}'
-            name: name
-            type: type
-            oneTime: true
-            sourceService: sourceService
-            billing: billing
-          type: public
-          createdOn: 2000-01-23T04:56:07.000+00:00
-          netgw: netgw
-          modifiedOn: 2000-01-23T04:56:07.000+00:00
-          createdBy: createdBy
-          name: name
-          processing: true
-          modifiedBy: modifiedBy
-          _id: _id
-          accessRights:
-          - accessRights
-          - accessRights
-          state: Online
-          tag: '{}'
-          queue:
-          - stage: stage
-            createdBy: createdBy
-            resource:
-              id: id
-              type: type
-            queued: 2000-01-23T04:56:07.000+00:00
-            name: name
-            _id: _id
-            state: pending
-          - stage: stage
-            createdBy: createdBy
-            resource:
-              id: id
-              type: type
-            queued: 2000-01-23T04:56:07.000+00:00
-            name: name
-            _id: _id
-            state: pending
-          gateway: gateway
+        network: network
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
-        vpn:
-          l2tp:
-            preSharedSecret: preSharedSecret
-            clientPrefix: clientPrefix
-            _id: _id
-            user:
-              _id: _id
-              username: username
-          ipsec: ipsec
         name: name
-        primaryIP:
-          address: address
-          flavour: flavour
-          created: true
-          project: project
-          services:
-          - quantity: 0.80082819046101150206595775671303272247314453125
-            data: '{}'
-            name: name
-            type: type
-            oneTime: true
-            sourceService: sourceService
-            billing: billing
-          - quantity: 0.80082819046101150206595775671303272247314453125
-            data: '{}'
-            name: name
-            type: type
-            oneTime: true
-            sourceService: sourceService
-            billing: billing
-          createdOn: 2000-01-23T04:56:07.000+00:00
-          mac:
-            vm: vm
-            macaddress: macaddress
-            _id: _id
-          network: network
-          modifiedOn: 2000-01-23T04:56:07.000+00:00
-          createdBy: createdBy
-          ptrRecord: ptrRecord
-          associated:
-            ip: ip
-            fip: fip
-          name: name
-          processing: true
-          modifiedBy: modifiedBy
-          _id: _id
-          accessRights:
-          - accessRights
-          - accessRights
-          state: Associated
-          tag: '{}'
-          persistent: persistent
-          queue:
-          - stage: stage
-            createdBy: createdBy
-            resource:
-              id: id
-              type: type
-            queued: 2000-01-23T04:56:07.000+00:00
-            name: name
-            _id: _id
-            state: pending
-          - stage: stage
-            createdBy: createdBy
-            resource:
-              id: id
-              type: type
-            queued: 2000-01-23T04:56:07.000+00:00
-            name: name
-            _id: _id
-            state: pending
+        primaryIP: primaryIP
         processing: true
         modifiedBy: modifiedBy
         _id: _id
@@ -12804,11 +12700,9 @@ components:
           format: ObjectId
           type: string
         primaryIP:
-          $ref: '#/components/schemas/ip'
+          type: string
         network:
-          $ref: '#/components/schemas/network'
-        vpn:
-          $ref: '#/components/schemas/netgw_vpn'
+          type: string
       type: object
     netgw_create:
       properties:
@@ -13007,8 +12901,10 @@ components:
         name:
           type: string
         vm:
+          format: ObjectId
           type: string
         replica:
+          format: ObjectId
           type: string
         service:
           default: 564639bc052c084e2f2e3266
@@ -13031,6 +12927,7 @@ components:
     image_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -13076,7 +12973,9 @@ components:
     disk:
       example:
         metadata:
-          source: source
+          source:
+            filename: filename
+            size: 6.02745618307040320615897144307382404804229736328125
         flavour: flavour
         created: true
         downloadUrl: downloadUrl
@@ -13211,7 +13110,7 @@ components:
         cloud:
           type: string
         metadata:
-          $ref: '#/components/schemas/disk_create_metadata'
+          $ref: '#/components/schemas/disk_metadata'
         tag:
           type: object
       required:
@@ -13230,6 +13129,7 @@ components:
     disk_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -13275,7 +13175,9 @@ components:
     iso:
       example:
         metadata:
-          source: source
+          source:
+            filename: filename
+            size: 6.02745618307040320615897144307382404804229736328125
         flavour: flavour
         created: true
         project: project
@@ -13391,7 +13293,7 @@ components:
         cloud:
           type: string
         metadata:
-          $ref: '#/components/schemas/disk_create_metadata'
+          $ref: '#/components/schemas/disk_metadata'
         tag:
           type: object
       required:
@@ -13405,6 +13307,7 @@ components:
     iso_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -13590,8 +13493,10 @@ components:
         name:
           type: string
         image:
+          format: ObjectId
           type: string
         iso:
+          format: ObjectId
           type: string
         service:
           format: ObjectId
@@ -13633,6 +13538,14 @@ components:
           type: string
         name:
           type: string
+      type: object
+    vm_delete:
+      properties:
+        removeDisks:
+          items:
+            format: ObjectId
+            type: string
+          type: array
       type: object
     vm_action_rename:
       properties:
@@ -13707,6 +13620,7 @@ components:
     vm_post_hdd:
       properties:
         disk:
+          format: ObjectId
           type: string
         controllerType:
           type: string
@@ -13719,8 +13633,10 @@ components:
           format: ObjectId
           type: string
         network:
+          format: ObjectId
           type: string
         ip:
+          format: ObjectId
           type: string
         tag:
           type: object
@@ -13776,7 +13692,7 @@ components:
         - accessRights
         state: Associated
         tag: '{}'
-        persistent: persistent
+        persistent: true
         queue:
         - stage: stage
           createdBy: createdBy
@@ -13851,7 +13767,7 @@ components:
         ptrRecord:
           type: string
         persistent:
-          type: string
+          type: boolean
         associated:
           $ref: '#/components/schemas/ip_associated'
       type: object
@@ -13879,6 +13795,7 @@ components:
     ip_action_associate:
       properties:
         ip:
+          format: ObjectId
           type: string
       required:
       - ip
@@ -13886,6 +13803,7 @@ components:
     ip_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -13933,7 +13851,7 @@ components:
         flavour: flavour
         created: true
         ip:
-          address: address
+        - address: address
           flavour: flavour
           created: true
           project: project
@@ -13973,7 +13891,67 @@ components:
           - accessRights
           state: Associated
           tag: '{}'
-          persistent: persistent
+          persistent: true
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+        - address: address
+          flavour: flavour
+          created: true
+          project: project
+          services:
+          - quantity: 0.80082819046101150206595775671303272247314453125
+            data: '{}'
+            name: name
+            type: type
+            oneTime: true
+            sourceService: sourceService
+            billing: billing
+          - quantity: 0.80082819046101150206595775671303272247314453125
+            data: '{}'
+            name: name
+            type: type
+            oneTime: true
+            sourceService: sourceService
+            billing: billing
+          createdOn: 2000-01-23T04:56:07.000+00:00
+          mac:
+            vm: vm
+            macaddress: macaddress
+            _id: _id
+          network: network
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          createdBy: createdBy
+          ptrRecord: ptrRecord
+          associated:
+            ip: ip
+            fip: fip
+          name: name
+          processing: true
+          modifiedBy: modifiedBy
+          _id: _id
+          accessRights:
+          - accessRights
+          - accessRights
+          state: Associated
+          tag: '{}'
+          persistent: true
           queue:
           - stage: stage
             createdBy: createdBy
@@ -14077,7 +14055,7 @@ components:
         modifiedBy: modifiedBy
         macaddress: macaddress
         assigned:
-          resource: resource
+          resource: vm
           id: id
         _id: _id
         accessRights:
@@ -14156,7 +14134,9 @@ components:
         network:
           $ref: '#/components/schemas/network'
         ip:
-          $ref: '#/components/schemas/ip'
+          items:
+            $ref: '#/components/schemas/ip'
+          type: array
         assigned:
           $ref: '#/components/schemas/netadp_assigned'
       type: object
@@ -14314,6 +14294,7 @@ components:
         credential:
           $ref: '#/components/schemas/vault_create_credential'
         snapshot:
+          format: ObjectId
           type: string
         tag:
           type: object
@@ -14325,6 +14306,11 @@ components:
       properties:
         name:
           type: string
+      type: object
+    vault_delete:
+      properties:
+        removeAllSnapshots:
+          type: boolean
       type: object
     vault_action_resize:
       properties:
@@ -14514,6 +14500,7 @@ components:
     snapshot_create:
       properties:
         vault:
+          format: ObjectId
           type: string
         service:
           default: 5badbeb585f66b3d085727eb
@@ -14701,6 +14688,7 @@ components:
     reservation_action_assign:
       properties:
         resource:
+          format: ObjectId
           type: string
       type: object
     reservation.accessRights:
@@ -14868,6 +14856,7 @@ components:
     logArchive_action_transfer:
       properties:
         project:
+          format: ObjectId
           type: string
       required:
       - project
@@ -14980,8 +14969,10 @@ components:
     vmhost_action_moveVM:
       properties:
         vm:
+          format: ObjectId
           type: string
         vmhost:
+          format: ObjectId
           type: string
       required:
       - vm
@@ -14989,8 +14980,10 @@ components:
     vmhost_action_moveDisk:
       properties:
         disk:
+          format: ObjectId
           type: string
         vmhost:
+          format: ObjectId
           type: string
       required:
       - disk
@@ -14998,8 +14991,10 @@ components:
     vmhost_action_moveISO:
       properties:
         iso:
+          format: ObjectId
           type: string
         vmhost:
+          format: ObjectId
           type: string
       required:
       - iso
@@ -15007,8 +15002,10 @@ components:
     vmhost_action_moveImage:
       properties:
         image:
+          format: ObjectId
           type: string
         vmhost:
+          format: ObjectId
           type: string
       required:
       - image
@@ -15286,14 +15283,12 @@ components:
       - type
     hdd_disk:
       example:
-        size: size
-        vm: vm
+        size: 1.46581298050294517310021547018550336360931396484375
         name: name
-        processing: processing
+        processing: true
         _id: _id
         type: type
-        persistent: persistent
-        tags: tags
+        persistent: true
       properties:
         _id:
           type: string
@@ -15302,15 +15297,11 @@ components:
         type:
           type: string
         size:
-          type: string
-        tags:
-          type: string
+          type: number
         processing:
-          type: string
-        vm:
-          type: string
+          type: boolean
         persistent:
-          type: string
+          type: boolean
     project_services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -15498,14 +15489,20 @@ components:
           $ref: '#/components/schemas/project_limit_iso'
     project_threshold_credits:
       example:
-        levels: levels
+        levels:
+        - 1.489415909854170383397331534069962799549102783203125
+        - 1.489415909854170383397331534069962799549102783203125
       properties:
         levels:
-          type: string
+          items:
+            type: number
+          type: array
     project_threshold:
       example:
         credits:
-          levels: levels
+          levels:
+          - 1.489415909854170383397331534069962799549102783203125
+          - 1.489415909854170383397331534069962799549102783203125
       properties:
         credits:
           $ref: '#/components/schemas/project_threshold_credits'
@@ -15564,12 +15561,14 @@ components:
         logArchive: logArchive
       properties:
         logArchive:
+          format: ObjectId
           type: string
     project_transfer:
       example:
         organisation: organisation
       properties:
         organisation:
+          format: ObjectId
           type: string
     project_create_accessRights:
       properties:
@@ -15580,9 +15579,47 @@ components:
       required:
       - id
       - role
+    organisation_accessRights:
+      example:
+        role: owner
+        id: id
+      properties:
+        role:
+          enum:
+          - owner
+          - billing
+          - user
+          - support
+          type: string
+        id:
+          type: string
+    organisation_billing_address:
+      example:
+        zipcode: zipcode
+        country: country
+        city: city
+        street: street
+      properties:
+        street:
+          type: string
+        zipcode:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+      required:
+      - city
+      - country
+      - street
+      - zipcode
     organisation_billing:
       example:
-        address: address
+        address:
+          zipcode: zipcode
+          country: country
+          city: city
+          street: street
         nip: nip
         currency: currency
         company: company
@@ -15595,7 +15632,7 @@ components:
         email:
           type: string
         address:
-          type: string
+          $ref: '#/components/schemas/organisation_billing_address'
         nip:
           type: string
     organisation_limit_organisation:
@@ -15714,6 +15751,7 @@ components:
     container_create_volumes:
       properties:
         source:
+          format: ObjectId
           type: string
         sourcePath:
           type: string
@@ -15732,56 +15770,17 @@ components:
           items:
             type: string
           type: array
-    netgw_vpn_l2tp_user:
-      example:
-        _id: _id
-        username: username
-      properties:
-        _id:
-          type: string
-        username:
-          type: string
-    netgw_vpn_l2tp:
-      example:
-        preSharedSecret: preSharedSecret
-        clientPrefix: clientPrefix
-        _id: _id
-        user:
-          _id: _id
-          username: username
-      properties:
-        _id:
-          type: string
-        preSharedSecret:
-          type: string
-        clientPrefix:
-          type: string
-        user:
-          $ref: '#/components/schemas/netgw_vpn_l2tp_user'
-    netgw_vpn:
-      example:
-        l2tp:
-          preSharedSecret: preSharedSecret
-          clientPrefix: clientPrefix
-          _id: _id
-          user:
-            _id: _id
-            username: username
-        ipsec: ipsec
-      properties:
-        ipsec:
-          type: string
-        l2tp:
-          $ref: '#/components/schemas/netgw_vpn_l2tp'
     netgw_create_public:
       properties:
         ip:
+          format: ObjectId
           type: string
       required:
       - ip
     netgw_action_attach_private:
       properties:
         network:
+          format: ObjectId
           type: string
       required:
       - network
@@ -15847,23 +15846,25 @@ components:
         name:
           type: string
         id:
+          format: ObjectId
           type: string
-    disk_metadata:
+    disk_metadata_source:
       example:
-        source: source
-      properties:
-        source:
-          type: string
-    disk_create_metadata_source:
+        filename: filename
+        size: 6.02745618307040320615897144307382404804229736328125
       properties:
         filename:
           type: string
         size:
           type: number
-    disk_create_metadata:
+    disk_metadata:
+      example:
+        source:
+          filename: filename
+          size: 6.02745618307040320615897144307382404804229736328125
       properties:
         source:
-          $ref: '#/components/schemas/disk_create_metadata_source'
+          $ref: '#/components/schemas/disk_metadata_source'
     vm_sourceImage:
       example:
         name: name
@@ -15892,6 +15893,7 @@ components:
     vm_create_disk:
       properties:
         id:
+          format: ObjectId
           type: string
         size:
           type: number
@@ -15908,9 +15910,11 @@ components:
           format: ObjectId
           type: string
         network:
+          format: ObjectId
           type: string
         ip:
           items:
+            format: ObjectId
             type: string
           type: array
     ip_mac:
@@ -15936,12 +15940,18 @@ components:
           type: string
     netadp_assigned:
       example:
-        resource: resource
+        resource: vm
         id: id
       properties:
         resource:
+          enum:
+          - vm
+          - netgw
+          - network
+          - ip
           type: string
         id:
+          format: ObjectId
           type: string
     vault_create_credential_password:
       properties:

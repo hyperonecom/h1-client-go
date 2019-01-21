@@ -21,7 +21,7 @@ type Organisation struct {
 	ModifiedBy string `json:"modifiedBy,omitempty"`
 	CreatedBy string `json:"createdBy,omitempty"`
 	CreatedOn time.Time `json:"createdOn,omitempty"`
-	AccessRights ProjectAccessRights `json:"accessRights,omitempty"`
+	AccessRights []OrganisationAccessRights `json:"accessRights,omitempty"`
 	Processing bool `json:"processing,omitempty"`
 	Created bool `json:"created,omitempty"`
 	Queue []Event `json:"queue,omitempty"`

@@ -27,7 +27,6 @@ type Netgw struct {
 	State string `json:"state,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Project string `json:"project,omitempty"`
-	PrimaryIP Ip `json:"primaryIP,omitempty"`
-	Network Network `json:"network,omitempty"`
-	Vpn NetgwVpn `json:"vpn,omitempty"`
+	PrimaryIP string `json:"primaryIP,omitempty"`
+	Network string `json:"network,omitempty"`
 }

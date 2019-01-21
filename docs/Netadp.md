@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Macaddress** | **string** |  | [optional] 
 **Speed** | **float32** |  | [optional] 
 **Network** | [**Network**](network.md) |  | [optional] 
-**Ip** | [**Ip**](ip.md) |  | [optional] 
+**Ip** | [**[]Ip**](ip.md) |  | [optional] 
 **Assigned** | [**NetadpAssigned**](netadp_assigned.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
