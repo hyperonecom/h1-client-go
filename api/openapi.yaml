@@ -13672,16 +13672,13 @@ components:
           sourceService: sourceService
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
-        mac:
-          vm: vm
-          macaddress: macaddress
-          _id: _id
         network: network
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
         ptrRecord: ptrRecord
         associated:
           ip: ip
+          netadp: netadp
           fip: fip
         name: name
         processing: true
@@ -13759,8 +13756,6 @@ components:
           type: string
         address:
           type: string
-        mac:
-          $ref: '#/components/schemas/ip_mac'
         network:
           format: ObjectId
           type: string
@@ -13871,16 +13866,13 @@ components:
             sourceService: sourceService
             billing: billing
           createdOn: 2000-01-23T04:56:07.000+00:00
-          mac:
-            vm: vm
-            macaddress: macaddress
-            _id: _id
           network: network
           modifiedOn: 2000-01-23T04:56:07.000+00:00
           createdBy: createdBy
           ptrRecord: ptrRecord
           associated:
             ip: ip
+            netadp: netadp
             fip: fip
           name: name
           processing: true
@@ -13931,16 +13923,13 @@ components:
             sourceService: sourceService
             billing: billing
           createdOn: 2000-01-23T04:56:07.000+00:00
-          mac:
-            vm: vm
-            macaddress: macaddress
-            _id: _id
           network: network
           modifiedOn: 2000-01-23T04:56:07.000+00:00
           createdBy: createdBy
           ptrRecord: ptrRecord
           associated:
             ip: ip
+            netadp: netadp
             fip: fip
           name: name
           processing: true
@@ -15917,26 +15906,17 @@ components:
             format: ObjectId
             type: string
           type: array
-    ip_mac:
-      example:
-        vm: vm
-        macaddress: macaddress
-        _id: _id
-      properties:
-        _id:
-          type: string
-        macaddress:
-          type: string
-        vm:
-          type: string
     ip_associated:
       example:
         ip: ip
+        netadp: netadp
         fip: fip
       properties:
         ip:
           type: string
         fip:
+          type: string
+        netadp:
           type: string
     netadp_assigned:
       example:

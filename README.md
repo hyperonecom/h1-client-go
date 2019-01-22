@@ -403,7 +403,6 @@ Class | Method | HTTP request | Description
  - [IpActionTransfer](docs/IpActionTransfer.md)
  - [IpAssociated](docs/IpAssociated.md)
  - [IpCreate](docs/IpCreate.md)
- - [IpMac](docs/IpMac.md)
  - [IpPostAccessrights](docs/IpPostAccessrights.md)
  - [IpServices](docs/IpServices.md)
  - [IpUpdate](docs/IpUpdate.md)

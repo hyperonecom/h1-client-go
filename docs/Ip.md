@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 **Project** | **string** |  | [optional] 
 **Address** | **string** |  | [optional] 
-**Mac** | [**IpMac**](ip_mac.md) |  | [optional] 
 **Network** | **string** |  | [optional] 
 **PtrRecord** | **string** |  | [optional] 
 **Persistent** | **bool** |  | [optional] 
