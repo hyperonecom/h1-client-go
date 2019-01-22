@@ -285,13 +285,13 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 }
 
 /*
-OrganisationApiService /accessrights/:identity
+OrganisationApiService /accessrights/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
- * @param identity identity
+ * @param id id
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationDeleteAccessrightsIdentity(ctx context.Context, organisationId string, identity string) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Context, organisationId string, id string) (Organisation, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -302,9 +302,9 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsIdentity(ctx cont
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights/{identity}"
+	localVarPath := a.client.cfg.BasePath + "/organisation/{organisationId}/accessrights/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -830,16 +830,16 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 OrganisationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
-@return []OrganisationAccessRights
+@return []AccessrightsUserRole
 */
-func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Context, organisationId string) ([]OrganisationAccessRights, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Context, organisationId string) ([]AccessrightsUserRole, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []OrganisationAccessRights
+		localVarReturnValue  []AccessrightsUserRole
 	)
 
 	// create path and map variables
@@ -928,7 +928,7 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []OrganisationAccessRights
+			var v []AccessrightsUserRole
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1212,16 +1212,16 @@ OrganisationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationPostAccessrights
-@return OrganisationAccessRights
+@return AccessrightsUserRole
 */
-func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (OrganisationAccessRights, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (AccessrightsUserRole, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  OrganisationAccessRights
+		localVarReturnValue  AccessrightsUserRole
 	)
 
 	// create path and map variables
@@ -1312,7 +1312,7 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v OrganisationAccessRights
+			var v AccessrightsUserRole
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

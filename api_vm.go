@@ -2985,16 +2985,16 @@ VmApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmPostAccessrights
-@return string
+@return Vm
 */
-func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (string, *http.Response, error) {
+func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (Vm, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Vm
 	)
 
 	// create path and map variables
@@ -3085,7 +3085,17 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Vm
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

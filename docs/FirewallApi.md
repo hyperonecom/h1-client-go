@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallDeleteEgressRuleId**
-> InlineResponse200 FirewallDeleteEgressRuleId(ctx, firewallId, ruleId)
+> InlineResponse2001 FirewallDeleteEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallDeleteIngressRuleId**
-> InlineResponse200 FirewallDeleteIngressRuleId(ctx, firewallId, ruleId)
+> InlineResponse2001 FirewallDeleteIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallGetEgressRuleId**
-> InlineResponse200 FirewallGetEgressRuleId(ctx, firewallId, ruleId)
+> InlineResponse2001 FirewallGetEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallGetIngressRuleId**
-> InlineResponse200 FirewallGetIngressRuleId(ctx, firewallId, ruleId)
+> InlineResponse2001 FirewallGetIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallListEgress**
-> []InlineResponse200 FirewallListEgress(ctx, firewallId)
+> []InlineResponse2001 FirewallListEgress(ctx, firewallId)
 /egress
 
 ### Required Parameters
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]InlineResponse200**](inline_response_200.md)
+[**[]InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallListIngress**
-> []InlineResponse200 FirewallListIngress(ctx, firewallId)
+> []InlineResponse2001 FirewallListIngress(ctx, firewallId)
 /ingress
 
 ### Required Parameters
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]InlineResponse200**](inline_response_200.md)
+[**[]InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallPostAccessrights**
-> string FirewallPostAccessrights(ctx, firewallId, firewallPostAccessrights)
+> Firewall FirewallPostAccessrights(ctx, firewallId, firewallPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Firewall**](firewall.md)
 
 ### Authorization
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallPostEgress**
-> InlineResponse200 FirewallPostEgress(ctx, firewallId, firewallPostEgress)
+> InlineResponse2001 FirewallPostEgress(ctx, firewallId, firewallPostEgress)
 /egress
 
 ### Required Parameters
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FirewallPostIngress**
-> InlineResponse200 FirewallPostIngress(ctx, firewallId, firewallPostIngress)
+> InlineResponse2001 FirewallPostIngress(ctx, firewallId, firewallPostIngress)
 /ingress
 
 ### Required Parameters
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 

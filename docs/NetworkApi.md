@@ -7,9 +7,9 @@ Method | HTTP request | Description
 [**NetworkCreate**](NetworkApi.md#NetworkCreate) | **Post** /network | Create
 [**NetworkDelete**](NetworkApi.md#NetworkDelete) | **Delete** /network/{networkId} | Delete
 [**NetworkDeleteAccessrightsIdentity**](NetworkApi.md#NetworkDeleteAccessrightsIdentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-[**NetworkDeleteIpIpId**](NetworkApi.md#NetworkDeleteIpIpId) | **Delete** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**NetworkDeleteIpIpId**](NetworkApi.md#NetworkDeleteIpIpId) | **Delete** /network/{networkId}/ip/{ipId} | /ip/:ipId
 [**NetworkDeleteTagKey**](NetworkApi.md#NetworkDeleteTagKey) | **Delete** /network/{networkId}/tag/{key} | /tag/:key
-[**NetworkGetIpIpId**](NetworkApi.md#NetworkGetIpIpId) | **Get** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**NetworkGetIpIpId**](NetworkApi.md#NetworkGetIpIpId) | **Get** /network/{networkId}/ip/{ipId} | /ip/:ipId
 [**NetworkGetServicesServiceId**](NetworkApi.md#NetworkGetServicesServiceId) | **Get** /network/{networkId}/services/{serviceId} | /services/:serviceId
 [**NetworkGetTag**](NetworkApi.md#NetworkGetTag) | **Get** /network/{networkId}/tag | /tag
 [**NetworkList**](NetworkApi.md#NetworkList) | **Get** /network | List
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **NetworkDeleteIpIpId**
-> Ip NetworkDeleteIpIpId(ctx, networkId)
+> Ip NetworkDeleteIpIpId(ctx, networkId, ipId)
 /ip/:ipId
 
 ### Required Parameters
@@ -115,6 +115,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
+  **ipId** | **string**| ipId | 
 
 ### Return type
 
@@ -159,7 +160,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **NetworkGetIpIpId**
-> Ip NetworkGetIpIpId(ctx, networkId)
+> Ip NetworkGetIpIpId(ctx, networkId, ipId)
 /ip/:ipId
 
 ### Required Parameters
@@ -168,6 +169,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
+  **ipId** | **string**| ipId | 
 
 ### Return type
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **NetworkPostAccessrights**
-> string NetworkPostAccessrights(ctx, networkId, networkPostAccessrights)
+> Network NetworkPostAccessrights(ctx, networkId, networkPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -417,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Network**](network.md)
 
 ### Authorization
 

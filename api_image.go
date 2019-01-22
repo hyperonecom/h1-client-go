@@ -1556,16 +1556,16 @@ ImageApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param imagePostAccessrights
-@return string
+@return Image
 */
-func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (string, *http.Response, error) {
+func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (Image, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Image
 	)
 
 	// create path and map variables
@@ -1656,7 +1656,17 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Image
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Image
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

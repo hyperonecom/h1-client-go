@@ -97,6 +97,30 @@ paths:
       tags:
       - project
   /project/{projectId}:
+    delete:
+      operationId: project_delete
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Delete
+      tags:
+      - project
     get:
       description: Returns a single project
       operationId: project_show
@@ -165,6 +189,196 @@ paths:
       summary: Update
       tags:
       - project
+  /project/{projectId}/credentialStore/certificate:
+    get:
+      operationId: project_list_credentialStorecertificate
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credentialStore/certificate
+      tags:
+      - project
+    post:
+      operationId: project_post_credentialStorecertificate
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project_post_credentialStorecertificate'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credentialStore/certificate
+      tags:
+      - project
+  /project/{projectId}/credentialStore/certificate/{id}:
+    delete:
+      operationId: project_delete_credentialStorecertificate_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credentialStore/certificate/:id
+      tags:
+      - project
+    get:
+      operationId: project_get_credentialStorecertificate_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credentialStore/certificate/:id
+      tags:
+      - project
+    patch:
+      operationId: project_patch_credentialStorecertificate_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project_patch_credentialStorecertificate_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credentialStore/certificate/:id
+      tags:
+      - project
   /project/{projectId}/accessrights:
     get:
       operationId: project_list_accessrights
@@ -183,7 +397,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/project.accessRights'
+                  $ref: '#/components/schemas/accessrightsUserRole'
                 type: array
           description: successful operation
         401:
@@ -220,7 +434,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/project.accessRights'
+                $ref: '#/components/schemas/accessrightsUserRole'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -234,9 +448,9 @@ paths:
       summary: /accessrights
       tags:
       - project
-  /project/{projectId}/accessrights/{identity}:
+  /project/{projectId}/accessrights/{id}:
     delete:
-      operationId: project_delete_accessrights_identity
+      operationId: project_delete_accessrights_id
       parameters:
       - description: ID of project
         explode: false
@@ -246,10 +460,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: identity
+      - description: id
         explode: false
         in: path
-        name: identity
+        name: id
         required: true
         schema:
           type: string
@@ -276,7 +490,7 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/:identity
+      summary: /accessrights/:id
       tags:
       - project
   /project/{projectId}/services:
@@ -701,7 +915,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/organisation.accessRights'
+                  $ref: '#/components/schemas/accessrightsUserRole'
                 type: array
           description: successful operation
         401:
@@ -738,7 +952,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/organisation.accessRights'
+                $ref: '#/components/schemas/accessrightsUserRole'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -752,9 +966,9 @@ paths:
       summary: /accessrights
       tags:
       - organisation
-  /organisation/{organisationId}/accessrights/{identity}:
+  /organisation/{organisationId}/accessrights/{id}:
     delete:
-      operationId: organisation_delete_accessrights_identity
+      operationId: organisation_delete_accessrights_id
       parameters:
       - description: ID of organisation
         explode: false
@@ -764,10 +978,10 @@ paths:
         schema:
           type: string
         style: simple
-      - description: identity
+      - description: id
         explode: false
         in: path
-        name: identity
+        name: id
         required: true
         schema:
           type: string
@@ -794,7 +1008,7 @@ paths:
               schema:
                 type: string
               style: simple
-      summary: /accessrights/:identity
+      summary: /accessrights/:id
       tags:
       - organisation
   /organisation/{organisationId}/tag:
@@ -1205,7 +1419,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/container.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -1242,8 +1456,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/container.accessRights'
+                $ref: '#/components/schemas/container'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -1793,7 +2013,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/inline_response_200'
+                  $ref: '#/components/schemas/inline_response_200_1'
                 type: array
           description: successful operation
         401:
@@ -1830,7 +2050,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -1869,7 +2089,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -1907,7 +2127,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -1939,7 +2159,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/inline_response_200'
+                  $ref: '#/components/schemas/inline_response_200_1'
                 type: array
           description: successful operation
         401:
@@ -1976,7 +2196,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -2015,7 +2235,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -2053,7 +2273,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/inline_response_200_1'
           description: successful operation
         401:
           description: API key is missing or invalid
@@ -2085,7 +2305,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/firewall.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -2122,8 +2342,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/firewall.accessRights'
+                $ref: '#/components/schemas/firewall'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/firewall'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -2616,7 +2842,7 @@ paths:
       summary: /ip
       tags:
       - network
-  /network/{networkId}/ip/:ipId:
+  /network/{networkId}/ip/{ipId}:
     delete:
       operationId: network_delete_ip_ipId
       parameters:
@@ -2624,6 +2850,14 @@ paths:
         explode: false
         in: path
         name: networkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ipId
+        explode: false
+        in: path
+        name: ipId
         required: true
         schema:
           type: string
@@ -2654,6 +2888,14 @@ paths:
         explode: false
         in: path
         name: networkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: ipId
+        explode: false
+        in: path
+        name: ipId
         required: true
         schema:
           type: string
@@ -2695,7 +2937,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/network.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -2732,8 +2974,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/network.accessRights'
+                $ref: '#/components/schemas/network'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/network'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -3245,7 +3493,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/netgw.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -3282,8 +3530,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/netgw.accessRights'
+                $ref: '#/components/schemas/netgw'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netgw'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -3763,7 +4017,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/image.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -3800,8 +4054,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/image.accessRights'
+                $ref: '#/components/schemas/image'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/image'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -4319,7 +4579,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/disk.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -4356,8 +4616,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/disk.accessRights'
+                $ref: '#/components/schemas/disk'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disk'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -4837,7 +5103,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/iso.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -4874,8 +5140,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/iso.accessRights'
+                $ref: '#/components/schemas/iso'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/iso'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -5843,7 +6115,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/vm.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -5880,8 +6152,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/vm.accessRights'
+                $ref: '#/components/schemas/vm'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vm'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -6501,7 +6779,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ip.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -6538,8 +6816,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ip.accessRights'
+                $ref: '#/components/schemas/ip'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ip'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -6900,7 +7184,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/netadp.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -6937,8 +7221,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/netadp.accessRights'
+                $ref: '#/components/schemas/netadp'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netadp'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -7918,7 +8208,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/vault.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -7955,8 +8245,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/vault.accessRights'
+                $ref: '#/components/schemas/vault'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -8406,7 +8702,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/snapshot.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -8443,8 +8739,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/snapshot.accessRights'
+                $ref: '#/components/schemas/snapshot'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/snapshot'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -8988,7 +9290,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/reservation.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -9025,8 +9327,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/reservation.accessRights'
+                $ref: '#/components/schemas/reservation'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reservation'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -9898,7 +10206,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/logArchive.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -9935,8 +10243,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/logArchive.accessRights'
+                $ref: '#/components/schemas/logArchive'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logArchive'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -10502,7 +10816,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/vmhost.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -10539,8 +10853,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/vmhost.accessRights'
+                $ref: '#/components/schemas/vmhost'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vmhost'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -10983,7 +11303,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/replica.accessRights'
+                  $ref: '#/components/schemas/accessrightsProject'
                 type: array
           description: successful operation
         401:
@@ -11020,8 +11340,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replica.accessRights'
+                $ref: '#/components/schemas/replica'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replica'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -11507,15 +11833,74 @@ components:
           - money
           type: string
       type: object
+    accessrightsProject:
+      type: string
+    accessrightsUserRole:
+      example:
+        role: owner
+        id: id
+      properties:
+        id:
+          type: string
+        role:
+          enum:
+          - owner
+          - billing
+          - user
+          - support
+          type: string
+      type: object
     project:
       example:
         networkAcl:
-          name: name
+        - name: name
           _id: _id
-          type: type
+          type: subnet
+          value: value
+        - name: name
+          _id: _id
+          type: subnet
           value: value
         payments:
-          amount: 7.061401241503109105224211816675961017608642578125
+        - amount: 7.061401241503109105224211816675961017608642578125
+          flavour: flavour
+          created: true
+          channel: bank
+          project: project
+          services: services
+          type: bonus
+          createdOn: 2000-01-23T04:56:07.000+00:00
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          createdBy: createdBy
+          credits: 2.3021358869347654518833223846741020679473876953125
+          creditsFree: 5.63737665663332876420099637471139430999755859375
+          name: name
+          processing: processing
+          modifiedBy: modifiedBy
+          _id: _id
+          accessRights: accessRights
+          state: state
+          tag: '{}'
+          queue:
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+          - stage: stage
+            createdBy: createdBy
+            resource:
+              id: id
+              type: type
+            queued: 2000-01-23T04:56:07.000+00:00
+            name: name
+            _id: _id
+            state: pending
+        - amount: 7.061401241503109105224211816675961017608642578125
           flavour: flavour
           created: true
           channel: bank
@@ -11580,7 +11965,16 @@ components:
           creditLimit: 5.962133916683182377482808078639209270477294921875
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         invoices:
-          summary: summary
+        - summary: summary
+          project: project
+          organisation: organisation
+          _id: _id
+          duplicate:
+            _id: _id
+            createdOn: createdOn
+          invoiceNo: invoiceNo
+          issueDate: issueDate
+        - summary: summary
           project: project
           organisation: organisation
           _id: _id
@@ -11652,7 +12046,9 @@ components:
         processing: true
         _id: _id
         accessRights:
-          role: role
+        - role: owner
+          id: id
+        - role: owner
           id: id
         queue:
         - stage: stage
@@ -11696,7 +12092,9 @@ components:
           format: date-time
           type: string
         accessRights:
-          $ref: '#/components/schemas/project_accessRights'
+          items:
+            $ref: '#/components/schemas/project_accessRights'
+          type: array
         processing:
           type: boolean
         created:
@@ -11724,9 +12122,13 @@ components:
         billing:
           $ref: '#/components/schemas/project_billing'
         invoices:
-          $ref: '#/components/schemas/project_invoices'
+          items:
+            $ref: '#/components/schemas/project_invoices'
+          type: array
         payments:
-          $ref: '#/components/schemas/payment'
+          items:
+            $ref: '#/components/schemas/payment'
+          type: array
         verified:
           type: string
         active:
@@ -11740,7 +12142,9 @@ components:
             $ref: '#/components/schemas/project_roles'
           type: array
         networkAcl:
-          $ref: '#/components/schemas/project_networkAcl'
+          items:
+            $ref: '#/components/schemas/project_networkAcl'
+          type: array
         compliance:
           $ref: '#/components/schemas/project_compliance'
         transfer:
@@ -11767,24 +12171,6 @@ components:
       properties:
         name:
           type: string
-      type: object
-    project.accessRights:
-      example:
-        role: owner
-        id: id
-      properties:
-        id:
-          type: string
-        role:
-          enum:
-          - owner
-          - billing
-          - user
-          - support
-          type: string
-      required:
-      - id
-      - role
       type: object
     project.services:
       example:
@@ -11815,10 +12201,29 @@ components:
       type: object
     project.tag:
       type: object
+    project_post_credentialStorecertificate:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    project_patch_credentialStorecertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
     project_post_accessrights:
       properties:
-        identity:
+        id:
           type: string
+        role:
+          type: string
+      required:
+      - id
+      - role
       type: object
     project_patch_tag:
       type: object
@@ -11946,7 +12351,7 @@ components:
           type: string
         accessRights:
           items:
-            $ref: '#/components/schemas/organisation_accessRights'
+            $ref: '#/components/schemas/project_accessRights'
           type: array
         processing:
           type: boolean
@@ -12011,30 +12416,17 @@ components:
       - payment
       - project
       type: object
-    organisation.accessRights:
-      example:
-        role: owner
-        id: id
-      properties:
-        id:
-          type: string
-        role:
-          enum:
-          - owner
-          - billing
-          - user
-          - support
-          type: string
-      required:
-      - id
-      - role
-      type: object
     organisation.tag:
       type: object
     organisation_post_accessrights:
       properties:
-        identity:
+        id:
           type: string
+        role:
+          type: string
+      required:
+      - id
+      - role
       type: object
     organisation_patch_tag:
       type: object
@@ -12173,8 +12565,6 @@ components:
         name:
           type: string
       type: object
-    container.accessRights:
-      type: string
     container.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -12344,8 +12734,6 @@ components:
       required:
       - project
       type: object
-    firewall.accessRights:
-      type: string
     firewall.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -12563,8 +12951,6 @@ components:
         gateway:
           type: string
       type: object
-    network.accessRights:
-      type: string
     network.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -12723,8 +13109,6 @@ components:
         private:
           $ref: '#/components/schemas/netgw_action_attach_private'
       type: object
-    netgw.accessRights:
-      type: string
     netgw.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -12932,8 +13316,6 @@ components:
       required:
       - project
       type: object
-    image.accessRights:
-      type: string
     image.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -13134,8 +13516,6 @@ components:
       required:
       - project
       type: object
-    disk.accessRights:
-      type: string
     disk.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -13312,8 +13692,6 @@ components:
       required:
       - project
       type: object
-    iso.accessRights:
-      type: string
     iso.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -13586,8 +13964,6 @@ components:
       required:
       - service
       type: object
-    vm.accessRights:
-      type: string
     vm.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -13803,8 +14179,6 @@ components:
       required:
       - project
       type: object
-    ip.accessRights:
-      type: string
     ip.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14129,8 +14503,6 @@ components:
         assigned:
           $ref: '#/components/schemas/netadp_assigned'
       type: object
-    netadp.accessRights:
-      type: string
     netadp.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14313,8 +14685,6 @@ components:
           format: ObjectId
           type: string
       type: object
-    vault.accessRights:
-      type: string
     vault.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14508,8 +14878,6 @@ components:
         name:
           type: string
       type: object
-    snapshot.accessRights:
-      type: string
     snapshot.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14680,8 +15048,6 @@ components:
           format: ObjectId
           type: string
       type: object
-    reservation.accessRights:
-      type: string
     reservation.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14850,8 +15216,6 @@ components:
       required:
       - project
       type: object
-    logArchive.accessRights:
-      type: string
     logArchive.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -14999,8 +15363,6 @@ components:
       required:
       - image
       type: object
-    vmhost.accessRights:
-      type: string
     vmhost.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -15163,8 +15525,6 @@ components:
         description:
           type: string
       type: object
-    replica.accessRights:
-      type: string
     replica.services:
       example:
         quantity: 0.80082819046101150206595775671303272247314453125
@@ -15202,6 +15562,33 @@ components:
     replica_patch_tag:
       type: object
     inline_response_200:
+      example:
+        createdBy: createdBy
+        name: name
+        type: ssh
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        value: value
+      properties:
+        name:
+          type: string
+        createdOn:
+          format: date-time
+          type: string
+        createdBy:
+          type: string
+        type:
+          enum:
+          - ssh
+          type: string
+        value:
+          type: string
+      required:
+      - createdBy
+      - createdOn
+      - name
+      - type
+      - value
+    inline_response_200_1:
       example:
         filter:
         - filter
@@ -15319,10 +15706,15 @@ components:
           type: number
     project_accessRights:
       example:
-        role: role
+        role: owner
         id: id
       properties:
         role:
+          enum:
+          - owner
+          - billing
+          - user
+          - support
           type: string
         id:
           type: string
@@ -15338,7 +15730,7 @@ components:
           type: number
         creditLimit:
           type: number
-    project_invoices_duplicate:
+    project_duplicate:
       example:
         _id: _id
         createdOn: createdOn
@@ -15372,7 +15764,7 @@ components:
         organisation:
           type: string
         duplicate:
-          $ref: '#/components/schemas/project_invoices_duplicate'
+          $ref: '#/components/schemas/project_duplicate'
     project_limit_vm:
       example:
         memory: 3.61607674925191080461672754609026014804840087890625
@@ -15534,10 +15926,13 @@ components:
       example:
         name: name
         _id: _id
-        type: type
+        type: subnet
         value: value
       properties:
         type:
+          enum:
+          - subnet
+          - geo
           type: string
         value:
           type: string
@@ -15568,20 +15963,6 @@ components:
       required:
       - id
       - role
-    organisation_accessRights:
-      example:
-        role: owner
-        id: id
-      properties:
-        role:
-          enum:
-          - owner
-          - billing
-          - user
-          - support
-          type: string
-        id:
-          type: string
     organisation_billing_address:
       example:
         zipcode: zipcode

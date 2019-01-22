@@ -2989,16 +2989,16 @@ VaultApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultPostAccessrights
-@return string
+@return Vault
 */
-func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (string, *http.Response, error) {
+func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (Vault, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Vault
 	)
 
 	// create path and map variables
@@ -3089,7 +3089,17 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Vault
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VmhostPostAccessrights**
-> string VmhostPostAccessrights(ctx, vmhostId, vmhostPostAccessrights)
+> Vmhost VmhostPostAccessrights(ctx, vmhostId, vmhostPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Vmhost**](vmhost.md)
 
 ### Authorization
 

@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SnapshotPostAccessrights**
-> string SnapshotPostAccessrights(ctx, snapshotId, snapshotPostAccessrights)
+> Snapshot SnapshotPostAccessrights(ctx, snapshotId, snapshotPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Snapshot**](snapshot.md)
 
 ### Authorization
 

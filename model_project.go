@@ -21,7 +21,7 @@ type Project struct {
 	ModifiedBy string `json:"modifiedBy,omitempty"`
 	CreatedBy string `json:"createdBy,omitempty"`
 	CreatedOn time.Time `json:"createdOn,omitempty"`
-	AccessRights ProjectAccessRights `json:"accessRights,omitempty"`
+	AccessRights []ProjectAccessRights `json:"accessRights,omitempty"`
 	Processing bool `json:"processing,omitempty"`
 	Created bool `json:"created,omitempty"`
 	Queue []Event `json:"queue,omitempty"`
@@ -31,14 +31,14 @@ type Project struct {
 	BankAccount string `json:"bankAccount,omitempty"`
 	Organisation string `json:"organisation,omitempty"`
 	Billing ProjectBilling `json:"billing,omitempty"`
-	Invoices ProjectInvoices `json:"invoices,omitempty"`
-	Payments Payment `json:"payments,omitempty"`
+	Invoices []ProjectInvoices `json:"invoices,omitempty"`
+	Payments []Payment `json:"payments,omitempty"`
 	Verified string `json:"verified,omitempty"`
 	Active bool `json:"active,omitempty"`
 	Limit ProjectLimit `json:"limit,omitempty"`
 	Threshold ProjectThreshold `json:"threshold,omitempty"`
 	Roles []ProjectRoles `json:"roles,omitempty"`
-	NetworkAcl ProjectNetworkAcl `json:"networkAcl,omitempty"`
+	NetworkAcl []ProjectNetworkAcl `json:"networkAcl,omitempty"`
 	Compliance ProjectCompliance `json:"compliance,omitempty"`
 	Transfer ProjectTransfer `json:"transfer,omitempty"`
 }

@@ -1198,16 +1198,16 @@ NetadpApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param netadpPostAccessrights
-@return string
+@return Netadp
 */
-func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId string, netadpPostAccessrights NetadpPostAccessrights) (string, *http.Response, error) {
+func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId string, netadpPostAccessrights NetadpPostAccessrights) (Netadp, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Netadp
 	)
 
 	// create path and map variables
@@ -1298,7 +1298,17 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Netadp
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

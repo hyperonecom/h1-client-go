@@ -16,5 +16,5 @@ type ProjectInvoices struct {
 	Summary string `json:"summary,omitempty"`
 	Project string `json:"project,omitempty"`
 	Organisation string `json:"organisation,omitempty"`
-	Duplicate ProjectInvoicesDuplicate `json:"duplicate,omitempty"`
+	Duplicate ProjectDuplicate `json:"duplicate,omitempty"`
 }

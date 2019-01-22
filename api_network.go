@@ -401,9 +401,10 @@ func (a *NetworkApiService) NetworkDeleteAccessrightsIdentity(ctx context.Contex
 NetworkApiService /ip/:ipId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
+ * @param ipId ipId
 @return Ip
 */
-func (a *NetworkApiService) NetworkDeleteIpIpId(ctx context.Context, networkId string) (Ip, *http.Response, error) {
+func (a *NetworkApiService) NetworkDeleteIpIpId(ctx context.Context, networkId string, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
@@ -414,8 +415,9 @@ func (a *NetworkApiService) NetworkDeleteIpIpId(ctx context.Context, networkId s
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/network/{networkId}/ip/:ipId"
+	localVarPath := a.client.cfg.BasePath + "/network/{networkId}/ip/{ipId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"networkId"+"}", fmt.Sprintf("%v", networkId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -655,9 +657,10 @@ func (a *NetworkApiService) NetworkDeleteTagKey(ctx context.Context, networkId s
 NetworkApiService /ip/:ipId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
+ * @param ipId ipId
 @return Ip
 */
-func (a *NetworkApiService) NetworkGetIpIpId(ctx context.Context, networkId string) (Ip, *http.Response, error) {
+func (a *NetworkApiService) NetworkGetIpIpId(ctx context.Context, networkId string, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
@@ -668,8 +671,9 @@ func (a *NetworkApiService) NetworkGetIpIpId(ctx context.Context, networkId stri
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/network/{networkId}/ip/:ipId"
+	localVarPath := a.client.cfg.BasePath + "/network/{networkId}/ip/{ipId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"networkId"+"}", fmt.Sprintf("%v", networkId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"ipId"+"}", fmt.Sprintf("%v", ipId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1804,16 +1808,16 @@ NetworkApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param networkId ID of network
  * @param networkPostAccessrights
-@return string
+@return Network
 */
-func (a *NetworkApiService) NetworkPostAccessrights(ctx context.Context, networkId string, networkPostAccessrights NetworkPostAccessrights) (string, *http.Response, error) {
+func (a *NetworkApiService) NetworkPostAccessrights(ctx context.Context, networkId string, networkPostAccessrights NetworkPostAccessrights) (Network, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Network
 	)
 
 	// create path and map variables
@@ -1904,7 +1908,17 @@ func (a *NetworkApiService) NetworkPostAccessrights(ctx context.Context, network
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Network
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Network
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

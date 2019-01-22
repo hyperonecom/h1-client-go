@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IsoPostAccessrights**
-> string IsoPostAccessrights(ctx, isoId, isoPostAccessrights)
+> Iso IsoPostAccessrights(ctx, isoId, isoPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Iso**](iso.md)
 
 ### Authorization
 

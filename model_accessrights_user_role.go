@@ -9,7 +9,7 @@
 
 package openapi
 
-type ProjectPostAccessrights struct {
-	Id string `json:"id"`
-	Role string `json:"role"`
+type AccessrightsUserRole struct {
+	Id string `json:"id,omitempty"`
+	Role string `json:"role,omitempty"`
 }

@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ContainerPostAccessrights**
-> string ContainerPostAccessrights(ctx, containerId, containerPostAccessrights)
+> Container ContainerPostAccessrights(ctx, containerId, containerPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Container**](container.md)
 
 ### Authorization
 

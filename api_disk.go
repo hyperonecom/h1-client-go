@@ -1686,16 +1686,16 @@ DiskApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskPostAccessrights
-@return string
+@return Disk
 */
-func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string, diskPostAccessrights DiskPostAccessrights) (string, *http.Response, error) {
+func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string, diskPostAccessrights DiskPostAccessrights) (Disk, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Disk
 	)
 
 	// create path and map variables
@@ -1786,7 +1786,17 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Disk
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Disk
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

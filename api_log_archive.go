@@ -2602,16 +2602,16 @@ LogArchiveApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchivePostAccessrights
-@return string
+@return LogArchive
 */
-func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, logArchiveId string, logArchivePostAccessrights LogArchivePostAccessrights) (string, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, logArchiveId string, logArchivePostAccessrights LogArchivePostAccessrights) (LogArchive, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  LogArchive
 	)
 
 	// create path and map variables
@@ -2702,7 +2702,17 @@ func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, l
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v LogArchive
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v LogArchive
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

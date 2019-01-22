@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **LogArchivePostAccessrights**
-> string LogArchivePostAccessrights(ctx, logArchiveId, logArchivePostAccessrights)
+> LogArchive LogArchivePostAccessrights(ctx, logArchiveId, logArchivePostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**LogArchive**](logArchive.md)
 
 ### Authorization
 

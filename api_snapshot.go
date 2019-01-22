@@ -1431,16 +1431,16 @@ SnapshotApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param snapshotPostAccessrights
-@return string
+@return Snapshot
 */
-func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snapshotId string, snapshotPostAccessrights SnapshotPostAccessrights) (string, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snapshotId string, snapshotPostAccessrights SnapshotPostAccessrights) (Snapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Snapshot
 	)
 
 	// create path and map variables
@@ -1531,7 +1531,17 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Snapshot
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Snapshot
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

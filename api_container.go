@@ -1807,16 +1807,16 @@ ContainerApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param containerPostAccessrights
-@return string
+@return Container
 */
-func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (string, *http.Response, error) {
+func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (Container, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Container
 	)
 
 	// create path and map variables
@@ -1907,7 +1907,17 @@ func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, con
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Container
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Container
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

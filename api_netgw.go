@@ -1683,16 +1683,16 @@ NetgwApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param netgwPostAccessrights
-@return string
+@return Netgw
 */
-func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId string, netgwPostAccessrights NetgwPostAccessrights) (string, *http.Response, error) {
+func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId string, netgwPostAccessrights NetgwPostAccessrights) (Netgw, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Netgw
 	)
 
 	// create path and map variables
@@ -1783,7 +1783,17 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Netgw
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Netgw
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IpPostAccessrights**
-> string IpPostAccessrights(ctx, ipId, ipPostAccessrights)
+> Ip IpPostAccessrights(ctx, ipId, ipPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Ip**](ip.md)
 
 ### Authorization
 

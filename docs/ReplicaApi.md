@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ReplicaPostAccessrights**
-> string ReplicaPostAccessrights(ctx, replicaId, replicaPostAccessrights)
+> Replica ReplicaPostAccessrights(ctx, replicaId, replicaPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Replica**](replica.md)
 
 ### Authorization
 

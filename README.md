@@ -192,9 +192,9 @@ Class | Method | HTTP request | Description
 *NetworkApi* | [**NetworkCreate**](docs/NetworkApi.md#networkcreate) | **Post** /network | Create
 *NetworkApi* | [**NetworkDelete**](docs/NetworkApi.md#networkdelete) | **Delete** /network/{networkId} | Delete
 *NetworkApi* | [**NetworkDeleteAccessrightsIdentity**](docs/NetworkApi.md#networkdeleteaccessrightsidentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-*NetworkApi* | [**NetworkDeleteIpIpId**](docs/NetworkApi.md#networkdeleteipipid) | **Delete** /network/{networkId}/ip/:ipId | /ip/:ipId
+*NetworkApi* | [**NetworkDeleteIpIpId**](docs/NetworkApi.md#networkdeleteipipid) | **Delete** /network/{networkId}/ip/{ipId} | /ip/:ipId
 *NetworkApi* | [**NetworkDeleteTagKey**](docs/NetworkApi.md#networkdeletetagkey) | **Delete** /network/{networkId}/tag/{key} | /tag/:key
-*NetworkApi* | [**NetworkGetIpIpId**](docs/NetworkApi.md#networkgetipipid) | **Get** /network/{networkId}/ip/:ipId | /ip/:ipId
+*NetworkApi* | [**NetworkGetIpIpId**](docs/NetworkApi.md#networkgetipipid) | **Get** /network/{networkId}/ip/{ipId} | /ip/:ipId
 *NetworkApi* | [**NetworkGetServicesServiceId**](docs/NetworkApi.md#networkgetservicesserviceid) | **Get** /network/{networkId}/services/{serviceId} | /services/:serviceId
 *NetworkApi* | [**NetworkGetTag**](docs/NetworkApi.md#networkgettag) | **Get** /network/{networkId}/tag | /tag
 *NetworkApi* | [**NetworkList**](docs/NetworkApi.md#networklist) | **Get** /network | List
@@ -209,7 +209,7 @@ Class | Method | HTTP request | Description
 *NetworkApi* | [**NetworkUpdate**](docs/NetworkApi.md#networkupdate) | **Patch** /network/{networkId} | Update
 *OrganisationApi* | [**OrganisationActionTransferAccept**](docs/OrganisationApi.md#organisationactiontransferaccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 *OrganisationApi* | [**OrganisationCreate**](docs/OrganisationApi.md#organisationcreate) | **Post** /organisation | Create
-*OrganisationApi* | [**OrganisationDeleteAccessrightsIdentity**](docs/OrganisationApi.md#organisationdeleteaccessrightsidentity) | **Delete** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+*OrganisationApi* | [**OrganisationDeleteAccessrightsId**](docs/OrganisationApi.md#organisationdeleteaccessrightsid) | **Delete** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
 *OrganisationApi* | [**OrganisationDeleteTagKey**](docs/OrganisationApi.md#organisationdeletetagkey) | **Delete** /organisation/{organisationId}/tag/{key} | /tag/:key
 *OrganisationApi* | [**OrganisationGetTag**](docs/OrganisationApi.md#organisationgettag) | **Get** /organisation/{organisationId}/tag | /tag
 *OrganisationApi* | [**OrganisationList**](docs/OrganisationApi.md#organisationlist) | **Get** /organisation | List
@@ -220,16 +220,22 @@ Class | Method | HTTP request | Description
 *OrganisationApi* | [**OrganisationShow**](docs/OrganisationApi.md#organisationshow) | **Get** /organisation/{organisationId} | Get
 *OrganisationApi* | [**OrganisationUpdate**](docs/OrganisationApi.md#organisationupdate) | **Patch** /organisation/{organisationId} | Update
 *ProjectApi* | [**ProjectCreate**](docs/ProjectApi.md#projectcreate) | **Post** /project | Create
-*ProjectApi* | [**ProjectDeleteAccessrightsIdentity**](docs/ProjectApi.md#projectdeleteaccessrightsidentity) | **Delete** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
+*ProjectApi* | [**ProjectDelete**](docs/ProjectApi.md#projectdelete) | **Delete** /project/{projectId} | Delete
+*ProjectApi* | [**ProjectDeleteAccessrightsId**](docs/ProjectApi.md#projectdeleteaccessrightsid) | **Delete** /project/{projectId}/accessrights/{id} | /accessrights/:id
+*ProjectApi* | [**ProjectDeleteCredentialStorecertificateId**](docs/ProjectApi.md#projectdeletecredentialstorecertificateid) | **Delete** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectDeleteTagKey**](docs/ProjectApi.md#projectdeletetagkey) | **Delete** /project/{projectId}/tag/{key} | /tag/:key
+*ProjectApi* | [**ProjectGetCredentialStorecertificateId**](docs/ProjectApi.md#projectgetcredentialstorecertificateid) | **Get** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectGetServicesServiceId**](docs/ProjectApi.md#projectgetservicesserviceid) | **Get** /project/{projectId}/services/{serviceId} | /services/:serviceId
 *ProjectApi* | [**ProjectGetTag**](docs/ProjectApi.md#projectgettag) | **Get** /project/{projectId}/tag | /tag
 *ProjectApi* | [**ProjectList**](docs/ProjectApi.md#projectlist) | **Get** /project | List
 *ProjectApi* | [**ProjectListAccessrights**](docs/ProjectApi.md#projectlistaccessrights) | **Get** /project/{projectId}/accessrights | /accessrights
+*ProjectApi* | [**ProjectListCredentialStorecertificate**](docs/ProjectApi.md#projectlistcredentialstorecertificate) | **Get** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *ProjectApi* | [**ProjectListQueue**](docs/ProjectApi.md#projectlistqueue) | **Get** /project/{projectId}/queue | /queue
 *ProjectApi* | [**ProjectListServices**](docs/ProjectApi.md#projectlistservices) | **Get** /project/{projectId}/services | /services
+*ProjectApi* | [**ProjectPatchCredentialStorecertificateId**](docs/ProjectApi.md#projectpatchcredentialstorecertificateid) | **Patch** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectPatchTag**](docs/ProjectApi.md#projectpatchtag) | **Patch** /project/{projectId}/tag | /tag
 *ProjectApi* | [**ProjectPostAccessrights**](docs/ProjectApi.md#projectpostaccessrights) | **Post** /project/{projectId}/accessrights | /accessrights
+*ProjectApi* | [**ProjectPostCredentialStorecertificate**](docs/ProjectApi.md#projectpostcredentialstorecertificate) | **Post** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *ProjectApi* | [**ProjectShow**](docs/ProjectApi.md#projectshow) | **Get** /project/{projectId} | Get
 *ProjectApi* | [**ProjectUpdate**](docs/ProjectApi.md#projectupdate) | **Patch** /project/{projectId} | Update
 *ReplicaApi* | [**ReplicaActionImage**](docs/ReplicaApi.md#replicaactionimage) | **Post** /replica/{replicaId}/actions/image | /actions/image
@@ -354,6 +360,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AccessrightsUserRole](docs/AccessrightsUserRole.md)
  - [Container](docs/Container.md)
  - [ContainerCreate](docs/ContainerCreate.md)
  - [ContainerCreateExpose](docs/ContainerCreateExpose.md)
@@ -397,6 +404,7 @@ Class | Method | HTTP request | Description
  - [ImageUpdate](docs/ImageUpdate.md)
  - [ImageVm](docs/ImageVm.md)
  - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse2001](docs/InlineResponse2001.md)
  - [Ip](docs/Ip.md)
  - [IpActionAllocate](docs/IpActionAllocate.md)
  - [IpActionAssociate](docs/IpActionAssociate.md)
@@ -442,7 +450,6 @@ Class | Method | HTTP request | Description
  - [NetworkServices](docs/NetworkServices.md)
  - [NetworkUpdate](docs/NetworkUpdate.md)
  - [Organisation](docs/Organisation.md)
- - [OrganisationAccessRights](docs/OrganisationAccessRights.md)
  - [OrganisationActionTransferAccept](docs/OrganisationActionTransferAccept.md)
  - [OrganisationBilling](docs/OrganisationBilling.md)
  - [OrganisationBillingAddress](docs/OrganisationBillingAddress.md)
@@ -465,15 +472,17 @@ Class | Method | HTTP request | Description
  - [ProjectCompliance](docs/ProjectCompliance.md)
  - [ProjectCreate](docs/ProjectCreate.md)
  - [ProjectCreateAccessRights](docs/ProjectCreateAccessRights.md)
+ - [ProjectDuplicate](docs/ProjectDuplicate.md)
  - [ProjectInvoices](docs/ProjectInvoices.md)
- - [ProjectInvoicesDuplicate](docs/ProjectInvoicesDuplicate.md)
  - [ProjectLimit](docs/ProjectLimit.md)
  - [ProjectLimitDisk](docs/ProjectLimitDisk.md)
  - [ProjectLimitDomain](docs/ProjectLimitDomain.md)
  - [ProjectLimitIso](docs/ProjectLimitIso.md)
  - [ProjectLimitVm](docs/ProjectLimitVm.md)
  - [ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
+ - [ProjectPatchCredentialStorecertificateId](docs/ProjectPatchCredentialStorecertificateId.md)
  - [ProjectPostAccessrights](docs/ProjectPostAccessrights.md)
+ - [ProjectPostCredentialStorecertificate](docs/ProjectPostCredentialStorecertificate.md)
  - [ProjectRoles](docs/ProjectRoles.md)
  - [ProjectServices](docs/ProjectServices.md)
  - [ProjectThreshold](docs/ProjectThreshold.md)

@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DiskPostAccessrights**
-> string DiskPostAccessrights(ctx, diskId, diskPostAccessrights)
+> Disk DiskPostAccessrights(ctx, diskId, diskPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Disk**](disk.md)
 
 ### Authorization
 

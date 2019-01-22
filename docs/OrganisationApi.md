@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**OrganisationActionTransferAccept**](OrganisationApi.md#OrganisationActionTransferAccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 [**OrganisationCreate**](OrganisationApi.md#OrganisationCreate) | **Post** /organisation | Create
-[**OrganisationDeleteAccessrightsIdentity**](OrganisationApi.md#OrganisationDeleteAccessrightsIdentity) | **Delete** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+[**OrganisationDeleteAccessrightsId**](OrganisationApi.md#OrganisationDeleteAccessrightsId) | **Delete** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
 [**OrganisationDeleteTagKey**](OrganisationApi.md#OrganisationDeleteTagKey) | **Delete** /organisation/{organisationId}/tag/{key} | /tag/:key
 [**OrganisationGetTag**](OrganisationApi.md#OrganisationGetTag) | **Get** /organisation/{organisationId}/tag | /tag
 [**OrganisationList**](OrganisationApi.md#OrganisationList) | **Get** /organisation | List
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **OrganisationDeleteAccessrightsIdentity**
-> Organisation OrganisationDeleteAccessrightsIdentity(ctx, organisationId, identity)
-/accessrights/:identity
+# **OrganisationDeleteAccessrightsId**
+> Organisation OrganisationDeleteAccessrightsId(ctx, organisationId, id)
+/accessrights/:id
 
 ### Required Parameters
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **organisationId** | **string**| ID of organisation | 
-  **identity** | **string**| identity | 
+  **id** | **string**| id | 
 
 ### Return type
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OrganisationListAccessrights**
-> []OrganisationAccessRights OrganisationListAccessrights(ctx, organisationId)
+> []AccessrightsUserRole OrganisationListAccessrights(ctx, organisationId)
 /accessrights
 
 ### Required Parameters
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]OrganisationAccessRights**](organisation.accessRights.md)
+[**[]AccessrightsUserRole**](accessrightsUserRole.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OrganisationPostAccessrights**
-> OrganisationAccessRights OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
+> AccessrightsUserRole OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganisationAccessRights**](organisation.accessRights.md)
+[**AccessrightsUserRole**](accessrightsUserRole.md)
 
 ### Authorization
 

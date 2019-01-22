@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VmPostAccessrights**
-> string VmPostAccessrights(ctx, vmId, vmPostAccessrights)
+> Vm VmPostAccessrights(ctx, vmId, vmPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**Vm**](vm.md)
 
 ### Authorization
 

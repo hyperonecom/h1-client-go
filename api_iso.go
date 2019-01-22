@@ -1556,16 +1556,16 @@ IsoApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param isoPostAccessrights
-@return string
+@return Iso
 */
-func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, isoPostAccessrights IsoPostAccessrights) (string, *http.Response, error) {
+func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, isoPostAccessrights IsoPostAccessrights) (Iso, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  string
+		localVarReturnValue  Iso
 	)
 
 	// create path and map variables
@@ -1656,7 +1656,17 @@ func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, i
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v string
+			var v Iso
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Iso
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
