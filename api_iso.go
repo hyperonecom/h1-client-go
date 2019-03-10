@@ -83,7 +83,6 @@ func (a *IsoApiService) IsoActionTransfer(ctx context.Context, isoId string, iso
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *IsoApiService) IsoActionTransfer(ctx context.Context, isoId string, iso
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *IsoApiService) IsoActionTransfer(ctx context.Context, isoId string, iso
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -211,7 +208,6 @@ func (a *IsoApiService) IsoCreate(ctx context.Context, isoCreate IsoCreate) (Iso
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -224,7 +220,6 @@ func (a *IsoApiService) IsoCreate(ctx context.Context, isoCreate IsoCreate) (Iso
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -237,7 +232,6 @@ func (a *IsoApiService) IsoCreate(ctx context.Context, isoCreate IsoCreate) (Iso
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -335,7 +329,6 @@ func (a *IsoApiService) IsoDelete(ctx context.Context, isoId string) (*http.Resp
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -348,7 +341,6 @@ func (a *IsoApiService) IsoDelete(ctx context.Context, isoId string) (*http.Resp
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -361,7 +353,6 @@ func (a *IsoApiService) IsoDelete(ctx context.Context, isoId string) (*http.Resp
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -444,7 +435,6 @@ func (a *IsoApiService) IsoDeleteAccessrightsIdentity(ctx context.Context, isoId
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -457,7 +447,6 @@ func (a *IsoApiService) IsoDeleteAccessrightsIdentity(ctx context.Context, isoId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -470,7 +459,6 @@ func (a *IsoApiService) IsoDeleteAccessrightsIdentity(ctx context.Context, isoId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -582,7 +570,6 @@ func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -595,7 +582,6 @@ func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -608,7 +594,6 @@ func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -710,7 +695,6 @@ func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId strin
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -723,7 +707,6 @@ func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -736,7 +719,6 @@ func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -836,7 +818,6 @@ func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -849,7 +830,6 @@ func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -862,7 +842,6 @@ func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -971,7 +950,6 @@ func (a *IsoApiService) IsoList(ctx context.Context, localVarOptionals *IsoListO
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -984,7 +962,6 @@ func (a *IsoApiService) IsoList(ctx context.Context, localVarOptionals *IsoListO
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -997,7 +974,6 @@ func (a *IsoApiService) IsoList(ctx context.Context, localVarOptionals *IsoListO
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1097,7 +1073,6 @@ func (a *IsoApiService) IsoListAccessrights(ctx context.Context, isoId string) (
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1110,7 +1085,6 @@ func (a *IsoApiService) IsoListAccessrights(ctx context.Context, isoId string) (
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1123,7 +1097,6 @@ func (a *IsoApiService) IsoListAccessrights(ctx context.Context, isoId string) (
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1223,7 +1196,6 @@ func (a *IsoApiService) IsoListQueue(ctx context.Context, isoId string) ([]Event
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1236,7 +1208,6 @@ func (a *IsoApiService) IsoListQueue(ctx context.Context, isoId string) ([]Event
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1249,7 +1220,6 @@ func (a *IsoApiService) IsoListQueue(ctx context.Context, isoId string) ([]Event
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1349,7 +1319,6 @@ func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]Is
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1362,7 +1331,6 @@ func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]Is
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1375,7 +1343,6 @@ func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]Is
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1426,10 +1393,10 @@ func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]Is
 IsoApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1465,7 +1432,7 @@ func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1478,7 +1445,6 @@ func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1491,7 +1457,6 @@ func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1504,7 +1469,6 @@ func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, body map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1607,7 +1571,6 @@ func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, i
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1620,7 +1583,6 @@ func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, i
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1633,7 +1595,6 @@ func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, i
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1744,7 +1705,6 @@ func (a *IsoApiService) IsoShow(ctx context.Context, isoId string) (Iso, *http.R
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1757,7 +1717,6 @@ func (a *IsoApiService) IsoShow(ctx context.Context, isoId string) (Iso, *http.R
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1770,7 +1729,6 @@ func (a *IsoApiService) IsoShow(ctx context.Context, isoId string) (Iso, *http.R
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1874,7 +1832,6 @@ func (a *IsoApiService) IsoUpdate(ctx context.Context, isoId string, isoUpdate I
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1887,7 +1844,6 @@ func (a *IsoApiService) IsoUpdate(ctx context.Context, isoId string, isoUpdate I
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1900,7 +1856,6 @@ func (a *IsoApiService) IsoUpdate(ctx context.Context, isoId string, isoUpdate I
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

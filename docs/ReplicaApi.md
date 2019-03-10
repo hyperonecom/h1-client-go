@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ReplicaPatchTag**
-> map[string]interface{} ReplicaPatchTag(ctx, replicaId, body)
+> map[string]interface{} ReplicaPatchTag(ctx, replicaId, requestBody)
 /tag
 
 ### Required Parameters
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **replicaId** | **string**| ID of replica | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

@@ -83,7 +83,6 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -211,7 +208,6 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -224,7 +220,6 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -237,7 +232,6 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -335,7 +329,6 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -348,7 +341,6 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -361,7 +353,6 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -444,7 +435,6 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -457,7 +447,6 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -470,7 +459,6 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -582,7 +570,6 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -595,7 +582,6 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -608,7 +594,6 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -710,7 +695,6 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -723,7 +707,6 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -736,7 +719,6 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -836,7 +818,6 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -849,7 +830,6 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -862,7 +842,6 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -971,7 +950,6 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -984,7 +962,6 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -997,7 +974,6 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1097,7 +1073,6 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1110,7 +1085,6 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1123,7 +1097,6 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1223,7 +1196,6 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1236,7 +1208,6 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1249,7 +1220,6 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1349,7 +1319,6 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1362,7 +1331,6 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1375,7 +1343,6 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1426,10 +1393,10 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 ImageApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1465,7 +1432,7 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, bod
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1478,7 +1445,6 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, bod
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1491,7 +1457,6 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, bod
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1504,7 +1469,6 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, bod
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1607,7 +1571,6 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1620,7 +1583,6 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1633,7 +1595,6 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1744,7 +1705,6 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1757,7 +1717,6 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1770,7 +1729,6 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1874,7 +1832,6 @@ func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, image
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1887,7 +1844,6 @@ func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, image
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1900,7 +1856,6 @@ func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, image
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

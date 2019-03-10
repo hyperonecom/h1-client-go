@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VmhostPatchTag**
-> map[string]interface{} VmhostPatchTag(ctx, vmhostId, body)
+> map[string]interface{} VmhostPatchTag(ctx, vmhostId, requestBody)
 /tag
 
 ### Required Parameters
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **vmhostId** | **string**| ID of vmhost | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

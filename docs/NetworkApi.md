@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **NetworkPatchTag**
-> map[string]interface{} NetworkPatchTag(ctx, networkId, body)
+> map[string]interface{} NetworkPatchTag(ctx, networkId, requestBody)
 /tag
 
 ### Required Parameters
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **networkId** | **string**| ID of network | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

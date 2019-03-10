@@ -83,7 +83,6 @@ func (a *VmhostApiService) VmhostActionMoveDisk(ctx context.Context, vmhostId st
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *VmhostApiService) VmhostActionMoveDisk(ctx context.Context, vmhostId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *VmhostApiService) VmhostActionMoveDisk(ctx context.Context, vmhostId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -213,7 +210,6 @@ func (a *VmhostApiService) VmhostActionMoveISO(ctx context.Context, vmhostId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -226,7 +222,6 @@ func (a *VmhostApiService) VmhostActionMoveISO(ctx context.Context, vmhostId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -239,7 +234,6 @@ func (a *VmhostApiService) VmhostActionMoveISO(ctx context.Context, vmhostId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -343,7 +337,6 @@ func (a *VmhostApiService) VmhostActionMoveImage(ctx context.Context, vmhostId s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -356,7 +349,6 @@ func (a *VmhostApiService) VmhostActionMoveImage(ctx context.Context, vmhostId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -369,7 +361,6 @@ func (a *VmhostApiService) VmhostActionMoveImage(ctx context.Context, vmhostId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -473,7 +464,6 @@ func (a *VmhostApiService) VmhostActionMoveVM(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -486,7 +476,6 @@ func (a *VmhostApiService) VmhostActionMoveVM(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -499,7 +488,6 @@ func (a *VmhostApiService) VmhostActionMoveVM(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -597,7 +585,6 @@ func (a *VmhostApiService) VmhostDelete(ctx context.Context, vmhostId string) (*
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -610,7 +597,6 @@ func (a *VmhostApiService) VmhostDelete(ctx context.Context, vmhostId string) (*
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -623,7 +609,6 @@ func (a *VmhostApiService) VmhostDelete(ctx context.Context, vmhostId string) (*
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -706,7 +691,6 @@ func (a *VmhostApiService) VmhostDeleteAccessrightsIdentity(ctx context.Context,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -719,7 +703,6 @@ func (a *VmhostApiService) VmhostDeleteAccessrightsIdentity(ctx context.Context,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -732,7 +715,6 @@ func (a *VmhostApiService) VmhostDeleteAccessrightsIdentity(ctx context.Context,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -844,7 +826,6 @@ func (a *VmhostApiService) VmhostDeleteTagKey(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -857,7 +838,6 @@ func (a *VmhostApiService) VmhostDeleteTagKey(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -870,7 +850,6 @@ func (a *VmhostApiService) VmhostDeleteTagKey(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -972,7 +951,6 @@ func (a *VmhostApiService) VmhostGetServicesServiceId(ctx context.Context, vmhos
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -985,7 +963,6 @@ func (a *VmhostApiService) VmhostGetServicesServiceId(ctx context.Context, vmhos
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -998,7 +975,6 @@ func (a *VmhostApiService) VmhostGetServicesServiceId(ctx context.Context, vmhos
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1098,7 +1074,6 @@ func (a *VmhostApiService) VmhostGetTag(ctx context.Context, vmhostId string) (m
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1111,7 +1086,6 @@ func (a *VmhostApiService) VmhostGetTag(ctx context.Context, vmhostId string) (m
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1124,7 +1098,6 @@ func (a *VmhostApiService) VmhostGetTag(ctx context.Context, vmhostId string) (m
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1233,7 +1206,6 @@ func (a *VmhostApiService) VmhostList(ctx context.Context, localVarOptionals *Vm
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1246,7 +1218,6 @@ func (a *VmhostApiService) VmhostList(ctx context.Context, localVarOptionals *Vm
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1259,7 +1230,6 @@ func (a *VmhostApiService) VmhostList(ctx context.Context, localVarOptionals *Vm
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1359,7 +1329,6 @@ func (a *VmhostApiService) VmhostListAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1372,7 +1341,6 @@ func (a *VmhostApiService) VmhostListAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1385,7 +1353,6 @@ func (a *VmhostApiService) VmhostListAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1485,7 +1452,6 @@ func (a *VmhostApiService) VmhostListQueue(ctx context.Context, vmhostId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1498,7 +1464,6 @@ func (a *VmhostApiService) VmhostListQueue(ctx context.Context, vmhostId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1511,7 +1476,6 @@ func (a *VmhostApiService) VmhostListQueue(ctx context.Context, vmhostId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1611,7 +1575,6 @@ func (a *VmhostApiService) VmhostListServices(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1624,7 +1587,6 @@ func (a *VmhostApiService) VmhostListServices(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1637,7 +1599,6 @@ func (a *VmhostApiService) VmhostListServices(ctx context.Context, vmhostId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1688,10 +1649,10 @@ func (a *VmhostApiService) VmhostListServices(ctx context.Context, vmhostId stri
 VmhostApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmhostId ID of vmhost
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1727,7 +1688,7 @@ func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1740,7 +1701,6 @@ func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1753,7 +1713,6 @@ func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1766,7 +1725,6 @@ func (a *VmhostApiService) VmhostPatchTag(ctx context.Context, vmhostId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1869,7 +1827,6 @@ func (a *VmhostApiService) VmhostPostAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1882,7 +1839,6 @@ func (a *VmhostApiService) VmhostPostAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1895,7 +1851,6 @@ func (a *VmhostApiService) VmhostPostAccessrights(ctx context.Context, vmhostId 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2006,7 +1961,6 @@ func (a *VmhostApiService) VmhostShow(ctx context.Context, vmhostId string) (Vmh
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2019,7 +1973,6 @@ func (a *VmhostApiService) VmhostShow(ctx context.Context, vmhostId string) (Vmh
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2032,7 +1985,6 @@ func (a *VmhostApiService) VmhostShow(ctx context.Context, vmhostId string) (Vmh
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2136,7 +2088,6 @@ func (a *VmhostApiService) VmhostUpdate(ctx context.Context, vmhostId string, vm
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2149,7 +2100,6 @@ func (a *VmhostApiService) VmhostUpdate(ctx context.Context, vmhostId string, vm
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2162,7 +2112,6 @@ func (a *VmhostApiService) VmhostUpdate(ctx context.Context, vmhostId string, vm
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

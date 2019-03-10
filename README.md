@@ -30,6 +30,31 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AgentApi* | [**AgentCreate**](docs/AgentApi.md#agentcreate) | **Post** /agent | Create
+*AgentApi* | [**AgentDelete**](docs/AgentApi.md#agentdelete) | **Delete** /agent/{agentId} | Delete
+*AgentApi* | [**AgentDeleteAccessrightsIdentity**](docs/AgentApi.md#agentdeleteaccessrightsidentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
+*AgentApi* | [**AgentDeleteCredentialcertificateId**](docs/AgentApi.md#agentdeletecredentialcertificateid) | **Delete** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*AgentApi* | [**AgentDeleteTagKey**](docs/AgentApi.md#agentdeletetagkey) | **Delete** /agent/{agentId}/tag/{key} | /tag/:key
+*AgentApi* | [**AgentGetCredentialcertificateId**](docs/AgentApi.md#agentgetcredentialcertificateid) | **Get** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*AgentApi* | [**AgentGetInspect**](docs/AgentApi.md#agentgetinspect) | **Get** /agent/{agentId}/inspect | /inspect
+*AgentApi* | [**AgentGetResourceResourceIdinspect**](docs/AgentApi.md#agentgetresourceresourceidinspect) | **Get** /agent/{agentId}/resource/{resourceId}/inspect | /resource/:resourceId/inspect
+*AgentApi* | [**AgentGetServicesServiceId**](docs/AgentApi.md#agentgetservicesserviceid) | **Get** /agent/{agentId}/services/{serviceId} | /services/:serviceId
+*AgentApi* | [**AgentGetTag**](docs/AgentApi.md#agentgettag) | **Get** /agent/{agentId}/tag | /tag
+*AgentApi* | [**AgentList**](docs/AgentApi.md#agentlist) | **Get** /agent | List
+*AgentApi* | [**AgentListAccessrights**](docs/AgentApi.md#agentlistaccessrights) | **Get** /agent/{agentId}/accessrights | /accessrights
+*AgentApi* | [**AgentListCredentialcertificate**](docs/AgentApi.md#agentlistcredentialcertificate) | **Get** /agent/{agentId}/credential/certificate | /credential/certificate
+*AgentApi* | [**AgentListEnabledServices**](docs/AgentApi.md#agentlistenabledservices) | **Get** /agent/{agentId}/enabledServices | /enabledServices
+*AgentApi* | [**AgentListQueue**](docs/AgentApi.md#agentlistqueue) | **Get** /agent/{agentId}/queue | /queue
+*AgentApi* | [**AgentListResource**](docs/AgentApi.md#agentlistresource) | **Get** /agent/{agentId}/resource | /resource
+*AgentApi* | [**AgentListServices**](docs/AgentApi.md#agentlistservices) | **Get** /agent/{agentId}/services | /services
+*AgentApi* | [**AgentPatchCredentialcertificateId**](docs/AgentApi.md#agentpatchcredentialcertificateid) | **Patch** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*AgentApi* | [**AgentPatchTag**](docs/AgentApi.md#agentpatchtag) | **Patch** /agent/{agentId}/tag | /tag
+*AgentApi* | [**AgentPostAccessrights**](docs/AgentApi.md#agentpostaccessrights) | **Post** /agent/{agentId}/accessrights | /accessrights
+*AgentApi* | [**AgentPostCredentialcertificate**](docs/AgentApi.md#agentpostcredentialcertificate) | **Post** /agent/{agentId}/credential/certificate | /credential/certificate
+*AgentApi* | [**AgentPostResourceResourceIdactionsrecreate**](docs/AgentApi.md#agentpostresourceresourceidactionsrecreate) | **Post** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
+*AgentApi* | [**AgentPutEnabledServices**](docs/AgentApi.md#agentputenabledservices) | **Put** /agent/{agentId}/enabledServices | /enabledServices
+*AgentApi* | [**AgentShow**](docs/AgentApi.md#agentshow) | **Get** /agent/{agentId} | Get
+*AgentApi* | [**AgentUpdate**](docs/AgentApi.md#agentupdate) | **Patch** /agent/{agentId} | Update
 *ContainerApi* | [**ContainerActionRestart**](docs/ContainerApi.md#containeractionrestart) | **Post** /container/{containerId}/actions/restart | /actions/restart
 *ContainerApi* | [**ContainerActionStart**](docs/ContainerApi.md#containeractionstart) | **Post** /container/{containerId}/actions/start | /actions/start
 *ContainerApi* | [**ContainerActionStop**](docs/ContainerApi.md#containeractionstop) | **Post** /container/{containerId}/actions/stop | /actions/stop
@@ -141,24 +166,19 @@ Class | Method | HTTP request | Description
 *LogArchiveApi* | [**LogArchiveCreate**](docs/LogArchiveApi.md#logarchivecreate) | **Post** /logArchive | Create
 *LogArchiveApi* | [**LogArchiveDelete**](docs/LogArchiveApi.md#logarchivedelete) | **Delete** /logArchive/{logArchiveId} | Delete
 *LogArchiveApi* | [**LogArchiveDeleteAccessrightsIdentity**](docs/LogArchiveApi.md#logarchivedeleteaccessrightsidentity) | **Delete** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
-*LogArchiveApi* | [**LogArchiveDeleteCredentialcertificateId**](docs/LogArchiveApi.md#logarchivedeletecredentialcertificateid) | **Delete** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *LogArchiveApi* | [**LogArchiveDeleteCredentialpasswordId**](docs/LogArchiveApi.md#logarchivedeletecredentialpasswordid) | **Delete** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchiveDeleteTagKey**](docs/LogArchiveApi.md#logarchivedeletetagkey) | **Delete** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
-*LogArchiveApi* | [**LogArchiveGetCredentialcertificateId**](docs/LogArchiveApi.md#logarchivegetcredentialcertificateid) | **Get** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *LogArchiveApi* | [**LogArchiveGetCredentialpasswordId**](docs/LogArchiveApi.md#logarchivegetcredentialpasswordid) | **Get** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchiveGetServicesServiceId**](docs/LogArchiveApi.md#logarchivegetservicesserviceid) | **Get** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
 *LogArchiveApi* | [**LogArchiveGetTag**](docs/LogArchiveApi.md#logarchivegettag) | **Get** /logArchive/{logArchiveId}/tag | /tag
 *LogArchiveApi* | [**LogArchiveList**](docs/LogArchiveApi.md#logarchivelist) | **Get** /logArchive | List
 *LogArchiveApi* | [**LogArchiveListAccessrights**](docs/LogArchiveApi.md#logarchivelistaccessrights) | **Get** /logArchive/{logArchiveId}/accessrights | /accessrights
-*LogArchiveApi* | [**LogArchiveListCredentialcertificate**](docs/LogArchiveApi.md#logarchivelistcredentialcertificate) | **Get** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 *LogArchiveApi* | [**LogArchiveListCredentialpassword**](docs/LogArchiveApi.md#logarchivelistcredentialpassword) | **Get** /logArchive/{logArchiveId}/credential/password | /credential/password
 *LogArchiveApi* | [**LogArchiveListQueue**](docs/LogArchiveApi.md#logarchivelistqueue) | **Get** /logArchive/{logArchiveId}/queue | /queue
 *LogArchiveApi* | [**LogArchiveListServices**](docs/LogArchiveApi.md#logarchivelistservices) | **Get** /logArchive/{logArchiveId}/services | /services
-*LogArchiveApi* | [**LogArchivePatchCredentialcertificateId**](docs/LogArchiveApi.md#logarchivepatchcredentialcertificateid) | **Patch** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *LogArchiveApi* | [**LogArchivePatchCredentialpasswordId**](docs/LogArchiveApi.md#logarchivepatchcredentialpasswordid) | **Patch** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchivePatchTag**](docs/LogArchiveApi.md#logarchivepatchtag) | **Patch** /logArchive/{logArchiveId}/tag | /tag
 *LogArchiveApi* | [**LogArchivePostAccessrights**](docs/LogArchiveApi.md#logarchivepostaccessrights) | **Post** /logArchive/{logArchiveId}/accessrights | /accessrights
-*LogArchiveApi* | [**LogArchivePostCredentialcertificate**](docs/LogArchiveApi.md#logarchivepostcredentialcertificate) | **Post** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 *LogArchiveApi* | [**LogArchivePostCredentialpassword**](docs/LogArchiveApi.md#logarchivepostcredentialpassword) | **Post** /logArchive/{logArchiveId}/credential/password | /credential/password
 *LogArchiveApi* | [**LogArchiveShow**](docs/LogArchiveApi.md#logarchiveshow) | **Get** /logArchive/{logArchiveId} | Get
 *LogArchiveApi* | [**LogArchiveUpdate**](docs/LogArchiveApi.md#logarchiveupdate) | **Patch** /logArchive/{logArchiveId} | Update
@@ -207,6 +227,7 @@ Class | Method | HTTP request | Description
 *NetworkApi* | [**NetworkPostIp**](docs/NetworkApi.md#networkpostip) | **Post** /network/{networkId}/ip | /ip
 *NetworkApi* | [**NetworkShow**](docs/NetworkApi.md#networkshow) | **Get** /network/{networkId} | Get
 *NetworkApi* | [**NetworkUpdate**](docs/NetworkApi.md#networkupdate) | **Patch** /network/{networkId} | Update
+*OrganisationApi* | [**OrganisationActionPaymentAssign**](docs/OrganisationApi.md#organisationactionpaymentassign) | **Post** /organisation/{organisationId}/actions/payment_assign | /actions/payment_assign
 *OrganisationApi* | [**OrganisationActionTransferAccept**](docs/OrganisationApi.md#organisationactiontransferaccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 *OrganisationApi* | [**OrganisationCreate**](docs/OrganisationApi.md#organisationcreate) | **Post** /organisation | Create
 *OrganisationApi* | [**OrganisationDeleteAccessrightsId**](docs/OrganisationApi.md#organisationdeleteaccessrightsid) | **Delete** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
@@ -269,6 +290,8 @@ Class | Method | HTTP request | Description
 *ReservationApi* | [**ReservationPostAccessrights**](docs/ReservationApi.md#reservationpostaccessrights) | **Post** /reservation/{reservationId}/accessrights | /accessrights
 *ReservationApi* | [**ReservationShow**](docs/ReservationApi.md#reservationshow) | **Get** /reservation/{reservationId} | Get
 *ReservationApi* | [**ReservationUpdate**](docs/ReservationApi.md#reservationupdate) | **Patch** /reservation/{reservationId} | Update
+*ServiceApi* | [**ServiceList**](docs/ServiceApi.md#servicelist) | **Get** /service | List
+*ServiceApi* | [**ServiceShow**](docs/ServiceApi.md#serviceshow) | **Get** /service/{serviceId} | Get
 *SnapshotApi* | [**SnapshotCreate**](docs/SnapshotApi.md#snapshotcreate) | **Post** /snapshot | Create
 *SnapshotApi* | [**SnapshotDelete**](docs/SnapshotApi.md#snapshotdelete) | **Delete** /snapshot/{snapshotId} | Delete
 *SnapshotApi* | [**SnapshotDeleteAccessrightsIdentity**](docs/SnapshotApi.md#snapshotdeleteaccessrightsidentity) | **Delete** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
@@ -356,19 +379,44 @@ Class | Method | HTTP request | Description
 *VmhostApi* | [**VmhostPostAccessrights**](docs/VmhostApi.md#vmhostpostaccessrights) | **Post** /vmhost/{vmhostId}/accessrights | /accessrights
 *VmhostApi* | [**VmhostShow**](docs/VmhostApi.md#vmhostshow) | **Get** /vmhost/{vmhostId} | Get
 *VmhostApi* | [**VmhostUpdate**](docs/VmhostApi.md#vmhostupdate) | **Patch** /vmhost/{vmhostId} | Update
+*VolumeApi* | [**VolumeCreate**](docs/VolumeApi.md#volumecreate) | **Post** /volume | Create
+*VolumeApi* | [**VolumeDelete**](docs/VolumeApi.md#volumedelete) | **Delete** /volume/{volumeId} | Delete
+*VolumeApi* | [**VolumeDeleteAccessrightsIdentity**](docs/VolumeApi.md#volumedeleteaccessrightsidentity) | **Delete** /volume/{volumeId}/accessrights/{identity} | /accessrights/:identity
+*VolumeApi* | [**VolumeDeleteTagKey**](docs/VolumeApi.md#volumedeletetagkey) | **Delete** /volume/{volumeId}/tag/{key} | /tag/:key
+*VolumeApi* | [**VolumeGetServicesServiceId**](docs/VolumeApi.md#volumegetservicesserviceid) | **Get** /volume/{volumeId}/services/{serviceId} | /services/:serviceId
+*VolumeApi* | [**VolumeGetTag**](docs/VolumeApi.md#volumegettag) | **Get** /volume/{volumeId}/tag | /tag
+*VolumeApi* | [**VolumeList**](docs/VolumeApi.md#volumelist) | **Get** /volume | List
+*VolumeApi* | [**VolumeListAccessrights**](docs/VolumeApi.md#volumelistaccessrights) | **Get** /volume/{volumeId}/accessrights | /accessrights
+*VolumeApi* | [**VolumeListQueue**](docs/VolumeApi.md#volumelistqueue) | **Get** /volume/{volumeId}/queue | /queue
+*VolumeApi* | [**VolumeListServices**](docs/VolumeApi.md#volumelistservices) | **Get** /volume/{volumeId}/services | /services
+*VolumeApi* | [**VolumePatchTag**](docs/VolumeApi.md#volumepatchtag) | **Patch** /volume/{volumeId}/tag | /tag
+*VolumeApi* | [**VolumePostAccessrights**](docs/VolumeApi.md#volumepostaccessrights) | **Post** /volume/{volumeId}/accessrights | /accessrights
+*VolumeApi* | [**VolumeShow**](docs/VolumeApi.md#volumeshow) | **Get** /volume/{volumeId} | Get
+*VolumeApi* | [**VolumeUpdate**](docs/VolumeApi.md#volumeupdate) | **Patch** /volume/{volumeId} | Update
 
 
 ## Documentation For Models
 
  - [AccessrightsUserRole](docs/AccessrightsUserRole.md)
+ - [Agent](docs/Agent.md)
+ - [AgentCreate](docs/AgentCreate.md)
+ - [AgentCreateCredential](docs/AgentCreateCredential.md)
+ - [AgentPatchCredentialcertificateId](docs/AgentPatchCredentialcertificateId.md)
+ - [AgentPostAccessrights](docs/AgentPostAccessrights.md)
+ - [AgentPostCredentialcertificate](docs/AgentPostCredentialcertificate.md)
+ - [AgentResource](docs/AgentResource.md)
+ - [AgentServices](docs/AgentServices.md)
+ - [AgentUpdate](docs/AgentUpdate.md)
  - [Container](docs/Container.md)
  - [ContainerCreate](docs/ContainerCreate.md)
  - [ContainerCreateExpose](docs/ContainerCreateExpose.md)
  - [ContainerCreateRegistry](docs/ContainerCreateRegistry.md)
  - [ContainerCreateVolumes](docs/ContainerCreateVolumes.md)
+ - [ContainerExpose](docs/ContainerExpose.md)
  - [ContainerPostAccessrights](docs/ContainerPostAccessrights.md)
  - [ContainerServices](docs/ContainerServices.md)
  - [ContainerUpdate](docs/ContainerUpdate.md)
+ - [ContainerVolumes](docs/ContainerVolumes.md)
  - [CredentialCertificate](docs/CredentialCertificate.md)
  - [CredentialPassword](docs/CredentialPassword.md)
  - [Disk](docs/Disk.md)
@@ -423,10 +471,9 @@ Class | Method | HTTP request | Description
  - [LogArchive](docs/LogArchive.md)
  - [LogArchiveActionTransfer](docs/LogArchiveActionTransfer.md)
  - [LogArchiveCreate](docs/LogArchiveCreate.md)
- - [LogArchivePatchCredentialcertificateId](docs/LogArchivePatchCredentialcertificateId.md)
+ - [LogArchiveCreateCredential](docs/LogArchiveCreateCredential.md)
  - [LogArchivePatchCredentialpasswordId](docs/LogArchivePatchCredentialpasswordId.md)
  - [LogArchivePostAccessrights](docs/LogArchivePostAccessrights.md)
- - [LogArchivePostCredentialcertificate](docs/LogArchivePostCredentialcertificate.md)
  - [LogArchivePostCredentialpassword](docs/LogArchivePostCredentialpassword.md)
  - [LogArchiveServices](docs/LogArchiveServices.md)
  - [LogArchiveUpdate](docs/LogArchiveUpdate.md)
@@ -450,6 +497,7 @@ Class | Method | HTTP request | Description
  - [NetworkServices](docs/NetworkServices.md)
  - [NetworkUpdate](docs/NetworkUpdate.md)
  - [Organisation](docs/Organisation.md)
+ - [OrganisationActionPaymentAssign](docs/OrganisationActionPaymentAssign.md)
  - [OrganisationActionTransferAccept](docs/OrganisationActionTransferAccept.md)
  - [OrganisationBilling](docs/OrganisationBilling.md)
  - [OrganisationBillingAddress](docs/OrganisationBillingAddress.md)
@@ -482,7 +530,6 @@ Class | Method | HTTP request | Description
  - [ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
  - [ProjectPatchCredentialStorecertificateId](docs/ProjectPatchCredentialStorecertificateId.md)
  - [ProjectPostAccessrights](docs/ProjectPostAccessrights.md)
- - [ProjectPostCredentialStorecertificate](docs/ProjectPostCredentialStorecertificate.md)
  - [ProjectRoles](docs/ProjectRoles.md)
  - [ProjectServices](docs/ProjectServices.md)
  - [ProjectThreshold](docs/ProjectThreshold.md)
@@ -500,6 +547,10 @@ Class | Method | HTTP request | Description
  - [ReservationPostAccessrights](docs/ReservationPostAccessrights.md)
  - [ReservationServices](docs/ReservationServices.md)
  - [ReservationUpdate](docs/ReservationUpdate.md)
+ - [Service](docs/Service.md)
+ - [ServiceBilling](docs/ServiceBilling.md)
+ - [ServiceBillingPrice](docs/ServiceBillingPrice.md)
+ - [ServiceBillingReservations](docs/ServiceBillingReservations.md)
  - [Snapshot](docs/Snapshot.md)
  - [SnapshotCreate](docs/SnapshotCreate.md)
  - [SnapshotPostAccessrights](docs/SnapshotPostAccessrights.md)
@@ -545,6 +596,11 @@ Class | Method | HTTP request | Description
  - [VmhostPostAccessrights](docs/VmhostPostAccessrights.md)
  - [VmhostServices](docs/VmhostServices.md)
  - [VmhostUpdate](docs/VmhostUpdate.md)
+ - [Volume](docs/Volume.md)
+ - [VolumeCreate](docs/VolumeCreate.md)
+ - [VolumePostAccessrights](docs/VolumePostAccessrights.md)
+ - [VolumeServices](docs/VolumeServices.md)
+ - [VolumeUpdate](docs/VolumeUpdate.md)
 
 
 ## Documentation For Authorization

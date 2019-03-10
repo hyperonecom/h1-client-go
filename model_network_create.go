@@ -10,7 +10,7 @@
 package openapi
 
 type NetworkCreate struct {
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Address string `json:"address,omitempty"`
 	Gateway string `json:"gateway,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`

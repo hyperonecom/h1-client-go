@@ -260,6 +260,7 @@ Optional parameters are passed through a pointer to a DiskListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 
@@ -355,7 +356,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DiskPatchTag**
-> map[string]interface{} DiskPatchTag(ctx, diskId, body)
+> map[string]interface{} DiskPatchTag(ctx, diskId, requestBody)
 /tag
 
 ### Required Parameters
@@ -364,7 +365,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **diskId** | **string**| ID of disk | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

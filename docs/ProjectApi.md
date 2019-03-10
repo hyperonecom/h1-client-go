@@ -259,8 +259,8 @@ Optional parameters are passed through a pointer to a ProjectListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
- **limit** | **optional.String**| Filter by $limit | 
- **active** | **optional.String**| Filter by active | 
+ **limit** | **optional.Float32**| Filter by $limit | 
+ **active** | **optional.Bool**| Filter by active | 
  **organisation** | **optional.String**| Filter by organisation | 
 
 ### Return type
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ProjectPatchTag**
-> map[string]interface{} ProjectPatchTag(ctx, projectId, body)
+> map[string]interface{} ProjectPatchTag(ctx, projectId, requestBody)
 /tag
 
 ### Required Parameters
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **projectId** | **string**| ID of project | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ProjectPostAccessrights**
-> AccessrightsUserRole ProjectPostAccessrights(ctx, projectId, projectPostAccessrights)
+> Project ProjectPostAccessrights(ctx, projectId, projectPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccessrightsUserRole**](accessrightsUserRole.md)
+[**Project**](project.md)
 
 ### Authorization
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ProjectPostCredentialStorecertificate**
-> InlineResponse200 ProjectPostCredentialStorecertificate(ctx, projectId, projectPostCredentialStorecertificate)
+> InlineResponse200 ProjectPostCredentialStorecertificate(ctx, projectId, body)
 /credentialStore/certificate
 
 ### Required Parameters
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **projectId** | **string**| ID of project | 
-  **projectPostCredentialStorecertificate** | [**ProjectPostCredentialStorecertificate**](ProjectPostCredentialStorecertificate.md)|  | 
+  **body** | **string**|  | 
 
 ### Return type
 

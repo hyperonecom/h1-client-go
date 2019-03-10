@@ -12,7 +12,7 @@ package openapi
 type LogArchiveCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service,omitempty"`
-	Credential VaultCreateCredential `json:"credential,omitempty"`
+	Credential LogArchiveCreateCredential `json:"credential,omitempty"`
 	Retention float32 `json:"retention,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

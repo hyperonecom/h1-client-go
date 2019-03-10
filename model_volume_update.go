@@ -9,6 +9,6 @@
 
 package openapi
 
-type LogArchivePatchCredentialcertificateId struct {
+type VolumeUpdate struct {
 	Name string `json:"name,omitempty"`
 }

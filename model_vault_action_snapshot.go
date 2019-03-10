@@ -10,5 +10,6 @@
 package openapi
 
 type VaultActionSnapshot struct {
+	Name string `json:"name"`
 	Service string `json:"service,omitempty"`
 }

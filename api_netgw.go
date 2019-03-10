@@ -83,7 +83,6 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -210,7 +207,6 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -223,7 +219,6 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -236,7 +231,6 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -338,7 +332,6 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -351,7 +344,6 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -364,7 +356,6 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -462,7 +453,6 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -475,7 +465,6 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -488,7 +477,6 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -571,7 +559,6 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -584,7 +571,6 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -597,7 +583,6 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -709,7 +694,6 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -722,7 +706,6 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -735,7 +718,6 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -837,7 +819,6 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -850,7 +831,6 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -863,7 +843,6 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -963,7 +942,6 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -976,7 +954,6 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -989,7 +966,6 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1098,7 +1074,6 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1111,7 +1086,6 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1124,7 +1098,6 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1224,7 +1197,6 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1237,7 +1209,6 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1250,7 +1221,6 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1350,7 +1320,6 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1363,7 +1332,6 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1376,7 +1344,6 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1476,7 +1443,6 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1489,7 +1455,6 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1502,7 +1467,6 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1553,10 +1517,10 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 NetgwApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1592,7 +1556,7 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, bod
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1605,7 +1569,6 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, bod
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1618,7 +1581,6 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, bod
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1631,7 +1593,6 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, bod
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1734,7 +1695,6 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1747,7 +1707,6 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1760,7 +1719,6 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1871,7 +1829,6 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1884,7 +1841,6 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1897,7 +1853,6 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2001,7 +1956,6 @@ func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgw
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2014,7 +1968,6 @@ func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgw
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2027,7 +1980,6 @@ func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgw
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

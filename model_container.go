@@ -28,5 +28,9 @@ type Container struct {
 	State string `json:"state,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Project string `json:"project,omitempty"`
-	Url string `json:"url,omitempty"`
+	Image string `json:"image,omitempty"`
+	Command string `json:"command,omitempty"`
+	Volumes []ContainerVolumes `json:"volumes,omitempty"`
+	Expose []ContainerExpose `json:"expose,omitempty"`
+	Env []string `json:"env,omitempty"`
 }

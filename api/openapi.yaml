@@ -10,6 +10,88 @@ security:
   Project: []
 - ServiceAccount: []
 paths:
+  /service:
+    get:
+      description: List service
+      operationId: service_list
+      parameters:
+      - description: Filter by type
+        explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by resource
+        explode: true
+        in: query
+        name: resource
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/service'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: List
+      tags:
+      - service
+  /service/{serviceId}:
+    get:
+      description: Returns a single service
+      operationId: service_show
+      parameters:
+      - description: ID of service
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Get
+      tags:
+      - service
   /project:
     get:
       description: List project
@@ -29,7 +111,7 @@ paths:
         name: $limit
         required: false
         schema:
-          type: string
+          type: number
         style: form
       - description: Filter by active
         explode: true
@@ -37,7 +119,7 @@ paths:
         name: active
         required: false
         schema:
-          type: string
+          type: boolean
         style: form
       - description: Filter by organisation
         explode: true
@@ -434,8 +516,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/accessrightsUserRole'
+                $ref: '#/components/schemas/project'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -731,7 +819,7 @@ paths:
         name: $limit
         required: false
         schema:
-          type: string
+          type: number
         style: form
       - description: Filter by active
         explode: true
@@ -739,7 +827,7 @@ paths:
         name: active
         required: false
         schema:
-          type: string
+          type: boolean
         style: form
       responses:
         200:
@@ -897,6 +985,44 @@ paths:
       summary: /actions/transfer_accept
       tags:
       - organisation
+  /organisation/{organisationId}/actions/payment_assign:
+    post:
+      description: Action payment_assign
+      operationId: organisation_action_payment_assign
+      parameters:
+      - description: ID of organisation
+        explode: false
+        in: path
+        name: organisationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/organisation_action_payment_assign'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /actions/payment_assign
+      tags:
+      - organisation
   /organisation/{organisationId}/accessrights:
     get:
       operationId: organisation_list_accessrights
@@ -952,8 +1078,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/accessrightsUserRole'
+                $ref: '#/components/schemas/organisation'
           description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+          description: operation queued
         401:
           description: API key is missing or invalid
           headers:
@@ -1150,588 +1282,6 @@ paths:
       summary: /queue
       tags:
       - organisation
-  /container:
-    get:
-      description: List container
-      operationId: container_list
-      parameters:
-      - description: Filter by name
-        explode: true
-        in: query
-        name: name
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/container'
-                type: array
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: List
-      tags:
-      - container
-    post:
-      description: Create container
-      operationId: container_create
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/container_create'
-        required: true
-      responses:
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: Create
-      tags:
-      - container
-  /container/{containerId}:
-    delete:
-      operationId: container_delete
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: Delete
-      tags:
-      - container
-    get:
-      description: Returns a single container
-      operationId: container_show
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: Get
-      tags:
-      - container
-    patch:
-      description: Returns modified container
-      operationId: container_update
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/container_update'
-        required: true
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: Update
-      tags:
-      - container
-  /container/{containerId}/actions/start:
-    post:
-      description: Action start
-      operationId: container_action_start
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /actions/start
-      tags:
-      - container
-  /container/{containerId}/actions/stop:
-    post:
-      description: Action stop
-      operationId: container_action_stop
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /actions/stop
-      tags:
-      - container
-  /container/{containerId}/actions/restart:
-    post:
-      description: Action restart
-      operationId: container_action_restart
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /actions/restart
-      tags:
-      - container
-  /container/{containerId}/accessrights:
-    get:
-      operationId: container_list_accessrights
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/accessrightsProject'
-                type: array
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /accessrights
-      tags:
-      - container
-    post:
-      operationId: container_post_accessrights
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/container_post_accessrights'
-        required: true
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: successful operation
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /accessrights
-      tags:
-      - container
-  /container/{containerId}/accessrights/{identity}:
-    delete:
-      operationId: container_delete_accessrights_identity
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: identity
-        explode: false
-        in: path
-        name: identity
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: successful operation
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /accessrights/:identity
-      tags:
-      - container
-  /container/{containerId}/services:
-    get:
-      operationId: container_list_services
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/container.services'
-                type: array
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /services
-      tags:
-      - container
-  /container/{containerId}/services/{serviceId}:
-    get:
-      operationId: container_get_services_serviceId
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: serviceId
-        explode: false
-        in: path
-        name: serviceId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container.services'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /services/:serviceId
-      tags:
-      - container
-  /container/{containerId}/tag:
-    get:
-      operationId: container_get_tag
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container.tag'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /tag
-      tags:
-      - container
-    patch:
-      operationId: container_patch_tag
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/container_patch_tag'
-        required: true
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container.tag'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /tag
-      tags:
-      - container
-  /container/{containerId}/tag/{key}:
-    delete:
-      operationId: container_delete_tag_key
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: key
-        explode: false
-        in: path
-        name: key
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/container.tag'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /tag/:key
-      tags:
-      - container
-  /container/{containerId}/queue:
-    get:
-      operationId: container_list_queue
-      parameters:
-      - description: ID of container
-        explode: false
-        in: path
-        name: containerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/event'
-                type: array
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /queue
-      tags:
-      - container
   /firewall:
     get:
       description: List firewall
@@ -4343,6 +3893,16 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by tag
+        explode: false
+        in: query
+        name: tag
+        required: false
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+        style: deepObject
       responses:
         200:
           content:
@@ -5429,6 +4989,16 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by tag
+        explode: false
+        in: query
+        name: tag
+        required: false
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+        style: deepObject
       responses:
         200:
           content:
@@ -6441,6 +6011,16 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by tag
+        explode: false
+        in: query
+        name: tag
+        required: false
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+        style: deepObject
       responses:
         200:
           content:
@@ -9992,202 +9572,6 @@ paths:
       summary: /credential/password/:id
       tags:
       - logArchive
-  /logArchive/{logArchiveId}/credential/certificate:
-    get:
-      operationId: logArchive_list_credentialcertificate
-      parameters:
-      - description: ID of logArchive
-        explode: false
-        in: path
-        name: logArchiveId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/credential.certificate'
-                type: array
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /credential/certificate
-      tags:
-      - logArchive
-    post:
-      operationId: logArchive_post_credentialcertificate
-      parameters:
-      - description: ID of logArchive
-        explode: false
-        in: path
-        name: logArchiveId
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/logArchive_post_credentialcertificate'
-        required: true
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/credential.certificate'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /credential/certificate
-      tags:
-      - logArchive
-  /logArchive/{logArchiveId}/credential/certificate/{id}:
-    delete:
-      operationId: logArchive_delete_credentialcertificate_id
-      parameters:
-      - description: ID of logArchive
-        explode: false
-        in: path
-        name: logArchiveId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: id
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/logArchive'
-          description: successful operation
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/logArchive'
-          description: operation queued
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /credential/certificate/:id
-      tags:
-      - logArchive
-    get:
-      operationId: logArchive_get_credentialcertificate_id
-      parameters:
-      - description: ID of logArchive
-        explode: false
-        in: path
-        name: logArchiveId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: id
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/credential.certificate'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /credential/certificate/:id
-      tags:
-      - logArchive
-    patch:
-      operationId: logArchive_patch_credentialcertificate_id
-      parameters:
-      - description: ID of logArchive
-        explode: false
-        in: path
-        name: logArchiveId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: id
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/logArchive_patch_credentialcertificate_id'
-        required: true
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/credential.certificate'
-          description: successful operation
-        401:
-          description: API key is missing or invalid
-          headers:
-            x-auth-token:
-              description: authentication token
-              explode: false
-              schema:
-                type: string
-              style: simple
-      summary: /credential/certificate/:id
-      tags:
-      - logArchive
   /logArchive/{logArchiveId}/accessrights:
     get:
       operationId: logArchive_list_accessrights
@@ -11129,6 +10513,1969 @@ paths:
       summary: /queue
       tags:
       - vmhost
+  /agent:
+    get:
+      description: List agent
+      operationId: agent_list
+      parameters:
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/agent'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: List
+      tags:
+      - agent
+    post:
+      description: Create agent
+      operationId: agent_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_create'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Create
+      tags:
+      - agent
+  /agent/{agentId}:
+    delete:
+      operationId: agent_delete
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Delete
+      tags:
+      - agent
+    get:
+      description: Returns a single agent
+      operationId: agent_show
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Get
+      tags:
+      - agent
+    patch:
+      description: Returns modified agent
+      operationId: agent_update
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_update'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Update
+      tags:
+      - agent
+  /agent/{agentId}/enabledServices:
+    get:
+      operationId: agent_list_enabledServices
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  format: ObjectId
+                  type: string
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /enabledServices
+      tags:
+      - agent
+    put:
+      operationId: agent_put_enabledServices
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_put_enabledServices'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  format: ObjectId
+                  type: string
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /enabledServices
+      tags:
+      - agent
+  /agent/{agentId}/inspect:
+    get:
+      operationId: agent_get_inspect
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema: {}
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /inspect
+      tags:
+      - agent
+  /agent/{agentId}/resource:
+    get:
+      operationId: agent_list_resource
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/agentResource'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /resource
+      tags:
+      - agent
+  /agent/{agentId}/resource/{resourceId}/actions/recreate:
+    post:
+      operationId: agent_post_resource_resourceIdactionsrecreate
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: resourceId
+        explode: false
+        in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agentResource'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /resource/:resourceId/actions/recreate
+      tags:
+      - agent
+  /agent/{agentId}/resource/{resourceId}/inspect:
+    get:
+      operationId: agent_get_resource_resourceIdinspect
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: resourceId
+        explode: false
+        in: path
+        name: resourceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema: {}
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /resource/:resourceId/inspect
+      tags:
+      - agent
+  /agent/{agentId}/credential/certificate:
+    get:
+      operationId: agent_list_credentialcertificate
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.certificate'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credential/certificate
+      tags:
+      - agent
+    post:
+      operationId: agent_post_credentialcertificate
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_post_credentialcertificate'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.certificate'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credential/certificate
+      tags:
+      - agent
+  /agent/{agentId}/credential/certificate/{id}:
+    delete:
+      operationId: agent_delete_credentialcertificate_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credential/certificate/:id
+      tags:
+      - agent
+    get:
+      operationId: agent_get_credentialcertificate_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.certificate'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credential/certificate/:id
+      tags:
+      - agent
+    patch:
+      operationId: agent_patch_credentialcertificate_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_patch_credentialcertificate_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.certificate'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /credential/certificate/:id
+      tags:
+      - agent
+  /agent/{agentId}/accessrights:
+    get:
+      operationId: agent_list_accessrights
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/accessrightsProject'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - agent
+    post:
+      operationId: agent_post_accessrights
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_post_accessrights'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - agent
+  /agent/{agentId}/accessrights/{identity}:
+    delete:
+      operationId: agent_delete_accessrights_identity
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: identity
+        explode: false
+        in: path
+        name: identity
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights/:identity
+      tags:
+      - agent
+  /agent/{agentId}/services:
+    get:
+      operationId: agent_list_services
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/agent.services'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services
+      tags:
+      - agent
+  /agent/{agentId}/services/{serviceId}:
+    get:
+      operationId: agent_get_services_serviceId
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent.services'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services/:serviceId
+      tags:
+      - agent
+  /agent/{agentId}/tag:
+    get:
+      operationId: agent_get_tag
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - agent
+    patch:
+      operationId: agent_patch_tag
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_patch_tag'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - agent
+  /agent/{agentId}/tag/{key}:
+    delete:
+      operationId: agent_delete_tag_key
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: key
+        explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag/:key
+      tags:
+      - agent
+  /agent/{agentId}/queue:
+    get:
+      operationId: agent_list_queue
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /queue
+      tags:
+      - agent
+  /container:
+    get:
+      description: List container
+      operationId: container_list
+      parameters:
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/container'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: List
+      tags:
+      - container
+    post:
+      description: Create container
+      operationId: container_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/container_create'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Create
+      tags:
+      - container
+  /container/{containerId}:
+    delete:
+      operationId: container_delete
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Delete
+      tags:
+      - container
+    get:
+      description: Returns a single container
+      operationId: container_show
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Get
+      tags:
+      - container
+    patch:
+      description: Returns modified container
+      operationId: container_update
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/container_update'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Update
+      tags:
+      - container
+  /container/{containerId}/actions/start:
+    post:
+      description: Action start
+      operationId: container_action_start
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /actions/start
+      tags:
+      - container
+  /container/{containerId}/actions/stop:
+    post:
+      description: Action stop
+      operationId: container_action_stop
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /actions/stop
+      tags:
+      - container
+  /container/{containerId}/actions/restart:
+    post:
+      description: Action restart
+      operationId: container_action_restart
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /actions/restart
+      tags:
+      - container
+  /container/{containerId}/accessrights:
+    get:
+      operationId: container_list_accessrights
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/accessrightsProject'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - container
+    post:
+      operationId: container_post_accessrights
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/container_post_accessrights'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - container
+  /container/{containerId}/accessrights/{identity}:
+    delete:
+      operationId: container_delete_accessrights_identity
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: identity
+        explode: false
+        in: path
+        name: identity
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights/:identity
+      tags:
+      - container
+  /container/{containerId}/services:
+    get:
+      operationId: container_list_services
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/container.services'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services
+      tags:
+      - container
+  /container/{containerId}/services/{serviceId}:
+    get:
+      operationId: container_get_services_serviceId
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.services'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services/:serviceId
+      tags:
+      - container
+  /container/{containerId}/tag:
+    get:
+      operationId: container_get_tag
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - container
+    patch:
+      operationId: container_patch_tag
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/container_patch_tag'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - container
+  /container/{containerId}/tag/{key}:
+    delete:
+      operationId: container_delete_tag_key
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: key
+        explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag/:key
+      tags:
+      - container
+  /container/{containerId}/queue:
+    get:
+      operationId: container_list_queue
+      parameters:
+      - description: ID of container
+        explode: false
+        in: path
+        name: containerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /queue
+      tags:
+      - container
+  /volume:
+    get:
+      description: List volume
+      operationId: volume_list
+      parameters:
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/volume'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: List
+      tags:
+      - volume
+    post:
+      description: Create volume
+      operationId: volume_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/volume_create'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Create
+      tags:
+      - volume
+  /volume/{volumeId}:
+    delete:
+      operationId: volume_delete
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Delete
+      tags:
+      - volume
+    get:
+      description: Returns a single volume
+      operationId: volume_show
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Get
+      tags:
+      - volume
+    patch:
+      description: Returns modified volume
+      operationId: volume_update
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/volume_update'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: Update
+      tags:
+      - volume
+  /volume/{volumeId}/accessrights:
+    get:
+      operationId: volume_list_accessrights
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/accessrightsProject'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - volume
+    post:
+      operationId: volume_post_accessrights
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/volume_post_accessrights'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights
+      tags:
+      - volume
+  /volume/{volumeId}/accessrights/{identity}:
+    delete:
+      operationId: volume_delete_accessrights_identity
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: identity
+        explode: false
+        in: path
+        name: identity
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume'
+          description: operation queued
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /accessrights/:identity
+      tags:
+      - volume
+  /volume/{volumeId}/services:
+    get:
+      operationId: volume_list_services
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/volume.services'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services
+      tags:
+      - volume
+  /volume/{volumeId}/services/{serviceId}:
+    get:
+      operationId: volume_get_services_serviceId
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume.services'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /services/:serviceId
+      tags:
+      - volume
+  /volume/{volumeId}/tag:
+    get:
+      operationId: volume_get_tag
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - volume
+    patch:
+      operationId: volume_patch_tag
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/volume_patch_tag'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag
+      tags:
+      - volume
+  /volume/{volumeId}/tag/{key}:
+    delete:
+      operationId: volume_delete_tag_key
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: key
+        explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/volume.tag'
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /tag/:key
+      tags:
+      - volume
+  /volume/{volumeId}/queue:
+    get:
+      operationId: volume_list_queue
+      parameters:
+      - description: ID of volume
+        explode: false
+        in: path
+        name: volumeId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                type: array
+          description: successful operation
+        401:
+          description: API key is missing or invalid
+          headers:
+            x-auth-token:
+              description: authentication token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: /queue
+      tags:
+      - volume
   /replica:
     get:
       description: List replica
@@ -11709,7 +13056,7 @@ components:
     hdd:
       example:
         disk:
-          size: 1.46581298050294517310021547018550336360931396484375
+          size: 1.4658129805029452
           name: name
           processing: true
           _id: _id
@@ -11717,9 +13064,9 @@ components:
           persistent: true
         controllerType: controllerType
         controllerNumber: controllerNumber
-        controllerLocation: 6.02745618307040320615897144307382404804229736328125
+        controllerLocation: 6.027456183070403
         _id: _id
-        maximumIOPS: 0.80082819046101150206595775671303272247314453125
+        maximumIOPS: 0.8008281904610115
       properties:
         maximumIOPS:
           type: number
@@ -11736,7 +13083,7 @@ components:
       type: object
     payment:
       example:
-        amount: 7.061401241503109105224211816675961017608642578125
+        amount: 7.061401241503109
         flavour: flavour
         created: true
         channel: bank
@@ -11746,8 +13093,8 @@ components:
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
-        credits: 2.3021358869347654518833223846741020679473876953125
-        creditsFree: 5.63737665663332876420099637471139430999755859375
+        credits: 2.3021358869347655
+        creditsFree: 5.637376656633329
         name: name
         processing: processing
         modifiedBy: modifiedBy
@@ -11850,6 +13197,72 @@ components:
           - support
           type: string
       type: object
+    agentResource:
+      example:
+        name: name
+        _id: _id
+        state: state
+        createdOn: createdOn
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        state:
+          type: string
+        createdOn:
+          type: string
+      type: object
+    service:
+      example:
+        data: data
+        resource: resource
+        availableServices:
+        - availableServices
+        - availableServices
+        name: name
+        _id: _id
+        type: type
+        billing:
+          period: period
+          quantity: 5.637376656633329
+          reservations:
+            period: period
+            resourcePrice:
+              PLN: 0.8008281904610115
+              EUR: 6.027456183070403
+              GBP: 5.962133916683182
+              USD: 1.4658129805029452
+            price:
+              PLN: 0.8008281904610115
+              EUR: 6.027456183070403
+              GBP: 5.962133916683182
+              USD: 1.4658129805029452
+            _id: _id
+          price:
+            PLN: 0.8008281904610115
+            EUR: 6.027456183070403
+            GBP: 5.962133916683182
+            USD: 1.4658129805029452
+          oneTime: true
+      properties:
+        _id:
+          type: string
+        resource:
+          type: string
+        type:
+          type: string
+        billing:
+          $ref: '#/components/schemas/service_billing'
+        data:
+          type: string
+        name:
+          type: string
+        availableServices:
+          items:
+            type: string
+          type: array
+      type: object
     project:
       example:
         networkAcl:
@@ -11862,7 +13275,7 @@ components:
           type: subnet
           value: value
         payments:
-        - amount: 7.061401241503109105224211816675961017608642578125
+        - amount: 7.061401241503109
           flavour: flavour
           created: true
           channel: bank
@@ -11872,8 +13285,8 @@ components:
           createdOn: 2000-01-23T04:56:07.000+00:00
           modifiedOn: 2000-01-23T04:56:07.000+00:00
           createdBy: createdBy
-          credits: 2.3021358869347654518833223846741020679473876953125
-          creditsFree: 5.63737665663332876420099637471139430999755859375
+          credits: 2.3021358869347655
+          creditsFree: 5.637376656633329
           name: name
           processing: processing
           modifiedBy: modifiedBy
@@ -11900,7 +13313,7 @@ components:
             name: name
             _id: _id
             state: pending
-        - amount: 7.061401241503109105224211816675961017608642578125
+        - amount: 7.061401241503109
           flavour: flavour
           created: true
           channel: bank
@@ -11910,8 +13323,8 @@ components:
           createdOn: 2000-01-23T04:56:07.000+00:00
           modifiedOn: 2000-01-23T04:56:07.000+00:00
           createdBy: createdBy
-          credits: 2.3021358869347654518833223846741020679473876953125
-          creditsFree: 5.63737665663332876420099637471139430999755859375
+          credits: 2.3021358869347655
+          creditsFree: 5.637376656633329
           name: name
           processing: processing
           modifiedBy: modifiedBy
@@ -11956,13 +13369,13 @@ components:
         threshold:
           credits:
             levels:
-            - 1.489415909854170383397331534069962799549102783203125
-            - 1.489415909854170383397331534069962799549102783203125
+            - 1.4894159098541704
+            - 1.4894159098541704
         createdOn: 2000-01-23T04:56:07.000+00:00
         billing:
-          creditsBonus: 1.46581298050294517310021547018550336360931396484375
-          credits: 6.02745618307040320615897144307382404804229736328125
-          creditLimit: 5.962133916683182377482808078639209270477294921875
+          creditsBonus: 1.4658129805029452
+          credits: 6.027456183070403
+          creditLimit: 5.962133916683182
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         invoices:
         - summary: summary
@@ -11985,35 +13398,35 @@ components:
           issueDate: issueDate
         limit:
           image:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           iso:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           ip:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           network:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           netgw:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           disk:
-            size: 4.1456080298839363962315474054776132106781005859375
-            count: 2.027123023002321833274663731572218239307403564453125
+            size: 4.145608029883936
+            count: 2.027123023002322
           firewall:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           vm:
-            memory: 3.61607674925191080461672754609026014804840087890625
-            count: 9.301444243932575517419536481611430644989013671875
+            memory: 3.616076749251911
+            count: 9.301444243932576
           domain:
-            record: 1.024645700144157789424070870154537260532379150390625
-            count: 1.231513536777255612975068288506008684635162353515625
+            record: 1.0246457001441578
+            count: 1.2315135367772556
           reservation:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           logArchive:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           vault:
-            size: 4.1456080298839363962315474054776132106781005859375
-            count: 2.027123023002321833274663731572218239307403564453125
+            size: 4.145608029883936
+            count: 2.027123023002322
           snapshot:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
         modifiedBy: modifiedBy
         state: Active
         tag: '{}'
@@ -12023,14 +13436,14 @@ components:
         verified: verified
         active: true
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -12174,7 +13587,7 @@ components:
       type: object
     project.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -12202,14 +13615,7 @@ components:
     project.tag:
       type: object
     project_post_credentialStorecertificate:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
+      type: string
     project_patch_credentialStorecertificate_id:
       properties:
         name:
@@ -12226,6 +13632,8 @@ components:
       - role
       type: object
     project_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     organisation:
       example:
@@ -12245,7 +13653,7 @@ components:
           - path: path
             method: ALL
           name: name
-        verified: 0.80082819046101150206595775671303272247314453125
+        verified: 0.8008281904610115
         project: project
         services: services
         createdOn: 2000-01-23T04:56:07.000+00:00
@@ -12268,38 +13676,38 @@ components:
         limit:
           organisation:
             project:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
           project:
             image:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             iso:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             ip:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             network:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             netgw:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             disk:
-              size: 4.1456080298839363962315474054776132106781005859375
-              count: 2.027123023002321833274663731572218239307403564453125
+              size: 4.145608029883936
+              count: 2.027123023002322
             firewall:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             vm:
-              memory: 3.61607674925191080461672754609026014804840087890625
-              count: 9.301444243932575517419536481611430644989013671875
+              memory: 3.616076749251911
+              count: 9.301444243932576
             domain:
-              record: 1.024645700144157789424070870154537260532379150390625
-              count: 1.231513536777255612975068288506008684635162353515625
+              record: 1.0246457001441578
+              count: 1.2315135367772556
             reservation:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             logArchive:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
             vault:
-              size: 4.1456080298839363962315474054776132106781005859375
-              count: 2.027123023002321833274663731572218239307403564453125
+              size: 4.145608029883936
+              count: 2.027123023002322
             snapshot:
-              count: 7.3862819483858839220147274318151175975799560546875
+              count: 7.386281948385884
         processing: true
         modifiedBy: modifiedBy
         _id: _id
@@ -12416,6 +13824,16 @@ components:
       - payment
       - project
       type: object
+    organisation_action_payment_assign:
+      properties:
+        payment:
+          type: string
+        project:
+          type: string
+      required:
+      - payment
+      - project
+      type: object
     organisation.tag:
       type: object
     organisation_post_accessrights:
@@ -12429,177 +13847,8 @@ components:
       - role
       type: object
     organisation_patch_tag:
-      type: object
-    container:
-      example:
-        flavour: flavour
-        created: true
-        project: project
-        services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
-          data: '{}'
-          name: name
-          type: type
-          oneTime: true
-          sourceService: sourceService
-          billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
-          data: '{}'
-          name: name
-          type: type
-          oneTime: true
-          sourceService: sourceService
-          billing: billing
-        createdOn: 2000-01-23T04:56:07.000+00:00
-        url: url
-        modifiedOn: 2000-01-23T04:56:07.000+00:00
-        createdBy: createdBy
-        name: name
-        processing: true
-        modifiedBy: modifiedBy
-        _id: _id
-        accessRights:
-        - accessRights
-        - accessRights
-        state: Running
-        tag: '{}'
-        queue:
-        - stage: stage
-          createdBy: createdBy
-          resource:
-            id: id
-            type: type
-          queued: 2000-01-23T04:56:07.000+00:00
-          name: name
-          _id: _id
-          state: pending
-        - stage: stage
-          createdBy: createdBy
-          resource:
-            id: id
-            type: type
-          queued: 2000-01-23T04:56:07.000+00:00
-          name: name
-          _id: _id
-          state: pending
-      properties:
-        _id:
-          format: ObjectId
-          type: string
-        name:
-          type: string
-        services:
-          items:
-            $ref: '#/components/schemas/project_services'
-          type: array
-        flavour:
-          type: string
-        modifiedOn:
-          format: date-time
-          type: string
-        modifiedBy:
-          type: string
-        createdBy:
-          type: string
-        createdOn:
-          format: date-time
-          type: string
-        accessRights:
-          items:
-            type: string
-          type: array
-        processing:
-          type: boolean
-        created:
-          type: boolean
-        queue:
-          items:
-            $ref: '#/components/schemas/event'
-          type: array
-        state:
-          enum:
-          - Running
-          - Off
-          - Unknown
-          type: string
-        tag:
-          type: object
-        project:
-          format: ObjectId
-          type: string
-        url:
-          type: string
-      type: object
-    container_create:
-      properties:
-        name:
-          type: string
-        image:
-          type: string
-        registry:
-          $ref: '#/components/schemas/container_create_registry'
-        service:
-          format: ObjectId
-          type: string
-        expose:
-          $ref: '#/components/schemas/container_create_expose'
-        env:
-          items:
-            type: string
-          type: array
-        command:
-          type: string
-        volumes:
-          items:
-            $ref: '#/components/schemas/container_create_volumes'
-          type: array
-        tag:
-          type: object
-      required:
-      - image
-      - name
-      - service
-      type: object
-    container_update:
-      properties:
-        name:
-          type: string
-      type: object
-    container.services:
-      example:
-        quantity: 0.80082819046101150206595775671303272247314453125
-        data: '{}'
-        name: name
-        type: type
-        oneTime: true
-        sourceService: sourceService
-        billing: billing
-      properties:
-        type:
-          type: string
-        name:
-          type: string
-        oneTime:
-          type: boolean
-        billing:
-          format: ObjectId
-          type: string
-        data:
-          type: object
-        sourceService:
-          format: ObjectId
-          type: string
-        quantity:
-          type: number
-      type: object
-    container.tag:
-      type: object
-    container_post_accessrights:
-      properties:
-        identity:
-          type: string
-      type: object
-    container_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     firewall:
       example:
@@ -12607,14 +13856,14 @@ components:
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -12712,6 +13961,8 @@ components:
           default: 5bacaf7202deee0c100eda3b
           format: ObjectId
           type: string
+      required:
+      - name
       type: object
     firewall_update:
       properties:
@@ -12736,7 +13987,7 @@ components:
       type: object
     firewall.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -12811,6 +14062,8 @@ components:
           type: string
       type: object
     firewall_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     network:
       example:
@@ -12824,14 +14077,14 @@ components:
           - nameservers
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -12943,6 +14196,8 @@ components:
           type: string
         tag:
           type: object
+      required:
+      - name
       type: object
     network_update:
       properties:
@@ -12953,7 +14208,7 @@ components:
       type: object
     network.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -12993,6 +14248,8 @@ components:
           type: string
       type: object
     network_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     netgw:
       example:
@@ -13000,14 +14257,14 @@ components:
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -13111,7 +14368,7 @@ components:
       type: object
     netgw.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -13144,6 +14401,8 @@ components:
           type: string
       type: object
     netgw_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     image:
       example:
@@ -13151,38 +14410,38 @@ components:
         disks:
         - attachedOn:
             controllerType: controllerType
-            controllerNumber: 5.962133916683182377482808078639209270477294921875
-            controllerLocation: 1.46581298050294517310021547018550336360931396484375
+            controllerNumber: 5.962133916683182
+            controllerLocation: 1.4658129805029452
           disk:
             name: name
             _id: _id
-          size: 0.80082819046101150206595775671303272247314453125
-          fileSize: 6.02745618307040320615897144307382404804229736328125
+          size: 0.8008281904610115
+          fileSize: 6.027456183070403
           downloadUrl: downloadUrl
           type: type
         - attachedOn:
             controllerType: controllerType
-            controllerNumber: 5.962133916683182377482808078639209270477294921875
-            controllerLocation: 1.46581298050294517310021547018550336360931396484375
+            controllerNumber: 5.962133916683182
+            controllerLocation: 1.4658129805029452
           disk:
             name: name
             _id: _id
-          size: 0.80082819046101150206595775671303272247314453125
-          fileSize: 6.02745618307040320615897144307382404804229736328125
+          size: 0.8008281904610115
+          fileSize: 6.027456183070403
           downloadUrl: downloadUrl
           type: type
         created: true
         project: project
         description: description
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -13192,7 +14451,7 @@ components:
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
-        fileSize: 5.63737665663332876420099637471139430999755859375
+        fileSize: 5.637376656633329
         vm:
           flavour: flavour
           name: name
@@ -13318,7 +14577,7 @@ components:
       type: object
     image.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -13351,26 +14610,28 @@ components:
           type: string
       type: object
     image_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     disk:
       example:
         metadata:
           source:
             filename: filename
-            size: 6.02745618307040320615897144307382404804229736328125
+            size: 6.027456183070403
         flavour: flavour
         created: true
         downloadUrl: downloadUrl
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -13380,7 +14641,7 @@ components:
         type: archive
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
-        size: 0.80082819046101150206595775671303272247314453125
+        size: 0.8008281904610115
         createdBy: createdBy
         vm: vm
         name: name
@@ -13518,7 +14779,7 @@ components:
       type: object
     disk.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -13551,25 +14812,27 @@ components:
           type: string
       type: object
     disk_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     iso:
       example:
         metadata:
           source:
             filename: filename
-            size: 6.02745618307040320615897144307382404804229736328125
+            size: 6.027456183070403
         flavour: flavour
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -13578,7 +14841,7 @@ components:
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
-        size: 0.80082819046101150206595775671303272247314453125
+        size: 0.8008281904610115
         createdBy: createdBy
         name: name
         processing: true
@@ -13694,7 +14957,7 @@ components:
       type: object
     iso.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -13727,25 +14990,27 @@ components:
           type: string
       type: object
     iso_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     vm:
       example:
-        memory: 6.02745618307040320615897144307382404804229736328125
+        memory: 6.027456183070403
         flavour: flavour
         data:
           username: username
         created: true
         project: project
-        cpu: 0.80082819046101150206595775671303272247314453125
+        cpu: 0.8008281904610115
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -13966,7 +15231,7 @@ components:
       type: object
     vm.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -14025,6 +15290,8 @@ components:
           type: string
       type: object
     vm_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     ip:
       example:
@@ -14033,14 +15300,14 @@ components:
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -14181,7 +15448,7 @@ components:
       type: object
     ip.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -14214,6 +15481,8 @@ components:
           type: string
       type: object
     ip_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     netadp:
       example:
@@ -14225,14 +15494,14 @@ components:
           created: true
           project: project
           services:
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
             oneTime: true
             sourceService: sourceService
             billing: billing
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
@@ -14282,14 +15551,14 @@ components:
           created: true
           project: project
           services:
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
             oneTime: true
             sourceService: sourceService
             billing: billing
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
@@ -14336,14 +15605,14 @@ components:
             state: pending
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -14351,7 +15620,7 @@ components:
           sourceService: sourceService
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
-        speed: 0.80082819046101150206595775671303272247314453125
+        speed: 0.8008281904610115
         network:
           broadcast: broadcast
           address: address
@@ -14363,14 +15632,14 @@ components:
             - nameservers
           project: project
           services:
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
             oneTime: true
             sourceService: sourceService
             billing: billing
-          - quantity: 0.80082819046101150206595775671303272247314453125
+          - quantity: 0.8008281904610115
             data: '{}'
             name: name
             type: type
@@ -14505,7 +15774,7 @@ components:
       type: object
     netadp.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -14538,22 +15807,24 @@ components:
           type: string
       type: object
     netadp_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     vault:
       example:
-        sizeUsed: 6.02745618307040320615897144307382404804229736328125
+        sizeUsed: 6.027456183070403
         flavour: flavour
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -14562,7 +15833,7 @@ components:
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
-        size: 0.80082819046101150206595775671303272247314453125
+        size: 0.8008281904610115
         createdBy: createdBy
         name: name
         processing: true
@@ -14680,14 +15951,18 @@ components:
       type: object
     vault_action_snapshot:
       properties:
+        name:
+          type: string
         service:
           default: 5badbeb585f66b3d085727eb
           format: ObjectId
           type: string
+      required:
+      - name
       type: object
     vault.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -14752,22 +16027,24 @@ components:
           type: string
       type: object
     vault_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     snapshot:
       example:
-        sizeUsed: 0.80082819046101150206595775671303272247314453125
+        sizeUsed: 0.8008281904610115
         flavour: flavour
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -14880,7 +16157,7 @@ components:
       type: object
     snapshot.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -14913,6 +16190,8 @@ components:
           type: string
       type: object
     snapshot_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     reservation:
       example:
@@ -14921,14 +16200,14 @@ components:
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -15050,7 +16329,7 @@ components:
       type: object
     reservation.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -15083,22 +16362,24 @@ components:
           type: string
       type: object
     reservation_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     logArchive:
       example:
-        sizeUsed: 0.80082819046101150206595775671303272247314453125
+        sizeUsed: 0.8008281904610115
         flavour: flavour
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -15136,7 +16417,7 @@ components:
           name: name
           _id: _id
           state: pending
-        retention: 6.02745618307040320615897144307382404804229736328125
+        retention: 6.027456183070403
       properties:
         _id:
           format: ObjectId
@@ -15195,7 +16476,7 @@ components:
           format: ObjectId
           type: string
         credential:
-          $ref: '#/components/schemas/vault_create_credential'
+          $ref: '#/components/schemas/logArchive_create_credential'
         retention:
           type: number
         tag:
@@ -15218,7 +16499,7 @@ components:
       type: object
     logArchive.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -15263,26 +16544,14 @@ components:
         name:
           type: string
       type: object
-    logArchive_post_credentialcertificate:
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        value:
-          type: string
-      type: object
-    logArchive_patch_credentialcertificate_id:
-      properties:
-        name:
-          type: string
-      type: object
     logArchive_post_accessrights:
       properties:
         identity:
           type: string
       type: object
     logArchive_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     vmhost:
       example:
@@ -15365,7 +16634,7 @@ components:
       type: object
     vmhost.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -15398,6 +16667,557 @@ components:
           type: string
       type: object
     vmhost_patch_tag:
+      additionalProperties:
+        type: string
+      type: object
+    agent:
+      example:
+        flavour: flavour
+        created: true
+        project: project
+        services:
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        type: type
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        createdBy: createdBy
+        name: name
+        processing: true
+        modifiedBy: modifiedBy
+        _id: _id
+        accessRights:
+        - accessRights
+        - accessRights
+        state: Online
+        tag: '{}'
+        enabledServices:
+        - enabledServices
+        - enabledServices
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+      properties:
+        _id:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        services:
+          items:
+            $ref: '#/components/schemas/project_services'
+          type: array
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          type: string
+        createdBy:
+          type: string
+        createdOn:
+          format: date-time
+          type: string
+        accessRights:
+          items:
+            type: string
+          type: array
+        processing:
+          type: boolean
+        created:
+          type: boolean
+        queue:
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
+        state:
+          enum:
+          - Online
+          - Unknown
+          type: string
+        tag:
+          type: object
+        project:
+          format: ObjectId
+          type: string
+        enabledServices:
+          items:
+            format: ObjectId
+            type: string
+          type: array
+        type:
+          type: string
+      type: object
+    agent_create:
+      properties:
+        name:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        credential:
+          $ref: '#/components/schemas/agent_create_credential'
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    agent_update:
+      properties:
+        name:
+          type: string
+      type: object
+    agent.services:
+      example:
+        quantity: 0.8008281904610115
+        data: '{}'
+        name: name
+        type: type
+        oneTime: true
+        sourceService: sourceService
+        billing: billing
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        oneTime:
+          type: boolean
+        billing:
+          format: ObjectId
+          type: string
+        data:
+          type: object
+        sourceService:
+          format: ObjectId
+          type: string
+        quantity:
+          type: number
+      type: object
+    agent.tag:
+      type: object
+    agent_put_enabledServices:
+      items:
+        format: ObjectId
+        type: string
+      type: array
+    agent_post_credentialcertificate:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+      type: object
+    agent_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    agent_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    agent_patch_tag:
+      additionalProperties:
+        type: string
+      type: object
+    container:
+      example:
+        image: image
+        flavour: flavour
+        created: true
+        volumes:
+        - source: source
+          sourcePath: sourcePath
+          target: target
+        - source: source
+          sourcePath: sourcePath
+          target: target
+        project: project
+        services:
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        env:
+        - env
+        - env
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        expose:
+        - external: external
+          internal: internal
+        - external: external
+          internal: internal
+        command: command
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        createdBy: createdBy
+        name: name
+        processing: true
+        modifiedBy: modifiedBy
+        _id: _id
+        accessRights:
+        - accessRights
+        - accessRights
+        state: Running
+        tag: '{}'
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+      properties:
+        _id:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        services:
+          items:
+            $ref: '#/components/schemas/project_services'
+          type: array
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          type: string
+        createdBy:
+          type: string
+        createdOn:
+          format: date-time
+          type: string
+        accessRights:
+          items:
+            type: string
+          type: array
+        processing:
+          type: boolean
+        created:
+          type: boolean
+        queue:
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
+        state:
+          enum:
+          - Running
+          - Off
+          - Unknown
+          type: string
+        tag:
+          type: object
+        project:
+          format: ObjectId
+          type: string
+        image:
+          type: string
+        command:
+          type: string
+        volumes:
+          items:
+            $ref: '#/components/schemas/container_volumes'
+          type: array
+        expose:
+          items:
+            $ref: '#/components/schemas/container_expose'
+          type: array
+        env:
+          items:
+            type: string
+          type: array
+      type: object
+    container_create:
+      properties:
+        name:
+          type: string
+        image:
+          type: string
+        registry:
+          $ref: '#/components/schemas/container_create_registry'
+        service:
+          format: ObjectId
+          type: string
+        expose:
+          items:
+            $ref: '#/components/schemas/container_create_expose'
+          type: array
+        env:
+          items:
+            type: string
+          type: array
+        command:
+          type: string
+        volumes:
+          items:
+            $ref: '#/components/schemas/container_create_volumes'
+          type: array
+        tag:
+          type: object
+      required:
+      - image
+      - name
+      - service
+      type: object
+    container_update:
+      properties:
+        name:
+          type: string
+      type: object
+    container.services:
+      example:
+        quantity: 0.8008281904610115
+        data: '{}'
+        name: name
+        type: type
+        oneTime: true
+        sourceService: sourceService
+        billing: billing
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        oneTime:
+          type: boolean
+        billing:
+          format: ObjectId
+          type: string
+        data:
+          type: object
+        sourceService:
+          format: ObjectId
+          type: string
+        quantity:
+          type: number
+      type: object
+    container.tag:
+      type: object
+    container_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    container_patch_tag:
+      additionalProperties:
+        type: string
+      type: object
+    volume:
+      example:
+        flavour: flavour
+        created: true
+        project: project
+        services:
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        size: 0.8008281904610115
+        createdBy: createdBy
+        name: name
+        processing: true
+        modifiedBy: modifiedBy
+        _id: _id
+        accessRights:
+        - accessRights
+        - accessRights
+        state: Online
+        tag: '{}'
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+      properties:
+        _id:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        services:
+          items:
+            $ref: '#/components/schemas/project_services'
+          type: array
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          type: string
+        createdBy:
+          type: string
+        createdOn:
+          format: date-time
+          type: string
+        accessRights:
+          items:
+            type: string
+          type: array
+        processing:
+          type: boolean
+        created:
+          type: boolean
+        queue:
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
+        state:
+          enum:
+          - Online
+          - Attached
+          - Detached
+          - Unknown
+          type: string
+        tag:
+          type: object
+        project:
+          format: ObjectId
+          type: string
+        size:
+          type: number
+      type: object
+    volume_create:
+      properties:
+        service:
+          format: ObjectId
+          type: string
+        name:
+          type: string
+        size:
+          type: number
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      - size
+      type: object
+    volume_update:
+      properties:
+        name:
+          type: string
+      type: object
+    volume.services:
+      example:
+        quantity: 0.8008281904610115
+        data: '{}'
+        name: name
+        type: type
+        oneTime: true
+        sourceService: sourceService
+        billing: billing
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        oneTime:
+          type: boolean
+        billing:
+          format: ObjectId
+          type: string
+        data:
+          type: object
+        sourceService:
+          format: ObjectId
+          type: string
+        quantity:
+          type: number
+      type: object
+    volume.tag:
+      type: object
+    volume_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    volume_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     replica:
       example:
@@ -15405,14 +17225,14 @@ components:
         created: true
         project: project
         services:
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
           oneTime: true
           sourceService: sourceService
           billing: billing
-        - quantity: 0.80082819046101150206595775671303272247314453125
+        - quantity: 0.8008281904610115
           data: '{}'
           name: name
           type: type
@@ -15527,7 +17347,7 @@ components:
       type: object
     replica.services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -15560,6 +17380,8 @@ components:
           type: string
       type: object
     replica_patch_tag:
+      additionalProperties:
+        type: string
       type: object
     inline_response_200:
       example:
@@ -15605,7 +17427,7 @@ components:
         description: description
         action: allow
         modifiedBy: modifiedBy
-        priority: 0.80082819046101150206595775671303272247314453125
+        priority: 0.8008281904610115
         createdOn: 2000-01-23T04:56:07.000+00:00
       properties:
         name:
@@ -15659,7 +17481,7 @@ components:
       - type
     hdd_disk:
       example:
-        size: 1.46581298050294517310021547018550336360931396484375
+        size: 1.4658129805029452
         name: name
         processing: true
         _id: _id
@@ -15678,9 +17500,81 @@ components:
           type: boolean
         persistent:
           type: boolean
+    service_billing_price:
+      example:
+        PLN: 0.8008281904610115
+        EUR: 6.027456183070403
+        GBP: 5.962133916683182
+        USD: 1.4658129805029452
+      properties:
+        PLN:
+          type: number
+        EUR:
+          type: number
+        USD:
+          type: number
+        GBP:
+          type: number
+    service_billing_reservations:
+      example:
+        period: period
+        resourcePrice:
+          PLN: 0.8008281904610115
+          EUR: 6.027456183070403
+          GBP: 5.962133916683182
+          USD: 1.4658129805029452
+        price:
+          PLN: 0.8008281904610115
+          EUR: 6.027456183070403
+          GBP: 5.962133916683182
+          USD: 1.4658129805029452
+        _id: _id
+      properties:
+        _id:
+          type: string
+        period:
+          type: string
+        price:
+          $ref: '#/components/schemas/service_billing_price'
+        resourcePrice:
+          $ref: '#/components/schemas/service_billing_price'
+    service_billing:
+      example:
+        period: period
+        quantity: 5.637376656633329
+        reservations:
+          period: period
+          resourcePrice:
+            PLN: 0.8008281904610115
+            EUR: 6.027456183070403
+            GBP: 5.962133916683182
+            USD: 1.4658129805029452
+          price:
+            PLN: 0.8008281904610115
+            EUR: 6.027456183070403
+            GBP: 5.962133916683182
+            USD: 1.4658129805029452
+          _id: _id
+        price:
+          PLN: 0.8008281904610115
+          EUR: 6.027456183070403
+          GBP: 5.962133916683182
+          USD: 1.4658129805029452
+        oneTime: true
+      properties:
+        price:
+          $ref: '#/components/schemas/service_billing_price'
+        period:
+          type: string
+        quantity:
+          type: number
+        oneTime:
+          type: boolean
+        reservations:
+          $ref: '#/components/schemas/service_billing_reservations'
     project_services:
       example:
-        quantity: 0.80082819046101150206595775671303272247314453125
+        quantity: 0.8008281904610115
         data: '{}'
         name: name
         type: type
@@ -15720,9 +17614,9 @@ components:
           type: string
     project_billing:
       example:
-        creditsBonus: 1.46581298050294517310021547018550336360931396484375
-        credits: 6.02745618307040320615897144307382404804229736328125
-        creditLimit: 5.962133916683182377482808078639209270477294921875
+        creditsBonus: 1.4658129805029452
+        credits: 6.027456183070403
+        creditLimit: 5.962133916683182
       properties:
         credits:
           type: number
@@ -15767,8 +17661,8 @@ components:
           $ref: '#/components/schemas/project_duplicate'
     project_limit_vm:
       example:
-        memory: 3.61607674925191080461672754609026014804840087890625
-        count: 9.301444243932575517419536481611430644989013671875
+        memory: 3.616076749251911
+        count: 9.301444243932576
       properties:
         count:
           type: number
@@ -15779,8 +17673,8 @@ components:
       - memory
     project_limit_disk:
       example:
-        size: 4.1456080298839363962315474054776132106781005859375
-        count: 2.027123023002321833274663731572218239307403564453125
+        size: 4.145608029883936
+        count: 2.027123023002322
       properties:
         count:
           type: number
@@ -15791,7 +17685,7 @@ components:
       - size
     project_limit_iso:
       example:
-        count: 7.3862819483858839220147274318151175975799560546875
+        count: 7.386281948385884
       properties:
         count:
           type: number
@@ -15799,8 +17693,8 @@ components:
       - count
     project_limit_domain:
       example:
-        record: 1.024645700144157789424070870154537260532379150390625
-        count: 1.231513536777255612975068288506008684635162353515625
+        record: 1.0246457001441578
+        count: 1.2315135367772556
       properties:
         count:
           type: number
@@ -15812,35 +17706,35 @@ components:
     project_limit:
       example:
         image:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         iso:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         ip:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         network:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         netgw:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         disk:
-          size: 4.1456080298839363962315474054776132106781005859375
-          count: 2.027123023002321833274663731572218239307403564453125
+          size: 4.145608029883936
+          count: 2.027123023002322
         firewall:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         vm:
-          memory: 3.61607674925191080461672754609026014804840087890625
-          count: 9.301444243932575517419536481611430644989013671875
+          memory: 3.616076749251911
+          count: 9.301444243932576
         domain:
-          record: 1.024645700144157789424070870154537260532379150390625
-          count: 1.231513536777255612975068288506008684635162353515625
+          record: 1.0246457001441578
+          count: 1.2315135367772556
         reservation:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         logArchive:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
         vault:
-          size: 4.1456080298839363962315474054776132106781005859375
-          count: 2.027123023002321833274663731572218239307403564453125
+          size: 4.145608029883936
+          count: 2.027123023002322
         snapshot:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
       properties:
         vm:
           $ref: '#/components/schemas/project_limit_vm'
@@ -15871,8 +17765,8 @@ components:
     project_threshold_credits:
       example:
         levels:
-        - 1.489415909854170383397331534069962799549102783203125
-        - 1.489415909854170383397331534069962799549102783203125
+        - 1.4894159098541704
+        - 1.4894159098541704
       properties:
         levels:
           items:
@@ -15882,8 +17776,8 @@ components:
       example:
         credits:
           levels:
-          - 1.489415909854170383397331534069962799549102783203125
-          - 1.489415909854170383397331534069962799549102783203125
+          - 1.4894159098541704
+          - 1.4894159098541704
       properties:
         credits:
           $ref: '#/components/schemas/project_threshold_credits'
@@ -16008,7 +17902,7 @@ components:
     organisation_limit_organisation:
       example:
         project:
-          count: 7.3862819483858839220147274318151175975799560546875
+          count: 7.386281948385884
       properties:
         project:
           $ref: '#/components/schemas/project_limit_iso'
@@ -16016,38 +17910,38 @@ components:
       example:
         organisation:
           project:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
         project:
           image:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           iso:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           ip:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           network:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           netgw:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           disk:
-            size: 4.1456080298839363962315474054776132106781005859375
-            count: 2.027123023002321833274663731572218239307403564453125
+            size: 4.145608029883936
+            count: 2.027123023002322
           firewall:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           vm:
-            memory: 3.61607674925191080461672754609026014804840087890625
-            count: 9.301444243932575517419536481611430644989013671875
+            memory: 3.616076749251911
+            count: 9.301444243932576
           domain:
-            record: 1.024645700144157789424070870154537260532379150390625
-            count: 1.231513536777255612975068288506008684635162353515625
+            record: 1.0246457001441578
+            count: 1.2315135367772556
           reservation:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           logArchive:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
           vault:
-            size: 4.1456080298839363962315474054776132106781005859375
-            count: 2.027123023002321833274663731572218239307403564453125
+            size: 4.145608029883936
+            count: 2.027123023002322
           snapshot:
-            count: 7.3862819483858839220147274318151175975799560546875
+            count: 7.386281948385884
       properties:
         organisation:
           $ref: '#/components/schemas/organisation_limit_organisation'
@@ -16106,30 +18000,6 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/organisation_update_billing_address'
-    container_create_registry:
-      properties:
-        username:
-          type: string
-        password:
-          type: string
-    container_create_expose:
-      properties:
-        port:
-          type: number
-        host:
-          type: string
-    container_create_volumes:
-      properties:
-        source:
-          format: ObjectId
-          type: string
-        sourcePath:
-          type: string
-        target:
-          type: string
-      required:
-      - source
-      - target
     network_dns:
       example:
         nameservers:
@@ -16157,8 +18027,8 @@ components:
     image_attachedOn:
       example:
         controllerType: controllerType
-        controllerNumber: 5.962133916683182377482808078639209270477294921875
-        controllerLocation: 1.46581298050294517310021547018550336360931396484375
+        controllerNumber: 5.962133916683182
+        controllerLocation: 1.4658129805029452
       properties:
         controllerLocation:
           type: number
@@ -16183,13 +18053,13 @@ components:
       example:
         attachedOn:
           controllerType: controllerType
-          controllerNumber: 5.962133916683182377482808078639209270477294921875
-          controllerLocation: 1.46581298050294517310021547018550336360931396484375
+          controllerNumber: 5.962133916683182
+          controllerLocation: 1.4658129805029452
         disk:
           name: name
           _id: _id
-        size: 0.80082819046101150206595775671303272247314453125
-        fileSize: 6.02745618307040320615897144307382404804229736328125
+        size: 0.8008281904610115
+        fileSize: 6.027456183070403
         downloadUrl: downloadUrl
         type: type
       properties:
@@ -16221,7 +18091,7 @@ components:
     disk_metadata_source:
       example:
         filename: filename
-        size: 6.02745618307040320615897144307382404804229736328125
+        size: 6.027456183070403
       properties:
         filename:
           type: string
@@ -16231,7 +18101,7 @@ components:
       example:
         source:
           filename: filename
-          size: 6.02745618307040320615897144307382404804229736328125
+          size: 6.027456183070403
       properties:
         source:
           $ref: '#/components/schemas/disk_metadata_source'
@@ -16344,6 +18214,75 @@ components:
           items:
             $ref: '#/components/schemas/vault_create_credential_certificate'
           type: array
+    logArchive_create_credential:
+      properties:
+        password:
+          items:
+            $ref: '#/components/schemas/vault_create_credential_password'
+          type: array
+    agent_create_credential:
+      properties:
+        certificate:
+          items:
+            $ref: '#/components/schemas/vault_create_credential_certificate'
+          type: array
+    container_volumes:
+      example:
+        source: source
+        sourcePath: sourcePath
+        target: target
+      properties:
+        target:
+          type: string
+        sourcePath:
+          type: string
+        source:
+          format: ObjectId
+          type: string
+      required:
+      - source
+      - target
+    container_expose:
+      example:
+        external: external
+        internal: internal
+      properties:
+        external:
+          type: string
+        internal:
+          type: string
+      required:
+      - external
+      - internal
+    container_create_registry:
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        token:
+          type: string
+    container_create_expose:
+      properties:
+        internal:
+          type: string
+        external:
+          type: string
+      required:
+      - external
+      - internal
+    container_create_volumes:
+      properties:
+        source:
+          format: ObjectId
+          type: string
+        sourcePath:
+          type: string
+        target:
+          type: string
+      required:
+      - source
+      - target
   securitySchemes:
     Session:
       in: header

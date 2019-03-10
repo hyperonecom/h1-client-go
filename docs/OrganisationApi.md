@@ -4,6 +4,7 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**OrganisationActionPaymentAssign**](OrganisationApi.md#OrganisationActionPaymentAssign) | **Post** /organisation/{organisationId}/actions/payment_assign | /actions/payment_assign
 [**OrganisationActionTransferAccept**](OrganisationApi.md#OrganisationActionTransferAccept) | **Post** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 [**OrganisationCreate**](OrganisationApi.md#OrganisationCreate) | **Post** /organisation | Create
 [**OrganisationDeleteAccessrightsId**](OrganisationApi.md#OrganisationDeleteAccessrightsId) | **Delete** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
@@ -17,6 +18,35 @@ Method | HTTP request | Description
 [**OrganisationShow**](OrganisationApi.md#OrganisationShow) | **Get** /organisation/{organisationId} | Get
 [**OrganisationUpdate**](OrganisationApi.md#OrganisationUpdate) | **Patch** /organisation/{organisationId} | Update
 
+
+# **OrganisationActionPaymentAssign**
+> Organisation OrganisationActionPaymentAssign(ctx, organisationId, organisationActionPaymentAssign)
+/actions/payment_assign
+
+Action payment_assign
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **organisationId** | **string**| ID of organisation | 
+  **organisationActionPaymentAssign** | [**OrganisationActionPaymentAssign**](OrganisationActionPaymentAssign.md)|  | 
+
+### Return type
+
+[**Organisation**](organisation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OrganisationActionTransferAccept**
 > Organisation OrganisationActionTransferAccept(ctx, organisationId, organisationActionTransferAccept)
@@ -175,8 +205,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
  **billingCompany** | **optional.String**| Filter by billing.company | 
- **limit** | **optional.String**| Filter by $limit | 
- **active** | **optional.String**| Filter by active | 
+ **limit** | **optional.Float32**| Filter by $limit | 
+ **active** | **optional.Bool**| Filter by active | 
 
 ### Return type
 
@@ -246,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OrganisationPatchTag**
-> map[string]interface{} OrganisationPatchTag(ctx, organisationId, body)
+> map[string]interface{} OrganisationPatchTag(ctx, organisationId, requestBody)
 /tag
 
 ### Required Parameters
@@ -255,7 +285,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **organisationId** | **string**| ID of organisation | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -273,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OrganisationPostAccessrights**
-> AccessrightsUserRole OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
+> Organisation OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
 /accessrights
 
 ### Required Parameters
@@ -286,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccessrightsUserRole**](accessrightsUserRole.md)
+[**Organisation**](organisation.md)
 
 ### Authorization
 

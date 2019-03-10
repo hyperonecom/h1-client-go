@@ -83,7 +83,6 @@ func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -213,7 +210,6 @@ func (a *IpApiService) IpActionAssociate(ctx context.Context, ipId string, ipAct
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -226,7 +222,6 @@ func (a *IpApiService) IpActionAssociate(ctx context.Context, ipId string, ipAct
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -239,7 +234,6 @@ func (a *IpApiService) IpActionAssociate(ctx context.Context, ipId string, ipAct
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -340,7 +334,6 @@ func (a *IpApiService) IpActionDisassociate(ctx context.Context, ipId string) (I
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -353,7 +346,6 @@ func (a *IpApiService) IpActionDisassociate(ctx context.Context, ipId string) (I
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -366,7 +358,6 @@ func (a *IpApiService) IpActionDisassociate(ctx context.Context, ipId string) (I
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -467,7 +458,6 @@ func (a *IpApiService) IpActionRelease(ctx context.Context, ipId string) (Ip, *h
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -480,7 +470,6 @@ func (a *IpApiService) IpActionRelease(ctx context.Context, ipId string) (Ip, *h
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -493,7 +482,6 @@ func (a *IpApiService) IpActionRelease(ctx context.Context, ipId string) (Ip, *h
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -597,7 +585,6 @@ func (a *IpApiService) IpActionTransfer(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -610,7 +597,6 @@ func (a *IpApiService) IpActionTransfer(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -623,7 +609,6 @@ func (a *IpApiService) IpActionTransfer(ctx context.Context, ipId string, ipActi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -725,7 +710,6 @@ func (a *IpApiService) IpCreate(ctx context.Context, ipCreate IpCreate) (Ip, *ht
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -738,7 +722,6 @@ func (a *IpApiService) IpCreate(ctx context.Context, ipCreate IpCreate) (Ip, *ht
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -751,7 +734,6 @@ func (a *IpApiService) IpCreate(ctx context.Context, ipCreate IpCreate) (Ip, *ht
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -849,7 +831,6 @@ func (a *IpApiService) IpDelete(ctx context.Context, ipId string) (*http.Respons
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -862,7 +843,6 @@ func (a *IpApiService) IpDelete(ctx context.Context, ipId string) (*http.Respons
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -875,7 +855,6 @@ func (a *IpApiService) IpDelete(ctx context.Context, ipId string) (*http.Respons
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -958,7 +937,6 @@ func (a *IpApiService) IpDeleteAccessrightsIdentity(ctx context.Context, ipId st
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -971,7 +949,6 @@ func (a *IpApiService) IpDeleteAccessrightsIdentity(ctx context.Context, ipId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -984,7 +961,6 @@ func (a *IpApiService) IpDeleteAccessrightsIdentity(ctx context.Context, ipId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1096,7 +1072,6 @@ func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1109,7 +1084,6 @@ func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1122,7 +1096,6 @@ func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1224,7 +1197,6 @@ func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1237,7 +1209,6 @@ func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1250,7 +1221,6 @@ func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1350,7 +1320,6 @@ func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]in
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1363,7 +1332,6 @@ func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]in
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1376,7 +1344,6 @@ func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]in
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1429,11 +1396,13 @@ List ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *IpListOpts - Optional Parameters:
  * @param "Mac" (optional.String) -  Filter by mac
+ * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Ip
 */
 
 type IpListOpts struct {
 	Mac optional.String
+	Tag optional.Interface
 }
 
 func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts) ([]Ip, *http.Response, error) {
@@ -1455,6 +1424,9 @@ func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts
 
 	if localVarOptionals != nil && localVarOptionals.Mac.IsSet() {
 		localVarQueryParams.Add("mac", parameterToString(localVarOptionals.Mac.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
+		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1485,7 +1457,6 @@ func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1498,7 +1469,6 @@ func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1511,7 +1481,6 @@ func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1611,7 +1580,6 @@ func (a *IpApiService) IpListAccessrights(ctx context.Context, ipId string) ([]s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1624,7 +1592,6 @@ func (a *IpApiService) IpListAccessrights(ctx context.Context, ipId string) ([]s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1637,7 +1604,6 @@ func (a *IpApiService) IpListAccessrights(ctx context.Context, ipId string) ([]s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1737,7 +1703,6 @@ func (a *IpApiService) IpListQueue(ctx context.Context, ipId string) ([]Event, *
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1750,7 +1715,6 @@ func (a *IpApiService) IpListQueue(ctx context.Context, ipId string) ([]Event, *
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1763,7 +1727,6 @@ func (a *IpApiService) IpListQueue(ctx context.Context, ipId string) ([]Event, *
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1863,7 +1826,6 @@ func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpSer
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1876,7 +1838,6 @@ func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpSer
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1889,7 +1850,6 @@ func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpSer
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1940,10 +1900,10 @@ func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpSer
 IpApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1979,7 +1939,7 @@ func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[str
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1992,7 +1952,6 @@ func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2005,7 +1964,6 @@ func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2018,7 +1976,6 @@ func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, body map[str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2121,7 +2078,6 @@ func (a *IpApiService) IpPostAccessrights(ctx context.Context, ipId string, ipPo
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2134,7 +2090,6 @@ func (a *IpApiService) IpPostAccessrights(ctx context.Context, ipId string, ipPo
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2147,7 +2102,6 @@ func (a *IpApiService) IpPostAccessrights(ctx context.Context, ipId string, ipPo
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2258,7 +2212,6 @@ func (a *IpApiService) IpShow(ctx context.Context, ipId string) (Ip, *http.Respo
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2271,7 +2224,6 @@ func (a *IpApiService) IpShow(ctx context.Context, ipId string) (Ip, *http.Respo
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2284,7 +2236,6 @@ func (a *IpApiService) IpShow(ctx context.Context, ipId string) (Ip, *http.Respo
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2388,7 +2339,6 @@ func (a *IpApiService) IpUpdate(ctx context.Context, ipId string, ipUpdate IpUpd
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2401,7 +2351,6 @@ func (a *IpApiService) IpUpdate(ctx context.Context, ipId string, ipUpdate IpUpd
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2414,7 +2363,6 @@ func (a *IpApiService) IpUpdate(ctx context.Context, ipId string, ipUpdate IpUpd
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

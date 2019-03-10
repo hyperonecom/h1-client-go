@@ -10,7 +10,7 @@
 package openapi
 
 type FirewallCreate struct {
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Service string `json:"service,omitempty"`
 }

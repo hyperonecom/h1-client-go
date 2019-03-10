@@ -45,6 +45,8 @@ type APIClient struct {
 
 	// API Services
 
+	AgentApi *AgentApiService
+
 	ContainerApi *ContainerApiService
 
 	DiskApi *DiskApiService
@@ -73,6 +75,8 @@ type APIClient struct {
 
 	ReservationApi *ReservationApiService
 
+	ServiceApi *ServiceApiService
+
 	SnapshotApi *SnapshotApiService
 
 	VaultApi *VaultApiService
@@ -80,6 +84,8 @@ type APIClient struct {
 	VmApi *VmApiService
 
 	VmhostApi *VmhostApiService
+
+	VolumeApi *VolumeApiService
 }
 
 type service struct {
@@ -98,6 +104,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.AgentApi = (*AgentApiService)(&c.common)
 	c.ContainerApi = (*ContainerApiService)(&c.common)
 	c.DiskApi = (*DiskApiService)(&c.common)
 	c.FirewallApi = (*FirewallApiService)(&c.common)
@@ -112,10 +119,12 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProjectApi = (*ProjectApiService)(&c.common)
 	c.ReplicaApi = (*ReplicaApiService)(&c.common)
 	c.ReservationApi = (*ReservationApiService)(&c.common)
+	c.ServiceApi = (*ServiceApiService)(&c.common)
 	c.SnapshotApi = (*SnapshotApiService)(&c.common)
 	c.VaultApi = (*VaultApiService)(&c.common)
 	c.VmApi = (*VmApiService)(&c.common)
 	c.VmhostApi = (*VmhostApiService)(&c.common)
+	c.VolumeApi = (*VolumeApiService)(&c.common)
 
 	return c
 }

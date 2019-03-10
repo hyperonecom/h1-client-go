@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Service** | **string** |  | [optional] [default to 5b4e074d1d34e82848ce7499]
-**Credential** | [**VaultCreateCredential**](vault_create_credential.md) |  | [optional] 
+**Credential** | [**LogArchiveCreateCredential**](logArchive_create_credential.md) |  | [optional] 
 **Retention** | **float32** |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

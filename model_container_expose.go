@@ -9,8 +9,7 @@
 
 package openapi
 
-type ProjectPostCredentialStorecertificate struct {
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-	Value string `json:"value,omitempty"`
+type ContainerExpose struct {
+	External string `json:"external"`
+	Internal string `json:"internal"`
 }

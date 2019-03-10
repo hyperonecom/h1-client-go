@@ -83,7 +83,6 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -96,7 +95,6 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -109,7 +107,6 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -213,7 +210,6 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -226,7 +222,6 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -239,7 +234,6 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -341,7 +335,6 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -354,7 +347,6 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -367,7 +359,6 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -465,7 +456,6 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -478,7 +468,6 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -491,7 +480,6 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -574,7 +562,6 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -587,7 +574,6 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -600,7 +586,6 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -712,7 +697,6 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -725,7 +709,6 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -738,7 +721,6 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -840,7 +822,6 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -853,7 +834,6 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -866,7 +846,6 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -966,7 +945,6 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -979,7 +957,6 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -992,7 +969,6 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1045,11 +1021,13 @@ List disk
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DiskListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
+ * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Disk
 */
 
 type DiskListOpts struct {
 	Name optional.String
+	Tag optional.Interface
 }
 
 func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskListOpts) ([]Disk, *http.Response, error) {
@@ -1071,6 +1049,9 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
+		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1101,7 +1082,6 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1114,7 +1094,6 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1127,7 +1106,6 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1227,7 +1205,6 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1240,7 +1217,6 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1253,7 +1229,6 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1353,7 +1328,6 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1366,7 +1340,6 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1379,7 +1352,6 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1479,7 +1451,6 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1492,7 +1463,6 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1505,7 +1475,6 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1556,10 +1525,10 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 DiskApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1595,7 +1564,7 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, body m
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1608,7 +1577,6 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, body m
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1621,7 +1589,6 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, body m
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1634,7 +1601,6 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, body m
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1737,7 +1703,6 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1750,7 +1715,6 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1763,7 +1727,6 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1874,7 +1837,6 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1887,7 +1849,6 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1900,7 +1861,6 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2004,7 +1964,6 @@ func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpda
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2017,7 +1976,6 @@ func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpda
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2030,7 +1988,6 @@ func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpda
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

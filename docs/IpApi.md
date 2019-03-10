@@ -348,6 +348,7 @@ Optional parameters are passed through a pointer to a IpListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mac** | **optional.String**| Filter by mac | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 
@@ -443,7 +444,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IpPatchTag**
-> map[string]interface{} IpPatchTag(ctx, ipId, body)
+> map[string]interface{} IpPatchTag(ctx, ipId, requestBody)
 /tag
 
 ### Required Parameters
@@ -452,7 +453,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **ipId** | **string**| ID of ip | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

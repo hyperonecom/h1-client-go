@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SnapshotPatchTag**
-> map[string]interface{} SnapshotPatchTag(ctx, snapshotId, body)
+> map[string]interface{} SnapshotPatchTag(ctx, snapshotId, requestBody)
 /tag
 
 ### Required Parameters
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **snapshotId** | **string**| ID of snapshot | 
-  **body** | **map[string]interface{}**|  | 
+  **requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 

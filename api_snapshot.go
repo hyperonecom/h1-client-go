@@ -81,7 +81,6 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -94,7 +93,6 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -107,7 +105,6 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -205,7 +202,6 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -218,7 +214,6 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -231,7 +226,6 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -314,7 +308,6 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -327,7 +320,6 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -340,7 +332,6 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -452,7 +443,6 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -465,7 +455,6 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -478,7 +467,6 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -580,7 +568,6 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -593,7 +580,6 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -606,7 +592,6 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -706,7 +691,6 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -719,7 +703,6 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -732,7 +715,6 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -846,7 +828,6 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -859,7 +840,6 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -872,7 +852,6 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -972,7 +951,6 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -985,7 +963,6 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -998,7 +975,6 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1098,7 +1074,6 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1111,7 +1086,6 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1124,7 +1098,6 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1224,7 +1197,6 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1237,7 +1209,6 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1250,7 +1221,6 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1301,10 +1271,10 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 SnapshotApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1340,7 +1310,7 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1353,7 +1323,6 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1366,7 +1335,6 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1379,7 +1347,6 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1482,7 +1449,6 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1495,7 +1461,6 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1508,7 +1473,6 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1619,7 +1583,6 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1632,7 +1595,6 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1645,7 +1607,6 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1749,7 +1710,6 @@ func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1762,7 +1722,6 @@ func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1775,7 +1734,6 @@ func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

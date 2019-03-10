@@ -81,7 +81,6 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -94,7 +93,6 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -107,7 +105,6 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -205,7 +202,6 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -218,7 +214,6 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -231,7 +226,6 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -314,7 +308,6 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -327,7 +320,6 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -340,7 +332,6 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -452,7 +443,6 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -465,7 +455,6 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -478,7 +467,6 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -580,7 +568,6 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -593,7 +580,6 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -606,7 +592,6 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -708,7 +693,6 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -721,7 +705,6 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -734,7 +717,6 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -836,7 +818,6 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -849,7 +830,6 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -862,7 +842,6 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -962,7 +941,6 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -975,7 +953,6 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -988,7 +965,6 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1041,16 +1017,16 @@ List project
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ProjectListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
- * @param "Limit" (optional.String) -  Filter by $limit
- * @param "Active" (optional.String) -  Filter by active
+ * @param "Limit" (optional.Float32) -  Filter by $limit
+ * @param "Active" (optional.Bool) -  Filter by active
  * @param "Organisation" (optional.String) -  Filter by organisation
 @return []Project
 */
 
 type ProjectListOpts struct {
 	Name optional.String
-	Limit optional.String
-	Active optional.String
+	Limit optional.Float32
+	Active optional.Bool
 	Organisation optional.String
 }
 
@@ -1112,7 +1088,6 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1125,7 +1100,6 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1138,7 +1112,6 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1238,7 +1211,6 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1251,7 +1223,6 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1264,7 +1235,6 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1364,7 +1334,6 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1377,7 +1346,6 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1390,7 +1358,6 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1490,7 +1457,6 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1503,7 +1469,6 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1516,7 +1481,6 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1616,7 +1580,6 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1629,7 +1592,6 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1642,7 +1604,6 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1747,7 +1708,6 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1760,7 +1720,6 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1773,7 +1732,6 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1824,10 +1782,10 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 ProjectApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param body
+ * @param requestBody
 @return map[string]interface{}
 */
-func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId string, body map[string]interface{}) (map[string]interface{}, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
@@ -1863,7 +1821,7 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &requestBody
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1876,7 +1834,6 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1889,7 +1846,6 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1902,7 +1858,6 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1954,16 +1909,16 @@ ProjectApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectPostAccessrights
-@return AccessrightsUserRole
+@return Project
 */
-func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (AccessrightsUserRole, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (Project, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  AccessrightsUserRole
+		localVarReturnValue  Project
 	)
 
 	// create path and map variables
@@ -2005,7 +1960,6 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2018,7 +1972,6 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2031,7 +1984,6 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2054,7 +2006,17 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AccessrightsUserRole
+			var v Project
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Project
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2082,10 +2044,10 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 ProjectApiService /credentialStore/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param projectPostCredentialStorecertificate
+ * @param body
 @return InlineResponse200
 */
-func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, projectPostCredentialStorecertificate ProjectPostCredentialStorecertificate) (InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, body string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -2121,7 +2083,7 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectPostCredentialStorecertificate
+	localVarPostBody = &body
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2134,7 +2096,6 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2147,7 +2108,6 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2160,7 +2120,6 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2261,7 +2220,6 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2274,7 +2232,6 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2287,7 +2244,6 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2391,7 +2347,6 @@ func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2404,7 +2359,6 @@ func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2417,7 +2371,6 @@ func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string,
 			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
-
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
