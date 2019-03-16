@@ -83,30 +83,6 @@ func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Con
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -130,6 +106,16 @@ func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Con
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -210,30 +196,6 @@ func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Co
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -257,6 +219,16 @@ func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Co
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -335,30 +307,6 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -382,6 +330,16 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -460,30 +418,6 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -517,6 +451,16 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -595,30 +539,6 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -642,6 +562,16 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -718,30 +648,6 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -765,6 +671,16 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -797,6 +713,7 @@ List organisation
  * @param "BillingCompany" (optional.String) -  Filter by billing.company
  * @param "Limit" (optional.Float32) -  Filter by $limit
  * @param "Active" (optional.Bool) -  Filter by active
+ * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Organisation
 */
 
@@ -805,6 +722,7 @@ type OrganisationListOpts struct {
 	BillingCompany optional.String
 	Limit optional.Float32
 	Active optional.Bool
+	Tag optional.Interface
 }
 
 func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *http.Response, error) {
@@ -836,6 +754,9 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
 		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
 	}
+	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
+		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 
@@ -865,30 +786,6 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -912,6 +809,16 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -988,30 +895,6 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1035,6 +918,16 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []AccessrightsUserRole
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1111,30 +1004,6 @@ func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, orga
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1158,6 +1027,16 @@ func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, orga
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Event
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1237,30 +1116,6 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1284,6 +1139,16 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1363,30 +1228,6 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1420,6 +1261,16 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1497,30 +1348,6 @@ func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisat
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1544,6 +1371,16 @@ func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisat
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1624,30 +1461,6 @@ func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organis
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1671,6 +1484,16 @@ func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organis
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Organisation
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -83,30 +83,6 @@ func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -130,6 +106,16 @@ func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string,
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -210,30 +196,6 @@ func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId strin
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -257,6 +219,16 @@ func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId strin
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -334,30 +306,6 @@ func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -381,6 +329,16 @@ func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) 
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -458,30 +416,6 @@ func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -505,6 +439,16 @@ func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -583,30 +527,6 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -630,6 +550,16 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -686,7 +616,7 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -705,30 +635,6 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 				key = auth.Key
 			}
 			localVarHeaderParams["x-project"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
@@ -751,6 +657,16 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 		newErr := GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
 		}
 		return localVarHttpResponse, newErr
 	}
@@ -813,30 +729,6 @@ func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, v
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -870,6 +762,16 @@ func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, v
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -948,30 +850,6 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1005,6 +883,16 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1083,30 +971,6 @@ func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, v
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1140,6 +1004,16 @@ func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, v
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1218,30 +1092,6 @@ func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1265,6 +1115,16 @@ func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1343,30 +1203,6 @@ func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, v
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1390,6 +1226,16 @@ func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, v
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialCertificate
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1468,30 +1314,6 @@ func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaul
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1515,6 +1337,16 @@ func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaul
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialPassword
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1593,30 +1425,6 @@ func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1640,6 +1448,16 @@ func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VaultServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1716,30 +1534,6 @@ func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1771,6 +1565,16 @@ func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[
 			newErr.model = v
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
@@ -1792,11 +1596,13 @@ List vault
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *VaultListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
+ * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Vault
 */
 
 type VaultListOpts struct {
 	Name optional.String
+	Tag optional.Interface
 }
 
 func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *VaultListOpts) ([]Vault, *http.Response, error) {
@@ -1818,6 +1624,9 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
+		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1848,30 +1657,6 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1895,6 +1680,16 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1971,30 +1766,6 @@ func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2018,6 +1789,16 @@ func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId str
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []string
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2094,30 +1875,6 @@ func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, va
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2141,6 +1898,16 @@ func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, va
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []CredentialCertificate
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2217,30 +1984,6 @@ func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vault
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2264,6 +2007,16 @@ func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vault
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []CredentialPassword
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2340,30 +2093,6 @@ func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2387,6 +2116,16 @@ func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Event
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2463,30 +2202,6 @@ func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2510,6 +2225,16 @@ func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string)
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []VaultServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2591,30 +2316,6 @@ func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2638,6 +2339,16 @@ func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialCertificate
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2719,30 +2430,6 @@ func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, va
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2766,6 +2453,16 @@ func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, va
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialPassword
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2845,30 +2542,6 @@ func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, req
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2892,6 +2565,16 @@ func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, req
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2971,30 +2654,6 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3028,6 +2687,16 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3107,30 +2776,6 @@ func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, va
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3154,6 +2799,16 @@ func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, va
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialCertificate
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3233,30 +2888,6 @@ func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vault
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3280,6 +2911,16 @@ func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vault
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v CredentialPassword
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3357,30 +2998,6 @@ func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3404,6 +3021,16 @@ func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3484,30 +3111,6 @@ func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vault
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3531,6 +3134,16 @@ func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vault
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Vault
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

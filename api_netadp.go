@@ -81,30 +81,6 @@ func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -138,6 +114,16 @@ func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context,
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -216,30 +202,6 @@ func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -263,6 +225,16 @@ func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId stri
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -341,30 +313,6 @@ func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netad
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -388,6 +336,16 @@ func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netad
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v NetadpServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -464,30 +422,6 @@ func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (m
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -511,6 +445,16 @@ func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (m
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -601,30 +545,6 @@ func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *Ne
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -648,6 +568,16 @@ func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *Ne
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -724,30 +654,6 @@ func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -771,6 +677,16 @@ func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId 
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []string
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -847,30 +763,6 @@ func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string)
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -894,6 +786,16 @@ func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string)
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Event
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -970,30 +872,6 @@ func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1017,6 +895,16 @@ func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId stri
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []NetadpServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1096,30 +984,6 @@ func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1143,6 +1007,16 @@ func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, 
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1222,30 +1096,6 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1279,6 +1129,16 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1356,30 +1216,6 @@ func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Net
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1403,6 +1239,16 @@ func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Net
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

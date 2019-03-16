@@ -83,30 +83,6 @@ func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActio
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -130,6 +106,16 @@ func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActio
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -210,30 +196,6 @@ func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionI
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -257,6 +219,16 @@ func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionI
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -337,30 +309,6 @@ func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, v
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -384,6 +332,16 @@ func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, v
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -464,30 +422,6 @@ func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmAction
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -511,6 +445,16 @@ func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmAction
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -588,30 +532,6 @@ func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *h
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -635,6 +555,16 @@ func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *h
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -712,30 +642,6 @@ func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *htt
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -759,6 +665,16 @@ func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *htt
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -836,30 +752,6 @@ func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -883,6 +775,16 @@ func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -960,30 +862,6 @@ func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *h
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1007,6 +885,16 @@ func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *h
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1085,30 +973,6 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1132,6 +996,16 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1188,7 +1062,7 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1207,30 +1081,6 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 				key = auth.Key
 			}
 			localVarHeaderParams["x-project"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
 		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
@@ -1253,6 +1103,16 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 		newErr := GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarHttpResponse, newErr
 		}
 		return localVarHttpResponse, newErr
 	}
@@ -1315,30 +1175,6 @@ func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId st
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1372,6 +1208,16 @@ func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId st
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1450,30 +1296,6 @@ func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskI
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1507,6 +1329,16 @@ func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskI
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1585,30 +1417,6 @@ func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1642,6 +1450,16 @@ func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, 
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1720,30 +1538,6 @@ func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key stri
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1767,6 +1561,16 @@ func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key stri
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1845,30 +1649,6 @@ func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1892,6 +1672,16 @@ func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, 
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v VmServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1968,30 +1758,6 @@ func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]in
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2015,6 +1781,16 @@ func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]in
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2105,30 +1881,6 @@ func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2152,6 +1904,16 @@ func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2228,30 +1990,6 @@ func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]s
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2275,6 +2013,16 @@ func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]s
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []string
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2351,30 +2099,6 @@ func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2398,6 +2122,16 @@ func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Hdd
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2474,30 +2208,6 @@ func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp,
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2521,6 +2231,16 @@ func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Netadp
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2597,30 +2317,6 @@ func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2644,6 +2340,16 @@ func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []Event
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2720,30 +2426,6 @@ func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmSer
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2767,6 +2449,16 @@ func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmSer
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v []VmServices
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2846,30 +2538,6 @@ func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody 
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2893,6 +2561,16 @@ func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody 
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2972,30 +2650,6 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3029,6 +2683,16 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3108,30 +2772,6 @@ func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmP
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3165,6 +2805,16 @@ func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmP
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3244,30 +2894,6 @@ func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNeta
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3301,6 +2927,16 @@ func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNeta
 		}
 		if localVarHttpResponse.StatusCode == 202 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3378,30 +3014,6 @@ func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Respo
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3425,6 +3037,16 @@ func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Respo
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3505,30 +3127,6 @@ func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpd
 			localVarHeaderParams["x-project"] = key
 		}
 	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["x-auth-token"] = key
-		}
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3552,6 +3150,16 @@ func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpd
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Vm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -9,6 +9,9 @@
 
 package openapi
 
-type OrganisationLimitOrganisation struct {
-	Project map[string]interface{} `json:"project,omitempty"`
+type ContainerProcess struct {
+	Id string `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
+	User string `json:"user,omitempty"`
+	Parent string `json:"parent,omitempty"`
 }

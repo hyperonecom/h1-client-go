@@ -10,17 +10,19 @@
 package openapi
 
 type ProjectLimit struct {
-	Vm ProjectLimitVm `json:"vm,omitempty"`
-	Disk ProjectLimitDisk `json:"disk,omitempty"`
-	Iso ProjectLimitIso `json:"iso,omitempty"`
-	Network ProjectLimitIso `json:"network,omitempty"`
-	Image ProjectLimitIso `json:"image,omitempty"`
-	Ip ProjectLimitIso `json:"ip,omitempty"`
-	Firewall ProjectLimitIso `json:"firewall,omitempty"`
-	Netgw ProjectLimitIso `json:"netgw,omitempty"`
-	Vault ProjectLimitDisk `json:"vault,omitempty"`
-	Snapshot ProjectLimitIso `json:"snapshot,omitempty"`
-	Domain ProjectLimitDomain `json:"domain,omitempty"`
-	LogArchive ProjectLimitIso `json:"logArchive,omitempty"`
-	Reservation ProjectLimitIso `json:"reservation,omitempty"`
+	Vm map[string]interface{} `json:"vm,omitempty"`
+	Disk map[string]interface{} `json:"disk,omitempty"`
+	Iso map[string]interface{} `json:"iso,omitempty"`
+	Network map[string]interface{} `json:"network,omitempty"`
+	Image map[string]interface{} `json:"image,omitempty"`
+	Ip map[string]interface{} `json:"ip,omitempty"`
+	Firewall map[string]interface{} `json:"firewall,omitempty"`
+	Netgw map[string]interface{} `json:"netgw,omitempty"`
+	Vault map[string]interface{} `json:"vault,omitempty"`
+	Snapshot map[string]interface{} `json:"snapshot,omitempty"`
+	Domain map[string]interface{} `json:"domain,omitempty"`
+	LogArchive map[string]interface{} `json:"logArchive,omitempty"`
+	Reservation map[string]interface{} `json:"reservation,omitempty"`
+	Container map[string]interface{} `json:"container,omitempty"`
+	Volume map[string]interface{} `json:"volume,omitempty"`
 }

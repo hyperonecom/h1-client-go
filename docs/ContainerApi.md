@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**ContainerGetTag**](ContainerApi.md#ContainerGetTag) | **Get** /container/{containerId}/tag | /tag
 [**ContainerList**](ContainerApi.md#ContainerList) | **Get** /container | List
 [**ContainerListAccessrights**](ContainerApi.md#ContainerListAccessrights) | **Get** /container/{containerId}/accessrights | /accessrights
+[**ContainerListProcess**](ContainerApi.md#ContainerListProcess) | **Get** /container/{containerId}/process | /process
 [**ContainerListQueue**](ContainerApi.md#ContainerListQueue) | **Get** /container/{containerId}/queue | /queue
 [**ContainerListServices**](ContainerApi.md#ContainerListServices) | **Get** /container/{containerId}/services | /services
 [**ContainerPatchTag**](ContainerApi.md#ContainerPatchTag) | **Patch** /container/{containerId}/tag | /tag
@@ -157,7 +158,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -287,6 +288,7 @@ Optional parameters are passed through a pointer to a ContainerListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 
@@ -317,6 +319,32 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ContainerListProcess**
+> []ContainerProcess ContainerListProcess(ctx, containerId)
+/process
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **containerId** | **string**| ID of container | 
+
+### Return type
+
+[**[]ContainerProcess**](container.process.md)
 
 ### Authorization
 

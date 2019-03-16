@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AgentActionStart**](AgentApi.md#AgentActionStart) | **Post** /agent/{agentId}/actions/start | /actions/start
+[**AgentActionSuspend**](AgentApi.md#AgentActionSuspend) | **Post** /agent/{agentId}/actions/suspend | /actions/suspend
 [**AgentCreate**](AgentApi.md#AgentCreate) | **Post** /agent | Create
 [**AgentDelete**](AgentApi.md#AgentDelete) | **Delete** /agent/{agentId} | Delete
 [**AgentDeleteAccessrightsIdentity**](AgentApi.md#AgentDeleteAccessrightsIdentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
@@ -30,6 +32,62 @@ Method | HTTP request | Description
 [**AgentShow**](AgentApi.md#AgentShow) | **Get** /agent/{agentId} | Get
 [**AgentUpdate**](AgentApi.md#AgentUpdate) | **Patch** /agent/{agentId} | Update
 
+
+# **AgentActionStart**
+> Agent AgentActionStart(ctx, agentId)
+/actions/start
+
+Action start
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **agentId** | **string**| ID of agent | 
+
+### Return type
+
+[**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **AgentActionSuspend**
+> Agent AgentActionSuspend(ctx, agentId)
+/actions/suspend
+
+Action suspend
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **agentId** | **string**| ID of agent | 
+
+### Return type
+
+[**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AgentCreate**
 > Agent AgentCreate(ctx, agentCreate)
@@ -81,7 +139,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -318,6 +376,7 @@ Optional parameters are passed through a pointer to a AgentListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 

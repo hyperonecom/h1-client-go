@@ -14,4 +14,5 @@ type AgentResource struct {
 	Name string `json:"name,omitempty"`
 	State string `json:"state,omitempty"`
 	CreatedOn string `json:"createdOn,omitempty"`
+	Project string `json:"project,omitempty"`
 }

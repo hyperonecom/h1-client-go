@@ -9,6 +9,7 @@
 
 package openapi
 
-type OrganisationLimitOrganisation struct {
-	Project map[string]interface{} `json:"project,omitempty"`
+type InlineResponse400 struct {
+	// error description
+	Message string `json:"message,omitempty"`
 }

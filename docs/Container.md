@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **Volumes** | [**[]ContainerVolumes**](container_volumes.md) |  | [optional] 
 **Expose** | [**[]ContainerExpose**](container_expose.md) |  | [optional] 
 **Env** | **[]string** |  | [optional] 
+**Process** | [**ContainerProcess**](container_process.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

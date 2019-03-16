@@ -33,4 +33,5 @@ type Container struct {
 	Volumes []ContainerVolumes `json:"volumes,omitempty"`
 	Expose []ContainerExpose `json:"expose,omitempty"`
 	Env []string `json:"env,omitempty"`
+	Process ContainerProcess `json:"process,omitempty"`
 }

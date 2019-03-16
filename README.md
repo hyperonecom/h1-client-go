@@ -30,6 +30,8 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AgentApi* | [**AgentActionStart**](docs/AgentApi.md#agentactionstart) | **Post** /agent/{agentId}/actions/start | /actions/start
+*AgentApi* | [**AgentActionSuspend**](docs/AgentApi.md#agentactionsuspend) | **Post** /agent/{agentId}/actions/suspend | /actions/suspend
 *AgentApi* | [**AgentCreate**](docs/AgentApi.md#agentcreate) | **Post** /agent | Create
 *AgentApi* | [**AgentDelete**](docs/AgentApi.md#agentdelete) | **Delete** /agent/{agentId} | Delete
 *AgentApi* | [**AgentDeleteAccessrightsIdentity**](docs/AgentApi.md#agentdeleteaccessrightsidentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
@@ -66,6 +68,7 @@ Class | Method | HTTP request | Description
 *ContainerApi* | [**ContainerGetTag**](docs/ContainerApi.md#containergettag) | **Get** /container/{containerId}/tag | /tag
 *ContainerApi* | [**ContainerList**](docs/ContainerApi.md#containerlist) | **Get** /container | List
 *ContainerApi* | [**ContainerListAccessrights**](docs/ContainerApi.md#containerlistaccessrights) | **Get** /container/{containerId}/accessrights | /accessrights
+*ContainerApi* | [**ContainerListProcess**](docs/ContainerApi.md#containerlistprocess) | **Get** /container/{containerId}/process | /process
 *ContainerApi* | [**ContainerListQueue**](docs/ContainerApi.md#containerlistqueue) | **Get** /container/{containerId}/queue | /queue
 *ContainerApi* | [**ContainerListServices**](docs/ContainerApi.md#containerlistservices) | **Get** /container/{containerId}/services | /services
 *ContainerApi* | [**ContainerPatchTag**](docs/ContainerApi.md#containerpatchtag) | **Patch** /container/{containerId}/tag | /tag
@@ -251,6 +254,7 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**ProjectList**](docs/ProjectApi.md#projectlist) | **Get** /project | List
 *ProjectApi* | [**ProjectListAccessrights**](docs/ProjectApi.md#projectlistaccessrights) | **Get** /project/{projectId}/accessrights | /accessrights
 *ProjectApi* | [**ProjectListCredentialStorecertificate**](docs/ProjectApi.md#projectlistcredentialstorecertificate) | **Get** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
+*ProjectApi* | [**ProjectListLimit**](docs/ProjectApi.md#projectlistlimit) | **Get** /project/{projectId}/limit | /limit
 *ProjectApi* | [**ProjectListQueue**](docs/ProjectApi.md#projectlistqueue) | **Get** /project/{projectId}/queue | /queue
 *ProjectApi* | [**ProjectListServices**](docs/ProjectApi.md#projectlistservices) | **Get** /project/{projectId}/services | /services
 *ProjectApi* | [**ProjectPatchCredentialStorecertificateId**](docs/ProjectApi.md#projectpatchcredentialstorecertificateid) | **Patch** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
@@ -362,23 +366,6 @@ Class | Method | HTTP request | Description
 *VmApi* | [**VmPostNetadp**](docs/VmApi.md#vmpostnetadp) | **Post** /vm/{vmId}/netadp | /netadp
 *VmApi* | [**VmShow**](docs/VmApi.md#vmshow) | **Get** /vm/{vmId} | Get
 *VmApi* | [**VmUpdate**](docs/VmApi.md#vmupdate) | **Patch** /vm/{vmId} | Update
-*VmhostApi* | [**VmhostActionMoveDisk**](docs/VmhostApi.md#vmhostactionmovedisk) | **Post** /vmhost/{vmhostId}/actions/moveDisk | /actions/moveDisk
-*VmhostApi* | [**VmhostActionMoveISO**](docs/VmhostApi.md#vmhostactionmoveiso) | **Post** /vmhost/{vmhostId}/actions/moveISO | /actions/moveISO
-*VmhostApi* | [**VmhostActionMoveImage**](docs/VmhostApi.md#vmhostactionmoveimage) | **Post** /vmhost/{vmhostId}/actions/moveImage | /actions/moveImage
-*VmhostApi* | [**VmhostActionMoveVM**](docs/VmhostApi.md#vmhostactionmovevm) | **Post** /vmhost/{vmhostId}/actions/moveVM | /actions/moveVM
-*VmhostApi* | [**VmhostDelete**](docs/VmhostApi.md#vmhostdelete) | **Delete** /vmhost/{vmhostId} | Delete
-*VmhostApi* | [**VmhostDeleteAccessrightsIdentity**](docs/VmhostApi.md#vmhostdeleteaccessrightsidentity) | **Delete** /vmhost/{vmhostId}/accessrights/{identity} | /accessrights/:identity
-*VmhostApi* | [**VmhostDeleteTagKey**](docs/VmhostApi.md#vmhostdeletetagkey) | **Delete** /vmhost/{vmhostId}/tag/{key} | /tag/:key
-*VmhostApi* | [**VmhostGetServicesServiceId**](docs/VmhostApi.md#vmhostgetservicesserviceid) | **Get** /vmhost/{vmhostId}/services/{serviceId} | /services/:serviceId
-*VmhostApi* | [**VmhostGetTag**](docs/VmhostApi.md#vmhostgettag) | **Get** /vmhost/{vmhostId}/tag | /tag
-*VmhostApi* | [**VmhostList**](docs/VmhostApi.md#vmhostlist) | **Get** /vmhost | List
-*VmhostApi* | [**VmhostListAccessrights**](docs/VmhostApi.md#vmhostlistaccessrights) | **Get** /vmhost/{vmhostId}/accessrights | /accessrights
-*VmhostApi* | [**VmhostListQueue**](docs/VmhostApi.md#vmhostlistqueue) | **Get** /vmhost/{vmhostId}/queue | /queue
-*VmhostApi* | [**VmhostListServices**](docs/VmhostApi.md#vmhostlistservices) | **Get** /vmhost/{vmhostId}/services | /services
-*VmhostApi* | [**VmhostPatchTag**](docs/VmhostApi.md#vmhostpatchtag) | **Patch** /vmhost/{vmhostId}/tag | /tag
-*VmhostApi* | [**VmhostPostAccessrights**](docs/VmhostApi.md#vmhostpostaccessrights) | **Post** /vmhost/{vmhostId}/accessrights | /accessrights
-*VmhostApi* | [**VmhostShow**](docs/VmhostApi.md#vmhostshow) | **Get** /vmhost/{vmhostId} | Get
-*VmhostApi* | [**VmhostUpdate**](docs/VmhostApi.md#vmhostupdate) | **Patch** /vmhost/{vmhostId} | Update
 *VolumeApi* | [**VolumeCreate**](docs/VolumeApi.md#volumecreate) | **Post** /volume | Create
 *VolumeApi* | [**VolumeDelete**](docs/VolumeApi.md#volumedelete) | **Delete** /volume/{volumeId} | Delete
 *VolumeApi* | [**VolumeDeleteAccessrightsIdentity**](docs/VolumeApi.md#volumedeleteaccessrightsidentity) | **Delete** /volume/{volumeId}/accessrights/{identity} | /accessrights/:identity
@@ -414,6 +401,7 @@ Class | Method | HTTP request | Description
  - [ContainerCreateVolumes](docs/ContainerCreateVolumes.md)
  - [ContainerExpose](docs/ContainerExpose.md)
  - [ContainerPostAccessrights](docs/ContainerPostAccessrights.md)
+ - [ContainerProcess](docs/ContainerProcess.md)
  - [ContainerServices](docs/ContainerServices.md)
  - [ContainerUpdate](docs/ContainerUpdate.md)
  - [ContainerVolumes](docs/ContainerVolumes.md)
@@ -453,6 +441,7 @@ Class | Method | HTTP request | Description
  - [ImageVm](docs/ImageVm.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [InlineResponse400](docs/InlineResponse400.md)
  - [Ip](docs/Ip.md)
  - [IpActionAllocate](docs/IpActionAllocate.md)
  - [IpActionAssociate](docs/IpActionAssociate.md)
@@ -588,14 +577,6 @@ Class | Method | HTTP request | Description
  - [VmServices](docs/VmServices.md)
  - [VmSourceImage](docs/VmSourceImage.md)
  - [VmUpdate](docs/VmUpdate.md)
- - [Vmhost](docs/Vmhost.md)
- - [VmhostActionMoveDisk](docs/VmhostActionMoveDisk.md)
- - [VmhostActionMoveImage](docs/VmhostActionMoveImage.md)
- - [VmhostActionMoveIso](docs/VmhostActionMoveIso.md)
- - [VmhostActionMoveVm](docs/VmhostActionMoveVm.md)
- - [VmhostPostAccessrights](docs/VmhostPostAccessrights.md)
- - [VmhostServices](docs/VmhostServices.md)
- - [VmhostUpdate](docs/VmhostUpdate.md)
  - [Volume](docs/Volume.md)
  - [VolumeCreate](docs/VolumeCreate.md)
  - [VolumePostAccessrights](docs/VolumePostAccessrights.md)
@@ -617,24 +598,24 @@ auth := context.WithValue(context.Background(), sw.ContextAPIKey, sw.APIKey{
 r, err := client.Service.Operation(auth, args)
 ```
 ## ServiceAccount
-- **Type**: API key 
+- **Type**: HTTP basic authentication
 
 Example
 ```golang
-auth := context.WithValue(context.Background(), sw.ContextAPIKey, sw.APIKey{
-	Key: "APIKEY",
-	Prefix: "Bearer", // Omit if not necessary.
+auth := context.WithValue(context.Background(), sw.ContextBasicAuth, sw.BasicAuth{
+	UserName: "username",
+	Password: "password",
 })
 r, err := client.Service.Operation(auth, args)
 ```
 ## Session
-- **Type**: API key 
+- **Type**: HTTP basic authentication
 
 Example
 ```golang
-auth := context.WithValue(context.Background(), sw.ContextAPIKey, sw.APIKey{
-	Key: "APIKEY",
-	Prefix: "Bearer", // Omit if not necessary.
+auth := context.WithValue(context.Background(), sw.ContextBasicAuth, sw.BasicAuth{
+	UserName: "username",
+	Password: "password",
 })
 r, err := client.Service.Operation(auth, args)
 ```

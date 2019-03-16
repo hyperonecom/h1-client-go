@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**ProjectList**](ProjectApi.md#ProjectList) | **Get** /project | List
 [**ProjectListAccessrights**](ProjectApi.md#ProjectListAccessrights) | **Get** /project/{projectId}/accessrights | /accessrights
 [**ProjectListCredentialStorecertificate**](ProjectApi.md#ProjectListCredentialStorecertificate) | **Get** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
+[**ProjectListLimit**](ProjectApi.md#ProjectListLimit) | **Get** /project/{projectId}/limit | /limit
 [**ProjectListQueue**](ProjectApi.md#ProjectListQueue) | **Get** /project/{projectId}/queue | /queue
 [**ProjectListServices**](ProjectApi.md#ProjectListServices) | **Get** /project/{projectId}/services | /services
 [**ProjectPatchCredentialStorecertificateId**](ProjectApi.md#ProjectPatchCredentialStorecertificateId) | **Patch** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -262,6 +263,7 @@ Name | Type | Description  | Notes
  **limit** | **optional.Float32**| Filter by $limit | 
  **active** | **optional.Bool**| Filter by active | 
  **organisation** | **optional.String**| Filter by organisation | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 
@@ -318,6 +320,32 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]InlineResponse200**](inline_response_200.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ProjectListLimit**
+> []ProjectLimit ProjectListLimit(ctx, projectId)
+/limit
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **projectId** | **string**| ID of project | 
+
+### Return type
+
+[**[]ProjectLimit**](project.limit.md)
 
 ### Authorization
 

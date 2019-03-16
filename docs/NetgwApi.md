@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -259,6 +259,7 @@ Optional parameters are passed through a pointer to a NetgwListOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **optional.String**| Filter by name | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 

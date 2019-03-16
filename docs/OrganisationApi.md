@@ -207,6 +207,7 @@ Name | Type | Description  | Notes
  **billingCompany** | **optional.String**| Filter by billing.company | 
  **limit** | **optional.Float32**| Filter by $limit | 
  **active** | **optional.Bool**| Filter by active | 
+ **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
 
