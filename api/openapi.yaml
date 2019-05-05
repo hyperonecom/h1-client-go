@@ -16068,6 +16068,7 @@ components:
         flavour: flavour
         data:
           username: username
+        fqdn: fqdn
         created: true
         project: project
         cpu: 0.8008281904610115
@@ -16202,6 +16203,8 @@ components:
           type: number
         data:
           $ref: '#/components/schemas/vm_data'
+        fqdn:
+          type: string
       type: object
     vm_create:
       properties:

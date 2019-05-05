@@ -33,4 +33,5 @@ type Vm struct {
 	Cpu float32 `json:"cpu,omitempty"`
 	Memory float32 `json:"memory,omitempty"`
 	Data VmData `json:"data,omitempty"`
+	Fqdn string `json:"fqdn,omitempty"`
 }

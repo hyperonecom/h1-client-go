@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Cpu** | **float32** |  | [optional] 
 **Memory** | **float32** |  | [optional] 
 **Data** | [**VmData**](vm_data.md) |  | [optional] 
+**Fqdn** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
