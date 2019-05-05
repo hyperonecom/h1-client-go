@@ -1,6 +1,7 @@
 # ProjectThreshold
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Credits** | [**ProjectThresholdCredits**](project_threshold_credits.md) |  | [optional] 

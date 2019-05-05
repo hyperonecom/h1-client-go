@@ -800,16 +800,16 @@ VaultApiService /credential/certificate/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
-@return Vault
+@return CredentialCertificate
 */
-func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Vault
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
@@ -872,17 +872,7 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v Vault
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 202 {
-			var v Vault
+			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

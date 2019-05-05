@@ -1,6 +1,7 @@
 # OrganisationBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | **string** |  | [optional] 

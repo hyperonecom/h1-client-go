@@ -1,6 +1,7 @@
 # CredentialCertificate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedBy** | **string** |  | [optional] 

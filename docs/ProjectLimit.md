@@ -1,6 +1,7 @@
 # ProjectLimit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vm** | [**map[string]interface{}**](object.md) |  | [optional] 
@@ -18,6 +19,8 @@ Name | Type | Description | Notes
 **Reservation** | [**map[string]interface{}**](object.md) |  | [optional] 
 **Container** | [**map[string]interface{}**](object.md) |  | [optional] 
 **Volume** | [**map[string]interface{}**](object.md) |  | [optional] 
+**Agent** | [**map[string]interface{}**](object.md) |  | [optional] 
+**Website** | [**map[string]interface{}**](object.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,6 +1,7 @@
 # VmData
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Username** | **string** |  | [optional] 

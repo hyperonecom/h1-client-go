@@ -687,16 +687,16 @@ FirewallApiService /egress/:ruleId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -759,7 +759,7 @@ func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, fir
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -798,16 +798,16 @@ FirewallApiService /ingress/:ruleId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -870,7 +870,7 @@ func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, fi
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1020,16 +1020,16 @@ FirewallApiService /egress/:ruleId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -1092,7 +1092,7 @@ func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewa
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1131,16 +1131,16 @@ FirewallApiService /ingress/:ruleId
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -1203,7 +1203,7 @@ func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firew
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1693,16 +1693,16 @@ func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firew
 FirewallApiService /egress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
-@return []InlineResponse2001
+@return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId string) ([]InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []InlineResponse2001
+		localVarReturnValue  []InlineResponse200
 	)
 
 	// create path and map variables
@@ -1764,7 +1764,7 @@ func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []InlineResponse2001
+			var v []InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1802,16 +1802,16 @@ func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId 
 FirewallApiService /ingress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
-@return []InlineResponse2001
+@return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId string) ([]InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []InlineResponse2001
+		localVarReturnValue  []InlineResponse200
 	)
 
 	// create path and map variables
@@ -1873,7 +1873,7 @@ func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []InlineResponse2001
+			var v []InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2364,16 +2364,16 @@ FirewallApiService /egress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallPostEgress
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId string, firewallPostEgress FirewallPostEgress) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId string, firewallPostEgress FirewallPostEgress) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -2437,7 +2437,7 @@ func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2476,16 +2476,16 @@ FirewallApiService /ingress
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallPostIngress
-@return InlineResponse2001
+@return InlineResponse200
 */
-func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId string, firewallPostIngress FirewallPostIngress) (InlineResponse2001, *http.Response, error) {
+func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId string, firewallPostIngress FirewallPostIngress) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse2001
+		localVarReturnValue  InlineResponse200
 	)
 
 	// create path and map variables
@@ -2549,7 +2549,7 @@ func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

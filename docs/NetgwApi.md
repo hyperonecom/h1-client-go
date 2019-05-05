@@ -22,7 +22,9 @@ Method | HTTP request | Description
 [**NetgwUpdate**](NetgwApi.md#NetgwUpdate) | **Patch** /netgw/{netgwId} | Update
 
 
-# **NetgwActionAttach**
+
+## NetgwActionAttach
+
 > Netgw NetgwActionAttach(ctx, netgwId, netgwActionAttach)
 /actions/attach
 
@@ -30,11 +32,12 @@ Action attach
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **netgwActionAttach** | [**NetgwActionAttach**](NetgwActionAttach.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**netgwActionAttach** | [**NetgwActionAttach**](NetgwActionAttach.md)|  | 
 
 ### Return type
 
@@ -46,12 +49,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwActionDetach**
+
+## NetgwActionDetach
+
 > Netgw NetgwActionDetach(ctx, netgwId)
 /actions/detach
 
@@ -59,10 +66,11 @@ Action detach
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -74,12 +82,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwCreate**
+
+## NetgwCreate
+
 > Netgw NetgwCreate(ctx, netgwCreate)
 Create
 
@@ -87,10 +99,11 @@ Create netgw
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwCreate** | [**NetgwCreate**](NetgwCreate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwCreate** | [**NetgwCreate**](NetgwCreate.md)|  | 
 
 ### Return type
 
@@ -102,21 +115,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwDelete**
+
+## NetgwDelete
+
 > NetgwDelete(ctx, netgwId)
 Delete
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -128,22 +146,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwDeleteAccessrightsIdentity**
+
+## NetgwDeleteAccessrightsIdentity
+
 > Netgw NetgwDeleteAccessrightsIdentity(ctx, netgwId, identity)
 /accessrights/:identity
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **identity** | **string**| identity | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**identity** | **string**| identity | 
 
 ### Return type
 
@@ -155,22 +178,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwDeleteTagKey**
+
+## NetgwDeleteTagKey
+
 > map[string]interface{} NetgwDeleteTagKey(ctx, netgwId, key)
 /tag/:key
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **key** | **string**| key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**key** | **string**| key | 
 
 ### Return type
 
@@ -182,22 +210,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwGetServicesServiceId**
+
+## NetgwGetServicesServiceId
+
 > NetgwServices NetgwGetServicesServiceId(ctx, netgwId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **serviceId** | **string**| serviceId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**serviceId** | **string**| serviceId | 
 
 ### Return type
 
@@ -209,21 +242,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwGetTag**
+
+## NetgwGetTag
+
 > map[string]interface{} NetgwGetTag(ctx, netgwId)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -235,12 +273,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwList**
+
+## NetgwList
+
 > []Netgw NetgwList(ctx, optional)
 List
 
@@ -248,13 +290,16 @@ List netgw
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
  **optional** | ***NetgwListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
+
 Optional parameters are passed through a pointer to a NetgwListOpts struct
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -271,21 +316,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwListAccessrights**
+
+## NetgwListAccessrights
+
 > []string NetgwListAccessrights(ctx, netgwId)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -297,21 +347,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwListQueue**
+
+## NetgwListQueue
+
 > []Event NetgwListQueue(ctx, netgwId)
 /queue
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -323,21 +378,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwListServices**
+
+## NetgwListServices
+
 > []NetgwServices NetgwListServices(ctx, netgwId)
 /services
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -349,22 +409,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwPatchTag**
+
+## NetgwPatchTag
+
 > map[string]interface{} NetgwPatchTag(ctx, netgwId, requestBody)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -376,22 +441,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwPostAccessrights**
+
+## NetgwPostAccessrights
+
 > Netgw NetgwPostAccessrights(ctx, netgwId, netgwPostAccessrights)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **netgwPostAccessrights** | [**NetgwPostAccessrights**](NetgwPostAccessrights.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**netgwPostAccessrights** | [**NetgwPostAccessrights**](NetgwPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -403,12 +473,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwShow**
+
+## NetgwShow
+
 > Netgw NetgwShow(ctx, netgwId)
 Get
 
@@ -416,10 +490,11 @@ Returns a single netgw
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
 
 ### Return type
 
@@ -431,12 +506,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **NetgwUpdate**
+
+## NetgwUpdate
+
 > Netgw NetgwUpdate(ctx, netgwId, netgwUpdate)
 Update
 
@@ -444,11 +523,12 @@ Returns modified netgw
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **netgwId** | **string**| ID of netgw | 
-  **netgwUpdate** | [**NetgwUpdate**](NetgwUpdate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**netgwUpdate** | [**NetgwUpdate**](NetgwUpdate.md)|  | 
 
 ### Return type
 
@@ -460,8 +540,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

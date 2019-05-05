@@ -10,6 +10,7 @@
 package openapi
 
 type ContainerExpose struct {
+	Protocol string `json:"protocol"`
 	External string `json:"external"`
 	Internal string `json:"internal"`
 }

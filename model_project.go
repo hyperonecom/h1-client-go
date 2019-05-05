@@ -38,7 +38,7 @@ type Project struct {
 	Limit ProjectLimit `json:"limit,omitempty"`
 	Threshold ProjectThreshold `json:"threshold,omitempty"`
 	Roles []ProjectRoles `json:"roles,omitempty"`
-	NetworkAcl []ProjectNetworkAcl `json:"networkAcl,omitempty"`
+	NetworkAcl []UserNetworkAcl `json:"networkAcl,omitempty"`
 	Compliance ProjectCompliance `json:"compliance,omitempty"`
 	Transfer ProjectTransfer `json:"transfer,omitempty"`
 }

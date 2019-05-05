@@ -1,6 +1,7 @@
 # NetgwCreatePublic
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ip** | **string** |  | 

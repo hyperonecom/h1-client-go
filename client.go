@@ -79,11 +79,15 @@ type APIClient struct {
 
 	SnapshotApi *SnapshotApiService
 
+	UserApi *UserApiService
+
 	VaultApi *VaultApiService
 
 	VmApi *VmApiService
 
 	VolumeApi *VolumeApiService
+
+	WebsiteApi *WebsiteApiService
 }
 
 type service struct {
@@ -119,9 +123,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ReservationApi = (*ReservationApiService)(&c.common)
 	c.ServiceApi = (*ServiceApiService)(&c.common)
 	c.SnapshotApi = (*SnapshotApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
 	c.VaultApi = (*VaultApiService)(&c.common)
 	c.VmApi = (*VmApiService)(&c.common)
 	c.VolumeApi = (*VolumeApiService)(&c.common)
+	c.WebsiteApi = (*WebsiteApiService)(&c.common)
 
 	return c
 }

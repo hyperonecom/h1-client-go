@@ -19,7 +19,9 @@ Method | HTTP request | Description
 [**OrganisationUpdate**](OrganisationApi.md#OrganisationUpdate) | **Patch** /organisation/{organisationId} | Update
 
 
-# **OrganisationActionPaymentAssign**
+
+## OrganisationActionPaymentAssign
+
 > Organisation OrganisationActionPaymentAssign(ctx, organisationId, organisationActionPaymentAssign)
 /actions/payment_assign
 
@@ -27,11 +29,12 @@ Action payment_assign
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **organisationActionPaymentAssign** | [**OrganisationActionPaymentAssign**](OrganisationActionPaymentAssign.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**organisationActionPaymentAssign** | [**OrganisationActionPaymentAssign**](OrganisationActionPaymentAssign.md)|  | 
 
 ### Return type
 
@@ -43,12 +46,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationActionTransferAccept**
+
+## OrganisationActionTransferAccept
+
 > Organisation OrganisationActionTransferAccept(ctx, organisationId, organisationActionTransferAccept)
 /actions/transfer_accept
 
@@ -56,11 +63,12 @@ Action transfer_accept
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **organisationActionTransferAccept** | [**OrganisationActionTransferAccept**](OrganisationActionTransferAccept.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**organisationActionTransferAccept** | [**OrganisationActionTransferAccept**](OrganisationActionTransferAccept.md)|  | 
 
 ### Return type
 
@@ -72,12 +80,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationCreate**
+
+## OrganisationCreate
+
 > Organisation OrganisationCreate(ctx, organisationCreate)
 Create
 
@@ -85,10 +97,11 @@ Create organisation
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationCreate** | [**OrganisationCreate**](OrganisationCreate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationCreate** | [**OrganisationCreate**](OrganisationCreate.md)|  | 
 
 ### Return type
 
@@ -100,26 +113,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationDeleteAccessrightsId**
-> Organisation OrganisationDeleteAccessrightsId(ctx, organisationId, id)
+
+## OrganisationDeleteAccessrightsId
+
+> OrganisationDeleteAccessrightsId(ctx, organisationId, id)
 /accessrights/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**id** | **string**| id | 
 
 ### Return type
 
-[**Organisation**](organisation.md)
+ (empty response body)
 
 ### Authorization
 
@@ -127,22 +145,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationDeleteTagKey**
+
+## OrganisationDeleteTagKey
+
 > map[string]interface{} OrganisationDeleteTagKey(ctx, organisationId, key)
 /tag/:key
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **key** | **string**| key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**key** | **string**| key | 
 
 ### Return type
 
@@ -154,21 +177,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationGetTag**
+
+## OrganisationGetTag
+
 > map[string]interface{} OrganisationGetTag(ctx, organisationId)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
 
 ### Return type
 
@@ -180,12 +208,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationList**
+
+## OrganisationList
+
 > []Organisation OrganisationList(ctx, optional)
 List
 
@@ -193,13 +225,16 @@ List organisation
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
  **optional** | ***OrganisationListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
+
 Optional parameters are passed through a pointer to a OrganisationListOpts struct
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -207,6 +242,7 @@ Name | Type | Description  | Notes
  **billingCompany** | **optional.String**| Filter by billing.company | 
  **limit** | **optional.Float32**| Filter by $limit | 
  **active** | **optional.Bool**| Filter by active | 
+ **accessRightsId** | **optional.String**| Filter by accessRights.id | 
  **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
@@ -219,21 +255,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationListAccessrights**
+
+## OrganisationListAccessrights
+
 > []AccessrightsUserRole OrganisationListAccessrights(ctx, organisationId)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
 
 ### Return type
 
@@ -245,21 +286,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationListQueue**
+
+## OrganisationListQueue
+
 > []Event OrganisationListQueue(ctx, organisationId)
 /queue
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
 
 ### Return type
 
@@ -271,22 +317,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationPatchTag**
+
+## OrganisationPatchTag
+
 > map[string]interface{} OrganisationPatchTag(ctx, organisationId, requestBody)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -298,26 +349,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationPostAccessrights**
-> Organisation OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
+
+## OrganisationPostAccessrights
+
+> OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **organisationPostAccessrights** | [**OrganisationPostAccessrights**](OrganisationPostAccessrights.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**organisationPostAccessrights** | [**OrganisationPostAccessrights**](OrganisationPostAccessrights.md)|  | 
 
 ### Return type
 
-[**Organisation**](organisation.md)
+ (empty response body)
 
 ### Authorization
 
@@ -325,12 +381,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationShow**
+
+## OrganisationShow
+
 > Organisation OrganisationShow(ctx, organisationId)
 Get
 
@@ -338,10 +398,11 @@ Returns a single organisation
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
 
 ### Return type
 
@@ -353,12 +414,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **OrganisationUpdate**
+
+## OrganisationUpdate
+
 > Organisation OrganisationUpdate(ctx, organisationId, organisationUpdate)
 Update
 
@@ -366,11 +431,12 @@ Returns modified organisation
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **organisationId** | **string**| ID of organisation | 
-  **organisationUpdate** | [**OrganisationUpdate**](OrganisationUpdate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**organisationUpdate** | [**OrganisationUpdate**](OrganisationUpdate.md)|  | 
 
 ### Return type
 
@@ -382,8 +448,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

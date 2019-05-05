@@ -1,6 +1,7 @@
 # ProjectThresholdCredits
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Levels** | **[]float32** |  | [optional] 

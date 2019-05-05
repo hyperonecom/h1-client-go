@@ -1,6 +1,7 @@
 # ImageVm
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Flavour** | **string** |  | [optional] 

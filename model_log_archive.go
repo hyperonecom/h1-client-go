@@ -30,4 +30,5 @@ type LogArchive struct {
 	Project string `json:"project,omitempty"`
 	SizeUsed float32 `json:"sizeUsed,omitempty"`
 	Retention float32 `json:"retention,omitempty"`
+	Fqdn string `json:"fqdn,omitempty"`
 }

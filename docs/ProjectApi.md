@@ -26,7 +26,9 @@ Method | HTTP request | Description
 [**ProjectUpdate**](ProjectApi.md#ProjectUpdate) | **Patch** /project/{projectId} | Update
 
 
-# **ProjectCreate**
+
+## ProjectCreate
+
 > Project ProjectCreate(ctx, projectCreate)
 Create
 
@@ -34,10 +36,11 @@ Create project
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectCreate** | [**ProjectCreate**](ProjectCreate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectCreate** | [**ProjectCreate**](ProjectCreate.md)|  | 
 
 ### Return type
 
@@ -49,21 +52,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectDelete**
+
+## ProjectDelete
+
 > ProjectDelete(ctx, projectId)
 Delete
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -75,26 +83,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectDeleteAccessrightsId**
-> Project ProjectDeleteAccessrightsId(ctx, projectId, id)
+
+## ProjectDeleteAccessrightsId
+
+> ProjectDeleteAccessrightsId(ctx, projectId, id)
 /accessrights/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
 
 ### Return type
 
-[**Project**](project.md)
+ (empty response body)
 
 ### Authorization
 
@@ -102,26 +115,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectDeleteCredentialStorecertificateId**
-> InlineResponse200 ProjectDeleteCredentialStorecertificateId(ctx, projectId, id)
+
+## ProjectDeleteCredentialStorecertificateId
+
+> CredentialCertificate ProjectDeleteCredentialStorecertificateId(ctx, projectId, id)
 /credentialStore/certificate/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**CredentialCertificate**](credential.certificate.md)
 
 ### Authorization
 
@@ -129,22 +147,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectDeleteTagKey**
+
+## ProjectDeleteTagKey
+
 > map[string]interface{} ProjectDeleteTagKey(ctx, projectId, key)
 /tag/:key
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **key** | **string**| key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**key** | **string**| key | 
 
 ### Return type
 
@@ -156,26 +179,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectGetCredentialStorecertificateId**
-> InlineResponse200 ProjectGetCredentialStorecertificateId(ctx, projectId, id)
+
+## ProjectGetCredentialStorecertificateId
+
+> CredentialCertificate ProjectGetCredentialStorecertificateId(ctx, projectId, id)
 /credentialStore/certificate/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**CredentialCertificate**](credential.certificate.md)
 
 ### Authorization
 
@@ -183,22 +211,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectGetServicesServiceId**
+
+## ProjectGetServicesServiceId
+
 > ProjectServices ProjectGetServicesServiceId(ctx, projectId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **serviceId** | **string**| serviceId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**serviceId** | **string**| serviceId | 
 
 ### Return type
 
@@ -210,21 +243,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectGetTag**
+
+## ProjectGetTag
+
 > map[string]interface{} ProjectGetTag(ctx, projectId)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -236,12 +274,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectList**
+
+## ProjectList
+
 > []Project ProjectList(ctx, optional)
 List
 
@@ -249,13 +291,16 @@ List project
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
  **optional** | ***ProjectListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
+
 Optional parameters are passed through a pointer to a ProjectListOpts struct
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -263,6 +308,7 @@ Name | Type | Description  | Notes
  **limit** | **optional.Float32**| Filter by $limit | 
  **active** | **optional.Bool**| Filter by active | 
  **organisation** | **optional.String**| Filter by organisation | 
+ **accessRightsId** | **optional.String**| Filter by accessRights.id | 
  **tag** | [**optional.Interface of map[string]string**](string.md)| Filter by tag | 
 
 ### Return type
@@ -275,21 +321,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectListAccessrights**
+
+## ProjectListAccessrights
+
 > []AccessrightsUserRole ProjectListAccessrights(ctx, projectId)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -301,25 +352,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectListCredentialStorecertificate**
-> []InlineResponse200 ProjectListCredentialStorecertificate(ctx, projectId)
+
+## ProjectListCredentialStorecertificate
+
+> []CredentialCertificate ProjectListCredentialStorecertificate(ctx, projectId)
 /credentialStore/certificate
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
-[**[]InlineResponse200**](inline_response_200.md)
+[**[]CredentialCertificate**](credential.certificate.md)
 
 ### Authorization
 
@@ -327,21 +383,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectListLimit**
+
+## ProjectListLimit
+
 > []ProjectLimit ProjectListLimit(ctx, projectId)
 /limit
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -353,21 +414,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectListQueue**
+
+## ProjectListQueue
+
 > []Event ProjectListQueue(ctx, projectId)
 /queue
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -379,21 +445,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectListServices**
+
+## ProjectListServices
+
 > []ProjectServices ProjectListServices(ctx, projectId)
 /services
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -405,27 +476,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectPatchCredentialStorecertificateId**
-> InlineResponse200 ProjectPatchCredentialStorecertificateId(ctx, projectId, id, projectPatchCredentialStorecertificateId)
+
+## ProjectPatchCredentialStorecertificateId
+
+> CredentialCertificate ProjectPatchCredentialStorecertificateId(ctx, projectId, id, projectPatchCredentialStorecertificateId)
 /credentialStore/certificate/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **id** | **string**| id | 
-  **projectPatchCredentialStorecertificateId** | [**ProjectPatchCredentialStorecertificateId**](ProjectPatchCredentialStorecertificateId.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
+**projectPatchCredentialStorecertificateId** | [**ProjectPatchCredentialStorecertificateId**](ProjectPatchCredentialStorecertificateId.md)|  | 
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**CredentialCertificate**](credential.certificate.md)
 
 ### Authorization
 
@@ -433,22 +509,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectPatchTag**
+
+## ProjectPatchTag
+
 > map[string]interface{} ProjectPatchTag(ctx, projectId, requestBody)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -460,26 +541,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectPostAccessrights**
-> Project ProjectPostAccessrights(ctx, projectId, projectPostAccessrights)
+
+## ProjectPostAccessrights
+
+> ProjectPostAccessrights(ctx, projectId, projectPostAccessrights)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **projectPostAccessrights** | [**ProjectPostAccessrights**](ProjectPostAccessrights.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**projectPostAccessrights** | [**ProjectPostAccessrights**](ProjectPostAccessrights.md)|  | 
 
 ### Return type
 
-[**Project**](project.md)
+ (empty response body)
 
 ### Authorization
 
@@ -487,26 +573,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectPostCredentialStorecertificate**
-> InlineResponse200 ProjectPostCredentialStorecertificate(ctx, projectId, body)
+
+## ProjectPostCredentialStorecertificate
+
+> CredentialCertificate ProjectPostCredentialStorecertificate(ctx, projectId, projectPostCredentialStorecertificate)
 /credentialStore/certificate
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **body** | **string**|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**projectPostCredentialStorecertificate** | [**ProjectPostCredentialStorecertificate**](ProjectPostCredentialStorecertificate.md)|  | 
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**CredentialCertificate**](credential.certificate.md)
 
 ### Authorization
 
@@ -514,12 +605,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectShow**
+
+## ProjectShow
+
 > Project ProjectShow(ctx, projectId)
 Get
 
@@ -527,10 +622,11 @@ Returns a single project
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
 
 ### Return type
 
@@ -542,12 +638,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **ProjectUpdate**
+
+## ProjectUpdate
+
 > Project ProjectUpdate(ctx, projectId, projectUpdate)
 Update
 
@@ -555,11 +655,12 @@ Returns modified project
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **projectId** | **string**| ID of project | 
-  **projectUpdate** | [**ProjectUpdate**](ProjectUpdate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**projectUpdate** | [**ProjectUpdate**](ProjectUpdate.md)|  | 
 
 ### Return type
 
@@ -571,8 +672,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

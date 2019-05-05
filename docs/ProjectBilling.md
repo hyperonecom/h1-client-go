@@ -1,6 +1,7 @@
 # ProjectBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Credits** | **float32** |  | [optional] 

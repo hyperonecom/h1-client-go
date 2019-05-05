@@ -31,7 +31,9 @@ Method | HTTP request | Description
 [**FirewallUpdate**](FirewallApi.md#FirewallUpdate) | **Patch** /firewall/{firewallId} | Update
 
 
-# **FirewallActionAttach**
+
+## FirewallActionAttach
+
 > Firewall FirewallActionAttach(ctx, firewallId, firewallActionAttach)
 /actions/attach
 
@@ -39,11 +41,12 @@ Action attach
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallActionAttach** | [**FirewallActionAttach**](FirewallActionAttach.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallActionAttach** | [**FirewallActionAttach**](FirewallActionAttach.md)|  | 
 
 ### Return type
 
@@ -55,12 +58,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallActionDetach**
+
+## FirewallActionDetach
+
 > Firewall FirewallActionDetach(ctx, firewallId)
 /actions/detach
 
@@ -68,10 +75,11 @@ Action detach
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -83,12 +91,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallActionTransfer**
+
+## FirewallActionTransfer
+
 > Firewall FirewallActionTransfer(ctx, firewallId, firewallActionTransfer)
 /actions/transfer
 
@@ -96,11 +108,12 @@ Action transfer
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallActionTransfer** | [**FirewallActionTransfer**](FirewallActionTransfer.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallActionTransfer** | [**FirewallActionTransfer**](FirewallActionTransfer.md)|  | 
 
 ### Return type
 
@@ -112,12 +125,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallCreate**
+
+## FirewallCreate
+
 > Firewall FirewallCreate(ctx, firewallCreate)
 Create
 
@@ -125,10 +142,11 @@ Create firewall
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallCreate** | [**FirewallCreate**](FirewallCreate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallCreate** | [**FirewallCreate**](FirewallCreate.md)|  | 
 
 ### Return type
 
@@ -140,21 +158,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallDelete**
+
+## FirewallDelete
+
 > FirewallDelete(ctx, firewallId)
 Delete
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -166,22 +189,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallDeleteAccessrightsIdentity**
+
+## FirewallDeleteAccessrightsIdentity
+
 > Firewall FirewallDeleteAccessrightsIdentity(ctx, firewallId, identity)
 /accessrights/:identity
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **identity** | **string**| identity | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**identity** | **string**| identity | 
 
 ### Return type
 
@@ -193,26 +221,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallDeleteEgressRuleId**
-> InlineResponse2001 FirewallDeleteEgressRuleId(ctx, firewallId, ruleId)
+
+## FirewallDeleteEgressRuleId
+
+> InlineResponse200 FirewallDeleteEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **ruleId** | **string**| ruleId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**ruleId** | **string**| ruleId | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -220,26 +253,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallDeleteIngressRuleId**
-> InlineResponse2001 FirewallDeleteIngressRuleId(ctx, firewallId, ruleId)
+
+## FirewallDeleteIngressRuleId
+
+> InlineResponse200 FirewallDeleteIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **ruleId** | **string**| ruleId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**ruleId** | **string**| ruleId | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -247,22 +285,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallDeleteTagKey**
+
+## FirewallDeleteTagKey
+
 > map[string]interface{} FirewallDeleteTagKey(ctx, firewallId, key)
 /tag/:key
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **key** | **string**| key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**key** | **string**| key | 
 
 ### Return type
 
@@ -274,26 +317,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallGetEgressRuleId**
-> InlineResponse2001 FirewallGetEgressRuleId(ctx, firewallId, ruleId)
+
+## FirewallGetEgressRuleId
+
+> InlineResponse200 FirewallGetEgressRuleId(ctx, firewallId, ruleId)
 /egress/:ruleId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **ruleId** | **string**| ruleId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**ruleId** | **string**| ruleId | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -301,26 +349,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallGetIngressRuleId**
-> InlineResponse2001 FirewallGetIngressRuleId(ctx, firewallId, ruleId)
+
+## FirewallGetIngressRuleId
+
+> InlineResponse200 FirewallGetIngressRuleId(ctx, firewallId, ruleId)
 /ingress/:ruleId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **ruleId** | **string**| ruleId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**ruleId** | **string**| ruleId | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -328,22 +381,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallGetServicesServiceId**
+
+## FirewallGetServicesServiceId
+
 > FirewallServices FirewallGetServicesServiceId(ctx, firewallId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **serviceId** | **string**| serviceId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**serviceId** | **string**| serviceId | 
 
 ### Return type
 
@@ -355,21 +413,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallGetTag**
+
+## FirewallGetTag
+
 > map[string]interface{} FirewallGetTag(ctx, firewallId)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -381,12 +444,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallList**
+
+## FirewallList
+
 > []Firewall FirewallList(ctx, optional)
 List
 
@@ -394,13 +461,16 @@ List firewall
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
  **optional** | ***FirewallListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
+
 Optional parameters are passed through a pointer to a FirewallListOpts struct
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -417,21 +487,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallListAccessrights**
+
+## FirewallListAccessrights
+
 > []string FirewallListAccessrights(ctx, firewallId)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -443,25 +518,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallListEgress**
-> []InlineResponse2001 FirewallListEgress(ctx, firewallId)
+
+## FirewallListEgress
+
+> []InlineResponse200 FirewallListEgress(ctx, firewallId)
 /egress
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
-[**[]InlineResponse2001**](inline_response_200_1.md)
+[**[]InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -469,25 +549,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallListIngress**
-> []InlineResponse2001 FirewallListIngress(ctx, firewallId)
+
+## FirewallListIngress
+
+> []InlineResponse200 FirewallListIngress(ctx, firewallId)
 /ingress
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
-[**[]InlineResponse2001**](inline_response_200_1.md)
+[**[]InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -495,21 +580,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallListQueue**
+
+## FirewallListQueue
+
 > []Event FirewallListQueue(ctx, firewallId)
 /queue
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -521,21 +611,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallListServices**
+
+## FirewallListServices
+
 > []FirewallServices FirewallListServices(ctx, firewallId)
 /services
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -547,22 +642,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallPatchTag**
+
+## FirewallPatchTag
+
 > map[string]interface{} FirewallPatchTag(ctx, firewallId, requestBody)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -574,22 +674,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallPostAccessrights**
+
+## FirewallPostAccessrights
+
 > Firewall FirewallPostAccessrights(ctx, firewallId, firewallPostAccessrights)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallPostAccessrights** | [**FirewallPostAccessrights**](FirewallPostAccessrights.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallPostAccessrights** | [**FirewallPostAccessrights**](FirewallPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -601,26 +706,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallPostEgress**
-> InlineResponse2001 FirewallPostEgress(ctx, firewallId, firewallPostEgress)
+
+## FirewallPostEgress
+
+> InlineResponse200 FirewallPostEgress(ctx, firewallId, firewallPostEgress)
 /egress
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallPostEgress** | [**FirewallPostEgress**](FirewallPostEgress.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallPostEgress** | [**FirewallPostEgress**](FirewallPostEgress.md)|  | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -628,26 +738,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallPostIngress**
-> InlineResponse2001 FirewallPostIngress(ctx, firewallId, firewallPostIngress)
+
+## FirewallPostIngress
+
+> InlineResponse200 FirewallPostIngress(ctx, firewallId, firewallPostIngress)
 /ingress
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallPostIngress** | [**FirewallPostIngress**](FirewallPostIngress.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallPostIngress** | [**FirewallPostIngress**](FirewallPostIngress.md)|  | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -655,12 +770,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallShow**
+
+## FirewallShow
+
 > Firewall FirewallShow(ctx, firewallId)
 Get
 
@@ -668,10 +787,11 @@ Returns a single firewall
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
 
 ### Return type
 
@@ -683,12 +803,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **FirewallUpdate**
+
+## FirewallUpdate
+
 > Firewall FirewallUpdate(ctx, firewallId, firewallUpdate)
 Update
 
@@ -696,11 +820,12 @@ Returns modified firewall
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **firewallId** | **string**| ID of firewall | 
-  **firewallUpdate** | [**FirewallUpdate**](FirewallUpdate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**firewallUpdate** | [**FirewallUpdate**](FirewallUpdate.md)|  | 
 
 ### Return type
 
@@ -712,8 +837,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

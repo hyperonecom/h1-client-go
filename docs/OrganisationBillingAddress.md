@@ -1,6 +1,7 @@
 # OrganisationBillingAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Street** | **string** |  | 

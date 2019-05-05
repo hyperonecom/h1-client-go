@@ -1,6 +1,7 @@
 # VmActionPasswordReset
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserName** | **string** |  | 

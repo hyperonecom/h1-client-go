@@ -368,16 +368,14 @@ OrganisationApiService /accessrights/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param id id
-@return Organisation
 */
-func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Context, organisationId string, id string) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Context, organisationId string, id string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Organisation
 	)
 
 	// create path and map variables
@@ -420,18 +418,18 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -439,49 +437,20 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v Organisation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 202 {
-			var v Organisation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
 		if localVarHttpResponse.StatusCode == 400 {
 			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
+				return localVarHttpResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
+			return localVarHttpResponse, newErr
 		}
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarHttpResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
+	return localVarHttpResponse, nil
 }
 
 /*
@@ -713,6 +682,7 @@ List organisation
  * @param "BillingCompany" (optional.String) -  Filter by billing.company
  * @param "Limit" (optional.Float32) -  Filter by $limit
  * @param "Active" (optional.Bool) -  Filter by active
+ * @param "AccessRightsId" (optional.String) -  Filter by accessRights.id
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Organisation
 */
@@ -722,6 +692,7 @@ type OrganisationListOpts struct {
 	BillingCompany optional.String
 	Limit optional.Float32
 	Active optional.Bool
+	AccessRightsId optional.String
 	Tag optional.Interface
 }
 
@@ -753,6 +724,9 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 	}
 	if localVarOptionals != nil && localVarOptionals.Active.IsSet() {
 		localVarQueryParams.Add("active", parameterToString(localVarOptionals.Active.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.AccessRightsId.IsSet() {
+		localVarQueryParams.Add("accessRights.id", parameterToString(localVarOptionals.AccessRightsId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
 		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
@@ -1177,16 +1151,14 @@ OrganisationApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationPostAccessrights
-@return Organisation
 */
-func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Organisation
 	)
 
 	// create path and map variables
@@ -1230,18 +1202,18 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -1249,49 +1221,20 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v Organisation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 202 {
-			var v Organisation
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
 		if localVarHttpResponse.StatusCode == 400 {
 			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
+				return localVarHttpResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
+			return localVarHttpResponse, newErr
 		}
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarHttpResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
+	return localVarHttpResponse, nil
 }
 
 /*

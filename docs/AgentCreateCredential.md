@@ -1,6 +1,7 @@
 # AgentCreateCredential
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Certificate** | [**[]VaultCreateCredentialCertificate**](vault_create_credential_certificate.md) |  | [optional] 

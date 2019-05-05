@@ -1,6 +1,7 @@
 # NetgwActionAttachPrivate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Network** | **string** |  | 

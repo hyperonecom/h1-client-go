@@ -26,7 +26,9 @@ Method | HTTP request | Description
 [**LogArchiveUpdate**](LogArchiveApi.md#LogArchiveUpdate) | **Patch** /logArchive/{logArchiveId} | Update
 
 
-# **LogArchiveActionTransfer**
+
+## LogArchiveActionTransfer
+
 > LogArchive LogArchiveActionTransfer(ctx, logArchiveId, logArchiveActionTransfer)
 /actions/transfer
 
@@ -34,11 +36,12 @@ Action transfer
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **logArchiveActionTransfer** | [**LogArchiveActionTransfer**](LogArchiveActionTransfer.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**logArchiveActionTransfer** | [**LogArchiveActionTransfer**](LogArchiveActionTransfer.md)|  | 
 
 ### Return type
 
@@ -50,12 +53,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveCreate**
+
+## LogArchiveCreate
+
 > LogArchive LogArchiveCreate(ctx, logArchiveCreate)
 Create
 
@@ -63,10 +70,11 @@ Create logArchive
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveCreate** | [**LogArchiveCreate**](LogArchiveCreate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveCreate** | [**LogArchiveCreate**](LogArchiveCreate.md)|  | 
 
 ### Return type
 
@@ -78,21 +86,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveDelete**
+
+## LogArchiveDelete
+
 > LogArchiveDelete(ctx, logArchiveId)
 Delete
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -104,22 +117,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveDeleteAccessrightsIdentity**
+
+## LogArchiveDeleteAccessrightsIdentity
+
 > LogArchive LogArchiveDeleteAccessrightsIdentity(ctx, logArchiveId, identity)
 /accessrights/:identity
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **identity** | **string**| identity | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**identity** | **string**| identity | 
 
 ### Return type
 
@@ -131,22 +149,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveDeleteCredentialpasswordId**
+
+## LogArchiveDeleteCredentialpasswordId
+
 > LogArchive LogArchiveDeleteCredentialpasswordId(ctx, logArchiveId, id)
 /credential/password/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
 
 ### Return type
 
@@ -158,22 +181,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveDeleteTagKey**
+
+## LogArchiveDeleteTagKey
+
 > map[string]interface{} LogArchiveDeleteTagKey(ctx, logArchiveId, key)
 /tag/:key
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **key** | **string**| key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**key** | **string**| key | 
 
 ### Return type
 
@@ -185,22 +213,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveGetCredentialpasswordId**
+
+## LogArchiveGetCredentialpasswordId
+
 > CredentialPassword LogArchiveGetCredentialpasswordId(ctx, logArchiveId, id)
 /credential/password/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **id** | **string**| id | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
 
 ### Return type
 
@@ -212,22 +245,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveGetServicesServiceId**
+
+## LogArchiveGetServicesServiceId
+
 > LogArchiveServices LogArchiveGetServicesServiceId(ctx, logArchiveId, serviceId)
 /services/:serviceId
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **serviceId** | **string**| serviceId | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**serviceId** | **string**| serviceId | 
 
 ### Return type
 
@@ -239,21 +277,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveGetTag**
+
+## LogArchiveGetTag
+
 > map[string]interface{} LogArchiveGetTag(ctx, logArchiveId)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -265,12 +308,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveList**
+
+## LogArchiveList
+
 > []LogArchive LogArchiveList(ctx, optional)
 List
 
@@ -278,13 +325,16 @@ List logArchive
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
  **optional** | ***LogArchiveListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
+
 Optional parameters are passed through a pointer to a LogArchiveListOpts struct
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -301,21 +351,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveListAccessrights**
+
+## LogArchiveListAccessrights
+
 > []string LogArchiveListAccessrights(ctx, logArchiveId)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -327,21 +382,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveListCredentialpassword**
+
+## LogArchiveListCredentialpassword
+
 > []CredentialPassword LogArchiveListCredentialpassword(ctx, logArchiveId)
 /credential/password
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -353,21 +413,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveListQueue**
+
+## LogArchiveListQueue
+
 > []Event LogArchiveListQueue(ctx, logArchiveId)
 /queue
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -379,21 +444,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveListServices**
+
+## LogArchiveListServices
+
 > []LogArchiveServices LogArchiveListServices(ctx, logArchiveId)
 /services
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -405,23 +475,28 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchivePatchCredentialpasswordId**
+
+## LogArchivePatchCredentialpasswordId
+
 > CredentialPassword LogArchivePatchCredentialpasswordId(ctx, logArchiveId, id, logArchivePatchCredentialpasswordId)
 /credential/password/:id
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **id** | **string**| id | 
-  **logArchivePatchCredentialpasswordId** | [**LogArchivePatchCredentialpasswordId**](LogArchivePatchCredentialpasswordId.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
+**logArchivePatchCredentialpasswordId** | [**LogArchivePatchCredentialpasswordId**](LogArchivePatchCredentialpasswordId.md)|  | 
 
 ### Return type
 
@@ -433,22 +508,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchivePatchTag**
+
+## LogArchivePatchTag
+
 > map[string]interface{} LogArchivePatchTag(ctx, logArchiveId, requestBody)
 /tag
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **requestBody** | [**map[string]string**](string.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**requestBody** | [**map[string]string**](string.md)|  | 
 
 ### Return type
 
@@ -460,22 +540,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchivePostAccessrights**
+
+## LogArchivePostAccessrights
+
 > LogArchive LogArchivePostAccessrights(ctx, logArchiveId, logArchivePostAccessrights)
 /accessrights
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **logArchivePostAccessrights** | [**LogArchivePostAccessrights**](LogArchivePostAccessrights.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**logArchivePostAccessrights** | [**LogArchivePostAccessrights**](LogArchivePostAccessrights.md)|  | 
 
 ### Return type
 
@@ -487,22 +572,27 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchivePostCredentialpassword**
+
+## LogArchivePostCredentialpassword
+
 > CredentialPassword LogArchivePostCredentialpassword(ctx, logArchiveId, logArchivePostCredentialpassword)
 /credential/password
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **logArchivePostCredentialpassword** | [**LogArchivePostCredentialpassword**](LogArchivePostCredentialpassword.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**logArchivePostCredentialpassword** | [**LogArchivePostCredentialpassword**](LogArchivePostCredentialpassword.md)|  | 
 
 ### Return type
 
@@ -514,12 +604,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveShow**
+
+## LogArchiveShow
+
 > LogArchive LogArchiveShow(ctx, logArchiveId)
 Get
 
@@ -527,10 +621,11 @@ Returns a single logArchive
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
 
 ### Return type
 
@@ -542,12 +637,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-# **LogArchiveUpdate**
+
+## LogArchiveUpdate
+
 > LogArchive LogArchiveUpdate(ctx, logArchiveId, logArchiveUpdate)
 Update
 
@@ -555,11 +654,12 @@ Returns modified logArchive
 
 ### Required Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **logArchiveId** | **string**| ID of logArchive | 
-  **logArchiveUpdate** | [**LogArchiveUpdate**](LogArchiveUpdate.md)|  | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**logArchiveUpdate** | [**LogArchiveUpdate**](LogArchiveUpdate.md)|  | 
 
 ### Return type
 
@@ -571,8 +671,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

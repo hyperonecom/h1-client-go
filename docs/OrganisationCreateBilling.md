@@ -1,6 +1,7 @@
 # OrganisationCreateBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Nip** | **string** |  | [optional] 
