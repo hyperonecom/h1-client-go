@@ -1,6 +1,7 @@
 # ProjectAccessRights
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Role** | **string** |  | [optional] 

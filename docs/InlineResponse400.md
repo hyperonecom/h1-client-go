@@ -1,6 +1,7 @@
 # InlineResponse400
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Message** | **string** | error description | [optional] 

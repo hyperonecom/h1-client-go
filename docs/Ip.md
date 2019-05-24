@@ -1,6 +1,7 @@
 # Ip
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
@@ -8,17 +9,18 @@ Name | Type | Description | Notes
 **Services** | [**[]ProjectServices**](project_services.md) |  | [optional] 
 **Flavour** | **string** |  | [optional] 
 **ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**ModifiedBy** | **string** |  | [optional] 
-**CreatedBy** | **string** |  | [optional] 
+**ModifiedBy** | **string** |  | [optional] [default to ]
+**CreatedBy** | **string** |  | [optional] [default to ]
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **AccessRights** | **[]string** |  | [optional] 
 **Processing** | **bool** |  | [optional] 
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
 **Project** | **string** |  | [optional] 
 **Address** | **string** |  | [optional] 
+**Fqdn** | **string** |  | [optional] 
 **Network** | **string** |  | [optional] 
 **PtrRecord** | **string** |  | [optional] 
 **Persistent** | **bool** |  | [optional] 

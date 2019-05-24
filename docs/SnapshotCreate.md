@@ -1,6 +1,7 @@
 # SnapshotCreate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vault** | **string** |  | 

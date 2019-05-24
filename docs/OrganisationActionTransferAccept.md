@@ -1,6 +1,7 @@
 # OrganisationActionTransferAccept
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Payment** | **string** |  | 

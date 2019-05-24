@@ -1,6 +1,7 @@
 # ServiceBillingPrice
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PLN** | **float32** |  | [optional] 

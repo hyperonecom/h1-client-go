@@ -1,6 +1,7 @@
 # LogArchiveCreateCredential
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Password** | [**[]VaultCreateCredentialPassword**](vault_create_credential_password.md) |  | [optional] 

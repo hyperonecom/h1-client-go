@@ -1,6 +1,7 @@
 # DiskActionResize
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Size** | **float32** |  | [optional] 

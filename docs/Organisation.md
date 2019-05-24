@@ -1,6 +1,7 @@
 # Organisation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
@@ -8,18 +9,18 @@ Name | Type | Description | Notes
 **Services** | **string** |  | [optional] 
 **Flavour** | **string** |  | [optional] 
 **ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**ModifiedBy** | **string** |  | [optional] 
-**CreatedBy** | **string** |  | [optional] 
+**ModifiedBy** | **string** |  | [optional] [default to ]
+**CreatedBy** | **string** |  | [optional] [default to ]
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **AccessRights** | [**[]ProjectAccessRights**](project_accessRights.md) |  | [optional] 
 **Processing** | **bool** |  | [optional] 
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
 **Project** | **string** |  | [optional] 
 **Billing** | [**OrganisationBilling**](organisation_billing.md) |  | [optional] 
-**Verified** | **float32** |  | [optional] 
+**Verified** | **float32** |  | [optional] [default to 0]
 **Limit** | [**OrganisationLimit**](organisation_limit.md) |  | [optional] 
 **Roles** | [**[]ProjectRoles**](project_roles.md) |  | [optional] 
 **Transfer** | [**OrganisationTransfer**](organisation_transfer.md) |  | [optional] 

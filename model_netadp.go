@@ -30,6 +30,7 @@ type Netadp struct {
 	Project string `json:"project,omitempty"`
 	Macaddress string `json:"macaddress,omitempty"`
 	Speed float32 `json:"speed,omitempty"`
+	Fqdn string `json:"fqdn,omitempty"`
 	Network Network `json:"network,omitempty"`
 	Ip []Ip `json:"ip,omitempty"`
 	Assigned NetadpAssigned `json:"assigned,omitempty"`

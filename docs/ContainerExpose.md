@@ -1,8 +1,10 @@
 # ContainerExpose
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Protocol** | **string** |  | 
 **External** | **string** |  | 
 **Internal** | **string** |  | 
 

@@ -1,6 +1,7 @@
 # VmDelete
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RemoveDisks** | **[]string** |  | [optional] 

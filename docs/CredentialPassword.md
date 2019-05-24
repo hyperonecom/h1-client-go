@@ -1,6 +1,7 @@
 # CredentialPassword
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedBy** | **string** |  | [optional] 

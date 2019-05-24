@@ -1,6 +1,7 @@
 # IpUpdate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PtrRecord** | **string** |  | [optional] 

@@ -25,4 +25,7 @@ type ProjectLimit struct {
 	Reservation map[string]interface{} `json:"reservation,omitempty"`
 	Container map[string]interface{} `json:"container,omitempty"`
 	Volume map[string]interface{} `json:"volume,omitempty"`
+	Agent map[string]interface{} `json:"agent,omitempty"`
+	Website map[string]interface{} `json:"website,omitempty"`
+	Database map[string]interface{} `json:"database,omitempty"`
 }

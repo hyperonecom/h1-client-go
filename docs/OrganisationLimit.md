@@ -1,6 +1,7 @@
 # OrganisationLimit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Organisation** | [**OrganisationLimitOrganisation**](organisation_limit_organisation.md) |  | [optional] 

@@ -29,6 +29,7 @@ type Ip struct {
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	Project string `json:"project,omitempty"`
 	Address string `json:"address,omitempty"`
+	Fqdn string `json:"fqdn,omitempty"`
 	Network string `json:"network,omitempty"`
 	PtrRecord string `json:"ptrRecord,omitempty"`
 	Persistent bool `json:"persistent,omitempty"`

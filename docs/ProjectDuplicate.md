@@ -1,6 +1,7 @@
 # ProjectDuplicate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedOn** | **string** |  | [optional] 

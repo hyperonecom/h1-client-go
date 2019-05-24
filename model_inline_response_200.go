@@ -13,9 +13,15 @@ import (
 )
 
 type InlineResponse200 struct {
-	Name string `json:"name"`
-	CreatedOn time.Time `json:"createdOn"`
-	CreatedBy string `json:"createdBy"`
-	Type string `json:"type"`
-	Value string `json:"value"`
+	Name string `json:"name,omitempty"`
+	Description string `json:"description,omitempty"`
+	CreatedOn time.Time `json:"createdOn,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
+	ModifiedBy string `json:"modifiedBy,omitempty"`
+	Priority float32 `json:"priority"`
+	Action string `json:"action"`
+	Filter []string `json:"filter,omitempty"`
+	External []string `json:"external,omitempty"`
+	Internal []string `json:"internal,omitempty"`
 }

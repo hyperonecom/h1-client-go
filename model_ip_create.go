@@ -10,6 +10,8 @@
 package openapi
 
 type IpCreate struct {
-	Service string `json:"service,omitempty"`
+	Network string `json:"network,omitempty"`
+	PtrRecord string `json:"ptrRecord,omitempty"`
+	Address string `json:"address,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

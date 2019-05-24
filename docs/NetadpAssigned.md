@@ -1,6 +1,7 @@
 # NetadpAssigned
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Resource** | **string** |  | [optional] 

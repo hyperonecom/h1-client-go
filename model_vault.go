@@ -30,4 +30,5 @@ type Vault struct {
 	Project string `json:"project,omitempty"`
 	Size float32 `json:"size,omitempty"`
 	SizeUsed float32 `json:"sizeUsed,omitempty"`
+	Fqdn string `json:"fqdn,omitempty"`
 }

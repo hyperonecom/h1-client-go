@@ -49,6 +49,8 @@ type APIClient struct {
 
 	ContainerApi *ContainerApiService
 
+	DatabaseApi *DatabaseApiService
+
 	DiskApi *DiskApiService
 
 	FirewallApi *FirewallApiService
@@ -79,11 +81,15 @@ type APIClient struct {
 
 	SnapshotApi *SnapshotApiService
 
+	UserApi *UserApiService
+
 	VaultApi *VaultApiService
 
 	VmApi *VmApiService
 
 	VolumeApi *VolumeApiService
+
+	WebsiteApi *WebsiteApiService
 }
 
 type service struct {
@@ -104,6 +110,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AgentApi = (*AgentApiService)(&c.common)
 	c.ContainerApi = (*ContainerApiService)(&c.common)
+	c.DatabaseApi = (*DatabaseApiService)(&c.common)
 	c.DiskApi = (*DiskApiService)(&c.common)
 	c.FirewallApi = (*FirewallApiService)(&c.common)
 	c.ImageApi = (*ImageApiService)(&c.common)
@@ -119,9 +126,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ReservationApi = (*ReservationApiService)(&c.common)
 	c.ServiceApi = (*ServiceApiService)(&c.common)
 	c.SnapshotApi = (*SnapshotApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
 	c.VaultApi = (*VaultApiService)(&c.common)
 	c.VmApi = (*VmApiService)(&c.common)
 	c.VolumeApi = (*VolumeApiService)(&c.common)
+	c.WebsiteApi = (*WebsiteApiService)(&c.common)
 
 	return c
 }
@@ -271,9 +280,10 @@ func (c *APIClient) prepareRequest(
 			if err != nil {
 				return nil, err
 			}
-			// Set the Boundary in the Content-Type
-			headerParams["Content-Type"] = w.FormDataContentType()
 		}
+
+		// Set the Boundary in the Content-Type
+		headerParams["Content-Type"] = w.FormDataContentType()
 
 		// Set Content-Length
 		headerParams["Content-Length"] = fmt.Sprintf("%d", body.Len())

@@ -230,16 +230,14 @@ ProjectApiService /accessrights/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
-@return Project
 */
-func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, projectId string, id string) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, projectId string, id string) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Project
 	)
 
 	// create path and map variables
@@ -282,18 +280,18 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -301,49 +299,20 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v Project
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 202 {
-			var v Project
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
 		if localVarHttpResponse.StatusCode == 400 {
 			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
+				return localVarHttpResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
+			return localVarHttpResponse, newErr
 		}
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarHttpResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
+	return localVarHttpResponse, nil
 }
 
 /*
@@ -351,16 +320,16 @@ ProjectApiService /credentialStore/certificate/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
-@return InlineResponse200
+@return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx context.Context, projectId string, id string) (InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Delete")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse200
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
@@ -423,7 +392,7 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -573,16 +542,16 @@ ProjectApiService /credentialStore/certificate/:id
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
-@return InlineResponse200
+@return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.Context, projectId string, id string) (InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse200
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
@@ -645,7 +614,7 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -908,6 +877,7 @@ List project
  * @param "Limit" (optional.Float32) -  Filter by $limit
  * @param "Active" (optional.Bool) -  Filter by active
  * @param "Organisation" (optional.String) -  Filter by organisation
+ * @param "AccessRightsId" (optional.String) -  Filter by accessRights.id
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Project
 */
@@ -917,6 +887,7 @@ type ProjectListOpts struct {
 	Limit optional.Float32
 	Active optional.Bool
 	Organisation optional.String
+	AccessRightsId optional.String
 	Tag optional.Interface
 }
 
@@ -948,6 +919,9 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 	}
 	if localVarOptionals != nil && localVarOptionals.Organisation.IsSet() {
 		localVarQueryParams.Add("organisation", parameterToString(localVarOptionals.Organisation.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.AccessRightsId.IsSet() {
+		localVarQueryParams.Add("accessRights.id", parameterToString(localVarOptionals.AccessRightsId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
 		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))
@@ -1150,16 +1124,16 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 ProjectApiService /credentialStore/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
-@return []InlineResponse200
+@return []CredentialCertificate
 */
-func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Context, projectId string) ([]InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Context, projectId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Get")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []InlineResponse200
+		localVarReturnValue  []CredentialCertificate
 	)
 
 	// create path and map variables
@@ -1221,7 +1195,7 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []InlineResponse200
+			var v []CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1588,16 +1562,16 @@ ProjectApiService /credentialStore/certificate/:id
  * @param projectId ID of project
  * @param id id
  * @param projectPatchCredentialStorecertificateId
-@return InlineResponse200
+@return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context.Context, projectId string, id string, projectPatchCredentialStorecertificateId ProjectPatchCredentialStorecertificateId) (InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context.Context, projectId string, id string, projectPatchCredentialStorecertificateId ProjectPatchCredentialStorecertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Patch")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse200
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
@@ -1662,7 +1636,7 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1813,16 +1787,14 @@ ProjectApiService /accessrights
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectPostAccessrights
-@return Project
 */
-func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (*http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Project
 	)
 
 	// create path and map variables
@@ -1866,18 +1838,18 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
+		return localVarHttpResponse, err
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -1885,66 +1857,37 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v Project
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 202 {
-			var v Project
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
-		}
 		if localVarHttpResponse.StatusCode == 400 {
 			var v InlineResponse400
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarReturnValue, localVarHttpResponse, newErr
+				return localVarHttpResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
+			return localVarHttpResponse, newErr
 		}
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarHttpResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
+	return localVarHttpResponse, nil
 }
 
 /*
 ProjectApiService /credentialStore/certificate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
- * @param body
-@return InlineResponse200
+ * @param projectPostCredentialStorecertificate
+@return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, body string) (InlineResponse200, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, projectPostCredentialStorecertificate ProjectPostCredentialStorecertificate) (CredentialCertificate, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  InlineResponse200
+		localVarReturnValue  CredentialCertificate
 	)
 
 	// create path and map variables
@@ -1973,7 +1916,7 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = &body
+	localVarPostBody = &projectPostCredentialStorecertificate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -2008,7 +1951,7 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v CredentialCertificate
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

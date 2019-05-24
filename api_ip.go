@@ -31,10 +31,9 @@ IpApiService /actions/allocate
 Action allocate
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
- * @param ipActionAllocate
 @return Ip
 */
-func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActionAllocate IpActionAllocate) (Ip, *http.Response, error) {
+func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod   = strings.ToUpper("Post")
 		localVarPostBody     interface{}
@@ -53,7 +52,7 @@ func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActi
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -69,8 +68,6 @@ func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string, ipActi
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	// body params
-	localVarPostBody = &ipActionAllocate
 	if ctx != nil {
 		// API Key Authentication
 		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
@@ -1241,13 +1238,13 @@ IpApiService List
 List ip
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *IpListOpts - Optional Parameters:
- * @param "Mac" (optional.String) -  Filter by mac
+ * @param "Network" (optional.String) -  Filter by network
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
 @return []Ip
 */
 
 type IpListOpts struct {
-	Mac optional.String
+	Network optional.String
 	Tag optional.Interface
 }
 
@@ -1268,8 +1265,8 @@ func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Mac.IsSet() {
-		localVarQueryParams.Add("mac", parameterToString(localVarOptionals.Mac.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.Network.IsSet() {
+		localVarQueryParams.Add("network", parameterToString(localVarOptionals.Network.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Tag.IsSet() {
 		localVarQueryParams.Add("tag", parameterToString(localVarOptionals.Tag.Value(), ""))

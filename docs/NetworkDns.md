@@ -1,6 +1,7 @@
 # NetworkDns
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Nameservers** | **[]string** |  | [optional] 

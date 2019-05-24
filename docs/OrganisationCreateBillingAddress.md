@@ -1,6 +1,7 @@
 # OrganisationCreateBillingAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Country** | **string** |  | [optional] 

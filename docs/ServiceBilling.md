@@ -1,6 +1,7 @@
 # ServiceBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Price** | [**ServiceBillingPrice**](service_billing_price.md) |  | [optional] 
