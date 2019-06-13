@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ NetadpApiService /accessrights/:identity
 */
 func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context, netadpId string, identity string) (Netadp, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -156,7 +156,7 @@ NetadpApiService /tag/:key
 */
 func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -267,7 +267,7 @@ NetadpApiService /services/:serviceId
 */
 func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netadpId string, serviceId string) (NetadpServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -377,7 +377,7 @@ NetadpApiService /tag
 */
 func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -495,7 +495,7 @@ type NetadpListOpts struct {
 
 func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *NetadpListOpts) ([]Netadp, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -609,7 +609,7 @@ NetadpApiService /accessrights
 */
 func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -718,7 +718,7 @@ NetadpApiService /queue
 */
 func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -827,7 +827,7 @@ NetadpApiService /services
 */
 func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId string) ([]NetadpServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -937,7 +937,7 @@ NetadpApiService /tag
 */
 func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1049,7 +1049,7 @@ NetadpApiService /accessrights
 */
 func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId string, netadpPostAccessrights NetadpPostAccessrights) (Netadp, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1171,7 +1171,7 @@ Returns a single netadp
 */
 func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Netadp, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

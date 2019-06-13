@@ -10573,6 +10573,80 @@ paths:
       summary: /actions/stop
       tags:
       - website
+  /website/{websiteId}/actions/transfer:
+    post:
+      description: Action transfer
+      operationId: website_action_transfer
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_action_transfer'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/transfer
+      tags:
+      - website
+  /website/{websiteId}/actions/update_domain:
+    post:
+      description: Action update_domain
+      operationId: website_action_update_domain
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_action_update_domain'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/update_domain
+      tags:
+      - website
   /website/{websiteId}/credential/password:
     get:
       operationId: website_list_credentialpassword
@@ -11493,6 +11567,43 @@ paths:
       summary: /actions/stop
       tags:
       - database
+  /database/{databaseId}/actions/transfer:
+    post:
+      description: Action transfer
+      operationId: database_action_transfer
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/database_action_transfer'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/database'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/transfer
+      tags:
+      - database
   /database/{databaseId}/credential/password:
     get:
       operationId: database_list_credentialpassword
@@ -12226,6 +12337,80 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /actions/suspend
+      tags:
+      - agent
+  /agent/{agentId}/actions/transfer:
+    post:
+      description: Action transfer
+      operationId: agent_action_transfer
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_action_transfer'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/transfer
+      tags:
+      - agent
+  /agent/{agentId}/actions/update_enabledServices:
+    post:
+      description: Action update_enabledServices
+      operationId: agent_action_update_enabledServices
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_action_update_enabledServices'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/update_enabledServices
       tags:
       - agent
   /agent/{agentId}/enabledServices:
@@ -14680,6 +14865,7 @@ components:
         processing: processing
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights: accessRights
         state: state
         tag: '{}'
@@ -14705,6 +14891,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -15109,6 +15297,7 @@ components:
           processing: processing
           modifiedBy: modifiedBy
           _id: _id
+          id: id
           accessRights: accessRights
           state: state
           tag: '{}'
@@ -15147,6 +15336,7 @@ components:
           processing: processing
           modifiedBy: modifiedBy
           _id: _id
+          id: id
           accessRights: accessRights
           state: state
           tag: '{}'
@@ -15234,6 +15424,7 @@ components:
           vault: '{}'
           snapshot: '{}'
         modifiedBy: modifiedBy
+        id: id
         state: Active
         tag: '{}'
         bankAccount: bankAccount
@@ -15291,6 +15482,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -15522,6 +15715,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - role: owner
           id: id
@@ -15551,6 +15745,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -15698,6 +15894,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -15725,6 +15922,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -15924,6 +16123,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -15952,6 +16152,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -16108,6 +16310,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         state: Attached
         tag: '{}'
         queue:
@@ -16132,6 +16335,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -16292,6 +16497,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -16319,6 +16525,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -16484,6 +16692,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -16512,6 +16721,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -16593,6 +16804,9 @@ components:
           type: string
         metadata:
           $ref: '#/components/schemas/disk_metadata'
+        source:
+          format: ObjectId
+          type: string
         tag:
           type: object
       required:
@@ -16698,6 +16912,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -16725,6 +16940,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -16880,6 +17097,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -16911,6 +17129,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -17190,6 +17410,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -17218,6 +17439,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -17388,6 +17611,7 @@ components:
           processing: true
           modifiedBy: modifiedBy
           _id: _id
+          id: id
           accessRights:
           - accessRights
           - accessRights
@@ -17446,6 +17670,7 @@ components:
           processing: true
           modifiedBy: modifiedBy
           _id: _id
+          id: id
           accessRights:
           - accessRights
           - accessRights
@@ -17523,6 +17748,7 @@ components:
           processing: true
           modifiedBy: modifiedBy
           _id: _id
+          id: id
           accessRights:
           - accessRights
           - accessRights
@@ -17558,6 +17784,7 @@ components:
           resource: vm
           id: id
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -17585,6 +17812,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -17714,6 +17943,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -17741,6 +17971,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -17949,6 +18181,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -17977,6 +18210,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -18117,6 +18352,7 @@ components:
         modifiedBy: modifiedBy
         assigned: assigned
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -18145,6 +18381,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -18293,6 +18531,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -18321,6 +18560,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -18496,6 +18737,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -18523,6 +18765,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -18606,6 +18850,23 @@ components:
       properties:
         name:
           type: string
+      type: object
+    website_action_transfer:
+      properties:
+        project:
+          format: ObjectId
+          type: string
+      required:
+      - project
+      type: object
+    website_action_update_domain:
+      properties:
+        domain:
+          items:
+            type: string
+          type: array
+      required:
+      - domain
       type: object
     website.services:
       example:
@@ -18716,6 +18977,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -18743,6 +19005,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -18810,6 +19074,14 @@ components:
       properties:
         name:
           type: string
+      type: object
+    database_action_transfer:
+      properties:
+        project:
+          format: ObjectId
+          type: string
+      required:
+      - project
       type: object
     database.services:
       example:
@@ -18900,6 +19172,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -18930,6 +19203,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -19001,6 +19276,24 @@ components:
       properties:
         name:
           type: string
+      type: object
+    agent_action_transfer:
+      properties:
+        project:
+          format: ObjectId
+          type: string
+      required:
+      - project
+      type: object
+    agent_action_update_enabledServices:
+      properties:
+        enabledServices:
+          items:
+            format: ObjectId
+            type: string
+          type: array
+      required:
+      - enabledServices
       type: object
     agent.services:
       example:
@@ -19118,6 +19411,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -19145,6 +19439,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -19315,6 +19611,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -19342,6 +19639,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string
@@ -19478,6 +19777,7 @@ components:
         processing: true
         modifiedBy: modifiedBy
         _id: _id
+        id: id
         accessRights:
         - accessRights
         - accessRights
@@ -19505,6 +19805,8 @@ components:
       properties:
         _id:
           format: ObjectId
+          type: string
+        id:
           type: string
         name:
           type: string

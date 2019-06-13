@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Create network
 */
 func (a *NetworkApiService) NetworkCreate(ctx context.Context, networkCreate NetworkCreate) (Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -144,7 +144,7 @@ NetworkApiService Delete
 */
 func (a *NetworkApiService) NetworkDelete(ctx context.Context, networkId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -234,7 +234,7 @@ NetworkApiService /accessrights/:identity
 */
 func (a *NetworkApiService) NetworkDeleteAccessrightsIdentity(ctx context.Context, networkId string, identity string) (Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -355,7 +355,7 @@ NetworkApiService /ip/:ipId
 */
 func (a *NetworkApiService) NetworkDeleteIpIpId(ctx context.Context, networkId string, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -466,7 +466,7 @@ NetworkApiService /tag/:key
 */
 func (a *NetworkApiService) NetworkDeleteTagKey(ctx context.Context, networkId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -577,7 +577,7 @@ NetworkApiService /ip/:ipId
 */
 func (a *NetworkApiService) NetworkGetIpIpId(ctx context.Context, networkId string, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -688,7 +688,7 @@ NetworkApiService /services/:serviceId
 */
 func (a *NetworkApiService) NetworkGetServicesServiceId(ctx context.Context, networkId string, serviceId string) (NetworkServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -798,7 +798,7 @@ NetworkApiService /tag
 */
 func (a *NetworkApiService) NetworkGetTag(ctx context.Context, networkId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -916,7 +916,7 @@ type NetworkListOpts struct {
 
 func (a *NetworkApiService) NetworkList(ctx context.Context, localVarOptionals *NetworkListOpts) ([]Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1030,7 +1030,7 @@ NetworkApiService /accessrights
 */
 func (a *NetworkApiService) NetworkListAccessrights(ctx context.Context, networkId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1139,7 +1139,7 @@ NetworkApiService /ip
 */
 func (a *NetworkApiService) NetworkListIp(ctx context.Context, networkId string) ([]Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1248,7 +1248,7 @@ NetworkApiService /queue
 */
 func (a *NetworkApiService) NetworkListQueue(ctx context.Context, networkId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1357,7 +1357,7 @@ NetworkApiService /services
 */
 func (a *NetworkApiService) NetworkListServices(ctx context.Context, networkId string) ([]NetworkServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1467,7 +1467,7 @@ NetworkApiService /tag
 */
 func (a *NetworkApiService) NetworkPatchTag(ctx context.Context, networkId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1579,7 +1579,7 @@ NetworkApiService /accessrights
 */
 func (a *NetworkApiService) NetworkPostAccessrights(ctx context.Context, networkId string, networkPostAccessrights NetworkPostAccessrights) (Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1701,7 +1701,7 @@ NetworkApiService /ip
 */
 func (a *NetworkApiService) NetworkPostIp(ctx context.Context, networkId string, networkPostIp NetworkPostIp) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1813,7 +1813,7 @@ Returns a single network
 */
 func (a *NetworkApiService) NetworkShow(ctx context.Context, networkId string) (Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1924,7 +1924,7 @@ Returns modified network
 */
 func (a *NetworkApiService) NetworkUpdate(ctx context.Context, networkId string, networkUpdate NetworkUpdate) (Network, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

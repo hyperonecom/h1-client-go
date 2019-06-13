@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Action start
 */
 func (a *DatabaseApiService) DatabaseActionStart(ctx context.Context, databaseId string) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -145,7 +145,7 @@ Action stop
 */
 func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId string) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -247,6 +247,119 @@ func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId 
 }
 
 /*
+DatabaseApiService /actions/transfer
+Action transfer
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param databaseId ID of database
+ * @param databaseActionTransfer
+@return Database
+*/
+func (a *DatabaseApiService) DatabaseActionTransfer(ctx context.Context, databaseId string, databaseActionTransfer DatabaseActionTransfer) (Database, *http.Response, error) {
+	var (
+		localVarHttpMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  Database
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/database/{databaseId}/actions/transfer"
+	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &databaseActionTransfer
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Database
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 DatabaseApiService Create
 Create database
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -255,7 +368,7 @@ Create database
 */
 func (a *DatabaseApiService) DatabaseCreate(ctx context.Context, databaseCreate DatabaseCreate) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -364,7 +477,7 @@ DatabaseApiService Delete
 */
 func (a *DatabaseApiService) DatabaseDelete(ctx context.Context, databaseId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -454,7 +567,7 @@ DatabaseApiService /accessrights/:identity
 */
 func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx context.Context, databaseId string, identity string) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -575,7 +688,7 @@ DatabaseApiService /credential/password/:id
 */
 func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx context.Context, databaseId string, id string) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -696,7 +809,7 @@ DatabaseApiService /tag/:key
 */
 func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx context.Context, databaseId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -807,7 +920,7 @@ DatabaseApiService /credential/password/:id
 */
 func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx context.Context, databaseId string, id string) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -918,7 +1031,7 @@ DatabaseApiService /services/:serviceId
 */
 func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx context.Context, databaseId string, serviceId string) (DatabaseServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1028,7 +1141,7 @@ DatabaseApiService /tag
 */
 func (a *DatabaseApiService) DatabaseGetTag(ctx context.Context, databaseId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1146,7 +1259,7 @@ type DatabaseListOpts struct {
 
 func (a *DatabaseApiService) DatabaseList(ctx context.Context, localVarOptionals *DatabaseListOpts) ([]Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1260,7 +1373,7 @@ DatabaseApiService /accessrights
 */
 func (a *DatabaseApiService) DatabaseListAccessrights(ctx context.Context, databaseId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1369,7 +1482,7 @@ DatabaseApiService /credential/password
 */
 func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx context.Context, databaseId string) ([]CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1478,7 +1591,7 @@ DatabaseApiService /queue
 */
 func (a *DatabaseApiService) DatabaseListQueue(ctx context.Context, databaseId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1587,7 +1700,7 @@ DatabaseApiService /services
 */
 func (a *DatabaseApiService) DatabaseListServices(ctx context.Context, databaseId string) ([]DatabaseServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1698,7 +1811,7 @@ DatabaseApiService /credential/password/:id
 */
 func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx context.Context, databaseId string, id string, databasePatchCredentialpasswordId DatabasePatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1811,7 +1924,7 @@ DatabaseApiService /tag
 */
 func (a *DatabaseApiService) DatabasePatchTag(ctx context.Context, databaseId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1923,7 +2036,7 @@ DatabaseApiService /accessrights
 */
 func (a *DatabaseApiService) DatabasePostAccessrights(ctx context.Context, databaseId string, databasePostAccessrights DatabasePostAccessrights) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2045,7 +2158,7 @@ DatabaseApiService /credential/password
 */
 func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx context.Context, databaseId string, databasePostCredentialpassword DatabasePostCredentialpassword) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2157,7 +2270,7 @@ Returns a single database
 */
 func (a *DatabaseApiService) DatabaseShow(ctx context.Context, databaseId string) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2268,7 +2381,7 @@ Returns modified database
 */
 func (a *DatabaseApiService) DatabaseUpdate(ctx context.Context, databaseId string, databaseUpdate DatabaseUpdate) (Database, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

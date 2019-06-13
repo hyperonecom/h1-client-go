@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Create volume
 */
 func (a *VolumeApiService) VolumeCreate(ctx context.Context, volumeCreate VolumeCreate) (Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -144,7 +144,7 @@ VolumeApiService Delete
 */
 func (a *VolumeApiService) VolumeDelete(ctx context.Context, volumeId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -234,7 +234,7 @@ VolumeApiService /accessrights/:identity
 */
 func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx context.Context, volumeId string, identity string) (Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -355,7 +355,7 @@ VolumeApiService /tag/:key
 */
 func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -466,7 +466,7 @@ VolumeApiService /services/:serviceId
 */
 func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volumeId string, serviceId string) (VolumeServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -576,7 +576,7 @@ VolumeApiService /tag
 */
 func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -694,7 +694,7 @@ type VolumeListOpts struct {
 
 func (a *VolumeApiService) VolumeList(ctx context.Context, localVarOptionals *VolumeListOpts) ([]Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -808,7 +808,7 @@ VolumeApiService /accessrights
 */
 func (a *VolumeApiService) VolumeListAccessrights(ctx context.Context, volumeId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -917,7 +917,7 @@ VolumeApiService /queue
 */
 func (a *VolumeApiService) VolumeListQueue(ctx context.Context, volumeId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1026,7 +1026,7 @@ VolumeApiService /services
 */
 func (a *VolumeApiService) VolumeListServices(ctx context.Context, volumeId string) ([]VolumeServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1136,7 +1136,7 @@ VolumeApiService /tag
 */
 func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1248,7 +1248,7 @@ VolumeApiService /accessrights
 */
 func (a *VolumeApiService) VolumePostAccessrights(ctx context.Context, volumeId string, volumePostAccessrights VolumePostAccessrights) (Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1370,7 +1370,7 @@ Returns a single volume
 */
 func (a *VolumeApiService) VolumeShow(ctx context.Context, volumeId string) (Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1481,7 +1481,7 @@ Returns modified volume
 */
 func (a *VolumeApiService) VolumeUpdate(ctx context.Context, volumeId string, volumeUpdate VolumeUpdate) (Volume, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

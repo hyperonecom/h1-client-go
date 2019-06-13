@@ -15,5 +15,6 @@ type DiskCreate struct {
 	Size float32 `json:"size,omitempty"`
 	Cloud string `json:"cloud,omitempty"`
 	Metadata DiskMetadata `json:"metadata,omitempty"`
+	Source string `json:"source,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

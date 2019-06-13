@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action transfer
 */
 func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId string, imageActionTransfer ImageActionTransfer) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Create image
 */
 func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCreate) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -257,7 +257,7 @@ ImageApiService Delete
 */
 func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -347,7 +347,7 @@ ImageApiService /accessrights/:identity
 */
 func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, imageId string, identity string) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -468,7 +468,7 @@ ImageApiService /tag/:key
 */
 func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -579,7 +579,7 @@ ImageApiService /services/:serviceId
 */
 func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId string, serviceId string) (ImageServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -689,7 +689,7 @@ ImageApiService /tag
 */
 func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -807,7 +807,7 @@ type ImageListOpts struct {
 
 func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *ImageListOpts) ([]Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -921,7 +921,7 @@ ImageApiService /accessrights
 */
 func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1030,7 +1030,7 @@ ImageApiService /queue
 */
 func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1139,7 +1139,7 @@ ImageApiService /services
 */
 func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string) ([]ImageServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1249,7 +1249,7 @@ ImageApiService /tag
 */
 func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1361,7 +1361,7 @@ ImageApiService /accessrights
 */
 func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1483,7 +1483,7 @@ Returns a single image
 */
 func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1594,7 +1594,7 @@ Returns modified image
 */
 func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, imageUpdate ImageUpdate) (Image, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

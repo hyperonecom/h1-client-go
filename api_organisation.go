@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action payment_assign
 */
 func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Context, organisationId string, organisationActionPaymentAssign OrganisationActionPaymentAssign) (Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -149,7 +149,7 @@ Action transfer_accept
 */
 func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Context, organisationId string, organisationActionTransferAccept OrganisationActionTransferAccept) (Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -261,7 +261,7 @@ Create organisation
 */
 func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organisationCreate OrganisationCreate) (Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -371,7 +371,7 @@ OrganisationApiService /accessrights/:id
 */
 func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Context, organisationId string, id string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -462,7 +462,7 @@ OrganisationApiService /tag/:key
 */
 func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, organisationId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -572,7 +572,7 @@ OrganisationApiService /tag
 */
 func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organisationId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -698,7 +698,7 @@ type OrganisationListOpts struct {
 
 func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -824,7 +824,7 @@ OrganisationApiService /accessrights
 */
 func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Context, organisationId string) ([]AccessrightsUserRole, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -933,7 +933,7 @@ OrganisationApiService /queue
 */
 func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, organisationId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1043,7 +1043,7 @@ OrganisationApiService /tag
 */
 func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organisationId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1154,7 +1154,7 @@ OrganisationApiService /accessrights
 */
 func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1246,7 +1246,7 @@ Returns a single organisation
 */
 func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisationId string) (Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1357,7 +1357,7 @@ Returns modified organisation
 */
 func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organisationId string, organisationUpdate OrganisationUpdate) (Organisation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

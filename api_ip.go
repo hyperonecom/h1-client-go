@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Action allocate
 */
 func (a *IpApiService) IpActionAllocate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -146,7 +146,7 @@ Action associate
 */
 func (a *IpApiService) IpActionAssociate(ctx context.Context, ipId string, ipActionAssociate IpActionAssociate) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -258,7 +258,7 @@ Action disassociate
 */
 func (a *IpApiService) IpActionDisassociate(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -368,7 +368,7 @@ Action release
 */
 func (a *IpApiService) IpActionRelease(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -479,7 +479,7 @@ Action transfer
 */
 func (a *IpApiService) IpActionTransfer(ctx context.Context, ipId string, ipActionTransfer IpActionTransfer) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -591,7 +591,7 @@ Create ip
 */
 func (a *IpApiService) IpCreate(ctx context.Context, ipCreate IpCreate) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -700,7 +700,7 @@ IpApiService Delete
 */
 func (a *IpApiService) IpDelete(ctx context.Context, ipId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -790,7 +790,7 @@ IpApiService /accessrights/:identity
 */
 func (a *IpApiService) IpDeleteAccessrightsIdentity(ctx context.Context, ipId string, identity string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -911,7 +911,7 @@ IpApiService /tag/:key
 */
 func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1022,7 +1022,7 @@ IpApiService /services/:serviceId
 */
 func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, serviceId string) (IpServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1132,7 +1132,7 @@ IpApiService /tag
 */
 func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1250,7 +1250,7 @@ type IpListOpts struct {
 
 func (a *IpApiService) IpList(ctx context.Context, localVarOptionals *IpListOpts) ([]Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1364,7 +1364,7 @@ IpApiService /accessrights
 */
 func (a *IpApiService) IpListAccessrights(ctx context.Context, ipId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1473,7 +1473,7 @@ IpApiService /queue
 */
 func (a *IpApiService) IpListQueue(ctx context.Context, ipId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1582,7 +1582,7 @@ IpApiService /services
 */
 func (a *IpApiService) IpListServices(ctx context.Context, ipId string) ([]IpServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1692,7 +1692,7 @@ IpApiService /tag
 */
 func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1804,7 +1804,7 @@ IpApiService /accessrights
 */
 func (a *IpApiService) IpPostAccessrights(ctx context.Context, ipId string, ipPostAccessrights IpPostAccessrights) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1926,7 +1926,7 @@ Returns a single ip
 */
 func (a *IpApiService) IpShow(ctx context.Context, ipId string) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2037,7 +2037,7 @@ Returns modified ip
 */
 func (a *IpApiService) IpUpdate(ctx context.Context, ipId string, ipUpdate IpUpdate) (Ip, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

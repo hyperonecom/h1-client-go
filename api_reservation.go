@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action assign
 */
 func (a *ReservationApiService) ReservationActionAssign(ctx context.Context, reservationId string, reservationActionAssign ReservationActionAssign) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Action extend
 */
 func (a *ReservationApiService) ReservationActionExtend(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -258,7 +258,7 @@ Action unassign
 */
 func (a *ReservationApiService) ReservationActionUnassign(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -368,7 +368,7 @@ Create reservation
 */
 func (a *ReservationApiService) ReservationCreate(ctx context.Context, reservationCreate ReservationCreate) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -477,7 +477,7 @@ ReservationApiService Delete
 */
 func (a *ReservationApiService) ReservationDelete(ctx context.Context, reservationId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -567,7 +567,7 @@ ReservationApiService /accessrights/:identity
 */
 func (a *ReservationApiService) ReservationDeleteAccessrightsIdentity(ctx context.Context, reservationId string, identity string) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -688,7 +688,7 @@ ReservationApiService /tag/:key
 */
 func (a *ReservationApiService) ReservationDeleteTagKey(ctx context.Context, reservationId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -799,7 +799,7 @@ ReservationApiService /services/:serviceId
 */
 func (a *ReservationApiService) ReservationGetServicesServiceId(ctx context.Context, reservationId string, serviceId string) (ReservationServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -909,7 +909,7 @@ ReservationApiService /tag
 */
 func (a *ReservationApiService) ReservationGetTag(ctx context.Context, reservationId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1027,7 +1027,7 @@ type ReservationListOpts struct {
 
 func (a *ReservationApiService) ReservationList(ctx context.Context, localVarOptionals *ReservationListOpts) ([]Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1141,7 +1141,7 @@ ReservationApiService /accessrights
 */
 func (a *ReservationApiService) ReservationListAccessrights(ctx context.Context, reservationId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1250,7 +1250,7 @@ ReservationApiService /queue
 */
 func (a *ReservationApiService) ReservationListQueue(ctx context.Context, reservationId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1359,7 +1359,7 @@ ReservationApiService /services
 */
 func (a *ReservationApiService) ReservationListServices(ctx context.Context, reservationId string) ([]ReservationServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1469,7 +1469,7 @@ ReservationApiService /tag
 */
 func (a *ReservationApiService) ReservationPatchTag(ctx context.Context, reservationId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1581,7 +1581,7 @@ ReservationApiService /accessrights
 */
 func (a *ReservationApiService) ReservationPostAccessrights(ctx context.Context, reservationId string, reservationPostAccessrights ReservationPostAccessrights) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1703,7 +1703,7 @@ Returns a single reservation
 */
 func (a *ReservationApiService) ReservationShow(ctx context.Context, reservationId string) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1814,7 +1814,7 @@ Returns modified reservation
 */
 func (a *ReservationApiService) ReservationUpdate(ctx context.Context, reservationId string, reservationUpdate ReservationUpdate) (Reservation, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

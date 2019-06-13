@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action attach
 */
 func (a *FirewallApiService) FirewallActionAttach(ctx context.Context, firewallId string, firewallActionAttach FirewallActionAttach) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Action detach
 */
 func (a *FirewallApiService) FirewallActionDetach(ctx context.Context, firewallId string) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -259,7 +259,7 @@ Action transfer
 */
 func (a *FirewallApiService) FirewallActionTransfer(ctx context.Context, firewallId string, firewallActionTransfer FirewallActionTransfer) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -371,7 +371,7 @@ Create firewall
 */
 func (a *FirewallApiService) FirewallCreate(ctx context.Context, firewallCreate FirewallCreate) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -480,7 +480,7 @@ FirewallApiService Delete
 */
 func (a *FirewallApiService) FirewallDelete(ctx context.Context, firewallId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -570,7 +570,7 @@ FirewallApiService /accessrights/:identity
 */
 func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx context.Context, firewallId string, identity string) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -691,7 +691,7 @@ FirewallApiService /egress/:ruleId
 */
 func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -802,7 +802,7 @@ FirewallApiService /ingress/:ruleId
 */
 func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -913,7 +913,7 @@ FirewallApiService /tag/:key
 */
 func (a *FirewallApiService) FirewallDeleteTagKey(ctx context.Context, firewallId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1024,7 +1024,7 @@ FirewallApiService /egress/:ruleId
 */
 func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1135,7 +1135,7 @@ FirewallApiService /ingress/:ruleId
 */
 func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1246,7 +1246,7 @@ FirewallApiService /services/:serviceId
 */
 func (a *FirewallApiService) FirewallGetServicesServiceId(ctx context.Context, firewallId string, serviceId string) (FirewallServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1356,7 +1356,7 @@ FirewallApiService /tag
 */
 func (a *FirewallApiService) FirewallGetTag(ctx context.Context, firewallId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1474,7 +1474,7 @@ type FirewallListOpts struct {
 
 func (a *FirewallApiService) FirewallList(ctx context.Context, localVarOptionals *FirewallListOpts) ([]Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1588,7 +1588,7 @@ FirewallApiService /accessrights
 */
 func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firewallId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1697,7 +1697,7 @@ FirewallApiService /egress
 */
 func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1806,7 +1806,7 @@ FirewallApiService /ingress
 */
 func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1915,7 +1915,7 @@ FirewallApiService /queue
 */
 func (a *FirewallApiService) FirewallListQueue(ctx context.Context, firewallId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2024,7 +2024,7 @@ FirewallApiService /services
 */
 func (a *FirewallApiService) FirewallListServices(ctx context.Context, firewallId string) ([]FirewallServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2134,7 +2134,7 @@ FirewallApiService /tag
 */
 func (a *FirewallApiService) FirewallPatchTag(ctx context.Context, firewallId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2246,7 +2246,7 @@ FirewallApiService /accessrights
 */
 func (a *FirewallApiService) FirewallPostAccessrights(ctx context.Context, firewallId string, firewallPostAccessrights FirewallPostAccessrights) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2368,7 +2368,7 @@ FirewallApiService /egress
 */
 func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId string, firewallPostEgress FirewallPostEgress) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2480,7 +2480,7 @@ FirewallApiService /ingress
 */
 func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId string, firewallPostIngress FirewallPostIngress) (InlineResponse200, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2592,7 +2592,7 @@ Returns a single firewall
 */
 func (a *FirewallApiService) FirewallShow(ctx context.Context, firewallId string) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2703,7 +2703,7 @@ Returns modified firewall
 */
 func (a *FirewallApiService) FirewallUpdate(ctx context.Context, firewallId string, firewallUpdate FirewallUpdate) (Firewall, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

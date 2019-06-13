@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AgentActionStart**](AgentApi.md#AgentActionStart) | **Post** /agent/{agentId}/actions/start | /actions/start
 [**AgentActionSuspend**](AgentApi.md#AgentActionSuspend) | **Post** /agent/{agentId}/actions/suspend | /actions/suspend
+[**AgentActionTransfer**](AgentApi.md#AgentActionTransfer) | **Post** /agent/{agentId}/actions/transfer | /actions/transfer
+[**AgentActionUpdateEnabledServices**](AgentApi.md#AgentActionUpdateEnabledServices) | **Post** /agent/{agentId}/actions/update_enabledServices | /actions/update_enabledServices
 [**AgentCreate**](AgentApi.md#AgentCreate) | **Post** /agent | Create
 [**AgentDelete**](AgentApi.md#AgentDelete) | **Delete** /agent/{agentId} | Delete
 [**AgentDeleteAccessrightsIdentity**](AgentApi.md#AgentDeleteAccessrightsIdentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
@@ -94,6 +96,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentActionTransfer
+
+> Agent AgentActionTransfer(ctx, agentId, agentActionTransfer)
+/actions/transfer
+
+Action transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**agentActionTransfer** | [**AgentActionTransfer**](AgentActionTransfer.md)|  | 
+
+### Return type
+
+[**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentActionUpdateEnabledServices
+
+> Agent AgentActionUpdateEnabledServices(ctx, agentId, agentActionUpdateEnabledServices)
+/actions/update_enabledServices
+
+Action update_enabledServices
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**agentActionUpdateEnabledServices** | [**AgentActionUpdateEnabledServices**](AgentActionUpdateEnabledServices.md)|  | 
+
+### Return type
+
+[**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -853,7 +923,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **agentId** | **string**| ID of agent | 
-**requestBody** | [**[]string**](array.md)|  | 
+**requestBody** | [**[]string**](string.md)|  | 
 
 ### Return type
 

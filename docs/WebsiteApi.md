@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**WebsiteActionStart**](WebsiteApi.md#WebsiteActionStart) | **Post** /website/{websiteId}/actions/start | /actions/start
 [**WebsiteActionStop**](WebsiteApi.md#WebsiteActionStop) | **Post** /website/{websiteId}/actions/stop | /actions/stop
+[**WebsiteActionTransfer**](WebsiteApi.md#WebsiteActionTransfer) | **Post** /website/{websiteId}/actions/transfer | /actions/transfer
+[**WebsiteActionUpdateDomain**](WebsiteApi.md#WebsiteActionUpdateDomain) | **Post** /website/{websiteId}/actions/update_domain | /actions/update_domain
 [**WebsiteCreate**](WebsiteApi.md#WebsiteCreate) | **Post** /website | Create
 [**WebsiteDelete**](WebsiteApi.md#WebsiteDelete) | **Delete** /website/{websiteId} | Delete
 [**WebsiteDeleteAccessrightsIdentity**](WebsiteApi.md#WebsiteDeleteAccessrightsIdentity) | **Delete** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
@@ -92,6 +94,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteActionTransfer
+
+> Website WebsiteActionTransfer(ctx, websiteId, websiteActionTransfer)
+/actions/transfer
+
+Action transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**websiteActionTransfer** | [**WebsiteActionTransfer**](WebsiteActionTransfer.md)|  | 
+
+### Return type
+
+[**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteActionUpdateDomain
+
+> Website WebsiteActionUpdateDomain(ctx, websiteId, websiteActionUpdateDomain)
+/actions/update_domain
+
+Action update_domain
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**websiteActionUpdateDomain** | [**WebsiteActionUpdateDomain**](WebsiteActionUpdateDomain.md)|  | 
+
+### Return type
+
+[**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

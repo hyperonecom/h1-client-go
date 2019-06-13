@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Create project
 */
 func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate ProjectCreate) (Project, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -144,7 +144,7 @@ ProjectApiService Delete
 */
 func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -233,7 +233,7 @@ ProjectApiService /accessrights/:id
 */
 func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, projectId string, id string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -324,7 +324,7 @@ ProjectApiService /credentialStore/certificate/:id
 */
 func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -435,7 +435,7 @@ ProjectApiService /tag/:key
 */
 func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -546,7 +546,7 @@ ProjectApiService /credentialStore/certificate/:id
 */
 func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -657,7 +657,7 @@ ProjectApiService /services/:serviceId
 */
 func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, projectId string, serviceId string) (ProjectServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -767,7 +767,7 @@ ProjectApiService /tag
 */
 func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -893,7 +893,7 @@ type ProjectListOpts struct {
 
 func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *ProjectListOpts) ([]Project, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1019,7 +1019,7 @@ ProjectApiService /accessrights
 */
 func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, projectId string) ([]AccessrightsUserRole, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1128,7 +1128,7 @@ ProjectApiService /credentialStore/certificate
 */
 func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Context, projectId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1237,7 +1237,7 @@ ProjectApiService /limit
 */
 func (a *ProjectApiService) ProjectListLimit(ctx context.Context, projectId string) ([]ProjectLimit, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1346,7 +1346,7 @@ ProjectApiService /queue
 */
 func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1455,7 +1455,7 @@ ProjectApiService /services
 */
 func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId string) ([]ProjectServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1566,7 +1566,7 @@ ProjectApiService /credentialStore/certificate/:id
 */
 func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context.Context, projectId string, id string, projectPatchCredentialStorecertificateId ProjectPatchCredentialStorecertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1679,7 +1679,7 @@ ProjectApiService /tag
 */
 func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1790,7 +1790,7 @@ ProjectApiService /accessrights
 */
 func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1882,7 +1882,7 @@ ProjectApiService /credentialStore/certificate
 */
 func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, projectPostCredentialStorecertificate ProjectPostCredentialStorecertificate) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1994,7 +1994,7 @@ Returns a single project
 */
 func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (Project, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2105,7 +2105,7 @@ Returns modified project
 */
 func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string, projectUpdate ProjectUpdate) (Project, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

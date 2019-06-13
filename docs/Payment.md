@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Services** | **string** |  | [optional] 
 **Flavour** | **string** |  | [optional] 

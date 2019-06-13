@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action resize
 */
 func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string, vaultActionResize VaultActionResize) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -149,7 +149,7 @@ Action snapshot
 */
 func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId string, vaultActionSnapshot VaultActionSnapshot) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -261,7 +261,7 @@ Action start
 */
 func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -371,7 +371,7 @@ Action stop
 */
 func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -481,7 +481,7 @@ Create vault
 */
 func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCreate) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -591,7 +591,7 @@ VaultApiService Delete
 */
 func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vaultDelete VaultDelete) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -683,7 +683,7 @@ VaultApiService /accessrights/:identity
 */
 func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, vaultId string, identity string) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -804,7 +804,7 @@ VaultApiService /credential/certificate/:id
 */
 func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -915,7 +915,7 @@ VaultApiService /credential/password/:id
 */
 func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1036,7 +1036,7 @@ VaultApiService /tag/:key
 */
 func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1147,7 +1147,7 @@ VaultApiService /credential/certificate/:id
 */
 func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1258,7 +1258,7 @@ VaultApiService /credential/password/:id
 */
 func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaultId string, id string) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1369,7 +1369,7 @@ VaultApiService /services/:serviceId
 */
 func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId string, serviceId string) (VaultServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1479,7 +1479,7 @@ VaultApiService /tag
 */
 func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1597,7 +1597,7 @@ type VaultListOpts struct {
 
 func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *VaultListOpts) ([]Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1711,7 +1711,7 @@ VaultApiService /accessrights
 */
 func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1820,7 +1820,7 @@ VaultApiService /credential/certificate
 */
 func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, vaultId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1929,7 +1929,7 @@ VaultApiService /credential/password
 */
 func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vaultId string) ([]CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2038,7 +2038,7 @@ VaultApiService /queue
 */
 func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2147,7 +2147,7 @@ VaultApiService /services
 */
 func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string) ([]VaultServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2258,7 +2258,7 @@ VaultApiService /credential/certificate/:id
 */
 func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context, vaultId string, id string, vaultPatchCredentialcertificateId VaultPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2372,7 +2372,7 @@ VaultApiService /credential/password/:id
 */
 func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, vaultId string, id string, vaultPatchCredentialpasswordId VaultPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2485,7 +2485,7 @@ VaultApiService /tag
 */
 func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2597,7 +2597,7 @@ VaultApiService /accessrights
 */
 func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2719,7 +2719,7 @@ VaultApiService /credential/certificate
 */
 func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, vaultId string, vaultPostCredentialcertificate VaultPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2831,7 +2831,7 @@ VaultApiService /credential/password
 */
 func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vaultId string, vaultPostCredentialpassword VaultPostCredentialpassword) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2943,7 +2943,7 @@ Returns a single vault
 */
 func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3054,7 +3054,7 @@ Returns modified vault
 */
 func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vaultUpdate VaultUpdate) (Vault, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

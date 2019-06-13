@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action transfer
 */
 func (a *IsoApiService) IsoActionTransfer(ctx context.Context, isoId string, isoActionTransfer IsoActionTransfer) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Create iso
 */
 func (a *IsoApiService) IsoCreate(ctx context.Context, isoCreate IsoCreate) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -257,7 +257,7 @@ IsoApiService Delete
 */
 func (a *IsoApiService) IsoDelete(ctx context.Context, isoId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -347,7 +347,7 @@ IsoApiService /accessrights/:identity
 */
 func (a *IsoApiService) IsoDeleteAccessrightsIdentity(ctx context.Context, isoId string, identity string) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -468,7 +468,7 @@ IsoApiService /tag/:key
 */
 func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -579,7 +579,7 @@ IsoApiService /services/:serviceId
 */
 func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId string, serviceId string) (IsoServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -689,7 +689,7 @@ IsoApiService /tag
 */
 func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -807,7 +807,7 @@ type IsoListOpts struct {
 
 func (a *IsoApiService) IsoList(ctx context.Context, localVarOptionals *IsoListOpts) ([]Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -921,7 +921,7 @@ IsoApiService /accessrights
 */
 func (a *IsoApiService) IsoListAccessrights(ctx context.Context, isoId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1030,7 +1030,7 @@ IsoApiService /queue
 */
 func (a *IsoApiService) IsoListQueue(ctx context.Context, isoId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1139,7 +1139,7 @@ IsoApiService /services
 */
 func (a *IsoApiService) IsoListServices(ctx context.Context, isoId string) ([]IsoServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1249,7 +1249,7 @@ IsoApiService /tag
 */
 func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1361,7 +1361,7 @@ IsoApiService /accessrights
 */
 func (a *IsoApiService) IsoPostAccessrights(ctx context.Context, isoId string, isoPostAccessrights IsoPostAccessrights) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1483,7 +1483,7 @@ Returns a single iso
 */
 func (a *IsoApiService) IsoShow(ctx context.Context, isoId string) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1594,7 +1594,7 @@ Returns modified iso
 */
 func (a *IsoApiService) IsoUpdate(ctx context.Context, isoId string, isoUpdate IsoUpdate) (Iso, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

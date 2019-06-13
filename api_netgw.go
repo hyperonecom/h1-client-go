@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action attach
 */
 func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string, netgwActionAttach NetgwActionAttach) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Action detach
 */
 func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -258,7 +258,7 @@ Create netgw
 */
 func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCreate) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -367,7 +367,7 @@ NetgwApiService Delete
 */
 func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -457,7 +457,7 @@ NetgwApiService /accessrights/:identity
 */
 func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, netgwId string, identity string) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -578,7 +578,7 @@ NetgwApiService /tag/:key
 */
 func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -689,7 +689,7 @@ NetgwApiService /services/:serviceId
 */
 func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId string, serviceId string) (NetgwServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -799,7 +799,7 @@ NetgwApiService /tag
 */
 func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -917,7 +917,7 @@ type NetgwListOpts struct {
 
 func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *NetgwListOpts) ([]Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1031,7 +1031,7 @@ NetgwApiService /accessrights
 */
 func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1140,7 +1140,7 @@ NetgwApiService /queue
 */
 func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1249,7 +1249,7 @@ NetgwApiService /services
 */
 func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string) ([]NetgwServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1359,7 +1359,7 @@ NetgwApiService /tag
 */
 func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1471,7 +1471,7 @@ NetgwApiService /accessrights
 */
 func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId string, netgwPostAccessrights NetgwPostAccessrights) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1593,7 +1593,7 @@ Returns a single netgw
 */
 func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1704,7 +1704,7 @@ Returns modified netgw
 */
 func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgwUpdate NetgwUpdate) (Netgw, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

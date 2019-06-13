@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DatabaseActionStart**](DatabaseApi.md#DatabaseActionStart) | **Post** /database/{databaseId}/actions/start | /actions/start
 [**DatabaseActionStop**](DatabaseApi.md#DatabaseActionStop) | **Post** /database/{databaseId}/actions/stop | /actions/stop
+[**DatabaseActionTransfer**](DatabaseApi.md#DatabaseActionTransfer) | **Post** /database/{databaseId}/actions/transfer | /actions/transfer
 [**DatabaseCreate**](DatabaseApi.md#DatabaseCreate) | **Post** /database | Create
 [**DatabaseDelete**](DatabaseApi.md#DatabaseDelete) | **Delete** /database/{databaseId} | Delete
 [**DatabaseDeleteAccessrightsIdentity**](DatabaseApi.md#DatabaseDeleteAccessrightsIdentity) | **Delete** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
@@ -87,6 +88,40 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseActionTransfer
+
+> Database DatabaseActionTransfer(ctx, databaseId, databaseActionTransfer)
+/actions/transfer
+
+Action transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**databaseActionTransfer** | [**DatabaseActionTransfer**](DatabaseActionTransfer.md)|  | 
+
+### Return type
+
+[**Database**](database.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Create snapshot
 */
 func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate SnapshotCreate) (Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -144,7 +144,7 @@ SnapshotApiService Delete
 */
 func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -234,7 +234,7 @@ SnapshotApiService /accessrights/:identity
 */
 func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Context, snapshotId string, identity string) (Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -355,7 +355,7 @@ SnapshotApiService /tag/:key
 */
 func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -466,7 +466,7 @@ SnapshotApiService /services/:serviceId
 */
 func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, snapshotId string, serviceId string) (SnapshotServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -576,7 +576,7 @@ SnapshotApiService /tag
 */
 func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -696,7 +696,7 @@ type SnapshotListOpts struct {
 
 func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals *SnapshotListOpts) ([]Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -813,7 +813,7 @@ SnapshotApiService /accessrights
 */
 func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snapshotId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -922,7 +922,7 @@ SnapshotApiService /queue
 */
 func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1031,7 +1031,7 @@ SnapshotApiService /services
 */
 func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotId string) ([]SnapshotServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1141,7 +1141,7 @@ SnapshotApiService /tag
 */
 func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1253,7 +1253,7 @@ SnapshotApiService /accessrights
 */
 func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snapshotId string, snapshotPostAccessrights SnapshotPostAccessrights) (Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1375,7 +1375,7 @@ Returns a single snapshot
 */
 func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string) (Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1486,7 +1486,7 @@ Returns modified snapshot
 */
 func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId string, snapshotUpdate SnapshotUpdate) (Snapshot, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

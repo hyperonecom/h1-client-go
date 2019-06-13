@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 )
 
 // Linger please
@@ -32,7 +32,7 @@ UserApiService Delete
 */
 func (a *UserApiService) UserDelete(ctx context.Context, userId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -122,7 +122,7 @@ UserApiService /credential/certificate/:id
 */
 func (a *UserApiService) UserDeleteCredentialcertificateId(ctx context.Context, userId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -233,7 +233,7 @@ UserApiService /credential/password/:id
 */
 func (a *UserApiService) UserDeleteCredentialpasswordId(ctx context.Context, userId string, id string) (User, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -354,7 +354,7 @@ UserApiService /tag/:key
 */
 func (a *UserApiService) UserDeleteTagKey(ctx context.Context, userId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -465,7 +465,7 @@ UserApiService /credential/certificate/:id
 */
 func (a *UserApiService) UserGetCredentialcertificateId(ctx context.Context, userId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -576,7 +576,7 @@ UserApiService /credential/password/:id
 */
 func (a *UserApiService) UserGetCredentialpasswordId(ctx context.Context, userId string, id string) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -686,7 +686,7 @@ UserApiService /tag
 */
 func (a *UserApiService) UserGetTag(ctx context.Context, userId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -795,7 +795,7 @@ List user
 */
 func (a *UserApiService) UserList(ctx context.Context) ([]User, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -903,7 +903,7 @@ UserApiService /credential/certificate
 */
 func (a *UserApiService) UserListCredentialcertificate(ctx context.Context, userId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1012,7 +1012,7 @@ UserApiService /credential/password
 */
 func (a *UserApiService) UserListCredentialpassword(ctx context.Context, userId string) ([]CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1123,7 +1123,7 @@ UserApiService /credential/certificate/:id
 */
 func (a *UserApiService) UserPatchCredentialcertificateId(ctx context.Context, userId string, id string, userPatchCredentialcertificateId UserPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1237,7 +1237,7 @@ UserApiService /credential/password/:id
 */
 func (a *UserApiService) UserPatchCredentialpasswordId(ctx context.Context, userId string, id string, userPatchCredentialpasswordId UserPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1350,7 +1350,7 @@ UserApiService /tag
 */
 func (a *UserApiService) UserPatchTag(ctx context.Context, userId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1462,7 +1462,7 @@ UserApiService /credential/certificate
 */
 func (a *UserApiService) UserPostCredentialcertificate(ctx context.Context, userId string, userPostCredentialcertificate UserPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1574,7 +1574,7 @@ UserApiService /credential/password
 */
 func (a *UserApiService) UserPostCredentialpassword(ctx context.Context, userId string, userPostCredentialpassword UserPostCredentialpassword) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1686,7 +1686,7 @@ Returns a single user
 */
 func (a *UserApiService) UserShow(ctx context.Context, userId string) (User, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

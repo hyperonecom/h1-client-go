@@ -34,6 +34,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AgentApi* | [**AgentActionStart**](docs/AgentApi.md#agentactionstart) | **Post** /agent/{agentId}/actions/start | /actions/start
 *AgentApi* | [**AgentActionSuspend**](docs/AgentApi.md#agentactionsuspend) | **Post** /agent/{agentId}/actions/suspend | /actions/suspend
+*AgentApi* | [**AgentActionTransfer**](docs/AgentApi.md#agentactiontransfer) | **Post** /agent/{agentId}/actions/transfer | /actions/transfer
+*AgentApi* | [**AgentActionUpdateEnabledServices**](docs/AgentApi.md#agentactionupdateenabledservices) | **Post** /agent/{agentId}/actions/update_enabledServices | /actions/update_enabledServices
 *AgentApi* | [**AgentCreate**](docs/AgentApi.md#agentcreate) | **Post** /agent | Create
 *AgentApi* | [**AgentDelete**](docs/AgentApi.md#agentdelete) | **Delete** /agent/{agentId} | Delete
 *AgentApi* | [**AgentDeleteAccessrightsIdentity**](docs/AgentApi.md#agentdeleteaccessrightsidentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
@@ -80,6 +82,7 @@ Class | Method | HTTP request | Description
 *ContainerApi* | [**ContainerUpdate**](docs/ContainerApi.md#containerupdate) | **Patch** /container/{containerId} | Update
 *DatabaseApi* | [**DatabaseActionStart**](docs/DatabaseApi.md#databaseactionstart) | **Post** /database/{databaseId}/actions/start | /actions/start
 *DatabaseApi* | [**DatabaseActionStop**](docs/DatabaseApi.md#databaseactionstop) | **Post** /database/{databaseId}/actions/stop | /actions/stop
+*DatabaseApi* | [**DatabaseActionTransfer**](docs/DatabaseApi.md#databaseactiontransfer) | **Post** /database/{databaseId}/actions/transfer | /actions/transfer
 *DatabaseApi* | [**DatabaseCreate**](docs/DatabaseApi.md#databasecreate) | **Post** /database | Create
 *DatabaseApi* | [**DatabaseDelete**](docs/DatabaseApi.md#databasedelete) | **Delete** /database/{databaseId} | Delete
 *DatabaseApi* | [**DatabaseDeleteAccessrightsIdentity**](docs/DatabaseApi.md#databasedeleteaccessrightsidentity) | **Delete** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
@@ -423,6 +426,8 @@ Class | Method | HTTP request | Description
 *VolumeApi* | [**VolumeUpdate**](docs/VolumeApi.md#volumeupdate) | **Patch** /volume/{volumeId} | Update
 *WebsiteApi* | [**WebsiteActionStart**](docs/WebsiteApi.md#websiteactionstart) | **Post** /website/{websiteId}/actions/start | /actions/start
 *WebsiteApi* | [**WebsiteActionStop**](docs/WebsiteApi.md#websiteactionstop) | **Post** /website/{websiteId}/actions/stop | /actions/stop
+*WebsiteApi* | [**WebsiteActionTransfer**](docs/WebsiteApi.md#websiteactiontransfer) | **Post** /website/{websiteId}/actions/transfer | /actions/transfer
+*WebsiteApi* | [**WebsiteActionUpdateDomain**](docs/WebsiteApi.md#websiteactionupdatedomain) | **Post** /website/{websiteId}/actions/update_domain | /actions/update_domain
 *WebsiteApi* | [**WebsiteCreate**](docs/WebsiteApi.md#websitecreate) | **Post** /website | Create
 *WebsiteApi* | [**WebsiteDelete**](docs/WebsiteApi.md#websitedelete) | **Delete** /website/{websiteId} | Delete
 *WebsiteApi* | [**WebsiteDeleteAccessrightsIdentity**](docs/WebsiteApi.md#websitedeleteaccessrightsidentity) | **Delete** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
@@ -453,6 +458,8 @@ Class | Method | HTTP request | Description
 
  - [AccessrightsUserRole](docs/AccessrightsUserRole.md)
  - [Agent](docs/Agent.md)
+ - [AgentActionTransfer](docs/AgentActionTransfer.md)
+ - [AgentActionUpdateEnabledServices](docs/AgentActionUpdateEnabledServices.md)
  - [AgentCreate](docs/AgentCreate.md)
  - [AgentCreateCredential](docs/AgentCreateCredential.md)
  - [AgentPatchCredentialcertificateId](docs/AgentPatchCredentialcertificateId.md)
@@ -476,6 +483,7 @@ Class | Method | HTTP request | Description
  - [CredentialCertificate](docs/CredentialCertificate.md)
  - [CredentialPassword](docs/CredentialPassword.md)
  - [Database](docs/Database.md)
+ - [DatabaseActionTransfer](docs/DatabaseActionTransfer.md)
  - [DatabaseCreate](docs/DatabaseCreate.md)
  - [DatabaseCreateCredential](docs/DatabaseCreateCredential.md)
  - [DatabaseCreateCredentialPassword](docs/DatabaseCreateCredentialPassword.md)
@@ -677,6 +685,8 @@ Class | Method | HTTP request | Description
  - [VolumeServices](docs/VolumeServices.md)
  - [VolumeUpdate](docs/VolumeUpdate.md)
  - [Website](docs/Website.md)
+ - [WebsiteActionTransfer](docs/WebsiteActionTransfer.md)
+ - [WebsiteActionUpdateDomain](docs/WebsiteActionUpdateDomain.md)
  - [WebsiteCreate](docs/WebsiteCreate.md)
  - [WebsitePatchCredentialcertificateId](docs/WebsitePatchCredentialcertificateId.md)
  - [WebsitePatchCredentialpasswordId](docs/WebsitePatchCredentialpasswordId.md)

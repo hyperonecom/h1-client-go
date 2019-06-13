@@ -8,30 +8,31 @@
  */
 
 package openapi
+
 import (
 	"time"
 )
 
 type Ip struct {
-	Id string `json:"_id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Services []ProjectServices `json:"services,omitempty"`
-	Flavour string `json:"flavour,omitempty"`
-	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy string `json:"modifiedBy,omitempty"`
-	CreatedBy string `json:"createdBy,omitempty"`
-	CreatedOn time.Time `json:"createdOn,omitempty"`
-	AccessRights []string `json:"accessRights,omitempty"`
-	Processing bool `json:"processing,omitempty"`
-	Created bool `json:"created,omitempty"`
-	Queue []Event `json:"queue,omitempty"`
-	State string `json:"state,omitempty"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
-	Project string `json:"project,omitempty"`
-	Address string `json:"address,omitempty"`
-	Fqdn string `json:"fqdn,omitempty"`
-	Network string `json:"network,omitempty"`
-	PtrRecord string `json:"ptrRecord,omitempty"`
-	Persistent bool `json:"persistent,omitempty"`
-	Associated IpAssociated `json:"associated,omitempty"`
+	Id           string                 `json:"_id,omitempty"`
+	Name         string                 `json:"name,omitempty"`
+	Services     []ProjectServices      `json:"services,omitempty"`
+	Flavour      string                 `json:"flavour,omitempty"`
+	ModifiedOn   time.Time              `json:"modifiedOn,omitempty"`
+	ModifiedBy   string                 `json:"modifiedBy,omitempty"`
+	CreatedBy    string                 `json:"createdBy,omitempty"`
+	CreatedOn    time.Time              `json:"createdOn,omitempty"`
+	AccessRights []string               `json:"accessRights,omitempty"`
+	Processing   bool                   `json:"processing,omitempty"`
+	Created      bool                   `json:"created,omitempty"`
+	Queue        []Event                `json:"queue,omitempty"`
+	State        string                 `json:"state,omitempty"`
+	Tag          map[string]interface{} `json:"tag,omitempty"`
+	Project      string                 `json:"project,omitempty"`
+	Address      string                 `json:"address,omitempty"`
+	Fqdn         string                 `json:"fqdn,omitempty"`
+	Network      string                 `json:"network,omitempty"`
+	PtrRecord    string                 `json:"ptrRecord,omitempty"`
+	Persistent   bool                   `json:"persistent,omitempty"`
+	Associated   IpAssociated           `json:"associated,omitempty"`
 }

@@ -8,31 +8,32 @@
  */
 
 package openapi
+
 import (
 	"time"
 )
 
 type Container struct {
-	Id string `json:"_id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Services []ProjectServices `json:"services,omitempty"`
-	Flavour string `json:"flavour,omitempty"`
-	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy string `json:"modifiedBy,omitempty"`
-	CreatedBy string `json:"createdBy,omitempty"`
-	CreatedOn time.Time `json:"createdOn,omitempty"`
-	AccessRights []string `json:"accessRights,omitempty"`
-	Processing bool `json:"processing,omitempty"`
-	Created bool `json:"created,omitempty"`
-	Queue []Event `json:"queue,omitempty"`
-	State string `json:"state,omitempty"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
-	Project string `json:"project,omitempty"`
-	Image string `json:"image,omitempty"`
-	Command string `json:"command,omitempty"`
-	Volumes []ContainerVolumes `json:"volumes,omitempty"`
-	Expose []ContainerExpose `json:"expose,omitempty"`
-	Env []string `json:"env,omitempty"`
-	Fqdn string `json:"fqdn,omitempty"`
-	Process ContainerProcess `json:"process,omitempty"`
+	Id           string                 `json:"_id,omitempty"`
+	Name         string                 `json:"name,omitempty"`
+	Services     []ProjectServices      `json:"services,omitempty"`
+	Flavour      string                 `json:"flavour,omitempty"`
+	ModifiedOn   time.Time              `json:"modifiedOn,omitempty"`
+	ModifiedBy   string                 `json:"modifiedBy,omitempty"`
+	CreatedBy    string                 `json:"createdBy,omitempty"`
+	CreatedOn    time.Time              `json:"createdOn,omitempty"`
+	AccessRights []string               `json:"accessRights,omitempty"`
+	Processing   bool                   `json:"processing,omitempty"`
+	Created      bool                   `json:"created,omitempty"`
+	Queue        []Event                `json:"queue,omitempty"`
+	State        string                 `json:"state,omitempty"`
+	Tag          map[string]interface{} `json:"tag,omitempty"`
+	Project      string                 `json:"project,omitempty"`
+	Image        string                 `json:"image,omitempty"`
+	Command      string                 `json:"command,omitempty"`
+	Volumes      []ContainerVolumes     `json:"volumes,omitempty"`
+	Expose       []ContainerExpose      `json:"expose,omitempty"`
+	Env          []string               `json:"env,omitempty"`
+	Fqdn         string                 `json:"fqdn,omitempty"`
+	Process      ContainerProcess       `json:"process,omitempty"`
 }

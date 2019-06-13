@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action clone
 */
 func (a *DiskApiService) DiskActionClone(ctx context.Context, diskId string, diskActionClone DiskActionClone) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -149,7 +149,7 @@ Action resize
 */
 func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, diskActionResize DiskActionResize) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -262,7 +262,7 @@ Action transfer
 */
 func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, diskActionTransfer DiskActionTransfer) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -374,7 +374,7 @@ Create disk
 */
 func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -483,7 +483,7 @@ DiskApiService Delete
 */
 func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -573,7 +573,7 @@ DiskApiService /accessrights/:identity
 */
 func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, diskId string, identity string) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -694,7 +694,7 @@ DiskApiService /tag/:key
 */
 func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -805,7 +805,7 @@ DiskApiService /services/:serviceId
 */
 func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId string, serviceId string) (DiskServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -915,7 +915,7 @@ DiskApiService /tag
 */
 func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1033,7 +1033,7 @@ type DiskListOpts struct {
 
 func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskListOpts) ([]Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1147,7 +1147,7 @@ DiskApiService /accessrights
 */
 func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1256,7 +1256,7 @@ DiskApiService /queue
 */
 func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1365,7 +1365,7 @@ DiskApiService /services
 */
 func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([]DiskServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1475,7 +1475,7 @@ DiskApiService /tag
 */
 func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1587,7 +1587,7 @@ DiskApiService /accessrights
 */
 func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string, diskPostAccessrights DiskPostAccessrights) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1709,7 +1709,7 @@ Returns a single disk
 */
 func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1820,7 +1820,7 @@ Returns modified disk
 */
 func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpdate DiskUpdate) (Disk, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

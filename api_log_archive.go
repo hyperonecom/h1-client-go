@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action transfer
 */
 func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx context.Context, logArchiveId string, logArchiveActionTransfer LogArchiveActionTransfer) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Create logArchive
 */
 func (a *LogArchiveApiService) LogArchiveCreate(ctx context.Context, logArchiveCreate LogArchiveCreate) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -257,7 +257,7 @@ LogArchiveApiService Delete
 */
 func (a *LogArchiveApiService) LogArchiveDelete(ctx context.Context, logArchiveId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -347,7 +347,7 @@ LogArchiveApiService /accessrights/:identity
 */
 func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx context.Context, logArchiveId string, identity string) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -468,7 +468,7 @@ LogArchiveApiService /credential/password/:id
 */
 func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx context.Context, logArchiveId string, id string) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -589,7 +589,7 @@ LogArchiveApiService /tag/:key
 */
 func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx context.Context, logArchiveId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -700,7 +700,7 @@ LogArchiveApiService /credential/password/:id
 */
 func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx context.Context, logArchiveId string, id string) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -811,7 +811,7 @@ LogArchiveApiService /services/:serviceId
 */
 func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx context.Context, logArchiveId string, serviceId string) (LogArchiveServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -921,7 +921,7 @@ LogArchiveApiService /tag
 */
 func (a *LogArchiveApiService) LogArchiveGetTag(ctx context.Context, logArchiveId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1039,7 +1039,7 @@ type LogArchiveListOpts struct {
 
 func (a *LogArchiveApiService) LogArchiveList(ctx context.Context, localVarOptionals *LogArchiveListOpts) ([]LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1153,7 +1153,7 @@ LogArchiveApiService /accessrights
 */
 func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx context.Context, logArchiveId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1262,7 +1262,7 @@ LogArchiveApiService /credential/password
 */
 func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx context.Context, logArchiveId string) ([]CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1371,7 +1371,7 @@ LogArchiveApiService /queue
 */
 func (a *LogArchiveApiService) LogArchiveListQueue(ctx context.Context, logArchiveId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1480,7 +1480,7 @@ LogArchiveApiService /services
 */
 func (a *LogArchiveApiService) LogArchiveListServices(ctx context.Context, logArchiveId string) ([]LogArchiveServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1591,7 +1591,7 @@ LogArchiveApiService /credential/password/:id
 */
 func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx context.Context, logArchiveId string, id string, logArchivePatchCredentialpasswordId LogArchivePatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1704,7 +1704,7 @@ LogArchiveApiService /tag
 */
 func (a *LogArchiveApiService) LogArchivePatchTag(ctx context.Context, logArchiveId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1816,7 +1816,7 @@ LogArchiveApiService /accessrights
 */
 func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, logArchiveId string, logArchivePostAccessrights LogArchivePostAccessrights) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1938,7 +1938,7 @@ LogArchiveApiService /credential/password
 */
 func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx context.Context, logArchiveId string, logArchivePostCredentialpassword LogArchivePostCredentialpassword) (CredentialPassword, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2050,7 +2050,7 @@ Returns a single logArchive
 */
 func (a *LogArchiveApiService) LogArchiveShow(ctx context.Context, logArchiveId string) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2161,7 +2161,7 @@ Returns modified logArchive
 */
 func (a *LogArchiveApiService) LogArchiveUpdate(ctx context.Context, logArchiveId string, logArchiveUpdate LogArchiveUpdate) (LogArchive, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

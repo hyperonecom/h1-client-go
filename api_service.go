@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -45,7 +45,7 @@ type ServiceListOpts struct {
 
 func (a *ServiceApiService) ServiceList(ctx context.Context, localVarOptionals *ServiceListOpts) ([]Service, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -163,7 +163,7 @@ Returns a single service
 */
 func (a *ServiceApiService) ServiceShow(ctx context.Context, serviceId string) (Service, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

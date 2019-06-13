@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Action restart
 */
 func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -145,7 +145,7 @@ Action start
 */
 func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -255,7 +255,7 @@ Action stop
 */
 func (a *ContainerApiService) ContainerActionStop(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -365,7 +365,7 @@ Create container
 */
 func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCreate ContainerCreate) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -474,7 +474,7 @@ ContainerApiService Delete
 */
 func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -564,7 +564,7 @@ ContainerApiService /accessrights/:identity
 */
 func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Context, containerId string, identity string) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -685,7 +685,7 @@ ContainerApiService /tag/:key
 */
 func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, containerId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -796,7 +796,7 @@ ContainerApiService /services/:serviceId
 */
 func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context, containerId string, serviceId string) (ContainerServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -906,7 +906,7 @@ ContainerApiService /tag
 */
 func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1024,7 +1024,7 @@ type ContainerListOpts struct {
 
 func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptionals *ContainerListOpts) ([]Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1138,7 +1138,7 @@ ContainerApiService /accessrights
 */
 func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, containerId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1247,7 +1247,7 @@ ContainerApiService /process
 */
 func (a *ContainerApiService) ContainerListProcess(ctx context.Context, containerId string) ([]ContainerProcess, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1356,7 +1356,7 @@ ContainerApiService /queue
 */
 func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1465,7 +1465,7 @@ ContainerApiService /services
 */
 func (a *ContainerApiService) ContainerListServices(ctx context.Context, containerId string) ([]ContainerServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1575,7 +1575,7 @@ ContainerApiService /tag
 */
 func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1687,7 +1687,7 @@ ContainerApiService /accessrights
 */
 func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1809,7 +1809,7 @@ Returns a single container
 */
 func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId string) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1920,7 +1920,7 @@ Returns modified container
 */
 func (a *ContainerApiService) ContainerUpdate(ctx context.Context, containerId string, containerUpdate ContainerUpdate) (Container, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

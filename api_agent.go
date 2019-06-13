@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -35,7 +35,7 @@ Action start
 */
 func (a *AgentApiService) AgentActionStart(ctx context.Context, agentId string) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -145,7 +145,7 @@ Action suspend
 */
 func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -247,6 +247,232 @@ func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string
 }
 
 /*
+AgentApiService /actions/transfer
+Action transfer
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param agentId ID of agent
+ * @param agentActionTransfer
+@return Agent
+*/
+func (a *AgentApiService) AgentActionTransfer(ctx context.Context, agentId string, agentActionTransfer AgentActionTransfer) (Agent, *http.Response, error) {
+	var (
+		localVarHttpMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  Agent
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/agent/{agentId}/actions/transfer"
+	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &agentActionTransfer
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Agent
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+AgentApiService /actions/update_enabledServices
+Action update_enabledServices
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param agentId ID of agent
+ * @param agentActionUpdateEnabledServices
+@return Agent
+*/
+func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx context.Context, agentId string, agentActionUpdateEnabledServices AgentActionUpdateEnabledServices) (Agent, *http.Response, error) {
+	var (
+		localVarHttpMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  Agent
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/agent/{agentId}/actions/update_enabledServices"
+	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &agentActionUpdateEnabledServices
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["x-project"] = key
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 202 {
+			var v Agent
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 AgentApiService Create
 Create agent
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -255,7 +481,7 @@ Create agent
 */
 func (a *AgentApiService) AgentCreate(ctx context.Context, agentCreate AgentCreate) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -364,7 +590,7 @@ AgentApiService Delete
 */
 func (a *AgentApiService) AgentDelete(ctx context.Context, agentId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -454,7 +680,7 @@ AgentApiService /accessrights/:identity
 */
 func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx context.Context, agentId string, identity string) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -575,7 +801,7 @@ AgentApiService /credential/certificate/:id
 */
 func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx context.Context, agentId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -686,7 +912,7 @@ AgentApiService /tag/:key
 */
 func (a *AgentApiService) AgentDeleteTagKey(ctx context.Context, agentId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -797,7 +1023,7 @@ AgentApiService /credential/certificate/:id
 */
 func (a *AgentApiService) AgentGetCredentialcertificateId(ctx context.Context, agentId string, id string) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -907,7 +1133,7 @@ AgentApiService /inspect
 */
 func (a *AgentApiService) AgentGetInspect(ctx context.Context, agentId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1017,7 +1243,7 @@ AgentApiService /resource/:resourceId/inspect
 */
 func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx context.Context, agentId string, resourceId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1128,7 +1354,7 @@ AgentApiService /services/:serviceId
 */
 func (a *AgentApiService) AgentGetServicesServiceId(ctx context.Context, agentId string, serviceId string) (AgentServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1238,7 +1464,7 @@ AgentApiService /tag
 */
 func (a *AgentApiService) AgentGetTag(ctx context.Context, agentId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1356,7 +1582,7 @@ type AgentListOpts struct {
 
 func (a *AgentApiService) AgentList(ctx context.Context, localVarOptionals *AgentListOpts) ([]Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1470,7 +1696,7 @@ AgentApiService /accessrights
 */
 func (a *AgentApiService) AgentListAccessrights(ctx context.Context, agentId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1579,7 +1805,7 @@ AgentApiService /credential/certificate
 */
 func (a *AgentApiService) AgentListCredentialcertificate(ctx context.Context, agentId string) ([]CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1688,7 +1914,7 @@ AgentApiService /enabledServices
 */
 func (a *AgentApiService) AgentListEnabledServices(ctx context.Context, agentId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1797,7 +2023,7 @@ AgentApiService /queue
 */
 func (a *AgentApiService) AgentListQueue(ctx context.Context, agentId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1906,7 +2132,7 @@ AgentApiService /resource
 */
 func (a *AgentApiService) AgentListResource(ctx context.Context, agentId string) ([]AgentResource, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2016,7 +2242,7 @@ AgentApiService /resource/:resourceId/queue
 */
 func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx context.Context, agentId string, resourceId string) ([]AgentResourceEvent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2126,7 +2352,7 @@ AgentApiService /services
 */
 func (a *AgentApiService) AgentListServices(ctx context.Context, agentId string) ([]AgentServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2237,7 +2463,7 @@ AgentApiService /credential/certificate/:id
 */
 func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx context.Context, agentId string, id string, agentPatchCredentialcertificateId AgentPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2350,7 +2576,7 @@ AgentApiService /tag
 */
 func (a *AgentApiService) AgentPatchTag(ctx context.Context, agentId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2462,7 +2688,7 @@ AgentApiService /accessrights
 */
 func (a *AgentApiService) AgentPostAccessrights(ctx context.Context, agentId string, agentPostAccessrights AgentPostAccessrights) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2584,7 +2810,7 @@ AgentApiService /credential/certificate
 */
 func (a *AgentApiService) AgentPostCredentialcertificate(ctx context.Context, agentId string, agentPostCredentialcertificate AgentPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2696,7 +2922,7 @@ AgentApiService /resource/:resourceId/actions/recreate
 */
 func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx context.Context, agentId string, resourceId string) (AgentResource, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2807,7 +3033,7 @@ AgentApiService /enabledServices
 */
 func (a *AgentApiService) AgentPutEnabledServices(ctx context.Context, agentId string, requestBody []string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Put")
+		localVarHttpMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2919,7 +3145,7 @@ Returns a single agent
 */
 func (a *AgentApiService) AgentShow(ctx context.Context, agentId string) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3030,7 +3256,7 @@ Returns modified agent
 */
 func (a *AgentApiService) AgentUpdate(ctx context.Context, agentId string, agentUpdate AgentUpdate) (Agent, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

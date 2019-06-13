@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action flavour
 */
 func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActionFlavour VmActionFlavour) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -149,7 +149,7 @@ Action image
 */
 func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionImage VmActionImage) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -262,7 +262,7 @@ Action password_reset
 */
 func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, vmActionPasswordReset VmActionPasswordReset) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -375,7 +375,7 @@ Action rename
 */
 func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmActionRename VmActionRename) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -487,7 +487,7 @@ Action restart
 */
 func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -597,7 +597,7 @@ Action start
 */
 func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -707,7 +707,7 @@ Action stop
 */
 func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -817,7 +817,7 @@ Action turnoff
 */
 func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -927,7 +927,7 @@ Create vm
 */
 func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1037,7 +1037,7 @@ VmApiService Delete
 */
 func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDelete) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1129,7 +1129,7 @@ VmApiService /accessrights/:identity
 */
 func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId string, identity string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1250,7 +1250,7 @@ VmApiService /hdd/:diskId
 */
 func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1371,7 +1371,7 @@ VmApiService /netadp/:netadpId
 */
 func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, netadpId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1492,7 +1492,7 @@ VmApiService /tag/:key
 */
 func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1603,7 +1603,7 @@ VmApiService /services/:serviceId
 */
 func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, serviceId string) (VmServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1713,7 +1713,7 @@ VmApiService /tag
 */
 func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1831,7 +1831,7 @@ type VmListOpts struct {
 
 func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts) ([]Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1945,7 +1945,7 @@ VmApiService /accessrights
 */
 func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2054,7 +2054,7 @@ VmApiService /hdd
 */
 func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2163,7 +2163,7 @@ VmApiService /netadp
 */
 func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2272,7 +2272,7 @@ VmApiService /queue
 */
 func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2381,7 +2381,7 @@ VmApiService /services
 */
 func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2491,7 +2491,7 @@ VmApiService /tag
 */
 func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2603,7 +2603,7 @@ VmApiService /accessrights
 */
 func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2725,7 +2725,7 @@ VmApiService /hdd
 */
 func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmPostHdd) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2847,7 +2847,7 @@ VmApiService /netadp
 */
 func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNetadp VmPostNetadp) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2969,7 +2969,7 @@ Returns a single vm
 */
 func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3080,7 +3080,7 @@ Returns modified vm
 */
 func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpdate) (Vm, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string

@@ -14,8 +14,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 	"fmt"
+	"strings"
 	"github.com/antihax/optional"
 )
 
@@ -36,7 +36,7 @@ Action image
 */
 func (a *ReplicaApiService) ReplicaActionImage(ctx context.Context, replicaId string, replicaActionImage ReplicaActionImage) (Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -148,7 +148,7 @@ Create replica
 */
 func (a *ReplicaApiService) ReplicaCreate(ctx context.Context, replicaCreate ReplicaCreate) (Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -257,7 +257,7 @@ ReplicaApiService Delete
 */
 func (a *ReplicaApiService) ReplicaDelete(ctx context.Context, replicaId string) (*http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -347,7 +347,7 @@ ReplicaApiService /accessrights/:identity
 */
 func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx context.Context, replicaId string, identity string) (Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -468,7 +468,7 @@ ReplicaApiService /tag/:key
 */
 func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId string, key string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Delete")
+		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -579,7 +579,7 @@ ReplicaApiService /services/:serviceId
 */
 func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, replicaId string, serviceId string) (ReplicaServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -689,7 +689,7 @@ ReplicaApiService /tag
 */
 func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -805,7 +805,7 @@ type ReplicaListOpts struct {
 
 func (a *ReplicaApiService) ReplicaList(ctx context.Context, localVarOptionals *ReplicaListOpts) ([]Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -916,7 +916,7 @@ ReplicaApiService /accessrights
 */
 func (a *ReplicaApiService) ReplicaListAccessrights(ctx context.Context, replicaId string) ([]string, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1025,7 +1025,7 @@ ReplicaApiService /queue
 */
 func (a *ReplicaApiService) ReplicaListQueue(ctx context.Context, replicaId string) ([]Event, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1134,7 +1134,7 @@ ReplicaApiService /services
 */
 func (a *ReplicaApiService) ReplicaListServices(ctx context.Context, replicaId string) ([]ReplicaServices, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1244,7 +1244,7 @@ ReplicaApiService /tag
 */
 func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Patch")
+		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1356,7 +1356,7 @@ ReplicaApiService /accessrights
 */
 func (a *ReplicaApiService) ReplicaPostAccessrights(ctx context.Context, replicaId string, replicaPostAccessrights ReplicaPostAccessrights) (Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Post")
+		localVarHttpMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1478,7 +1478,7 @@ Returns a single replica
 */
 func (a *ReplicaApiService) ReplicaShow(ctx context.Context, replicaId string) (Replica, *http.Response, error) {
 	var (
-		localVarHttpMethod   = strings.ToUpper("Get")
+		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
