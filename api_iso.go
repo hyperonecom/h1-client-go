@@ -464,16 +464,16 @@ IsoApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -536,7 +536,7 @@ func (a *IsoApiService) IsoDeleteTagKey(ctx context.Context, isoId string, key s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -685,16 +685,16 @@ func (a *IsoApiService) IsoGetServicesServiceId(ctx context.Context, isoId strin
 IsoApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -756,7 +756,7 @@ func (a *IsoApiService) IsoGetTag(ctx context.Context, isoId string) (map[string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1245,16 +1245,16 @@ IsoApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param isoId ID of iso
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1318,7 +1318,7 @@ func (a *IsoApiService) IsoPatchTag(ctx context.Context, isoId string, requestBo
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

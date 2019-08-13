@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
+**Tag** | **map[string]string** |  | [optional] 
 **Project** | **string** |  | [optional] 
 **Size** | **float32** |  | [optional] 
 

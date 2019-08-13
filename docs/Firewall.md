@@ -18,9 +18,10 @@ Name | Type | Description | Notes
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
+**Tag** | **map[string]string** |  | [optional] 
 **Project** | **string** |  | [optional] 
-**Network** | **string** |  | [optional] 
+**Ingress** | [**[]InlineResponse200**](inline_response_200.md) |  | [optional] 
+**Egress** | [**[]InlineResponse200**](inline_response_200.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

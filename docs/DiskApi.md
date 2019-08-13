@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## DiskDeleteTagKey
 
-> map[string]interface{} DiskDeleteTagKey(ctx, diskId, key)
+> map[string]string DiskDeleteTagKey(ctx, diskId, key)
 /tag/:key
 
 ### Required Parameters
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ## DiskGetTag
 
-> map[string]interface{} DiskGetTag(ctx, diskId)
+> map[string]string DiskGetTag(ctx, diskId)
 /tag
 
 ### Required Parameters
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ## DiskPatchTag
 
-> map[string]interface{} DiskPatchTag(ctx, diskId, requestBody)
+> map[string]string DiskPatchTag(ctx, diskId, requestBody)
 /tag
 
 ### Required Parameters
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

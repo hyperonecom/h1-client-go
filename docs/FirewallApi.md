@@ -27,6 +27,8 @@ Method | HTTP request | Description
 [**FirewallPostAccessrights**](FirewallApi.md#FirewallPostAccessrights) | **Post** /firewall/{firewallId}/accessrights | /accessrights
 [**FirewallPostEgress**](FirewallApi.md#FirewallPostEgress) | **Post** /firewall/{firewallId}/egress | /egress
 [**FirewallPostIngress**](FirewallApi.md#FirewallPostIngress) | **Post** /firewall/{firewallId}/ingress | /ingress
+[**FirewallPutEgress**](FirewallApi.md#FirewallPutEgress) | **Put** /firewall/{firewallId}/egress | /egress
+[**FirewallPutIngress**](FirewallApi.md#FirewallPutIngress) | **Put** /firewall/{firewallId}/ingress | /ingress
 [**FirewallShow**](FirewallApi.md#FirewallShow) | **Get** /firewall/{firewallId} | Get
 [**FirewallUpdate**](FirewallApi.md#FirewallUpdate) | **Patch** /firewall/{firewallId} | Update
 
@@ -295,7 +297,7 @@ Name | Type | Description  | Notes
 
 ## FirewallDeleteTagKey
 
-> map[string]interface{} FirewallDeleteTagKey(ctx, firewallId, key)
+> map[string]string FirewallDeleteTagKey(ctx, firewallId, key)
 /tag/:key
 
 ### Required Parameters
@@ -309,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -423,7 +425,7 @@ Name | Type | Description  | Notes
 
 ## FirewallGetTag
 
-> map[string]interface{} FirewallGetTag(ctx, firewallId)
+> map[string]string FirewallGetTag(ctx, firewallId)
 /tag
 
 ### Required Parameters
@@ -436,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -652,7 +654,7 @@ Name | Type | Description  | Notes
 
 ## FirewallPatchTag
 
-> map[string]interface{} FirewallPatchTag(ctx, firewallId, requestBody)
+> map[string]string FirewallPatchTag(ctx, firewallId, requestBody)
 /tag
 
 ### Required Parameters
@@ -666,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -763,6 +765,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse200**](inline_response_200.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## FirewallPutEgress
+
+> []InlineResponse200 FirewallPutEgress(ctx, firewallId, mapStringinterface)
+/egress
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**mapStringinterface** | [**[]map[string]interface{}**](map[string]interface{}.md)|  | 
+
+### Return type
+
+[**[]InlineResponse200**](inline_response_200.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## FirewallPutIngress
+
+> []InlineResponse200 FirewallPutIngress(ctx, firewallId, mapStringinterface)
+/ingress
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**firewallId** | **string**| ID of firewall | 
+**mapStringinterface** | [**[]map[string]interface{}**](map[string]interface{}.md)|  | 
+
+### Return type
+
+[**[]InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 

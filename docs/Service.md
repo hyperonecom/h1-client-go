@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
 **Resource** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Billing** | [**ServiceBilling**](service_billing.md) |  | [optional] 

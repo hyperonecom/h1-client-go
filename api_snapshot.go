@@ -351,16 +351,16 @@ SnapshotApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -423,7 +423,7 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -572,16 +572,16 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 SnapshotApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId string) (map[string]interface{}, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -643,7 +643,7 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1137,16 +1137,16 @@ SnapshotApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1210,7 +1210,7 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

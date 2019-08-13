@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**AgentCreate**](AgentApi.md#AgentCreate) | **Post** /agent | Create
 [**AgentDelete**](AgentApi.md#AgentDelete) | **Delete** /agent/{agentId} | Delete
 [**AgentDeleteAccessrightsIdentity**](AgentApi.md#AgentDeleteAccessrightsIdentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
+[**AgentDeleteCredentialId**](AgentApi.md#AgentDeleteCredentialId) | **Delete** /agent/{agentId}/credential/{id} | /credential/:id
 [**AgentDeleteCredentialcertificateId**](AgentApi.md#AgentDeleteCredentialcertificateId) | **Delete** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 [**AgentDeleteTagKey**](AgentApi.md#AgentDeleteTagKey) | **Delete** /agent/{agentId}/tag/{key} | /tag/:key
+[**AgentGetCredentialId**](AgentApi.md#AgentGetCredentialId) | **Get** /agent/{agentId}/credential/{id} | /credential/:id
 [**AgentGetCredentialcertificateId**](AgentApi.md#AgentGetCredentialcertificateId) | **Get** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 [**AgentGetInspect**](AgentApi.md#AgentGetInspect) | **Get** /agent/{agentId}/inspect | /inspect
 [**AgentGetResourceResourceIdinspect**](AgentApi.md#AgentGetResourceResourceIdinspect) | **Get** /agent/{agentId}/resource/{resourceId}/inspect | /resource/:resourceId/inspect
@@ -20,15 +22,18 @@ Method | HTTP request | Description
 [**AgentGetTag**](AgentApi.md#AgentGetTag) | **Get** /agent/{agentId}/tag | /tag
 [**AgentList**](AgentApi.md#AgentList) | **Get** /agent | List
 [**AgentListAccessrights**](AgentApi.md#AgentListAccessrights) | **Get** /agent/{agentId}/accessrights | /accessrights
+[**AgentListCredential**](AgentApi.md#AgentListCredential) | **Get** /agent/{agentId}/credential | /credential
 [**AgentListCredentialcertificate**](AgentApi.md#AgentListCredentialcertificate) | **Get** /agent/{agentId}/credential/certificate | /credential/certificate
 [**AgentListEnabledServices**](AgentApi.md#AgentListEnabledServices) | **Get** /agent/{agentId}/enabledServices | /enabledServices
 [**AgentListQueue**](AgentApi.md#AgentListQueue) | **Get** /agent/{agentId}/queue | /queue
 [**AgentListResource**](AgentApi.md#AgentListResource) | **Get** /agent/{agentId}/resource | /resource
 [**AgentListResourceResourceIdqueue**](AgentApi.md#AgentListResourceResourceIdqueue) | **Get** /agent/{agentId}/resource/{resourceId}/queue | /resource/:resourceId/queue
 [**AgentListServices**](AgentApi.md#AgentListServices) | **Get** /agent/{agentId}/services | /services
+[**AgentPatchCredentialId**](AgentApi.md#AgentPatchCredentialId) | **Patch** /agent/{agentId}/credential/{id} | /credential/:id
 [**AgentPatchCredentialcertificateId**](AgentApi.md#AgentPatchCredentialcertificateId) | **Patch** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 [**AgentPatchTag**](AgentApi.md#AgentPatchTag) | **Patch** /agent/{agentId}/tag | /tag
 [**AgentPostAccessrights**](AgentApi.md#AgentPostAccessrights) | **Post** /agent/{agentId}/accessrights | /accessrights
+[**AgentPostCredential**](AgentApi.md#AgentPostCredential) | **Post** /agent/{agentId}/credential | /credential
 [**AgentPostCredentialcertificate**](AgentApi.md#AgentPostCredentialcertificate) | **Post** /agent/{agentId}/credential/certificate | /credential/certificate
 [**AgentPostResourceResourceIdactionsrecreate**](AgentApi.md#AgentPostResourceResourceIdactionsrecreate) | **Post** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
 [**AgentPutEnabledServices**](AgentApi.md#AgentPutEnabledServices) | **Put** /agent/{agentId}/enabledServices | /enabledServices
@@ -267,6 +272,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AgentDeleteCredentialId
+
+> Agent AgentDeleteCredentialId(ctx, agentId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AgentDeleteCredentialcertificateId
 
 > CredentialCertificate AgentDeleteCredentialcertificateId(ctx, agentId, id)
@@ -301,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## AgentDeleteTagKey
 
-> map[string]interface{} AgentDeleteTagKey(ctx, agentId, key)
+> map[string]string AgentDeleteTagKey(ctx, agentId, key)
 /tag/:key
 
 ### Required Parameters
@@ -315,7 +352,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentGetCredentialId
+
+> CredentialPassword AgentGetCredentialId(ctx, agentId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -460,7 +529,7 @@ Name | Type | Description  | Notes
 
 ## AgentGetTag
 
-> map[string]interface{} AgentGetTag(ctx, agentId)
+> map[string]string AgentGetTag(ctx, agentId)
 /tag
 
 ### Required Parameters
@@ -473,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -548,6 +617,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentListCredential
+
+> []CredentialPassword AgentListCredential(ctx, agentId)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -750,6 +850,39 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AgentPatchCredentialId
+
+> CredentialPassword AgentPatchCredentialId(ctx, agentId, id, agentPatchCredentialId)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**id** | **string**| id | 
+**agentPatchCredentialId** | [**AgentPatchCredentialId**](AgentPatchCredentialId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AgentPatchCredentialcertificateId
 
 > CredentialCertificate AgentPatchCredentialcertificateId(ctx, agentId, id, agentPatchCredentialcertificateId)
@@ -785,7 +918,7 @@ Name | Type | Description  | Notes
 
 ## AgentPatchTag
 
-> map[string]interface{} AgentPatchTag(ctx, agentId, requestBody)
+> map[string]string AgentPatchTag(ctx, agentId, requestBody)
 /tag
 
 ### Required Parameters
@@ -799,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -832,6 +965,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Agent**](agent.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentPostCredential
+
+> CredentialPassword AgentPostCredential(ctx, agentId, agentPostCredential)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**agentPostCredential** | [**AgentPostCredential**](AgentPostCredential.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 

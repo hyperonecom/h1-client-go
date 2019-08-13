@@ -8,19 +8,24 @@ Method | HTTP request | Description
 [**LogArchiveCreate**](LogArchiveApi.md#LogArchiveCreate) | **Post** /logArchive | Create
 [**LogArchiveDelete**](LogArchiveApi.md#LogArchiveDelete) | **Delete** /logArchive/{logArchiveId} | Delete
 [**LogArchiveDeleteAccessrightsIdentity**](LogArchiveApi.md#LogArchiveDeleteAccessrightsIdentity) | **Delete** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
+[**LogArchiveDeleteCredentialId**](LogArchiveApi.md#LogArchiveDeleteCredentialId) | **Delete** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 [**LogArchiveDeleteCredentialpasswordId**](LogArchiveApi.md#LogArchiveDeleteCredentialpasswordId) | **Delete** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**LogArchiveDeleteTagKey**](LogArchiveApi.md#LogArchiveDeleteTagKey) | **Delete** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
+[**LogArchiveGetCredentialId**](LogArchiveApi.md#LogArchiveGetCredentialId) | **Get** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 [**LogArchiveGetCredentialpasswordId**](LogArchiveApi.md#LogArchiveGetCredentialpasswordId) | **Get** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**LogArchiveGetServicesServiceId**](LogArchiveApi.md#LogArchiveGetServicesServiceId) | **Get** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
 [**LogArchiveGetTag**](LogArchiveApi.md#LogArchiveGetTag) | **Get** /logArchive/{logArchiveId}/tag | /tag
 [**LogArchiveList**](LogArchiveApi.md#LogArchiveList) | **Get** /logArchive | List
 [**LogArchiveListAccessrights**](LogArchiveApi.md#LogArchiveListAccessrights) | **Get** /logArchive/{logArchiveId}/accessrights | /accessrights
+[**LogArchiveListCredential**](LogArchiveApi.md#LogArchiveListCredential) | **Get** /logArchive/{logArchiveId}/credential | /credential
 [**LogArchiveListCredentialpassword**](LogArchiveApi.md#LogArchiveListCredentialpassword) | **Get** /logArchive/{logArchiveId}/credential/password | /credential/password
 [**LogArchiveListQueue**](LogArchiveApi.md#LogArchiveListQueue) | **Get** /logArchive/{logArchiveId}/queue | /queue
 [**LogArchiveListServices**](LogArchiveApi.md#LogArchiveListServices) | **Get** /logArchive/{logArchiveId}/services | /services
+[**LogArchivePatchCredentialId**](LogArchiveApi.md#LogArchivePatchCredentialId) | **Patch** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 [**LogArchivePatchCredentialpasswordId**](LogArchiveApi.md#LogArchivePatchCredentialpasswordId) | **Patch** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**LogArchivePatchTag**](LogArchiveApi.md#LogArchivePatchTag) | **Patch** /logArchive/{logArchiveId}/tag | /tag
 [**LogArchivePostAccessrights**](LogArchiveApi.md#LogArchivePostAccessrights) | **Post** /logArchive/{logArchiveId}/accessrights | /accessrights
+[**LogArchivePostCredential**](LogArchiveApi.md#LogArchivePostCredential) | **Post** /logArchive/{logArchiveId}/credential | /credential
 [**LogArchivePostCredentialpassword**](LogArchiveApi.md#LogArchivePostCredentialpassword) | **Post** /logArchive/{logArchiveId}/credential/password | /credential/password
 [**LogArchiveShow**](LogArchiveApi.md#LogArchiveShow) | **Get** /logArchive/{logArchiveId} | Get
 [**LogArchiveUpdate**](LogArchiveApi.md#LogArchiveUpdate) | **Patch** /logArchive/{logArchiveId} | Update
@@ -157,6 +162,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## LogArchiveDeleteCredentialId
+
+> LogArchive LogArchiveDeleteCredentialId(ctx, logArchiveId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
+
+### Return type
+
+[**LogArchive**](logArchive.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## LogArchiveDeleteCredentialpasswordId
 
 > LogArchive LogArchiveDeleteCredentialpasswordId(ctx, logArchiveId, id)
@@ -191,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## LogArchiveDeleteTagKey
 
-> map[string]interface{} LogArchiveDeleteTagKey(ctx, logArchiveId, key)
+> map[string]string LogArchiveDeleteTagKey(ctx, logArchiveId, key)
 /tag/:key
 
 ### Required Parameters
@@ -205,7 +242,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogArchiveGetCredentialId
+
+> CredentialPassword LogArchiveGetCredentialId(ctx, logArchiveId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -287,7 +356,7 @@ Name | Type | Description  | Notes
 
 ## LogArchiveGetTag
 
-> map[string]interface{} LogArchiveGetTag(ctx, logArchiveId)
+> map[string]string LogArchiveGetTag(ctx, logArchiveId)
 /tag
 
 ### Required Parameters
@@ -300,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -375,6 +444,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogArchiveListCredential
+
+> []CredentialPassword LogArchiveListCredential(ctx, logArchiveId)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -483,6 +583,39 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## LogArchivePatchCredentialId
+
+> CredentialPassword LogArchivePatchCredentialId(ctx, logArchiveId, id, logArchivePatchCredentialId)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**id** | **string**| id | 
+**logArchivePatchCredentialId** | [**LogArchivePatchCredentialId**](LogArchivePatchCredentialId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## LogArchivePatchCredentialpasswordId
 
 > CredentialPassword LogArchivePatchCredentialpasswordId(ctx, logArchiveId, id, logArchivePatchCredentialpasswordId)
@@ -518,7 +651,7 @@ Name | Type | Description  | Notes
 
 ## LogArchivePatchTag
 
-> map[string]interface{} LogArchivePatchTag(ctx, logArchiveId, requestBody)
+> map[string]string LogArchivePatchTag(ctx, logArchiveId, requestBody)
 /tag
 
 ### Required Parameters
@@ -532,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -565,6 +698,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LogArchive**](logArchive.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## LogArchivePostCredential
+
+> CredentialPassword LogArchivePostCredential(ctx, logArchiveId, logArchivePostCredential)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logArchiveId** | **string**| ID of logArchive | 
+**logArchivePostCredential** | [**LogArchivePostCredential**](LogArchivePostCredential.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 

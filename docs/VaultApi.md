@@ -11,23 +11,28 @@ Method | HTTP request | Description
 [**VaultCreate**](VaultApi.md#VaultCreate) | **Post** /vault | Create
 [**VaultDelete**](VaultApi.md#VaultDelete) | **Delete** /vault/{vaultId} | Delete
 [**VaultDeleteAccessrightsIdentity**](VaultApi.md#VaultDeleteAccessrightsIdentity) | **Delete** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
+[**VaultDeleteCredentialId**](VaultApi.md#VaultDeleteCredentialId) | **Delete** /vault/{vaultId}/credential/{id} | /credential/:id
 [**VaultDeleteCredentialcertificateId**](VaultApi.md#VaultDeleteCredentialcertificateId) | **Delete** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 [**VaultDeleteCredentialpasswordId**](VaultApi.md#VaultDeleteCredentialpasswordId) | **Delete** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 [**VaultDeleteTagKey**](VaultApi.md#VaultDeleteTagKey) | **Delete** /vault/{vaultId}/tag/{key} | /tag/:key
+[**VaultGetCredentialId**](VaultApi.md#VaultGetCredentialId) | **Get** /vault/{vaultId}/credential/{id} | /credential/:id
 [**VaultGetCredentialcertificateId**](VaultApi.md#VaultGetCredentialcertificateId) | **Get** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 [**VaultGetCredentialpasswordId**](VaultApi.md#VaultGetCredentialpasswordId) | **Get** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 [**VaultGetServicesServiceId**](VaultApi.md#VaultGetServicesServiceId) | **Get** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
 [**VaultGetTag**](VaultApi.md#VaultGetTag) | **Get** /vault/{vaultId}/tag | /tag
 [**VaultList**](VaultApi.md#VaultList) | **Get** /vault | List
 [**VaultListAccessrights**](VaultApi.md#VaultListAccessrights) | **Get** /vault/{vaultId}/accessrights | /accessrights
+[**VaultListCredential**](VaultApi.md#VaultListCredential) | **Get** /vault/{vaultId}/credential | /credential
 [**VaultListCredentialcertificate**](VaultApi.md#VaultListCredentialcertificate) | **Get** /vault/{vaultId}/credential/certificate | /credential/certificate
 [**VaultListCredentialpassword**](VaultApi.md#VaultListCredentialpassword) | **Get** /vault/{vaultId}/credential/password | /credential/password
 [**VaultListQueue**](VaultApi.md#VaultListQueue) | **Get** /vault/{vaultId}/queue | /queue
 [**VaultListServices**](VaultApi.md#VaultListServices) | **Get** /vault/{vaultId}/services | /services
+[**VaultPatchCredentialId**](VaultApi.md#VaultPatchCredentialId) | **Patch** /vault/{vaultId}/credential/{id} | /credential/:id
 [**VaultPatchCredentialcertificateId**](VaultApi.md#VaultPatchCredentialcertificateId) | **Patch** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 [**VaultPatchCredentialpasswordId**](VaultApi.md#VaultPatchCredentialpasswordId) | **Patch** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 [**VaultPatchTag**](VaultApi.md#VaultPatchTag) | **Patch** /vault/{vaultId}/tag | /tag
 [**VaultPostAccessrights**](VaultApi.md#VaultPostAccessrights) | **Post** /vault/{vaultId}/accessrights | /accessrights
+[**VaultPostCredential**](VaultApi.md#VaultPostCredential) | **Post** /vault/{vaultId}/credential | /credential
 [**VaultPostCredentialcertificate**](VaultApi.md#VaultPostCredentialcertificate) | **Post** /vault/{vaultId}/credential/certificate | /credential/certificate
 [**VaultPostCredentialpassword**](VaultApi.md#VaultPostCredentialpassword) | **Post** /vault/{vaultId}/credential/password | /credential/password
 [**VaultShow**](VaultApi.md#VaultShow) | **Get** /vault/{vaultId} | Get
@@ -266,6 +271,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## VaultDeleteCredentialId
+
+> Vault VaultDeleteCredentialId(ctx, vaultId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Vault**](vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## VaultDeleteCredentialcertificateId
 
 > CredentialCertificate VaultDeleteCredentialcertificateId(ctx, vaultId, id)
@@ -332,7 +369,7 @@ Name | Type | Description  | Notes
 
 ## VaultDeleteTagKey
 
-> map[string]interface{} VaultDeleteTagKey(ctx, vaultId, key)
+> map[string]string VaultDeleteTagKey(ctx, vaultId, key)
 /tag/:key
 
 ### Required Parameters
@@ -346,7 +383,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VaultGetCredentialId
+
+> CredentialPassword VaultGetCredentialId(ctx, vaultId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -460,7 +529,7 @@ Name | Type | Description  | Notes
 
 ## VaultGetTag
 
-> map[string]interface{} VaultGetTag(ctx, vaultId)
+> map[string]string VaultGetTag(ctx, vaultId)
 /tag
 
 ### Required Parameters
@@ -473,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -548,6 +617,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VaultListCredential
+
+> []CredentialPassword VaultListCredential(ctx, vaultId)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -687,6 +787,39 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## VaultPatchCredentialId
+
+> CredentialPassword VaultPatchCredentialId(ctx, vaultId, id, vaultPatchCredentialId)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+**id** | **string**| id | 
+**vaultPatchCredentialId** | [**VaultPatchCredentialId**](VaultPatchCredentialId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## VaultPatchCredentialcertificateId
 
 > CredentialCertificate VaultPatchCredentialcertificateId(ctx, vaultId, id, vaultPatchCredentialcertificateId)
@@ -755,7 +888,7 @@ Name | Type | Description  | Notes
 
 ## VaultPatchTag
 
-> map[string]interface{} VaultPatchTag(ctx, vaultId, requestBody)
+> map[string]string VaultPatchTag(ctx, vaultId, requestBody)
 /tag
 
 ### Required Parameters
@@ -769,7 +902,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -802,6 +935,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Vault**](vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VaultPostCredential
+
+> CredentialPassword VaultPostCredential(ctx, vaultId, vaultPostCredential)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+**vaultPostCredential** | [**VaultPostCredential**](VaultPostCredential.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 

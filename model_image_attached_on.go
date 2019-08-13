@@ -10,7 +10,7 @@
 package openapi
 
 type ImageAttachedOn struct {
-	ControllerLocation float32 `json:"controllerLocation"`
-	ControllerNumber float32 `json:"controllerNumber"`
 	ControllerType string `json:"controllerType"`
+	ControllerNumber float32 `json:"controllerNumber"`
+	ControllerLocation float32 `json:"controllerLocation"`
 }

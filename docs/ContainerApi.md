@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## ContainerDeleteTagKey
 
-> map[string]interface{} ContainerDeleteTagKey(ctx, containerId, key)
+> map[string]string ContainerDeleteTagKey(ctx, containerId, key)
 /tag/:key
 
 ### Required Parameters
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ## ContainerGetTag
 
-> map[string]interface{} ContainerGetTag(ctx, containerId)
+> map[string]string ContainerGetTag(ctx, containerId)
 /tag
 
 ### Required Parameters
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ## ContainerPatchTag
 
-> map[string]interface{} ContainerPatchTag(ctx, containerId, requestBody)
+> map[string]string ContainerPatchTag(ctx, containerId, requestBody)
 /tag
 
 ### Required Parameters
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

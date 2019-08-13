@@ -11,25 +11,35 @@ Method | HTTP request | Description
 [**WebsiteCreate**](WebsiteApi.md#WebsiteCreate) | **Post** /website | Create
 [**WebsiteDelete**](WebsiteApi.md#WebsiteDelete) | **Delete** /website/{websiteId} | Delete
 [**WebsiteDeleteAccessrightsIdentity**](WebsiteApi.md#WebsiteDeleteAccessrightsIdentity) | **Delete** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
+[**WebsiteDeleteCredentialId**](WebsiteApi.md#WebsiteDeleteCredentialId) | **Delete** /website/{websiteId}/credential/{id} | /credential/:id
 [**WebsiteDeleteCredentialcertificateId**](WebsiteApi.md#WebsiteDeleteCredentialcertificateId) | **Delete** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 [**WebsiteDeleteCredentialpasswordId**](WebsiteApi.md#WebsiteDeleteCredentialpasswordId) | **Delete** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+[**WebsiteDeleteSnapshotId**](WebsiteApi.md#WebsiteDeleteSnapshotId) | **Delete** /website/{websiteId}/snapshot/{id} | /snapshot/:id
 [**WebsiteDeleteTagKey**](WebsiteApi.md#WebsiteDeleteTagKey) | **Delete** /website/{websiteId}/tag/{key} | /tag/:key
+[**WebsiteGetCredentialId**](WebsiteApi.md#WebsiteGetCredentialId) | **Get** /website/{websiteId}/credential/{id} | /credential/:id
 [**WebsiteGetCredentialcertificateId**](WebsiteApi.md#WebsiteGetCredentialcertificateId) | **Get** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 [**WebsiteGetCredentialpasswordId**](WebsiteApi.md#WebsiteGetCredentialpasswordId) | **Get** /website/{websiteId}/credential/password/{id} | /credential/password/:id
 [**WebsiteGetServicesServiceId**](WebsiteApi.md#WebsiteGetServicesServiceId) | **Get** /website/{websiteId}/services/{serviceId} | /services/:serviceId
+[**WebsiteGetSnapshotId**](WebsiteApi.md#WebsiteGetSnapshotId) | **Get** /website/{websiteId}/snapshot/{id} | /snapshot/:id
+[**WebsiteGetSnapshotIddownload**](WebsiteApi.md#WebsiteGetSnapshotIddownload) | **Get** /website/{websiteId}/snapshot/:id/download | /snapshot/:id/download
 [**WebsiteGetTag**](WebsiteApi.md#WebsiteGetTag) | **Get** /website/{websiteId}/tag | /tag
 [**WebsiteList**](WebsiteApi.md#WebsiteList) | **Get** /website | List
 [**WebsiteListAccessrights**](WebsiteApi.md#WebsiteListAccessrights) | **Get** /website/{websiteId}/accessrights | /accessrights
+[**WebsiteListCredential**](WebsiteApi.md#WebsiteListCredential) | **Get** /website/{websiteId}/credential | /credential
 [**WebsiteListCredentialcertificate**](WebsiteApi.md#WebsiteListCredentialcertificate) | **Get** /website/{websiteId}/credential/certificate | /credential/certificate
 [**WebsiteListCredentialpassword**](WebsiteApi.md#WebsiteListCredentialpassword) | **Get** /website/{websiteId}/credential/password | /credential/password
 [**WebsiteListQueue**](WebsiteApi.md#WebsiteListQueue) | **Get** /website/{websiteId}/queue | /queue
 [**WebsiteListServices**](WebsiteApi.md#WebsiteListServices) | **Get** /website/{websiteId}/services | /services
+[**WebsiteListSnapshot**](WebsiteApi.md#WebsiteListSnapshot) | **Get** /website/{websiteId}/snapshot | /snapshot
+[**WebsitePatchCredentialId**](WebsiteApi.md#WebsitePatchCredentialId) | **Patch** /website/{websiteId}/credential/{id} | /credential/:id
 [**WebsitePatchCredentialcertificateId**](WebsiteApi.md#WebsitePatchCredentialcertificateId) | **Patch** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 [**WebsitePatchCredentialpasswordId**](WebsiteApi.md#WebsitePatchCredentialpasswordId) | **Patch** /website/{websiteId}/credential/password/{id} | /credential/password/:id
 [**WebsitePatchTag**](WebsiteApi.md#WebsitePatchTag) | **Patch** /website/{websiteId}/tag | /tag
 [**WebsitePostAccessrights**](WebsiteApi.md#WebsitePostAccessrights) | **Post** /website/{websiteId}/accessrights | /accessrights
+[**WebsitePostCredential**](WebsiteApi.md#WebsitePostCredential) | **Post** /website/{websiteId}/credential | /credential
 [**WebsitePostCredentialcertificate**](WebsiteApi.md#WebsitePostCredentialcertificate) | **Post** /website/{websiteId}/credential/certificate | /credential/certificate
 [**WebsitePostCredentialpassword**](WebsiteApi.md#WebsitePostCredentialpassword) | **Post** /website/{websiteId}/credential/password | /credential/password
+[**WebsitePostSnapshot**](WebsiteApi.md#WebsitePostSnapshot) | **Post** /website/{websiteId}/snapshot | /snapshot
 [**WebsiteShow**](WebsiteApi.md#WebsiteShow) | **Get** /website/{websiteId} | Get
 [**WebsiteUpdate**](WebsiteApi.md#WebsiteUpdate) | **Patch** /website/{websiteId} | Update
 
@@ -265,6 +275,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## WebsiteDeleteCredentialId
+
+> Website WebsiteDeleteCredentialId(ctx, websiteId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsiteDeleteCredentialcertificateId
 
 > CredentialCertificate WebsiteDeleteCredentialcertificateId(ctx, websiteId, id)
@@ -329,9 +371,41 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## WebsiteDeleteSnapshotId
+
+> Website WebsiteDeleteSnapshotId(ctx, websiteId, id)
+/snapshot/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsiteDeleteTagKey
 
-> map[string]interface{} WebsiteDeleteTagKey(ctx, websiteId, key)
+> map[string]string WebsiteDeleteTagKey(ctx, websiteId, key)
 /tag/:key
 
 ### Required Parameters
@@ -345,7 +419,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteGetCredentialId
+
+> CredentialPassword WebsiteGetCredentialId(ctx, websiteId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -457,9 +563,72 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## WebsiteGetSnapshotId
+
+> WebsiteGetSnapshotId(ctx, websiteId, id)
+/snapshot/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**id** | **string**| id | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteGetSnapshotIddownload
+
+> WebsiteGetSnapshotIddownload(ctx, websiteId)
+/snapshot/:id/download
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsiteGetTag
 
-> map[string]interface{} WebsiteGetTag(ctx, websiteId)
+> map[string]string WebsiteGetTag(ctx, websiteId)
 /tag
 
 ### Required Parameters
@@ -472,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -547,6 +716,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteListCredential
+
+> []CredentialPassword WebsiteListCredential(ctx, websiteId)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -686,6 +886,70 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## WebsiteListSnapshot
+
+> WebsiteListSnapshot(ctx, websiteId)
+/snapshot
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsitePatchCredentialId
+
+> CredentialPassword WebsitePatchCredentialId(ctx, websiteId, id, websitePatchCredentialId)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**id** | **string**| id | 
+**websitePatchCredentialId** | [**WebsitePatchCredentialId**](WebsitePatchCredentialId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsitePatchCredentialcertificateId
 
 > CredentialCertificate WebsitePatchCredentialcertificateId(ctx, websiteId, id, websitePatchCredentialcertificateId)
@@ -754,7 +1018,7 @@ Name | Type | Description  | Notes
 
 ## WebsitePatchTag
 
-> map[string]interface{} WebsitePatchTag(ctx, websiteId, requestBody)
+> map[string]string WebsitePatchTag(ctx, websiteId, requestBody)
 /tag
 
 ### Required Parameters
@@ -768,7 +1032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -801,6 +1065,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsitePostCredential
+
+> CredentialPassword WebsitePostCredential(ctx, websiteId, websitePostCredential)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**websitePostCredential** | [**WebsitePostCredential**](WebsitePostCredential.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -865,6 +1161,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsitePostSnapshot
+
+> Website WebsitePostSnapshot(ctx, websiteId, websitePostSnapshot)
+/snapshot
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**websitePostSnapshot** | [**WebsitePostSnapshot**](WebsitePostSnapshot.md)|  | 
+
+### Return type
+
+[**Website**](website.md)
 
 ### Authorization
 

@@ -10,11 +10,11 @@
 package openapi
 
 type Service struct {
-	Id string `json:"_id,omitempty"`
-	Resource string `json:"resource,omitempty"`
-	Type string `json:"type,omitempty"`
-	Billing ServiceBilling `json:"billing,omitempty"`
-	Data string `json:"data,omitempty"`
-	Name string `json:"name,omitempty"`
-	AvailableServices []string `json:"availableServices,omitempty"`
+	Id                string         `json:"_id,omitempty"`
+	Resource          string         `json:"resource,omitempty"`
+	Type              string         `json:"type,omitempty"`
+	Billing           ServiceBilling `json:"billing,omitempty"`
+	Data              string         `json:"data,omitempty"`
+	Name              string         `json:"name,omitempty"`
+	AvailableServices []string       `json:"availableServices,omitempty"`
 }

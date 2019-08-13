@@ -24,6 +24,7 @@ type User struct {
 	Phone string `json:"phone,omitempty"`
 	LastLogin []UserLastLogin `json:"lastLogin,omitempty"`
 	Limit UserLimit `json:"limit,omitempty"`
+	Services []UserServices `json:"services,omitempty"`
 	Credential UserCredential `json:"credential,omitempty"`
 	NetworkAcl []UserNetworkAcl `json:"networkAcl,omitempty"`
 }

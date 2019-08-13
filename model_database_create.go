@@ -12,6 +12,5 @@ package openapi
 type DatabaseCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service"`
-	Credential DatabaseCreateCredential `json:"credential,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

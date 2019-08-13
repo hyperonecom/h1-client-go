@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ## IpDeleteTagKey
 
-> map[string]interface{} IpDeleteTagKey(ctx, ipId, key)
+> map[string]string IpDeleteTagKey(ctx, ipId, key)
 /tag/:key
 
 ### Required Parameters
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ## IpGetTag
 
-> map[string]interface{} IpGetTag(ctx, ipId)
+> map[string]string IpGetTag(ctx, ipId)
 /tag
 
 ### Required Parameters
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ## IpPatchTag
 
-> map[string]interface{} IpPatchTag(ctx, ipId, requestBody)
+> map[string]string IpPatchTag(ctx, ipId, requestBody)
 /tag
 
 ### Required Parameters
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

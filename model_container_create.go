@@ -14,7 +14,7 @@ type ContainerCreate struct {
 	Image string `json:"image"`
 	Registry ContainerCreateRegistry `json:"registry,omitempty"`
 	Service string `json:"service"`
-	Expose []ContainerCreateExpose `json:"expose,omitempty"`
+	Expose []ContainerExpose `json:"expose,omitempty"`
 	Env []string `json:"env,omitempty"`
 	Command string `json:"command,omitempty"`
 	Volumes []ContainerCreateVolumes `json:"volumes,omitempty"`

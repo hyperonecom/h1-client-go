@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**NetworkActionFirewallAdd**](NetworkApi.md#NetworkActionFirewallAdd) | **Post** /network/{networkId}/actions/firewall_add | /actions/firewall_add
+[**NetworkActionFirewallRemove**](NetworkApi.md#NetworkActionFirewallRemove) | **Post** /network/{networkId}/actions/firewall_remove | /actions/firewall_remove
 [**NetworkCreate**](NetworkApi.md#NetworkCreate) | **Post** /network | Create
 [**NetworkDelete**](NetworkApi.md#NetworkDelete) | **Delete** /network/{networkId} | Delete
 [**NetworkDeleteAccessrightsIdentity**](NetworkApi.md#NetworkDeleteAccessrightsIdentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
@@ -23,6 +25,73 @@ Method | HTTP request | Description
 [**NetworkShow**](NetworkApi.md#NetworkShow) | **Get** /network/{networkId} | Get
 [**NetworkUpdate**](NetworkApi.md#NetworkUpdate) | **Patch** /network/{networkId} | Update
 
+
+
+## NetworkActionFirewallAdd
+
+> Network NetworkActionFirewallAdd(ctx, networkId, networkActionFirewallAdd)
+/actions/firewall_add
+
+Action firewall_add
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**networkId** | **string**| ID of network | 
+**networkActionFirewallAdd** | [**NetworkActionFirewallAdd**](NetworkActionFirewallAdd.md)|  | 
+
+### Return type
+
+[**Network**](network.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NetworkActionFirewallRemove
+
+> Network NetworkActionFirewallRemove(ctx, networkId)
+/actions/firewall_remove
+
+Action firewall_remove
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**networkId** | **string**| ID of network | 
+
+### Return type
+
+[**Network**](network.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## NetworkCreate
@@ -155,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## NetworkDeleteTagKey
 
-> map[string]interface{} NetworkDeleteTagKey(ctx, networkId, key)
+> map[string]string NetworkDeleteTagKey(ctx, networkId, key)
 /tag/:key
 
 ### Required Parameters
@@ -169,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -251,7 +320,7 @@ Name | Type | Description  | Notes
 
 ## NetworkGetTag
 
-> map[string]interface{} NetworkGetTag(ctx, networkId)
+> map[string]string NetworkGetTag(ctx, networkId)
 /tag
 
 ### Required Parameters
@@ -264,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -449,7 +518,7 @@ Name | Type | Description  | Notes
 
 ## NetworkPatchTag
 
-> map[string]interface{} NetworkPatchTag(ctx, networkId, requestBody)
+> map[string]string NetworkPatchTag(ctx, networkId, requestBody)
 /tag
 
 ### Required Parameters
@@ -463,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

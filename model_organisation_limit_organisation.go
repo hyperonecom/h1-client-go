@@ -10,5 +10,5 @@
 package openapi
 
 type OrganisationLimitOrganisation struct {
-	Project map[string]interface{} `json:"project,omitempty"`
+	Project ProjectLimitImage `json:"project,omitempty"`
 }

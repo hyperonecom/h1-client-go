@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
+**Tag** | **map[string]string** |  | [optional] 
 **Project** | **string** |  | [optional] 
 **Billing** | [**OrganisationBilling**](organisation_billing.md) |  | [optional] 
 **Verified** | **float32** |  | [optional] [default to 0]

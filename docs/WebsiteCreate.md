@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Image** | **string** |  | 
-**Domain** | **[]string** |  | [optional] 
 **Service** | **string** |  | 
+**Source** | [**WebsiteCreateSource**](website_create_source.md) |  | [optional] 
 **Credential** | [**VaultCreateCredential**](vault_create_credential.md) |  | [optional] 
 **Tag** | [**map[string]interface{}**](.md) |  | [optional] 
 

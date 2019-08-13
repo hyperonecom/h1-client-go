@@ -458,16 +458,16 @@ OrganisationApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, organisationId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, organisationId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -530,7 +530,7 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -568,16 +568,16 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 OrganisationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organisationId string) (map[string]interface{}, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organisationId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -639,7 +639,7 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1039,16 +1039,16 @@ OrganisationApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organisationId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organisationId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1112,7 +1112,7 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

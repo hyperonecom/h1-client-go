@@ -681,16 +681,16 @@ ContainerApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, containerId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, containerId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -753,7 +753,7 @@ func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, contain
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -902,16 +902,16 @@ func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context,
 ContainerApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId string) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -973,7 +973,7 @@ func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1571,16 +1571,16 @@ ContainerApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1644,7 +1644,7 @@ func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

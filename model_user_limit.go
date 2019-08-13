@@ -10,5 +10,5 @@
 package openapi
 
 type UserLimit struct {
-	Organisation map[string]interface{} `json:"organisation,omitempty"`
+	Organisation ProjectLimitNetwork `json:"organisation,omitempty"`
 }

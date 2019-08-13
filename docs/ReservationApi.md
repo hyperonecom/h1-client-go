@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ReservationActionAssign**](ReservationApi.md#ReservationActionAssign) | **Post** /reservation/{reservationId}/actions/assign | /actions/assign
 [**ReservationActionExtend**](ReservationApi.md#ReservationActionExtend) | **Post** /reservation/{reservationId}/actions/extend | /actions/extend
-[**ReservationActionUnassign**](ReservationApi.md#ReservationActionUnassign) | **Post** /reservation/{reservationId}/actions/unassign | /actions/unassign
 [**ReservationCreate**](ReservationApi.md#ReservationCreate) | **Post** /reservation | Create
 [**ReservationDelete**](ReservationApi.md#ReservationDelete) | **Delete** /reservation/{reservationId} | Delete
 [**ReservationDeleteAccessrightsIdentity**](ReservationApi.md#ReservationDeleteAccessrightsIdentity) | **Delete** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
@@ -64,39 +63,6 @@ Name | Type | Description  | Notes
 /actions/extend
 
 Action extend
-
-### Required Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**reservationId** | **string**| ID of reservation | 
-
-### Return type
-
-[**Reservation**](reservation.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ReservationActionUnassign
-
-> Reservation ReservationActionUnassign(ctx, reservationId)
-/actions/unassign
-
-Action unassign
 
 ### Required Parameters
 
@@ -222,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## ReservationDeleteTagKey
 
-> map[string]interface{} ReservationDeleteTagKey(ctx, reservationId, key)
+> map[string]string ReservationDeleteTagKey(ctx, reservationId, key)
 /tag/:key
 
 ### Required Parameters
@@ -236,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -286,7 +252,7 @@ Name | Type | Description  | Notes
 
 ## ReservationGetTag
 
-> map[string]interface{} ReservationGetTag(ctx, reservationId)
+> map[string]string ReservationGetTag(ctx, reservationId)
 /tag
 
 ### Required Parameters
@@ -299,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -453,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## ReservationPatchTag
 
-> map[string]interface{} ReservationPatchTag(ctx, reservationId, requestBody)
+> map[string]string ReservationPatchTag(ctx, reservationId, requestBody)
 /tag
 
 ### Required Parameters
@@ -467,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

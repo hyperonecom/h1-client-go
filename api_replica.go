@@ -464,16 +464,16 @@ ReplicaApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -536,7 +536,7 @@ func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -685,16 +685,16 @@ func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, rep
 ReplicaApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -756,7 +756,7 @@ func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string)
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1240,16 +1240,16 @@ ReplicaApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1313,7 +1313,7 @@ func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

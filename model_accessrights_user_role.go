@@ -12,4 +12,5 @@ package openapi
 type AccessrightsUserRole struct {
 	Id string `json:"id,omitempty"`
 	Role string `json:"role,omitempty"`
+	State string `json:"state,omitempty"`
 }

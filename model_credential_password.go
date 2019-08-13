@@ -12,8 +12,8 @@ package openapi
 type CredentialPassword struct {
 	CreatedBy string `json:"createdBy,omitempty"`
 	CreatedOn string `json:"createdOn,omitempty"`
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
-	Id string `json:"_id,omitempty"`
-	Value string `json:"value,omitempty"`
+	Name      string `json:"name,omitempty"`
+	Type      string `json:"type,omitempty"`
+	Id        string `json:"_id,omitempty"`
+	Value     string `json:"value,omitempty"`
 }

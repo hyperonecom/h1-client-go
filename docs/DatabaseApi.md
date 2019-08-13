@@ -10,19 +10,24 @@ Method | HTTP request | Description
 [**DatabaseCreate**](DatabaseApi.md#DatabaseCreate) | **Post** /database | Create
 [**DatabaseDelete**](DatabaseApi.md#DatabaseDelete) | **Delete** /database/{databaseId} | Delete
 [**DatabaseDeleteAccessrightsIdentity**](DatabaseApi.md#DatabaseDeleteAccessrightsIdentity) | **Delete** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
+[**DatabaseDeleteCredentialId**](DatabaseApi.md#DatabaseDeleteCredentialId) | **Delete** /database/{databaseId}/credential/{id} | /credential/:id
 [**DatabaseDeleteCredentialpasswordId**](DatabaseApi.md#DatabaseDeleteCredentialpasswordId) | **Delete** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**DatabaseDeleteTagKey**](DatabaseApi.md#DatabaseDeleteTagKey) | **Delete** /database/{databaseId}/tag/{key} | /tag/:key
+[**DatabaseGetCredentialId**](DatabaseApi.md#DatabaseGetCredentialId) | **Get** /database/{databaseId}/credential/{id} | /credential/:id
 [**DatabaseGetCredentialpasswordId**](DatabaseApi.md#DatabaseGetCredentialpasswordId) | **Get** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**DatabaseGetServicesServiceId**](DatabaseApi.md#DatabaseGetServicesServiceId) | **Get** /database/{databaseId}/services/{serviceId} | /services/:serviceId
 [**DatabaseGetTag**](DatabaseApi.md#DatabaseGetTag) | **Get** /database/{databaseId}/tag | /tag
 [**DatabaseList**](DatabaseApi.md#DatabaseList) | **Get** /database | List
 [**DatabaseListAccessrights**](DatabaseApi.md#DatabaseListAccessrights) | **Get** /database/{databaseId}/accessrights | /accessrights
+[**DatabaseListCredential**](DatabaseApi.md#DatabaseListCredential) | **Get** /database/{databaseId}/credential | /credential
 [**DatabaseListCredentialpassword**](DatabaseApi.md#DatabaseListCredentialpassword) | **Get** /database/{databaseId}/credential/password | /credential/password
 [**DatabaseListQueue**](DatabaseApi.md#DatabaseListQueue) | **Get** /database/{databaseId}/queue | /queue
 [**DatabaseListServices**](DatabaseApi.md#DatabaseListServices) | **Get** /database/{databaseId}/services | /services
+[**DatabasePatchCredentialId**](DatabaseApi.md#DatabasePatchCredentialId) | **Patch** /database/{databaseId}/credential/{id} | /credential/:id
 [**DatabasePatchCredentialpasswordId**](DatabaseApi.md#DatabasePatchCredentialpasswordId) | **Patch** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**DatabasePatchTag**](DatabaseApi.md#DatabasePatchTag) | **Patch** /database/{databaseId}/tag | /tag
 [**DatabasePostAccessrights**](DatabaseApi.md#DatabasePostAccessrights) | **Post** /database/{databaseId}/accessrights | /accessrights
+[**DatabasePostCredential**](DatabaseApi.md#DatabasePostCredential) | **Post** /database/{databaseId}/credential | /credential
 [**DatabasePostCredentialpassword**](DatabaseApi.md#DatabasePostCredentialpassword) | **Post** /database/{databaseId}/credential/password | /credential/password
 [**DatabaseShow**](DatabaseApi.md#DatabaseShow) | **Get** /database/{databaseId} | Get
 [**DatabaseUpdate**](DatabaseApi.md#DatabaseUpdate) | **Patch** /database/{databaseId} | Update
@@ -225,6 +230,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DatabaseDeleteCredentialId
+
+> Database DatabaseDeleteCredentialId(ctx, databaseId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Database**](database.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DatabaseDeleteCredentialpasswordId
 
 > Database DatabaseDeleteCredentialpasswordId(ctx, databaseId, id)
@@ -259,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## DatabaseDeleteTagKey
 
-> map[string]interface{} DatabaseDeleteTagKey(ctx, databaseId, key)
+> map[string]string DatabaseDeleteTagKey(ctx, databaseId, key)
 /tag/:key
 
 ### Required Parameters
@@ -273,7 +310,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseGetCredentialId
+
+> CredentialPassword DatabaseGetCredentialId(ctx, databaseId, id)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -355,7 +424,7 @@ Name | Type | Description  | Notes
 
 ## DatabaseGetTag
 
-> map[string]interface{} DatabaseGetTag(ctx, databaseId)
+> map[string]string DatabaseGetTag(ctx, databaseId)
 /tag
 
 ### Required Parameters
@@ -368,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -443,6 +512,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseListCredential
+
+> []CredentialPassword DatabaseListCredential(ctx, databaseId)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -551,6 +651,39 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DatabasePatchCredentialId
+
+> CredentialPassword DatabasePatchCredentialId(ctx, databaseId, id, databasePatchCredentialId)
+/credential/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**id** | **string**| id | 
+**databasePatchCredentialId** | [**DatabasePatchCredentialId**](DatabasePatchCredentialId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DatabasePatchCredentialpasswordId
 
 > CredentialPassword DatabasePatchCredentialpasswordId(ctx, databaseId, id, databasePatchCredentialpasswordId)
@@ -586,7 +719,7 @@ Name | Type | Description  | Notes
 
 ## DatabasePatchTag
 
-> map[string]interface{} DatabasePatchTag(ctx, databaseId, requestBody)
+> map[string]string DatabasePatchTag(ctx, databaseId, requestBody)
 /tag
 
 ### Required Parameters
@@ -600,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -633,6 +766,38 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Database**](database.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabasePostCredential
+
+> CredentialPassword DatabasePostCredential(ctx, databaseId, databasePostCredential)
+/credential
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**databasePostCredential** | [**DatabasePostCredential**](DatabasePostCredential.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 

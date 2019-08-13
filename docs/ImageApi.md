@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## ImageDeleteTagKey
 
-> map[string]interface{} ImageDeleteTagKey(ctx, imageId, key)
+> map[string]string ImageDeleteTagKey(ctx, imageId, key)
 /tag/:key
 
 ### Required Parameters
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## ImageGetTag
 
-> map[string]interface{} ImageGetTag(ctx, imageId)
+> map[string]string ImageGetTag(ctx, imageId)
 /tag
 
 ### Required Parameters
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ## ImagePatchTag
 
-> map[string]interface{} ImagePatchTag(ctx, imageId, requestBody)
+> map[string]string ImagePatchTag(ctx, imageId, requestBody)
 /tag
 
 ### Required Parameters
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

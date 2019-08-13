@@ -7,20 +7,25 @@ Method | HTTP request | Description
 [**ProjectCreate**](ProjectApi.md#ProjectCreate) | **Post** /project | Create
 [**ProjectDelete**](ProjectApi.md#ProjectDelete) | **Delete** /project/{projectId} | Delete
 [**ProjectDeleteAccessrightsId**](ProjectApi.md#ProjectDeleteAccessrightsId) | **Delete** /project/{projectId}/accessrights/{id} | /accessrights/:id
+[**ProjectDeleteCredentialStoreId**](ProjectApi.md#ProjectDeleteCredentialStoreId) | **Delete** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 [**ProjectDeleteCredentialStorecertificateId**](ProjectApi.md#ProjectDeleteCredentialStorecertificateId) | **Delete** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**ProjectDeleteTagKey**](ProjectApi.md#ProjectDeleteTagKey) | **Delete** /project/{projectId}/tag/{key} | /tag/:key
+[**ProjectGetCredentialStoreId**](ProjectApi.md#ProjectGetCredentialStoreId) | **Get** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 [**ProjectGetCredentialStorecertificateId**](ProjectApi.md#ProjectGetCredentialStorecertificateId) | **Get** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**ProjectGetServicesServiceId**](ProjectApi.md#ProjectGetServicesServiceId) | **Get** /project/{projectId}/services/{serviceId} | /services/:serviceId
 [**ProjectGetTag**](ProjectApi.md#ProjectGetTag) | **Get** /project/{projectId}/tag | /tag
 [**ProjectList**](ProjectApi.md#ProjectList) | **Get** /project | List
 [**ProjectListAccessrights**](ProjectApi.md#ProjectListAccessrights) | **Get** /project/{projectId}/accessrights | /accessrights
+[**ProjectListCredentialStore**](ProjectApi.md#ProjectListCredentialStore) | **Get** /project/{projectId}/credentialStore | /credentialStore
 [**ProjectListCredentialStorecertificate**](ProjectApi.md#ProjectListCredentialStorecertificate) | **Get** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 [**ProjectListLimit**](ProjectApi.md#ProjectListLimit) | **Get** /project/{projectId}/limit | /limit
 [**ProjectListQueue**](ProjectApi.md#ProjectListQueue) | **Get** /project/{projectId}/queue | /queue
 [**ProjectListServices**](ProjectApi.md#ProjectListServices) | **Get** /project/{projectId}/services | /services
+[**ProjectPatchCredentialStoreId**](ProjectApi.md#ProjectPatchCredentialStoreId) | **Patch** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 [**ProjectPatchCredentialStorecertificateId**](ProjectApi.md#ProjectPatchCredentialStorecertificateId) | **Patch** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**ProjectPatchTag**](ProjectApi.md#ProjectPatchTag) | **Patch** /project/{projectId}/tag | /tag
 [**ProjectPostAccessrights**](ProjectApi.md#ProjectPostAccessrights) | **Post** /project/{projectId}/accessrights | /accessrights
+[**ProjectPostCredentialStore**](ProjectApi.md#ProjectPostCredentialStore) | **Post** /project/{projectId}/credentialStore | /credentialStore
 [**ProjectPostCredentialStorecertificate**](ProjectApi.md#ProjectPostCredentialStorecertificate) | **Post** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 [**ProjectShow**](ProjectApi.md#ProjectShow) | **Get** /project/{projectId} | Get
 [**ProjectUpdate**](ProjectApi.md#ProjectUpdate) | **Patch** /project/{projectId} | Update
@@ -123,6 +128,38 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ProjectDeleteCredentialStoreId
+
+> Project ProjectDeleteCredentialStoreId(ctx, projectId, id)
+/credentialStore/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
+
+### Return type
+
+[**Project**](project.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ProjectDeleteCredentialStorecertificateId
 
 > CredentialCertificate ProjectDeleteCredentialStorecertificateId(ctx, projectId, id)
@@ -157,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## ProjectDeleteTagKey
 
-> map[string]interface{} ProjectDeleteTagKey(ctx, projectId, key)
+> map[string]string ProjectDeleteTagKey(ctx, projectId, key)
 /tag/:key
 
 ### Required Parameters
@@ -171,7 +208,39 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProjectGetCredentialStoreId
+
+> CredentialPassword ProjectGetCredentialStoreId(ctx, projectId, id)
+/credentialStore/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -253,7 +322,7 @@ Name | Type | Description  | Notes
 
 ## ProjectGetTag
 
-> map[string]interface{} ProjectGetTag(ctx, projectId)
+> map[string]string ProjectGetTag(ctx, projectId)
 /tag
 
 ### Required Parameters
@@ -266,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -345,6 +414,37 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]AccessrightsUserRole**](accessrightsUserRole.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProjectListCredentialStore
+
+> []CredentialPassword ProjectListCredentialStore(ctx, projectId)
+/credentialStore
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+
+### Return type
+
+[**[]CredentialPassword**](credential.password.md)
 
 ### Authorization
 
@@ -484,6 +584,39 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ProjectPatchCredentialStoreId
+
+> CredentialPassword ProjectPatchCredentialStoreId(ctx, projectId, id, projectPatchCredentialStoreId)
+/credentialStore/:id
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**id** | **string**| id | 
+**projectPatchCredentialStoreId** | [**ProjectPatchCredentialStoreId**](ProjectPatchCredentialStoreId.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ProjectPatchCredentialStorecertificateId
 
 > CredentialCertificate ProjectPatchCredentialStorecertificateId(ctx, projectId, id, projectPatchCredentialStorecertificateId)
@@ -519,7 +652,7 @@ Name | Type | Description  | Notes
 
 ## ProjectPatchTag
 
-> map[string]interface{} ProjectPatchTag(ctx, projectId, requestBody)
+> map[string]string ProjectPatchTag(ctx, projectId, requestBody)
 /tag
 
 ### Required Parameters
@@ -533,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -566,6 +699,38 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProjectPostCredentialStore
+
+> CredentialPassword ProjectPostCredentialStore(ctx, projectId, projectPostCredentialStore)
+/credentialStore
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| ID of project | 
+**projectPostCredentialStore** | [**ProjectPostCredentialStore**](ProjectPostCredentialStore.md)|  | 
+
+### Return type
+
+[**CredentialPassword**](credential.password.md)
 
 ### Authorization
 

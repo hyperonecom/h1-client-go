@@ -351,16 +351,16 @@ VolumeApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -423,7 +423,7 @@ func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -572,16 +572,16 @@ func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volum
 VolumeApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (map[string]interface{}, *http.Response, error) {
+func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -643,7 +643,7 @@ func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (m
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1132,16 +1132,16 @@ VolumeApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1205,7 +1205,7 @@ func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

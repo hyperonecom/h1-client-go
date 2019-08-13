@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## IsoDeleteTagKey
 
-> map[string]interface{} IsoDeleteTagKey(ctx, isoId, key)
+> map[string]string IsoDeleteTagKey(ctx, isoId, key)
 /tag/:key
 
 ### Required Parameters
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## IsoGetTag
 
-> map[string]interface{} IsoGetTag(ctx, isoId)
+> map[string]string IsoGetTag(ctx, isoId)
 /tag
 
 ### Required Parameters
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ## IsoPatchTag
 
-> map[string]interface{} IsoPatchTag(ctx, isoId, requestBody)
+> map[string]string IsoPatchTag(ctx, isoId, requestBody)
 /tag
 
 ### Required Parameters
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

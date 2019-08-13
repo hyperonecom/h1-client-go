@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**NetadpActionFirewallAdd**](NetadpApi.md#NetadpActionFirewallAdd) | **Post** /netadp/{netadpId}/actions/firewall_add | /actions/firewall_add
+[**NetadpActionFirewallRemove**](NetadpApi.md#NetadpActionFirewallRemove) | **Post** /netadp/{netadpId}/actions/firewall_remove | /actions/firewall_remove
 [**NetadpDeleteAccessrightsIdentity**](NetadpApi.md#NetadpDeleteAccessrightsIdentity) | **Delete** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
 [**NetadpDeleteTagKey**](NetadpApi.md#NetadpDeleteTagKey) | **Delete** /netadp/{netadpId}/tag/{key} | /tag/:key
 [**NetadpGetServicesServiceId**](NetadpApi.md#NetadpGetServicesServiceId) | **Get** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
@@ -16,6 +18,73 @@ Method | HTTP request | Description
 [**NetadpPostAccessrights**](NetadpApi.md#NetadpPostAccessrights) | **Post** /netadp/{netadpId}/accessrights | /accessrights
 [**NetadpShow**](NetadpApi.md#NetadpShow) | **Get** /netadp/{netadpId} | Get
 
+
+
+## NetadpActionFirewallAdd
+
+> Netadp NetadpActionFirewallAdd(ctx, netadpId, netadpActionFirewallAdd)
+/actions/firewall_add
+
+Action firewall_add
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netadpId** | **string**| ID of netadp | 
+**netadpActionFirewallAdd** | [**NetadpActionFirewallAdd**](NetadpActionFirewallAdd.md)|  | 
+
+### Return type
+
+[**Netadp**](netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NetadpActionFirewallRemove
+
+> Netadp NetadpActionFirewallRemove(ctx, netadpId)
+/actions/firewall_remove
+
+Action firewall_remove
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netadpId** | **string**| ID of netadp | 
+
+### Return type
+
+[**Netadp**](netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## NetadpDeleteAccessrightsIdentity
@@ -52,7 +121,7 @@ Name | Type | Description  | Notes
 
 ## NetadpDeleteTagKey
 
-> map[string]interface{} NetadpDeleteTagKey(ctx, netadpId, key)
+> map[string]string NetadpDeleteTagKey(ctx, netadpId, key)
 /tag/:key
 
 ### Required Parameters
@@ -66,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -116,7 +185,7 @@ Name | Type | Description  | Notes
 
 ## NetadpGetTag
 
-> map[string]interface{} NetadpGetTag(ctx, netadpId)
+> map[string]string NetadpGetTag(ctx, netadpId)
 /tag
 
 ### Required Parameters
@@ -129,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -283,7 +352,7 @@ Name | Type | Description  | Notes
 
 ## NetadpPatchTag
 
-> map[string]interface{} NetadpPatchTag(ctx, netadpId, requestBody)
+> map[string]string NetadpPatchTag(ctx, netadpId, requestBody)
 /tag
 
 ### Required Parameters
@@ -297,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

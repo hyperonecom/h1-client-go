@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Created** | **bool** |  | [optional] 
 **Queue** | [**[]Event**](event.md) |  | [optional] 
 **State** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] [default to {}]
+**Tag** | **map[string]string** |  | [optional] 
 **Project** | **string** |  | [optional] 
 **Macaddress** | **string** |  | [optional] 
 **Speed** | **float32** |  | [optional] 
@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Network** | [**Network**](network.md) |  | [optional] 
 **Ip** | [**[]Ip**](ip.md) |  | [optional] 
 **Assigned** | [**NetadpAssigned**](netadp_assigned.md) |  | [optional] 
+**Firewall** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

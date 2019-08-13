@@ -33,6 +33,8 @@ tags:
 - description: Available as part of the Early Adopters program.
   name: database
 - description: Available as part of the Early Adopters program.
+  name: registry
+- description: Available as part of the Early Adopters program.
   name: agent
 - description: Available as part of the Early Adopters program.
   name: container
@@ -573,6 +575,267 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /credential/certificate/:id
+      tags:
+      - user
+  /user/{userId}/credential:
+    get:
+      operationId: user_list_credential
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - user
+    post:
+      operationId: user_post_credential
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - user
+  /user/{userId}/credential/{id}:
+    delete:
+      operationId: user_delete_credential_id
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - user
+    get:
+      operationId: user_get_credential_id
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - user
+    patch:
+      operationId: user_patch_credential_id
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - user
+  /user/{userId}/services:
+    get:
+      operationId: user_list_services
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/user.services'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /services
+      tags:
+      - user
+  /user/{userId}/services/{serviceId}:
+    get:
+      operationId: user_get_services_serviceId
+      parameters:
+      - description: ID of user
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user.services'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /services/:serviceId
       tags:
       - user
   /user/{userId}/tag:
@@ -1178,6 +1441,197 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /credentialStore/certificate/:id
+      tags:
+      - project
+  /project/{projectId}/credentialStore:
+    get:
+      operationId: project_list_credentialStore
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credentialStore
+      tags:
+      - project
+    post:
+      operationId: project_post_credentialStore
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project_post_credentialStore'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credentialStore
+      tags:
+      - project
+  /project/{projectId}/credentialStore/{id}:
+    delete:
+      operationId: project_delete_credentialStore_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credentialStore/:id
+      tags:
+      - project
+    get:
+      operationId: project_get_credentialStore_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credentialStore/:id
+      tags:
+      - project
+    patch:
+      operationId: project_patch_credentialStore_id
+      parameters:
+      - description: ID of project
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/project_patch_credentialStore_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credentialStore/:id
       tags:
       - project
   /project/{projectId}/services:
@@ -2188,6 +2642,43 @@ paths:
       summary: /ingress
       tags:
       - firewall
+    put:
+      operationId: firewall_put_ingress
+      parameters:
+      - description: ID of firewall
+        explode: false
+        in: path
+        name: firewallId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/firewall_put_ingress'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /ingress
+      tags:
+      - firewall
   /firewall/{firewallId}/ingress/{ruleId}:
     delete:
       operationId: firewall_delete_ingress_ruleId
@@ -2318,6 +2809,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/inline_response_200'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /egress
+      tags:
+      - firewall
+    put:
+      operationId: firewall_put_egress
+      parameters:
+      - description: ID of firewall
+        explode: false
+        in: path
+        name: firewallId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/firewall_put_egress'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                type: array
           description: successful operation
         400:
           content:
@@ -2885,6 +3413,74 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: Update
+      tags:
+      - network
+  /network/{networkId}/actions/firewall_add:
+    post:
+      description: Action firewall_add
+      operationId: network_action_firewall_add
+      parameters:
+      - description: ID of network
+        explode: false
+        in: path
+        name: networkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/network_action_firewall_add'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/network'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/firewall_add
+      tags:
+      - network
+  /network/{networkId}/actions/firewall_remove:
+    post:
+      description: Action firewall_remove
+      operationId: network_action_firewall_remove
+      parameters:
+      - description: ID of network
+        explode: false
+        in: path
+        name: networkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/network'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/firewall_remove
       tags:
       - network
   /network/{networkId}/ip:
@@ -7248,6 +7844,74 @@ paths:
       summary: Get
       tags:
       - netadp
+  /netadp/{netadpId}/actions/firewall_add:
+    post:
+      description: Action firewall_add
+      operationId: netadp_action_firewall_add
+      parameters:
+      - description: ID of netadp
+        explode: false
+        in: path
+        name: netadpId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/netadp_action_firewall_add'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netadp'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/firewall_add
+      tags:
+      - netadp
+  /netadp/{netadpId}/actions/firewall_remove:
+    post:
+      description: Action firewall_remove
+      operationId: netadp_action_firewall_remove
+      parameters:
+      - description: ID of netadp
+        explode: false
+        in: path
+        name: netadpId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netadp'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/firewall_remove
+      tags:
+      - netadp
   /netadp/{netadpId}/accessrights:
     get:
       operationId: netadp_list_accessrights
@@ -8246,6 +8910,197 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /credential/certificate/:id
+      tags:
+      - vault
+  /vault/{vaultId}/credential:
+    get:
+      operationId: vault_list_credential
+      parameters:
+      - description: ID of vault
+        explode: false
+        in: path
+        name: vaultId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - vault
+    post:
+      operationId: vault_post_credential
+      parameters:
+      - description: ID of vault
+        explode: false
+        in: path
+        name: vaultId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/vault_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - vault
+  /vault/{vaultId}/credential/{id}:
+    delete:
+      operationId: vault_delete_credential_id
+      parameters:
+      - description: ID of vault
+        explode: false
+        in: path
+        name: vaultId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - vault
+    get:
+      operationId: vault_get_credential_id
+      parameters:
+      - description: ID of vault
+        explode: false
+        in: path
+        name: vaultId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - vault
+    patch:
+      operationId: vault_patch_credential_id
+      parameters:
+      - description: ID of vault
+        explode: false
+        in: path
+        name: vaultId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/vault_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
       tags:
       - vault
   /vault/{vaultId}/accessrights:
@@ -9288,37 +10143,6 @@ paths:
       summary: /actions/extend
       tags:
       - reservation
-  /reservation/{reservationId}/actions/unassign:
-    post:
-      description: Action unassign
-      operationId: reservation_action_unassign
-      parameters:
-      - description: ID of reservation
-        explode: false
-        in: path
-        name: reservationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        202:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/reservation'
-          description: operation queued
-        400:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        401:
-          description: Access token is missing or invalid
-      summary: /actions/unassign
-      tags:
-      - reservation
   /reservation/{reservationId}/accessrights:
     get:
       operationId: reservation_list_accessrights
@@ -10029,6 +10853,197 @@ paths:
       summary: /credential/password/:id
       tags:
       - logArchive
+  /logArchive/{logArchiveId}/credential:
+    get:
+      operationId: logArchive_list_credential
+      parameters:
+      - description: ID of logArchive
+        explode: false
+        in: path
+        name: logArchiveId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - logArchive
+    post:
+      operationId: logArchive_post_credential
+      parameters:
+      - description: ID of logArchive
+        explode: false
+        in: path
+        name: logArchiveId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/logArchive_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - logArchive
+  /logArchive/{logArchiveId}/credential/{id}:
+    delete:
+      operationId: logArchive_delete_credential_id
+      parameters:
+      - description: ID of logArchive
+        explode: false
+        in: path
+        name: logArchiveId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logArchive'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logArchive'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - logArchive
+    get:
+      operationId: logArchive_get_credential_id
+      parameters:
+      - description: ID of logArchive
+        explode: false
+        in: path
+        name: logArchiveId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - logArchive
+    patch:
+      operationId: logArchive_patch_credential_id
+      parameters:
+      - description: ID of logArchive
+        explode: false
+        in: path
+        name: logArchiveId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/logArchive_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - logArchive
   /logArchive/{logArchiveId}/accessrights:
     get:
       operationId: logArchive_list_accessrights
@@ -10647,6 +11662,182 @@ paths:
       summary: /actions/update_domain
       tags:
       - website
+  /website/{websiteId}/snapshot:
+    get:
+      operationId: website_list_snapshot
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /snapshot
+      tags:
+      - website
+    post:
+      operationId: website_post_snapshot
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_post_snapshot'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /snapshot
+      tags:
+      - website
+  /website/{websiteId}/snapshot/{id}:
+    delete:
+      operationId: website_delete_snapshot_id
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /snapshot/:id
+      tags:
+      - website
+    get:
+      operationId: website_get_snapshot_id
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /snapshot/:id
+      tags:
+      - website
+  /website/{websiteId}/snapshot/:id/download:
+    get:
+      operationId: website_get_snapshot_iddownload
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /snapshot/:id/download
+      tags:
+      - website
   /website/{websiteId}/credential/password:
     get:
       operationId: website_list_credentialpassword
@@ -11021,6 +12212,197 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /credential/certificate/:id
+      tags:
+      - website
+  /website/{websiteId}/credential:
+    get:
+      operationId: website_list_credential
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - website
+    post:
+      operationId: website_post_credential
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - website
+  /website/{websiteId}/credential/{id}:
+    delete:
+      operationId: website_delete_credential_id
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/website'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - website
+    get:
+      operationId: website_get_credential_id
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - website
+    patch:
+      operationId: website_patch_credential_id
+      parameters:
+      - description: ID of website
+        explode: false
+        in: path
+        name: websiteId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
       tags:
       - website
   /website/{websiteId}/accessrights:
@@ -11795,6 +13177,197 @@ paths:
       summary: /credential/password/:id
       tags:
       - database
+  /database/{databaseId}/credential:
+    get:
+      operationId: database_list_credential
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - database
+    post:
+      operationId: database_post_credential
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/database_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - database
+  /database/{databaseId}/credential/{id}:
+    delete:
+      operationId: database_delete_credential_id
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/database'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/database'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - database
+    get:
+      operationId: database_get_credential_id
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - database
+    patch:
+      operationId: database_patch_credential_id
+      parameters:
+      - description: ID of database
+        explode: false
+        in: path
+        name: databaseId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/database_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - database
   /database/{databaseId}/accessrights:
     get:
       operationId: database_list_accessrights
@@ -12117,6 +13690,1193 @@ paths:
       summary: /queue
       tags:
       - database
+  /registry:
+    get:
+      description: List registry
+      operationId: registry_list
+      parameters:
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by tag
+        explode: false
+        in: query
+        name: tag
+        required: false
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+        style: deepObject
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/registry'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: List
+      tags:
+      - registry
+    post:
+      description: Create registry
+      operationId: registry_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_create'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: Create
+      tags:
+      - registry
+  /registry/{registryId}:
+    delete:
+      operationId: registry_delete
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: Delete
+      tags:
+      - registry
+    get:
+      description: Returns a single registry
+      operationId: registry_show
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: Get
+      tags:
+      - registry
+    patch:
+      description: Returns modified registry
+      operationId: registry_update
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_update'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: Update
+      tags:
+      - registry
+  /registry/{registryId}/actions/start:
+    post:
+      description: Action start
+      operationId: registry_action_start
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/start
+      tags:
+      - registry
+  /registry/{registryId}/actions/stop:
+    post:
+      description: Action stop
+      operationId: registry_action_stop
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/stop
+      tags:
+      - registry
+  /registry/{registryId}/actions/transfer:
+    post:
+      description: Action transfer
+      operationId: registry_action_transfer
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_action_transfer'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/transfer
+      tags:
+      - registry
+  /registry/{registryId}/actions/update_domain:
+    post:
+      description: Action update_domain
+      operationId: registry_action_update_domain
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_action_update_domain'
+        required: true
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /actions/update_domain
+      tags:
+      - registry
+  /registry/{registryId}/repository:
+    get:
+      operationId: registry_list_repository
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /repository
+      tags:
+      - registry
+  /registry/{registryId}/repository/{repositoryId}:
+    get:
+      operationId: registry_get_repository_repositoryId
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: repositoryId
+        explode: false
+        in: path
+        name: repositoryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /repository/:repositoryId
+      tags:
+      - registry
+  /registry/{registryId}/repository/{repositoryId}/tag:
+    get:
+      operationId: registry_list_repository_repositoryIdtag
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: repositoryId
+        explode: false
+        in: path
+        name: repositoryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /repository/:repositoryId/tag
+      tags:
+      - registry
+  /registry/{registryId}/repository/{repositoryId}/tag/{tagId}:
+    delete:
+      operationId: registry_delete_repository_repositoryIdtag_tagId
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: repositoryId
+        explode: false
+        in: path
+        name: repositoryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /repository/:repositoryId/tag/:tagId
+      tags:
+      - registry
+    get:
+      operationId: registry_get_repository_repositoryIdtag_tagId
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: repositoryId
+        explode: false
+        in: path
+        name: repositoryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json: {}
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /repository/:repositoryId/tag/:tagId
+      tags:
+      - registry
+  /registry/{registryId}/credential/password:
+    get:
+      operationId: registry_list_credentialpassword
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/password
+      tags:
+      - registry
+    post:
+      operationId: registry_post_credentialpassword
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_post_credentialpassword'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/password
+      tags:
+      - registry
+  /registry/{registryId}/credential/password/{id}:
+    delete:
+      operationId: registry_delete_credentialpassword_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/password/:id
+      tags:
+      - registry
+    get:
+      operationId: registry_get_credentialpassword_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/password/:id
+      tags:
+      - registry
+    patch:
+      operationId: registry_patch_credentialpassword_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_patch_credentialpassword_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/password/:id
+      tags:
+      - registry
+  /registry/{registryId}/credential:
+    get:
+      operationId: registry_list_credential
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - registry
+    post:
+      operationId: registry_post_credential
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - registry
+  /registry/{registryId}/credential/{id}:
+    delete:
+      operationId: registry_delete_credential_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - registry
+    get:
+      operationId: registry_get_credential_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - registry
+    patch:
+      operationId: registry_patch_credential_id
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - registry
+  /registry/{registryId}/accessrights:
+    get:
+      operationId: registry_list_accessrights
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/accessrightsProject'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /accessrights
+      tags:
+      - registry
+    post:
+      operationId: registry_post_accessrights
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_post_accessrights'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /accessrights
+      tags:
+      - registry
+  /registry/{registryId}/accessrights/{identity}:
+    delete:
+      operationId: registry_delete_accessrights_identity
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: identity
+        explode: false
+        in: path
+        name: identity
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /accessrights/:identity
+      tags:
+      - registry
+  /registry/{registryId}/services:
+    get:
+      operationId: registry_list_services
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/registry.services'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /services
+      tags:
+      - registry
+  /registry/{registryId}/services/{serviceId}:
+    get:
+      operationId: registry_get_services_serviceId
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry.services'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /services/:serviceId
+      tags:
+      - registry
+  /registry/{registryId}/tag:
+    get:
+      operationId: registry_get_tag
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry.tag'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /tag
+      tags:
+      - registry
+    patch:
+      operationId: registry_patch_tag
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registry_patch_tag'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry.tag'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /tag
+      tags:
+      - registry
+  /registry/{registryId}/tag/{key}:
+    delete:
+      operationId: registry_delete_tag_key
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: key
+        explode: false
+        in: path
+        name: key
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry.tag'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /tag/:key
+      tags:
+      - registry
+  /registry/{registryId}/queue:
+    get:
+      operationId: registry_list_queue
+      parameters:
+      - description: ID of registry
+        explode: false
+        in: path
+        name: registryId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /queue
+      tags:
+      - registry
   /agent:
     get:
       description: List agent
@@ -12843,6 +15603,197 @@ paths:
         401:
           description: Access token is missing or invalid
       summary: /credential/certificate/:id
+      tags:
+      - agent
+  /agent/{agentId}/credential:
+    get:
+      operationId: agent_list_credential
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/credential.password'
+                type: array
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - agent
+    post:
+      operationId: agent_post_credential
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_post_credential'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential
+      tags:
+      - agent
+  /agent/{agentId}/credential/{id}:
+    delete:
+      operationId: agent_delete_credential_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: successful operation
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - agent
+    get:
+      operationId: agent_get_credential_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
+      tags:
+      - agent
+    patch:
+      operationId: agent_patch_credential_id
+      parameters:
+      - description: ID of agent
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/agent_patch_credential_id'
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credential.password'
+          description: successful operation
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        401:
+          description: Access token is missing or invalid
+      summary: /credential/:id
       tags:
       - agent
   /agent/{agentId}/accessrights:
@@ -14780,6 +17731,7 @@ components:
         createdBy: createdBy
         name: name
         _id: _id
+        id: id
         type: type
         createdOn: createdOn
         value: value
@@ -14793,6 +17745,8 @@ components:
         type:
           type: string
         _id:
+          type: string
+        id:
           type: string
         value:
           type: string
@@ -14802,6 +17756,7 @@ components:
         createdBy: createdBy
         name: name
         _id: _id
+        id: id
         type: type
         createdOn: createdOn
         value: value
@@ -14815,6 +17770,8 @@ components:
         type:
           type: string
         _id:
+          type: string
+        id:
           type: string
         value:
           type: string
@@ -14868,7 +17825,8 @@ components:
         id: id
         accessRights: accessRights
         state: state
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -14925,7 +17883,8 @@ components:
         state:
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -14958,6 +17917,7 @@ components:
       example:
         role: owner
         id: id
+        state: Active
       properties:
         id:
           type: string
@@ -14967,6 +17927,13 @@ components:
           - billing
           - user
           - support
+          type: string
+        state:
+          default: Active
+          enum:
+          - Active
+          - Invited
+          - Declined
           type: string
       type: object
     agentResource:
@@ -15025,61 +17992,88 @@ components:
       type: object
     project.limit:
       example:
-        container: '{}'
-        image: '{}'
-        agent: '{}'
-        website: '{}'
-        iso: '{}'
-        ip: '{}'
-        network: '{}'
-        netgw: '{}'
-        volume: '{}'
-        disk: '{}'
-        database: '{}'
-        firewall: '{}'
-        vm: '{}'
-        domain: '{}'
-        reservation: '{}'
-        logArchive: '{}'
-        vault: '{}'
-        snapshot: '{}'
+        container:
+          count: 1.2315135367772556
+        image:
+          count: 1.2315135367772556
+        registry:
+          count: 7.386281948385884
+        agent:
+          count: 9.369310271410669
+        website:
+          count: 1.2315135367772556
+        iso:
+          count: 7.386281948385884
+        ip:
+          count: 1.2315135367772556
+        network:
+          count: 0.8008281904610115
+        netgw:
+          count: 1.2315135367772556
+        volume:
+          size: 9.965781217890562
+          count: 5.025004791520295
+        disk:
+          size: 4.145608029883936
+          count: 2.027123023002322
+        database:
+          count: 1.2315135367772556
+        firewall:
+          count: 1.2315135367772556
+        vm:
+          memory: 3.616076749251911
+          count: 9.301444243932576
+        domain:
+          record: 1.1730742509559433
+          count: 7.457744773683766
+        reservation:
+          count: 4.965218492984954
+        logArchive:
+          count: 1.2315135367772556
+        vault:
+          size: 1.4894159098541704
+          count: 1.0246457001441578
+        snapshot:
+          count: 6.84685269835264
       properties:
         vm:
-          $ref: project.limit_vm
+          $ref: '#/components/schemas/project_limit_vm'
         disk:
-          $ref: project.limit_disk
+          $ref: '#/components/schemas/project_limit_disk'
         iso:
-          $ref: project.limit_iso
+          $ref: '#/components/schemas/project_limit_iso'
         network:
-          $ref: project.limit_network
+          $ref: '#/components/schemas/project_limit_network'
         image:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         ip:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         firewall:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         netgw:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         vault:
-          $ref: project.limit_vault
+          $ref: '#/components/schemas/project_limit_vault'
         snapshot:
-          $ref: project.limit_snapshot
+          $ref: '#/components/schemas/project_limit_snapshot'
         domain:
-          $ref: project.limit_domain
+          $ref: '#/components/schemas/project_limit_domain'
         logArchive:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         reservation:
-          $ref: project.limit_reservation
+          $ref: '#/components/schemas/project_limit_reservation'
         container:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         volume:
-          $ref: project.limit_volume
+          $ref: '#/components/schemas/project_limit_volume'
         agent:
-          $ref: project.limit_agent
+          $ref: '#/components/schemas/project_limit_agent'
         website:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         database:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
+        registry:
+          $ref: '#/components/schemas/project_limit_iso'
       type: object
     service:
       example:
@@ -15090,6 +18084,7 @@ components:
         - availableServices
         name: name
         _id: _id
+        id: id
         type: type
         billing:
           period: period
@@ -15115,6 +18110,8 @@ components:
           oneTime: true
       properties:
         _id:
+          type: string
+        id:
           type: string
         resource:
           type: string
@@ -15148,6 +18145,11 @@ components:
           type: subnet
           value: value
         verified: false
+        services:
+        - type: type
+          sourceService: sourceService
+        - type: type
+          sourceService: sourceService
         createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         credential:
@@ -15155,6 +18157,7 @@ components:
             createdBy: createdBy
             name: name
             _id: _id
+            id: id
             type: type
             createdOn: createdOn
             value: value
@@ -15162,6 +18165,7 @@ components:
             createdBy: createdBy
             name: name
             _id: _id
+            id: id
             type: type
             createdOn: createdOn
             value: value
@@ -15173,7 +18177,8 @@ components:
           createdOn: 2000-01-23T04:56:07.000+00:00
           hash: hash
         limit:
-          organisation: '{}'
+          organisation:
+            count: 0.8008281904610115
         _id: _id
         lang: en
       properties:
@@ -15211,6 +18216,10 @@ components:
           type: array
         limit:
           $ref: '#/components/schemas/user_limit'
+        services:
+          items:
+            $ref: '#/components/schemas/user_services'
+          type: array
         credential:
           $ref: '#/components/schemas/user_credential'
         networkAcl:
@@ -15218,18 +18227,26 @@ components:
             $ref: '#/components/schemas/user_networkAcl'
           type: array
       type: object
+    user.services:
+      example:
+        type: type
+        sourceService: sourceService
+      properties:
+        type:
+          type: string
+        sourceService:
+          format: ObjectId
+          type: string
+      type: object
     user.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     user_post_credentialpassword:
       properties:
         name:
           type: string
         type:
-          enum:
-          - totp
-          - otac
-          - sha512
           type: string
         value:
           type: string
@@ -15261,6 +18278,26 @@ components:
       - value
       type: object
     user_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    user_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    user_patch_credential_id:
       properties:
         name:
           type: string
@@ -15300,7 +18337,8 @@ components:
           id: id
           accessRights: accessRights
           state: state
-          tag: '{}'
+          tag:
+            key: tag
           queue:
           - stage: stage
             createdBy: createdBy
@@ -15339,7 +18377,8 @@ components:
           id: id
           accessRights: accessRights
           state: state
-          tag: '{}'
+          tag:
+            key: tag
           queue:
           - stage: stage
             createdBy: createdBy
@@ -15377,8 +18416,8 @@ components:
         threshold:
           credits:
             levels:
-            - 9.301444243932576
-            - 9.301444243932576
+            - 6.683562403749608
+            - 6.683562403749608
         createdOn: 2000-01-23T04:56:07.000+00:00
         billing:
           creditsBonus: 1.4658129805029452
@@ -15405,28 +18444,54 @@ components:
           invoiceNo: invoiceNo
           issueDate: issueDate
         limit:
-          container: '{}'
-          image: '{}'
-          agent: '{}'
-          website: '{}'
-          iso: '{}'
-          ip: '{}'
-          network: '{}'
-          netgw: '{}'
-          volume: '{}'
-          disk: '{}'
-          database: '{}'
-          firewall: '{}'
-          vm: '{}'
-          domain: '{}'
-          reservation: '{}'
-          logArchive: '{}'
-          vault: '{}'
-          snapshot: '{}'
+          container:
+            count: 1.2315135367772556
+          image:
+            count: 1.2315135367772556
+          registry:
+            count: 7.386281948385884
+          agent:
+            count: 9.369310271410669
+          website:
+            count: 1.2315135367772556
+          iso:
+            count: 7.386281948385884
+          ip:
+            count: 1.2315135367772556
+          network:
+            count: 0.8008281904610115
+          netgw:
+            count: 1.2315135367772556
+          volume:
+            size: 9.965781217890562
+            count: 5.025004791520295
+          disk:
+            size: 4.145608029883936
+            count: 2.027123023002322
+          database:
+            count: 1.2315135367772556
+          firewall:
+            count: 1.2315135367772556
+          vm:
+            memory: 3.616076749251911
+            count: 9.301444243932576
+          domain:
+            record: 1.1730742509559433
+            count: 7.457744773683766
+          reservation:
+            count: 4.965218492984954
+          logArchive:
+            count: 1.2315135367772556
+          vault:
+            size: 1.4894159098541704
+            count: 1.0246457001441578
+          snapshot:
+            count: 6.84685269835264
         modifiedBy: modifiedBy
         id: id
         state: Active
-        tag: '{}'
+        tag:
+          key: tag
         bankAccount: bankAccount
         flavour: flavour
         created: true
@@ -15458,8 +18523,10 @@ components:
         accessRights:
         - role: owner
           id: id
+          state: Active
         - role: owner
           id: id
+          state: Active
         queue:
         - stage: stage
           createdBy: createdBy
@@ -15524,7 +18591,8 @@ components:
           - Limited
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -15616,7 +18684,8 @@ components:
           type: number
       type: object
     project.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     project_post_accessrights:
       properties:
@@ -15644,6 +18713,26 @@ components:
       - value
       type: object
     project_patch_credentialStorecertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    project_post_credentialStore:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    project_patch_credentialStore_id:
       properties:
         name:
           type: string
@@ -15692,26 +18781,52 @@ components:
         name: name
         limit:
           organisation:
-            project: '{}'
+            project:
+              count: 1.2315135367772556
           project:
-            container: '{}'
-            image: '{}'
-            agent: '{}'
-            website: '{}'
-            iso: '{}'
-            ip: '{}'
-            network: '{}'
-            netgw: '{}'
-            volume: '{}'
-            disk: '{}'
-            database: '{}'
-            firewall: '{}'
-            vm: '{}'
-            domain: '{}'
-            reservation: '{}'
-            logArchive: '{}'
-            vault: '{}'
-            snapshot: '{}'
+            container:
+              count: 1.2315135367772556
+            image:
+              count: 1.2315135367772556
+            registry:
+              count: 7.386281948385884
+            agent:
+              count: 9.369310271410669
+            website:
+              count: 1.2315135367772556
+            iso:
+              count: 7.386281948385884
+            ip:
+              count: 1.2315135367772556
+            network:
+              count: 0.8008281904610115
+            netgw:
+              count: 1.2315135367772556
+            volume:
+              size: 9.965781217890562
+              count: 5.025004791520295
+            disk:
+              size: 4.145608029883936
+              count: 2.027123023002322
+            database:
+              count: 1.2315135367772556
+            firewall:
+              count: 1.2315135367772556
+            vm:
+              memory: 3.616076749251911
+              count: 9.301444243932576
+            domain:
+              record: 1.1730742509559433
+              count: 7.457744773683766
+            reservation:
+              count: 4.965218492984954
+            logArchive:
+              count: 1.2315135367772556
+            vault:
+              size: 1.4894159098541704
+              count: 1.0246457001441578
+            snapshot:
+              count: 6.84685269835264
         processing: true
         modifiedBy: modifiedBy
         _id: _id
@@ -15719,10 +18834,13 @@ components:
         accessRights:
         - role: owner
           id: id
+          state: Active
         - role: owner
           id: id
+          state: Active
         state: Active
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -15785,7 +18903,8 @@ components:
           - Limited
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           type: string
@@ -15850,7 +18969,8 @@ components:
       - project
       type: object
     organisation.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     organisation_post_accessrights:
       properties:
@@ -15887,7 +19007,76 @@ components:
           sourceService: sourceService
           billing: billing
         createdOn: 2000-01-23T04:56:07.000+00:00
-        network: network
+        egress:
+        - filter:
+          - filter
+          - filter
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          external:
+          - external
+          - external
+          internal:
+          - internal
+          - internal
+          createdBy: createdBy
+          name: name
+          description: description
+          action: allow
+          modifiedBy: modifiedBy
+          priority: 0.8008281904610115
+          createdOn: 2000-01-23T04:56:07.000+00:00
+        - filter:
+          - filter
+          - filter
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          external:
+          - external
+          - external
+          internal:
+          - internal
+          - internal
+          createdBy: createdBy
+          name: name
+          description: description
+          action: allow
+          modifiedBy: modifiedBy
+          priority: 0.8008281904610115
+          createdOn: 2000-01-23T04:56:07.000+00:00
+        ingress:
+        - filter:
+          - filter
+          - filter
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          external:
+          - external
+          - external
+          internal:
+          - internal
+          - internal
+          createdBy: createdBy
+          name: name
+          description: description
+          action: allow
+          modifiedBy: modifiedBy
+          priority: 0.8008281904610115
+          createdOn: 2000-01-23T04:56:07.000+00:00
+        - filter:
+          - filter
+          - filter
+          modifiedOn: 2000-01-23T04:56:07.000+00:00
+          external:
+          - external
+          - external
+          internal:
+          - internal
+          - internal
+          createdBy: createdBy
+          name: name
+          description: description
+          action: allow
+          modifiedBy: modifiedBy
+          priority: 0.8008281904610115
+          createdOn: 2000-01-23T04:56:07.000+00:00
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
         name: name
@@ -15899,7 +19088,8 @@ components:
         - accessRights
         - accessRights
         state: Attached
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -15964,14 +19154,20 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
           type: string
-        network:
-          format: ObjectId
-          type: string
+        ingress:
+          items:
+            $ref: '#/components/schemas/inline_response_200'
+          type: array
+        egress:
+          items:
+            $ref: '#/components/schemas/inline_response_200'
+          type: array
       type: object
     firewall_create:
       properties:
@@ -15983,6 +19179,14 @@ components:
           default: 5bacaf7202deee0c100eda3b
           format: ObjectId
           type: string
+        ingress:
+          items:
+            $ref: '#/components/schemas/firewall_create_ingress'
+          type: array
+        egress:
+          items:
+            $ref: '#/components/schemas/firewall_create_ingress'
+          type: array
       required:
       - name
       type: object
@@ -16035,8 +19239,32 @@ components:
           type: number
       type: object
     firewall.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
+    firewall_put_ingress:
+      items:
+        properties:
+          name:
+            type: string
+          action:
+            type: string
+          priority:
+            type: number
+          filter:
+            items:
+              type: string
+            type: array
+          external:
+            items:
+              type: string
+            type: array
+          internal:
+            items:
+              type: string
+            type: array
+        type: object
+      type: array
     firewall_post_ingress:
       properties:
         name:
@@ -16058,6 +19286,29 @@ components:
             type: string
           type: array
       type: object
+    firewall_put_egress:
+      items:
+        properties:
+          name:
+            type: string
+          action:
+            type: string
+          priority:
+            type: number
+          filter:
+            items:
+              type: string
+            type: array
+          external:
+            items:
+              type: string
+            type: array
+          internal:
+            items:
+              type: string
+            type: array
+        type: object
+      type: array
     firewall_post_egress:
       properties:
         name:
@@ -16119,6 +19370,7 @@ components:
         netgw: netgw
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
+        firewall: firewall
         name: name
         processing: true
         modifiedBy: modifiedBy
@@ -16128,7 +19380,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -16193,7 +19446,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -16212,6 +19466,9 @@ components:
         dns:
           $ref: '#/components/schemas/network_dns'
         netgw:
+          format: ObjectId
+          type: string
+        firewall:
           format: ObjectId
           type: string
       type: object
@@ -16234,6 +19491,14 @@ components:
           type: string
         gateway:
           type: string
+      type: object
+    network_action_firewall_add:
+      properties:
+        firewall:
+          format: ObjectId
+          type: string
+      required:
+      - firewall
       type: object
     network.services:
       example:
@@ -16263,7 +19528,8 @@ components:
           type: number
       type: object
     network.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     network_post_ip:
       properties:
@@ -16312,7 +19578,8 @@ components:
         _id: _id
         id: id
         state: Attached
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -16373,7 +19640,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -16430,7 +19698,8 @@ components:
           type: number
       type: object
     netgw.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     netgw_post_accessrights:
       properties:
@@ -16447,8 +19716,8 @@ components:
         disks:
         - attachedOn:
             controllerType: controllerType
-            controllerNumber: 5.962133916683182
-            controllerLocation: 1.4658129805029452
+            controllerNumber: 1.4658129805029452
+            controllerLocation: 5.962133916683182
           disk:
             name: name
             _id: _id
@@ -16458,8 +19727,8 @@ components:
           type: type
         - attachedOn:
             controllerType: controllerType
-            controllerNumber: 5.962133916683182
-            controllerLocation: 1.4658129805029452
+            controllerNumber: 1.4658129805029452
+            controllerLocation: 5.962133916683182
           disk:
             name: name
             _id: _id
@@ -16502,7 +19771,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -16566,7 +19836,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -16646,7 +19917,8 @@ components:
           type: number
       type: object
     image.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     image_post_accessrights:
       properties:
@@ -16697,7 +19969,8 @@ components:
         - accessRights
         - accessRights
         state: Uploading
-        tag: '{}'
+        tag:
+          key: tag
         persistent: true
         queue:
         - stage: stage
@@ -16765,7 +20038,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -16869,7 +20143,8 @@ components:
           type: number
       type: object
     disk.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     disk_post_accessrights:
       properties:
@@ -16917,7 +20192,8 @@ components:
         - accessRights
         - accessRights
         state: Uploading
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -16982,7 +20258,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -17054,7 +20331,8 @@ components:
           type: number
       type: object
     iso.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     iso_post_accessrights:
       properties:
@@ -17102,7 +20380,8 @@ components:
         - accessRights
         - accessRights
         state: Other
-        tag: '{}'
+        tag:
+          key: tag
         sourceImage:
           name: name
           _id: _id
@@ -17194,7 +20473,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -17338,7 +20618,8 @@ components:
           type: number
       type: object
     vm.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     vm_post_hdd:
       properties:
@@ -17415,7 +20696,8 @@ components:
         - accessRights
         - accessRights
         state: Associated
-        tag: '{}'
+        tag:
+          key: tag
         persistent: true
         queue:
         - stage: stage
@@ -17481,7 +20763,8 @@ components:
           - Unallocated
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -17561,7 +20844,8 @@ components:
           type: number
       type: object
     ip.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     ip_post_accessrights:
       properties:
@@ -17616,7 +20900,8 @@ components:
           - accessRights
           - accessRights
           state: Associated
-          tag: '{}'
+          tag:
+            key: tag
           persistent: true
           queue:
           - stage: stage
@@ -17675,7 +20960,8 @@ components:
           - accessRights
           - accessRights
           state: Associated
-          tag: '{}'
+          tag:
+            key: tag
           persistent: true
           queue:
           - stage: stage
@@ -17744,6 +21030,7 @@ components:
           netgw: netgw
           modifiedOn: 2000-01-23T04:56:07.000+00:00
           createdBy: createdBy
+          firewall: firewall
           name: name
           processing: true
           modifiedBy: modifiedBy
@@ -17753,7 +21040,8 @@ components:
           - accessRights
           - accessRights
           state: Online
-          tag: '{}'
+          tag:
+            key: tag
           queue:
           - stage: stage
             createdBy: createdBy
@@ -17776,6 +21064,7 @@ components:
           gateway: gateway
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
+        firewall: firewall
         name: name
         processing: true
         modifiedBy: modifiedBy
@@ -17789,7 +21078,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -17854,7 +21144,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -17873,6 +21164,17 @@ components:
           type: array
         assigned:
           $ref: '#/components/schemas/netadp_assigned'
+        firewall:
+          format: ObjectId
+          type: string
+      type: object
+    netadp_action_firewall_add:
+      properties:
+        firewall:
+          format: ObjectId
+          type: string
+      required:
+      - firewall
       type: object
     netadp.services:
       example:
@@ -17902,7 +21204,8 @@ components:
           type: number
       type: object
     netadp.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     netadp_post_accessrights:
       properties:
@@ -17948,7 +21251,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -18013,7 +21317,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -18100,15 +21405,14 @@ components:
           type: number
       type: object
     vault.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     vault_post_credentialpassword:
       properties:
         name:
           type: string
         type:
-          enum:
-          - sha512
           type: string
         value:
           type: string
@@ -18140,6 +21444,26 @@ components:
       - value
       type: object
     vault_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    vault_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    vault_patch_credential_id:
       properties:
         name:
           type: string
@@ -18186,7 +21510,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -18251,7 +21576,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -18312,7 +21638,8 @@ components:
           type: number
       type: object
     snapshot.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     snapshot_post_accessrights:
       properties:
@@ -18357,7 +21684,8 @@ components:
         - accessRights
         - accessRights
         state: Detached
-        tag: '{}'
+        tag:
+          key: tag
         sourceService: sourceService
         queue:
         - stage: stage
@@ -18425,7 +21753,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -18491,7 +21820,8 @@ components:
           type: number
       type: object
     reservation.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     reservation_post_accessrights:
       properties:
@@ -18536,7 +21866,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -18601,7 +21932,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -18672,15 +22004,14 @@ components:
           type: number
       type: object
     logArchive.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     logArchive_post_credentialpassword:
       properties:
         name:
           type: string
         type:
-          enum:
-          - sha512
           type: string
         value:
           type: string
@@ -18692,6 +22023,26 @@ components:
       - value
       type: object
     logArchive_patch_credentialpassword_id:
+      properties:
+        name:
+          type: string
+      type: object
+    logArchive_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    logArchive_patch_credential_id:
       properties:
         name:
           type: string
@@ -18742,7 +22093,8 @@ components:
         - accessRights
         - accessRights
         state: Running
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -18807,7 +22159,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -18827,16 +22180,15 @@ components:
           type: string
         image:
           enum:
-          - quay.io/hyperone/php-apache:7.2
-          - quay.io/hyperone/php-apache:5.6
+          - h1cr.io/website/nginx-static:latest
+          - h1cr.io/website/php-apache:7.2
+          - h1cr.io/website/php-apache:5.6
           type: string
-        domain:
-          items:
-            type: string
-          type: array
         service:
           format: ObjectId
           type: string
+        source:
+          $ref: '#/components/schemas/website_create_source'
         credential:
           $ref: '#/components/schemas/vault_create_credential'
         tag:
@@ -18896,15 +22248,22 @@ components:
           type: number
       type: object
     website.tag:
-      default: {}
+      additionalProperties:
+        type: string
+      type: object
+    website_post_snapshot:
+      properties:
+        name:
+          pattern: /^[\w-]+$/
+          type: string
+      required:
+      - name
       type: object
     website_post_credentialpassword:
       properties:
         name:
           type: string
         type:
-          enum:
-          - sha512
           type: string
         value:
           type: string
@@ -18936,6 +22295,26 @@ components:
       - value
       type: object
     website_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    website_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    website_patch_credential_id:
       properties:
         name:
           type: string
@@ -18982,7 +22361,8 @@ components:
         - accessRights
         - accessRights
         state: Running
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -19047,7 +22427,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -19062,8 +22443,6 @@ components:
         service:
           format: ObjectId
           type: string
-        credential:
-          $ref: '#/components/schemas/database_create_credential'
         tag:
           type: object
       required:
@@ -19111,15 +22490,14 @@ components:
           type: number
       type: object
     database.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     database_post_credentialpassword:
       properties:
         name:
           type: string
         type:
-          enum:
-          - double-sha1
           type: string
         value:
           type: string
@@ -19135,12 +22513,267 @@ components:
         name:
           type: string
       type: object
+    database_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    database_patch_credential_id:
+      properties:
+        name:
+          type: string
+      type: object
     database_post_accessrights:
       properties:
         identity:
           type: string
       type: object
     database_patch_tag:
+      additionalProperties:
+        type: string
+      type: object
+    registry:
+      example:
+        sizeUsed: 0.8008281904610115
+        flavour: flavour
+        fqdn: fqdn
+        created: true
+        project: project
+        services:
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        - quantity: 0.8008281904610115
+          data: '{}'
+          name: name
+          type: type
+          oneTime: true
+          sourceService: sourceService
+          billing: billing
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        createdBy: createdBy
+        domain:
+        - domain
+        - domain
+        name: name
+        processing: true
+        modifiedBy: modifiedBy
+        _id: _id
+        id: id
+        accessRights:
+        - accessRights
+        - accessRights
+        state: Running
+        tag:
+          key: tag
+        queue:
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+        - stage: stage
+          createdBy: createdBy
+          resource:
+            id: id
+            type: type
+          queued: 2000-01-23T04:56:07.000+00:00
+          name: name
+          _id: _id
+          state: pending
+      properties:
+        _id:
+          format: ObjectId
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        services:
+          items:
+            $ref: '#/components/schemas/project_services'
+          type: array
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          default: ""
+          type: string
+        createdBy:
+          default: ""
+          type: string
+        createdOn:
+          format: date-time
+          type: string
+        accessRights:
+          items:
+            type: string
+          type: array
+        processing:
+          type: boolean
+        created:
+          type: boolean
+        queue:
+          items:
+            $ref: '#/components/schemas/event'
+          type: array
+        state:
+          enum:
+          - Running
+          - Off
+          - Unknown
+          type: string
+        tag:
+          additionalProperties:
+            type: string
+          type: object
+        project:
+          format: ObjectId
+          type: string
+        fqdn:
+          type: string
+        sizeUsed:
+          type: number
+        domain:
+          items:
+            type: string
+          type: array
+      type: object
+    registry_create:
+      properties:
+        name:
+          type: string
+        service:
+          format: ObjectId
+          type: string
+        credential:
+          $ref: '#/components/schemas/logArchive_create_credential'
+        tag:
+          type: object
+      required:
+      - name
+      - service
+      type: object
+    registry_update:
+      properties:
+        name:
+          type: string
+      type: object
+    registry_action_transfer:
+      properties:
+        project:
+          format: ObjectId
+          type: string
+      required:
+      - project
+      type: object
+    registry_action_update_domain:
+      properties:
+        domain:
+          items:
+            type: string
+          type: array
+      required:
+      - domain
+      type: object
+    registry.services:
+      example:
+        quantity: 0.8008281904610115
+        data: '{}'
+        name: name
+        type: type
+        oneTime: true
+        sourceService: sourceService
+        billing: billing
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        oneTime:
+          type: boolean
+        billing:
+          format: ObjectId
+          type: string
+        data:
+          type: object
+        sourceService:
+          format: ObjectId
+          type: string
+        quantity:
+          type: number
+      type: object
+    registry.tag:
+      additionalProperties:
+        type: string
+      type: object
+    registry_post_credentialpassword:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    registry_patch_credentialpassword_id:
+      properties:
+        name:
+          type: string
+      type: object
+    registry_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    registry_patch_credential_id:
+      properties:
+        name:
+          type: string
+      type: object
+    registry_post_accessrights:
+      properties:
+        identity:
+          type: string
+      type: object
+    registry_patch_tag:
       additionalProperties:
         type: string
       type: object
@@ -19177,7 +22810,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         enabledServices:
         - enabledServices
         - enabledServices
@@ -19244,7 +22878,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -19323,7 +22958,8 @@ components:
           type: number
       type: object
     agent.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     agent_put_enabledServices:
       items:
@@ -19346,6 +22982,26 @@ components:
       - value
       type: object
     agent_patch_credentialcertificate_id:
+      properties:
+        name:
+          type: string
+      type: object
+    agent_post_credential:
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+        token:
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    agent_patch_credential_id:
       properties:
         name:
           type: string
@@ -19398,12 +23054,12 @@ components:
         - env
         createdOn: 2000-01-23T04:56:07.000+00:00
         expose:
-        - protocol: protocol
+        - internal: internal
           external: external
-          internal: internal
-        - protocol: protocol
+          protocol: protocol
+        - internal: internal
           external: external
-          internal: internal
+          protocol: protocol
         command: command
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: createdBy
@@ -19416,7 +23072,8 @@ components:
         - accessRights
         - accessRights
         state: Running
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -19481,7 +23138,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -19520,7 +23178,7 @@ components:
           type: string
         expose:
           items:
-            $ref: '#/components/schemas/container_create_expose'
+            $ref: '#/components/schemas/container_expose'
           type: array
         env:
           items:
@@ -19572,7 +23230,8 @@ components:
           type: number
       type: object
     container.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     container_post_accessrights:
       properties:
@@ -19616,7 +23275,8 @@ components:
         - accessRights
         - accessRights
         state: Online
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -19682,7 +23342,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -19739,7 +23400,8 @@ components:
           type: number
       type: object
     volume.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     volume_post_accessrights:
       properties:
@@ -19782,7 +23444,8 @@ components:
         - accessRights
         - accessRights
         state: Error
-        tag: '{}'
+        tag:
+          key: tag
         queue:
         - stage: stage
           createdBy: createdBy
@@ -19857,7 +23520,8 @@ components:
           - Unknown
           type: string
         tag:
-          default: {}
+          additionalProperties:
+            type: string
           type: object
         project:
           format: ObjectId
@@ -19910,7 +23574,8 @@ components:
           type: number
       type: object
     replica.tag:
-      default: {}
+      additionalProperties:
+        type: string
       type: object
     replica_post_accessrights:
       properties:
@@ -20018,7 +23683,10 @@ components:
           type: boolean
         persistent:
           type: boolean
-    project.limit_vm:
+    project_limit_vm:
+      example:
+        memory: 3.616076749251911
+        count: 9.301444243932576
       properties:
         count:
           default: 3
@@ -20029,7 +23697,10 @@ components:
       required:
       - count
       - memory
-    project.limit_disk:
+    project_limit_disk:
+      example:
+        size: 4.145608029883936
+        count: 2.027123023002322
       properties:
         count:
           default: 3
@@ -20040,28 +23711,37 @@ components:
       required:
       - count
       - size
-    project.limit_iso:
+    project_limit_iso:
+      example:
+        count: 7.386281948385884
       properties:
         count:
           default: 5
           type: number
       required:
       - count
-    project.limit_network:
+    project_limit_network:
+      example:
+        count: 0.8008281904610115
       properties:
         count:
           default: 3
           type: number
       required:
       - count
-    project.limit_image:
+    project_limit_image:
+      example:
+        count: 1.2315135367772556
       properties:
         count:
           default: 10
           type: number
       required:
       - count
-    project.limit_vault:
+    project_limit_vault:
+      example:
+        size: 1.4894159098541704
+        count: 1.0246457001441578
       properties:
         count:
           default: 10
@@ -20072,14 +23752,19 @@ components:
       required:
       - count
       - size
-    project.limit_snapshot:
+    project_limit_snapshot:
+      example:
+        count: 6.84685269835264
       properties:
         count:
           default: 500
           type: number
       required:
       - count
-    project.limit_domain:
+    project_limit_domain:
+      example:
+        record: 1.1730742509559433
+        count: 7.457744773683766
       properties:
         count:
           default: 20
@@ -20090,14 +23775,19 @@ components:
       required:
       - count
       - record
-    project.limit_reservation:
+    project_limit_reservation:
+      example:
+        count: 4.965218492984954
       properties:
         count:
           default: 50
           type: number
       required:
       - count
-    project.limit_volume:
+    project_limit_volume:
+      example:
+        size: 9.965781217890562
+        count: 5.025004791520295
       properties:
         count:
           default: 10
@@ -20108,7 +23798,9 @@ components:
       required:
       - count
       - size
-    project.limit_agent:
+    project_limit_agent:
+      example:
+        count: 9.369310271410669
       properties:
         count:
           default: 2
@@ -20213,15 +23905,27 @@ components:
           type: string
     user_limit:
       example:
-        organisation: '{}'
+        organisation:
+          count: 0.8008281904610115
       properties:
         organisation:
-          $ref: project.limit_network
+          $ref: '#/components/schemas/project_limit_network'
+    user_services:
+      example:
+        type: type
+        sourceService: sourceService
+      properties:
+        type:
+          type: string
+        sourceService:
+          format: ObjectId
+          type: string
     user_credential_password:
       example:
         createdBy: createdBy
         name: name
         _id: _id
+        id: id
         type: type
         createdOn: createdOn
         value: value
@@ -20236,6 +23940,8 @@ components:
           type: string
         _id:
           type: string
+        id:
+          type: string
         value:
           type: string
     user_credential:
@@ -20244,6 +23950,7 @@ components:
           createdBy: createdBy
           name: name
           _id: _id
+          id: id
           type: type
           createdOn: createdOn
           value: value
@@ -20251,6 +23958,7 @@ components:
           createdBy: createdBy
           name: name
           _id: _id
+          id: id
           type: type
           createdOn: createdOn
           value: value
@@ -20308,7 +24016,10 @@ components:
       example:
         role: owner
         id: id
+        state: Active
       properties:
+        id:
+          type: string
         role:
           enum:
           - owner
@@ -20316,7 +24027,12 @@ components:
           - user
           - support
           type: string
-        id:
+        state:
+          default: Active
+          enum:
+          - Active
+          - Invited
+          - Declined
           type: string
     project_billing:
       example:
@@ -20367,66 +24083,93 @@ components:
           $ref: '#/components/schemas/project_duplicate'
     project_limit:
       example:
-        container: '{}'
-        image: '{}'
-        agent: '{}'
-        website: '{}'
-        iso: '{}'
-        ip: '{}'
-        network: '{}'
-        netgw: '{}'
-        volume: '{}'
-        disk: '{}'
-        database: '{}'
-        firewall: '{}'
-        vm: '{}'
-        domain: '{}'
-        reservation: '{}'
-        logArchive: '{}'
-        vault: '{}'
-        snapshot: '{}'
+        container:
+          count: 1.2315135367772556
+        image:
+          count: 1.2315135367772556
+        registry:
+          count: 7.386281948385884
+        agent:
+          count: 9.369310271410669
+        website:
+          count: 1.2315135367772556
+        iso:
+          count: 7.386281948385884
+        ip:
+          count: 1.2315135367772556
+        network:
+          count: 0.8008281904610115
+        netgw:
+          count: 1.2315135367772556
+        volume:
+          size: 9.965781217890562
+          count: 5.025004791520295
+        disk:
+          size: 4.145608029883936
+          count: 2.027123023002322
+        database:
+          count: 1.2315135367772556
+        firewall:
+          count: 1.2315135367772556
+        vm:
+          memory: 3.616076749251911
+          count: 9.301444243932576
+        domain:
+          record: 1.1730742509559433
+          count: 7.457744773683766
+        reservation:
+          count: 4.965218492984954
+        logArchive:
+          count: 1.2315135367772556
+        vault:
+          size: 1.4894159098541704
+          count: 1.0246457001441578
+        snapshot:
+          count: 6.84685269835264
       properties:
         vm:
-          $ref: project.limit_vm
+          $ref: '#/components/schemas/project_limit_vm'
         disk:
-          $ref: project.limit_disk
+          $ref: '#/components/schemas/project_limit_disk'
         iso:
-          $ref: project.limit_iso
+          $ref: '#/components/schemas/project_limit_iso'
         network:
-          $ref: project.limit_network
+          $ref: '#/components/schemas/project_limit_network'
         image:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         ip:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         firewall:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         netgw:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         vault:
-          $ref: project.limit_vault
+          $ref: '#/components/schemas/project_limit_vault'
         snapshot:
-          $ref: project.limit_snapshot
+          $ref: '#/components/schemas/project_limit_snapshot'
         domain:
-          $ref: project.limit_domain
+          $ref: '#/components/schemas/project_limit_domain'
         logArchive:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         reservation:
-          $ref: project.limit_reservation
+          $ref: '#/components/schemas/project_limit_reservation'
         container:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         volume:
-          $ref: project.limit_volume
+          $ref: '#/components/schemas/project_limit_volume'
         agent:
-          $ref: project.limit_agent
+          $ref: '#/components/schemas/project_limit_agent'
         website:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
         database:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
+        registry:
+          $ref: '#/components/schemas/project_limit_iso'
     project_threshold_credits:
       example:
         levels:
-        - 9.301444243932576
-        - 9.301444243932576
+        - 6.683562403749608
+        - 6.683562403749608
       properties:
         levels:
           items:
@@ -20436,8 +24179,8 @@ components:
       example:
         credits:
           levels:
-          - 9.301444243932576
-          - 9.301444243932576
+          - 6.683562403749608
+          - 6.683562403749608
       properties:
         credits:
           $ref: '#/components/schemas/project_threshold_credits'
@@ -20446,8 +24189,6 @@ components:
         path: path
         method: ALL
       properties:
-        path:
-          type: string
         method:
           enum:
           - ALL
@@ -20455,6 +24196,8 @@ components:
           - POST
           - PATCH
           - DELETE
+          type: string
+        path:
           type: string
       required:
       - method
@@ -20468,12 +24211,12 @@ components:
           method: ALL
         name: name
       properties:
+        name:
+          type: string
         access:
           items:
             $ref: '#/components/schemas/project_access'
           type: array
-        name:
-          type: string
       required:
       - name
     project_compliance:
@@ -20543,33 +24286,60 @@ components:
           type: string
     organisation_limit_organisation:
       example:
-        project: '{}'
+        project:
+          count: 1.2315135367772556
       properties:
         project:
-          $ref: project.limit_image
+          $ref: '#/components/schemas/project_limit_image'
     organisation_limit:
       example:
         organisation:
-          project: '{}'
+          project:
+            count: 1.2315135367772556
         project:
-          container: '{}'
-          image: '{}'
-          agent: '{}'
-          website: '{}'
-          iso: '{}'
-          ip: '{}'
-          network: '{}'
-          netgw: '{}'
-          volume: '{}'
-          disk: '{}'
-          database: '{}'
-          firewall: '{}'
-          vm: '{}'
-          domain: '{}'
-          reservation: '{}'
-          logArchive: '{}'
-          vault: '{}'
-          snapshot: '{}'
+          container:
+            count: 1.2315135367772556
+          image:
+            count: 1.2315135367772556
+          registry:
+            count: 7.386281948385884
+          agent:
+            count: 9.369310271410669
+          website:
+            count: 1.2315135367772556
+          iso:
+            count: 7.386281948385884
+          ip:
+            count: 1.2315135367772556
+          network:
+            count: 0.8008281904610115
+          netgw:
+            count: 1.2315135367772556
+          volume:
+            size: 9.965781217890562
+            count: 5.025004791520295
+          disk:
+            size: 4.145608029883936
+            count: 2.027123023002322
+          database:
+            count: 1.2315135367772556
+          firewall:
+            count: 1.2315135367772556
+          vm:
+            memory: 3.616076749251911
+            count: 9.301444243932576
+          domain:
+            record: 1.1730742509559433
+            count: 7.457744773683766
+          reservation:
+            count: 4.965218492984954
+          logArchive:
+            count: 1.2315135367772556
+          vault:
+            size: 1.4894159098541704
+            count: 1.0246457001441578
+          snapshot:
+            count: 6.84685269835264
       properties:
         organisation:
           $ref: '#/components/schemas/organisation_limit_organisation'
@@ -20628,6 +24398,26 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/organisation_update_billing_address'
+    firewall_create_ingress:
+      properties:
+        name:
+          type: string
+        action:
+          type: string
+        priority:
+          type: number
+        filter:
+          items:
+            type: string
+          type: array
+        external:
+          items:
+            type: string
+          type: array
+        internal:
+          items:
+            type: string
+          type: array
     network_dns:
       example:
         nameservers:
@@ -20655,15 +24445,15 @@ components:
     image_attachedOn:
       example:
         controllerType: controllerType
-        controllerNumber: 5.962133916683182
-        controllerLocation: 1.4658129805029452
+        controllerNumber: 1.4658129805029452
+        controllerLocation: 5.962133916683182
       properties:
-        controllerLocation:
-          type: number
-        controllerNumber:
-          type: number
         controllerType:
           type: string
+        controllerNumber:
+          type: number
+        controllerLocation:
+          type: number
       required:
       - controllerLocation
       - controllerNumber
@@ -20681,8 +24471,8 @@ components:
       example:
         attachedOn:
           controllerType: controllerType
-          controllerNumber: 5.962133916683182
-          controllerLocation: 1.4658129805029452
+          controllerNumber: 1.4658129805029452
+          controllerLocation: 5.962133916683182
         disk:
           name: name
           _id: _id
@@ -20817,8 +24607,6 @@ components:
         name:
           type: string
         type:
-          enum:
-          - sha512
           type: string
         value:
           type: string
@@ -20858,28 +24646,13 @@ components:
           items:
             $ref: '#/components/schemas/vault_create_credential_password'
           type: array
-    database_create_credential_password:
+    website_create_source:
       properties:
-        name:
+        website:
+          format: ObjectId
           type: string
-        type:
-          enum:
-          - double-sha1
+        snapshot:
           type: string
-        value:
-          type: string
-        token:
-          type: string
-      required:
-      - name
-      - type
-      - value
-    database_create_credential:
-      properties:
-        password:
-          items:
-            $ref: '#/components/schemas/database_create_credential_password'
-          type: array
     agent_create_credential:
       properties:
         certificate:
@@ -20892,28 +24665,28 @@ components:
         sourcePath: sourcePath
         target: target
       properties:
-        target:
+        source:
+          format: ObjectId
           type: string
         sourcePath:
           default: ""
           type: string
-        source:
-          format: ObjectId
+        target:
           type: string
       required:
       - source
       - target
     container_expose:
       example:
-        protocol: protocol
-        external: external
         internal: internal
+        external: external
+        protocol: protocol
       properties:
-        protocol:
+        internal:
           type: string
         external:
           type: string
-        internal:
+        protocol:
           type: string
       required:
       - external
@@ -20942,18 +24715,6 @@ components:
           type: string
         token:
           type: string
-    container_create_expose:
-      properties:
-        internal:
-          type: string
-        external:
-          type: string
-        protocol:
-          type: string
-      required:
-      - external
-      - internal
-      - protocol
     container_create_volumes:
       properties:
         source:

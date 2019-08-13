@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## NetgwDeleteTagKey
 
-> map[string]interface{} NetgwDeleteTagKey(ctx, netgwId, key)
+> map[string]string NetgwDeleteTagKey(ctx, netgwId, key)
 /tag/:key
 
 ### Required Parameters
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ## NetgwGetTag
 
-> map[string]interface{} NetgwGetTag(ctx, netgwId)
+> map[string]string NetgwGetTag(ctx, netgwId)
 /tag
 
 ### Required Parameters
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## NetgwPatchTag
 
-> map[string]interface{} NetgwPatchTag(ctx, netgwId, requestBody)
+> map[string]string NetgwPatchTag(ctx, netgwId, requestBody)
 /tag
 
 ### Required Parameters
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

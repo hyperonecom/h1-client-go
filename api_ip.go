@@ -907,16 +907,16 @@ IpApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -979,7 +979,7 @@ func (a *IpApiService) IpDeleteTagKey(ctx context.Context, ipId string, key stri
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1128,16 +1128,16 @@ func (a *IpApiService) IpGetServicesServiceId(ctx context.Context, ipId string, 
 IpApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1199,7 +1199,7 @@ func (a *IpApiService) IpGetTag(ctx context.Context, ipId string) (map[string]in
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1688,16 +1688,16 @@ IpApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param ipId ID of ip
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1761,7 +1761,7 @@ func (a *IpApiService) IpPatchTag(ctx context.Context, ipId string, requestBody 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

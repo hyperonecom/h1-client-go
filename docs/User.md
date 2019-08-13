@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Phone** | **string** |  | [optional] [default to ]
 **LastLogin** | [**[]UserLastLogin**](user_lastLogin.md) |  | [optional] 
 **Limit** | [**UserLimit**](user_limit.md) |  | [optional] 
+**Services** | [**[]UserServices**](user_services.md) |  | [optional] 
 **Credential** | [**UserCredential**](user_credential.md) |  | [optional] 
 **NetworkAcl** | [**[]UserNetworkAcl**](user_networkAcl.md) |  | [optional] 
 

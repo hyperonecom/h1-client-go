@@ -10,7 +10,7 @@
 package openapi
 
 type ContainerVolumes struct {
-	Target string `json:"target"`
-	SourcePath string `json:"sourcePath,omitempty"`
 	Source string `json:"source"`
+	SourcePath string `json:"sourcePath,omitempty"`
+	Target string `json:"target"`
 }

@@ -12,8 +12,8 @@ package openapi
 type WebsiteCreate struct {
 	Name string `json:"name"`
 	Image string `json:"image"`
-	Domain []string `json:"domain,omitempty"`
 	Service string `json:"service"`
+	Source WebsiteCreateSource `json:"source,omitempty"`
 	Credential VaultCreateCredential `json:"credential,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 }

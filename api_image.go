@@ -464,16 +464,16 @@ ImageApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -536,7 +536,7 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -685,16 +685,16 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 ImageApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -756,7 +756,7 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1245,16 +1245,16 @@ ImageApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1318,7 +1318,7 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, req
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

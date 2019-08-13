@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ## VolumeDeleteTagKey
 
-> map[string]interface{} VolumeDeleteTagKey(ctx, volumeId, key)
+> map[string]string VolumeDeleteTagKey(ctx, volumeId, key)
 /tag/:key
 
 ### Required Parameters
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ## VolumeGetTag
 
-> map[string]interface{} VolumeGetTag(ctx, volumeId)
+> map[string]string VolumeGetTag(ctx, volumeId)
 /tag
 
 ### Required Parameters
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## VolumePatchTag
 
-> map[string]interface{} VolumePatchTag(ctx, volumeId, requestBody)
+> map[string]string VolumePatchTag(ctx, volumeId, requestBody)
 /tag
 
 ### Required Parameters
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

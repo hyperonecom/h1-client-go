@@ -690,16 +690,16 @@ DiskApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -762,7 +762,7 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -911,16 +911,16 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 DiskApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[string]interface{}, *http.Response, error) {
+func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -982,7 +982,7 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1471,16 +1471,16 @@ DiskApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1544,7 +1544,7 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, reques
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

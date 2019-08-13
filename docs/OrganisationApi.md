@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ## OrganisationDeleteTagKey
 
-> map[string]interface{} OrganisationDeleteTagKey(ctx, organisationId, key)
+> map[string]string OrganisationDeleteTagKey(ctx, organisationId, key)
 /tag/:key
 
 ### Required Parameters
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ## OrganisationGetTag
 
-> map[string]interface{} OrganisationGetTag(ctx, organisationId)
+> map[string]string OrganisationGetTag(ctx, organisationId)
 /tag
 
 ### Required Parameters
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ## OrganisationPatchTag
 
-> map[string]interface{} OrganisationPatchTag(ctx, organisationId, requestBody)
+> map[string]string OrganisationPatchTag(ctx, organisationId, requestBody)
 /tag
 
 ### Required Parameters
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

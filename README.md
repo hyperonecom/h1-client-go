@@ -39,8 +39,10 @@ Class | Method | HTTP request | Description
 *AgentApi* | [**AgentCreate**](docs/AgentApi.md#agentcreate) | **Post** /agent | Create
 *AgentApi* | [**AgentDelete**](docs/AgentApi.md#agentdelete) | **Delete** /agent/{agentId} | Delete
 *AgentApi* | [**AgentDeleteAccessrightsIdentity**](docs/AgentApi.md#agentdeleteaccessrightsidentity) | **Delete** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
+*AgentApi* | [**AgentDeleteCredentialId**](docs/AgentApi.md#agentdeletecredentialid) | **Delete** /agent/{agentId}/credential/{id} | /credential/:id
 *AgentApi* | [**AgentDeleteCredentialcertificateId**](docs/AgentApi.md#agentdeletecredentialcertificateid) | **Delete** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 *AgentApi* | [**AgentDeleteTagKey**](docs/AgentApi.md#agentdeletetagkey) | **Delete** /agent/{agentId}/tag/{key} | /tag/:key
+*AgentApi* | [**AgentGetCredentialId**](docs/AgentApi.md#agentgetcredentialid) | **Get** /agent/{agentId}/credential/{id} | /credential/:id
 *AgentApi* | [**AgentGetCredentialcertificateId**](docs/AgentApi.md#agentgetcredentialcertificateid) | **Get** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 *AgentApi* | [**AgentGetInspect**](docs/AgentApi.md#agentgetinspect) | **Get** /agent/{agentId}/inspect | /inspect
 *AgentApi* | [**AgentGetResourceResourceIdinspect**](docs/AgentApi.md#agentgetresourceresourceidinspect) | **Get** /agent/{agentId}/resource/{resourceId}/inspect | /resource/:resourceId/inspect
@@ -48,15 +50,18 @@ Class | Method | HTTP request | Description
 *AgentApi* | [**AgentGetTag**](docs/AgentApi.md#agentgettag) | **Get** /agent/{agentId}/tag | /tag
 *AgentApi* | [**AgentList**](docs/AgentApi.md#agentlist) | **Get** /agent | List
 *AgentApi* | [**AgentListAccessrights**](docs/AgentApi.md#agentlistaccessrights) | **Get** /agent/{agentId}/accessrights | /accessrights
+*AgentApi* | [**AgentListCredential**](docs/AgentApi.md#agentlistcredential) | **Get** /agent/{agentId}/credential | /credential
 *AgentApi* | [**AgentListCredentialcertificate**](docs/AgentApi.md#agentlistcredentialcertificate) | **Get** /agent/{agentId}/credential/certificate | /credential/certificate
 *AgentApi* | [**AgentListEnabledServices**](docs/AgentApi.md#agentlistenabledservices) | **Get** /agent/{agentId}/enabledServices | /enabledServices
 *AgentApi* | [**AgentListQueue**](docs/AgentApi.md#agentlistqueue) | **Get** /agent/{agentId}/queue | /queue
 *AgentApi* | [**AgentListResource**](docs/AgentApi.md#agentlistresource) | **Get** /agent/{agentId}/resource | /resource
 *AgentApi* | [**AgentListResourceResourceIdqueue**](docs/AgentApi.md#agentlistresourceresourceidqueue) | **Get** /agent/{agentId}/resource/{resourceId}/queue | /resource/:resourceId/queue
 *AgentApi* | [**AgentListServices**](docs/AgentApi.md#agentlistservices) | **Get** /agent/{agentId}/services | /services
+*AgentApi* | [**AgentPatchCredentialId**](docs/AgentApi.md#agentpatchcredentialid) | **Patch** /agent/{agentId}/credential/{id} | /credential/:id
 *AgentApi* | [**AgentPatchCredentialcertificateId**](docs/AgentApi.md#agentpatchcredentialcertificateid) | **Patch** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 *AgentApi* | [**AgentPatchTag**](docs/AgentApi.md#agentpatchtag) | **Patch** /agent/{agentId}/tag | /tag
 *AgentApi* | [**AgentPostAccessrights**](docs/AgentApi.md#agentpostaccessrights) | **Post** /agent/{agentId}/accessrights | /accessrights
+*AgentApi* | [**AgentPostCredential**](docs/AgentApi.md#agentpostcredential) | **Post** /agent/{agentId}/credential | /credential
 *AgentApi* | [**AgentPostCredentialcertificate**](docs/AgentApi.md#agentpostcredentialcertificate) | **Post** /agent/{agentId}/credential/certificate | /credential/certificate
 *AgentApi* | [**AgentPostResourceResourceIdactionsrecreate**](docs/AgentApi.md#agentpostresourceresourceidactionsrecreate) | **Post** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
 *AgentApi* | [**AgentPutEnabledServices**](docs/AgentApi.md#agentputenabledservices) | **Put** /agent/{agentId}/enabledServices | /enabledServices
@@ -86,19 +91,24 @@ Class | Method | HTTP request | Description
 *DatabaseApi* | [**DatabaseCreate**](docs/DatabaseApi.md#databasecreate) | **Post** /database | Create
 *DatabaseApi* | [**DatabaseDelete**](docs/DatabaseApi.md#databasedelete) | **Delete** /database/{databaseId} | Delete
 *DatabaseApi* | [**DatabaseDeleteAccessrightsIdentity**](docs/DatabaseApi.md#databasedeleteaccessrightsidentity) | **Delete** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
+*DatabaseApi* | [**DatabaseDeleteCredentialId**](docs/DatabaseApi.md#databasedeletecredentialid) | **Delete** /database/{databaseId}/credential/{id} | /credential/:id
 *DatabaseApi* | [**DatabaseDeleteCredentialpasswordId**](docs/DatabaseApi.md#databasedeletecredentialpasswordid) | **Delete** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 *DatabaseApi* | [**DatabaseDeleteTagKey**](docs/DatabaseApi.md#databasedeletetagkey) | **Delete** /database/{databaseId}/tag/{key} | /tag/:key
+*DatabaseApi* | [**DatabaseGetCredentialId**](docs/DatabaseApi.md#databasegetcredentialid) | **Get** /database/{databaseId}/credential/{id} | /credential/:id
 *DatabaseApi* | [**DatabaseGetCredentialpasswordId**](docs/DatabaseApi.md#databasegetcredentialpasswordid) | **Get** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 *DatabaseApi* | [**DatabaseGetServicesServiceId**](docs/DatabaseApi.md#databasegetservicesserviceid) | **Get** /database/{databaseId}/services/{serviceId} | /services/:serviceId
 *DatabaseApi* | [**DatabaseGetTag**](docs/DatabaseApi.md#databasegettag) | **Get** /database/{databaseId}/tag | /tag
 *DatabaseApi* | [**DatabaseList**](docs/DatabaseApi.md#databaselist) | **Get** /database | List
 *DatabaseApi* | [**DatabaseListAccessrights**](docs/DatabaseApi.md#databaselistaccessrights) | **Get** /database/{databaseId}/accessrights | /accessrights
+*DatabaseApi* | [**DatabaseListCredential**](docs/DatabaseApi.md#databaselistcredential) | **Get** /database/{databaseId}/credential | /credential
 *DatabaseApi* | [**DatabaseListCredentialpassword**](docs/DatabaseApi.md#databaselistcredentialpassword) | **Get** /database/{databaseId}/credential/password | /credential/password
 *DatabaseApi* | [**DatabaseListQueue**](docs/DatabaseApi.md#databaselistqueue) | **Get** /database/{databaseId}/queue | /queue
 *DatabaseApi* | [**DatabaseListServices**](docs/DatabaseApi.md#databaselistservices) | **Get** /database/{databaseId}/services | /services
+*DatabaseApi* | [**DatabasePatchCredentialId**](docs/DatabaseApi.md#databasepatchcredentialid) | **Patch** /database/{databaseId}/credential/{id} | /credential/:id
 *DatabaseApi* | [**DatabasePatchCredentialpasswordId**](docs/DatabaseApi.md#databasepatchcredentialpasswordid) | **Patch** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 *DatabaseApi* | [**DatabasePatchTag**](docs/DatabaseApi.md#databasepatchtag) | **Patch** /database/{databaseId}/tag | /tag
 *DatabaseApi* | [**DatabasePostAccessrights**](docs/DatabaseApi.md#databasepostaccessrights) | **Post** /database/{databaseId}/accessrights | /accessrights
+*DatabaseApi* | [**DatabasePostCredential**](docs/DatabaseApi.md#databasepostcredential) | **Post** /database/{databaseId}/credential | /credential
 *DatabaseApi* | [**DatabasePostCredentialpassword**](docs/DatabaseApi.md#databasepostcredentialpassword) | **Post** /database/{databaseId}/credential/password | /credential/password
 *DatabaseApi* | [**DatabaseShow**](docs/DatabaseApi.md#databaseshow) | **Get** /database/{databaseId} | Get
 *DatabaseApi* | [**DatabaseUpdate**](docs/DatabaseApi.md#databaseupdate) | **Patch** /database/{databaseId} | Update
@@ -142,6 +152,8 @@ Class | Method | HTTP request | Description
 *FirewallApi* | [**FirewallPostAccessrights**](docs/FirewallApi.md#firewallpostaccessrights) | **Post** /firewall/{firewallId}/accessrights | /accessrights
 *FirewallApi* | [**FirewallPostEgress**](docs/FirewallApi.md#firewallpostegress) | **Post** /firewall/{firewallId}/egress | /egress
 *FirewallApi* | [**FirewallPostIngress**](docs/FirewallApi.md#firewallpostingress) | **Post** /firewall/{firewallId}/ingress | /ingress
+*FirewallApi* | [**FirewallPutEgress**](docs/FirewallApi.md#firewallputegress) | **Put** /firewall/{firewallId}/egress | /egress
+*FirewallApi* | [**FirewallPutIngress**](docs/FirewallApi.md#firewallputingress) | **Put** /firewall/{firewallId}/ingress | /ingress
 *FirewallApi* | [**FirewallShow**](docs/FirewallApi.md#firewallshow) | **Get** /firewall/{firewallId} | Get
 *FirewallApi* | [**FirewallUpdate**](docs/FirewallApi.md#firewallupdate) | **Patch** /firewall/{firewallId} | Update
 *ImageApi* | [**ImageActionTransfer**](docs/ImageApi.md#imageactiontransfer) | **Post** /image/{imageId}/actions/transfer | /actions/transfer
@@ -197,22 +209,29 @@ Class | Method | HTTP request | Description
 *LogArchiveApi* | [**LogArchiveCreate**](docs/LogArchiveApi.md#logarchivecreate) | **Post** /logArchive | Create
 *LogArchiveApi* | [**LogArchiveDelete**](docs/LogArchiveApi.md#logarchivedelete) | **Delete** /logArchive/{logArchiveId} | Delete
 *LogArchiveApi* | [**LogArchiveDeleteAccessrightsIdentity**](docs/LogArchiveApi.md#logarchivedeleteaccessrightsidentity) | **Delete** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
+*LogArchiveApi* | [**LogArchiveDeleteCredentialId**](docs/LogArchiveApi.md#logarchivedeletecredentialid) | **Delete** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 *LogArchiveApi* | [**LogArchiveDeleteCredentialpasswordId**](docs/LogArchiveApi.md#logarchivedeletecredentialpasswordid) | **Delete** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchiveDeleteTagKey**](docs/LogArchiveApi.md#logarchivedeletetagkey) | **Delete** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
+*LogArchiveApi* | [**LogArchiveGetCredentialId**](docs/LogArchiveApi.md#logarchivegetcredentialid) | **Get** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 *LogArchiveApi* | [**LogArchiveGetCredentialpasswordId**](docs/LogArchiveApi.md#logarchivegetcredentialpasswordid) | **Get** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchiveGetServicesServiceId**](docs/LogArchiveApi.md#logarchivegetservicesserviceid) | **Get** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
 *LogArchiveApi* | [**LogArchiveGetTag**](docs/LogArchiveApi.md#logarchivegettag) | **Get** /logArchive/{logArchiveId}/tag | /tag
 *LogArchiveApi* | [**LogArchiveList**](docs/LogArchiveApi.md#logarchivelist) | **Get** /logArchive | List
 *LogArchiveApi* | [**LogArchiveListAccessrights**](docs/LogArchiveApi.md#logarchivelistaccessrights) | **Get** /logArchive/{logArchiveId}/accessrights | /accessrights
+*LogArchiveApi* | [**LogArchiveListCredential**](docs/LogArchiveApi.md#logarchivelistcredential) | **Get** /logArchive/{logArchiveId}/credential | /credential
 *LogArchiveApi* | [**LogArchiveListCredentialpassword**](docs/LogArchiveApi.md#logarchivelistcredentialpassword) | **Get** /logArchive/{logArchiveId}/credential/password | /credential/password
 *LogArchiveApi* | [**LogArchiveListQueue**](docs/LogArchiveApi.md#logarchivelistqueue) | **Get** /logArchive/{logArchiveId}/queue | /queue
 *LogArchiveApi* | [**LogArchiveListServices**](docs/LogArchiveApi.md#logarchivelistservices) | **Get** /logArchive/{logArchiveId}/services | /services
+*LogArchiveApi* | [**LogArchivePatchCredentialId**](docs/LogArchiveApi.md#logarchivepatchcredentialid) | **Patch** /logArchive/{logArchiveId}/credential/{id} | /credential/:id
 *LogArchiveApi* | [**LogArchivePatchCredentialpasswordId**](docs/LogArchiveApi.md#logarchivepatchcredentialpasswordid) | **Patch** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *LogArchiveApi* | [**LogArchivePatchTag**](docs/LogArchiveApi.md#logarchivepatchtag) | **Patch** /logArchive/{logArchiveId}/tag | /tag
 *LogArchiveApi* | [**LogArchivePostAccessrights**](docs/LogArchiveApi.md#logarchivepostaccessrights) | **Post** /logArchive/{logArchiveId}/accessrights | /accessrights
+*LogArchiveApi* | [**LogArchivePostCredential**](docs/LogArchiveApi.md#logarchivepostcredential) | **Post** /logArchive/{logArchiveId}/credential | /credential
 *LogArchiveApi* | [**LogArchivePostCredentialpassword**](docs/LogArchiveApi.md#logarchivepostcredentialpassword) | **Post** /logArchive/{logArchiveId}/credential/password | /credential/password
 *LogArchiveApi* | [**LogArchiveShow**](docs/LogArchiveApi.md#logarchiveshow) | **Get** /logArchive/{logArchiveId} | Get
 *LogArchiveApi* | [**LogArchiveUpdate**](docs/LogArchiveApi.md#logarchiveupdate) | **Patch** /logArchive/{logArchiveId} | Update
+*NetadpApi* | [**NetadpActionFirewallAdd**](docs/NetadpApi.md#netadpactionfirewalladd) | **Post** /netadp/{netadpId}/actions/firewall_add | /actions/firewall_add
+*NetadpApi* | [**NetadpActionFirewallRemove**](docs/NetadpApi.md#netadpactionfirewallremove) | **Post** /netadp/{netadpId}/actions/firewall_remove | /actions/firewall_remove
 *NetadpApi* | [**NetadpDeleteAccessrightsIdentity**](docs/NetadpApi.md#netadpdeleteaccessrightsidentity) | **Delete** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
 *NetadpApi* | [**NetadpDeleteTagKey**](docs/NetadpApi.md#netadpdeletetagkey) | **Delete** /netadp/{netadpId}/tag/{key} | /tag/:key
 *NetadpApi* | [**NetadpGetServicesServiceId**](docs/NetadpApi.md#netadpgetservicesserviceid) | **Get** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
@@ -240,6 +259,8 @@ Class | Method | HTTP request | Description
 *NetgwApi* | [**NetgwPostAccessrights**](docs/NetgwApi.md#netgwpostaccessrights) | **Post** /netgw/{netgwId}/accessrights | /accessrights
 *NetgwApi* | [**NetgwShow**](docs/NetgwApi.md#netgwshow) | **Get** /netgw/{netgwId} | Get
 *NetgwApi* | [**NetgwUpdate**](docs/NetgwApi.md#netgwupdate) | **Patch** /netgw/{netgwId} | Update
+*NetworkApi* | [**NetworkActionFirewallAdd**](docs/NetworkApi.md#networkactionfirewalladd) | **Post** /network/{networkId}/actions/firewall_add | /actions/firewall_add
+*NetworkApi* | [**NetworkActionFirewallRemove**](docs/NetworkApi.md#networkactionfirewallremove) | **Post** /network/{networkId}/actions/firewall_remove | /actions/firewall_remove
 *NetworkApi* | [**NetworkCreate**](docs/NetworkApi.md#networkcreate) | **Post** /network | Create
 *NetworkApi* | [**NetworkDelete**](docs/NetworkApi.md#networkdelete) | **Delete** /network/{networkId} | Delete
 *NetworkApi* | [**NetworkDeleteAccessrightsIdentity**](docs/NetworkApi.md#networkdeleteaccessrightsidentity) | **Delete** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
@@ -274,23 +295,61 @@ Class | Method | HTTP request | Description
 *ProjectApi* | [**ProjectCreate**](docs/ProjectApi.md#projectcreate) | **Post** /project | Create
 *ProjectApi* | [**ProjectDelete**](docs/ProjectApi.md#projectdelete) | **Delete** /project/{projectId} | Delete
 *ProjectApi* | [**ProjectDeleteAccessrightsId**](docs/ProjectApi.md#projectdeleteaccessrightsid) | **Delete** /project/{projectId}/accessrights/{id} | /accessrights/:id
+*ProjectApi* | [**ProjectDeleteCredentialStoreId**](docs/ProjectApi.md#projectdeletecredentialstoreid) | **Delete** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 *ProjectApi* | [**ProjectDeleteCredentialStorecertificateId**](docs/ProjectApi.md#projectdeletecredentialstorecertificateid) | **Delete** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectDeleteTagKey**](docs/ProjectApi.md#projectdeletetagkey) | **Delete** /project/{projectId}/tag/{key} | /tag/:key
+*ProjectApi* | [**ProjectGetCredentialStoreId**](docs/ProjectApi.md#projectgetcredentialstoreid) | **Get** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 *ProjectApi* | [**ProjectGetCredentialStorecertificateId**](docs/ProjectApi.md#projectgetcredentialstorecertificateid) | **Get** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectGetServicesServiceId**](docs/ProjectApi.md#projectgetservicesserviceid) | **Get** /project/{projectId}/services/{serviceId} | /services/:serviceId
 *ProjectApi* | [**ProjectGetTag**](docs/ProjectApi.md#projectgettag) | **Get** /project/{projectId}/tag | /tag
 *ProjectApi* | [**ProjectList**](docs/ProjectApi.md#projectlist) | **Get** /project | List
 *ProjectApi* | [**ProjectListAccessrights**](docs/ProjectApi.md#projectlistaccessrights) | **Get** /project/{projectId}/accessrights | /accessrights
+*ProjectApi* | [**ProjectListCredentialStore**](docs/ProjectApi.md#projectlistcredentialstore) | **Get** /project/{projectId}/credentialStore | /credentialStore
 *ProjectApi* | [**ProjectListCredentialStorecertificate**](docs/ProjectApi.md#projectlistcredentialstorecertificate) | **Get** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *ProjectApi* | [**ProjectListLimit**](docs/ProjectApi.md#projectlistlimit) | **Get** /project/{projectId}/limit | /limit
 *ProjectApi* | [**ProjectListQueue**](docs/ProjectApi.md#projectlistqueue) | **Get** /project/{projectId}/queue | /queue
 *ProjectApi* | [**ProjectListServices**](docs/ProjectApi.md#projectlistservices) | **Get** /project/{projectId}/services | /services
+*ProjectApi* | [**ProjectPatchCredentialStoreId**](docs/ProjectApi.md#projectpatchcredentialstoreid) | **Patch** /project/{projectId}/credentialStore/{id} | /credentialStore/:id
 *ProjectApi* | [**ProjectPatchCredentialStorecertificateId**](docs/ProjectApi.md#projectpatchcredentialstorecertificateid) | **Patch** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *ProjectApi* | [**ProjectPatchTag**](docs/ProjectApi.md#projectpatchtag) | **Patch** /project/{projectId}/tag | /tag
 *ProjectApi* | [**ProjectPostAccessrights**](docs/ProjectApi.md#projectpostaccessrights) | **Post** /project/{projectId}/accessrights | /accessrights
+*ProjectApi* | [**ProjectPostCredentialStore**](docs/ProjectApi.md#projectpostcredentialstore) | **Post** /project/{projectId}/credentialStore | /credentialStore
 *ProjectApi* | [**ProjectPostCredentialStorecertificate**](docs/ProjectApi.md#projectpostcredentialstorecertificate) | **Post** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *ProjectApi* | [**ProjectShow**](docs/ProjectApi.md#projectshow) | **Get** /project/{projectId} | Get
 *ProjectApi* | [**ProjectUpdate**](docs/ProjectApi.md#projectupdate) | **Patch** /project/{projectId} | Update
+*RegistryApi* | [**RegistryActionStart**](docs/RegistryApi.md#registryactionstart) | **Post** /registry/{registryId}/actions/start | /actions/start
+*RegistryApi* | [**RegistryActionStop**](docs/RegistryApi.md#registryactionstop) | **Post** /registry/{registryId}/actions/stop | /actions/stop
+*RegistryApi* | [**RegistryActionTransfer**](docs/RegistryApi.md#registryactiontransfer) | **Post** /registry/{registryId}/actions/transfer | /actions/transfer
+*RegistryApi* | [**RegistryActionUpdateDomain**](docs/RegistryApi.md#registryactionupdatedomain) | **Post** /registry/{registryId}/actions/update_domain | /actions/update_domain
+*RegistryApi* | [**RegistryCreate**](docs/RegistryApi.md#registrycreate) | **Post** /registry | Create
+*RegistryApi* | [**RegistryDelete**](docs/RegistryApi.md#registrydelete) | **Delete** /registry/{registryId} | Delete
+*RegistryApi* | [**RegistryDeleteAccessrightsIdentity**](docs/RegistryApi.md#registrydeleteaccessrightsidentity) | **Delete** /registry/{registryId}/accessrights/{identity} | /accessrights/:identity
+*RegistryApi* | [**RegistryDeleteCredentialId**](docs/RegistryApi.md#registrydeletecredentialid) | **Delete** /registry/{registryId}/credential/{id} | /credential/:id
+*RegistryApi* | [**RegistryDeleteCredentialpasswordId**](docs/RegistryApi.md#registrydeletecredentialpasswordid) | **Delete** /registry/{registryId}/credential/password/{id} | /credential/password/:id
+*RegistryApi* | [**RegistryDeleteRepositoryRepositoryIdtagTagId**](docs/RegistryApi.md#registrydeleterepositoryrepositoryidtagtagid) | **Delete** /registry/{registryId}/repository/{repositoryId}/tag/{tagId} | /repository/:repositoryId/tag/:tagId
+*RegistryApi* | [**RegistryDeleteTagKey**](docs/RegistryApi.md#registrydeletetagkey) | **Delete** /registry/{registryId}/tag/{key} | /tag/:key
+*RegistryApi* | [**RegistryGetCredentialId**](docs/RegistryApi.md#registrygetcredentialid) | **Get** /registry/{registryId}/credential/{id} | /credential/:id
+*RegistryApi* | [**RegistryGetCredentialpasswordId**](docs/RegistryApi.md#registrygetcredentialpasswordid) | **Get** /registry/{registryId}/credential/password/{id} | /credential/password/:id
+*RegistryApi* | [**RegistryGetRepositoryRepositoryId**](docs/RegistryApi.md#registrygetrepositoryrepositoryid) | **Get** /registry/{registryId}/repository/{repositoryId} | /repository/:repositoryId
+*RegistryApi* | [**RegistryGetRepositoryRepositoryIdtagTagId**](docs/RegistryApi.md#registrygetrepositoryrepositoryidtagtagid) | **Get** /registry/{registryId}/repository/{repositoryId}/tag/{tagId} | /repository/:repositoryId/tag/:tagId
+*RegistryApi* | [**RegistryGetServicesServiceId**](docs/RegistryApi.md#registrygetservicesserviceid) | **Get** /registry/{registryId}/services/{serviceId} | /services/:serviceId
+*RegistryApi* | [**RegistryGetTag**](docs/RegistryApi.md#registrygettag) | **Get** /registry/{registryId}/tag | /tag
+*RegistryApi* | [**RegistryList**](docs/RegistryApi.md#registrylist) | **Get** /registry | List
+*RegistryApi* | [**RegistryListAccessrights**](docs/RegistryApi.md#registrylistaccessrights) | **Get** /registry/{registryId}/accessrights | /accessrights
+*RegistryApi* | [**RegistryListCredential**](docs/RegistryApi.md#registrylistcredential) | **Get** /registry/{registryId}/credential | /credential
+*RegistryApi* | [**RegistryListCredentialpassword**](docs/RegistryApi.md#registrylistcredentialpassword) | **Get** /registry/{registryId}/credential/password | /credential/password
+*RegistryApi* | [**RegistryListQueue**](docs/RegistryApi.md#registrylistqueue) | **Get** /registry/{registryId}/queue | /queue
+*RegistryApi* | [**RegistryListRepository**](docs/RegistryApi.md#registrylistrepository) | **Get** /registry/{registryId}/repository | /repository
+*RegistryApi* | [**RegistryListRepositoryRepositoryIdtag**](docs/RegistryApi.md#registrylistrepositoryrepositoryidtag) | **Get** /registry/{registryId}/repository/{repositoryId}/tag | /repository/:repositoryId/tag
+*RegistryApi* | [**RegistryListServices**](docs/RegistryApi.md#registrylistservices) | **Get** /registry/{registryId}/services | /services
+*RegistryApi* | [**RegistryPatchCredentialId**](docs/RegistryApi.md#registrypatchcredentialid) | **Patch** /registry/{registryId}/credential/{id} | /credential/:id
+*RegistryApi* | [**RegistryPatchCredentialpasswordId**](docs/RegistryApi.md#registrypatchcredentialpasswordid) | **Patch** /registry/{registryId}/credential/password/{id} | /credential/password/:id
+*RegistryApi* | [**RegistryPatchTag**](docs/RegistryApi.md#registrypatchtag) | **Patch** /registry/{registryId}/tag | /tag
+*RegistryApi* | [**RegistryPostAccessrights**](docs/RegistryApi.md#registrypostaccessrights) | **Post** /registry/{registryId}/accessrights | /accessrights
+*RegistryApi* | [**RegistryPostCredential**](docs/RegistryApi.md#registrypostcredential) | **Post** /registry/{registryId}/credential | /credential
+*RegistryApi* | [**RegistryPostCredentialpassword**](docs/RegistryApi.md#registrypostcredentialpassword) | **Post** /registry/{registryId}/credential/password | /credential/password
+*RegistryApi* | [**RegistryShow**](docs/RegistryApi.md#registryshow) | **Get** /registry/{registryId} | Get
+*RegistryApi* | [**RegistryUpdate**](docs/RegistryApi.md#registryupdate) | **Patch** /registry/{registryId} | Update
 *ReplicaApi* | [**ReplicaActionImage**](docs/ReplicaApi.md#replicaactionimage) | **Post** /replica/{replicaId}/actions/image | /actions/image
 *ReplicaApi* | [**ReplicaCreate**](docs/ReplicaApi.md#replicacreate) | **Post** /replica | Create
 *ReplicaApi* | [**ReplicaDelete**](docs/ReplicaApi.md#replicadelete) | **Delete** /replica/{replicaId} | Delete
@@ -307,7 +366,6 @@ Class | Method | HTTP request | Description
 *ReplicaApi* | [**ReplicaShow**](docs/ReplicaApi.md#replicashow) | **Get** /replica/{replicaId} | Get
 *ReservationApi* | [**ReservationActionAssign**](docs/ReservationApi.md#reservationactionassign) | **Post** /reservation/{reservationId}/actions/assign | /actions/assign
 *ReservationApi* | [**ReservationActionExtend**](docs/ReservationApi.md#reservationactionextend) | **Post** /reservation/{reservationId}/actions/extend | /actions/extend
-*ReservationApi* | [**ReservationActionUnassign**](docs/ReservationApi.md#reservationactionunassign) | **Post** /reservation/{reservationId}/actions/unassign | /actions/unassign
 *ReservationApi* | [**ReservationCreate**](docs/ReservationApi.md#reservationcreate) | **Post** /reservation | Create
 *ReservationApi* | [**ReservationDelete**](docs/ReservationApi.md#reservationdelete) | **Delete** /reservation/{reservationId} | Delete
 *ReservationApi* | [**ReservationDeleteAccessrightsIdentity**](docs/ReservationApi.md#reservationdeleteaccessrightsidentity) | **Delete** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
@@ -339,18 +397,25 @@ Class | Method | HTTP request | Description
 *SnapshotApi* | [**SnapshotShow**](docs/SnapshotApi.md#snapshotshow) | **Get** /snapshot/{snapshotId} | Get
 *SnapshotApi* | [**SnapshotUpdate**](docs/SnapshotApi.md#snapshotupdate) | **Patch** /snapshot/{snapshotId} | Update
 *UserApi* | [**UserDelete**](docs/UserApi.md#userdelete) | **Delete** /user/{userId} | Delete
+*UserApi* | [**UserDeleteCredentialId**](docs/UserApi.md#userdeletecredentialid) | **Delete** /user/{userId}/credential/{id} | /credential/:id
 *UserApi* | [**UserDeleteCredentialcertificateId**](docs/UserApi.md#userdeletecredentialcertificateid) | **Delete** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 *UserApi* | [**UserDeleteCredentialpasswordId**](docs/UserApi.md#userdeletecredentialpasswordid) | **Delete** /user/{userId}/credential/password/{id} | /credential/password/:id
 *UserApi* | [**UserDeleteTagKey**](docs/UserApi.md#userdeletetagkey) | **Delete** /user/{userId}/tag/{key} | /tag/:key
+*UserApi* | [**UserGetCredentialId**](docs/UserApi.md#usergetcredentialid) | **Get** /user/{userId}/credential/{id} | /credential/:id
 *UserApi* | [**UserGetCredentialcertificateId**](docs/UserApi.md#usergetcredentialcertificateid) | **Get** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 *UserApi* | [**UserGetCredentialpasswordId**](docs/UserApi.md#usergetcredentialpasswordid) | **Get** /user/{userId}/credential/password/{id} | /credential/password/:id
+*UserApi* | [**UserGetServicesServiceId**](docs/UserApi.md#usergetservicesserviceid) | **Get** /user/{userId}/services/{serviceId} | /services/:serviceId
 *UserApi* | [**UserGetTag**](docs/UserApi.md#usergettag) | **Get** /user/{userId}/tag | /tag
 *UserApi* | [**UserList**](docs/UserApi.md#userlist) | **Get** /user | List
+*UserApi* | [**UserListCredential**](docs/UserApi.md#userlistcredential) | **Get** /user/{userId}/credential | /credential
 *UserApi* | [**UserListCredentialcertificate**](docs/UserApi.md#userlistcredentialcertificate) | **Get** /user/{userId}/credential/certificate | /credential/certificate
 *UserApi* | [**UserListCredentialpassword**](docs/UserApi.md#userlistcredentialpassword) | **Get** /user/{userId}/credential/password | /credential/password
+*UserApi* | [**UserListServices**](docs/UserApi.md#userlistservices) | **Get** /user/{userId}/services | /services
+*UserApi* | [**UserPatchCredentialId**](docs/UserApi.md#userpatchcredentialid) | **Patch** /user/{userId}/credential/{id} | /credential/:id
 *UserApi* | [**UserPatchCredentialcertificateId**](docs/UserApi.md#userpatchcredentialcertificateid) | **Patch** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 *UserApi* | [**UserPatchCredentialpasswordId**](docs/UserApi.md#userpatchcredentialpasswordid) | **Patch** /user/{userId}/credential/password/{id} | /credential/password/:id
 *UserApi* | [**UserPatchTag**](docs/UserApi.md#userpatchtag) | **Patch** /user/{userId}/tag | /tag
+*UserApi* | [**UserPostCredential**](docs/UserApi.md#userpostcredential) | **Post** /user/{userId}/credential | /credential
 *UserApi* | [**UserPostCredentialcertificate**](docs/UserApi.md#userpostcredentialcertificate) | **Post** /user/{userId}/credential/certificate | /credential/certificate
 *UserApi* | [**UserPostCredentialpassword**](docs/UserApi.md#userpostcredentialpassword) | **Post** /user/{userId}/credential/password | /credential/password
 *UserApi* | [**UserShow**](docs/UserApi.md#usershow) | **Get** /user/{userId} | Get
@@ -361,23 +426,28 @@ Class | Method | HTTP request | Description
 *VaultApi* | [**VaultCreate**](docs/VaultApi.md#vaultcreate) | **Post** /vault | Create
 *VaultApi* | [**VaultDelete**](docs/VaultApi.md#vaultdelete) | **Delete** /vault/{vaultId} | Delete
 *VaultApi* | [**VaultDeleteAccessrightsIdentity**](docs/VaultApi.md#vaultdeleteaccessrightsidentity) | **Delete** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
+*VaultApi* | [**VaultDeleteCredentialId**](docs/VaultApi.md#vaultdeletecredentialid) | **Delete** /vault/{vaultId}/credential/{id} | /credential/:id
 *VaultApi* | [**VaultDeleteCredentialcertificateId**](docs/VaultApi.md#vaultdeletecredentialcertificateid) | **Delete** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 *VaultApi* | [**VaultDeleteCredentialpasswordId**](docs/VaultApi.md#vaultdeletecredentialpasswordid) | **Delete** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 *VaultApi* | [**VaultDeleteTagKey**](docs/VaultApi.md#vaultdeletetagkey) | **Delete** /vault/{vaultId}/tag/{key} | /tag/:key
+*VaultApi* | [**VaultGetCredentialId**](docs/VaultApi.md#vaultgetcredentialid) | **Get** /vault/{vaultId}/credential/{id} | /credential/:id
 *VaultApi* | [**VaultGetCredentialcertificateId**](docs/VaultApi.md#vaultgetcredentialcertificateid) | **Get** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 *VaultApi* | [**VaultGetCredentialpasswordId**](docs/VaultApi.md#vaultgetcredentialpasswordid) | **Get** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 *VaultApi* | [**VaultGetServicesServiceId**](docs/VaultApi.md#vaultgetservicesserviceid) | **Get** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
 *VaultApi* | [**VaultGetTag**](docs/VaultApi.md#vaultgettag) | **Get** /vault/{vaultId}/tag | /tag
 *VaultApi* | [**VaultList**](docs/VaultApi.md#vaultlist) | **Get** /vault | List
 *VaultApi* | [**VaultListAccessrights**](docs/VaultApi.md#vaultlistaccessrights) | **Get** /vault/{vaultId}/accessrights | /accessrights
+*VaultApi* | [**VaultListCredential**](docs/VaultApi.md#vaultlistcredential) | **Get** /vault/{vaultId}/credential | /credential
 *VaultApi* | [**VaultListCredentialcertificate**](docs/VaultApi.md#vaultlistcredentialcertificate) | **Get** /vault/{vaultId}/credential/certificate | /credential/certificate
 *VaultApi* | [**VaultListCredentialpassword**](docs/VaultApi.md#vaultlistcredentialpassword) | **Get** /vault/{vaultId}/credential/password | /credential/password
 *VaultApi* | [**VaultListQueue**](docs/VaultApi.md#vaultlistqueue) | **Get** /vault/{vaultId}/queue | /queue
 *VaultApi* | [**VaultListServices**](docs/VaultApi.md#vaultlistservices) | **Get** /vault/{vaultId}/services | /services
+*VaultApi* | [**VaultPatchCredentialId**](docs/VaultApi.md#vaultpatchcredentialid) | **Patch** /vault/{vaultId}/credential/{id} | /credential/:id
 *VaultApi* | [**VaultPatchCredentialcertificateId**](docs/VaultApi.md#vaultpatchcredentialcertificateid) | **Patch** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
 *VaultApi* | [**VaultPatchCredentialpasswordId**](docs/VaultApi.md#vaultpatchcredentialpasswordid) | **Patch** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
 *VaultApi* | [**VaultPatchTag**](docs/VaultApi.md#vaultpatchtag) | **Patch** /vault/{vaultId}/tag | /tag
 *VaultApi* | [**VaultPostAccessrights**](docs/VaultApi.md#vaultpostaccessrights) | **Post** /vault/{vaultId}/accessrights | /accessrights
+*VaultApi* | [**VaultPostCredential**](docs/VaultApi.md#vaultpostcredential) | **Post** /vault/{vaultId}/credential | /credential
 *VaultApi* | [**VaultPostCredentialcertificate**](docs/VaultApi.md#vaultpostcredentialcertificate) | **Post** /vault/{vaultId}/credential/certificate | /credential/certificate
 *VaultApi* | [**VaultPostCredentialpassword**](docs/VaultApi.md#vaultpostcredentialpassword) | **Post** /vault/{vaultId}/credential/password | /credential/password
 *VaultApi* | [**VaultShow**](docs/VaultApi.md#vaultshow) | **Get** /vault/{vaultId} | Get
@@ -431,25 +501,35 @@ Class | Method | HTTP request | Description
 *WebsiteApi* | [**WebsiteCreate**](docs/WebsiteApi.md#websitecreate) | **Post** /website | Create
 *WebsiteApi* | [**WebsiteDelete**](docs/WebsiteApi.md#websitedelete) | **Delete** /website/{websiteId} | Delete
 *WebsiteApi* | [**WebsiteDeleteAccessrightsIdentity**](docs/WebsiteApi.md#websitedeleteaccessrightsidentity) | **Delete** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
+*WebsiteApi* | [**WebsiteDeleteCredentialId**](docs/WebsiteApi.md#websitedeletecredentialid) | **Delete** /website/{websiteId}/credential/{id} | /credential/:id
 *WebsiteApi* | [**WebsiteDeleteCredentialcertificateId**](docs/WebsiteApi.md#websitedeletecredentialcertificateid) | **Delete** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 *WebsiteApi* | [**WebsiteDeleteCredentialpasswordId**](docs/WebsiteApi.md#websitedeletecredentialpasswordid) | **Delete** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+*WebsiteApi* | [**WebsiteDeleteSnapshotId**](docs/WebsiteApi.md#websitedeletesnapshotid) | **Delete** /website/{websiteId}/snapshot/{id} | /snapshot/:id
 *WebsiteApi* | [**WebsiteDeleteTagKey**](docs/WebsiteApi.md#websitedeletetagkey) | **Delete** /website/{websiteId}/tag/{key} | /tag/:key
+*WebsiteApi* | [**WebsiteGetCredentialId**](docs/WebsiteApi.md#websitegetcredentialid) | **Get** /website/{websiteId}/credential/{id} | /credential/:id
 *WebsiteApi* | [**WebsiteGetCredentialcertificateId**](docs/WebsiteApi.md#websitegetcredentialcertificateid) | **Get** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 *WebsiteApi* | [**WebsiteGetCredentialpasswordId**](docs/WebsiteApi.md#websitegetcredentialpasswordid) | **Get** /website/{websiteId}/credential/password/{id} | /credential/password/:id
 *WebsiteApi* | [**WebsiteGetServicesServiceId**](docs/WebsiteApi.md#websitegetservicesserviceid) | **Get** /website/{websiteId}/services/{serviceId} | /services/:serviceId
+*WebsiteApi* | [**WebsiteGetSnapshotId**](docs/WebsiteApi.md#websitegetsnapshotid) | **Get** /website/{websiteId}/snapshot/{id} | /snapshot/:id
+*WebsiteApi* | [**WebsiteGetSnapshotIddownload**](docs/WebsiteApi.md#websitegetsnapshotiddownload) | **Get** /website/{websiteId}/snapshot/:id/download | /snapshot/:id/download
 *WebsiteApi* | [**WebsiteGetTag**](docs/WebsiteApi.md#websitegettag) | **Get** /website/{websiteId}/tag | /tag
 *WebsiteApi* | [**WebsiteList**](docs/WebsiteApi.md#websitelist) | **Get** /website | List
 *WebsiteApi* | [**WebsiteListAccessrights**](docs/WebsiteApi.md#websitelistaccessrights) | **Get** /website/{websiteId}/accessrights | /accessrights
+*WebsiteApi* | [**WebsiteListCredential**](docs/WebsiteApi.md#websitelistcredential) | **Get** /website/{websiteId}/credential | /credential
 *WebsiteApi* | [**WebsiteListCredentialcertificate**](docs/WebsiteApi.md#websitelistcredentialcertificate) | **Get** /website/{websiteId}/credential/certificate | /credential/certificate
 *WebsiteApi* | [**WebsiteListCredentialpassword**](docs/WebsiteApi.md#websitelistcredentialpassword) | **Get** /website/{websiteId}/credential/password | /credential/password
 *WebsiteApi* | [**WebsiteListQueue**](docs/WebsiteApi.md#websitelistqueue) | **Get** /website/{websiteId}/queue | /queue
 *WebsiteApi* | [**WebsiteListServices**](docs/WebsiteApi.md#websitelistservices) | **Get** /website/{websiteId}/services | /services
+*WebsiteApi* | [**WebsiteListSnapshot**](docs/WebsiteApi.md#websitelistsnapshot) | **Get** /website/{websiteId}/snapshot | /snapshot
+*WebsiteApi* | [**WebsitePatchCredentialId**](docs/WebsiteApi.md#websitepatchcredentialid) | **Patch** /website/{websiteId}/credential/{id} | /credential/:id
 *WebsiteApi* | [**WebsitePatchCredentialcertificateId**](docs/WebsiteApi.md#websitepatchcredentialcertificateid) | **Patch** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 *WebsiteApi* | [**WebsitePatchCredentialpasswordId**](docs/WebsiteApi.md#websitepatchcredentialpasswordid) | **Patch** /website/{websiteId}/credential/password/{id} | /credential/password/:id
 *WebsiteApi* | [**WebsitePatchTag**](docs/WebsiteApi.md#websitepatchtag) | **Patch** /website/{websiteId}/tag | /tag
 *WebsiteApi* | [**WebsitePostAccessrights**](docs/WebsiteApi.md#websitepostaccessrights) | **Post** /website/{websiteId}/accessrights | /accessrights
+*WebsiteApi* | [**WebsitePostCredential**](docs/WebsiteApi.md#websitepostcredential) | **Post** /website/{websiteId}/credential | /credential
 *WebsiteApi* | [**WebsitePostCredentialcertificate**](docs/WebsiteApi.md#websitepostcredentialcertificate) | **Post** /website/{websiteId}/credential/certificate | /credential/certificate
 *WebsiteApi* | [**WebsitePostCredentialpassword**](docs/WebsiteApi.md#websitepostcredentialpassword) | **Post** /website/{websiteId}/credential/password | /credential/password
+*WebsiteApi* | [**WebsitePostSnapshot**](docs/WebsiteApi.md#websitepostsnapshot) | **Post** /website/{websiteId}/snapshot | /snapshot
 *WebsiteApi* | [**WebsiteShow**](docs/WebsiteApi.md#websiteshow) | **Get** /website/{websiteId} | Get
 *WebsiteApi* | [**WebsiteUpdate**](docs/WebsiteApi.md#websiteupdate) | **Patch** /website/{websiteId} | Update
 
@@ -462,8 +542,10 @@ Class | Method | HTTP request | Description
  - [AgentActionUpdateEnabledServices](docs/AgentActionUpdateEnabledServices.md)
  - [AgentCreate](docs/AgentCreate.md)
  - [AgentCreateCredential](docs/AgentCreateCredential.md)
+ - [AgentPatchCredentialId](docs/AgentPatchCredentialId.md)
  - [AgentPatchCredentialcertificateId](docs/AgentPatchCredentialcertificateId.md)
  - [AgentPostAccessrights](docs/AgentPostAccessrights.md)
+ - [AgentPostCredential](docs/AgentPostCredential.md)
  - [AgentPostCredentialcertificate](docs/AgentPostCredentialcertificate.md)
  - [AgentResource](docs/AgentResource.md)
  - [AgentResourceEvent](docs/AgentResourceEvent.md)
@@ -471,7 +553,6 @@ Class | Method | HTTP request | Description
  - [AgentUpdate](docs/AgentUpdate.md)
  - [Container](docs/Container.md)
  - [ContainerCreate](docs/ContainerCreate.md)
- - [ContainerCreateExpose](docs/ContainerCreateExpose.md)
  - [ContainerCreateRegistry](docs/ContainerCreateRegistry.md)
  - [ContainerCreateVolumes](docs/ContainerCreateVolumes.md)
  - [ContainerExpose](docs/ContainerExpose.md)
@@ -485,10 +566,10 @@ Class | Method | HTTP request | Description
  - [Database](docs/Database.md)
  - [DatabaseActionTransfer](docs/DatabaseActionTransfer.md)
  - [DatabaseCreate](docs/DatabaseCreate.md)
- - [DatabaseCreateCredential](docs/DatabaseCreateCredential.md)
- - [DatabaseCreateCredentialPassword](docs/DatabaseCreateCredentialPassword.md)
+ - [DatabasePatchCredentialId](docs/DatabasePatchCredentialId.md)
  - [DatabasePatchCredentialpasswordId](docs/DatabasePatchCredentialpasswordId.md)
  - [DatabasePostAccessrights](docs/DatabasePostAccessrights.md)
+ - [DatabasePostCredential](docs/DatabasePostCredential.md)
  - [DatabasePostCredentialpassword](docs/DatabasePostCredentialpassword.md)
  - [DatabaseServices](docs/DatabaseServices.md)
  - [DatabaseUpdate](docs/DatabaseUpdate.md)
@@ -508,6 +589,7 @@ Class | Method | HTTP request | Description
  - [FirewallActionAttach](docs/FirewallActionAttach.md)
  - [FirewallActionTransfer](docs/FirewallActionTransfer.md)
  - [FirewallCreate](docs/FirewallCreate.md)
+ - [FirewallCreateIngress](docs/FirewallCreateIngress.md)
  - [FirewallPostAccessrights](docs/FirewallPostAccessrights.md)
  - [FirewallPostEgress](docs/FirewallPostEgress.md)
  - [FirewallPostIngress](docs/FirewallPostIngress.md)
@@ -545,12 +627,15 @@ Class | Method | HTTP request | Description
  - [LogArchiveActionTransfer](docs/LogArchiveActionTransfer.md)
  - [LogArchiveCreate](docs/LogArchiveCreate.md)
  - [LogArchiveCreateCredential](docs/LogArchiveCreateCredential.md)
+ - [LogArchivePatchCredentialId](docs/LogArchivePatchCredentialId.md)
  - [LogArchivePatchCredentialpasswordId](docs/LogArchivePatchCredentialpasswordId.md)
  - [LogArchivePostAccessrights](docs/LogArchivePostAccessrights.md)
+ - [LogArchivePostCredential](docs/LogArchivePostCredential.md)
  - [LogArchivePostCredentialpassword](docs/LogArchivePostCredentialpassword.md)
  - [LogArchiveServices](docs/LogArchiveServices.md)
  - [LogArchiveUpdate](docs/LogArchiveUpdate.md)
  - [Netadp](docs/Netadp.md)
+ - [NetadpActionFirewallAdd](docs/NetadpActionFirewallAdd.md)
  - [NetadpAssigned](docs/NetadpAssigned.md)
  - [NetadpPostAccessrights](docs/NetadpPostAccessrights.md)
  - [NetadpServices](docs/NetadpServices.md)
@@ -563,6 +648,7 @@ Class | Method | HTTP request | Description
  - [NetgwServices](docs/NetgwServices.md)
  - [NetgwUpdate](docs/NetgwUpdate.md)
  - [Network](docs/Network.md)
+ - [NetworkActionFirewallAdd](docs/NetworkActionFirewallAdd.md)
  - [NetworkCreate](docs/NetworkCreate.md)
  - [NetworkDns](docs/NetworkDns.md)
  - [NetworkPostAccessrights](docs/NetworkPostAccessrights.md)
@@ -607,8 +693,10 @@ Class | Method | HTTP request | Description
  - [ProjectLimitVault](docs/ProjectLimitVault.md)
  - [ProjectLimitVm](docs/ProjectLimitVm.md)
  - [ProjectLimitVolume](docs/ProjectLimitVolume.md)
+ - [ProjectPatchCredentialStoreId](docs/ProjectPatchCredentialStoreId.md)
  - [ProjectPatchCredentialStorecertificateId](docs/ProjectPatchCredentialStorecertificateId.md)
  - [ProjectPostAccessrights](docs/ProjectPostAccessrights.md)
+ - [ProjectPostCredentialStore](docs/ProjectPostCredentialStore.md)
  - [ProjectPostCredentialStorecertificate](docs/ProjectPostCredentialStorecertificate.md)
  - [ProjectRoles](docs/ProjectRoles.md)
  - [ProjectServices](docs/ProjectServices.md)
@@ -616,6 +704,17 @@ Class | Method | HTTP request | Description
  - [ProjectThresholdCredits](docs/ProjectThresholdCredits.md)
  - [ProjectTransfer](docs/ProjectTransfer.md)
  - [ProjectUpdate](docs/ProjectUpdate.md)
+ - [Registry](docs/Registry.md)
+ - [RegistryActionTransfer](docs/RegistryActionTransfer.md)
+ - [RegistryActionUpdateDomain](docs/RegistryActionUpdateDomain.md)
+ - [RegistryCreate](docs/RegistryCreate.md)
+ - [RegistryPatchCredentialId](docs/RegistryPatchCredentialId.md)
+ - [RegistryPatchCredentialpasswordId](docs/RegistryPatchCredentialpasswordId.md)
+ - [RegistryPostAccessrights](docs/RegistryPostAccessrights.md)
+ - [RegistryPostCredential](docs/RegistryPostCredential.md)
+ - [RegistryPostCredentialpassword](docs/RegistryPostCredentialpassword.md)
+ - [RegistryServices](docs/RegistryServices.md)
+ - [RegistryUpdate](docs/RegistryUpdate.md)
  - [Replica](docs/Replica.md)
  - [ReplicaActionImage](docs/ReplicaActionImage.md)
  - [ReplicaCreate](docs/ReplicaCreate.md)
@@ -643,10 +742,13 @@ Class | Method | HTTP request | Description
  - [UserLimit](docs/UserLimit.md)
  - [UserNetworkAcl](docs/UserNetworkAcl.md)
  - [UserPasswordReset](docs/UserPasswordReset.md)
+ - [UserPatchCredentialId](docs/UserPatchCredentialId.md)
  - [UserPatchCredentialcertificateId](docs/UserPatchCredentialcertificateId.md)
  - [UserPatchCredentialpasswordId](docs/UserPatchCredentialpasswordId.md)
+ - [UserPostCredential](docs/UserPostCredential.md)
  - [UserPostCredentialcertificate](docs/UserPostCredentialcertificate.md)
  - [UserPostCredentialpassword](docs/UserPostCredentialpassword.md)
+ - [UserServices](docs/UserServices.md)
  - [Vault](docs/Vault.md)
  - [VaultActionResize](docs/VaultActionResize.md)
  - [VaultActionSnapshot](docs/VaultActionSnapshot.md)
@@ -655,9 +757,11 @@ Class | Method | HTTP request | Description
  - [VaultCreateCredentialCertificate](docs/VaultCreateCredentialCertificate.md)
  - [VaultCreateCredentialPassword](docs/VaultCreateCredentialPassword.md)
  - [VaultDelete](docs/VaultDelete.md)
+ - [VaultPatchCredentialId](docs/VaultPatchCredentialId.md)
  - [VaultPatchCredentialcertificateId](docs/VaultPatchCredentialcertificateId.md)
  - [VaultPatchCredentialpasswordId](docs/VaultPatchCredentialpasswordId.md)
  - [VaultPostAccessrights](docs/VaultPostAccessrights.md)
+ - [VaultPostCredential](docs/VaultPostCredential.md)
  - [VaultPostCredentialcertificate](docs/VaultPostCredentialcertificate.md)
  - [VaultPostCredentialpassword](docs/VaultPostCredentialpassword.md)
  - [VaultServices](docs/VaultServices.md)
@@ -688,11 +792,15 @@ Class | Method | HTTP request | Description
  - [WebsiteActionTransfer](docs/WebsiteActionTransfer.md)
  - [WebsiteActionUpdateDomain](docs/WebsiteActionUpdateDomain.md)
  - [WebsiteCreate](docs/WebsiteCreate.md)
+ - [WebsiteCreateSource](docs/WebsiteCreateSource.md)
+ - [WebsitePatchCredentialId](docs/WebsitePatchCredentialId.md)
  - [WebsitePatchCredentialcertificateId](docs/WebsitePatchCredentialcertificateId.md)
  - [WebsitePatchCredentialpasswordId](docs/WebsitePatchCredentialpasswordId.md)
  - [WebsitePostAccessrights](docs/WebsitePostAccessrights.md)
+ - [WebsitePostCredential](docs/WebsitePostCredential.md)
  - [WebsitePostCredentialcertificate](docs/WebsitePostCredentialcertificate.md)
  - [WebsitePostCredentialpassword](docs/WebsitePostCredentialpassword.md)
+ - [WebsitePostSnapshot](docs/WebsitePostSnapshot.md)
  - [WebsiteServices](docs/WebsiteServices.md)
  - [WebsiteUpdate](docs/WebsiteUpdate.md)
 

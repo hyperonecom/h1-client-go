@@ -574,16 +574,16 @@ NetgwApiService /tag/:key
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param key key
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string, key string) (map[string]interface{}, *http.Response, error) {
+func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string, key string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -646,7 +646,7 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -795,16 +795,16 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 NetgwApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[string]interface{}, *http.Response, error) {
+func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -866,7 +866,7 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1355,16 +1355,16 @@ NetgwApiService /tag
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param requestBody
-@return map[string]interface{}
+@return map[string]string
 */
-func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, requestBody map[string]string) (map[string]interface{}, *http.Response, error) {
+func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  map[string]string
 	)
 
 	// create path and map variables
@@ -1428,7 +1428,7 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, req
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]interface{}
+			var v map[string]string
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

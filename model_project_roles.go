@@ -10,6 +10,6 @@
 package openapi
 
 type ProjectRoles struct {
-	Access []ProjectAccess `json:"access,omitempty"`
 	Name string `json:"name"`
+	Access []ProjectAccess `json:"access,omitempty"`
 }

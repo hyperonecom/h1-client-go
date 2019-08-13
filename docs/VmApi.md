@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 ## VmDeleteTagKey
 
-> map[string]interface{} VmDeleteTagKey(ctx, vmId, key)
+> map[string]string VmDeleteTagKey(ctx, vmId, key)
 /tag/:key
 
 ### Required Parameters
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ## VmGetTag
 
-> map[string]interface{} VmGetTag(ctx, vmId)
+> map[string]string VmGetTag(ctx, vmId)
 /tag
 
 ### Required Parameters
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -759,7 +759,7 @@ Name | Type | Description  | Notes
 
 ## VmPatchTag
 
-> map[string]interface{} VmPatchTag(ctx, vmId, requestBody)
+> map[string]string VmPatchTag(ctx, vmId, requestBody)
 /tag
 
 ### Required Parameters
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

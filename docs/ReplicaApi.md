@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## ReplicaDeleteTagKey
 
-> map[string]interface{} ReplicaDeleteTagKey(ctx, replicaId, key)
+> map[string]string ReplicaDeleteTagKey(ctx, replicaId, key)
 /tag/:key
 
 ### Required Parameters
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ## ReplicaGetTag
 
-> map[string]interface{} ReplicaGetTag(ctx, replicaId)
+> map[string]string ReplicaGetTag(ctx, replicaId)
 /tag
 
 ### Required Parameters
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## ReplicaPatchTag
 
-> map[string]interface{} ReplicaPatchTag(ctx, replicaId, requestBody)
+> map[string]string ReplicaPatchTag(ctx, replicaId, requestBody)
 /tag
 
 ### Required Parameters
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 

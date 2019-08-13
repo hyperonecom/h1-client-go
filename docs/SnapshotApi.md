@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ## SnapshotDeleteTagKey
 
-> map[string]interface{} SnapshotDeleteTagKey(ctx, snapshotId, key)
+> map[string]string SnapshotDeleteTagKey(ctx, snapshotId, key)
 /tag/:key
 
 ### Required Parameters
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ## SnapshotGetTag
 
-> map[string]interface{} SnapshotGetTag(ctx, snapshotId)
+> map[string]string SnapshotGetTag(ctx, snapshotId)
 /tag
 
 ### Required Parameters
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## SnapshotPatchTag
 
-> map[string]interface{} SnapshotPatchTag(ctx, snapshotId, requestBody)
+> map[string]string SnapshotPatchTag(ctx, snapshotId, requestBody)
 /tag
 
 ### Required Parameters
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**map[string]interface{}**](map[string]interface{}.md)
+**map[string]string**
 
 ### Authorization
 
