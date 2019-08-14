@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type RegistryApiService service
@@ -29,13 +29,13 @@ type RegistryApiService service
 /*
 RegistryApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return Registry
 */
-func (a *RegistryApiService) RegistryActionStart(ctx context.Context, registryId string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryActionStart(ctx _context.Context, registryId string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -48,8 +48,8 @@ func (a *RegistryApiService) RegistryActionStart(ctx context.Context, registryId
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -90,7 +90,7 @@ func (a *RegistryApiService) RegistryActionStart(ctx context.Context, registryId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,13 +139,13 @@ func (a *RegistryApiService) RegistryActionStart(ctx context.Context, registryId
 /*
 RegistryApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return Registry
 */
-func (a *RegistryApiService) RegistryActionStop(ctx context.Context, registryId string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryActionStop(ctx _context.Context, registryId string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -158,8 +158,8 @@ func (a *RegistryApiService) RegistryActionStop(ctx context.Context, registryId 
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -200,7 +200,7 @@ func (a *RegistryApiService) RegistryActionStop(ctx context.Context, registryId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,14 +249,14 @@ func (a *RegistryApiService) RegistryActionStop(ctx context.Context, registryId 
 /*
 RegistryApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryActionTransfer
 @return Registry
 */
-func (a *RegistryApiService) RegistryActionTransfer(ctx context.Context, registryId string, registryActionTransfer RegistryActionTransfer) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryActionTransfer(ctx _context.Context, registryId string, registryActionTransfer RegistryActionTransfer) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *RegistryApiService) RegistryActionTransfer(ctx context.Context, registr
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -313,7 +313,7 @@ func (a *RegistryApiService) RegistryActionTransfer(ctx context.Context, registr
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -362,14 +362,14 @@ func (a *RegistryApiService) RegistryActionTransfer(ctx context.Context, registr
 /*
 RegistryApiService /actions/update_domain
 Action update_domain
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryActionUpdateDomain
 @return Registry
 */
-func (a *RegistryApiService) RegistryActionUpdateDomain(ctx context.Context, registryId string, registryActionUpdateDomain RegistryActionUpdateDomain) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryActionUpdateDomain(ctx _context.Context, registryId string, registryActionUpdateDomain RegistryActionUpdateDomain) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -382,8 +382,8 @@ func (a *RegistryApiService) RegistryActionUpdateDomain(ctx context.Context, reg
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -426,7 +426,7 @@ func (a *RegistryApiService) RegistryActionUpdateDomain(ctx context.Context, reg
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -475,13 +475,13 @@ func (a *RegistryApiService) RegistryActionUpdateDomain(ctx context.Context, reg
 /*
 RegistryApiService Create
 Create registry
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryCreate
 @return Registry
 */
-func (a *RegistryApiService) RegistryCreate(ctx context.Context, registryCreate RegistryCreate) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryCreate(ctx _context.Context, registryCreate RegistryCreate) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -493,8 +493,8 @@ func (a *RegistryApiService) RegistryCreate(ctx context.Context, registryCreate 
 	localVarPath := a.client.cfg.BasePath + "/registry"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -537,7 +537,7 @@ func (a *RegistryApiService) RegistryCreate(ctx context.Context, registryCreate 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -585,12 +585,12 @@ func (a *RegistryApiService) RegistryCreate(ctx context.Context, registryCreate 
 
 /*
 RegistryApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 */
-func (a *RegistryApiService) RegistryDelete(ctx context.Context, registryId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryDelete(ctx _context.Context, registryId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -602,8 +602,8 @@ func (a *RegistryApiService) RegistryDelete(ctx context.Context, registryId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -644,7 +644,7 @@ func (a *RegistryApiService) RegistryDelete(ctx context.Context, registryId stri
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -673,14 +673,14 @@ func (a *RegistryApiService) RegistryDelete(ctx context.Context, registryId stri
 
 /*
 RegistryApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param identity identity
 @return Registry
 */
-func (a *RegistryApiService) RegistryDeleteAccessrightsIdentity(ctx context.Context, registryId string, identity string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryDeleteAccessrightsIdentity(ctx _context.Context, registryId string, identity string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -694,8 +694,8 @@ func (a *RegistryApiService) RegistryDeleteAccessrightsIdentity(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -736,7 +736,7 @@ func (a *RegistryApiService) RegistryDeleteAccessrightsIdentity(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -794,14 +794,14 @@ func (a *RegistryApiService) RegistryDeleteAccessrightsIdentity(ctx context.Cont
 
 /*
 RegistryApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
 @return Registry
 */
-func (a *RegistryApiService) RegistryDeleteCredentialId(ctx context.Context, registryId string, id string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryDeleteCredentialId(ctx _context.Context, registryId string, id string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -815,8 +815,8 @@ func (a *RegistryApiService) RegistryDeleteCredentialId(ctx context.Context, reg
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -857,7 +857,7 @@ func (a *RegistryApiService) RegistryDeleteCredentialId(ctx context.Context, reg
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -915,14 +915,14 @@ func (a *RegistryApiService) RegistryDeleteCredentialId(ctx context.Context, reg
 
 /*
 RegistryApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
 @return Registry
 */
-func (a *RegistryApiService) RegistryDeleteCredentialpasswordId(ctx context.Context, registryId string, id string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryDeleteCredentialpasswordId(ctx _context.Context, registryId string, id string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -936,8 +936,8 @@ func (a *RegistryApiService) RegistryDeleteCredentialpasswordId(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -978,7 +978,7 @@ func (a *RegistryApiService) RegistryDeleteCredentialpasswordId(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1036,14 +1036,14 @@ func (a *RegistryApiService) RegistryDeleteCredentialpasswordId(ctx context.Cont
 
 /*
 RegistryApiService /repository/:repositoryId/tag/:tagId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param repositoryId repositoryId
  * @param tagId tagId
 */
-func (a *RegistryApiService) RegistryDeleteRepositoryRepositoryIdtagTagId(ctx context.Context, registryId string, repositoryId string, tagId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryDeleteRepositoryRepositoryIdtagTagId(ctx _context.Context, registryId string, repositoryId string, tagId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1057,8 +1057,8 @@ func (a *RegistryApiService) RegistryDeleteRepositoryRepositoryIdtagTagId(ctx co
 	localVarPath = strings.Replace(localVarPath, "{"+"tagId"+"}", fmt.Sprintf("%v", tagId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1099,7 +1099,7 @@ func (a *RegistryApiService) RegistryDeleteRepositoryRepositoryIdtagTagId(ctx co
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1128,14 +1128,14 @@ func (a *RegistryApiService) RegistryDeleteRepositoryRepositoryIdtagTagId(ctx co
 
 /*
 RegistryApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param key key
 @return map[string]string
 */
-func (a *RegistryApiService) RegistryDeleteTagKey(ctx context.Context, registryId string, key string) (map[string]string, *http.Response, error) {
+func (a *RegistryApiService) RegistryDeleteTagKey(ctx _context.Context, registryId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1149,8 +1149,8 @@ func (a *RegistryApiService) RegistryDeleteTagKey(ctx context.Context, registryI
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1191,7 +1191,7 @@ func (a *RegistryApiService) RegistryDeleteTagKey(ctx context.Context, registryI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1239,14 +1239,14 @@ func (a *RegistryApiService) RegistryDeleteTagKey(ctx context.Context, registryI
 
 /*
 RegistryApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryGetCredentialId(ctx context.Context, registryId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryGetCredentialId(ctx _context.Context, registryId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1260,8 +1260,8 @@ func (a *RegistryApiService) RegistryGetCredentialId(ctx context.Context, regist
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1302,7 +1302,7 @@ func (a *RegistryApiService) RegistryGetCredentialId(ctx context.Context, regist
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1350,14 +1350,14 @@ func (a *RegistryApiService) RegistryGetCredentialId(ctx context.Context, regist
 
 /*
 RegistryApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryGetCredentialpasswordId(ctx context.Context, registryId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryGetCredentialpasswordId(ctx _context.Context, registryId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1371,8 +1371,8 @@ func (a *RegistryApiService) RegistryGetCredentialpasswordId(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1413,7 +1413,7 @@ func (a *RegistryApiService) RegistryGetCredentialpasswordId(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1461,13 +1461,13 @@ func (a *RegistryApiService) RegistryGetCredentialpasswordId(ctx context.Context
 
 /*
 RegistryApiService /repository/:repositoryId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param repositoryId repositoryId
 */
-func (a *RegistryApiService) RegistryGetRepositoryRepositoryId(ctx context.Context, registryId string, repositoryId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryGetRepositoryRepositoryId(ctx _context.Context, registryId string, repositoryId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1480,8 +1480,8 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryId(ctx context.Conte
 	localVarPath = strings.Replace(localVarPath, "{"+"repositoryId"+"}", fmt.Sprintf("%v", repositoryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1522,7 +1522,7 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryId(ctx context.Conte
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1551,14 +1551,14 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryId(ctx context.Conte
 
 /*
 RegistryApiService /repository/:repositoryId/tag/:tagId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param repositoryId repositoryId
  * @param tagId tagId
 */
-func (a *RegistryApiService) RegistryGetRepositoryRepositoryIdtagTagId(ctx context.Context, registryId string, repositoryId string, tagId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryGetRepositoryRepositoryIdtagTagId(ctx _context.Context, registryId string, repositoryId string, tagId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1572,8 +1572,8 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryIdtagTagId(ctx conte
 	localVarPath = strings.Replace(localVarPath, "{"+"tagId"+"}", fmt.Sprintf("%v", tagId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1614,7 +1614,7 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryIdtagTagId(ctx conte
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1643,14 +1643,14 @@ func (a *RegistryApiService) RegistryGetRepositoryRepositoryIdtagTagId(ctx conte
 
 /*
 RegistryApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param serviceId serviceId
 @return RegistryServices
 */
-func (a *RegistryApiService) RegistryGetServicesServiceId(ctx context.Context, registryId string, serviceId string) (RegistryServices, *http.Response, error) {
+func (a *RegistryApiService) RegistryGetServicesServiceId(ctx _context.Context, registryId string, serviceId string) (RegistryServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1664,8 +1664,8 @@ func (a *RegistryApiService) RegistryGetServicesServiceId(ctx context.Context, r
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1706,7 +1706,7 @@ func (a *RegistryApiService) RegistryGetServicesServiceId(ctx context.Context, r
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1754,13 +1754,13 @@ func (a *RegistryApiService) RegistryGetServicesServiceId(ctx context.Context, r
 
 /*
 RegistryApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return map[string]string
 */
-func (a *RegistryApiService) RegistryGetTag(ctx context.Context, registryId string) (map[string]string, *http.Response, error) {
+func (a *RegistryApiService) RegistryGetTag(ctx _context.Context, registryId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1773,8 +1773,8 @@ func (a *RegistryApiService) RegistryGetTag(ctx context.Context, registryId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1815,7 +1815,7 @@ func (a *RegistryApiService) RegistryGetTag(ctx context.Context, registryId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1864,7 +1864,7 @@ func (a *RegistryApiService) RegistryGetTag(ctx context.Context, registryId stri
 /*
 RegistryApiService List
 List registry
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *RegistryListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1876,9 +1876,9 @@ type RegistryListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *RegistryApiService) RegistryList(ctx context.Context, localVarOptionals *RegistryListOpts) ([]Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryList(ctx _context.Context, localVarOptionals *RegistryListOpts) ([]Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1890,8 +1890,8 @@ func (a *RegistryApiService) RegistryList(ctx context.Context, localVarOptionals
 	localVarPath := a.client.cfg.BasePath + "/registry"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1938,7 +1938,7 @@ func (a *RegistryApiService) RegistryList(ctx context.Context, localVarOptionals
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1986,13 +1986,13 @@ func (a *RegistryApiService) RegistryList(ctx context.Context, localVarOptionals
 
 /*
 RegistryApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return []string
 */
-func (a *RegistryApiService) RegistryListAccessrights(ctx context.Context, registryId string) ([]string, *http.Response, error) {
+func (a *RegistryApiService) RegistryListAccessrights(ctx _context.Context, registryId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2005,8 +2005,8 @@ func (a *RegistryApiService) RegistryListAccessrights(ctx context.Context, regis
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2047,7 +2047,7 @@ func (a *RegistryApiService) RegistryListAccessrights(ctx context.Context, regis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2095,13 +2095,13 @@ func (a *RegistryApiService) RegistryListAccessrights(ctx context.Context, regis
 
 /*
 RegistryApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return []CredentialPassword
 */
-func (a *RegistryApiService) RegistryListCredential(ctx context.Context, registryId string) ([]CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryListCredential(ctx _context.Context, registryId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2114,8 +2114,8 @@ func (a *RegistryApiService) RegistryListCredential(ctx context.Context, registr
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2156,7 +2156,7 @@ func (a *RegistryApiService) RegistryListCredential(ctx context.Context, registr
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2204,13 +2204,13 @@ func (a *RegistryApiService) RegistryListCredential(ctx context.Context, registr
 
 /*
 RegistryApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return []CredentialPassword
 */
-func (a *RegistryApiService) RegistryListCredentialpassword(ctx context.Context, registryId string) ([]CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryListCredentialpassword(ctx _context.Context, registryId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2223,8 +2223,8 @@ func (a *RegistryApiService) RegistryListCredentialpassword(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2265,7 +2265,7 @@ func (a *RegistryApiService) RegistryListCredentialpassword(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2313,13 +2313,13 @@ func (a *RegistryApiService) RegistryListCredentialpassword(ctx context.Context,
 
 /*
 RegistryApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return []Event
 */
-func (a *RegistryApiService) RegistryListQueue(ctx context.Context, registryId string) ([]Event, *http.Response, error) {
+func (a *RegistryApiService) RegistryListQueue(ctx _context.Context, registryId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2332,8 +2332,8 @@ func (a *RegistryApiService) RegistryListQueue(ctx context.Context, registryId s
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2374,7 +2374,7 @@ func (a *RegistryApiService) RegistryListQueue(ctx context.Context, registryId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2422,12 +2422,12 @@ func (a *RegistryApiService) RegistryListQueue(ctx context.Context, registryId s
 
 /*
 RegistryApiService /repository
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 */
-func (a *RegistryApiService) RegistryListRepository(ctx context.Context, registryId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryListRepository(ctx _context.Context, registryId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2439,8 +2439,8 @@ func (a *RegistryApiService) RegistryListRepository(ctx context.Context, registr
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2481,7 +2481,7 @@ func (a *RegistryApiService) RegistryListRepository(ctx context.Context, registr
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -2510,13 +2510,13 @@ func (a *RegistryApiService) RegistryListRepository(ctx context.Context, registr
 
 /*
 RegistryApiService /repository/:repositoryId/tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param repositoryId repositoryId
 */
-func (a *RegistryApiService) RegistryListRepositoryRepositoryIdtag(ctx context.Context, registryId string, repositoryId string) (*http.Response, error) {
+func (a *RegistryApiService) RegistryListRepositoryRepositoryIdtag(ctx _context.Context, registryId string, repositoryId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2529,8 +2529,8 @@ func (a *RegistryApiService) RegistryListRepositoryRepositoryIdtag(ctx context.C
 	localVarPath = strings.Replace(localVarPath, "{"+"repositoryId"+"}", fmt.Sprintf("%v", repositoryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2571,7 +2571,7 @@ func (a *RegistryApiService) RegistryListRepositoryRepositoryIdtag(ctx context.C
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -2600,13 +2600,13 @@ func (a *RegistryApiService) RegistryListRepositoryRepositoryIdtag(ctx context.C
 
 /*
 RegistryApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return []RegistryServices
 */
-func (a *RegistryApiService) RegistryListServices(ctx context.Context, registryId string) ([]RegistryServices, *http.Response, error) {
+func (a *RegistryApiService) RegistryListServices(ctx _context.Context, registryId string) ([]RegistryServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2619,8 +2619,8 @@ func (a *RegistryApiService) RegistryListServices(ctx context.Context, registryI
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2661,7 +2661,7 @@ func (a *RegistryApiService) RegistryListServices(ctx context.Context, registryI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2709,15 +2709,15 @@ func (a *RegistryApiService) RegistryListServices(ctx context.Context, registryI
 
 /*
 RegistryApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
  * @param registryPatchCredentialId
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryPatchCredentialId(ctx context.Context, registryId string, id string, registryPatchCredentialId RegistryPatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryPatchCredentialId(ctx _context.Context, registryId string, id string, registryPatchCredentialId RegistryPatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2731,8 +2731,8 @@ func (a *RegistryApiService) RegistryPatchCredentialId(ctx context.Context, regi
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2775,7 +2775,7 @@ func (a *RegistryApiService) RegistryPatchCredentialId(ctx context.Context, regi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2823,15 +2823,15 @@ func (a *RegistryApiService) RegistryPatchCredentialId(ctx context.Context, regi
 
 /*
 RegistryApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param id id
  * @param registryPatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryPatchCredentialpasswordId(ctx context.Context, registryId string, id string, registryPatchCredentialpasswordId RegistryPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryPatchCredentialpasswordId(ctx _context.Context, registryId string, id string, registryPatchCredentialpasswordId RegistryPatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2845,8 +2845,8 @@ func (a *RegistryApiService) RegistryPatchCredentialpasswordId(ctx context.Conte
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2889,7 +2889,7 @@ func (a *RegistryApiService) RegistryPatchCredentialpasswordId(ctx context.Conte
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2937,14 +2937,14 @@ func (a *RegistryApiService) RegistryPatchCredentialpasswordId(ctx context.Conte
 
 /*
 RegistryApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param requestBody
 @return map[string]string
 */
-func (a *RegistryApiService) RegistryPatchTag(ctx context.Context, registryId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *RegistryApiService) RegistryPatchTag(ctx _context.Context, registryId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2957,8 +2957,8 @@ func (a *RegistryApiService) RegistryPatchTag(ctx context.Context, registryId st
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3001,7 +3001,7 @@ func (a *RegistryApiService) RegistryPatchTag(ctx context.Context, registryId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3049,14 +3049,14 @@ func (a *RegistryApiService) RegistryPatchTag(ctx context.Context, registryId st
 
 /*
 RegistryApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryPostAccessrights
 @return Registry
 */
-func (a *RegistryApiService) RegistryPostAccessrights(ctx context.Context, registryId string, registryPostAccessrights RegistryPostAccessrights) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryPostAccessrights(ctx _context.Context, registryId string, registryPostAccessrights RegistryPostAccessrights) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3069,8 +3069,8 @@ func (a *RegistryApiService) RegistryPostAccessrights(ctx context.Context, regis
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3113,7 +3113,7 @@ func (a *RegistryApiService) RegistryPostAccessrights(ctx context.Context, regis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3171,14 +3171,14 @@ func (a *RegistryApiService) RegistryPostAccessrights(ctx context.Context, regis
 
 /*
 RegistryApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryPostCredential
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryPostCredential(ctx context.Context, registryId string, registryPostCredential RegistryPostCredential) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryPostCredential(ctx _context.Context, registryId string, registryPostCredential RegistryPostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3191,8 +3191,8 @@ func (a *RegistryApiService) RegistryPostCredential(ctx context.Context, registr
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3235,7 +3235,7 @@ func (a *RegistryApiService) RegistryPostCredential(ctx context.Context, registr
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3283,14 +3283,14 @@ func (a *RegistryApiService) RegistryPostCredential(ctx context.Context, registr
 
 /*
 RegistryApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryPostCredentialpassword
 @return CredentialPassword
 */
-func (a *RegistryApiService) RegistryPostCredentialpassword(ctx context.Context, registryId string, registryPostCredentialpassword RegistryPostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *RegistryApiService) RegistryPostCredentialpassword(ctx _context.Context, registryId string, registryPostCredentialpassword RegistryPostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3303,8 +3303,8 @@ func (a *RegistryApiService) RegistryPostCredentialpassword(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3347,7 +3347,7 @@ func (a *RegistryApiService) RegistryPostCredentialpassword(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3396,13 +3396,13 @@ func (a *RegistryApiService) RegistryPostCredentialpassword(ctx context.Context,
 /*
 RegistryApiService Get
 Returns a single registry
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
 @return Registry
 */
-func (a *RegistryApiService) RegistryShow(ctx context.Context, registryId string) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryShow(ctx _context.Context, registryId string) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3415,8 +3415,8 @@ func (a *RegistryApiService) RegistryShow(ctx context.Context, registryId string
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3457,7 +3457,7 @@ func (a *RegistryApiService) RegistryShow(ctx context.Context, registryId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3506,14 +3506,14 @@ func (a *RegistryApiService) RegistryShow(ctx context.Context, registryId string
 /*
 RegistryApiService Update
 Returns modified registry
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param registryId ID of registry
  * @param registryUpdate
 @return Registry
 */
-func (a *RegistryApiService) RegistryUpdate(ctx context.Context, registryId string, registryUpdate RegistryUpdate) (Registry, *http.Response, error) {
+func (a *RegistryApiService) RegistryUpdate(ctx _context.Context, registryId string, registryUpdate RegistryUpdate) (Registry, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3526,8 +3526,8 @@ func (a *RegistryApiService) RegistryUpdate(ctx context.Context, registryId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"registryId"+"}", fmt.Sprintf("%v", registryId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3570,7 +3570,7 @@ func (a *RegistryApiService) RegistryUpdate(ctx context.Context, registryId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

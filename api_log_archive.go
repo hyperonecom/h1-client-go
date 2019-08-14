@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type LogArchiveApiService service
@@ -29,14 +29,14 @@ type LogArchiveApiService service
 /*
 LogArchiveApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchiveActionTransfer
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx context.Context, logArchiveId string, logArchiveActionTransfer LogArchiveActionTransfer) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx _context.Context, logArchiveId string, logArchiveActionTransfer LogArchiveActionTransfer) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx context.Context, log
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx context.Context, log
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx context.Context, log
 /*
 LogArchiveApiService Create
 Create logArchive
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveCreate
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveCreate(ctx context.Context, logArchiveCreate LogArchiveCreate) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveCreate(ctx _context.Context, logArchiveCreate LogArchiveCreate) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -160,8 +160,8 @@ func (a *LogArchiveApiService) LogArchiveCreate(ctx context.Context, logArchiveC
 	localVarPath := a.client.cfg.BasePath + "/logArchive"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -204,7 +204,7 @@ func (a *LogArchiveApiService) LogArchiveCreate(ctx context.Context, logArchiveC
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -252,12 +252,12 @@ func (a *LogArchiveApiService) LogArchiveCreate(ctx context.Context, logArchiveC
 
 /*
 LogArchiveApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 */
-func (a *LogArchiveApiService) LogArchiveDelete(ctx context.Context, logArchiveId string) (*http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveDelete(ctx _context.Context, logArchiveId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *LogArchiveApiService) LogArchiveDelete(ctx context.Context, logArchiveI
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -311,7 +311,7 @@ func (a *LogArchiveApiService) LogArchiveDelete(ctx context.Context, logArchiveI
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -340,14 +340,14 @@ func (a *LogArchiveApiService) LogArchiveDelete(ctx context.Context, logArchiveI
 
 /*
 LogArchiveApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param identity identity
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx context.Context, logArchiveId string, identity string) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx _context.Context, logArchiveId string, identity string) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -361,8 +361,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx context.
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -403,7 +403,7 @@ func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx context.
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -461,14 +461,14 @@ func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx context.
 
 /*
 LogArchiveApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx context.Context, logArchiveId string, id string) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx _context.Context, logArchiveId string, id string) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -482,8 +482,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -524,7 +524,7 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -582,14 +582,14 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx context.Context,
 
 /*
 LogArchiveApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx context.Context, logArchiveId string, id string) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx _context.Context, logArchiveId string, id string) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -603,8 +603,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx context.
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -645,7 +645,7 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx context.
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -703,14 +703,14 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx context.
 
 /*
 LogArchiveApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param key key
 @return map[string]string
 */
-func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx context.Context, logArchiveId string, key string) (map[string]string, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx _context.Context, logArchiveId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -724,8 +724,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx context.Context, logAr
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -766,7 +766,7 @@ func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx context.Context, logAr
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -814,14 +814,14 @@ func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx context.Context, logAr
 
 /*
 LogArchiveApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx context.Context, logArchiveId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx _context.Context, logArchiveId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -835,8 +835,8 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx context.Context, lo
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -877,7 +877,7 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx context.Context, lo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -925,14 +925,14 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx context.Context, lo
 
 /*
 LogArchiveApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx context.Context, logArchiveId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx _context.Context, logArchiveId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -946,8 +946,8 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx context.Con
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -988,7 +988,7 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1036,14 +1036,14 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx context.Con
 
 /*
 LogArchiveApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param serviceId serviceId
 @return LogArchiveServices
 */
-func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx context.Context, logArchiveId string, serviceId string) (LogArchiveServices, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx _context.Context, logArchiveId string, serviceId string) (LogArchiveServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1057,8 +1057,8 @@ func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1099,7 +1099,7 @@ func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1147,13 +1147,13 @@ func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx context.Contex
 
 /*
 LogArchiveApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return map[string]string
 */
-func (a *LogArchiveApiService) LogArchiveGetTag(ctx context.Context, logArchiveId string) (map[string]string, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveGetTag(ctx _context.Context, logArchiveId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1166,8 +1166,8 @@ func (a *LogArchiveApiService) LogArchiveGetTag(ctx context.Context, logArchiveI
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1208,7 +1208,7 @@ func (a *LogArchiveApiService) LogArchiveGetTag(ctx context.Context, logArchiveI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1257,7 +1257,7 @@ func (a *LogArchiveApiService) LogArchiveGetTag(ctx context.Context, logArchiveI
 /*
 LogArchiveApiService List
 List logArchive
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LogArchiveListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1269,9 +1269,9 @@ type LogArchiveListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *LogArchiveApiService) LogArchiveList(ctx context.Context, localVarOptionals *LogArchiveListOpts) ([]LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveList(ctx _context.Context, localVarOptionals *LogArchiveListOpts) ([]LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1283,8 +1283,8 @@ func (a *LogArchiveApiService) LogArchiveList(ctx context.Context, localVarOptio
 	localVarPath := a.client.cfg.BasePath + "/logArchive"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1331,7 +1331,7 @@ func (a *LogArchiveApiService) LogArchiveList(ctx context.Context, localVarOptio
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1379,13 +1379,13 @@ func (a *LogArchiveApiService) LogArchiveList(ctx context.Context, localVarOptio
 
 /*
 LogArchiveApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return []string
 */
-func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx context.Context, logArchiveId string) ([]string, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx _context.Context, logArchiveId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1398,8 +1398,8 @@ func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx context.Context, l
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1440,7 +1440,7 @@ func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx context.Context, l
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1488,13 +1488,13 @@ func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx context.Context, l
 
 /*
 LogArchiveApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return []CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchiveListCredential(ctx context.Context, logArchiveId string) ([]CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveListCredential(ctx _context.Context, logArchiveId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1507,8 +1507,8 @@ func (a *LogArchiveApiService) LogArchiveListCredential(ctx context.Context, log
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1549,7 +1549,7 @@ func (a *LogArchiveApiService) LogArchiveListCredential(ctx context.Context, log
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1597,13 +1597,13 @@ func (a *LogArchiveApiService) LogArchiveListCredential(ctx context.Context, log
 
 /*
 LogArchiveApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return []CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx context.Context, logArchiveId string) ([]CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx _context.Context, logArchiveId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1616,8 +1616,8 @@ func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1658,7 +1658,7 @@ func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1706,13 +1706,13 @@ func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx context.Cont
 
 /*
 LogArchiveApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return []Event
 */
-func (a *LogArchiveApiService) LogArchiveListQueue(ctx context.Context, logArchiveId string) ([]Event, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveListQueue(ctx _context.Context, logArchiveId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1725,8 +1725,8 @@ func (a *LogArchiveApiService) LogArchiveListQueue(ctx context.Context, logArchi
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1767,7 +1767,7 @@ func (a *LogArchiveApiService) LogArchiveListQueue(ctx context.Context, logArchi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1815,13 +1815,13 @@ func (a *LogArchiveApiService) LogArchiveListQueue(ctx context.Context, logArchi
 
 /*
 LogArchiveApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return []LogArchiveServices
 */
-func (a *LogArchiveApiService) LogArchiveListServices(ctx context.Context, logArchiveId string) ([]LogArchiveServices, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveListServices(ctx _context.Context, logArchiveId string) ([]LogArchiveServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1834,8 +1834,8 @@ func (a *LogArchiveApiService) LogArchiveListServices(ctx context.Context, logAr
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1876,7 +1876,7 @@ func (a *LogArchiveApiService) LogArchiveListServices(ctx context.Context, logAr
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1924,15 +1924,15 @@ func (a *LogArchiveApiService) LogArchiveListServices(ctx context.Context, logAr
 
 /*
 LogArchiveApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param logArchivePatchCredentialId
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx context.Context, logArchiveId string, id string, logArchivePatchCredentialId LogArchivePatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx _context.Context, logArchiveId string, id string, logArchivePatchCredentialId LogArchivePatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1946,8 +1946,8 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1990,7 +1990,7 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2038,15 +2038,15 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx context.Context, 
 
 /*
 LogArchiveApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param id id
  * @param logArchivePatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx context.Context, logArchiveId string, id string, logArchivePatchCredentialpasswordId LogArchivePatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx _context.Context, logArchiveId string, id string, logArchivePatchCredentialpasswordId LogArchivePatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2060,8 +2060,8 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx context.C
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2104,7 +2104,7 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx context.C
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2152,14 +2152,14 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx context.C
 
 /*
 LogArchiveApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param requestBody
 @return map[string]string
 */
-func (a *LogArchiveApiService) LogArchivePatchTag(ctx context.Context, logArchiveId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePatchTag(ctx _context.Context, logArchiveId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2172,8 +2172,8 @@ func (a *LogArchiveApiService) LogArchivePatchTag(ctx context.Context, logArchiv
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2216,7 +2216,7 @@ func (a *LogArchiveApiService) LogArchivePatchTag(ctx context.Context, logArchiv
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2264,14 +2264,14 @@ func (a *LogArchiveApiService) LogArchivePatchTag(ctx context.Context, logArchiv
 
 /*
 LogArchiveApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchivePostAccessrights
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, logArchiveId string, logArchivePostAccessrights LogArchivePostAccessrights) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx _context.Context, logArchiveId string, logArchivePostAccessrights LogArchivePostAccessrights) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2284,8 +2284,8 @@ func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, l
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2328,7 +2328,7 @@ func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, l
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2386,14 +2386,14 @@ func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx context.Context, l
 
 /*
 LogArchiveApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchivePostCredential
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchivePostCredential(ctx context.Context, logArchiveId string, logArchivePostCredential LogArchivePostCredential) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePostCredential(ctx _context.Context, logArchiveId string, logArchivePostCredential LogArchivePostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2406,8 +2406,8 @@ func (a *LogArchiveApiService) LogArchivePostCredential(ctx context.Context, log
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2450,7 +2450,7 @@ func (a *LogArchiveApiService) LogArchivePostCredential(ctx context.Context, log
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2498,14 +2498,14 @@ func (a *LogArchiveApiService) LogArchivePostCredential(ctx context.Context, log
 
 /*
 LogArchiveApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchivePostCredentialpassword
 @return CredentialPassword
 */
-func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx context.Context, logArchiveId string, logArchivePostCredentialpassword LogArchivePostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx _context.Context, logArchiveId string, logArchivePostCredentialpassword LogArchivePostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2518,8 +2518,8 @@ func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2562,7 +2562,7 @@ func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2611,13 +2611,13 @@ func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx context.Cont
 /*
 LogArchiveApiService Get
 Returns a single logArchive
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveShow(ctx context.Context, logArchiveId string) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveShow(ctx _context.Context, logArchiveId string) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2630,8 +2630,8 @@ func (a *LogArchiveApiService) LogArchiveShow(ctx context.Context, logArchiveId 
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2672,7 +2672,7 @@ func (a *LogArchiveApiService) LogArchiveShow(ctx context.Context, logArchiveId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2721,14 +2721,14 @@ func (a *LogArchiveApiService) LogArchiveShow(ctx context.Context, logArchiveId 
 /*
 LogArchiveApiService Update
 Returns modified logArchive
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param logArchiveId ID of logArchive
  * @param logArchiveUpdate
 @return LogArchive
 */
-func (a *LogArchiveApiService) LogArchiveUpdate(ctx context.Context, logArchiveId string, logArchiveUpdate LogArchiveUpdate) (LogArchive, *http.Response, error) {
+func (a *LogArchiveApiService) LogArchiveUpdate(ctx _context.Context, logArchiveId string, logArchiveUpdate LogArchiveUpdate) (LogArchive, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2741,8 +2741,8 @@ func (a *LogArchiveApiService) LogArchiveUpdate(ctx context.Context, logArchiveI
 	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2785,7 +2785,7 @@ func (a *LogArchiveApiService) LogArchiveUpdate(ctx context.Context, logArchiveI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

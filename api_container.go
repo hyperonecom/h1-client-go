@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type ContainerApiService service
@@ -29,13 +29,13 @@ type ContainerApiService service
 /*
 ContainerApiService /actions/restart
 Action restart
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionRestart(ctx _context.Context, containerId string) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -48,8 +48,8 @@ func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, contai
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -90,7 +90,7 @@ func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, contai
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,13 +139,13 @@ func (a *ContainerApiService) ContainerActionRestart(ctx context.Context, contai
 /*
 ContainerApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionStart(ctx _context.Context, containerId string) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -158,8 +158,8 @@ func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containe
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -200,7 +200,7 @@ func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containe
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,13 +249,13 @@ func (a *ContainerApiService) ContainerActionStart(ctx context.Context, containe
 /*
 ContainerApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ContainerActionStop(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerActionStop(ctx _context.Context, containerId string) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -268,8 +268,8 @@ func (a *ContainerApiService) ContainerActionStop(ctx context.Context, container
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -310,7 +310,7 @@ func (a *ContainerApiService) ContainerActionStop(ctx context.Context, container
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -359,13 +359,13 @@ func (a *ContainerApiService) ContainerActionStop(ctx context.Context, container
 /*
 ContainerApiService Create
 Create container
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerCreate
 @return Container
 */
-func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCreate ContainerCreate) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerCreate(ctx _context.Context, containerCreate ContainerCreate) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -377,8 +377,8 @@ func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCrea
 	localVarPath := a.client.cfg.BasePath + "/container"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -421,7 +421,7 @@ func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCrea
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -469,12 +469,12 @@ func (a *ContainerApiService) ContainerCreate(ctx context.Context, containerCrea
 
 /*
 ContainerApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 */
-func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId string) (*http.Response, error) {
+func (a *ContainerApiService) ContainerDelete(ctx _context.Context, containerId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -486,8 +486,8 @@ func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId s
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -528,7 +528,7 @@ func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId s
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -557,14 +557,14 @@ func (a *ContainerApiService) ContainerDelete(ctx context.Context, containerId s
 
 /*
 ContainerApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param identity identity
 @return Container
 */
-func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Context, containerId string, identity string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx _context.Context, containerId string, identity string) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -578,8 +578,8 @@ func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Co
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -620,7 +620,7 @@ func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -678,14 +678,14 @@ func (a *ContainerApiService) ContainerDeleteAccessrightsIdentity(ctx context.Co
 
 /*
 ContainerApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param key key
 @return map[string]string
 */
-func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, containerId string, key string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerDeleteTagKey(ctx _context.Context, containerId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -699,8 +699,8 @@ func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, contain
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -741,7 +741,7 @@ func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, contain
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -789,14 +789,14 @@ func (a *ContainerApiService) ContainerDeleteTagKey(ctx context.Context, contain
 
 /*
 ContainerApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param serviceId serviceId
 @return ContainerServices
 */
-func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context, containerId string, serviceId string) (ContainerServices, *http.Response, error) {
+func (a *ContainerApiService) ContainerGetServicesServiceId(ctx _context.Context, containerId string, serviceId string) (ContainerServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -810,8 +810,8 @@ func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -852,7 +852,7 @@ func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -900,13 +900,13 @@ func (a *ContainerApiService) ContainerGetServicesServiceId(ctx context.Context,
 
 /*
 ContainerApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return map[string]string
 */
-func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerGetTag(ctx _context.Context, containerId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -919,8 +919,8 @@ func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId s
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -961,7 +961,7 @@ func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1010,7 +1010,7 @@ func (a *ContainerApiService) ContainerGetTag(ctx context.Context, containerId s
 /*
 ContainerApiService List
 List container
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ContainerListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1022,9 +1022,9 @@ type ContainerListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptionals *ContainerListOpts) ([]Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerList(ctx _context.Context, localVarOptionals *ContainerListOpts) ([]Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1036,8 +1036,8 @@ func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptiona
 	localVarPath := a.client.cfg.BasePath + "/container"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1084,7 +1084,7 @@ func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptiona
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1132,13 +1132,13 @@ func (a *ContainerApiService) ContainerList(ctx context.Context, localVarOptiona
 
 /*
 ContainerApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []string
 */
-func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, containerId string) ([]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerListAccessrights(ctx _context.Context, containerId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1151,8 +1151,8 @@ func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, con
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1193,7 +1193,7 @@ func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1241,13 +1241,13 @@ func (a *ContainerApiService) ContainerListAccessrights(ctx context.Context, con
 
 /*
 ContainerApiService /process
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []ContainerProcess
 */
-func (a *ContainerApiService) ContainerListProcess(ctx context.Context, containerId string) ([]ContainerProcess, *http.Response, error) {
+func (a *ContainerApiService) ContainerListProcess(ctx _context.Context, containerId string) ([]ContainerProcess, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1260,8 +1260,8 @@ func (a *ContainerApiService) ContainerListProcess(ctx context.Context, containe
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1302,7 +1302,7 @@ func (a *ContainerApiService) ContainerListProcess(ctx context.Context, containe
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1350,13 +1350,13 @@ func (a *ContainerApiService) ContainerListProcess(ctx context.Context, containe
 
 /*
 ContainerApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []Event
 */
-func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerId string) ([]Event, *http.Response, error) {
+func (a *ContainerApiService) ContainerListQueue(ctx _context.Context, containerId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1369,8 +1369,8 @@ func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerI
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1411,7 +1411,7 @@ func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1459,13 +1459,13 @@ func (a *ContainerApiService) ContainerListQueue(ctx context.Context, containerI
 
 /*
 ContainerApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return []ContainerServices
 */
-func (a *ContainerApiService) ContainerListServices(ctx context.Context, containerId string) ([]ContainerServices, *http.Response, error) {
+func (a *ContainerApiService) ContainerListServices(ctx _context.Context, containerId string) ([]ContainerServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1478,8 +1478,8 @@ func (a *ContainerApiService) ContainerListServices(ctx context.Context, contain
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1520,7 +1520,7 @@ func (a *ContainerApiService) ContainerListServices(ctx context.Context, contain
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1568,14 +1568,14 @@ func (a *ContainerApiService) ContainerListServices(ctx context.Context, contain
 
 /*
 ContainerApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param requestBody
 @return map[string]string
 */
-func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ContainerApiService) ContainerPatchTag(ctx _context.Context, containerId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1588,8 +1588,8 @@ func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1632,7 +1632,7 @@ func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1680,14 +1680,14 @@ func (a *ContainerApiService) ContainerPatchTag(ctx context.Context, containerId
 
 /*
 ContainerApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param containerPostAccessrights
 @return Container
 */
-func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerPostAccessrights(ctx _context.Context, containerId string, containerPostAccessrights ContainerPostAccessrights) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1700,8 +1700,8 @@ func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, con
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1744,7 +1744,7 @@ func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1803,13 +1803,13 @@ func (a *ContainerApiService) ContainerPostAccessrights(ctx context.Context, con
 /*
 ContainerApiService Get
 Returns a single container
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
 @return Container
 */
-func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId string) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerShow(ctx _context.Context, containerId string) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1822,8 +1822,8 @@ func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId str
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1864,7 +1864,7 @@ func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1913,14 +1913,14 @@ func (a *ContainerApiService) ContainerShow(ctx context.Context, containerId str
 /*
 ContainerApiService Update
 Returns modified container
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param containerId ID of container
  * @param containerUpdate
 @return Container
 */
-func (a *ContainerApiService) ContainerUpdate(ctx context.Context, containerId string, containerUpdate ContainerUpdate) (Container, *http.Response, error) {
+func (a *ContainerApiService) ContainerUpdate(ctx _context.Context, containerId string, containerUpdate ContainerUpdate) (Container, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1933,8 +1933,8 @@ func (a *ContainerApiService) ContainerUpdate(ctx context.Context, containerId s
 	localVarPath = strings.Replace(localVarPath, "{"+"containerId"+"}", fmt.Sprintf("%v", containerId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1977,7 +1977,7 @@ func (a *ContainerApiService) ContainerUpdate(ctx context.Context, containerId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type ReplicaApiService service
@@ -29,14 +29,14 @@ type ReplicaApiService service
 /*
 ReplicaApiService /actions/image
 Action image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param replicaActionImage
 @return Replica
 */
-func (a *ReplicaApiService) ReplicaActionImage(ctx context.Context, replicaId string, replicaActionImage ReplicaActionImage) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaActionImage(ctx _context.Context, replicaId string, replicaActionImage ReplicaActionImage) (Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *ReplicaApiService) ReplicaActionImage(ctx context.Context, replicaId st
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *ReplicaApiService) ReplicaActionImage(ctx context.Context, replicaId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *ReplicaApiService) ReplicaActionImage(ctx context.Context, replicaId st
 /*
 ReplicaApiService Create
 Create replica
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaCreate
 @return Replica
 */
-func (a *ReplicaApiService) ReplicaCreate(ctx context.Context, replicaCreate ReplicaCreate) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaCreate(ctx _context.Context, replicaCreate ReplicaCreate) (Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -160,8 +160,8 @@ func (a *ReplicaApiService) ReplicaCreate(ctx context.Context, replicaCreate Rep
 	localVarPath := a.client.cfg.BasePath + "/replica"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -204,7 +204,7 @@ func (a *ReplicaApiService) ReplicaCreate(ctx context.Context, replicaCreate Rep
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -252,12 +252,12 @@ func (a *ReplicaApiService) ReplicaCreate(ctx context.Context, replicaCreate Rep
 
 /*
 ReplicaApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 */
-func (a *ReplicaApiService) ReplicaDelete(ctx context.Context, replicaId string) (*http.Response, error) {
+func (a *ReplicaApiService) ReplicaDelete(ctx _context.Context, replicaId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *ReplicaApiService) ReplicaDelete(ctx context.Context, replicaId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -311,7 +311,7 @@ func (a *ReplicaApiService) ReplicaDelete(ctx context.Context, replicaId string)
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -340,14 +340,14 @@ func (a *ReplicaApiService) ReplicaDelete(ctx context.Context, replicaId string)
 
 /*
 ReplicaApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param identity identity
 @return Replica
 */
-func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx context.Context, replicaId string, identity string) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx _context.Context, replicaId string, identity string) (Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -361,8 +361,8 @@ func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -403,7 +403,7 @@ func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -461,14 +461,14 @@ func (a *ReplicaApiService) ReplicaDeleteAccessrightsIdentity(ctx context.Contex
 
 /*
 ReplicaApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param key key
 @return map[string]string
 */
-func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId string, key string) (map[string]string, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx _context.Context, replicaId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -482,8 +482,8 @@ func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId s
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -524,7 +524,7 @@ func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -572,14 +572,14 @@ func (a *ReplicaApiService) ReplicaDeleteTagKey(ctx context.Context, replicaId s
 
 /*
 ReplicaApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param serviceId serviceId
 @return ReplicaServices
 */
-func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, replicaId string, serviceId string) (ReplicaServices, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx _context.Context, replicaId string, serviceId string) (ReplicaServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -593,8 +593,8 @@ func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, rep
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -635,7 +635,7 @@ func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, rep
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -683,13 +683,13 @@ func (a *ReplicaApiService) ReplicaGetServicesServiceId(ctx context.Context, rep
 
 /*
 ReplicaApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 @return map[string]string
 */
-func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string) (map[string]string, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaGetTag(ctx _context.Context, replicaId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -702,8 +702,8 @@ func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -744,7 +744,7 @@ func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -793,7 +793,7 @@ func (a *ReplicaApiService) ReplicaGetTag(ctx context.Context, replicaId string)
 /*
 ReplicaApiService List
 List replica
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ReplicaListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
 @return []Replica
@@ -803,9 +803,9 @@ type ReplicaListOpts struct {
 	Name optional.String
 }
 
-func (a *ReplicaApiService) ReplicaList(ctx context.Context, localVarOptionals *ReplicaListOpts) ([]Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaList(ctx _context.Context, localVarOptionals *ReplicaListOpts) ([]Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -817,8 +817,8 @@ func (a *ReplicaApiService) ReplicaList(ctx context.Context, localVarOptionals *
 	localVarPath := a.client.cfg.BasePath + "/replica"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -862,7 +862,7 @@ func (a *ReplicaApiService) ReplicaList(ctx context.Context, localVarOptionals *
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -910,13 +910,13 @@ func (a *ReplicaApiService) ReplicaList(ctx context.Context, localVarOptionals *
 
 /*
 ReplicaApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 @return []string
 */
-func (a *ReplicaApiService) ReplicaListAccessrights(ctx context.Context, replicaId string) ([]string, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaListAccessrights(ctx _context.Context, replicaId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -929,8 +929,8 @@ func (a *ReplicaApiService) ReplicaListAccessrights(ctx context.Context, replica
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -971,7 +971,7 @@ func (a *ReplicaApiService) ReplicaListAccessrights(ctx context.Context, replica
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1019,13 +1019,13 @@ func (a *ReplicaApiService) ReplicaListAccessrights(ctx context.Context, replica
 
 /*
 ReplicaApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 @return []Event
 */
-func (a *ReplicaApiService) ReplicaListQueue(ctx context.Context, replicaId string) ([]Event, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaListQueue(ctx _context.Context, replicaId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1038,8 +1038,8 @@ func (a *ReplicaApiService) ReplicaListQueue(ctx context.Context, replicaId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1080,7 +1080,7 @@ func (a *ReplicaApiService) ReplicaListQueue(ctx context.Context, replicaId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1128,13 +1128,13 @@ func (a *ReplicaApiService) ReplicaListQueue(ctx context.Context, replicaId stri
 
 /*
 ReplicaApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 @return []ReplicaServices
 */
-func (a *ReplicaApiService) ReplicaListServices(ctx context.Context, replicaId string) ([]ReplicaServices, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaListServices(ctx _context.Context, replicaId string) ([]ReplicaServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1147,8 +1147,8 @@ func (a *ReplicaApiService) ReplicaListServices(ctx context.Context, replicaId s
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1189,7 +1189,7 @@ func (a *ReplicaApiService) ReplicaListServices(ctx context.Context, replicaId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1237,14 +1237,14 @@ func (a *ReplicaApiService) ReplicaListServices(ctx context.Context, replicaId s
 
 /*
 ReplicaApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param requestBody
 @return map[string]string
 */
-func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaPatchTag(ctx _context.Context, replicaId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1257,8 +1257,8 @@ func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1301,7 +1301,7 @@ func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1349,14 +1349,14 @@ func (a *ReplicaApiService) ReplicaPatchTag(ctx context.Context, replicaId strin
 
 /*
 ReplicaApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
  * @param replicaPostAccessrights
 @return Replica
 */
-func (a *ReplicaApiService) ReplicaPostAccessrights(ctx context.Context, replicaId string, replicaPostAccessrights ReplicaPostAccessrights) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaPostAccessrights(ctx _context.Context, replicaId string, replicaPostAccessrights ReplicaPostAccessrights) (Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1369,8 +1369,8 @@ func (a *ReplicaApiService) ReplicaPostAccessrights(ctx context.Context, replica
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1413,7 +1413,7 @@ func (a *ReplicaApiService) ReplicaPostAccessrights(ctx context.Context, replica
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1472,13 +1472,13 @@ func (a *ReplicaApiService) ReplicaPostAccessrights(ctx context.Context, replica
 /*
 ReplicaApiService Get
 Returns a single replica
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param replicaId ID of replica
 @return Replica
 */
-func (a *ReplicaApiService) ReplicaShow(ctx context.Context, replicaId string) (Replica, *http.Response, error) {
+func (a *ReplicaApiService) ReplicaShow(ctx _context.Context, replicaId string) (Replica, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1491,8 +1491,8 @@ func (a *ReplicaApiService) ReplicaShow(ctx context.Context, replicaId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"replicaId"+"}", fmt.Sprintf("%v", replicaId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1533,7 +1533,7 @@ func (a *ReplicaApiService) ReplicaShow(ctx context.Context, replicaId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

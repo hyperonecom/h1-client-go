@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type OrganisationApiService service
@@ -29,14 +29,14 @@ type OrganisationApiService service
 /*
 OrganisationApiService /actions/payment_assign
 Action payment_assign
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationActionPaymentAssign
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Context, organisationId string, organisationActionPaymentAssign OrganisationActionPaymentAssign) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx _context.Context, organisationId string, organisationActionPaymentAssign OrganisationActionPaymentAssign) (Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Con
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,14 +142,14 @@ func (a *OrganisationApiService) OrganisationActionPaymentAssign(ctx context.Con
 /*
 OrganisationApiService /actions/transfer_accept
 Action transfer_accept
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationActionTransferAccept
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Context, organisationId string, organisationActionTransferAccept OrganisationActionTransferAccept) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx _context.Context, organisationId string, organisationActionTransferAccept OrganisationActionTransferAccept) (Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,8 +162,8 @@ func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Co
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -206,7 +206,7 @@ func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -255,13 +255,13 @@ func (a *OrganisationApiService) OrganisationActionTransferAccept(ctx context.Co
 /*
 OrganisationApiService Create
 Create organisation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationCreate
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organisationCreate OrganisationCreate) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationCreate(ctx _context.Context, organisationCreate OrganisationCreate) (Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -273,8 +273,8 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 	localVarPath := a.client.cfg.BasePath + "/organisation"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -317,7 +317,7 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -365,13 +365,13 @@ func (a *OrganisationApiService) OrganisationCreate(ctx context.Context, organis
 
 /*
 OrganisationApiService /accessrights/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param id id
 */
-func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Context, organisationId string, id string) (*http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx _context.Context, organisationId string, id string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -384,8 +384,8 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -426,7 +426,7 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -455,14 +455,14 @@ func (a *OrganisationApiService) OrganisationDeleteAccessrightsId(ctx context.Co
 
 /*
 OrganisationApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param key key
 @return map[string]string
 */
-func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, organisationId string, key string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx _context.Context, organisationId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -476,8 +476,8 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -518,7 +518,7 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -566,13 +566,13 @@ func (a *OrganisationApiService) OrganisationDeleteTagKey(ctx context.Context, o
 
 /*
 OrganisationApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return map[string]string
 */
-func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organisationId string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationGetTag(ctx _context.Context, organisationId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -585,8 +585,8 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -627,7 +627,7 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -676,7 +676,7 @@ func (a *OrganisationApiService) OrganisationGetTag(ctx context.Context, organis
 /*
 OrganisationApiService List
 List organisation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *OrganisationListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "BillingCompany" (optional.String) -  Filter by billing.company
@@ -696,9 +696,9 @@ type OrganisationListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationList(ctx _context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -710,8 +710,8 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 	localVarPath := a.client.cfg.BasePath + "/organisation"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -770,7 +770,7 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -818,13 +818,13 @@ func (a *OrganisationApiService) OrganisationList(ctx context.Context, localVarO
 
 /*
 OrganisationApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return []AccessrightsUserRole
 */
-func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Context, organisationId string) ([]AccessrightsUserRole, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationListAccessrights(ctx _context.Context, organisationId string) ([]AccessrightsUserRole, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -837,8 +837,8 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -879,7 +879,7 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -927,13 +927,13 @@ func (a *OrganisationApiService) OrganisationListAccessrights(ctx context.Contex
 
 /*
 OrganisationApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return []Event
 */
-func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, organisationId string) ([]Event, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationListQueue(ctx _context.Context, organisationId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -946,8 +946,8 @@ func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, orga
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -988,7 +988,7 @@ func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, orga
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1036,14 +1036,14 @@ func (a *OrganisationApiService) OrganisationListQueue(ctx context.Context, orga
 
 /*
 OrganisationApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param requestBody
 @return map[string]string
 */
-func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organisationId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationPatchTag(ctx _context.Context, organisationId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1056,8 +1056,8 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1100,7 +1100,7 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1148,13 +1148,13 @@ func (a *OrganisationApiService) OrganisationPatchTag(ctx context.Context, organ
 
 /*
 OrganisationApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationPostAccessrights
 */
-func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (*http.Response, error) {
+func (a *OrganisationApiService) OrganisationPostAccessrights(ctx _context.Context, organisationId string, organisationPostAccessrights OrganisationPostAccessrights) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1166,8 +1166,8 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1210,7 +1210,7 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1240,13 +1240,13 @@ func (a *OrganisationApiService) OrganisationPostAccessrights(ctx context.Contex
 /*
 OrganisationApiService Get
 Returns a single organisation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisationId string) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationShow(ctx _context.Context, organisationId string) (Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1259,8 +1259,8 @@ func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisat
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1301,7 +1301,7 @@ func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisat
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1350,14 +1350,14 @@ func (a *OrganisationApiService) OrganisationShow(ctx context.Context, organisat
 /*
 OrganisationApiService Update
 Returns modified organisation
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId ID of organisation
  * @param organisationUpdate
 @return Organisation
 */
-func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organisationId string, organisationUpdate OrganisationUpdate) (Organisation, *http.Response, error) {
+func (a *OrganisationApiService) OrganisationUpdate(ctx _context.Context, organisationId string, organisationUpdate OrganisationUpdate) (Organisation, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1370,8 +1370,8 @@ func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organis
 	localVarPath = strings.Replace(localVarPath, "{"+"organisationId"+"}", fmt.Sprintf("%v", organisationId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1414,7 +1414,7 @@ func (a *OrganisationApiService) OrganisationUpdate(ctx context.Context, organis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

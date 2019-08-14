@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type VaultApiService service
@@ -29,14 +29,14 @@ type VaultApiService service
 /*
 VaultApiService /actions/resize
 Action resize
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultActionResize
 @return Vault
 */
-func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string, vaultActionResize VaultActionResize) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionResize(ctx _context.Context, vaultId string, vaultActionResize VaultActionResize) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,14 +142,14 @@ func (a *VaultApiService) VaultActionResize(ctx context.Context, vaultId string,
 /*
 VaultApiService /actions/snapshot
 Action snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultActionSnapshot
 @return Vault
 */
-func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId string, vaultActionSnapshot VaultActionSnapshot) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionSnapshot(ctx _context.Context, vaultId string, vaultActionSnapshot VaultActionSnapshot) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,8 +162,8 @@ func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -206,7 +206,7 @@ func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -255,13 +255,13 @@ func (a *VaultApiService) VaultActionSnapshot(ctx context.Context, vaultId strin
 /*
 VaultApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionStart(ctx _context.Context, vaultId string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -274,8 +274,8 @@ func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) 
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -316,7 +316,7 @@ func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -365,13 +365,13 @@ func (a *VaultApiService) VaultActionStart(ctx context.Context, vaultId string) 
 /*
 VaultApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultActionStop(ctx _context.Context, vaultId string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -384,8 +384,8 @@ func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -426,7 +426,7 @@ func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -475,13 +475,13 @@ func (a *VaultApiService) VaultActionStop(ctx context.Context, vaultId string) (
 /*
 VaultApiService Create
 Create vault
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultCreate
 @return Vault
 */
-func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCreate) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultCreate(ctx _context.Context, vaultCreate VaultCreate) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -493,8 +493,8 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 	localVarPath := a.client.cfg.BasePath + "/vault"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -537,7 +537,7 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -585,13 +585,13 @@ func (a *VaultApiService) VaultCreate(ctx context.Context, vaultCreate VaultCrea
 
 /*
 VaultApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultDelete
 */
-func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vaultDelete VaultDelete) (*http.Response, error) {
+func (a *VaultApiService) VaultDelete(ctx _context.Context, vaultId string, vaultDelete VaultDelete) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -603,8 +603,8 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -647,7 +647,7 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -676,14 +676,14 @@ func (a *VaultApiService) VaultDelete(ctx context.Context, vaultId string, vault
 
 /*
 VaultApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param identity identity
 @return Vault
 */
-func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, vaultId string, identity string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx _context.Context, vaultId string, identity string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -697,8 +697,8 @@ func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, v
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -739,7 +739,7 @@ func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, v
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -797,14 +797,14 @@ func (a *VaultApiService) VaultDeleteAccessrightsIdentity(ctx context.Context, v
 
 /*
 VaultApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return Vault
 */
-func (a *VaultApiService) VaultDeleteCredentialId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialId(ctx _context.Context, vaultId string, id string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -818,8 +818,8 @@ func (a *VaultApiService) VaultDeleteCredentialId(ctx context.Context, vaultId s
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -860,7 +860,7 @@ func (a *VaultApiService) VaultDeleteCredentialId(ctx context.Context, vaultId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -918,14 +918,14 @@ func (a *VaultApiService) VaultDeleteCredentialId(ctx context.Context, vaultId s
 
 /*
 VaultApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return CredentialCertificate
 */
-func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx _context.Context, vaultId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -939,8 +939,8 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -981,7 +981,7 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1029,14 +1029,14 @@ func (a *VaultApiService) VaultDeleteCredentialcertificateId(ctx context.Context
 
 /*
 VaultApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return Vault
 */
-func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, vaultId string, id string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx _context.Context, vaultId string, id string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1050,8 +1050,8 @@ func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, v
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1092,7 +1092,7 @@ func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, v
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1150,14 +1150,14 @@ func (a *VaultApiService) VaultDeleteCredentialpasswordId(ctx context.Context, v
 
 /*
 VaultApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param key key
 @return map[string]string
 */
-func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string, key string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultDeleteTagKey(ctx _context.Context, vaultId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1171,8 +1171,8 @@ func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1213,7 +1213,7 @@ func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1261,14 +1261,14 @@ func (a *VaultApiService) VaultDeleteTagKey(ctx context.Context, vaultId string,
 
 /*
 VaultApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultGetCredentialId(ctx context.Context, vaultId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultGetCredentialId(ctx _context.Context, vaultId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1282,8 +1282,8 @@ func (a *VaultApiService) VaultGetCredentialId(ctx context.Context, vaultId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1324,7 +1324,7 @@ func (a *VaultApiService) VaultGetCredentialId(ctx context.Context, vaultId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1372,14 +1372,14 @@ func (a *VaultApiService) VaultGetCredentialId(ctx context.Context, vaultId stri
 
 /*
 VaultApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return CredentialCertificate
 */
-func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, vaultId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultGetCredentialcertificateId(ctx _context.Context, vaultId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1393,8 +1393,8 @@ func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, v
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1435,7 +1435,7 @@ func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, v
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1483,14 +1483,14 @@ func (a *VaultApiService) VaultGetCredentialcertificateId(ctx context.Context, v
 
 /*
 VaultApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaultId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultGetCredentialpasswordId(ctx _context.Context, vaultId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1504,8 +1504,8 @@ func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaul
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1546,7 +1546,7 @@ func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaul
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1594,14 +1594,14 @@ func (a *VaultApiService) VaultGetCredentialpasswordId(ctx context.Context, vaul
 
 /*
 VaultApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param serviceId serviceId
 @return VaultServices
 */
-func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId string, serviceId string) (VaultServices, *http.Response, error) {
+func (a *VaultApiService) VaultGetServicesServiceId(ctx _context.Context, vaultId string, serviceId string) (VaultServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1615,8 +1615,8 @@ func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1657,7 +1657,7 @@ func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1705,13 +1705,13 @@ func (a *VaultApiService) VaultGetServicesServiceId(ctx context.Context, vaultId
 
 /*
 VaultApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return map[string]string
 */
-func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultGetTag(ctx _context.Context, vaultId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1724,8 +1724,8 @@ func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1766,7 +1766,7 @@ func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1815,7 +1815,7 @@ func (a *VaultApiService) VaultGetTag(ctx context.Context, vaultId string) (map[
 /*
 VaultApiService List
 List vault
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *VaultListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1827,9 +1827,9 @@ type VaultListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *VaultListOpts) ([]Vault, *http.Response, error) {
+func (a *VaultApiService) VaultList(ctx _context.Context, localVarOptionals *VaultListOpts) ([]Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1841,8 +1841,8 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 	localVarPath := a.client.cfg.BasePath + "/vault"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1889,7 +1889,7 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1937,13 +1937,13 @@ func (a *VaultApiService) VaultList(ctx context.Context, localVarOptionals *Vaul
 
 /*
 VaultApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []string
 */
-func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId string) ([]string, *http.Response, error) {
+func (a *VaultApiService) VaultListAccessrights(ctx _context.Context, vaultId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1956,8 +1956,8 @@ func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId str
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1998,7 +1998,7 @@ func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2046,13 +2046,13 @@ func (a *VaultApiService) VaultListAccessrights(ctx context.Context, vaultId str
 
 /*
 VaultApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []CredentialPassword
 */
-func (a *VaultApiService) VaultListCredential(ctx context.Context, vaultId string) ([]CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultListCredential(ctx _context.Context, vaultId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2065,8 +2065,8 @@ func (a *VaultApiService) VaultListCredential(ctx context.Context, vaultId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2107,7 +2107,7 @@ func (a *VaultApiService) VaultListCredential(ctx context.Context, vaultId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2155,13 +2155,13 @@ func (a *VaultApiService) VaultListCredential(ctx context.Context, vaultId strin
 
 /*
 VaultApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []CredentialCertificate
 */
-func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, vaultId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultListCredentialcertificate(ctx _context.Context, vaultId string) ([]CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2174,8 +2174,8 @@ func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, va
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2216,7 +2216,7 @@ func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, va
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2264,13 +2264,13 @@ func (a *VaultApiService) VaultListCredentialcertificate(ctx context.Context, va
 
 /*
 VaultApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []CredentialPassword
 */
-func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vaultId string) ([]CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultListCredentialpassword(ctx _context.Context, vaultId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2283,8 +2283,8 @@ func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vault
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2325,7 +2325,7 @@ func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vault
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2373,13 +2373,13 @@ func (a *VaultApiService) VaultListCredentialpassword(ctx context.Context, vault
 
 /*
 VaultApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []Event
 */
-func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([]Event, *http.Response, error) {
+func (a *VaultApiService) VaultListQueue(ctx _context.Context, vaultId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2392,8 +2392,8 @@ func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2434,7 +2434,7 @@ func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2482,13 +2482,13 @@ func (a *VaultApiService) VaultListQueue(ctx context.Context, vaultId string) ([
 
 /*
 VaultApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return []VaultServices
 */
-func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string) ([]VaultServices, *http.Response, error) {
+func (a *VaultApiService) VaultListServices(ctx _context.Context, vaultId string) ([]VaultServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2501,8 +2501,8 @@ func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2543,7 +2543,7 @@ func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2591,15 +2591,15 @@ func (a *VaultApiService) VaultListServices(ctx context.Context, vaultId string)
 
 /*
 VaultApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
  * @param vaultPatchCredentialId
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultPatchCredentialId(ctx context.Context, vaultId string, id string, vaultPatchCredentialId VaultPatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPatchCredentialId(ctx _context.Context, vaultId string, id string, vaultPatchCredentialId VaultPatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2613,8 +2613,8 @@ func (a *VaultApiService) VaultPatchCredentialId(ctx context.Context, vaultId st
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2657,7 +2657,7 @@ func (a *VaultApiService) VaultPatchCredentialId(ctx context.Context, vaultId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2705,15 +2705,15 @@ func (a *VaultApiService) VaultPatchCredentialId(ctx context.Context, vaultId st
 
 /*
 VaultApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
  * @param vaultPatchCredentialcertificateId
 @return CredentialCertificate
 */
-func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context, vaultId string, id string, vaultPatchCredentialcertificateId VaultPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx _context.Context, vaultId string, id string, vaultPatchCredentialcertificateId VaultPatchCredentialcertificateId) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2727,8 +2727,8 @@ func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2771,7 +2771,7 @@ func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2819,15 +2819,15 @@ func (a *VaultApiService) VaultPatchCredentialcertificateId(ctx context.Context,
 
 /*
 VaultApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param id id
  * @param vaultPatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, vaultId string, id string, vaultPatchCredentialpasswordId VaultPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx _context.Context, vaultId string, id string, vaultPatchCredentialpasswordId VaultPatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2841,8 +2841,8 @@ func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, va
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2885,7 +2885,7 @@ func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, va
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2933,14 +2933,14 @@ func (a *VaultApiService) VaultPatchCredentialpasswordId(ctx context.Context, va
 
 /*
 VaultApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param requestBody
 @return map[string]string
 */
-func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *VaultApiService) VaultPatchTag(ctx _context.Context, vaultId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2953,8 +2953,8 @@ func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, req
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2997,7 +2997,7 @@ func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, req
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3045,14 +3045,14 @@ func (a *VaultApiService) VaultPatchTag(ctx context.Context, vaultId string, req
 
 /*
 VaultApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultPostAccessrights
 @return Vault
 */
-func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultPostAccessrights(ctx _context.Context, vaultId string, vaultPostAccessrights VaultPostAccessrights) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3065,8 +3065,8 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3109,7 +3109,7 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3167,14 +3167,14 @@ func (a *VaultApiService) VaultPostAccessrights(ctx context.Context, vaultId str
 
 /*
 VaultApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultPostCredential
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultPostCredential(ctx context.Context, vaultId string, vaultPostCredential VaultPostCredential) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPostCredential(ctx _context.Context, vaultId string, vaultPostCredential VaultPostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3187,8 +3187,8 @@ func (a *VaultApiService) VaultPostCredential(ctx context.Context, vaultId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3231,7 +3231,7 @@ func (a *VaultApiService) VaultPostCredential(ctx context.Context, vaultId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3279,14 +3279,14 @@ func (a *VaultApiService) VaultPostCredential(ctx context.Context, vaultId strin
 
 /*
 VaultApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultPostCredentialcertificate
 @return CredentialCertificate
 */
-func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, vaultId string, vaultPostCredentialcertificate VaultPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
+func (a *VaultApiService) VaultPostCredentialcertificate(ctx _context.Context, vaultId string, vaultPostCredentialcertificate VaultPostCredentialcertificate) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3299,8 +3299,8 @@ func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, va
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3343,7 +3343,7 @@ func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, va
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3391,14 +3391,14 @@ func (a *VaultApiService) VaultPostCredentialcertificate(ctx context.Context, va
 
 /*
 VaultApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultPostCredentialpassword
 @return CredentialPassword
 */
-func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vaultId string, vaultPostCredentialpassword VaultPostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *VaultApiService) VaultPostCredentialpassword(ctx _context.Context, vaultId string, vaultPostCredentialpassword VaultPostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3411,8 +3411,8 @@ func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vault
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3455,7 +3455,7 @@ func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vault
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3504,13 +3504,13 @@ func (a *VaultApiService) VaultPostCredentialpassword(ctx context.Context, vault
 /*
 VaultApiService Get
 Returns a single vault
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
 @return Vault
 */
-func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultShow(ctx _context.Context, vaultId string) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3523,8 +3523,8 @@ func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault,
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3565,7 +3565,7 @@ func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3614,14 +3614,14 @@ func (a *VaultApiService) VaultShow(ctx context.Context, vaultId string) (Vault,
 /*
 VaultApiService Update
 Returns modified vault
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vaultId ID of vault
  * @param vaultUpdate
 @return Vault
 */
-func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vaultUpdate VaultUpdate) (Vault, *http.Response, error) {
+func (a *VaultApiService) VaultUpdate(ctx _context.Context, vaultId string, vaultUpdate VaultUpdate) (Vault, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3634,8 +3634,8 @@ func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vault
 	localVarPath = strings.Replace(localVarPath, "{"+"vaultId"+"}", fmt.Sprintf("%v", vaultId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3678,7 +3678,7 @@ func (a *VaultApiService) VaultUpdate(ctx context.Context, vaultId string, vault
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

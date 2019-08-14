@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type NetgwApiService service
@@ -29,14 +29,14 @@ type NetgwApiService service
 /*
 NetgwApiService /actions/attach
 Action attach
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param netgwActionAttach
 @return Netgw
 */
-func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string, netgwActionAttach NetgwActionAttach) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwActionAttach(ctx _context.Context, netgwId string, netgwActionAttach NetgwActionAttach) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *NetgwApiService) NetgwActionAttach(ctx context.Context, netgwId string,
 /*
 NetgwApiService /actions/detach
 Action detach
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return Netgw
 */
-func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwActionDetach(ctx _context.Context, netgwId string) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -161,8 +161,8 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -203,7 +203,7 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -252,13 +252,13 @@ func (a *NetgwApiService) NetgwActionDetach(ctx context.Context, netgwId string)
 /*
 NetgwApiService Create
 Create netgw
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwCreate
 @return Netgw
 */
-func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCreate) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwCreate(ctx _context.Context, netgwCreate NetgwCreate) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -270,8 +270,8 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 	localVarPath := a.client.cfg.BasePath + "/netgw"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -314,7 +314,7 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -362,12 +362,12 @@ func (a *NetgwApiService) NetgwCreate(ctx context.Context, netgwCreate NetgwCrea
 
 /*
 NetgwApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 */
-func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*http.Response, error) {
+func (a *NetgwApiService) NetgwDelete(ctx _context.Context, netgwId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -379,8 +379,8 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -421,7 +421,7 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -450,14 +450,14 @@ func (a *NetgwApiService) NetgwDelete(ctx context.Context, netgwId string) (*htt
 
 /*
 NetgwApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param identity identity
 @return Netgw
 */
-func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, netgwId string, identity string) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx _context.Context, netgwId string, identity string) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -471,8 +471,8 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -513,7 +513,7 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -571,14 +571,14 @@ func (a *NetgwApiService) NetgwDeleteAccessrightsIdentity(ctx context.Context, n
 
 /*
 NetgwApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param key key
 @return map[string]string
 */
-func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string, key string) (map[string]string, *http.Response, error) {
+func (a *NetgwApiService) NetgwDeleteTagKey(ctx _context.Context, netgwId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -592,8 +592,8 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -634,7 +634,7 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -682,14 +682,14 @@ func (a *NetgwApiService) NetgwDeleteTagKey(ctx context.Context, netgwId string,
 
 /*
 NetgwApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param serviceId serviceId
 @return NetgwServices
 */
-func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId string, serviceId string) (NetgwServices, *http.Response, error) {
+func (a *NetgwApiService) NetgwGetServicesServiceId(ctx _context.Context, netgwId string, serviceId string) (NetgwServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -703,8 +703,8 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -745,7 +745,7 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -793,13 +793,13 @@ func (a *NetgwApiService) NetgwGetServicesServiceId(ctx context.Context, netgwId
 
 /*
 NetgwApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return map[string]string
 */
-func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[string]string, *http.Response, error) {
+func (a *NetgwApiService) NetgwGetTag(ctx _context.Context, netgwId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -812,8 +812,8 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -854,7 +854,7 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -903,7 +903,7 @@ func (a *NetgwApiService) NetgwGetTag(ctx context.Context, netgwId string) (map[
 /*
 NetgwApiService List
 List netgw
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *NetgwListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -915,9 +915,9 @@ type NetgwListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *NetgwListOpts) ([]Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwList(ctx _context.Context, localVarOptionals *NetgwListOpts) ([]Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -929,8 +929,8 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 	localVarPath := a.client.cfg.BasePath + "/netgw"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -977,7 +977,7 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1025,13 +1025,13 @@ func (a *NetgwApiService) NetgwList(ctx context.Context, localVarOptionals *Netg
 
 /*
 NetgwApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return []string
 */
-func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId string) ([]string, *http.Response, error) {
+func (a *NetgwApiService) NetgwListAccessrights(ctx _context.Context, netgwId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1044,8 +1044,8 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1086,7 +1086,7 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1134,13 +1134,13 @@ func (a *NetgwApiService) NetgwListAccessrights(ctx context.Context, netgwId str
 
 /*
 NetgwApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return []Event
 */
-func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([]Event, *http.Response, error) {
+func (a *NetgwApiService) NetgwListQueue(ctx _context.Context, netgwId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1153,8 +1153,8 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1195,7 +1195,7 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1243,13 +1243,13 @@ func (a *NetgwApiService) NetgwListQueue(ctx context.Context, netgwId string) ([
 
 /*
 NetgwApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return []NetgwServices
 */
-func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string) ([]NetgwServices, *http.Response, error) {
+func (a *NetgwApiService) NetgwListServices(ctx _context.Context, netgwId string) ([]NetgwServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1262,8 +1262,8 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1304,7 +1304,7 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1352,14 +1352,14 @@ func (a *NetgwApiService) NetgwListServices(ctx context.Context, netgwId string)
 
 /*
 NetgwApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param requestBody
 @return map[string]string
 */
-func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *NetgwApiService) NetgwPatchTag(ctx _context.Context, netgwId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1372,8 +1372,8 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, req
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1416,7 +1416,7 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, req
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1464,14 +1464,14 @@ func (a *NetgwApiService) NetgwPatchTag(ctx context.Context, netgwId string, req
 
 /*
 NetgwApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param netgwPostAccessrights
 @return Netgw
 */
-func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId string, netgwPostAccessrights NetgwPostAccessrights) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwPostAccessrights(ctx _context.Context, netgwId string, netgwPostAccessrights NetgwPostAccessrights) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1484,8 +1484,8 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1528,7 +1528,7 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1587,13 +1587,13 @@ func (a *NetgwApiService) NetgwPostAccessrights(ctx context.Context, netgwId str
 /*
 NetgwApiService Get
 Returns a single netgw
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
 @return Netgw
 */
-func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwShow(ctx _context.Context, netgwId string) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1606,8 +1606,8 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1648,7 +1648,7 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1697,14 +1697,14 @@ func (a *NetgwApiService) NetgwShow(ctx context.Context, netgwId string) (Netgw,
 /*
 NetgwApiService Update
 Returns modified netgw
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netgwId ID of netgw
  * @param netgwUpdate
 @return Netgw
 */
-func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgwUpdate NetgwUpdate) (Netgw, *http.Response, error) {
+func (a *NetgwApiService) NetgwUpdate(ctx _context.Context, netgwId string, netgwUpdate NetgwUpdate) (Netgw, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1717,8 +1717,8 @@ func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgw
 	localVarPath = strings.Replace(localVarPath, "{"+"netgwId"+"}", fmt.Sprintf("%v", netgwId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1761,7 +1761,7 @@ func (a *NetgwApiService) NetgwUpdate(ctx context.Context, netgwId string, netgw
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type VolumeApiService service
@@ -29,13 +29,13 @@ type VolumeApiService service
 /*
 VolumeApiService Create
 Create volume
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeCreate
 @return Volume
 */
-func (a *VolumeApiService) VolumeCreate(ctx context.Context, volumeCreate VolumeCreate) (Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumeCreate(ctx _context.Context, volumeCreate VolumeCreate) (Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -47,8 +47,8 @@ func (a *VolumeApiService) VolumeCreate(ctx context.Context, volumeCreate Volume
 	localVarPath := a.client.cfg.BasePath + "/volume"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -91,7 +91,7 @@ func (a *VolumeApiService) VolumeCreate(ctx context.Context, volumeCreate Volume
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,12 +139,12 @@ func (a *VolumeApiService) VolumeCreate(ctx context.Context, volumeCreate Volume
 
 /*
 VolumeApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 */
-func (a *VolumeApiService) VolumeDelete(ctx context.Context, volumeId string) (*http.Response, error) {
+func (a *VolumeApiService) VolumeDelete(ctx _context.Context, volumeId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -156,8 +156,8 @@ func (a *VolumeApiService) VolumeDelete(ctx context.Context, volumeId string) (*
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -198,7 +198,7 @@ func (a *VolumeApiService) VolumeDelete(ctx context.Context, volumeId string) (*
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -227,14 +227,14 @@ func (a *VolumeApiService) VolumeDelete(ctx context.Context, volumeId string) (*
 
 /*
 VolumeApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param identity identity
 @return Volume
 */
-func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx context.Context, volumeId string, identity string) (Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx _context.Context, volumeId string, identity string) (Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -248,8 +248,8 @@ func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -290,7 +290,7 @@ func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -348,14 +348,14 @@ func (a *VolumeApiService) VolumeDeleteAccessrightsIdentity(ctx context.Context,
 
 /*
 VolumeApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param key key
 @return map[string]string
 */
-func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId string, key string) (map[string]string, *http.Response, error) {
+func (a *VolumeApiService) VolumeDeleteTagKey(ctx _context.Context, volumeId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -369,8 +369,8 @@ func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -411,7 +411,7 @@ func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -459,14 +459,14 @@ func (a *VolumeApiService) VolumeDeleteTagKey(ctx context.Context, volumeId stri
 
 /*
 VolumeApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param serviceId serviceId
 @return VolumeServices
 */
-func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volumeId string, serviceId string) (VolumeServices, *http.Response, error) {
+func (a *VolumeApiService) VolumeGetServicesServiceId(ctx _context.Context, volumeId string, serviceId string) (VolumeServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -480,8 +480,8 @@ func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volum
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -522,7 +522,7 @@ func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volum
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -570,13 +570,13 @@ func (a *VolumeApiService) VolumeGetServicesServiceId(ctx context.Context, volum
 
 /*
 VolumeApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 @return map[string]string
 */
-func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (map[string]string, *http.Response, error) {
+func (a *VolumeApiService) VolumeGetTag(ctx _context.Context, volumeId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -589,8 +589,8 @@ func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (m
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -631,7 +631,7 @@ func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (m
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -680,7 +680,7 @@ func (a *VolumeApiService) VolumeGetTag(ctx context.Context, volumeId string) (m
 /*
 VolumeApiService List
 List volume
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *VolumeListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -692,9 +692,9 @@ type VolumeListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *VolumeApiService) VolumeList(ctx context.Context, localVarOptionals *VolumeListOpts) ([]Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumeList(ctx _context.Context, localVarOptionals *VolumeListOpts) ([]Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -706,8 +706,8 @@ func (a *VolumeApiService) VolumeList(ctx context.Context, localVarOptionals *Vo
 	localVarPath := a.client.cfg.BasePath + "/volume"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -754,7 +754,7 @@ func (a *VolumeApiService) VolumeList(ctx context.Context, localVarOptionals *Vo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -802,13 +802,13 @@ func (a *VolumeApiService) VolumeList(ctx context.Context, localVarOptionals *Vo
 
 /*
 VolumeApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 @return []string
 */
-func (a *VolumeApiService) VolumeListAccessrights(ctx context.Context, volumeId string) ([]string, *http.Response, error) {
+func (a *VolumeApiService) VolumeListAccessrights(ctx _context.Context, volumeId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -821,8 +821,8 @@ func (a *VolumeApiService) VolumeListAccessrights(ctx context.Context, volumeId 
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -863,7 +863,7 @@ func (a *VolumeApiService) VolumeListAccessrights(ctx context.Context, volumeId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -911,13 +911,13 @@ func (a *VolumeApiService) VolumeListAccessrights(ctx context.Context, volumeId 
 
 /*
 VolumeApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 @return []Event
 */
-func (a *VolumeApiService) VolumeListQueue(ctx context.Context, volumeId string) ([]Event, *http.Response, error) {
+func (a *VolumeApiService) VolumeListQueue(ctx _context.Context, volumeId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -930,8 +930,8 @@ func (a *VolumeApiService) VolumeListQueue(ctx context.Context, volumeId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -972,7 +972,7 @@ func (a *VolumeApiService) VolumeListQueue(ctx context.Context, volumeId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1020,13 +1020,13 @@ func (a *VolumeApiService) VolumeListQueue(ctx context.Context, volumeId string)
 
 /*
 VolumeApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 @return []VolumeServices
 */
-func (a *VolumeApiService) VolumeListServices(ctx context.Context, volumeId string) ([]VolumeServices, *http.Response, error) {
+func (a *VolumeApiService) VolumeListServices(ctx _context.Context, volumeId string) ([]VolumeServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1039,8 +1039,8 @@ func (a *VolumeApiService) VolumeListServices(ctx context.Context, volumeId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1081,7 +1081,7 @@ func (a *VolumeApiService) VolumeListServices(ctx context.Context, volumeId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1129,14 +1129,14 @@ func (a *VolumeApiService) VolumeListServices(ctx context.Context, volumeId stri
 
 /*
 VolumeApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param requestBody
 @return map[string]string
 */
-func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *VolumeApiService) VolumePatchTag(ctx _context.Context, volumeId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1149,8 +1149,8 @@ func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1193,7 +1193,7 @@ func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1241,14 +1241,14 @@ func (a *VolumeApiService) VolumePatchTag(ctx context.Context, volumeId string, 
 
 /*
 VolumeApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param volumePostAccessrights
 @return Volume
 */
-func (a *VolumeApiService) VolumePostAccessrights(ctx context.Context, volumeId string, volumePostAccessrights VolumePostAccessrights) (Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumePostAccessrights(ctx _context.Context, volumeId string, volumePostAccessrights VolumePostAccessrights) (Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1261,8 +1261,8 @@ func (a *VolumeApiService) VolumePostAccessrights(ctx context.Context, volumeId 
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1305,7 +1305,7 @@ func (a *VolumeApiService) VolumePostAccessrights(ctx context.Context, volumeId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1364,13 +1364,13 @@ func (a *VolumeApiService) VolumePostAccessrights(ctx context.Context, volumeId 
 /*
 VolumeApiService Get
 Returns a single volume
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
 @return Volume
 */
-func (a *VolumeApiService) VolumeShow(ctx context.Context, volumeId string) (Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumeShow(ctx _context.Context, volumeId string) (Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1383,8 +1383,8 @@ func (a *VolumeApiService) VolumeShow(ctx context.Context, volumeId string) (Vol
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1425,7 +1425,7 @@ func (a *VolumeApiService) VolumeShow(ctx context.Context, volumeId string) (Vol
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1474,14 +1474,14 @@ func (a *VolumeApiService) VolumeShow(ctx context.Context, volumeId string) (Vol
 /*
 VolumeApiService Update
 Returns modified volume
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param volumeId ID of volume
  * @param volumeUpdate
 @return Volume
 */
-func (a *VolumeApiService) VolumeUpdate(ctx context.Context, volumeId string, volumeUpdate VolumeUpdate) (Volume, *http.Response, error) {
+func (a *VolumeApiService) VolumeUpdate(ctx _context.Context, volumeId string, volumeUpdate VolumeUpdate) (Volume, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1494,8 +1494,8 @@ func (a *VolumeApiService) VolumeUpdate(ctx context.Context, volumeId string, vo
 	localVarPath = strings.Replace(localVarPath, "{"+"volumeId"+"}", fmt.Sprintf("%v", volumeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1538,7 +1538,7 @@ func (a *VolumeApiService) VolumeUpdate(ctx context.Context, volumeId string, vo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

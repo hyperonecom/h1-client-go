@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type ImageApiService service
@@ -29,14 +29,14 @@ type ImageApiService service
 /*
 ImageApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param imageActionTransfer
 @return Image
 */
-func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId string, imageActionTransfer ImageActionTransfer) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageActionTransfer(ctx _context.Context, imageId string, imageActionTransfer ImageActionTransfer) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *ImageApiService) ImageActionTransfer(ctx context.Context, imageId strin
 /*
 ImageApiService Create
 Create image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageCreate
 @return Image
 */
-func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCreate) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageCreate(ctx _context.Context, imageCreate ImageCreate) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -160,8 +160,8 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 	localVarPath := a.client.cfg.BasePath + "/image"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -204,7 +204,7 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -252,12 +252,12 @@ func (a *ImageApiService) ImageCreate(ctx context.Context, imageCreate ImageCrea
 
 /*
 ImageApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 */
-func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*http.Response, error) {
+func (a *ImageApiService) ImageDelete(ctx _context.Context, imageId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -311,7 +311,7 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -340,14 +340,14 @@ func (a *ImageApiService) ImageDelete(ctx context.Context, imageId string) (*htt
 
 /*
 ImageApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param identity identity
 @return Image
 */
-func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, imageId string, identity string) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx _context.Context, imageId string, identity string) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -361,8 +361,8 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -403,7 +403,7 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -461,14 +461,14 @@ func (a *ImageApiService) ImageDeleteAccessrightsIdentity(ctx context.Context, i
 
 /*
 ImageApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param key key
 @return map[string]string
 */
-func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string, key string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImageDeleteTagKey(ctx _context.Context, imageId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -482,8 +482,8 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -524,7 +524,7 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -572,14 +572,14 @@ func (a *ImageApiService) ImageDeleteTagKey(ctx context.Context, imageId string,
 
 /*
 ImageApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param serviceId serviceId
 @return ImageServices
 */
-func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId string, serviceId string) (ImageServices, *http.Response, error) {
+func (a *ImageApiService) ImageGetServicesServiceId(ctx _context.Context, imageId string, serviceId string) (ImageServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -593,8 +593,8 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -635,7 +635,7 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -683,13 +683,13 @@ func (a *ImageApiService) ImageGetServicesServiceId(ctx context.Context, imageId
 
 /*
 ImageApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return map[string]string
 */
-func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImageGetTag(ctx _context.Context, imageId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -702,8 +702,8 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -744,7 +744,7 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -793,7 +793,7 @@ func (a *ImageApiService) ImageGetTag(ctx context.Context, imageId string) (map[
 /*
 ImageApiService List
 List image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ImageListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -805,9 +805,9 @@ type ImageListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *ImageListOpts) ([]Image, *http.Response, error) {
+func (a *ImageApiService) ImageList(ctx _context.Context, localVarOptionals *ImageListOpts) ([]Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -819,8 +819,8 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 	localVarPath := a.client.cfg.BasePath + "/image"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -867,7 +867,7 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -915,13 +915,13 @@ func (a *ImageApiService) ImageList(ctx context.Context, localVarOptionals *Imag
 
 /*
 ImageApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []string
 */
-func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId string) ([]string, *http.Response, error) {
+func (a *ImageApiService) ImageListAccessrights(ctx _context.Context, imageId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -934,8 +934,8 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -976,7 +976,7 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1024,13 +1024,13 @@ func (a *ImageApiService) ImageListAccessrights(ctx context.Context, imageId str
 
 /*
 ImageApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []Event
 */
-func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([]Event, *http.Response, error) {
+func (a *ImageApiService) ImageListQueue(ctx _context.Context, imageId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1043,8 +1043,8 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1085,7 +1085,7 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1133,13 +1133,13 @@ func (a *ImageApiService) ImageListQueue(ctx context.Context, imageId string) ([
 
 /*
 ImageApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return []ImageServices
 */
-func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string) ([]ImageServices, *http.Response, error) {
+func (a *ImageApiService) ImageListServices(ctx _context.Context, imageId string) ([]ImageServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1152,8 +1152,8 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1194,7 +1194,7 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1242,14 +1242,14 @@ func (a *ImageApiService) ImageListServices(ctx context.Context, imageId string)
 
 /*
 ImageApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param requestBody
 @return map[string]string
 */
-func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ImageApiService) ImagePatchTag(ctx _context.Context, imageId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1262,8 +1262,8 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, req
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1306,7 +1306,7 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, req
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1354,14 +1354,14 @@ func (a *ImageApiService) ImagePatchTag(ctx context.Context, imageId string, req
 
 /*
 ImageApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param imagePostAccessrights
 @return Image
 */
-func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (Image, *http.Response, error) {
+func (a *ImageApiService) ImagePostAccessrights(ctx _context.Context, imageId string, imagePostAccessrights ImagePostAccessrights) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1374,8 +1374,8 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1418,7 +1418,7 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1477,13 +1477,13 @@ func (a *ImageApiService) ImagePostAccessrights(ctx context.Context, imageId str
 /*
 ImageApiService Get
 Returns a single image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
 @return Image
 */
-func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageShow(ctx _context.Context, imageId string) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1496,8 +1496,8 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1538,7 +1538,7 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1587,14 +1587,14 @@ func (a *ImageApiService) ImageShow(ctx context.Context, imageId string) (Image,
 /*
 ImageApiService Update
 Returns modified image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param imageId ID of image
  * @param imageUpdate
 @return Image
 */
-func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, imageUpdate ImageUpdate) (Image, *http.Response, error) {
+func (a *ImageApiService) ImageUpdate(ctx _context.Context, imageId string, imageUpdate ImageUpdate) (Image, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1607,8 +1607,8 @@ func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, image
 	localVarPath = strings.Replace(localVarPath, "{"+"imageId"+"}", fmt.Sprintf("%v", imageId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1651,7 +1651,7 @@ func (a *ImageApiService) ImageUpdate(ctx context.Context, imageId string, image
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

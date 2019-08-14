@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type ServiceApiService service
@@ -29,7 +29,7 @@ type ServiceApiService service
 /*
 ServiceApiService List
 List service
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ServiceListOpts - Optional Parameters:
  * @param "Type_" (optional.String) -  Filter by type
  * @param "Resource" (optional.String) -  Filter by resource
@@ -43,9 +43,9 @@ type ServiceListOpts struct {
 	Name optional.String
 }
 
-func (a *ServiceApiService) ServiceList(ctx context.Context, localVarOptionals *ServiceListOpts) ([]Service, *http.Response, error) {
+func (a *ServiceApiService) ServiceList(ctx _context.Context, localVarOptionals *ServiceListOpts) ([]Service, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -57,8 +57,8 @@ func (a *ServiceApiService) ServiceList(ctx context.Context, localVarOptionals *
 	localVarPath := a.client.cfg.BasePath + "/service"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Type_.IsSet() {
 		localVarQueryParams.Add("type", parameterToString(localVarOptionals.Type_.Value(), ""))
@@ -108,7 +108,7 @@ func (a *ServiceApiService) ServiceList(ctx context.Context, localVarOptionals *
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -157,13 +157,13 @@ func (a *ServiceApiService) ServiceList(ctx context.Context, localVarOptionals *
 /*
 ServiceApiService Get
 Returns a single service
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceId ID of service
 @return Service
 */
-func (a *ServiceApiService) ServiceShow(ctx context.Context, serviceId string) (Service, *http.Response, error) {
+func (a *ServiceApiService) ServiceShow(ctx _context.Context, serviceId string) (Service, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -176,8 +176,8 @@ func (a *ServiceApiService) ServiceShow(ctx context.Context, serviceId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -218,7 +218,7 @@ func (a *ServiceApiService) ServiceShow(ctx context.Context, serviceId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

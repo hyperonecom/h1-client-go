@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type ProjectApiService service
@@ -29,13 +29,13 @@ type ProjectApiService service
 /*
 ProjectApiService Create
 Create project
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectCreate
 @return Project
 */
-func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate ProjectCreate) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectCreate(ctx _context.Context, projectCreate ProjectCreate) (Project, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -47,8 +47,8 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 	localVarPath := a.client.cfg.BasePath + "/project"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -91,7 +91,7 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,12 +139,12 @@ func (a *ProjectApiService) ProjectCreate(ctx context.Context, projectCreate Pro
 
 /*
 ProjectApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 */
-func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string) (*http.Response, error) {
+func (a *ProjectApiService) ProjectDelete(ctx _context.Context, projectId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -156,8 +156,8 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -198,7 +198,7 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -227,13 +227,13 @@ func (a *ProjectApiService) ProjectDelete(ctx context.Context, projectId string)
 
 /*
 ProjectApiService /accessrights/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
 */
-func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, projectId string, id string) (*http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx _context.Context, projectId string, id string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -246,8 +246,8 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -288,7 +288,7 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -317,14 +317,14 @@ func (a *ProjectApiService) ProjectDeleteAccessrightsId(ctx context.Context, pro
 
 /*
 ProjectApiService /credentialStore/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
 @return Project
 */
-func (a *ProjectApiService) ProjectDeleteCredentialStoreId(ctx context.Context, projectId string, id string) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteCredentialStoreId(ctx _context.Context, projectId string, id string) (Project, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -338,8 +338,8 @@ func (a *ProjectApiService) ProjectDeleteCredentialStoreId(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -380,7 +380,7 @@ func (a *ProjectApiService) ProjectDeleteCredentialStoreId(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -438,14 +438,14 @@ func (a *ProjectApiService) ProjectDeleteCredentialStoreId(ctx context.Context, 
 
 /*
 ProjectApiService /credentialStore/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
 @return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx _context.Context, projectId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -459,8 +459,8 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -501,7 +501,7 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -549,14 +549,14 @@ func (a *ProjectApiService) ProjectDeleteCredentialStorecertificateId(ctx contex
 
 /*
 ProjectApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param key key
 @return map[string]string
 */
-func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId string, key string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectDeleteTagKey(ctx _context.Context, projectId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -570,8 +570,8 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -612,7 +612,7 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -660,14 +660,14 @@ func (a *ProjectApiService) ProjectDeleteTagKey(ctx context.Context, projectId s
 
 /*
 ProjectApiService /credentialStore/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
 @return CredentialPassword
 */
-func (a *ProjectApiService) ProjectGetCredentialStoreId(ctx context.Context, projectId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetCredentialStoreId(ctx _context.Context, projectId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -681,8 +681,8 @@ func (a *ProjectApiService) ProjectGetCredentialStoreId(ctx context.Context, pro
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -723,7 +723,7 @@ func (a *ProjectApiService) ProjectGetCredentialStoreId(ctx context.Context, pro
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -771,14 +771,14 @@ func (a *ProjectApiService) ProjectGetCredentialStoreId(ctx context.Context, pro
 
 /*
 ProjectApiService /credentialStore/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
 @return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.Context, projectId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx _context.Context, projectId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -792,8 +792,8 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -834,7 +834,7 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -882,14 +882,14 @@ func (a *ProjectApiService) ProjectGetCredentialStorecertificateId(ctx context.C
 
 /*
 ProjectApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param serviceId serviceId
 @return ProjectServices
 */
-func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, projectId string, serviceId string) (ProjectServices, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetServicesServiceId(ctx _context.Context, projectId string, serviceId string) (ProjectServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -903,8 +903,8 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -945,7 +945,7 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -993,13 +993,13 @@ func (a *ProjectApiService) ProjectGetServicesServiceId(ctx context.Context, pro
 
 /*
 ProjectApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return map[string]string
 */
-func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectGetTag(ctx _context.Context, projectId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1012,8 +1012,8 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1054,7 +1054,7 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1103,7 +1103,7 @@ func (a *ProjectApiService) ProjectGetTag(ctx context.Context, projectId string)
 /*
 ProjectApiService List
 List project
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *ProjectListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Limit" (optional.Float32) -  Filter by $limit
@@ -1123,9 +1123,9 @@ type ProjectListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *ProjectListOpts) ([]Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectList(ctx _context.Context, localVarOptionals *ProjectListOpts) ([]Project, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1137,8 +1137,8 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 	localVarPath := a.client.cfg.BasePath + "/project"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1197,7 +1197,7 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1245,13 +1245,13 @@ func (a *ProjectApiService) ProjectList(ctx context.Context, localVarOptionals *
 
 /*
 ProjectApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []AccessrightsUserRole
 */
-func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, projectId string) ([]AccessrightsUserRole, *http.Response, error) {
+func (a *ProjectApiService) ProjectListAccessrights(ctx _context.Context, projectId string) ([]AccessrightsUserRole, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1264,8 +1264,8 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1306,7 +1306,7 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1354,13 +1354,13 @@ func (a *ProjectApiService) ProjectListAccessrights(ctx context.Context, project
 
 /*
 ProjectApiService /credentialStore
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []CredentialPassword
 */
-func (a *ProjectApiService) ProjectListCredentialStore(ctx context.Context, projectId string) ([]CredentialPassword, *http.Response, error) {
+func (a *ProjectApiService) ProjectListCredentialStore(ctx _context.Context, projectId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1373,8 +1373,8 @@ func (a *ProjectApiService) ProjectListCredentialStore(ctx context.Context, proj
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1415,7 +1415,7 @@ func (a *ProjectApiService) ProjectListCredentialStore(ctx context.Context, proj
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1463,13 +1463,13 @@ func (a *ProjectApiService) ProjectListCredentialStore(ctx context.Context, proj
 
 /*
 ProjectApiService /credentialStore/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []CredentialCertificate
 */
-func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Context, projectId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx _context.Context, projectId string) ([]CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1482,8 +1482,8 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1524,7 +1524,7 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1572,13 +1572,13 @@ func (a *ProjectApiService) ProjectListCredentialStorecertificate(ctx context.Co
 
 /*
 ProjectApiService /limit
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []ProjectLimit
 */
-func (a *ProjectApiService) ProjectListLimit(ctx context.Context, projectId string) ([]ProjectLimit, *http.Response, error) {
+func (a *ProjectApiService) ProjectListLimit(ctx _context.Context, projectId string) ([]ProjectLimit, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1591,8 +1591,8 @@ func (a *ProjectApiService) ProjectListLimit(ctx context.Context, projectId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1633,7 +1633,7 @@ func (a *ProjectApiService) ProjectListLimit(ctx context.Context, projectId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1681,13 +1681,13 @@ func (a *ProjectApiService) ProjectListLimit(ctx context.Context, projectId stri
 
 /*
 ProjectApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []Event
 */
-func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId string) ([]Event, *http.Response, error) {
+func (a *ProjectApiService) ProjectListQueue(ctx _context.Context, projectId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1700,8 +1700,8 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1742,7 +1742,7 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1790,13 +1790,13 @@ func (a *ProjectApiService) ProjectListQueue(ctx context.Context, projectId stri
 
 /*
 ProjectApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return []ProjectServices
 */
-func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId string) ([]ProjectServices, *http.Response, error) {
+func (a *ProjectApiService) ProjectListServices(ctx _context.Context, projectId string) ([]ProjectServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1809,8 +1809,8 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1851,7 +1851,7 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1899,15 +1899,15 @@ func (a *ProjectApiService) ProjectListServices(ctx context.Context, projectId s
 
 /*
 ProjectApiService /credentialStore/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
  * @param projectPatchCredentialStoreId
 @return CredentialPassword
 */
-func (a *ProjectApiService) ProjectPatchCredentialStoreId(ctx context.Context, projectId string, id string, projectPatchCredentialStoreId ProjectPatchCredentialStoreId) (CredentialPassword, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchCredentialStoreId(ctx _context.Context, projectId string, id string, projectPatchCredentialStoreId ProjectPatchCredentialStoreId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1921,8 +1921,8 @@ func (a *ProjectApiService) ProjectPatchCredentialStoreId(ctx context.Context, p
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1965,7 +1965,7 @@ func (a *ProjectApiService) ProjectPatchCredentialStoreId(ctx context.Context, p
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2013,15 +2013,15 @@ func (a *ProjectApiService) ProjectPatchCredentialStoreId(ctx context.Context, p
 
 /*
 ProjectApiService /credentialStore/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param id id
  * @param projectPatchCredentialStorecertificateId
 @return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context.Context, projectId string, id string, projectPatchCredentialStorecertificateId ProjectPatchCredentialStorecertificateId) (CredentialCertificate, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx _context.Context, projectId string, id string, projectPatchCredentialStorecertificateId ProjectPatchCredentialStorecertificateId) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2035,8 +2035,8 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2079,7 +2079,7 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2127,14 +2127,14 @@ func (a *ProjectApiService) ProjectPatchCredentialStorecertificateId(ctx context
 
 /*
 ProjectApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param requestBody
 @return map[string]string
 */
-func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *ProjectApiService) ProjectPatchTag(ctx _context.Context, projectId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2147,8 +2147,8 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2191,7 +2191,7 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2239,13 +2239,13 @@ func (a *ProjectApiService) ProjectPatchTag(ctx context.Context, projectId strin
 
 /*
 ProjectApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectPostAccessrights
 */
-func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (*http.Response, error) {
+func (a *ProjectApiService) ProjectPostAccessrights(ctx _context.Context, projectId string, projectPostAccessrights ProjectPostAccessrights) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2257,8 +2257,8 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2301,7 +2301,7 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -2330,14 +2330,14 @@ func (a *ProjectApiService) ProjectPostAccessrights(ctx context.Context, project
 
 /*
 ProjectApiService /credentialStore
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectPostCredentialStore
 @return CredentialPassword
 */
-func (a *ProjectApiService) ProjectPostCredentialStore(ctx context.Context, projectId string, projectPostCredentialStore ProjectPostCredentialStore) (CredentialPassword, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostCredentialStore(ctx _context.Context, projectId string, projectPostCredentialStore ProjectPostCredentialStore) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2350,8 +2350,8 @@ func (a *ProjectApiService) ProjectPostCredentialStore(ctx context.Context, proj
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2394,7 +2394,7 @@ func (a *ProjectApiService) ProjectPostCredentialStore(ctx context.Context, proj
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2442,14 +2442,14 @@ func (a *ProjectApiService) ProjectPostCredentialStore(ctx context.Context, proj
 
 /*
 ProjectApiService /credentialStore/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectPostCredentialStorecertificate
 @return CredentialCertificate
 */
-func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Context, projectId string, projectPostCredentialStorecertificate ProjectPostCredentialStorecertificate) (CredentialCertificate, *http.Response, error) {
+func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx _context.Context, projectId string, projectPostCredentialStorecertificate ProjectPostCredentialStorecertificate) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2462,8 +2462,8 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2506,7 +2506,7 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2555,13 +2555,13 @@ func (a *ProjectApiService) ProjectPostCredentialStorecertificate(ctx context.Co
 /*
 ProjectApiService Get
 Returns a single project
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
 @return Project
 */
-func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectShow(ctx _context.Context, projectId string) (Project, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2574,8 +2574,8 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2616,7 +2616,7 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2665,14 +2665,14 @@ func (a *ProjectApiService) ProjectShow(ctx context.Context, projectId string) (
 /*
 ProjectApiService Update
 Returns modified project
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId ID of project
  * @param projectUpdate
 @return Project
 */
-func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string, projectUpdate ProjectUpdate) (Project, *http.Response, error) {
+func (a *ProjectApiService) ProjectUpdate(ctx _context.Context, projectId string, projectUpdate ProjectUpdate) (Project, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2685,8 +2685,8 @@ func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", fmt.Sprintf("%v", projectId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2729,7 +2729,7 @@ func (a *ProjectApiService) ProjectUpdate(ctx context.Context, projectId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

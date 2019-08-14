@@ -10,29 +10,29 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 )
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type UserApiService service
 
 /*
 UserApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 */
-func (a *UserApiService) UserDelete(ctx context.Context, userId string) (*http.Response, error) {
+func (a *UserApiService) UserDelete(ctx _context.Context, userId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -44,8 +44,8 @@ func (a *UserApiService) UserDelete(ctx context.Context, userId string) (*http.R
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -86,7 +86,7 @@ func (a *UserApiService) UserDelete(ctx context.Context, userId string) (*http.R
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -115,14 +115,14 @@ func (a *UserApiService) UserDelete(ctx context.Context, userId string) (*http.R
 
 /*
 UserApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return User
 */
-func (a *UserApiService) UserDeleteCredentialId(ctx context.Context, userId string, id string) (User, *http.Response, error) {
+func (a *UserApiService) UserDeleteCredentialId(ctx _context.Context, userId string, id string) (User, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -136,8 +136,8 @@ func (a *UserApiService) UserDeleteCredentialId(ctx context.Context, userId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -178,7 +178,7 @@ func (a *UserApiService) UserDeleteCredentialId(ctx context.Context, userId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -236,14 +236,14 @@ func (a *UserApiService) UserDeleteCredentialId(ctx context.Context, userId stri
 
 /*
 UserApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return CredentialCertificate
 */
-func (a *UserApiService) UserDeleteCredentialcertificateId(ctx context.Context, userId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *UserApiService) UserDeleteCredentialcertificateId(ctx _context.Context, userId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -257,8 +257,8 @@ func (a *UserApiService) UserDeleteCredentialcertificateId(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -299,7 +299,7 @@ func (a *UserApiService) UserDeleteCredentialcertificateId(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -347,14 +347,14 @@ func (a *UserApiService) UserDeleteCredentialcertificateId(ctx context.Context, 
 
 /*
 UserApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return User
 */
-func (a *UserApiService) UserDeleteCredentialpasswordId(ctx context.Context, userId string, id string) (User, *http.Response, error) {
+func (a *UserApiService) UserDeleteCredentialpasswordId(ctx _context.Context, userId string, id string) (User, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -368,8 +368,8 @@ func (a *UserApiService) UserDeleteCredentialpasswordId(ctx context.Context, use
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -410,7 +410,7 @@ func (a *UserApiService) UserDeleteCredentialpasswordId(ctx context.Context, use
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -468,14 +468,14 @@ func (a *UserApiService) UserDeleteCredentialpasswordId(ctx context.Context, use
 
 /*
 UserApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param key key
 @return map[string]string
 */
-func (a *UserApiService) UserDeleteTagKey(ctx context.Context, userId string, key string) (map[string]string, *http.Response, error) {
+func (a *UserApiService) UserDeleteTagKey(ctx _context.Context, userId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -489,8 +489,8 @@ func (a *UserApiService) UserDeleteTagKey(ctx context.Context, userId string, ke
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -531,7 +531,7 @@ func (a *UserApiService) UserDeleteTagKey(ctx context.Context, userId string, ke
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -579,14 +579,14 @@ func (a *UserApiService) UserDeleteTagKey(ctx context.Context, userId string, ke
 
 /*
 UserApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return CredentialPassword
 */
-func (a *UserApiService) UserGetCredentialId(ctx context.Context, userId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserGetCredentialId(ctx _context.Context, userId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -600,8 +600,8 @@ func (a *UserApiService) UserGetCredentialId(ctx context.Context, userId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -642,7 +642,7 @@ func (a *UserApiService) UserGetCredentialId(ctx context.Context, userId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -690,14 +690,14 @@ func (a *UserApiService) UserGetCredentialId(ctx context.Context, userId string,
 
 /*
 UserApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return CredentialCertificate
 */
-func (a *UserApiService) UserGetCredentialcertificateId(ctx context.Context, userId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *UserApiService) UserGetCredentialcertificateId(ctx _context.Context, userId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -711,8 +711,8 @@ func (a *UserApiService) UserGetCredentialcertificateId(ctx context.Context, use
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -753,7 +753,7 @@ func (a *UserApiService) UserGetCredentialcertificateId(ctx context.Context, use
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -801,14 +801,14 @@ func (a *UserApiService) UserGetCredentialcertificateId(ctx context.Context, use
 
 /*
 UserApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
 @return CredentialPassword
 */
-func (a *UserApiService) UserGetCredentialpasswordId(ctx context.Context, userId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserGetCredentialpasswordId(ctx _context.Context, userId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -822,8 +822,8 @@ func (a *UserApiService) UserGetCredentialpasswordId(ctx context.Context, userId
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -864,7 +864,7 @@ func (a *UserApiService) UserGetCredentialpasswordId(ctx context.Context, userId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -912,14 +912,14 @@ func (a *UserApiService) UserGetCredentialpasswordId(ctx context.Context, userId
 
 /*
 UserApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param serviceId serviceId
 @return UserServices
 */
-func (a *UserApiService) UserGetServicesServiceId(ctx context.Context, userId string, serviceId string) (UserServices, *http.Response, error) {
+func (a *UserApiService) UserGetServicesServiceId(ctx _context.Context, userId string, serviceId string) (UserServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -933,8 +933,8 @@ func (a *UserApiService) UserGetServicesServiceId(ctx context.Context, userId st
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -975,7 +975,7 @@ func (a *UserApiService) UserGetServicesServiceId(ctx context.Context, userId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1023,13 +1023,13 @@ func (a *UserApiService) UserGetServicesServiceId(ctx context.Context, userId st
 
 /*
 UserApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return map[string]string
 */
-func (a *UserApiService) UserGetTag(ctx context.Context, userId string) (map[string]string, *http.Response, error) {
+func (a *UserApiService) UserGetTag(ctx _context.Context, userId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1042,8 +1042,8 @@ func (a *UserApiService) UserGetTag(ctx context.Context, userId string) (map[str
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1084,7 +1084,7 @@ func (a *UserApiService) UserGetTag(ctx context.Context, userId string) (map[str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1133,12 +1133,12 @@ func (a *UserApiService) UserGetTag(ctx context.Context, userId string) (map[str
 /*
 UserApiService List
 List user
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return []User
 */
-func (a *UserApiService) UserList(ctx context.Context) ([]User, *http.Response, error) {
+func (a *UserApiService) UserList(ctx _context.Context) ([]User, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1150,8 +1150,8 @@ func (a *UserApiService) UserList(ctx context.Context) ([]User, *http.Response, 
 	localVarPath := a.client.cfg.BasePath + "/user"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1192,7 +1192,7 @@ func (a *UserApiService) UserList(ctx context.Context) ([]User, *http.Response, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1240,13 +1240,13 @@ func (a *UserApiService) UserList(ctx context.Context) ([]User, *http.Response, 
 
 /*
 UserApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return []CredentialPassword
 */
-func (a *UserApiService) UserListCredential(ctx context.Context, userId string) ([]CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserListCredential(ctx _context.Context, userId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1259,8 +1259,8 @@ func (a *UserApiService) UserListCredential(ctx context.Context, userId string) 
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1301,7 +1301,7 @@ func (a *UserApiService) UserListCredential(ctx context.Context, userId string) 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1349,13 +1349,13 @@ func (a *UserApiService) UserListCredential(ctx context.Context, userId string) 
 
 /*
 UserApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return []CredentialCertificate
 */
-func (a *UserApiService) UserListCredentialcertificate(ctx context.Context, userId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *UserApiService) UserListCredentialcertificate(ctx _context.Context, userId string) ([]CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1368,8 +1368,8 @@ func (a *UserApiService) UserListCredentialcertificate(ctx context.Context, user
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1410,7 +1410,7 @@ func (a *UserApiService) UserListCredentialcertificate(ctx context.Context, user
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1458,13 +1458,13 @@ func (a *UserApiService) UserListCredentialcertificate(ctx context.Context, user
 
 /*
 UserApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return []CredentialPassword
 */
-func (a *UserApiService) UserListCredentialpassword(ctx context.Context, userId string) ([]CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserListCredentialpassword(ctx _context.Context, userId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1477,8 +1477,8 @@ func (a *UserApiService) UserListCredentialpassword(ctx context.Context, userId 
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1519,7 +1519,7 @@ func (a *UserApiService) UserListCredentialpassword(ctx context.Context, userId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1567,13 +1567,13 @@ func (a *UserApiService) UserListCredentialpassword(ctx context.Context, userId 
 
 /*
 UserApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return []UserServices
 */
-func (a *UserApiService) UserListServices(ctx context.Context, userId string) ([]UserServices, *http.Response, error) {
+func (a *UserApiService) UserListServices(ctx _context.Context, userId string) ([]UserServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1586,8 +1586,8 @@ func (a *UserApiService) UserListServices(ctx context.Context, userId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1628,7 +1628,7 @@ func (a *UserApiService) UserListServices(ctx context.Context, userId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1676,15 +1676,15 @@ func (a *UserApiService) UserListServices(ctx context.Context, userId string) ([
 
 /*
 UserApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
  * @param userPatchCredentialId
 @return CredentialPassword
 */
-func (a *UserApiService) UserPatchCredentialId(ctx context.Context, userId string, id string, userPatchCredentialId UserPatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserPatchCredentialId(ctx _context.Context, userId string, id string, userPatchCredentialId UserPatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1698,8 +1698,8 @@ func (a *UserApiService) UserPatchCredentialId(ctx context.Context, userId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1742,7 +1742,7 @@ func (a *UserApiService) UserPatchCredentialId(ctx context.Context, userId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1790,15 +1790,15 @@ func (a *UserApiService) UserPatchCredentialId(ctx context.Context, userId strin
 
 /*
 UserApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
  * @param userPatchCredentialcertificateId
 @return CredentialCertificate
 */
-func (a *UserApiService) UserPatchCredentialcertificateId(ctx context.Context, userId string, id string, userPatchCredentialcertificateId UserPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
+func (a *UserApiService) UserPatchCredentialcertificateId(ctx _context.Context, userId string, id string, userPatchCredentialcertificateId UserPatchCredentialcertificateId) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1812,8 +1812,8 @@ func (a *UserApiService) UserPatchCredentialcertificateId(ctx context.Context, u
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1856,7 +1856,7 @@ func (a *UserApiService) UserPatchCredentialcertificateId(ctx context.Context, u
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1904,15 +1904,15 @@ func (a *UserApiService) UserPatchCredentialcertificateId(ctx context.Context, u
 
 /*
 UserApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param id id
  * @param userPatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *UserApiService) UserPatchCredentialpasswordId(ctx context.Context, userId string, id string, userPatchCredentialpasswordId UserPatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserPatchCredentialpasswordId(ctx _context.Context, userId string, id string, userPatchCredentialpasswordId UserPatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1926,8 +1926,8 @@ func (a *UserApiService) UserPatchCredentialpasswordId(ctx context.Context, user
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1970,7 +1970,7 @@ func (a *UserApiService) UserPatchCredentialpasswordId(ctx context.Context, user
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2018,14 +2018,14 @@ func (a *UserApiService) UserPatchCredentialpasswordId(ctx context.Context, user
 
 /*
 UserApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param requestBody
 @return map[string]string
 */
-func (a *UserApiService) UserPatchTag(ctx context.Context, userId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *UserApiService) UserPatchTag(ctx _context.Context, userId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2038,8 +2038,8 @@ func (a *UserApiService) UserPatchTag(ctx context.Context, userId string, reques
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2082,7 +2082,7 @@ func (a *UserApiService) UserPatchTag(ctx context.Context, userId string, reques
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2130,14 +2130,14 @@ func (a *UserApiService) UserPatchTag(ctx context.Context, userId string, reques
 
 /*
 UserApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param userPostCredential
 @return CredentialPassword
 */
-func (a *UserApiService) UserPostCredential(ctx context.Context, userId string, userPostCredential UserPostCredential) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserPostCredential(ctx _context.Context, userId string, userPostCredential UserPostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2150,8 +2150,8 @@ func (a *UserApiService) UserPostCredential(ctx context.Context, userId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2194,7 +2194,7 @@ func (a *UserApiService) UserPostCredential(ctx context.Context, userId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2242,14 +2242,14 @@ func (a *UserApiService) UserPostCredential(ctx context.Context, userId string, 
 
 /*
 UserApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param userPostCredentialcertificate
 @return CredentialCertificate
 */
-func (a *UserApiService) UserPostCredentialcertificate(ctx context.Context, userId string, userPostCredentialcertificate UserPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
+func (a *UserApiService) UserPostCredentialcertificate(ctx _context.Context, userId string, userPostCredentialcertificate UserPostCredentialcertificate) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2262,8 +2262,8 @@ func (a *UserApiService) UserPostCredentialcertificate(ctx context.Context, user
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2306,7 +2306,7 @@ func (a *UserApiService) UserPostCredentialcertificate(ctx context.Context, user
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2354,14 +2354,14 @@ func (a *UserApiService) UserPostCredentialcertificate(ctx context.Context, user
 
 /*
 UserApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
  * @param userPostCredentialpassword
 @return CredentialPassword
 */
-func (a *UserApiService) UserPostCredentialpassword(ctx context.Context, userId string, userPostCredentialpassword UserPostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *UserApiService) UserPostCredentialpassword(ctx _context.Context, userId string, userPostCredentialpassword UserPostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2374,8 +2374,8 @@ func (a *UserApiService) UserPostCredentialpassword(ctx context.Context, userId 
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2418,7 +2418,7 @@ func (a *UserApiService) UserPostCredentialpassword(ctx context.Context, userId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2467,13 +2467,13 @@ func (a *UserApiService) UserPostCredentialpassword(ctx context.Context, userId 
 /*
 UserApiService Get
 Returns a single user
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId ID of user
 @return User
 */
-func (a *UserApiService) UserShow(ctx context.Context, userId string) (User, *http.Response, error) {
+func (a *UserApiService) UserShow(ctx _context.Context, userId string) (User, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2486,8 +2486,8 @@ func (a *UserApiService) UserShow(ctx context.Context, userId string) (User, *ht
 	localVarPath = strings.Replace(localVarPath, "{"+"userId"+"}", fmt.Sprintf("%v", userId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2528,7 +2528,7 @@ func (a *UserApiService) UserShow(ctx context.Context, userId string) (User, *ht
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

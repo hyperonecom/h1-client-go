@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type NetadpApiService service
@@ -29,14 +29,14 @@ type NetadpApiService service
 /*
 NetadpApiService /actions/firewall_add
 Action firewall_add
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param netadpActionFirewallAdd
 @return Netadp
 */
-func (a *NetadpApiService) NetadpActionFirewallAdd(ctx context.Context, netadpId string, netadpActionFirewallAdd NetadpActionFirewallAdd) (Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpActionFirewallAdd(ctx _context.Context, netadpId string, netadpActionFirewallAdd NetadpActionFirewallAdd) (Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *NetadpApiService) NetadpActionFirewallAdd(ctx context.Context, netadpId
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *NetadpApiService) NetadpActionFirewallAdd(ctx context.Context, netadpId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *NetadpApiService) NetadpActionFirewallAdd(ctx context.Context, netadpId
 /*
 NetadpApiService /actions/firewall_remove
 Action firewall_remove
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return Netadp
 */
-func (a *NetadpApiService) NetadpActionFirewallRemove(ctx context.Context, netadpId string) (Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpActionFirewallRemove(ctx _context.Context, netadpId string) (Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -161,8 +161,8 @@ func (a *NetadpApiService) NetadpActionFirewallRemove(ctx context.Context, netad
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -203,7 +203,7 @@ func (a *NetadpApiService) NetadpActionFirewallRemove(ctx context.Context, netad
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -251,14 +251,14 @@ func (a *NetadpApiService) NetadpActionFirewallRemove(ctx context.Context, netad
 
 /*
 NetadpApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param identity identity
 @return Netadp
 */
-func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context, netadpId string, identity string) (Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx _context.Context, netadpId string, identity string) (Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -272,8 +272,8 @@ func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -314,7 +314,7 @@ func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -372,14 +372,14 @@ func (a *NetadpApiService) NetadpDeleteAccessrightsIdentity(ctx context.Context,
 
 /*
 NetadpApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param key key
 @return map[string]string
 */
-func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId string, key string) (map[string]string, *http.Response, error) {
+func (a *NetadpApiService) NetadpDeleteTagKey(ctx _context.Context, netadpId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -393,8 +393,8 @@ func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -435,7 +435,7 @@ func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -483,14 +483,14 @@ func (a *NetadpApiService) NetadpDeleteTagKey(ctx context.Context, netadpId stri
 
 /*
 NetadpApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param serviceId serviceId
 @return NetadpServices
 */
-func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netadpId string, serviceId string) (NetadpServices, *http.Response, error) {
+func (a *NetadpApiService) NetadpGetServicesServiceId(ctx _context.Context, netadpId string, serviceId string) (NetadpServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -504,8 +504,8 @@ func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netad
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -546,7 +546,7 @@ func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netad
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -594,13 +594,13 @@ func (a *NetadpApiService) NetadpGetServicesServiceId(ctx context.Context, netad
 
 /*
 NetadpApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return map[string]string
 */
-func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (map[string]string, *http.Response, error) {
+func (a *NetadpApiService) NetadpGetTag(ctx _context.Context, netadpId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -613,8 +613,8 @@ func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (m
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -655,7 +655,7 @@ func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (m
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -704,7 +704,7 @@ func (a *NetadpApiService) NetadpGetTag(ctx context.Context, netadpId string) (m
 /*
 NetadpApiService List
 List netadp
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *NetadpListOpts - Optional Parameters:
  * @param "AssignedResource" (optional.String) -  Filter by assigned.resource
  * @param "AssignedId" (optional.String) -  Filter by assigned.id
@@ -716,9 +716,9 @@ type NetadpListOpts struct {
 	AssignedId optional.String
 }
 
-func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *NetadpListOpts) ([]Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpList(ctx _context.Context, localVarOptionals *NetadpListOpts) ([]Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -730,8 +730,8 @@ func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *Ne
 	localVarPath := a.client.cfg.BasePath + "/netadp"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.AssignedResource.IsSet() {
 		localVarQueryParams.Add("assigned.resource", parameterToString(localVarOptionals.AssignedResource.Value(), ""))
@@ -778,7 +778,7 @@ func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *Ne
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -826,13 +826,13 @@ func (a *NetadpApiService) NetadpList(ctx context.Context, localVarOptionals *Ne
 
 /*
 NetadpApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return []string
 */
-func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId string) ([]string, *http.Response, error) {
+func (a *NetadpApiService) NetadpListAccessrights(ctx _context.Context, netadpId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -845,8 +845,8 @@ func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId 
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -887,7 +887,7 @@ func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -935,13 +935,13 @@ func (a *NetadpApiService) NetadpListAccessrights(ctx context.Context, netadpId 
 
 /*
 NetadpApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return []Event
 */
-func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string) ([]Event, *http.Response, error) {
+func (a *NetadpApiService) NetadpListQueue(ctx _context.Context, netadpId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -954,8 +954,8 @@ func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -996,7 +996,7 @@ func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1044,13 +1044,13 @@ func (a *NetadpApiService) NetadpListQueue(ctx context.Context, netadpId string)
 
 /*
 NetadpApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return []NetadpServices
 */
-func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId string) ([]NetadpServices, *http.Response, error) {
+func (a *NetadpApiService) NetadpListServices(ctx _context.Context, netadpId string) ([]NetadpServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1063,8 +1063,8 @@ func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1105,7 +1105,7 @@ func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1153,14 +1153,14 @@ func (a *NetadpApiService) NetadpListServices(ctx context.Context, netadpId stri
 
 /*
 NetadpApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param requestBody
 @return map[string]string
 */
-func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *NetadpApiService) NetadpPatchTag(ctx _context.Context, netadpId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1173,8 +1173,8 @@ func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1217,7 +1217,7 @@ func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1265,14 +1265,14 @@ func (a *NetadpApiService) NetadpPatchTag(ctx context.Context, netadpId string, 
 
 /*
 NetadpApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
  * @param netadpPostAccessrights
 @return Netadp
 */
-func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId string, netadpPostAccessrights NetadpPostAccessrights) (Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpPostAccessrights(ctx _context.Context, netadpId string, netadpPostAccessrights NetadpPostAccessrights) (Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1285,8 +1285,8 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1329,7 +1329,7 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1388,13 +1388,13 @@ func (a *NetadpApiService) NetadpPostAccessrights(ctx context.Context, netadpId 
 /*
 NetadpApiService Get
 Returns a single netadp
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param netadpId ID of netadp
 @return Netadp
 */
-func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Netadp, *http.Response, error) {
+func (a *NetadpApiService) NetadpShow(ctx _context.Context, netadpId string) (Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1407,8 +1407,8 @@ func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Net
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1449,7 +1449,7 @@ func (a *NetadpApiService) NetadpShow(ctx context.Context, netadpId string) (Net
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

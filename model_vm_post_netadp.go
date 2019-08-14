@@ -15,4 +15,5 @@ type VmPostNetadp struct {
 	Ip string `json:"ip,omitempty"`
 	Tag map[string]interface{} `json:"tag,omitempty"`
 	VlanIds string `json:"vlanIds,omitempty"`
+	Firewall string `json:"firewall,omitempty"`
 }

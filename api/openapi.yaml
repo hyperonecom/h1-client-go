@@ -20646,6 +20646,9 @@ components:
           type: object
         vlanIds:
           type: string
+        firewall:
+          format: ObjectId
+          type: string
       type: object
     vm_post_accessrights:
       properties:
@@ -24575,6 +24578,9 @@ components:
             format: ObjectId
             type: string
           type: array
+        firewall:
+          format: ObjectId
+          type: string
     ip_associated:
       example:
         ip: ip

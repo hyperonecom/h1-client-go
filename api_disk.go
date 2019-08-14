@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type DiskApiService service
@@ -29,14 +29,14 @@ type DiskApiService service
 /*
 DiskApiService /actions/clone
 Action clone
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskActionClone
 @return Disk
 */
-func (a *DiskApiService) DiskActionClone(ctx context.Context, diskId string, diskActionClone DiskActionClone) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskActionClone(ctx _context.Context, diskId string, diskActionClone DiskActionClone) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *DiskApiService) DiskActionClone(ctx context.Context, diskId string, dis
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *DiskApiService) DiskActionClone(ctx context.Context, diskId string, dis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,14 +142,14 @@ func (a *DiskApiService) DiskActionClone(ctx context.Context, diskId string, dis
 /*
 DiskApiService /actions/resize
 Action resize
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskActionResize
 @return Disk
 */
-func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, diskActionResize DiskActionResize) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskActionResize(ctx _context.Context, diskId string, diskActionResize DiskActionResize) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,8 +162,8 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -206,7 +206,7 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -255,14 +255,14 @@ func (a *DiskApiService) DiskActionResize(ctx context.Context, diskId string, di
 /*
 DiskApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskActionTransfer
 @return Disk
 */
-func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, diskActionTransfer DiskActionTransfer) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskActionTransfer(ctx _context.Context, diskId string, diskActionTransfer DiskActionTransfer) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -275,8 +275,8 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -319,7 +319,7 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -368,13 +368,13 @@ func (a *DiskApiService) DiskActionTransfer(ctx context.Context, diskId string, 
 /*
 DiskApiService Create
 Create disk
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskCreate
 @return Disk
 */
-func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskCreate(ctx _context.Context, diskCreate DiskCreate) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -386,8 +386,8 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 	localVarPath := a.client.cfg.BasePath + "/disk"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -430,7 +430,7 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -478,12 +478,12 @@ func (a *DiskApiService) DiskCreate(ctx context.Context, diskCreate DiskCreate) 
 
 /*
 DiskApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 */
-func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.Response, error) {
+func (a *DiskApiService) DiskDelete(ctx _context.Context, diskId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -495,8 +495,8 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -537,7 +537,7 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -566,14 +566,14 @@ func (a *DiskApiService) DiskDelete(ctx context.Context, diskId string) (*http.R
 
 /*
 DiskApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param identity identity
 @return Disk
 */
-func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, diskId string, identity string) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx _context.Context, diskId string, identity string) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -587,8 +587,8 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -629,7 +629,7 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -687,14 +687,14 @@ func (a *DiskApiService) DiskDeleteAccessrightsIdentity(ctx context.Context, dis
 
 /*
 DiskApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param key key
 @return map[string]string
 */
-func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, key string) (map[string]string, *http.Response, error) {
+func (a *DiskApiService) DiskDeleteTagKey(ctx _context.Context, diskId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -708,8 +708,8 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -750,7 +750,7 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -798,14 +798,14 @@ func (a *DiskApiService) DiskDeleteTagKey(ctx context.Context, diskId string, ke
 
 /*
 DiskApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param serviceId serviceId
 @return DiskServices
 */
-func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId string, serviceId string) (DiskServices, *http.Response, error) {
+func (a *DiskApiService) DiskGetServicesServiceId(ctx _context.Context, diskId string, serviceId string) (DiskServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -819,8 +819,8 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -861,7 +861,7 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -909,13 +909,13 @@ func (a *DiskApiService) DiskGetServicesServiceId(ctx context.Context, diskId st
 
 /*
 DiskApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 @return map[string]string
 */
-func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[string]string, *http.Response, error) {
+func (a *DiskApiService) DiskGetTag(ctx _context.Context, diskId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -928,8 +928,8 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -970,7 +970,7 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1019,7 +1019,7 @@ func (a *DiskApiService) DiskGetTag(ctx context.Context, diskId string) (map[str
 /*
 DiskApiService List
 List disk
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DiskListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1031,9 +1031,9 @@ type DiskListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskListOpts) ([]Disk, *http.Response, error) {
+func (a *DiskApiService) DiskList(ctx _context.Context, localVarOptionals *DiskListOpts) ([]Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1045,8 +1045,8 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 	localVarPath := a.client.cfg.BasePath + "/disk"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1093,7 +1093,7 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1141,13 +1141,13 @@ func (a *DiskApiService) DiskList(ctx context.Context, localVarOptionals *DiskLi
 
 /*
 DiskApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 @return []string
 */
-func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string) ([]string, *http.Response, error) {
+func (a *DiskApiService) DiskListAccessrights(ctx _context.Context, diskId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1160,8 +1160,8 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1202,7 +1202,7 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1250,13 +1250,13 @@ func (a *DiskApiService) DiskListAccessrights(ctx context.Context, diskId string
 
 /*
 DiskApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 @return []Event
 */
-func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Event, *http.Response, error) {
+func (a *DiskApiService) DiskListQueue(ctx _context.Context, diskId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1269,8 +1269,8 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1311,7 +1311,7 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1359,13 +1359,13 @@ func (a *DiskApiService) DiskListQueue(ctx context.Context, diskId string) ([]Ev
 
 /*
 DiskApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 @return []DiskServices
 */
-func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([]DiskServices, *http.Response, error) {
+func (a *DiskApiService) DiskListServices(ctx _context.Context, diskId string) ([]DiskServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1378,8 +1378,8 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1420,7 +1420,7 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1468,14 +1468,14 @@ func (a *DiskApiService) DiskListServices(ctx context.Context, diskId string) ([
 
 /*
 DiskApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param requestBody
 @return map[string]string
 */
-func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *DiskApiService) DiskPatchTag(ctx _context.Context, diskId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1488,8 +1488,8 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, reques
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1532,7 +1532,7 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, reques
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1580,14 +1580,14 @@ func (a *DiskApiService) DiskPatchTag(ctx context.Context, diskId string, reques
 
 /*
 DiskApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskPostAccessrights
 @return Disk
 */
-func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string, diskPostAccessrights DiskPostAccessrights) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskPostAccessrights(ctx _context.Context, diskId string, diskPostAccessrights DiskPostAccessrights) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1600,8 +1600,8 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1644,7 +1644,7 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1703,13 +1703,13 @@ func (a *DiskApiService) DiskPostAccessrights(ctx context.Context, diskId string
 /*
 DiskApiService Get
 Returns a single disk
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
 @return Disk
 */
-func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskShow(ctx _context.Context, diskId string) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1722,8 +1722,8 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1764,7 +1764,7 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1813,14 +1813,14 @@ func (a *DiskApiService) DiskShow(ctx context.Context, diskId string) (Disk, *ht
 /*
 DiskApiService Update
 Returns modified disk
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param diskId ID of disk
  * @param diskUpdate
 @return Disk
 */
-func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpdate DiskUpdate) (Disk, *http.Response, error) {
+func (a *DiskApiService) DiskUpdate(ctx _context.Context, diskId string, diskUpdate DiskUpdate) (Disk, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1833,8 +1833,8 @@ func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpda
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1877,7 +1877,7 @@ func (a *DiskApiService) DiskUpdate(ctx context.Context, diskId string, diskUpda
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

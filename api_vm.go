@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type VmApiService service
@@ -29,14 +29,14 @@ type VmApiService service
 /*
 VmApiService /actions/flavour
 Action flavour
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmActionFlavour
 @return Vm
 */
-func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActionFlavour VmActionFlavour) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionFlavour(ctx _context.Context, vmId string, vmActionFlavour VmActionFlavour) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActio
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActio
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,14 +142,14 @@ func (a *VmApiService) VmActionFlavour(ctx context.Context, vmId string, vmActio
 /*
 VmApiService /actions/image
 Action image
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmActionImage
 @return Vm
 */
-func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionImage VmActionImage) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionImage(ctx _context.Context, vmId string, vmActionImage VmActionImage) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -162,8 +162,8 @@ func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionI
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -206,7 +206,7 @@ func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -255,14 +255,14 @@ func (a *VmApiService) VmActionImage(ctx context.Context, vmId string, vmActionI
 /*
 VmApiService /actions/password_reset
 Action password_reset
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmActionPasswordReset
 @return Vm
 */
-func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, vmActionPasswordReset VmActionPasswordReset) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionPasswordReset(ctx _context.Context, vmId string, vmActionPasswordReset VmActionPasswordReset) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -275,8 +275,8 @@ func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, v
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -319,7 +319,7 @@ func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, v
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -368,14 +368,14 @@ func (a *VmApiService) VmActionPasswordReset(ctx context.Context, vmId string, v
 /*
 VmApiService /actions/rename
 Action rename
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmActionRename
 @return Vm
 */
-func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmActionRename VmActionRename) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionRename(ctx _context.Context, vmId string, vmActionRename VmActionRename) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -388,8 +388,8 @@ func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmAction
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -432,7 +432,7 @@ func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmAction
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -481,13 +481,13 @@ func (a *VmApiService) VmActionRename(ctx context.Context, vmId string, vmAction
 /*
 VmApiService /actions/restart
 Action restart
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionRestart(ctx _context.Context, vmId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -500,8 +500,8 @@ func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *h
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -542,7 +542,7 @@ func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *h
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -591,13 +591,13 @@ func (a *VmApiService) VmActionRestart(ctx context.Context, vmId string) (Vm, *h
 /*
 VmApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionStart(ctx _context.Context, vmId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -610,8 +610,8 @@ func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *htt
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -652,7 +652,7 @@ func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *htt
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -701,13 +701,13 @@ func (a *VmApiService) VmActionStart(ctx context.Context, vmId string) (Vm, *htt
 /*
 VmApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionStop(ctx _context.Context, vmId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -720,8 +720,8 @@ func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -762,7 +762,7 @@ func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -811,13 +811,13 @@ func (a *VmApiService) VmActionStop(ctx context.Context, vmId string) (Vm, *http
 /*
 VmApiService /actions/turnoff
 Action turnoff
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmActionTurnoff(ctx _context.Context, vmId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -830,8 +830,8 @@ func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *h
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -872,7 +872,7 @@ func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *h
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -921,13 +921,13 @@ func (a *VmApiService) VmActionTurnoff(ctx context.Context, vmId string) (Vm, *h
 /*
 VmApiService Create
 Create vm
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmCreate
 @return Vm
 */
-func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *http.Response, error) {
+func (a *VmApiService) VmCreate(ctx _context.Context, vmCreate VmCreate) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -939,8 +939,8 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 	localVarPath := a.client.cfg.BasePath + "/vm"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -983,7 +983,7 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1031,13 +1031,13 @@ func (a *VmApiService) VmCreate(ctx context.Context, vmCreate VmCreate) (Vm, *ht
 
 /*
 VmApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmDelete
 */
-func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDelete) (*http.Response, error) {
+func (a *VmApiService) VmDelete(ctx _context.Context, vmId string, vmDelete VmDelete) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1049,8 +1049,8 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1093,7 +1093,7 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1122,14 +1122,14 @@ func (a *VmApiService) VmDelete(ctx context.Context, vmId string, vmDelete VmDel
 
 /*
 VmApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param identity identity
 @return Vm
 */
-func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId string, identity string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx _context.Context, vmId string, identity string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1143,8 +1143,8 @@ func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId st
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1185,7 +1185,7 @@ func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1243,14 +1243,14 @@ func (a *VmApiService) VmDeleteAccessrightsIdentity(ctx context.Context, vmId st
 
 /*
 VmApiService /hdd/:diskId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param diskId diskId
 @return Vm
 */
-func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteHddDiskId(ctx _context.Context, vmId string, diskId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1264,8 +1264,8 @@ func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskI
 	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", fmt.Sprintf("%v", diskId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1306,7 +1306,7 @@ func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1364,14 +1364,14 @@ func (a *VmApiService) VmDeleteHddDiskId(ctx context.Context, vmId string, diskI
 
 /*
 VmApiService /netadp/:netadpId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param netadpId netadpId
 @return Vm
 */
-func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, netadpId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmDeleteNetadpNetadpId(ctx _context.Context, vmId string, netadpId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1385,8 +1385,8 @@ func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"netadpId"+"}", fmt.Sprintf("%v", netadpId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1427,7 +1427,7 @@ func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1485,14 +1485,14 @@ func (a *VmApiService) VmDeleteNetadpNetadpId(ctx context.Context, vmId string, 
 
 /*
 VmApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param key key
 @return map[string]string
 */
-func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmDeleteTagKey(ctx _context.Context, vmId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1506,8 +1506,8 @@ func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key stri
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1548,7 +1548,7 @@ func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1596,14 +1596,14 @@ func (a *VmApiService) VmDeleteTagKey(ctx context.Context, vmId string, key stri
 
 /*
 VmApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param serviceId serviceId
 @return VmServices
 */
-func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, serviceId string) (VmServices, *http.Response, error) {
+func (a *VmApiService) VmGetServicesServiceId(ctx _context.Context, vmId string, serviceId string) (VmServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1617,8 +1617,8 @@ func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1659,7 +1659,7 @@ func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1707,13 +1707,13 @@ func (a *VmApiService) VmGetServicesServiceId(ctx context.Context, vmId string, 
 
 /*
 VmApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return map[string]string
 */
-func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmGetTag(ctx _context.Context, vmId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1726,8 +1726,8 @@ func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]st
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1768,7 +1768,7 @@ func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1817,7 +1817,7 @@ func (a *VmApiService) VmGetTag(ctx context.Context, vmId string) (map[string]st
 /*
 VmApiService List
 List vm
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *VmListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1829,9 +1829,9 @@ type VmListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts) ([]Vm, *http.Response, error) {
+func (a *VmApiService) VmList(ctx _context.Context, localVarOptionals *VmListOpts) ([]Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1843,8 +1843,8 @@ func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts
 	localVarPath := a.client.cfg.BasePath + "/vm"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1891,7 +1891,7 @@ func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1939,13 +1939,13 @@ func (a *VmApiService) VmList(ctx context.Context, localVarOptionals *VmListOpts
 
 /*
 VmApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []string
 */
-func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]string, *http.Response, error) {
+func (a *VmApiService) VmListAccessrights(ctx _context.Context, vmId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1958,8 +1958,8 @@ func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]s
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2000,7 +2000,7 @@ func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2048,13 +2048,13 @@ func (a *VmApiService) VmListAccessrights(ctx context.Context, vmId string) ([]s
 
 /*
 VmApiService /hdd
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []Hdd
 */
-func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http.Response, error) {
+func (a *VmApiService) VmListHdd(ctx _context.Context, vmId string) ([]Hdd, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2067,8 +2067,8 @@ func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2109,7 +2109,7 @@ func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2157,13 +2157,13 @@ func (a *VmApiService) VmListHdd(ctx context.Context, vmId string) ([]Hdd, *http
 
 /*
 VmApiService /netadp
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []Netadp
 */
-func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp, *http.Response, error) {
+func (a *VmApiService) VmListNetadp(ctx _context.Context, vmId string) ([]Netadp, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2176,8 +2176,8 @@ func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp,
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2218,7 +2218,7 @@ func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2266,13 +2266,13 @@ func (a *VmApiService) VmListNetadp(ctx context.Context, vmId string) ([]Netadp,
 
 /*
 VmApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []Event
 */
-func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *http.Response, error) {
+func (a *VmApiService) VmListQueue(ctx _context.Context, vmId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2285,8 +2285,8 @@ func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2327,7 +2327,7 @@ func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2375,13 +2375,13 @@ func (a *VmApiService) VmListQueue(ctx context.Context, vmId string) ([]Event, *
 
 /*
 VmApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return []VmServices
 */
-func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmServices, *http.Response, error) {
+func (a *VmApiService) VmListServices(ctx _context.Context, vmId string) ([]VmServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2394,8 +2394,8 @@ func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmSer
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2436,7 +2436,7 @@ func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmSer
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2484,14 +2484,14 @@ func (a *VmApiService) VmListServices(ctx context.Context, vmId string) ([]VmSer
 
 /*
 VmApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param requestBody
 @return map[string]string
 */
-func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *VmApiService) VmPatchTag(ctx _context.Context, vmId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2504,8 +2504,8 @@ func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody 
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2548,7 +2548,7 @@ func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2596,14 +2596,14 @@ func (a *VmApiService) VmPatchTag(ctx context.Context, vmId string, requestBody 
 
 /*
 VmApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmPostAccessrights
 @return Vm
 */
-func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (Vm, *http.Response, error) {
+func (a *VmApiService) VmPostAccessrights(ctx _context.Context, vmId string, vmPostAccessrights VmPostAccessrights) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2616,8 +2616,8 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2660,7 +2660,7 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2718,14 +2718,14 @@ func (a *VmApiService) VmPostAccessrights(ctx context.Context, vmId string, vmPo
 
 /*
 VmApiService /hdd
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmPostHdd
 @return Vm
 */
-func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmPostHdd) (Vm, *http.Response, error) {
+func (a *VmApiService) VmPostHdd(ctx _context.Context, vmId string, vmPostHdd VmPostHdd) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2738,8 +2738,8 @@ func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmP
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2782,7 +2782,7 @@ func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmP
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2840,14 +2840,14 @@ func (a *VmApiService) VmPostHdd(ctx context.Context, vmId string, vmPostHdd VmP
 
 /*
 VmApiService /netadp
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmPostNetadp
 @return Vm
 */
-func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNetadp VmPostNetadp) (Vm, *http.Response, error) {
+func (a *VmApiService) VmPostNetadp(ctx _context.Context, vmId string, vmPostNetadp VmPostNetadp) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2860,8 +2860,8 @@ func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNeta
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2904,7 +2904,7 @@ func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNeta
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2963,13 +2963,13 @@ func (a *VmApiService) VmPostNetadp(ctx context.Context, vmId string, vmPostNeta
 /*
 VmApiService Get
 Returns a single vm
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
 @return Vm
 */
-func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Response, error) {
+func (a *VmApiService) VmShow(ctx _context.Context, vmId string) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2982,8 +2982,8 @@ func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Respo
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3024,7 +3024,7 @@ func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Respo
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3073,14 +3073,14 @@ func (a *VmApiService) VmShow(ctx context.Context, vmId string) (Vm, *http.Respo
 /*
 VmApiService Update
 Returns modified vm
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param vmId ID of vm
  * @param vmUpdate
 @return Vm
 */
-func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpdate) (Vm, *http.Response, error) {
+func (a *VmApiService) VmUpdate(ctx _context.Context, vmId string, vmUpdate VmUpdate) (Vm, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3093,8 +3093,8 @@ func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpd
 	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", fmt.Sprintf("%v", vmId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3137,7 +3137,7 @@ func (a *VmApiService) VmUpdate(ctx context.Context, vmId string, vmUpdate VmUpd
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

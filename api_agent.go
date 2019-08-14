@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type AgentApiService service
@@ -29,13 +29,13 @@ type AgentApiService service
 /*
 AgentApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return Agent
 */
-func (a *AgentApiService) AgentActionStart(ctx context.Context, agentId string) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentActionStart(ctx _context.Context, agentId string) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -48,8 +48,8 @@ func (a *AgentApiService) AgentActionStart(ctx context.Context, agentId string) 
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -90,7 +90,7 @@ func (a *AgentApiService) AgentActionStart(ctx context.Context, agentId string) 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,13 +139,13 @@ func (a *AgentApiService) AgentActionStart(ctx context.Context, agentId string) 
 /*
 AgentApiService /actions/suspend
 Action suspend
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return Agent
 */
-func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentActionSuspend(ctx _context.Context, agentId string) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -158,8 +158,8 @@ func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -200,7 +200,7 @@ func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,14 +249,14 @@ func (a *AgentApiService) AgentActionSuspend(ctx context.Context, agentId string
 /*
 AgentApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentActionTransfer
 @return Agent
 */
-func (a *AgentApiService) AgentActionTransfer(ctx context.Context, agentId string, agentActionTransfer AgentActionTransfer) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentActionTransfer(ctx _context.Context, agentId string, agentActionTransfer AgentActionTransfer) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *AgentApiService) AgentActionTransfer(ctx context.Context, agentId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -313,7 +313,7 @@ func (a *AgentApiService) AgentActionTransfer(ctx context.Context, agentId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -362,14 +362,14 @@ func (a *AgentApiService) AgentActionTransfer(ctx context.Context, agentId strin
 /*
 AgentApiService /actions/update_enabledServices
 Action update_enabledServices
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentActionUpdateEnabledServices
 @return Agent
 */
-func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx context.Context, agentId string, agentActionUpdateEnabledServices AgentActionUpdateEnabledServices) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx _context.Context, agentId string, agentActionUpdateEnabledServices AgentActionUpdateEnabledServices) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -382,8 +382,8 @@ func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -426,7 +426,7 @@ func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -475,13 +475,13 @@ func (a *AgentApiService) AgentActionUpdateEnabledServices(ctx context.Context, 
 /*
 AgentApiService Create
 Create agent
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentCreate
 @return Agent
 */
-func (a *AgentApiService) AgentCreate(ctx context.Context, agentCreate AgentCreate) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentCreate(ctx _context.Context, agentCreate AgentCreate) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -493,8 +493,8 @@ func (a *AgentApiService) AgentCreate(ctx context.Context, agentCreate AgentCrea
 	localVarPath := a.client.cfg.BasePath + "/agent"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -537,7 +537,7 @@ func (a *AgentApiService) AgentCreate(ctx context.Context, agentCreate AgentCrea
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -585,12 +585,12 @@ func (a *AgentApiService) AgentCreate(ctx context.Context, agentCreate AgentCrea
 
 /*
 AgentApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 */
-func (a *AgentApiService) AgentDelete(ctx context.Context, agentId string) (*http.Response, error) {
+func (a *AgentApiService) AgentDelete(ctx _context.Context, agentId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -602,8 +602,8 @@ func (a *AgentApiService) AgentDelete(ctx context.Context, agentId string) (*htt
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -644,7 +644,7 @@ func (a *AgentApiService) AgentDelete(ctx context.Context, agentId string) (*htt
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -673,14 +673,14 @@ func (a *AgentApiService) AgentDelete(ctx context.Context, agentId string) (*htt
 
 /*
 AgentApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param identity identity
 @return Agent
 */
-func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx context.Context, agentId string, identity string) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx _context.Context, agentId string, identity string) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -694,8 +694,8 @@ func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx context.Context, a
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -736,7 +736,7 @@ func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx context.Context, a
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -794,14 +794,14 @@ func (a *AgentApiService) AgentDeleteAccessrightsIdentity(ctx context.Context, a
 
 /*
 AgentApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
 @return Agent
 */
-func (a *AgentApiService) AgentDeleteCredentialId(ctx context.Context, agentId string, id string) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentDeleteCredentialId(ctx _context.Context, agentId string, id string) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -815,8 +815,8 @@ func (a *AgentApiService) AgentDeleteCredentialId(ctx context.Context, agentId s
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -857,7 +857,7 @@ func (a *AgentApiService) AgentDeleteCredentialId(ctx context.Context, agentId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -915,14 +915,14 @@ func (a *AgentApiService) AgentDeleteCredentialId(ctx context.Context, agentId s
 
 /*
 AgentApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
 @return CredentialCertificate
 */
-func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx context.Context, agentId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx _context.Context, agentId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -936,8 +936,8 @@ func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -978,7 +978,7 @@ func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1026,14 +1026,14 @@ func (a *AgentApiService) AgentDeleteCredentialcertificateId(ctx context.Context
 
 /*
 AgentApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param key key
 @return map[string]string
 */
-func (a *AgentApiService) AgentDeleteTagKey(ctx context.Context, agentId string, key string) (map[string]string, *http.Response, error) {
+func (a *AgentApiService) AgentDeleteTagKey(ctx _context.Context, agentId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1047,8 +1047,8 @@ func (a *AgentApiService) AgentDeleteTagKey(ctx context.Context, agentId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1089,7 +1089,7 @@ func (a *AgentApiService) AgentDeleteTagKey(ctx context.Context, agentId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1137,14 +1137,14 @@ func (a *AgentApiService) AgentDeleteTagKey(ctx context.Context, agentId string,
 
 /*
 AgentApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
 @return CredentialPassword
 */
-func (a *AgentApiService) AgentGetCredentialId(ctx context.Context, agentId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *AgentApiService) AgentGetCredentialId(ctx _context.Context, agentId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1158,8 +1158,8 @@ func (a *AgentApiService) AgentGetCredentialId(ctx context.Context, agentId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1200,7 +1200,7 @@ func (a *AgentApiService) AgentGetCredentialId(ctx context.Context, agentId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1248,14 +1248,14 @@ func (a *AgentApiService) AgentGetCredentialId(ctx context.Context, agentId stri
 
 /*
 AgentApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
 @return CredentialCertificate
 */
-func (a *AgentApiService) AgentGetCredentialcertificateId(ctx context.Context, agentId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *AgentApiService) AgentGetCredentialcertificateId(ctx _context.Context, agentId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1269,8 +1269,8 @@ func (a *AgentApiService) AgentGetCredentialcertificateId(ctx context.Context, a
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1311,7 +1311,7 @@ func (a *AgentApiService) AgentGetCredentialcertificateId(ctx context.Context, a
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1359,13 +1359,13 @@ func (a *AgentApiService) AgentGetCredentialcertificateId(ctx context.Context, a
 
 /*
 AgentApiService /inspect
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return map[string]interface{}
 */
-func (a *AgentApiService) AgentGetInspect(ctx context.Context, agentId string) (map[string]interface{}, *http.Response, error) {
+func (a *AgentApiService) AgentGetInspect(ctx _context.Context, agentId string) (map[string]interface{}, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1378,8 +1378,8 @@ func (a *AgentApiService) AgentGetInspect(ctx context.Context, agentId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1420,7 +1420,7 @@ func (a *AgentApiService) AgentGetInspect(ctx context.Context, agentId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1468,14 +1468,14 @@ func (a *AgentApiService) AgentGetInspect(ctx context.Context, agentId string) (
 
 /*
 AgentApiService /resource/:resourceId/inspect
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param resourceId resourceId
 @return map[string]interface{}
 */
-func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx context.Context, agentId string, resourceId string) (map[string]interface{}, *http.Response, error) {
+func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx _context.Context, agentId string, resourceId string) (map[string]interface{}, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1489,8 +1489,8 @@ func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"resourceId"+"}", fmt.Sprintf("%v", resourceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1531,7 +1531,7 @@ func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1579,14 +1579,14 @@ func (a *AgentApiService) AgentGetResourceResourceIdinspect(ctx context.Context,
 
 /*
 AgentApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param serviceId serviceId
 @return AgentServices
 */
-func (a *AgentApiService) AgentGetServicesServiceId(ctx context.Context, agentId string, serviceId string) (AgentServices, *http.Response, error) {
+func (a *AgentApiService) AgentGetServicesServiceId(ctx _context.Context, agentId string, serviceId string) (AgentServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1600,8 +1600,8 @@ func (a *AgentApiService) AgentGetServicesServiceId(ctx context.Context, agentId
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1642,7 +1642,7 @@ func (a *AgentApiService) AgentGetServicesServiceId(ctx context.Context, agentId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1690,13 +1690,13 @@ func (a *AgentApiService) AgentGetServicesServiceId(ctx context.Context, agentId
 
 /*
 AgentApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return map[string]string
 */
-func (a *AgentApiService) AgentGetTag(ctx context.Context, agentId string) (map[string]string, *http.Response, error) {
+func (a *AgentApiService) AgentGetTag(ctx _context.Context, agentId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1709,8 +1709,8 @@ func (a *AgentApiService) AgentGetTag(ctx context.Context, agentId string) (map[
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1751,7 +1751,7 @@ func (a *AgentApiService) AgentGetTag(ctx context.Context, agentId string) (map[
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1800,7 +1800,7 @@ func (a *AgentApiService) AgentGetTag(ctx context.Context, agentId string) (map[
 /*
 AgentApiService List
 List agent
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *AgentListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1812,9 +1812,9 @@ type AgentListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *AgentApiService) AgentList(ctx context.Context, localVarOptionals *AgentListOpts) ([]Agent, *http.Response, error) {
+func (a *AgentApiService) AgentList(ctx _context.Context, localVarOptionals *AgentListOpts) ([]Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1826,8 +1826,8 @@ func (a *AgentApiService) AgentList(ctx context.Context, localVarOptionals *Agen
 	localVarPath := a.client.cfg.BasePath + "/agent"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1874,7 +1874,7 @@ func (a *AgentApiService) AgentList(ctx context.Context, localVarOptionals *Agen
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1922,13 +1922,13 @@ func (a *AgentApiService) AgentList(ctx context.Context, localVarOptionals *Agen
 
 /*
 AgentApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []string
 */
-func (a *AgentApiService) AgentListAccessrights(ctx context.Context, agentId string) ([]string, *http.Response, error) {
+func (a *AgentApiService) AgentListAccessrights(ctx _context.Context, agentId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1941,8 +1941,8 @@ func (a *AgentApiService) AgentListAccessrights(ctx context.Context, agentId str
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1983,7 +1983,7 @@ func (a *AgentApiService) AgentListAccessrights(ctx context.Context, agentId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2031,13 +2031,13 @@ func (a *AgentApiService) AgentListAccessrights(ctx context.Context, agentId str
 
 /*
 AgentApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []CredentialPassword
 */
-func (a *AgentApiService) AgentListCredential(ctx context.Context, agentId string) ([]CredentialPassword, *http.Response, error) {
+func (a *AgentApiService) AgentListCredential(ctx _context.Context, agentId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2050,8 +2050,8 @@ func (a *AgentApiService) AgentListCredential(ctx context.Context, agentId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2092,7 +2092,7 @@ func (a *AgentApiService) AgentListCredential(ctx context.Context, agentId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2140,13 +2140,13 @@ func (a *AgentApiService) AgentListCredential(ctx context.Context, agentId strin
 
 /*
 AgentApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []CredentialCertificate
 */
-func (a *AgentApiService) AgentListCredentialcertificate(ctx context.Context, agentId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *AgentApiService) AgentListCredentialcertificate(ctx _context.Context, agentId string) ([]CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2159,8 +2159,8 @@ func (a *AgentApiService) AgentListCredentialcertificate(ctx context.Context, ag
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2201,7 +2201,7 @@ func (a *AgentApiService) AgentListCredentialcertificate(ctx context.Context, ag
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2249,13 +2249,13 @@ func (a *AgentApiService) AgentListCredentialcertificate(ctx context.Context, ag
 
 /*
 AgentApiService /enabledServices
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []string
 */
-func (a *AgentApiService) AgentListEnabledServices(ctx context.Context, agentId string) ([]string, *http.Response, error) {
+func (a *AgentApiService) AgentListEnabledServices(ctx _context.Context, agentId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2268,8 +2268,8 @@ func (a *AgentApiService) AgentListEnabledServices(ctx context.Context, agentId 
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2310,7 +2310,7 @@ func (a *AgentApiService) AgentListEnabledServices(ctx context.Context, agentId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2358,13 +2358,13 @@ func (a *AgentApiService) AgentListEnabledServices(ctx context.Context, agentId 
 
 /*
 AgentApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []Event
 */
-func (a *AgentApiService) AgentListQueue(ctx context.Context, agentId string) ([]Event, *http.Response, error) {
+func (a *AgentApiService) AgentListQueue(ctx _context.Context, agentId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2377,8 +2377,8 @@ func (a *AgentApiService) AgentListQueue(ctx context.Context, agentId string) ([
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2419,7 +2419,7 @@ func (a *AgentApiService) AgentListQueue(ctx context.Context, agentId string) ([
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2467,13 +2467,13 @@ func (a *AgentApiService) AgentListQueue(ctx context.Context, agentId string) ([
 
 /*
 AgentApiService /resource
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []AgentResource
 */
-func (a *AgentApiService) AgentListResource(ctx context.Context, agentId string) ([]AgentResource, *http.Response, error) {
+func (a *AgentApiService) AgentListResource(ctx _context.Context, agentId string) ([]AgentResource, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2486,8 +2486,8 @@ func (a *AgentApiService) AgentListResource(ctx context.Context, agentId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2528,7 +2528,7 @@ func (a *AgentApiService) AgentListResource(ctx context.Context, agentId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2576,14 +2576,14 @@ func (a *AgentApiService) AgentListResource(ctx context.Context, agentId string)
 
 /*
 AgentApiService /resource/:resourceId/queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param resourceId resourceId
 @return []AgentResourceEvent
 */
-func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx context.Context, agentId string, resourceId string) ([]AgentResourceEvent, *http.Response, error) {
+func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx _context.Context, agentId string, resourceId string) ([]AgentResourceEvent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2597,8 +2597,8 @@ func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"resourceId"+"}", fmt.Sprintf("%v", resourceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2639,7 +2639,7 @@ func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2687,13 +2687,13 @@ func (a *AgentApiService) AgentListResourceResourceIdqueue(ctx context.Context, 
 
 /*
 AgentApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return []AgentServices
 */
-func (a *AgentApiService) AgentListServices(ctx context.Context, agentId string) ([]AgentServices, *http.Response, error) {
+func (a *AgentApiService) AgentListServices(ctx _context.Context, agentId string) ([]AgentServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2706,8 +2706,8 @@ func (a *AgentApiService) AgentListServices(ctx context.Context, agentId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2748,7 +2748,7 @@ func (a *AgentApiService) AgentListServices(ctx context.Context, agentId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2796,15 +2796,15 @@ func (a *AgentApiService) AgentListServices(ctx context.Context, agentId string)
 
 /*
 AgentApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
  * @param agentPatchCredentialId
 @return CredentialPassword
 */
-func (a *AgentApiService) AgentPatchCredentialId(ctx context.Context, agentId string, id string, agentPatchCredentialId AgentPatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *AgentApiService) AgentPatchCredentialId(ctx _context.Context, agentId string, id string, agentPatchCredentialId AgentPatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2818,8 +2818,8 @@ func (a *AgentApiService) AgentPatchCredentialId(ctx context.Context, agentId st
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2862,7 +2862,7 @@ func (a *AgentApiService) AgentPatchCredentialId(ctx context.Context, agentId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2910,15 +2910,15 @@ func (a *AgentApiService) AgentPatchCredentialId(ctx context.Context, agentId st
 
 /*
 AgentApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param id id
  * @param agentPatchCredentialcertificateId
 @return CredentialCertificate
 */
-func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx context.Context, agentId string, id string, agentPatchCredentialcertificateId AgentPatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
+func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx _context.Context, agentId string, id string, agentPatchCredentialcertificateId AgentPatchCredentialcertificateId) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2932,8 +2932,8 @@ func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2976,7 +2976,7 @@ func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3024,14 +3024,14 @@ func (a *AgentApiService) AgentPatchCredentialcertificateId(ctx context.Context,
 
 /*
 AgentApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param requestBody
 @return map[string]string
 */
-func (a *AgentApiService) AgentPatchTag(ctx context.Context, agentId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *AgentApiService) AgentPatchTag(ctx _context.Context, agentId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3044,8 +3044,8 @@ func (a *AgentApiService) AgentPatchTag(ctx context.Context, agentId string, req
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3088,7 +3088,7 @@ func (a *AgentApiService) AgentPatchTag(ctx context.Context, agentId string, req
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3136,14 +3136,14 @@ func (a *AgentApiService) AgentPatchTag(ctx context.Context, agentId string, req
 
 /*
 AgentApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentPostAccessrights
 @return Agent
 */
-func (a *AgentApiService) AgentPostAccessrights(ctx context.Context, agentId string, agentPostAccessrights AgentPostAccessrights) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentPostAccessrights(ctx _context.Context, agentId string, agentPostAccessrights AgentPostAccessrights) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3156,8 +3156,8 @@ func (a *AgentApiService) AgentPostAccessrights(ctx context.Context, agentId str
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3200,7 +3200,7 @@ func (a *AgentApiService) AgentPostAccessrights(ctx context.Context, agentId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3258,14 +3258,14 @@ func (a *AgentApiService) AgentPostAccessrights(ctx context.Context, agentId str
 
 /*
 AgentApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentPostCredential
 @return CredentialPassword
 */
-func (a *AgentApiService) AgentPostCredential(ctx context.Context, agentId string, agentPostCredential AgentPostCredential) (CredentialPassword, *http.Response, error) {
+func (a *AgentApiService) AgentPostCredential(ctx _context.Context, agentId string, agentPostCredential AgentPostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3278,8 +3278,8 @@ func (a *AgentApiService) AgentPostCredential(ctx context.Context, agentId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3322,7 +3322,7 @@ func (a *AgentApiService) AgentPostCredential(ctx context.Context, agentId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3370,14 +3370,14 @@ func (a *AgentApiService) AgentPostCredential(ctx context.Context, agentId strin
 
 /*
 AgentApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentPostCredentialcertificate
 @return CredentialCertificate
 */
-func (a *AgentApiService) AgentPostCredentialcertificate(ctx context.Context, agentId string, agentPostCredentialcertificate AgentPostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
+func (a *AgentApiService) AgentPostCredentialcertificate(ctx _context.Context, agentId string, agentPostCredentialcertificate AgentPostCredentialcertificate) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3390,8 +3390,8 @@ func (a *AgentApiService) AgentPostCredentialcertificate(ctx context.Context, ag
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3434,7 +3434,7 @@ func (a *AgentApiService) AgentPostCredentialcertificate(ctx context.Context, ag
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3482,14 +3482,14 @@ func (a *AgentApiService) AgentPostCredentialcertificate(ctx context.Context, ag
 
 /*
 AgentApiService /resource/:resourceId/actions/recreate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param resourceId resourceId
 @return AgentResource
 */
-func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx context.Context, agentId string, resourceId string) (AgentResource, *http.Response, error) {
+func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx _context.Context, agentId string, resourceId string) (AgentResource, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3503,8 +3503,8 @@ func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx context
 	localVarPath = strings.Replace(localVarPath, "{"+"resourceId"+"}", fmt.Sprintf("%v", resourceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3545,7 +3545,7 @@ func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3593,14 +3593,14 @@ func (a *AgentApiService) AgentPostResourceResourceIdactionsrecreate(ctx context
 
 /*
 AgentApiService /enabledServices
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param requestBody
 @return []string
 */
-func (a *AgentApiService) AgentPutEnabledServices(ctx context.Context, agentId string, requestBody []string) ([]string, *http.Response, error) {
+func (a *AgentApiService) AgentPutEnabledServices(ctx _context.Context, agentId string, requestBody []string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPut
+		localVarHttpMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3613,8 +3613,8 @@ func (a *AgentApiService) AgentPutEnabledServices(ctx context.Context, agentId s
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3657,7 +3657,7 @@ func (a *AgentApiService) AgentPutEnabledServices(ctx context.Context, agentId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3706,13 +3706,13 @@ func (a *AgentApiService) AgentPutEnabledServices(ctx context.Context, agentId s
 /*
 AgentApiService Get
 Returns a single agent
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
 @return Agent
 */
-func (a *AgentApiService) AgentShow(ctx context.Context, agentId string) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentShow(ctx _context.Context, agentId string) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3725,8 +3725,8 @@ func (a *AgentApiService) AgentShow(ctx context.Context, agentId string) (Agent,
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -3767,7 +3767,7 @@ func (a *AgentApiService) AgentShow(ctx context.Context, agentId string) (Agent,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3816,14 +3816,14 @@ func (a *AgentApiService) AgentShow(ctx context.Context, agentId string) (Agent,
 /*
 AgentApiService Update
 Returns modified agent
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param agentId ID of agent
  * @param agentUpdate
 @return Agent
 */
-func (a *AgentApiService) AgentUpdate(ctx context.Context, agentId string, agentUpdate AgentUpdate) (Agent, *http.Response, error) {
+func (a *AgentApiService) AgentUpdate(ctx _context.Context, agentId string, agentUpdate AgentUpdate) (Agent, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3836,8 +3836,8 @@ func (a *AgentApiService) AgentUpdate(ctx context.Context, agentId string, agent
 	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", fmt.Sprintf("%v", agentId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3880,7 +3880,7 @@ func (a *AgentApiService) AgentUpdate(ctx context.Context, agentId string, agent
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

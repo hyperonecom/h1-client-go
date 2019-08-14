@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type FirewallApiService service
@@ -29,14 +29,14 @@ type FirewallApiService service
 /*
 FirewallApiService /actions/attach
 Action attach
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallActionAttach
 @return Firewall
 */
-func (a *FirewallApiService) FirewallActionAttach(ctx context.Context, firewallId string, firewallActionAttach FirewallActionAttach) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallActionAttach(ctx _context.Context, firewallId string, firewallActionAttach FirewallActionAttach) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -49,8 +49,8 @@ func (a *FirewallApiService) FirewallActionAttach(ctx context.Context, firewallI
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -93,7 +93,7 @@ func (a *FirewallApiService) FirewallActionAttach(ctx context.Context, firewallI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -142,13 +142,13 @@ func (a *FirewallApiService) FirewallActionAttach(ctx context.Context, firewallI
 /*
 FirewallApiService /actions/detach
 Action detach
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return Firewall
 */
-func (a *FirewallApiService) FirewallActionDetach(ctx context.Context, firewallId string) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallActionDetach(ctx _context.Context, firewallId string) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -161,8 +161,8 @@ func (a *FirewallApiService) FirewallActionDetach(ctx context.Context, firewallI
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -203,7 +203,7 @@ func (a *FirewallApiService) FirewallActionDetach(ctx context.Context, firewallI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -252,14 +252,14 @@ func (a *FirewallApiService) FirewallActionDetach(ctx context.Context, firewallI
 /*
 FirewallApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallActionTransfer
 @return Firewall
 */
-func (a *FirewallApiService) FirewallActionTransfer(ctx context.Context, firewallId string, firewallActionTransfer FirewallActionTransfer) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallActionTransfer(ctx _context.Context, firewallId string, firewallActionTransfer FirewallActionTransfer) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -272,8 +272,8 @@ func (a *FirewallApiService) FirewallActionTransfer(ctx context.Context, firewal
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -316,7 +316,7 @@ func (a *FirewallApiService) FirewallActionTransfer(ctx context.Context, firewal
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -365,13 +365,13 @@ func (a *FirewallApiService) FirewallActionTransfer(ctx context.Context, firewal
 /*
 FirewallApiService Create
 Create firewall
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallCreate
 @return Firewall
 */
-func (a *FirewallApiService) FirewallCreate(ctx context.Context, firewallCreate FirewallCreate) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallCreate(ctx _context.Context, firewallCreate FirewallCreate) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -383,8 +383,8 @@ func (a *FirewallApiService) FirewallCreate(ctx context.Context, firewallCreate 
 	localVarPath := a.client.cfg.BasePath + "/firewall"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -427,7 +427,7 @@ func (a *FirewallApiService) FirewallCreate(ctx context.Context, firewallCreate 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -475,12 +475,12 @@ func (a *FirewallApiService) FirewallCreate(ctx context.Context, firewallCreate 
 
 /*
 FirewallApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 */
-func (a *FirewallApiService) FirewallDelete(ctx context.Context, firewallId string) (*http.Response, error) {
+func (a *FirewallApiService) FirewallDelete(ctx _context.Context, firewallId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -492,8 +492,8 @@ func (a *FirewallApiService) FirewallDelete(ctx context.Context, firewallId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -534,7 +534,7 @@ func (a *FirewallApiService) FirewallDelete(ctx context.Context, firewallId stri
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -563,14 +563,14 @@ func (a *FirewallApiService) FirewallDelete(ctx context.Context, firewallId stri
 
 /*
 FirewallApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param identity identity
 @return Firewall
 */
-func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx context.Context, firewallId string, identity string) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx _context.Context, firewallId string, identity string) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -584,8 +584,8 @@ func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -626,7 +626,7 @@ func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -684,14 +684,14 @@ func (a *FirewallApiService) FirewallDeleteAccessrightsIdentity(ctx context.Cont
 
 /*
 FirewallApiService /egress/:ruleId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx _context.Context, firewallId string, ruleId string) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -705,8 +705,8 @@ func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, fir
 	localVarPath = strings.Replace(localVarPath, "{"+"ruleId"+"}", fmt.Sprintf("%v", ruleId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -747,7 +747,7 @@ func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, fir
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -795,14 +795,14 @@ func (a *FirewallApiService) FirewallDeleteEgressRuleId(ctx context.Context, fir
 
 /*
 FirewallApiService /ingress/:ruleId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx _context.Context, firewallId string, ruleId string) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -816,8 +816,8 @@ func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, fi
 	localVarPath = strings.Replace(localVarPath, "{"+"ruleId"+"}", fmt.Sprintf("%v", ruleId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -858,7 +858,7 @@ func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, fi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -906,14 +906,14 @@ func (a *FirewallApiService) FirewallDeleteIngressRuleId(ctx context.Context, fi
 
 /*
 FirewallApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param key key
 @return map[string]string
 */
-func (a *FirewallApiService) FirewallDeleteTagKey(ctx context.Context, firewallId string, key string) (map[string]string, *http.Response, error) {
+func (a *FirewallApiService) FirewallDeleteTagKey(ctx _context.Context, firewallId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -927,8 +927,8 @@ func (a *FirewallApiService) FirewallDeleteTagKey(ctx context.Context, firewallI
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -969,7 +969,7 @@ func (a *FirewallApiService) FirewallDeleteTagKey(ctx context.Context, firewallI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1017,14 +1017,14 @@ func (a *FirewallApiService) FirewallDeleteTagKey(ctx context.Context, firewallI
 
 /*
 FirewallApiService /egress/:ruleId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetEgressRuleId(ctx _context.Context, firewallId string, ruleId string) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1038,8 +1038,8 @@ func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewa
 	localVarPath = strings.Replace(localVarPath, "{"+"ruleId"+"}", fmt.Sprintf("%v", ruleId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1080,7 +1080,7 @@ func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewa
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1128,14 +1128,14 @@ func (a *FirewallApiService) FirewallGetEgressRuleId(ctx context.Context, firewa
 
 /*
 FirewallApiService /ingress/:ruleId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param ruleId ruleId
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firewallId string, ruleId string) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetIngressRuleId(ctx _context.Context, firewallId string, ruleId string) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1149,8 +1149,8 @@ func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firew
 	localVarPath = strings.Replace(localVarPath, "{"+"ruleId"+"}", fmt.Sprintf("%v", ruleId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1191,7 +1191,7 @@ func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firew
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1239,14 +1239,14 @@ func (a *FirewallApiService) FirewallGetIngressRuleId(ctx context.Context, firew
 
 /*
 FirewallApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param serviceId serviceId
 @return FirewallServices
 */
-func (a *FirewallApiService) FirewallGetServicesServiceId(ctx context.Context, firewallId string, serviceId string) (FirewallServices, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetServicesServiceId(ctx _context.Context, firewallId string, serviceId string) (FirewallServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1260,8 +1260,8 @@ func (a *FirewallApiService) FirewallGetServicesServiceId(ctx context.Context, f
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1302,7 +1302,7 @@ func (a *FirewallApiService) FirewallGetServicesServiceId(ctx context.Context, f
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1350,13 +1350,13 @@ func (a *FirewallApiService) FirewallGetServicesServiceId(ctx context.Context, f
 
 /*
 FirewallApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return map[string]string
 */
-func (a *FirewallApiService) FirewallGetTag(ctx context.Context, firewallId string) (map[string]string, *http.Response, error) {
+func (a *FirewallApiService) FirewallGetTag(ctx _context.Context, firewallId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1369,8 +1369,8 @@ func (a *FirewallApiService) FirewallGetTag(ctx context.Context, firewallId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1411,7 +1411,7 @@ func (a *FirewallApiService) FirewallGetTag(ctx context.Context, firewallId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1460,7 +1460,7 @@ func (a *FirewallApiService) FirewallGetTag(ctx context.Context, firewallId stri
 /*
 FirewallApiService List
 List firewall
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *FirewallListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1472,9 +1472,9 @@ type FirewallListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *FirewallApiService) FirewallList(ctx context.Context, localVarOptionals *FirewallListOpts) ([]Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallList(ctx _context.Context, localVarOptionals *FirewallListOpts) ([]Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1486,8 +1486,8 @@ func (a *FirewallApiService) FirewallList(ctx context.Context, localVarOptionals
 	localVarPath := a.client.cfg.BasePath + "/firewall"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1534,7 +1534,7 @@ func (a *FirewallApiService) FirewallList(ctx context.Context, localVarOptionals
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1582,13 +1582,13 @@ func (a *FirewallApiService) FirewallList(ctx context.Context, localVarOptionals
 
 /*
 FirewallApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return []string
 */
-func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firewallId string) ([]string, *http.Response, error) {
+func (a *FirewallApiService) FirewallListAccessrights(ctx _context.Context, firewallId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1601,8 +1601,8 @@ func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firew
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1643,7 +1643,7 @@ func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firew
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1691,13 +1691,13 @@ func (a *FirewallApiService) FirewallListAccessrights(ctx context.Context, firew
 
 /*
 FirewallApiService /egress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallListEgress(ctx _context.Context, firewallId string) ([]InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1710,8 +1710,8 @@ func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId 
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1752,7 +1752,7 @@ func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1800,13 +1800,13 @@ func (a *FirewallApiService) FirewallListEgress(ctx context.Context, firewallId 
 
 /*
 FirewallApiService /ingress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId string) ([]InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallListIngress(ctx _context.Context, firewallId string) ([]InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1819,8 +1819,8 @@ func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1861,7 +1861,7 @@ func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1909,13 +1909,13 @@ func (a *FirewallApiService) FirewallListIngress(ctx context.Context, firewallId
 
 /*
 FirewallApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return []Event
 */
-func (a *FirewallApiService) FirewallListQueue(ctx context.Context, firewallId string) ([]Event, *http.Response, error) {
+func (a *FirewallApiService) FirewallListQueue(ctx _context.Context, firewallId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1928,8 +1928,8 @@ func (a *FirewallApiService) FirewallListQueue(ctx context.Context, firewallId s
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1970,7 +1970,7 @@ func (a *FirewallApiService) FirewallListQueue(ctx context.Context, firewallId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2018,13 +2018,13 @@ func (a *FirewallApiService) FirewallListQueue(ctx context.Context, firewallId s
 
 /*
 FirewallApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return []FirewallServices
 */
-func (a *FirewallApiService) FirewallListServices(ctx context.Context, firewallId string) ([]FirewallServices, *http.Response, error) {
+func (a *FirewallApiService) FirewallListServices(ctx _context.Context, firewallId string) ([]FirewallServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2037,8 +2037,8 @@ func (a *FirewallApiService) FirewallListServices(ctx context.Context, firewallI
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2079,7 +2079,7 @@ func (a *FirewallApiService) FirewallListServices(ctx context.Context, firewallI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2127,14 +2127,14 @@ func (a *FirewallApiService) FirewallListServices(ctx context.Context, firewallI
 
 /*
 FirewallApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param requestBody
 @return map[string]string
 */
-func (a *FirewallApiService) FirewallPatchTag(ctx context.Context, firewallId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *FirewallApiService) FirewallPatchTag(ctx _context.Context, firewallId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2147,8 +2147,8 @@ func (a *FirewallApiService) FirewallPatchTag(ctx context.Context, firewallId st
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2191,7 +2191,7 @@ func (a *FirewallApiService) FirewallPatchTag(ctx context.Context, firewallId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2239,14 +2239,14 @@ func (a *FirewallApiService) FirewallPatchTag(ctx context.Context, firewallId st
 
 /*
 FirewallApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallPostAccessrights
 @return Firewall
 */
-func (a *FirewallApiService) FirewallPostAccessrights(ctx context.Context, firewallId string, firewallPostAccessrights FirewallPostAccessrights) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallPostAccessrights(ctx _context.Context, firewallId string, firewallPostAccessrights FirewallPostAccessrights) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2259,8 +2259,8 @@ func (a *FirewallApiService) FirewallPostAccessrights(ctx context.Context, firew
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2303,7 +2303,7 @@ func (a *FirewallApiService) FirewallPostAccessrights(ctx context.Context, firew
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2361,14 +2361,14 @@ func (a *FirewallApiService) FirewallPostAccessrights(ctx context.Context, firew
 
 /*
 FirewallApiService /egress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallPostEgress
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId string, firewallPostEgress FirewallPostEgress) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallPostEgress(ctx _context.Context, firewallId string, firewallPostEgress FirewallPostEgress) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2381,8 +2381,8 @@ func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId 
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2425,7 +2425,7 @@ func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2473,14 +2473,14 @@ func (a *FirewallApiService) FirewallPostEgress(ctx context.Context, firewallId 
 
 /*
 FirewallApiService /ingress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallPostIngress
 @return InlineResponse200
 */
-func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId string, firewallPostIngress FirewallPostIngress) (InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallPostIngress(ctx _context.Context, firewallId string, firewallPostIngress FirewallPostIngress) (InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2493,8 +2493,8 @@ func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2537,7 +2537,7 @@ func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2585,14 +2585,14 @@ func (a *FirewallApiService) FirewallPostIngress(ctx context.Context, firewallId
 
 /*
 FirewallApiService /egress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param mapStringinterface
 @return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallPutEgress(ctx context.Context, firewallId string, mapStringinterface []map[string]interface{}) ([]InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallPutEgress(ctx _context.Context, firewallId string, mapStringinterface []map[string]interface{}) ([]InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPut
+		localVarHttpMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2605,8 +2605,8 @@ func (a *FirewallApiService) FirewallPutEgress(ctx context.Context, firewallId s
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2649,7 +2649,7 @@ func (a *FirewallApiService) FirewallPutEgress(ctx context.Context, firewallId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2697,14 +2697,14 @@ func (a *FirewallApiService) FirewallPutEgress(ctx context.Context, firewallId s
 
 /*
 FirewallApiService /ingress
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param mapStringinterface
 @return []InlineResponse200
 */
-func (a *FirewallApiService) FirewallPutIngress(ctx context.Context, firewallId string, mapStringinterface []map[string]interface{}) ([]InlineResponse200, *http.Response, error) {
+func (a *FirewallApiService) FirewallPutIngress(ctx _context.Context, firewallId string, mapStringinterface []map[string]interface{}) ([]InlineResponse200, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPut
+		localVarHttpMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2717,8 +2717,8 @@ func (a *FirewallApiService) FirewallPutIngress(ctx context.Context, firewallId 
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2761,7 +2761,7 @@ func (a *FirewallApiService) FirewallPutIngress(ctx context.Context, firewallId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2810,13 +2810,13 @@ func (a *FirewallApiService) FirewallPutIngress(ctx context.Context, firewallId 
 /*
 FirewallApiService Get
 Returns a single firewall
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
 @return Firewall
 */
-func (a *FirewallApiService) FirewallShow(ctx context.Context, firewallId string) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallShow(ctx _context.Context, firewallId string) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2829,8 +2829,8 @@ func (a *FirewallApiService) FirewallShow(ctx context.Context, firewallId string
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2871,7 +2871,7 @@ func (a *FirewallApiService) FirewallShow(ctx context.Context, firewallId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2920,14 +2920,14 @@ func (a *FirewallApiService) FirewallShow(ctx context.Context, firewallId string
 /*
 FirewallApiService Update
 Returns modified firewall
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param firewallId ID of firewall
  * @param firewallUpdate
 @return Firewall
 */
-func (a *FirewallApiService) FirewallUpdate(ctx context.Context, firewallId string, firewallUpdate FirewallUpdate) (Firewall, *http.Response, error) {
+func (a *FirewallApiService) FirewallUpdate(ctx _context.Context, firewallId string, firewallUpdate FirewallUpdate) (Firewall, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2940,8 +2940,8 @@ func (a *FirewallApiService) FirewallUpdate(ctx context.Context, firewallId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"firewallId"+"}", fmt.Sprintf("%v", firewallId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2984,7 +2984,7 @@ func (a *FirewallApiService) FirewallUpdate(ctx context.Context, firewallId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

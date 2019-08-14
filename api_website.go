@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type WebsiteApiService service
@@ -29,13 +29,13 @@ type WebsiteApiService service
 /*
 WebsiteApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return Website
 */
-func (a *WebsiteApiService) WebsiteActionStart(ctx context.Context, websiteId string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteActionStart(ctx _context.Context, websiteId string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -48,8 +48,8 @@ func (a *WebsiteApiService) WebsiteActionStart(ctx context.Context, websiteId st
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -90,7 +90,7 @@ func (a *WebsiteApiService) WebsiteActionStart(ctx context.Context, websiteId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,13 +139,13 @@ func (a *WebsiteApiService) WebsiteActionStart(ctx context.Context, websiteId st
 /*
 WebsiteApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return Website
 */
-func (a *WebsiteApiService) WebsiteActionStop(ctx context.Context, websiteId string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteActionStop(ctx _context.Context, websiteId string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -158,8 +158,8 @@ func (a *WebsiteApiService) WebsiteActionStop(ctx context.Context, websiteId str
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -200,7 +200,7 @@ func (a *WebsiteApiService) WebsiteActionStop(ctx context.Context, websiteId str
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,14 +249,14 @@ func (a *WebsiteApiService) WebsiteActionStop(ctx context.Context, websiteId str
 /*
 WebsiteApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websiteActionTransfer
 @return Website
 */
-func (a *WebsiteApiService) WebsiteActionTransfer(ctx context.Context, websiteId string, websiteActionTransfer WebsiteActionTransfer) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteActionTransfer(ctx _context.Context, websiteId string, websiteActionTransfer WebsiteActionTransfer) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *WebsiteApiService) WebsiteActionTransfer(ctx context.Context, websiteId
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -313,7 +313,7 @@ func (a *WebsiteApiService) WebsiteActionTransfer(ctx context.Context, websiteId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -362,14 +362,14 @@ func (a *WebsiteApiService) WebsiteActionTransfer(ctx context.Context, websiteId
 /*
 WebsiteApiService /actions/update_domain
 Action update_domain
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websiteActionUpdateDomain
 @return Website
 */
-func (a *WebsiteApiService) WebsiteActionUpdateDomain(ctx context.Context, websiteId string, websiteActionUpdateDomain WebsiteActionUpdateDomain) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteActionUpdateDomain(ctx _context.Context, websiteId string, websiteActionUpdateDomain WebsiteActionUpdateDomain) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -382,8 +382,8 @@ func (a *WebsiteApiService) WebsiteActionUpdateDomain(ctx context.Context, websi
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -426,7 +426,7 @@ func (a *WebsiteApiService) WebsiteActionUpdateDomain(ctx context.Context, websi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -475,13 +475,13 @@ func (a *WebsiteApiService) WebsiteActionUpdateDomain(ctx context.Context, websi
 /*
 WebsiteApiService Create
 Create website
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteCreate
 @return Website
 */
-func (a *WebsiteApiService) WebsiteCreate(ctx context.Context, websiteCreate WebsiteCreate) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteCreate(ctx _context.Context, websiteCreate WebsiteCreate) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -493,8 +493,8 @@ func (a *WebsiteApiService) WebsiteCreate(ctx context.Context, websiteCreate Web
 	localVarPath := a.client.cfg.BasePath + "/website"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -537,7 +537,7 @@ func (a *WebsiteApiService) WebsiteCreate(ctx context.Context, websiteCreate Web
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -585,12 +585,12 @@ func (a *WebsiteApiService) WebsiteCreate(ctx context.Context, websiteCreate Web
 
 /*
 WebsiteApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 */
-func (a *WebsiteApiService) WebsiteDelete(ctx context.Context, websiteId string) (*http.Response, error) {
+func (a *WebsiteApiService) WebsiteDelete(ctx _context.Context, websiteId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -602,8 +602,8 @@ func (a *WebsiteApiService) WebsiteDelete(ctx context.Context, websiteId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -644,7 +644,7 @@ func (a *WebsiteApiService) WebsiteDelete(ctx context.Context, websiteId string)
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -673,14 +673,14 @@ func (a *WebsiteApiService) WebsiteDelete(ctx context.Context, websiteId string)
 
 /*
 WebsiteApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param identity identity
 @return Website
 */
-func (a *WebsiteApiService) WebsiteDeleteAccessrightsIdentity(ctx context.Context, websiteId string, identity string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteAccessrightsIdentity(ctx _context.Context, websiteId string, identity string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -694,8 +694,8 @@ func (a *WebsiteApiService) WebsiteDeleteAccessrightsIdentity(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -736,7 +736,7 @@ func (a *WebsiteApiService) WebsiteDeleteAccessrightsIdentity(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -794,14 +794,14 @@ func (a *WebsiteApiService) WebsiteDeleteAccessrightsIdentity(ctx context.Contex
 
 /*
 WebsiteApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return Website
 */
-func (a *WebsiteApiService) WebsiteDeleteCredentialId(ctx context.Context, websiteId string, id string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteCredentialId(ctx _context.Context, websiteId string, id string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -815,8 +815,8 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialId(ctx context.Context, websi
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -857,7 +857,7 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialId(ctx context.Context, websi
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -915,14 +915,14 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialId(ctx context.Context, websi
 
 /*
 WebsiteApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return CredentialCertificate
 */
-func (a *WebsiteApiService) WebsiteDeleteCredentialcertificateId(ctx context.Context, websiteId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteCredentialcertificateId(ctx _context.Context, websiteId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -936,8 +936,8 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialcertificateId(ctx context.Con
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -978,7 +978,7 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialcertificateId(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1026,14 +1026,14 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialcertificateId(ctx context.Con
 
 /*
 WebsiteApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return Website
 */
-func (a *WebsiteApiService) WebsiteDeleteCredentialpasswordId(ctx context.Context, websiteId string, id string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteCredentialpasswordId(ctx _context.Context, websiteId string, id string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1047,8 +1047,8 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialpasswordId(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1089,7 +1089,7 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialpasswordId(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1147,14 +1147,14 @@ func (a *WebsiteApiService) WebsiteDeleteCredentialpasswordId(ctx context.Contex
 
 /*
 WebsiteApiService /snapshot/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return Website
 */
-func (a *WebsiteApiService) WebsiteDeleteSnapshotId(ctx context.Context, websiteId string, id string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteSnapshotId(ctx _context.Context, websiteId string, id string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1168,8 +1168,8 @@ func (a *WebsiteApiService) WebsiteDeleteSnapshotId(ctx context.Context, website
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1210,7 +1210,7 @@ func (a *WebsiteApiService) WebsiteDeleteSnapshotId(ctx context.Context, website
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1268,14 +1268,14 @@ func (a *WebsiteApiService) WebsiteDeleteSnapshotId(ctx context.Context, website
 
 /*
 WebsiteApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param key key
 @return map[string]string
 */
-func (a *WebsiteApiService) WebsiteDeleteTagKey(ctx context.Context, websiteId string, key string) (map[string]string, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteDeleteTagKey(ctx _context.Context, websiteId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1289,8 +1289,8 @@ func (a *WebsiteApiService) WebsiteDeleteTagKey(ctx context.Context, websiteId s
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1331,7 +1331,7 @@ func (a *WebsiteApiService) WebsiteDeleteTagKey(ctx context.Context, websiteId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1379,14 +1379,14 @@ func (a *WebsiteApiService) WebsiteDeleteTagKey(ctx context.Context, websiteId s
 
 /*
 WebsiteApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsiteGetCredentialId(ctx context.Context, websiteId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetCredentialId(ctx _context.Context, websiteId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1400,8 +1400,8 @@ func (a *WebsiteApiService) WebsiteGetCredentialId(ctx context.Context, websiteI
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1442,7 +1442,7 @@ func (a *WebsiteApiService) WebsiteGetCredentialId(ctx context.Context, websiteI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1490,14 +1490,14 @@ func (a *WebsiteApiService) WebsiteGetCredentialId(ctx context.Context, websiteI
 
 /*
 WebsiteApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return CredentialCertificate
 */
-func (a *WebsiteApiService) WebsiteGetCredentialcertificateId(ctx context.Context, websiteId string, id string) (CredentialCertificate, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetCredentialcertificateId(ctx _context.Context, websiteId string, id string) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1511,8 +1511,8 @@ func (a *WebsiteApiService) WebsiteGetCredentialcertificateId(ctx context.Contex
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1553,7 +1553,7 @@ func (a *WebsiteApiService) WebsiteGetCredentialcertificateId(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1601,14 +1601,14 @@ func (a *WebsiteApiService) WebsiteGetCredentialcertificateId(ctx context.Contex
 
 /*
 WebsiteApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsiteGetCredentialpasswordId(ctx context.Context, websiteId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetCredentialpasswordId(ctx _context.Context, websiteId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1622,8 +1622,8 @@ func (a *WebsiteApiService) WebsiteGetCredentialpasswordId(ctx context.Context, 
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1664,7 +1664,7 @@ func (a *WebsiteApiService) WebsiteGetCredentialpasswordId(ctx context.Context, 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1712,14 +1712,14 @@ func (a *WebsiteApiService) WebsiteGetCredentialpasswordId(ctx context.Context, 
 
 /*
 WebsiteApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param serviceId serviceId
 @return WebsiteServices
 */
-func (a *WebsiteApiService) WebsiteGetServicesServiceId(ctx context.Context, websiteId string, serviceId string) (WebsiteServices, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetServicesServiceId(ctx _context.Context, websiteId string, serviceId string) (WebsiteServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1733,8 +1733,8 @@ func (a *WebsiteApiService) WebsiteGetServicesServiceId(ctx context.Context, web
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1775,7 +1775,7 @@ func (a *WebsiteApiService) WebsiteGetServicesServiceId(ctx context.Context, web
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1823,13 +1823,13 @@ func (a *WebsiteApiService) WebsiteGetServicesServiceId(ctx context.Context, web
 
 /*
 WebsiteApiService /snapshot/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
 */
-func (a *WebsiteApiService) WebsiteGetSnapshotId(ctx context.Context, websiteId string, id string) (*http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetSnapshotId(ctx _context.Context, websiteId string, id string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1842,8 +1842,8 @@ func (a *WebsiteApiService) WebsiteGetSnapshotId(ctx context.Context, websiteId 
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1884,7 +1884,7 @@ func (a *WebsiteApiService) WebsiteGetSnapshotId(ctx context.Context, websiteId 
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -1913,12 +1913,12 @@ func (a *WebsiteApiService) WebsiteGetSnapshotId(ctx context.Context, websiteId 
 
 /*
 WebsiteApiService /snapshot/:id/download
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 */
-func (a *WebsiteApiService) WebsiteGetSnapshotIddownload(ctx context.Context, websiteId string) (*http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetSnapshotIddownload(ctx _context.Context, websiteId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1930,8 +1930,8 @@ func (a *WebsiteApiService) WebsiteGetSnapshotIddownload(ctx context.Context, we
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1972,7 +1972,7 @@ func (a *WebsiteApiService) WebsiteGetSnapshotIddownload(ctx context.Context, we
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -2001,13 +2001,13 @@ func (a *WebsiteApiService) WebsiteGetSnapshotIddownload(ctx context.Context, we
 
 /*
 WebsiteApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return map[string]string
 */
-func (a *WebsiteApiService) WebsiteGetTag(ctx context.Context, websiteId string) (map[string]string, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteGetTag(ctx _context.Context, websiteId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2020,8 +2020,8 @@ func (a *WebsiteApiService) WebsiteGetTag(ctx context.Context, websiteId string)
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2062,7 +2062,7 @@ func (a *WebsiteApiService) WebsiteGetTag(ctx context.Context, websiteId string)
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2111,7 +2111,7 @@ func (a *WebsiteApiService) WebsiteGetTag(ctx context.Context, websiteId string)
 /*
 WebsiteApiService List
 List website
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *WebsiteListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -2123,9 +2123,9 @@ type WebsiteListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *WebsiteApiService) WebsiteList(ctx context.Context, localVarOptionals *WebsiteListOpts) ([]Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteList(ctx _context.Context, localVarOptionals *WebsiteListOpts) ([]Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2137,8 +2137,8 @@ func (a *WebsiteApiService) WebsiteList(ctx context.Context, localVarOptionals *
 	localVarPath := a.client.cfg.BasePath + "/website"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -2185,7 +2185,7 @@ func (a *WebsiteApiService) WebsiteList(ctx context.Context, localVarOptionals *
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2233,13 +2233,13 @@ func (a *WebsiteApiService) WebsiteList(ctx context.Context, localVarOptionals *
 
 /*
 WebsiteApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []string
 */
-func (a *WebsiteApiService) WebsiteListAccessrights(ctx context.Context, websiteId string) ([]string, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListAccessrights(ctx _context.Context, websiteId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2252,8 +2252,8 @@ func (a *WebsiteApiService) WebsiteListAccessrights(ctx context.Context, website
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2294,7 +2294,7 @@ func (a *WebsiteApiService) WebsiteListAccessrights(ctx context.Context, website
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2342,13 +2342,13 @@ func (a *WebsiteApiService) WebsiteListAccessrights(ctx context.Context, website
 
 /*
 WebsiteApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []CredentialPassword
 */
-func (a *WebsiteApiService) WebsiteListCredential(ctx context.Context, websiteId string) ([]CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListCredential(ctx _context.Context, websiteId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2361,8 +2361,8 @@ func (a *WebsiteApiService) WebsiteListCredential(ctx context.Context, websiteId
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2403,7 +2403,7 @@ func (a *WebsiteApiService) WebsiteListCredential(ctx context.Context, websiteId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2451,13 +2451,13 @@ func (a *WebsiteApiService) WebsiteListCredential(ctx context.Context, websiteId
 
 /*
 WebsiteApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []CredentialCertificate
 */
-func (a *WebsiteApiService) WebsiteListCredentialcertificate(ctx context.Context, websiteId string) ([]CredentialCertificate, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListCredentialcertificate(ctx _context.Context, websiteId string) ([]CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2470,8 +2470,8 @@ func (a *WebsiteApiService) WebsiteListCredentialcertificate(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2512,7 +2512,7 @@ func (a *WebsiteApiService) WebsiteListCredentialcertificate(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2560,13 +2560,13 @@ func (a *WebsiteApiService) WebsiteListCredentialcertificate(ctx context.Context
 
 /*
 WebsiteApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []CredentialPassword
 */
-func (a *WebsiteApiService) WebsiteListCredentialpassword(ctx context.Context, websiteId string) ([]CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListCredentialpassword(ctx _context.Context, websiteId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2579,8 +2579,8 @@ func (a *WebsiteApiService) WebsiteListCredentialpassword(ctx context.Context, w
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2621,7 +2621,7 @@ func (a *WebsiteApiService) WebsiteListCredentialpassword(ctx context.Context, w
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2669,13 +2669,13 @@ func (a *WebsiteApiService) WebsiteListCredentialpassword(ctx context.Context, w
 
 /*
 WebsiteApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []Event
 */
-func (a *WebsiteApiService) WebsiteListQueue(ctx context.Context, websiteId string) ([]Event, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListQueue(ctx _context.Context, websiteId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2688,8 +2688,8 @@ func (a *WebsiteApiService) WebsiteListQueue(ctx context.Context, websiteId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2730,7 +2730,7 @@ func (a *WebsiteApiService) WebsiteListQueue(ctx context.Context, websiteId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2778,13 +2778,13 @@ func (a *WebsiteApiService) WebsiteListQueue(ctx context.Context, websiteId stri
 
 /*
 WebsiteApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return []WebsiteServices
 */
-func (a *WebsiteApiService) WebsiteListServices(ctx context.Context, websiteId string) ([]WebsiteServices, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteListServices(ctx _context.Context, websiteId string) ([]WebsiteServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2797,8 +2797,8 @@ func (a *WebsiteApiService) WebsiteListServices(ctx context.Context, websiteId s
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2839,7 +2839,7 @@ func (a *WebsiteApiService) WebsiteListServices(ctx context.Context, websiteId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2887,12 +2887,12 @@ func (a *WebsiteApiService) WebsiteListServices(ctx context.Context, websiteId s
 
 /*
 WebsiteApiService /snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 */
-func (a *WebsiteApiService) WebsiteListSnapshot(ctx context.Context, websiteId string) (*http.Response, error) {
+func (a *WebsiteApiService) WebsiteListSnapshot(ctx _context.Context, websiteId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2904,8 +2904,8 @@ func (a *WebsiteApiService) WebsiteListSnapshot(ctx context.Context, websiteId s
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2946,7 +2946,7 @@ func (a *WebsiteApiService) WebsiteListSnapshot(ctx context.Context, websiteId s
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -2975,15 +2975,15 @@ func (a *WebsiteApiService) WebsiteListSnapshot(ctx context.Context, websiteId s
 
 /*
 WebsiteApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
  * @param websitePatchCredentialId
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsitePatchCredentialId(ctx context.Context, websiteId string, id string, websitePatchCredentialId WebsitePatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePatchCredentialId(ctx _context.Context, websiteId string, id string, websitePatchCredentialId WebsitePatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2997,8 +2997,8 @@ func (a *WebsiteApiService) WebsitePatchCredentialId(ctx context.Context, websit
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3041,7 +3041,7 @@ func (a *WebsiteApiService) WebsitePatchCredentialId(ctx context.Context, websit
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3089,15 +3089,15 @@ func (a *WebsiteApiService) WebsitePatchCredentialId(ctx context.Context, websit
 
 /*
 WebsiteApiService /credential/certificate/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
  * @param websitePatchCredentialcertificateId
 @return CredentialCertificate
 */
-func (a *WebsiteApiService) WebsitePatchCredentialcertificateId(ctx context.Context, websiteId string, id string, websitePatchCredentialcertificateId WebsitePatchCredentialcertificateId) (CredentialCertificate, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePatchCredentialcertificateId(ctx _context.Context, websiteId string, id string, websitePatchCredentialcertificateId WebsitePatchCredentialcertificateId) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3111,8 +3111,8 @@ func (a *WebsiteApiService) WebsitePatchCredentialcertificateId(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3155,7 +3155,7 @@ func (a *WebsiteApiService) WebsitePatchCredentialcertificateId(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3203,15 +3203,15 @@ func (a *WebsiteApiService) WebsitePatchCredentialcertificateId(ctx context.Cont
 
 /*
 WebsiteApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param id id
  * @param websitePatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsitePatchCredentialpasswordId(ctx context.Context, websiteId string, id string, websitePatchCredentialpasswordId WebsitePatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePatchCredentialpasswordId(ctx _context.Context, websiteId string, id string, websitePatchCredentialpasswordId WebsitePatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3225,8 +3225,8 @@ func (a *WebsiteApiService) WebsitePatchCredentialpasswordId(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3269,7 +3269,7 @@ func (a *WebsiteApiService) WebsitePatchCredentialpasswordId(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3317,14 +3317,14 @@ func (a *WebsiteApiService) WebsitePatchCredentialpasswordId(ctx context.Context
 
 /*
 WebsiteApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param requestBody
 @return map[string]string
 */
-func (a *WebsiteApiService) WebsitePatchTag(ctx context.Context, websiteId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePatchTag(ctx _context.Context, websiteId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3337,8 +3337,8 @@ func (a *WebsiteApiService) WebsitePatchTag(ctx context.Context, websiteId strin
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3381,7 +3381,7 @@ func (a *WebsiteApiService) WebsitePatchTag(ctx context.Context, websiteId strin
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3429,14 +3429,14 @@ func (a *WebsiteApiService) WebsitePatchTag(ctx context.Context, websiteId strin
 
 /*
 WebsiteApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websitePostAccessrights
 @return Website
 */
-func (a *WebsiteApiService) WebsitePostAccessrights(ctx context.Context, websiteId string, websitePostAccessrights WebsitePostAccessrights) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePostAccessrights(ctx _context.Context, websiteId string, websitePostAccessrights WebsitePostAccessrights) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3449,8 +3449,8 @@ func (a *WebsiteApiService) WebsitePostAccessrights(ctx context.Context, website
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3493,7 +3493,7 @@ func (a *WebsiteApiService) WebsitePostAccessrights(ctx context.Context, website
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3551,14 +3551,14 @@ func (a *WebsiteApiService) WebsitePostAccessrights(ctx context.Context, website
 
 /*
 WebsiteApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websitePostCredential
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsitePostCredential(ctx context.Context, websiteId string, websitePostCredential WebsitePostCredential) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePostCredential(ctx _context.Context, websiteId string, websitePostCredential WebsitePostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3571,8 +3571,8 @@ func (a *WebsiteApiService) WebsitePostCredential(ctx context.Context, websiteId
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3615,7 +3615,7 @@ func (a *WebsiteApiService) WebsitePostCredential(ctx context.Context, websiteId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3663,14 +3663,14 @@ func (a *WebsiteApiService) WebsitePostCredential(ctx context.Context, websiteId
 
 /*
 WebsiteApiService /credential/certificate
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websitePostCredentialcertificate
 @return CredentialCertificate
 */
-func (a *WebsiteApiService) WebsitePostCredentialcertificate(ctx context.Context, websiteId string, websitePostCredentialcertificate WebsitePostCredentialcertificate) (CredentialCertificate, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePostCredentialcertificate(ctx _context.Context, websiteId string, websitePostCredentialcertificate WebsitePostCredentialcertificate) (CredentialCertificate, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3683,8 +3683,8 @@ func (a *WebsiteApiService) WebsitePostCredentialcertificate(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3727,7 +3727,7 @@ func (a *WebsiteApiService) WebsitePostCredentialcertificate(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3775,14 +3775,14 @@ func (a *WebsiteApiService) WebsitePostCredentialcertificate(ctx context.Context
 
 /*
 WebsiteApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websitePostCredentialpassword
 @return CredentialPassword
 */
-func (a *WebsiteApiService) WebsitePostCredentialpassword(ctx context.Context, websiteId string, websitePostCredentialpassword WebsitePostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePostCredentialpassword(ctx _context.Context, websiteId string, websitePostCredentialpassword WebsitePostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3795,8 +3795,8 @@ func (a *WebsiteApiService) WebsitePostCredentialpassword(ctx context.Context, w
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3839,7 +3839,7 @@ func (a *WebsiteApiService) WebsitePostCredentialpassword(ctx context.Context, w
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -3887,14 +3887,14 @@ func (a *WebsiteApiService) WebsitePostCredentialpassword(ctx context.Context, w
 
 /*
 WebsiteApiService /snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websitePostSnapshot
 @return Website
 */
-func (a *WebsiteApiService) WebsitePostSnapshot(ctx context.Context, websiteId string, websitePostSnapshot WebsitePostSnapshot) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsitePostSnapshot(ctx _context.Context, websiteId string, websitePostSnapshot WebsitePostSnapshot) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -3907,8 +3907,8 @@ func (a *WebsiteApiService) WebsitePostSnapshot(ctx context.Context, websiteId s
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3951,7 +3951,7 @@ func (a *WebsiteApiService) WebsitePostSnapshot(ctx context.Context, websiteId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -4010,13 +4010,13 @@ func (a *WebsiteApiService) WebsitePostSnapshot(ctx context.Context, websiteId s
 /*
 WebsiteApiService Get
 Returns a single website
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
 @return Website
 */
-func (a *WebsiteApiService) WebsiteShow(ctx context.Context, websiteId string) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteShow(ctx _context.Context, websiteId string) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -4029,8 +4029,8 @@ func (a *WebsiteApiService) WebsiteShow(ctx context.Context, websiteId string) (
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -4071,7 +4071,7 @@ func (a *WebsiteApiService) WebsiteShow(ctx context.Context, websiteId string) (
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -4120,14 +4120,14 @@ func (a *WebsiteApiService) WebsiteShow(ctx context.Context, websiteId string) (
 /*
 WebsiteApiService Update
 Returns modified website
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param websiteId ID of website
  * @param websiteUpdate
 @return Website
 */
-func (a *WebsiteApiService) WebsiteUpdate(ctx context.Context, websiteId string, websiteUpdate WebsiteUpdate) (Website, *http.Response, error) {
+func (a *WebsiteApiService) WebsiteUpdate(ctx _context.Context, websiteId string, websiteUpdate WebsiteUpdate) (Website, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -4140,8 +4140,8 @@ func (a *WebsiteApiService) WebsiteUpdate(ctx context.Context, websiteId string,
 	localVarPath = strings.Replace(localVarPath, "{"+"websiteId"+"}", fmt.Sprintf("%v", websiteId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -4184,7 +4184,7 @@ func (a *WebsiteApiService) WebsiteUpdate(ctx context.Context, websiteId string,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type DatabaseApiService service
@@ -29,13 +29,13 @@ type DatabaseApiService service
 /*
 DatabaseApiService /actions/start
 Action start
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return Database
 */
-func (a *DatabaseApiService) DatabaseActionStart(ctx context.Context, databaseId string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseActionStart(ctx _context.Context, databaseId string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -48,8 +48,8 @@ func (a *DatabaseApiService) DatabaseActionStart(ctx context.Context, databaseId
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -90,7 +90,7 @@ func (a *DatabaseApiService) DatabaseActionStart(ctx context.Context, databaseId
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,13 +139,13 @@ func (a *DatabaseApiService) DatabaseActionStart(ctx context.Context, databaseId
 /*
 DatabaseApiService /actions/stop
 Action stop
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return Database
 */
-func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseActionStop(ctx _context.Context, databaseId string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -158,8 +158,8 @@ func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId 
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -200,7 +200,7 @@ func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -249,14 +249,14 @@ func (a *DatabaseApiService) DatabaseActionStop(ctx context.Context, databaseId 
 /*
 DatabaseApiService /actions/transfer
 Action transfer
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param databaseActionTransfer
 @return Database
 */
-func (a *DatabaseApiService) DatabaseActionTransfer(ctx context.Context, databaseId string, databaseActionTransfer DatabaseActionTransfer) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseActionTransfer(ctx _context.Context, databaseId string, databaseActionTransfer DatabaseActionTransfer) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -269,8 +269,8 @@ func (a *DatabaseApiService) DatabaseActionTransfer(ctx context.Context, databas
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -313,7 +313,7 @@ func (a *DatabaseApiService) DatabaseActionTransfer(ctx context.Context, databas
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -362,13 +362,13 @@ func (a *DatabaseApiService) DatabaseActionTransfer(ctx context.Context, databas
 /*
 DatabaseApiService Create
 Create database
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseCreate
 @return Database
 */
-func (a *DatabaseApiService) DatabaseCreate(ctx context.Context, databaseCreate DatabaseCreate) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseCreate(ctx _context.Context, databaseCreate DatabaseCreate) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -380,8 +380,8 @@ func (a *DatabaseApiService) DatabaseCreate(ctx context.Context, databaseCreate 
 	localVarPath := a.client.cfg.BasePath + "/database"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -424,7 +424,7 @@ func (a *DatabaseApiService) DatabaseCreate(ctx context.Context, databaseCreate 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -472,12 +472,12 @@ func (a *DatabaseApiService) DatabaseCreate(ctx context.Context, databaseCreate 
 
 /*
 DatabaseApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 */
-func (a *DatabaseApiService) DatabaseDelete(ctx context.Context, databaseId string) (*http.Response, error) {
+func (a *DatabaseApiService) DatabaseDelete(ctx _context.Context, databaseId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -489,8 +489,8 @@ func (a *DatabaseApiService) DatabaseDelete(ctx context.Context, databaseId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -531,7 +531,7 @@ func (a *DatabaseApiService) DatabaseDelete(ctx context.Context, databaseId stri
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -560,14 +560,14 @@ func (a *DatabaseApiService) DatabaseDelete(ctx context.Context, databaseId stri
 
 /*
 DatabaseApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param identity identity
 @return Database
 */
-func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx context.Context, databaseId string, identity string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx _context.Context, databaseId string, identity string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -581,8 +581,8 @@ func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -623,7 +623,7 @@ func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -681,14 +681,14 @@ func (a *DatabaseApiService) DatabaseDeleteAccessrightsIdentity(ctx context.Cont
 
 /*
 DatabaseApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
 @return Database
 */
-func (a *DatabaseApiService) DatabaseDeleteCredentialId(ctx context.Context, databaseId string, id string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseDeleteCredentialId(ctx _context.Context, databaseId string, id string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -702,8 +702,8 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialId(ctx context.Context, dat
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -744,7 +744,7 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialId(ctx context.Context, dat
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -802,14 +802,14 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialId(ctx context.Context, dat
 
 /*
 DatabaseApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
 @return Database
 */
-func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx context.Context, databaseId string, id string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx _context.Context, databaseId string, id string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -823,8 +823,8 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -865,7 +865,7 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -923,14 +923,14 @@ func (a *DatabaseApiService) DatabaseDeleteCredentialpasswordId(ctx context.Cont
 
 /*
 DatabaseApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param key key
 @return map[string]string
 */
-func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx context.Context, databaseId string, key string) (map[string]string, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx _context.Context, databaseId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -944,8 +944,8 @@ func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx context.Context, databaseI
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -986,7 +986,7 @@ func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx context.Context, databaseI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1034,14 +1034,14 @@ func (a *DatabaseApiService) DatabaseDeleteTagKey(ctx context.Context, databaseI
 
 /*
 DatabaseApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabaseGetCredentialId(ctx context.Context, databaseId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseGetCredentialId(ctx _context.Context, databaseId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1055,8 +1055,8 @@ func (a *DatabaseApiService) DatabaseGetCredentialId(ctx context.Context, databa
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1097,7 +1097,7 @@ func (a *DatabaseApiService) DatabaseGetCredentialId(ctx context.Context, databa
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1145,14 +1145,14 @@ func (a *DatabaseApiService) DatabaseGetCredentialId(ctx context.Context, databa
 
 /*
 DatabaseApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx context.Context, databaseId string, id string) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx _context.Context, databaseId string, id string) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1166,8 +1166,8 @@ func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx context.Context
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1208,7 +1208,7 @@ func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx context.Context
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1256,14 +1256,14 @@ func (a *DatabaseApiService) DatabaseGetCredentialpasswordId(ctx context.Context
 
 /*
 DatabaseApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param serviceId serviceId
 @return DatabaseServices
 */
-func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx context.Context, databaseId string, serviceId string) (DatabaseServices, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx _context.Context, databaseId string, serviceId string) (DatabaseServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1277,8 +1277,8 @@ func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx context.Context, d
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1319,7 +1319,7 @@ func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx context.Context, d
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1367,13 +1367,13 @@ func (a *DatabaseApiService) DatabaseGetServicesServiceId(ctx context.Context, d
 
 /*
 DatabaseApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return map[string]string
 */
-func (a *DatabaseApiService) DatabaseGetTag(ctx context.Context, databaseId string) (map[string]string, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseGetTag(ctx _context.Context, databaseId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1386,8 +1386,8 @@ func (a *DatabaseApiService) DatabaseGetTag(ctx context.Context, databaseId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1428,7 +1428,7 @@ func (a *DatabaseApiService) DatabaseGetTag(ctx context.Context, databaseId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1477,7 +1477,7 @@ func (a *DatabaseApiService) DatabaseGetTag(ctx context.Context, databaseId stri
 /*
 DatabaseApiService List
 List database
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *DatabaseListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Tag" (optional.Interface of map[string]string) -  Filter by tag
@@ -1489,9 +1489,9 @@ type DatabaseListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *DatabaseApiService) DatabaseList(ctx context.Context, localVarOptionals *DatabaseListOpts) ([]Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseList(ctx _context.Context, localVarOptionals *DatabaseListOpts) ([]Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1503,8 +1503,8 @@ func (a *DatabaseApiService) DatabaseList(ctx context.Context, localVarOptionals
 	localVarPath := a.client.cfg.BasePath + "/database"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -1551,7 +1551,7 @@ func (a *DatabaseApiService) DatabaseList(ctx context.Context, localVarOptionals
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1599,13 +1599,13 @@ func (a *DatabaseApiService) DatabaseList(ctx context.Context, localVarOptionals
 
 /*
 DatabaseApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return []string
 */
-func (a *DatabaseApiService) DatabaseListAccessrights(ctx context.Context, databaseId string) ([]string, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseListAccessrights(ctx _context.Context, databaseId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1618,8 +1618,8 @@ func (a *DatabaseApiService) DatabaseListAccessrights(ctx context.Context, datab
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1660,7 +1660,7 @@ func (a *DatabaseApiService) DatabaseListAccessrights(ctx context.Context, datab
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1708,13 +1708,13 @@ func (a *DatabaseApiService) DatabaseListAccessrights(ctx context.Context, datab
 
 /*
 DatabaseApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return []CredentialPassword
 */
-func (a *DatabaseApiService) DatabaseListCredential(ctx context.Context, databaseId string) ([]CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseListCredential(ctx _context.Context, databaseId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1727,8 +1727,8 @@ func (a *DatabaseApiService) DatabaseListCredential(ctx context.Context, databas
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1769,7 +1769,7 @@ func (a *DatabaseApiService) DatabaseListCredential(ctx context.Context, databas
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1817,13 +1817,13 @@ func (a *DatabaseApiService) DatabaseListCredential(ctx context.Context, databas
 
 /*
 DatabaseApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return []CredentialPassword
 */
-func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx context.Context, databaseId string) ([]CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx _context.Context, databaseId string) ([]CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1836,8 +1836,8 @@ func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1878,7 +1878,7 @@ func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1926,13 +1926,13 @@ func (a *DatabaseApiService) DatabaseListCredentialpassword(ctx context.Context,
 
 /*
 DatabaseApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return []Event
 */
-func (a *DatabaseApiService) DatabaseListQueue(ctx context.Context, databaseId string) ([]Event, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseListQueue(ctx _context.Context, databaseId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1945,8 +1945,8 @@ func (a *DatabaseApiService) DatabaseListQueue(ctx context.Context, databaseId s
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1987,7 +1987,7 @@ func (a *DatabaseApiService) DatabaseListQueue(ctx context.Context, databaseId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2035,13 +2035,13 @@ func (a *DatabaseApiService) DatabaseListQueue(ctx context.Context, databaseId s
 
 /*
 DatabaseApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return []DatabaseServices
 */
-func (a *DatabaseApiService) DatabaseListServices(ctx context.Context, databaseId string) ([]DatabaseServices, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseListServices(ctx _context.Context, databaseId string) ([]DatabaseServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2054,8 +2054,8 @@ func (a *DatabaseApiService) DatabaseListServices(ctx context.Context, databaseI
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2096,7 +2096,7 @@ func (a *DatabaseApiService) DatabaseListServices(ctx context.Context, databaseI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2144,15 +2144,15 @@ func (a *DatabaseApiService) DatabaseListServices(ctx context.Context, databaseI
 
 /*
 DatabaseApiService /credential/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
  * @param databasePatchCredentialId
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabasePatchCredentialId(ctx context.Context, databaseId string, id string, databasePatchCredentialId DatabasePatchCredentialId) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePatchCredentialId(ctx _context.Context, databaseId string, id string, databasePatchCredentialId DatabasePatchCredentialId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2166,8 +2166,8 @@ func (a *DatabaseApiService) DatabasePatchCredentialId(ctx context.Context, data
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2210,7 +2210,7 @@ func (a *DatabaseApiService) DatabasePatchCredentialId(ctx context.Context, data
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2258,15 +2258,15 @@ func (a *DatabaseApiService) DatabasePatchCredentialId(ctx context.Context, data
 
 /*
 DatabaseApiService /credential/password/:id
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param id id
  * @param databasePatchCredentialpasswordId
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx context.Context, databaseId string, id string, databasePatchCredentialpasswordId DatabasePatchCredentialpasswordId) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx _context.Context, databaseId string, id string, databasePatchCredentialpasswordId DatabasePatchCredentialpasswordId) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2280,8 +2280,8 @@ func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx context.Conte
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2324,7 +2324,7 @@ func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx context.Conte
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2372,14 +2372,14 @@ func (a *DatabaseApiService) DatabasePatchCredentialpasswordId(ctx context.Conte
 
 /*
 DatabaseApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param requestBody
 @return map[string]string
 */
-func (a *DatabaseApiService) DatabasePatchTag(ctx context.Context, databaseId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePatchTag(ctx _context.Context, databaseId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2392,8 +2392,8 @@ func (a *DatabaseApiService) DatabasePatchTag(ctx context.Context, databaseId st
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2436,7 +2436,7 @@ func (a *DatabaseApiService) DatabasePatchTag(ctx context.Context, databaseId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2484,14 +2484,14 @@ func (a *DatabaseApiService) DatabasePatchTag(ctx context.Context, databaseId st
 
 /*
 DatabaseApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param databasePostAccessrights
 @return Database
 */
-func (a *DatabaseApiService) DatabasePostAccessrights(ctx context.Context, databaseId string, databasePostAccessrights DatabasePostAccessrights) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePostAccessrights(ctx _context.Context, databaseId string, databasePostAccessrights DatabasePostAccessrights) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2504,8 +2504,8 @@ func (a *DatabaseApiService) DatabasePostAccessrights(ctx context.Context, datab
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2548,7 +2548,7 @@ func (a *DatabaseApiService) DatabasePostAccessrights(ctx context.Context, datab
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2606,14 +2606,14 @@ func (a *DatabaseApiService) DatabasePostAccessrights(ctx context.Context, datab
 
 /*
 DatabaseApiService /credential
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param databasePostCredential
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabasePostCredential(ctx context.Context, databaseId string, databasePostCredential DatabasePostCredential) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePostCredential(ctx _context.Context, databaseId string, databasePostCredential DatabasePostCredential) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2626,8 +2626,8 @@ func (a *DatabaseApiService) DatabasePostCredential(ctx context.Context, databas
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2670,7 +2670,7 @@ func (a *DatabaseApiService) DatabasePostCredential(ctx context.Context, databas
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2718,14 +2718,14 @@ func (a *DatabaseApiService) DatabasePostCredential(ctx context.Context, databas
 
 /*
 DatabaseApiService /credential/password
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param databasePostCredentialpassword
 @return CredentialPassword
 */
-func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx context.Context, databaseId string, databasePostCredentialpassword DatabasePostCredentialpassword) (CredentialPassword, *http.Response, error) {
+func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx _context.Context, databaseId string, databasePostCredentialpassword DatabasePostCredentialpassword) (CredentialPassword, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2738,8 +2738,8 @@ func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx context.Context,
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -2782,7 +2782,7 @@ func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx context.Context,
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2831,13 +2831,13 @@ func (a *DatabaseApiService) DatabasePostCredentialpassword(ctx context.Context,
 /*
 DatabaseApiService Get
 Returns a single database
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
 @return Database
 */
-func (a *DatabaseApiService) DatabaseShow(ctx context.Context, databaseId string) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseShow(ctx _context.Context, databaseId string) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2850,8 +2850,8 @@ func (a *DatabaseApiService) DatabaseShow(ctx context.Context, databaseId string
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -2892,7 +2892,7 @@ func (a *DatabaseApiService) DatabaseShow(ctx context.Context, databaseId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -2941,14 +2941,14 @@ func (a *DatabaseApiService) DatabaseShow(ctx context.Context, databaseId string
 /*
 DatabaseApiService Update
 Returns modified database
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param databaseId ID of database
  * @param databaseUpdate
 @return Database
 */
-func (a *DatabaseApiService) DatabaseUpdate(ctx context.Context, databaseId string, databaseUpdate DatabaseUpdate) (Database, *http.Response, error) {
+func (a *DatabaseApiService) DatabaseUpdate(ctx _context.Context, databaseId string, databaseUpdate DatabaseUpdate) (Database, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -2961,8 +2961,8 @@ func (a *DatabaseApiService) DatabaseUpdate(ctx context.Context, databaseId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"databaseId"+"}", fmt.Sprintf("%v", databaseId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3005,7 +3005,7 @@ func (a *DatabaseApiService) DatabaseUpdate(ctx context.Context, databaseId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err

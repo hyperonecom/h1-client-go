@@ -10,10 +10,10 @@
 package openapi
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"net/url"
+	_context "context"
+	_ioutil "io/ioutil"
+	_nethttp "net/http"
+	_neturl "net/url"
 	"fmt"
 	"strings"
 	"github.com/antihax/optional"
@@ -21,7 +21,7 @@ import (
 
 // Linger please
 var (
-	_ context.Context
+	_ _context.Context
 )
 
 type SnapshotApiService service
@@ -29,13 +29,13 @@ type SnapshotApiService service
 /*
 SnapshotApiService Create
 Create snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotCreate
 @return Snapshot
 */
-func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate SnapshotCreate) (Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotCreate(ctx _context.Context, snapshotCreate SnapshotCreate) (Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -47,8 +47,8 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 	localVarPath := a.client.cfg.BasePath + "/snapshot"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -91,7 +91,7 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -139,12 +139,12 @@ func (a *SnapshotApiService) SnapshotCreate(ctx context.Context, snapshotCreate 
 
 /*
 SnapshotApiService Delete
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 */
-func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId string) (*http.Response, error) {
+func (a *SnapshotApiService) SnapshotDelete(ctx _context.Context, snapshotId string) (*_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -156,8 +156,8 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -198,7 +198,7 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
@@ -227,14 +227,14 @@ func (a *SnapshotApiService) SnapshotDelete(ctx context.Context, snapshotId stri
 
 /*
 SnapshotApiService /accessrights/:identity
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param identity identity
 @return Snapshot
 */
-func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Context, snapshotId string, identity string) (Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx _context.Context, snapshotId string, identity string) (Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -248,8 +248,8 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -290,7 +290,7 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -348,14 +348,14 @@ func (a *SnapshotApiService) SnapshotDeleteAccessrightsIdentity(ctx context.Cont
 
 /*
 SnapshotApiService /tag/:key
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param key key
 @return map[string]string
 */
-func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotId string, key string) (map[string]string, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx _context.Context, snapshotId string, key string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodDelete
+		localVarHttpMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -369,8 +369,8 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -411,7 +411,7 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -459,14 +459,14 @@ func (a *SnapshotApiService) SnapshotDeleteTagKey(ctx context.Context, snapshotI
 
 /*
 SnapshotApiService /services/:serviceId
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param serviceId serviceId
 @return SnapshotServices
 */
-func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, snapshotId string, serviceId string) (SnapshotServices, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx _context.Context, snapshotId string, serviceId string) (SnapshotServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -480,8 +480,8 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -522,7 +522,7 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -570,13 +570,13 @@ func (a *SnapshotApiService) SnapshotGetServicesServiceId(ctx context.Context, s
 
 /*
 SnapshotApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 @return map[string]string
 */
-func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId string) (map[string]string, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotGetTag(ctx _context.Context, snapshotId string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -589,8 +589,8 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -631,7 +631,7 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -680,7 +680,7 @@ func (a *SnapshotApiService) SnapshotGetTag(ctx context.Context, snapshotId stri
 /*
 SnapshotApiService List
 List snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *SnapshotListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Vault" (optional.String) -  Filter by vault
@@ -694,9 +694,9 @@ type SnapshotListOpts struct {
 	Tag optional.Interface
 }
 
-func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals *SnapshotListOpts) ([]Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotList(ctx _context.Context, localVarOptionals *SnapshotListOpts) ([]Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -708,8 +708,8 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 	localVarPath := a.client.cfg.BasePath + "/snapshot"
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
@@ -759,7 +759,7 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -807,13 +807,13 @@ func (a *SnapshotApiService) SnapshotList(ctx context.Context, localVarOptionals
 
 /*
 SnapshotApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 @return []string
 */
-func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snapshotId string) ([]string, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotListAccessrights(ctx _context.Context, snapshotId string) ([]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -826,8 +826,8 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -868,7 +868,7 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -916,13 +916,13 @@ func (a *SnapshotApiService) SnapshotListAccessrights(ctx context.Context, snaps
 
 /*
 SnapshotApiService /queue
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 @return []Event
 */
-func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId string) ([]Event, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotListQueue(ctx _context.Context, snapshotId string) ([]Event, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -935,8 +935,8 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -977,7 +977,7 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1025,13 +1025,13 @@ func (a *SnapshotApiService) SnapshotListQueue(ctx context.Context, snapshotId s
 
 /*
 SnapshotApiService /services
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 @return []SnapshotServices
 */
-func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotId string) ([]SnapshotServices, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotListServices(ctx _context.Context, snapshotId string) ([]SnapshotServices, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1044,8 +1044,8 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1086,7 +1086,7 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1134,14 +1134,14 @@ func (a *SnapshotApiService) SnapshotListServices(ctx context.Context, snapshotI
 
 /*
 SnapshotApiService /tag
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param requestBody
 @return map[string]string
 */
-func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId string, requestBody map[string]string) (map[string]string, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotPatchTag(ctx _context.Context, snapshotId string, requestBody map[string]string) (map[string]string, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1154,8 +1154,8 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1198,7 +1198,7 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1246,14 +1246,14 @@ func (a *SnapshotApiService) SnapshotPatchTag(ctx context.Context, snapshotId st
 
 /*
 SnapshotApiService /accessrights
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param snapshotPostAccessrights
 @return Snapshot
 */
-func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snapshotId string, snapshotPostAccessrights SnapshotPostAccessrights) (Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotPostAccessrights(ctx _context.Context, snapshotId string, snapshotPostAccessrights SnapshotPostAccessrights) (Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPost
+		localVarHttpMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1266,8 +1266,8 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1310,7 +1310,7 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1369,13 +1369,13 @@ func (a *SnapshotApiService) SnapshotPostAccessrights(ctx context.Context, snaps
 /*
 SnapshotApiService Get
 Returns a single snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
 @return Snapshot
 */
-func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string) (Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotShow(ctx _context.Context, snapshotId string) (Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodGet
+		localVarHttpMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1388,8 +1388,8 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
@@ -1430,7 +1430,7 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
@@ -1479,14 +1479,14 @@ func (a *SnapshotApiService) SnapshotShow(ctx context.Context, snapshotId string
 /*
 SnapshotApiService Update
 Returns modified snapshot
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param snapshotId ID of snapshot
  * @param snapshotUpdate
 @return Snapshot
 */
-func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId string, snapshotUpdate SnapshotUpdate) (Snapshot, *http.Response, error) {
+func (a *SnapshotApiService) SnapshotUpdate(ctx _context.Context, snapshotId string, snapshotUpdate SnapshotUpdate) (Snapshot, *_nethttp.Response, error) {
 	var (
-		localVarHttpMethod   = http.MethodPatch
+		localVarHttpMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -1499,8 +1499,8 @@ func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId stri
 	localVarPath = strings.Replace(localVarPath, "{"+"snapshotId"+"}", fmt.Sprintf("%v", snapshotId), -1)
 
 	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -1543,7 +1543,7 @@ func (a *SnapshotApiService) SnapshotUpdate(ctx context.Context, snapshotId stri
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarBody, err := _ioutil.ReadAll(localVarHttpResponse.Body)
 	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
