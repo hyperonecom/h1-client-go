@@ -9,6 +9,7 @@
 
 package openapi
 
+// NetadpActionFirewallAdd struct for NetadpActionFirewallAdd
 type NetadpActionFirewallAdd struct {
 	Firewall string `json:"firewall"`
 }

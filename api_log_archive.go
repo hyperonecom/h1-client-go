@@ -11,12 +11,12 @@ package openapi
 
 import (
 	_context "context"
+	"fmt"
+	"github.com/antihax/optional"
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"fmt"
 	"strings"
-	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -46,7 +46,7 @@ func (a *LogArchiveApiService) LogArchiveActionTransfer(ctx _context.Context, lo
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/actions/transfer"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -266,7 +266,7 @@ func (a *LogArchiveApiService) LogArchiveDelete(ctx _context.Context, logArchive
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -357,8 +357,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteAccessrightsIdentity(ctx _context
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/accessrights/{identity}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", fmt.Sprintf("%v", identity), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"identity"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", identity)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -478,8 +478,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialId(ctx _context.Context
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -599,8 +599,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteCredentialpasswordId(ctx _context
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -720,8 +720,8 @@ func (a *LogArchiveApiService) LogArchiveDeleteTagKey(ctx _context.Context, logA
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/tag/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", fmt.Sprintf("%v", key), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", key)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -831,8 +831,8 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialId(ctx _context.Context, l
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -942,8 +942,8 @@ func (a *LogArchiveApiService) LogArchiveGetCredentialpasswordId(ctx _context.Co
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1053,8 +1053,8 @@ func (a *LogArchiveApiService) LogArchiveGetServicesServiceId(ctx _context.Conte
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/services/{serviceId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", fmt.Sprintf("%v", serviceId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"serviceId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", serviceId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1163,7 +1163,7 @@ func (a *LogArchiveApiService) LogArchiveGetTag(ctx _context.Context, logArchive
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/tag"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1266,7 +1266,7 @@ List logArchive
 
 type LogArchiveListOpts struct {
 	Name optional.String
-	Tag optional.Interface
+	Tag  optional.Interface
 }
 
 func (a *LogArchiveApiService) LogArchiveList(ctx _context.Context, localVarOptionals *LogArchiveListOpts) ([]LogArchive, *_nethttp.Response, error) {
@@ -1395,7 +1395,7 @@ func (a *LogArchiveApiService) LogArchiveListAccessrights(ctx _context.Context, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/accessrights"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1504,7 +1504,7 @@ func (a *LogArchiveApiService) LogArchiveListCredential(ctx _context.Context, lo
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1613,7 +1613,7 @@ func (a *LogArchiveApiService) LogArchiveListCredentialpassword(ctx _context.Con
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1722,7 +1722,7 @@ func (a *LogArchiveApiService) LogArchiveListQueue(ctx _context.Context, logArch
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/queue"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1831,7 +1831,7 @@ func (a *LogArchiveApiService) LogArchiveListServices(ctx _context.Context, logA
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/services"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1942,8 +1942,8 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialId(ctx _context.Context,
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2056,8 +2056,8 @@ func (a *LogArchiveApiService) LogArchivePatchCredentialpasswordId(ctx _context.
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", id)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2169,7 +2169,7 @@ func (a *LogArchiveApiService) LogArchivePatchTag(ctx _context.Context, logArchi
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/tag"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2281,7 +2281,7 @@ func (a *LogArchiveApiService) LogArchivePostAccessrights(ctx _context.Context, 
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/accessrights"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2403,7 +2403,7 @@ func (a *LogArchiveApiService) LogArchivePostCredential(ctx _context.Context, lo
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2515,7 +2515,7 @@ func (a *LogArchiveApiService) LogArchivePostCredentialpassword(ctx _context.Con
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}/credential/password"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2627,7 +2627,7 @@ func (a *LogArchiveApiService) LogArchiveShow(ctx _context.Context, logArchiveId
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2738,7 +2738,7 @@ func (a *LogArchiveApiService) LogArchiveUpdate(ctx _context.Context, logArchive
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/logArchive/{logArchiveId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", fmt.Sprintf("%v", logArchiveId), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"logArchiveId"+"}", _neturl.QueryEscape(fmt.Sprintf("%v", logArchiveId)), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

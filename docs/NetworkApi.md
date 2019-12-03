@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**NetworkPatchTag**](NetworkApi.md#NetworkPatchTag) | **Patch** /network/{networkId}/tag | /tag
 [**NetworkPostAccessrights**](NetworkApi.md#NetworkPostAccessrights) | **Post** /network/{networkId}/accessrights | /accessrights
 [**NetworkPostIp**](NetworkApi.md#NetworkPostIp) | **Post** /network/{networkId}/ip | /ip
+[**NetworkPutTag**](NetworkApi.md#NetworkPutTag) | **Put** /network/{networkId}/tag | /tag
 [**NetworkShow**](NetworkApi.md#NetworkShow) | **Get** /network/{networkId} | Get
 [**NetworkUpdate**](NetworkApi.md#NetworkUpdate) | **Patch** /network/{networkId} | Update
 
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 ## NetworkActionFirewallAdd
 
 > Network NetworkActionFirewallAdd(ctx, networkId, networkActionFirewallAdd)
+
 /actions/firewall_add
 
 Action firewall_add
@@ -64,6 +66,7 @@ Name | Type | Description  | Notes
 ## NetworkActionFirewallRemove
 
 > Network NetworkActionFirewallRemove(ctx, networkId)
+
 /actions/firewall_remove
 
 Action firewall_remove
@@ -97,6 +100,7 @@ Name | Type | Description  | Notes
 ## NetworkCreate
 
 > Network NetworkCreate(ctx, networkCreate)
+
 Create
 
 Create network
@@ -130,6 +134,7 @@ Name | Type | Description  | Notes
 ## NetworkDelete
 
 > NetworkDelete(ctx, networkId)
+
 Delete
 
 ### Required Parameters
@@ -161,6 +166,7 @@ Name | Type | Description  | Notes
 ## NetworkDeleteAccessrightsIdentity
 
 > Network NetworkDeleteAccessrightsIdentity(ctx, networkId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -193,6 +199,7 @@ Name | Type | Description  | Notes
 ## NetworkDeleteIpIpId
 
 > Ip NetworkDeleteIpIpId(ctx, networkId, ipId)
+
 /ip/:ipId
 
 ### Required Parameters
@@ -225,6 +232,7 @@ Name | Type | Description  | Notes
 ## NetworkDeleteTagKey
 
 > map[string]string NetworkDeleteTagKey(ctx, networkId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -257,6 +265,7 @@ Name | Type | Description  | Notes
 ## NetworkGetIpIpId
 
 > Ip NetworkGetIpIpId(ctx, networkId, ipId)
+
 /ip/:ipId
 
 ### Required Parameters
@@ -289,6 +298,7 @@ Name | Type | Description  | Notes
 ## NetworkGetServicesServiceId
 
 > NetworkServices NetworkGetServicesServiceId(ctx, networkId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -321,6 +331,7 @@ Name | Type | Description  | Notes
 ## NetworkGetTag
 
 > map[string]string NetworkGetTag(ctx, networkId)
+
 /tag
 
 ### Required Parameters
@@ -352,6 +363,7 @@ Name | Type | Description  | Notes
 ## NetworkList
 
 > []Network NetworkList(ctx, optional)
+
 List
 
 List network
@@ -395,6 +407,7 @@ Name | Type | Description  | Notes
 ## NetworkListAccessrights
 
 > []string NetworkListAccessrights(ctx, networkId)
+
 /accessrights
 
 ### Required Parameters
@@ -426,6 +439,7 @@ Name | Type | Description  | Notes
 ## NetworkListIp
 
 > []Ip NetworkListIp(ctx, networkId)
+
 /ip
 
 ### Required Parameters
@@ -456,7 +470,8 @@ Name | Type | Description  | Notes
 
 ## NetworkListQueue
 
-> []Event NetworkListQueue(ctx, networkId)
+> []Event NetworkListQueue(ctx, networkId, optional)
+
 /queue
 
 ### Required Parameters
@@ -466,6 +481,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **networkId** | **string**| ID of network | 
+ **optional** | ***NetworkListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a NetworkListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -488,6 +515,7 @@ Name | Type | Description  | Notes
 ## NetworkListServices
 
 > []NetworkServices NetworkListServices(ctx, networkId)
+
 /services
 
 ### Required Parameters
@@ -519,6 +547,7 @@ Name | Type | Description  | Notes
 ## NetworkPatchTag
 
 > map[string]string NetworkPatchTag(ctx, networkId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -551,6 +580,7 @@ Name | Type | Description  | Notes
 ## NetworkPostAccessrights
 
 > Network NetworkPostAccessrights(ctx, networkId, networkPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -583,6 +613,7 @@ Name | Type | Description  | Notes
 ## NetworkPostIp
 
 > Ip NetworkPostIp(ctx, networkId, networkPostIp)
+
 /ip
 
 ### Required Parameters
@@ -612,9 +643,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## NetworkPutTag
+
+> map[string]string NetworkPutTag(ctx, networkId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**networkId** | **string**| ID of network | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## NetworkShow
 
 > Network NetworkShow(ctx, networkId)
+
 Get
 
 Returns a single network
@@ -648,6 +713,7 @@ Name | Type | Description  | Notes
 ## NetworkUpdate
 
 > Network NetworkUpdate(ctx, networkId, networkUpdate)
+
 Update
 
 Returns modified network

@@ -9,6 +9,7 @@
 
 package openapi
 
+// WebsitePostSnapshot struct for WebsitePostSnapshot
 type WebsitePostSnapshot struct {
 	Name string `json:"name"`
 }

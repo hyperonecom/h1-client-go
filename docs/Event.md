@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 
 **Queued** | [**time.Time**](time.Time.md) |  | [optional] 

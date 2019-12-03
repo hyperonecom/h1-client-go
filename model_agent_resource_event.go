@@ -9,10 +9,11 @@
 
 package openapi
 
+// AgentResourceEvent struct for AgentResourceEvent
 type AgentResourceEvent struct {
-	Id string `json:"_id,omitempty"`
-	Name string `json:"name,omitempty"`
-	State string `json:"state,omitempty"`
+	Id        string `json:"id,omitempty"`
+	Name      string `json:"name,omitempty"`
+	State     string `json:"state,omitempty"`
 	CreatedOn string `json:"createdOn,omitempty"`
-	Project string `json:"project,omitempty"`
+	Project   string `json:"project,omitempty"`
 }

@@ -9,6 +9,7 @@
 
 package openapi
 
+// RegistryUpdate struct for RegistryUpdate
 type RegistryUpdate struct {
 	Name string `json:"name,omitempty"`
 }

@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Services** | [**[]ProjectServices**](project_services.md) |  | [optional] 
 **Flavour** | **string** |  | [optional] 
 **ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**ModifiedBy** | **string** |  | [optional] [default to ]
-**CreatedBy** | **string** |  | [optional] [default to ]
+**ModifiedBy** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **AccessRights** | **[]string** |  | [optional] 
 **Processing** | **bool** |  | [optional] 
@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **Expose** | [**[]ContainerExpose**](container_expose.md) |  | [optional] 
 **Env** | **[]string** |  | [optional] 
 **Fqdn** | **string** |  | [optional] 
-**Process** | [**ContainerProcess**](container_process.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

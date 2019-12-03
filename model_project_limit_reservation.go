@@ -9,6 +9,7 @@
 
 package openapi
 
+// ProjectLimitReservation struct for ProjectLimitReservation
 type ProjectLimitReservation struct {
 	Count float32 `json:"count"`
 }

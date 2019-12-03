@@ -9,7 +9,8 @@
 
 package openapi
 
+// WebsiteCreateSource struct for WebsiteCreateSource
 type WebsiteCreateSource struct {
-	Website string `json:"website,omitempty"`
+	Website  string `json:"website,omitempty"`
 	Snapshot string `json:"snapshot,omitempty"`
 }

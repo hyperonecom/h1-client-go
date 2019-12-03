@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Service** | **string** |  | [optional] 
+**Service** | **string** |  | 
 **Network** | **string** |  | [optional] 
 **Ip** | **[]string** |  | [optional] 
 **Firewall** | **string** |  | [optional] 

@@ -9,6 +9,7 @@
 
 package openapi
 
+// DatabasePatchCredentialpasswordId struct for DatabasePatchCredentialpasswordId
 type DatabasePatchCredentialpasswordId struct {
 	Name string `json:"name,omitempty"`
 }

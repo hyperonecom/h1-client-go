@@ -9,10 +9,11 @@
 
 package openapi
 
+// FirewallCreate struct for FirewallCreate
 type FirewallCreate struct {
-	Name string `json:"name"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
-	Service string `json:"service,omitempty"`
+	Name    string                  `json:"name"`
+	Tag     map[string]string       `json:"tag,omitempty"`
+	Service string                  `json:"service,omitempty"`
 	Ingress []FirewallCreateIngress `json:"ingress,omitempty"`
-	Egress []FirewallCreateIngress `json:"egress,omitempty"`
+	Egress  []FirewallCreateIngress `json:"egress,omitempty"`
 }

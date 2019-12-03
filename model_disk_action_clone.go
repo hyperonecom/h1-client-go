@@ -9,7 +9,8 @@
 
 package openapi
 
+// DiskActionClone struct for DiskActionClone
 type DiskActionClone struct {
-	Name string `json:"name"`
+	Name    string `json:"name"`
 	Service string `json:"service"`
 }

@@ -9,6 +9,7 @@
 
 package openapi
 
+// OrganisationActionPaymentAssign struct for OrganisationActionPaymentAssign
 type OrganisationActionPaymentAssign struct {
 	Payment string `json:"payment"`
 	Project string `json:"project"`

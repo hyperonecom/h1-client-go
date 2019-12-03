@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Cloud** | **string** |  | [optional] 
 **Metadata** | [**DiskMetadata**](disk_metadata.md) |  | [optional] 
 **Source** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | **map[string]string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

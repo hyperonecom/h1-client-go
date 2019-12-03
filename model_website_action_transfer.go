@@ -9,6 +9,7 @@
 
 package openapi
 
+// WebsiteActionTransfer struct for WebsiteActionTransfer
 type WebsiteActionTransfer struct {
 	Project string `json:"project"`
 }

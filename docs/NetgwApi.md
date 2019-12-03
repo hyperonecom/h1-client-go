@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**NetgwListServices**](NetgwApi.md#NetgwListServices) | **Get** /netgw/{netgwId}/services | /services
 [**NetgwPatchTag**](NetgwApi.md#NetgwPatchTag) | **Patch** /netgw/{netgwId}/tag | /tag
 [**NetgwPostAccessrights**](NetgwApi.md#NetgwPostAccessrights) | **Post** /netgw/{netgwId}/accessrights | /accessrights
+[**NetgwPutTag**](NetgwApi.md#NetgwPutTag) | **Put** /netgw/{netgwId}/tag | /tag
 [**NetgwShow**](NetgwApi.md#NetgwShow) | **Get** /netgw/{netgwId} | Get
 [**NetgwUpdate**](NetgwApi.md#NetgwUpdate) | **Patch** /netgw/{netgwId} | Update
 
@@ -26,6 +27,7 @@ Method | HTTP request | Description
 ## NetgwActionAttach
 
 > Netgw NetgwActionAttach(ctx, netgwId, netgwActionAttach)
+
 /actions/attach
 
 Action attach
@@ -60,6 +62,7 @@ Name | Type | Description  | Notes
 ## NetgwActionDetach
 
 > Netgw NetgwActionDetach(ctx, netgwId)
+
 /actions/detach
 
 Action detach
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
 ## NetgwCreate
 
 > Netgw NetgwCreate(ctx, netgwCreate)
+
 Create
 
 Create netgw
@@ -126,6 +130,7 @@ Name | Type | Description  | Notes
 ## NetgwDelete
 
 > NetgwDelete(ctx, netgwId)
+
 Delete
 
 ### Required Parameters
@@ -157,6 +162,7 @@ Name | Type | Description  | Notes
 ## NetgwDeleteAccessrightsIdentity
 
 > Netgw NetgwDeleteAccessrightsIdentity(ctx, netgwId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -189,6 +195,7 @@ Name | Type | Description  | Notes
 ## NetgwDeleteTagKey
 
 > map[string]string NetgwDeleteTagKey(ctx, netgwId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -221,6 +228,7 @@ Name | Type | Description  | Notes
 ## NetgwGetServicesServiceId
 
 > NetgwServices NetgwGetServicesServiceId(ctx, netgwId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -253,6 +261,7 @@ Name | Type | Description  | Notes
 ## NetgwGetTag
 
 > map[string]string NetgwGetTag(ctx, netgwId)
+
 /tag
 
 ### Required Parameters
@@ -284,6 +293,7 @@ Name | Type | Description  | Notes
 ## NetgwList
 
 > []Netgw NetgwList(ctx, optional)
+
 List
 
 List netgw
@@ -327,6 +337,7 @@ Name | Type | Description  | Notes
 ## NetgwListAccessrights
 
 > []string NetgwListAccessrights(ctx, netgwId)
+
 /accessrights
 
 ### Required Parameters
@@ -357,7 +368,8 @@ Name | Type | Description  | Notes
 
 ## NetgwListQueue
 
-> []Event NetgwListQueue(ctx, netgwId)
+> []Event NetgwListQueue(ctx, netgwId, optional)
+
 /queue
 
 ### Required Parameters
@@ -367,6 +379,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **netgwId** | **string**| ID of netgw | 
+ **optional** | ***NetgwListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a NetgwListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -389,6 +413,7 @@ Name | Type | Description  | Notes
 ## NetgwListServices
 
 > []NetgwServices NetgwListServices(ctx, netgwId)
+
 /services
 
 ### Required Parameters
@@ -420,6 +445,7 @@ Name | Type | Description  | Notes
 ## NetgwPatchTag
 
 > map[string]string NetgwPatchTag(ctx, netgwId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -452,6 +478,7 @@ Name | Type | Description  | Notes
 ## NetgwPostAccessrights
 
 > Netgw NetgwPostAccessrights(ctx, netgwId, netgwPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -481,9 +508,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## NetgwPutTag
+
+> map[string]string NetgwPutTag(ctx, netgwId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netgwId** | **string**| ID of netgw | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## NetgwShow
 
 > Netgw NetgwShow(ctx, netgwId)
+
 Get
 
 Returns a single netgw
@@ -517,6 +578,7 @@ Name | Type | Description  | Notes
 ## NetgwUpdate
 
 > Netgw NetgwUpdate(ctx, netgwId, netgwUpdate)
+
 Update
 
 Returns modified netgw

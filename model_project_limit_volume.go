@@ -9,7 +9,8 @@
 
 package openapi
 
+// ProjectLimitVolume struct for ProjectLimitVolume
 type ProjectLimitVolume struct {
 	Count float32 `json:"count"`
-	Size float32 `json:"size"`
+	Size  float32 `json:"size"`
 }

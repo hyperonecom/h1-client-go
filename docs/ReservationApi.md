@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**ReservationListServices**](ReservationApi.md#ReservationListServices) | **Get** /reservation/{reservationId}/services | /services
 [**ReservationPatchTag**](ReservationApi.md#ReservationPatchTag) | **Patch** /reservation/{reservationId}/tag | /tag
 [**ReservationPostAccessrights**](ReservationApi.md#ReservationPostAccessrights) | **Post** /reservation/{reservationId}/accessrights | /accessrights
+[**ReservationPutTag**](ReservationApi.md#ReservationPutTag) | **Put** /reservation/{reservationId}/tag | /tag
 [**ReservationShow**](ReservationApi.md#ReservationShow) | **Get** /reservation/{reservationId} | Get
 [**ReservationUpdate**](ReservationApi.md#ReservationUpdate) | **Patch** /reservation/{reservationId} | Update
 
@@ -26,6 +27,7 @@ Method | HTTP request | Description
 ## ReservationActionAssign
 
 > Reservation ReservationActionAssign(ctx, reservationId, reservationActionAssign)
+
 /actions/assign
 
 Action assign
@@ -60,6 +62,7 @@ Name | Type | Description  | Notes
 ## ReservationActionExtend
 
 > Reservation ReservationActionExtend(ctx, reservationId)
+
 /actions/extend
 
 Action extend
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
 ## ReservationCreate
 
 > Reservation ReservationCreate(ctx, reservationCreate)
+
 Create
 
 Create reservation
@@ -126,6 +130,7 @@ Name | Type | Description  | Notes
 ## ReservationDelete
 
 > ReservationDelete(ctx, reservationId)
+
 Delete
 
 ### Required Parameters
@@ -157,6 +162,7 @@ Name | Type | Description  | Notes
 ## ReservationDeleteAccessrightsIdentity
 
 > Reservation ReservationDeleteAccessrightsIdentity(ctx, reservationId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -189,6 +195,7 @@ Name | Type | Description  | Notes
 ## ReservationDeleteTagKey
 
 > map[string]string ReservationDeleteTagKey(ctx, reservationId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -221,6 +228,7 @@ Name | Type | Description  | Notes
 ## ReservationGetServicesServiceId
 
 > ReservationServices ReservationGetServicesServiceId(ctx, reservationId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -253,6 +261,7 @@ Name | Type | Description  | Notes
 ## ReservationGetTag
 
 > map[string]string ReservationGetTag(ctx, reservationId)
+
 /tag
 
 ### Required Parameters
@@ -284,6 +293,7 @@ Name | Type | Description  | Notes
 ## ReservationList
 
 > []Reservation ReservationList(ctx, optional)
+
 List
 
 List reservation
@@ -327,6 +337,7 @@ Name | Type | Description  | Notes
 ## ReservationListAccessrights
 
 > []string ReservationListAccessrights(ctx, reservationId)
+
 /accessrights
 
 ### Required Parameters
@@ -357,7 +368,8 @@ Name | Type | Description  | Notes
 
 ## ReservationListQueue
 
-> []Event ReservationListQueue(ctx, reservationId)
+> []Event ReservationListQueue(ctx, reservationId, optional)
+
 /queue
 
 ### Required Parameters
@@ -367,6 +379,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **reservationId** | **string**| ID of reservation | 
+ **optional** | ***ReservationListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ReservationListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -389,6 +413,7 @@ Name | Type | Description  | Notes
 ## ReservationListServices
 
 > []ReservationServices ReservationListServices(ctx, reservationId)
+
 /services
 
 ### Required Parameters
@@ -420,6 +445,7 @@ Name | Type | Description  | Notes
 ## ReservationPatchTag
 
 > map[string]string ReservationPatchTag(ctx, reservationId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -452,6 +478,7 @@ Name | Type | Description  | Notes
 ## ReservationPostAccessrights
 
 > Reservation ReservationPostAccessrights(ctx, reservationId, reservationPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -481,9 +508,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ReservationPutTag
+
+> map[string]string ReservationPutTag(ctx, reservationId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**reservationId** | **string**| ID of reservation | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ReservationShow
 
 > Reservation ReservationShow(ctx, reservationId)
+
 Get
 
 Returns a single reservation
@@ -517,6 +578,7 @@ Name | Type | Description  | Notes
 ## ReservationUpdate
 
 > Reservation ReservationUpdate(ctx, reservationId, reservationUpdate)
+
 Update
 
 Returns modified reservation

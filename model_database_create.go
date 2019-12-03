@@ -9,8 +9,9 @@
 
 package openapi
 
+// DatabaseCreate struct for DatabaseCreate
 type DatabaseCreate struct {
-	Name string `json:"name"`
-	Service string `json:"service"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
+	Name    string            `json:"name"`
+	Service string            `json:"service"`
+	Tag     map[string]string `json:"tag,omitempty"`
 }

@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**RegistryPostAccessrights**](RegistryApi.md#RegistryPostAccessrights) | **Post** /registry/{registryId}/accessrights | /accessrights
 [**RegistryPostCredential**](RegistryApi.md#RegistryPostCredential) | **Post** /registry/{registryId}/credential | /credential
 [**RegistryPostCredentialpassword**](RegistryApi.md#RegistryPostCredentialpassword) | **Post** /registry/{registryId}/credential/password | /credential/password
+[**RegistryPutTag**](RegistryApi.md#RegistryPutTag) | **Put** /registry/{registryId}/tag | /tag
 [**RegistryShow**](RegistryApi.md#RegistryShow) | **Get** /registry/{registryId} | Get
 [**RegistryUpdate**](RegistryApi.md#RegistryUpdate) | **Patch** /registry/{registryId} | Update
 
@@ -43,6 +44,7 @@ Method | HTTP request | Description
 ## RegistryActionStart
 
 > Registry RegistryActionStart(ctx, registryId)
+
 /actions/start
 
 Action start
@@ -76,6 +78,7 @@ Name | Type | Description  | Notes
 ## RegistryActionStop
 
 > Registry RegistryActionStop(ctx, registryId)
+
 /actions/stop
 
 Action stop
@@ -109,6 +112,7 @@ Name | Type | Description  | Notes
 ## RegistryActionTransfer
 
 > Registry RegistryActionTransfer(ctx, registryId, registryActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -143,6 +147,7 @@ Name | Type | Description  | Notes
 ## RegistryActionUpdateDomain
 
 > Registry RegistryActionUpdateDomain(ctx, registryId, registryActionUpdateDomain)
+
 /actions/update_domain
 
 Action update_domain
@@ -177,6 +182,7 @@ Name | Type | Description  | Notes
 ## RegistryCreate
 
 > Registry RegistryCreate(ctx, registryCreate)
+
 Create
 
 Create registry
@@ -210,6 +216,7 @@ Name | Type | Description  | Notes
 ## RegistryDelete
 
 > RegistryDelete(ctx, registryId)
+
 Delete
 
 ### Required Parameters
@@ -241,6 +248,7 @@ Name | Type | Description  | Notes
 ## RegistryDeleteAccessrightsIdentity
 
 > Registry RegistryDeleteAccessrightsIdentity(ctx, registryId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -273,6 +281,7 @@ Name | Type | Description  | Notes
 ## RegistryDeleteCredentialId
 
 > Registry RegistryDeleteCredentialId(ctx, registryId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -305,6 +314,7 @@ Name | Type | Description  | Notes
 ## RegistryDeleteCredentialpasswordId
 
 > Registry RegistryDeleteCredentialpasswordId(ctx, registryId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -337,6 +347,7 @@ Name | Type | Description  | Notes
 ## RegistryDeleteRepositoryRepositoryIdtagTagId
 
 > RegistryDeleteRepositoryRepositoryIdtagTagId(ctx, registryId, repositoryId, tagId)
+
 /repository/:repositoryId/tag/:tagId
 
 ### Required Parameters
@@ -370,6 +381,7 @@ Name | Type | Description  | Notes
 ## RegistryDeleteTagKey
 
 > map[string]string RegistryDeleteTagKey(ctx, registryId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -402,6 +414,7 @@ Name | Type | Description  | Notes
 ## RegistryGetCredentialId
 
 > CredentialPassword RegistryGetCredentialId(ctx, registryId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -434,6 +447,7 @@ Name | Type | Description  | Notes
 ## RegistryGetCredentialpasswordId
 
 > CredentialPassword RegistryGetCredentialpasswordId(ctx, registryId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -466,6 +480,7 @@ Name | Type | Description  | Notes
 ## RegistryGetRepositoryRepositoryId
 
 > RegistryGetRepositoryRepositoryId(ctx, registryId, repositoryId)
+
 /repository/:repositoryId
 
 ### Required Parameters
@@ -498,6 +513,7 @@ Name | Type | Description  | Notes
 ## RegistryGetRepositoryRepositoryIdtagTagId
 
 > RegistryGetRepositoryRepositoryIdtagTagId(ctx, registryId, repositoryId, tagId)
+
 /repository/:repositoryId/tag/:tagId
 
 ### Required Parameters
@@ -531,6 +547,7 @@ Name | Type | Description  | Notes
 ## RegistryGetServicesServiceId
 
 > RegistryServices RegistryGetServicesServiceId(ctx, registryId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -563,6 +580,7 @@ Name | Type | Description  | Notes
 ## RegistryGetTag
 
 > map[string]string RegistryGetTag(ctx, registryId)
+
 /tag
 
 ### Required Parameters
@@ -594,6 +612,7 @@ Name | Type | Description  | Notes
 ## RegistryList
 
 > []Registry RegistryList(ctx, optional)
+
 List
 
 List registry
@@ -637,6 +656,7 @@ Name | Type | Description  | Notes
 ## RegistryListAccessrights
 
 > []string RegistryListAccessrights(ctx, registryId)
+
 /accessrights
 
 ### Required Parameters
@@ -668,6 +688,7 @@ Name | Type | Description  | Notes
 ## RegistryListCredential
 
 > []CredentialPassword RegistryListCredential(ctx, registryId)
+
 /credential
 
 ### Required Parameters
@@ -699,6 +720,7 @@ Name | Type | Description  | Notes
 ## RegistryListCredentialpassword
 
 > []CredentialPassword RegistryListCredentialpassword(ctx, registryId)
+
 /credential/password
 
 ### Required Parameters
@@ -729,7 +751,8 @@ Name | Type | Description  | Notes
 
 ## RegistryListQueue
 
-> []Event RegistryListQueue(ctx, registryId)
+> []Event RegistryListQueue(ctx, registryId, optional)
+
 /queue
 
 ### Required Parameters
@@ -739,6 +762,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **registryId** | **string**| ID of registry | 
+ **optional** | ***RegistryListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a RegistryListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -761,6 +796,7 @@ Name | Type | Description  | Notes
 ## RegistryListRepository
 
 > RegistryListRepository(ctx, registryId)
+
 /repository
 
 ### Required Parameters
@@ -792,6 +828,7 @@ Name | Type | Description  | Notes
 ## RegistryListRepositoryRepositoryIdtag
 
 > RegistryListRepositoryRepositoryIdtag(ctx, registryId, repositoryId)
+
 /repository/:repositoryId/tag
 
 ### Required Parameters
@@ -824,6 +861,7 @@ Name | Type | Description  | Notes
 ## RegistryListServices
 
 > []RegistryServices RegistryListServices(ctx, registryId)
+
 /services
 
 ### Required Parameters
@@ -855,6 +893,7 @@ Name | Type | Description  | Notes
 ## RegistryPatchCredentialId
 
 > CredentialPassword RegistryPatchCredentialId(ctx, registryId, id, registryPatchCredentialId)
+
 /credential/:id
 
 ### Required Parameters
@@ -888,6 +927,7 @@ Name | Type | Description  | Notes
 ## RegistryPatchCredentialpasswordId
 
 > CredentialPassword RegistryPatchCredentialpasswordId(ctx, registryId, id, registryPatchCredentialpasswordId)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -921,6 +961,7 @@ Name | Type | Description  | Notes
 ## RegistryPatchTag
 
 > map[string]string RegistryPatchTag(ctx, registryId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -953,6 +994,7 @@ Name | Type | Description  | Notes
 ## RegistryPostAccessrights
 
 > Registry RegistryPostAccessrights(ctx, registryId, registryPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -985,6 +1027,7 @@ Name | Type | Description  | Notes
 ## RegistryPostCredential
 
 > CredentialPassword RegistryPostCredential(ctx, registryId, registryPostCredential)
+
 /credential
 
 ### Required Parameters
@@ -1017,6 +1060,7 @@ Name | Type | Description  | Notes
 ## RegistryPostCredentialpassword
 
 > CredentialPassword RegistryPostCredentialpassword(ctx, registryId, registryPostCredentialpassword)
+
 /credential/password
 
 ### Required Parameters
@@ -1046,9 +1090,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## RegistryPutTag
+
+> map[string]string RegistryPutTag(ctx, registryId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**registryId** | **string**| ID of registry | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## RegistryShow
 
 > Registry RegistryShow(ctx, registryId)
+
 Get
 
 Returns a single registry
@@ -1082,6 +1160,7 @@ Name | Type | Description  | Notes
 ## RegistryUpdate
 
 > Registry RegistryUpdate(ctx, registryId, registryUpdate)
+
 Update
 
 Returns modified registry

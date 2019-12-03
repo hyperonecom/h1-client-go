@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**NetadpListServices**](NetadpApi.md#NetadpListServices) | **Get** /netadp/{netadpId}/services | /services
 [**NetadpPatchTag**](NetadpApi.md#NetadpPatchTag) | **Patch** /netadp/{netadpId}/tag | /tag
 [**NetadpPostAccessrights**](NetadpApi.md#NetadpPostAccessrights) | **Post** /netadp/{netadpId}/accessrights | /accessrights
+[**NetadpPutTag**](NetadpApi.md#NetadpPutTag) | **Put** /netadp/{netadpId}/tag | /tag
 [**NetadpShow**](NetadpApi.md#NetadpShow) | **Get** /netadp/{netadpId} | Get
 
 
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 ## NetadpActionFirewallAdd
 
 > Netadp NetadpActionFirewallAdd(ctx, netadpId, netadpActionFirewallAdd)
+
 /actions/firewall_add
 
 Action firewall_add
@@ -57,6 +59,7 @@ Name | Type | Description  | Notes
 ## NetadpActionFirewallRemove
 
 > Netadp NetadpActionFirewallRemove(ctx, netadpId)
+
 /actions/firewall_remove
 
 Action firewall_remove
@@ -90,6 +93,7 @@ Name | Type | Description  | Notes
 ## NetadpDeleteAccessrightsIdentity
 
 > Netadp NetadpDeleteAccessrightsIdentity(ctx, netadpId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -122,6 +126,7 @@ Name | Type | Description  | Notes
 ## NetadpDeleteTagKey
 
 > map[string]string NetadpDeleteTagKey(ctx, netadpId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -154,6 +159,7 @@ Name | Type | Description  | Notes
 ## NetadpGetServicesServiceId
 
 > NetadpServices NetadpGetServicesServiceId(ctx, netadpId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -186,6 +192,7 @@ Name | Type | Description  | Notes
 ## NetadpGetTag
 
 > map[string]string NetadpGetTag(ctx, netadpId)
+
 /tag
 
 ### Required Parameters
@@ -217,6 +224,7 @@ Name | Type | Description  | Notes
 ## NetadpList
 
 > []Netadp NetadpList(ctx, optional)
+
 List
 
 List netadp
@@ -260,6 +268,7 @@ Name | Type | Description  | Notes
 ## NetadpListAccessrights
 
 > []string NetadpListAccessrights(ctx, netadpId)
+
 /accessrights
 
 ### Required Parameters
@@ -290,7 +299,8 @@ Name | Type | Description  | Notes
 
 ## NetadpListQueue
 
-> []Event NetadpListQueue(ctx, netadpId)
+> []Event NetadpListQueue(ctx, netadpId, optional)
+
 /queue
 
 ### Required Parameters
@@ -300,6 +310,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **netadpId** | **string**| ID of netadp | 
+ **optional** | ***NetadpListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a NetadpListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -322,6 +344,7 @@ Name | Type | Description  | Notes
 ## NetadpListServices
 
 > []NetadpServices NetadpListServices(ctx, netadpId)
+
 /services
 
 ### Required Parameters
@@ -353,6 +376,7 @@ Name | Type | Description  | Notes
 ## NetadpPatchTag
 
 > map[string]string NetadpPatchTag(ctx, netadpId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -385,6 +409,7 @@ Name | Type | Description  | Notes
 ## NetadpPostAccessrights
 
 > Netadp NetadpPostAccessrights(ctx, netadpId, netadpPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -414,9 +439,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## NetadpPutTag
+
+> map[string]string NetadpPutTag(ctx, netadpId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**netadpId** | **string**| ID of netadp | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## NetadpShow
 
 > Netadp NetadpShow(ctx, netadpId)
+
 Get
 
 Returns a single netadp

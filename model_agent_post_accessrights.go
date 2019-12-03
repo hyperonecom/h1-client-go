@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentPostAccessrights struct for AgentPostAccessrights
 type AgentPostAccessrights struct {
 	Identity string `json:"identity,omitempty"`
 }

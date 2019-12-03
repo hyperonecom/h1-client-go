@@ -9,8 +9,9 @@
 
 package openapi
 
+// UserPostCredentialcertificate struct for UserPostCredentialcertificate
 type UserPostCredentialcertificate struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	Name  string `json:"name"`
+	Type  string `json:"type"`
 	Value string `json:"value"`
 }

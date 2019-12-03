@@ -9,6 +9,7 @@
 
 package openapi
 
+// ProjectLimitAgent struct for ProjectLimitAgent
 type ProjectLimitAgent struct {
 	Count float32 `json:"count"`
 }

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**DiskDelete**](DiskApi.md#DiskDelete) | **Delete** /disk/{diskId} | Delete
 [**DiskDeleteAccessrightsIdentity**](DiskApi.md#DiskDeleteAccessrightsIdentity) | **Delete** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
 [**DiskDeleteTagKey**](DiskApi.md#DiskDeleteTagKey) | **Delete** /disk/{diskId}/tag/{key} | /tag/:key
+[**DiskGetDownload**](DiskApi.md#DiskGetDownload) | **Get** /disk/{diskId}/download | /download
 [**DiskGetServicesServiceId**](DiskApi.md#DiskGetServicesServiceId) | **Get** /disk/{diskId}/services/{serviceId} | /services/:serviceId
 [**DiskGetTag**](DiskApi.md#DiskGetTag) | **Get** /disk/{diskId}/tag | /tag
 [**DiskList**](DiskApi.md#DiskList) | **Get** /disk | List
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**DiskListServices**](DiskApi.md#DiskListServices) | **Get** /disk/{diskId}/services | /services
 [**DiskPatchTag**](DiskApi.md#DiskPatchTag) | **Patch** /disk/{diskId}/tag | /tag
 [**DiskPostAccessrights**](DiskApi.md#DiskPostAccessrights) | **Post** /disk/{diskId}/accessrights | /accessrights
+[**DiskPutTag**](DiskApi.md#DiskPutTag) | **Put** /disk/{diskId}/tag | /tag
 [**DiskShow**](DiskApi.md#DiskShow) | **Get** /disk/{diskId} | Get
 [**DiskUpdate**](DiskApi.md#DiskUpdate) | **Patch** /disk/{diskId} | Update
 
@@ -27,6 +29,7 @@ Method | HTTP request | Description
 ## DiskActionClone
 
 > Disk DiskActionClone(ctx, diskId, diskActionClone)
+
 /actions/clone
 
 Action clone
@@ -61,6 +64,7 @@ Name | Type | Description  | Notes
 ## DiskActionResize
 
 > Disk DiskActionResize(ctx, diskId, diskActionResize)
+
 /actions/resize
 
 Action resize
@@ -95,6 +99,7 @@ Name | Type | Description  | Notes
 ## DiskActionTransfer
 
 > Disk DiskActionTransfer(ctx, diskId, diskActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -129,6 +134,7 @@ Name | Type | Description  | Notes
 ## DiskCreate
 
 > Disk DiskCreate(ctx, diskCreate)
+
 Create
 
 Create disk
@@ -162,6 +168,7 @@ Name | Type | Description  | Notes
 ## DiskDelete
 
 > DiskDelete(ctx, diskId)
+
 Delete
 
 ### Required Parameters
@@ -193,6 +200,7 @@ Name | Type | Description  | Notes
 ## DiskDeleteAccessrightsIdentity
 
 > Disk DiskDeleteAccessrightsIdentity(ctx, diskId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -225,6 +233,7 @@ Name | Type | Description  | Notes
 ## DiskDeleteTagKey
 
 > map[string]string DiskDeleteTagKey(ctx, diskId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -254,9 +263,42 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DiskGetDownload
+
+> DiskGetDownload(ctx, diskId)
+
+/download
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**diskId** | **string**| ID of disk | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DiskGetServicesServiceId
 
 > DiskServices DiskGetServicesServiceId(ctx, diskId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -289,6 +331,7 @@ Name | Type | Description  | Notes
 ## DiskGetTag
 
 > map[string]string DiskGetTag(ctx, diskId)
+
 /tag
 
 ### Required Parameters
@@ -320,6 +363,7 @@ Name | Type | Description  | Notes
 ## DiskList
 
 > []Disk DiskList(ctx, optional)
+
 List
 
 List disk
@@ -363,6 +407,7 @@ Name | Type | Description  | Notes
 ## DiskListAccessrights
 
 > []string DiskListAccessrights(ctx, diskId)
+
 /accessrights
 
 ### Required Parameters
@@ -393,7 +438,8 @@ Name | Type | Description  | Notes
 
 ## DiskListQueue
 
-> []Event DiskListQueue(ctx, diskId)
+> []Event DiskListQueue(ctx, diskId, optional)
+
 /queue
 
 ### Required Parameters
@@ -403,6 +449,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **diskId** | **string**| ID of disk | 
+ **optional** | ***DiskListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a DiskListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -425,6 +483,7 @@ Name | Type | Description  | Notes
 ## DiskListServices
 
 > []DiskServices DiskListServices(ctx, diskId)
+
 /services
 
 ### Required Parameters
@@ -456,6 +515,7 @@ Name | Type | Description  | Notes
 ## DiskPatchTag
 
 > map[string]string DiskPatchTag(ctx, diskId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -488,6 +548,7 @@ Name | Type | Description  | Notes
 ## DiskPostAccessrights
 
 > Disk DiskPostAccessrights(ctx, diskId, diskPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -517,9 +578,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DiskPutTag
+
+> map[string]string DiskPutTag(ctx, diskId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**diskId** | **string**| ID of disk | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DiskShow
 
 > Disk DiskShow(ctx, diskId)
+
 Get
 
 Returns a single disk
@@ -553,6 +648,7 @@ Name | Type | Description  | Notes
 ## DiskUpdate
 
 > Disk DiskUpdate(ctx, diskId, diskUpdate)
+
 Update
 
 Returns modified disk

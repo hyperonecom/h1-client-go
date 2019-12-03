@@ -12,6 +12,7 @@ Method | HTTP request | Description
 ## ServiceList
 
 > []Service ServiceList(ctx, optional)
+
 List
 
 List service
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
 ## ServiceShow
 
 > Service ServiceShow(ctx, serviceId)
+
 Get
 
 Returns a single service

@@ -8,11 +8,12 @@
  */
 
 package openapi
+
 import (
 	"time"
 )
 
 type UserLastLogin struct {
-	LoggedOn time.Time `json:"loggedOn,omitempty"`
-	LoggedFrom string `json:"loggedFrom,omitempty"`
+	LoggedOn   time.Time `json:"loggedOn,omitempty"`
+	LoggedFrom string    `json:"loggedFrom,omitempty"`
 }

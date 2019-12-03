@@ -13,8 +13,9 @@ import (
 	"time"
 )
 
+// Container struct for Container
 type Container struct {
-	Id           string             `json:"_id,omitempty"`
+	Id           string             `json:"id,omitempty"`
 	Name         string             `json:"name,omitempty"`
 	Services     []ProjectServices  `json:"services,omitempty"`
 	Flavour      string             `json:"flavour,omitempty"`
@@ -35,5 +36,4 @@ type Container struct {
 	Expose       []ContainerExpose  `json:"expose,omitempty"`
 	Env          []string           `json:"env,omitempty"`
 	Fqdn         string             `json:"fqdn,omitempty"`
-	Process      ContainerProcess   `json:"process,omitempty"`
 }

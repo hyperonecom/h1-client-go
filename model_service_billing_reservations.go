@@ -9,9 +9,10 @@
 
 package openapi
 
+// ServiceBillingReservations struct for ServiceBillingReservations
 type ServiceBillingReservations struct {
-	Id string `json:"_id,omitempty"`
-	Period string `json:"period,omitempty"`
-	Price ServiceBillingPrice `json:"price,omitempty"`
+	Id            string              `json:"_id,omitempty"`
+	Period        string              `json:"period,omitempty"`
+	Price         ServiceBillingPrice `json:"price,omitempty"`
 	ResourcePrice ServiceBillingPrice `json:"resourcePrice,omitempty"`
 }

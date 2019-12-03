@@ -13,8 +13,9 @@ import (
 	"time"
 )
 
+// Ip struct for Ip
 type Ip struct {
-	Id           string            `json:"_id,omitempty"`
+	Id           string            `json:"id,omitempty"`
 	Name         string            `json:"name,omitempty"`
 	Services     []ProjectServices `json:"services,omitempty"`
 	Flavour      string            `json:"flavour,omitempty"`

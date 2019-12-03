@@ -12,9 +12,11 @@ Method | HTTP request | Description
 [**OrganisationGetTag**](OrganisationApi.md#OrganisationGetTag) | **Get** /organisation/{organisationId}/tag | /tag
 [**OrganisationList**](OrganisationApi.md#OrganisationList) | **Get** /organisation | List
 [**OrganisationListAccessrights**](OrganisationApi.md#OrganisationListAccessrights) | **Get** /organisation/{organisationId}/accessrights | /accessrights
+[**OrganisationListBilling**](OrganisationApi.md#OrganisationListBilling) | **Get** /organisation/{organisationId}/billing | /billing
 [**OrganisationListQueue**](OrganisationApi.md#OrganisationListQueue) | **Get** /organisation/{organisationId}/queue | /queue
 [**OrganisationPatchTag**](OrganisationApi.md#OrganisationPatchTag) | **Patch** /organisation/{organisationId}/tag | /tag
 [**OrganisationPostAccessrights**](OrganisationApi.md#OrganisationPostAccessrights) | **Post** /organisation/{organisationId}/accessrights | /accessrights
+[**OrganisationPutTag**](OrganisationApi.md#OrganisationPutTag) | **Put** /organisation/{organisationId}/tag | /tag
 [**OrganisationShow**](OrganisationApi.md#OrganisationShow) | **Get** /organisation/{organisationId} | Get
 [**OrganisationUpdate**](OrganisationApi.md#OrganisationUpdate) | **Patch** /organisation/{organisationId} | Update
 
@@ -23,6 +25,7 @@ Method | HTTP request | Description
 ## OrganisationActionPaymentAssign
 
 > Organisation OrganisationActionPaymentAssign(ctx, organisationId, organisationActionPaymentAssign)
+
 /actions/payment_assign
 
 Action payment_assign
@@ -57,6 +60,7 @@ Name | Type | Description  | Notes
 ## OrganisationActionTransferAccept
 
 > Organisation OrganisationActionTransferAccept(ctx, organisationId, organisationActionTransferAccept)
+
 /actions/transfer_accept
 
 Action transfer_accept
@@ -91,6 +95,7 @@ Name | Type | Description  | Notes
 ## OrganisationCreate
 
 > Organisation OrganisationCreate(ctx, organisationCreate)
+
 Create
 
 Create organisation
@@ -124,6 +129,7 @@ Name | Type | Description  | Notes
 ## OrganisationDeleteAccessrightsId
 
 > OrganisationDeleteAccessrightsId(ctx, organisationId, id)
+
 /accessrights/:id
 
 ### Required Parameters
@@ -156,6 +162,7 @@ Name | Type | Description  | Notes
 ## OrganisationDeleteTagKey
 
 > map[string]string OrganisationDeleteTagKey(ctx, organisationId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -188,6 +195,7 @@ Name | Type | Description  | Notes
 ## OrganisationGetTag
 
 > map[string]string OrganisationGetTag(ctx, organisationId)
+
 /tag
 
 ### Required Parameters
@@ -219,6 +227,7 @@ Name | Type | Description  | Notes
 ## OrganisationList
 
 > []Organisation OrganisationList(ctx, optional)
+
 List
 
 List organisation
@@ -266,6 +275,7 @@ Name | Type | Description  | Notes
 ## OrganisationListAccessrights
 
 > []AccessrightsUserRole OrganisationListAccessrights(ctx, organisationId)
+
 /accessrights
 
 ### Required Parameters
@@ -294,9 +304,55 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## OrganisationListBilling
+
+> []Billing OrganisationListBilling(ctx, organisationId, optional)
+
+/billing
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+ **optional** | ***OrganisationListBillingOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a OrganisationListBillingOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **start** | **optional.Time**| start | 
+ **end** | **optional.Time**| end | 
+ **resourceType** | **optional.String**| resource.type | 
+
+### Return type
+
+[**[]Billing**](billing.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## OrganisationListQueue
 
-> []Event OrganisationListQueue(ctx, organisationId)
+> []Event OrganisationListQueue(ctx, organisationId, optional)
+
 /queue
 
 ### Required Parameters
@@ -306,6 +362,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| ID of organisation | 
+ **optional** | ***OrganisationListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a OrganisationListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -328,6 +396,7 @@ Name | Type | Description  | Notes
 ## OrganisationPatchTag
 
 > map[string]string OrganisationPatchTag(ctx, organisationId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -360,6 +429,7 @@ Name | Type | Description  | Notes
 ## OrganisationPostAccessrights
 
 > OrganisationPostAccessrights(ctx, organisationId, organisationPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -389,9 +459,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## OrganisationPutTag
+
+> map[string]string OrganisationPutTag(ctx, organisationId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| ID of organisation | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## OrganisationShow
 
 > Organisation OrganisationShow(ctx, organisationId)
+
 Get
 
 Returns a single organisation
@@ -425,6 +529,7 @@ Name | Type | Description  | Notes
 ## OrganisationUpdate
 
 > Organisation OrganisationUpdate(ctx, organisationId, organisationUpdate)
+
 Update
 
 Returns modified organisation

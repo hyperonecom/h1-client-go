@@ -9,9 +9,10 @@
 
 package openapi
 
+// VolumeCreate struct for VolumeCreate
 type VolumeCreate struct {
-	Service string `json:"service"`
-	Name string `json:"name"`
-	Size float32 `json:"size"`
-	Tag map[string]interface{} `json:"tag,omitempty"`
+	Service string            `json:"service"`
+	Name    string            `json:"name"`
+	Size    float32           `json:"size"`
+	Tag     map[string]string `json:"tag,omitempty"`
 }

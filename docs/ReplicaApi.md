@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**ReplicaListServices**](ReplicaApi.md#ReplicaListServices) | **Get** /replica/{replicaId}/services | /services
 [**ReplicaPatchTag**](ReplicaApi.md#ReplicaPatchTag) | **Patch** /replica/{replicaId}/tag | /tag
 [**ReplicaPostAccessrights**](ReplicaApi.md#ReplicaPostAccessrights) | **Post** /replica/{replicaId}/accessrights | /accessrights
+[**ReplicaPutTag**](ReplicaApi.md#ReplicaPutTag) | **Put** /replica/{replicaId}/tag | /tag
 [**ReplicaShow**](ReplicaApi.md#ReplicaShow) | **Get** /replica/{replicaId} | Get
 
 
@@ -24,6 +25,7 @@ Method | HTTP request | Description
 ## ReplicaActionImage
 
 > Replica ReplicaActionImage(ctx, replicaId, replicaActionImage)
+
 /actions/image
 
 Action image
@@ -58,6 +60,7 @@ Name | Type | Description  | Notes
 ## ReplicaCreate
 
 > Replica ReplicaCreate(ctx, replicaCreate)
+
 Create
 
 Create replica
@@ -91,6 +94,7 @@ Name | Type | Description  | Notes
 ## ReplicaDelete
 
 > ReplicaDelete(ctx, replicaId)
+
 Delete
 
 ### Required Parameters
@@ -122,6 +126,7 @@ Name | Type | Description  | Notes
 ## ReplicaDeleteAccessrightsIdentity
 
 > Replica ReplicaDeleteAccessrightsIdentity(ctx, replicaId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -154,6 +159,7 @@ Name | Type | Description  | Notes
 ## ReplicaDeleteTagKey
 
 > map[string]string ReplicaDeleteTagKey(ctx, replicaId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -186,6 +192,7 @@ Name | Type | Description  | Notes
 ## ReplicaGetServicesServiceId
 
 > ReplicaServices ReplicaGetServicesServiceId(ctx, replicaId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -218,6 +225,7 @@ Name | Type | Description  | Notes
 ## ReplicaGetTag
 
 > map[string]string ReplicaGetTag(ctx, replicaId)
+
 /tag
 
 ### Required Parameters
@@ -249,6 +257,7 @@ Name | Type | Description  | Notes
 ## ReplicaList
 
 > []Replica ReplicaList(ctx, optional)
+
 List
 
 List replica
@@ -291,6 +300,7 @@ Name | Type | Description  | Notes
 ## ReplicaListAccessrights
 
 > []string ReplicaListAccessrights(ctx, replicaId)
+
 /accessrights
 
 ### Required Parameters
@@ -321,7 +331,8 @@ Name | Type | Description  | Notes
 
 ## ReplicaListQueue
 
-> []Event ReplicaListQueue(ctx, replicaId)
+> []Event ReplicaListQueue(ctx, replicaId, optional)
+
 /queue
 
 ### Required Parameters
@@ -331,6 +342,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **replicaId** | **string**| ID of replica | 
+ **optional** | ***ReplicaListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ReplicaListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -353,6 +376,7 @@ Name | Type | Description  | Notes
 ## ReplicaListServices
 
 > []ReplicaServices ReplicaListServices(ctx, replicaId)
+
 /services
 
 ### Required Parameters
@@ -384,6 +408,7 @@ Name | Type | Description  | Notes
 ## ReplicaPatchTag
 
 > map[string]string ReplicaPatchTag(ctx, replicaId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -416,6 +441,7 @@ Name | Type | Description  | Notes
 ## ReplicaPostAccessrights
 
 > Replica ReplicaPostAccessrights(ctx, replicaId, replicaPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -445,9 +471,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ReplicaPutTag
+
+> map[string]string ReplicaPutTag(ctx, replicaId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**replicaId** | **string**| ID of replica | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ReplicaShow
 
 > Replica ReplicaShow(ctx, replicaId)
+
 Get
 
 Returns a single replica

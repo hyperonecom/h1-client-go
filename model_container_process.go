@@ -10,8 +10,8 @@
 package openapi
 
 type ContainerProcess struct {
-	Id string `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
-	User string `json:"user,omitempty"`
+	Id     string `json:"id,omitempty"`
+	Name   string `json:"name,omitempty"`
+	User   string `json:"user,omitempty"`
 	Parent string `json:"parent,omitempty"`
 }

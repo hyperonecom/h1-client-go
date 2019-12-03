@@ -9,10 +9,11 @@
 
 package openapi
 
+// ServiceBilling struct for ServiceBilling
 type ServiceBilling struct {
-	Price ServiceBillingPrice `json:"price,omitempty"`
-	Period string `json:"period,omitempty"`
-	Quantity float32 `json:"quantity,omitempty"`
-	OneTime bool `json:"oneTime,omitempty"`
+	Price        ServiceBillingPrice        `json:"price,omitempty"`
+	Period       string                     `json:"period,omitempty"`
+	Quantity     float32                    `json:"quantity,omitempty"`
+	OneTime      bool                       `json:"oneTime,omitempty"`
 	Reservations ServiceBillingReservations `json:"reservations,omitempty"`
 }

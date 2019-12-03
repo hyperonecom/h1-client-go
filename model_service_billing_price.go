@@ -9,6 +9,7 @@
 
 package openapi
 
+// ServiceBillingPrice struct for ServiceBillingPrice
 type ServiceBillingPrice struct {
 	PLN float32 `json:"PLN,omitempty"`
 	EUR float32 `json:"EUR,omitempty"`

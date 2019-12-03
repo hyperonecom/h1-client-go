@@ -9,6 +9,7 @@
 
 package openapi
 
+// ProjectLimitNetwork struct for ProjectLimitNetwork
 type ProjectLimitNetwork struct {
 	Count float32 `json:"count"`
 }

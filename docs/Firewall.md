@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Services** | [**[]ProjectServices**](project_services.md) |  | [optional] 
 **Flavour** | **string** |  | [optional] 
 **ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**ModifiedBy** | **string** |  | [optional] [default to ]
-**CreatedBy** | **string** |  | [optional] [default to ]
+**ModifiedBy** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **AccessRights** | **[]string** |  | [optional] 
 **Processing** | **bool** |  | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Tag** | **map[string]string** |  | [optional] 
 **Project** | **string** |  | [optional] 
-**Ingress** | [**[]InlineResponse200**](inline_response_200.md) |  | [optional] 
-**Egress** | [**[]InlineResponse200**](inline_response_200.md) |  | [optional] 
+**Ingress** | [**[]InlineResponse2005**](inline_response_200_5.md) |  | [optional] 
+**Egress** | [**[]InlineResponse2005**](inline_response_200_5.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

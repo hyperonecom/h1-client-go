@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentActionUpdateEnabledServices struct for AgentActionUpdateEnabledServices
 type AgentActionUpdateEnabledServices struct {
 	EnabledServices []string `json:"enabledServices"`
 }

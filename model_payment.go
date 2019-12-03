@@ -13,8 +13,9 @@ import (
 	"time"
 )
 
+// Payment struct for Payment
 type Payment struct {
-	Id           string            `json:"_id,omitempty"`
+	Id           string            `json:"id,omitempty"`
 	Name         string            `json:"name,omitempty"`
 	Services     string            `json:"services,omitempty"`
 	Flavour      string            `json:"flavour,omitempty"`
@@ -22,8 +23,8 @@ type Payment struct {
 	ModifiedBy   string            `json:"modifiedBy,omitempty"`
 	CreatedBy    string            `json:"createdBy,omitempty"`
 	CreatedOn    time.Time         `json:"createdOn,omitempty"`
-	AccessRights string            `json:"accessRights,omitempty"`
-	Processing   string            `json:"processing,omitempty"`
+	AccessRights []string          `json:"accessRights,omitempty"`
+	Processing   bool              `json:"processing,omitempty"`
 	Created      bool              `json:"created,omitempty"`
 	Queue        []Event           `json:"queue,omitempty"`
 	State        string            `json:"state,omitempty"`

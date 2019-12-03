@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] [default to ]
 **FamilyName** | **string** |  | [optional] [default to ]
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
@@ -13,7 +14,6 @@ Name | Type | Description | Notes
 **Verified** | **bool** |  | [optional] [default to false]
 **Lang** | **string** |  | [optional] [default to LANG_EN]
 **Phone** | **string** |  | [optional] [default to ]
-**LastLogin** | [**[]UserLastLogin**](user_lastLogin.md) |  | [optional] 
 **Limit** | [**UserLimit**](user_limit.md) |  | [optional] 
 **Services** | [**[]UserServices**](user_services.md) |  | [optional] 
 **Credential** | [**UserCredential**](user_credential.md) |  | [optional] 

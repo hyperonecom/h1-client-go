@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentActionTransfer struct for AgentActionTransfer
 type AgentActionTransfer struct {
 	Project string `json:"project"`
 }

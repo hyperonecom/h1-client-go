@@ -9,6 +9,7 @@
 
 package openapi
 
+// RegistryPostAccessrights struct for RegistryPostAccessrights
 type RegistryPostAccessrights struct {
 	Identity string `json:"identity,omitempty"`
 }

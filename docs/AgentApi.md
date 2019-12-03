@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**AgentPostCredentialcertificate**](AgentApi.md#AgentPostCredentialcertificate) | **Post** /agent/{agentId}/credential/certificate | /credential/certificate
 [**AgentPostResourceResourceIdactionsrecreate**](AgentApi.md#AgentPostResourceResourceIdactionsrecreate) | **Post** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
 [**AgentPutEnabledServices**](AgentApi.md#AgentPutEnabledServices) | **Put** /agent/{agentId}/enabledServices | /enabledServices
+[**AgentPutTag**](AgentApi.md#AgentPutTag) | **Put** /agent/{agentId}/tag | /tag
 [**AgentShow**](AgentApi.md#AgentShow) | **Get** /agent/{agentId} | Get
 [**AgentUpdate**](AgentApi.md#AgentUpdate) | **Patch** /agent/{agentId} | Update
 
@@ -45,6 +46,7 @@ Method | HTTP request | Description
 ## AgentActionStart
 
 > Agent AgentActionStart(ctx, agentId)
+
 /actions/start
 
 Action start
@@ -78,6 +80,7 @@ Name | Type | Description  | Notes
 ## AgentActionSuspend
 
 > Agent AgentActionSuspend(ctx, agentId)
+
 /actions/suspend
 
 Action suspend
@@ -111,6 +114,7 @@ Name | Type | Description  | Notes
 ## AgentActionTransfer
 
 > Agent AgentActionTransfer(ctx, agentId, agentActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -145,6 +149,7 @@ Name | Type | Description  | Notes
 ## AgentActionUpdateEnabledServices
 
 > Agent AgentActionUpdateEnabledServices(ctx, agentId, agentActionUpdateEnabledServices)
+
 /actions/update_enabledServices
 
 Action update_enabledServices
@@ -179,6 +184,7 @@ Name | Type | Description  | Notes
 ## AgentCreate
 
 > Agent AgentCreate(ctx, agentCreate)
+
 Create
 
 Create agent
@@ -212,6 +218,7 @@ Name | Type | Description  | Notes
 ## AgentDelete
 
 > AgentDelete(ctx, agentId)
+
 Delete
 
 ### Required Parameters
@@ -243,6 +250,7 @@ Name | Type | Description  | Notes
 ## AgentDeleteAccessrightsIdentity
 
 > Agent AgentDeleteAccessrightsIdentity(ctx, agentId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -275,6 +283,7 @@ Name | Type | Description  | Notes
 ## AgentDeleteCredentialId
 
 > Agent AgentDeleteCredentialId(ctx, agentId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -306,7 +315,8 @@ Name | Type | Description  | Notes
 
 ## AgentDeleteCredentialcertificateId
 
-> CredentialCertificate AgentDeleteCredentialcertificateId(ctx, agentId, id)
+> InlineResponse2003 AgentDeleteCredentialcertificateId(ctx, agentId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -320,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialCertificate**](credential.certificate.md)
+[**InlineResponse2003**](inline_response_200_3.md)
 
 ### Authorization
 
@@ -339,6 +349,7 @@ Name | Type | Description  | Notes
 ## AgentDeleteTagKey
 
 > map[string]string AgentDeleteTagKey(ctx, agentId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -371,6 +382,7 @@ Name | Type | Description  | Notes
 ## AgentGetCredentialId
 
 > CredentialPassword AgentGetCredentialId(ctx, agentId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -403,6 +415,7 @@ Name | Type | Description  | Notes
 ## AgentGetCredentialcertificateId
 
 > CredentialCertificate AgentGetCredentialcertificateId(ctx, agentId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -435,6 +448,7 @@ Name | Type | Description  | Notes
 ## AgentGetInspect
 
 > map[string]interface{} AgentGetInspect(ctx, agentId)
+
 /inspect
 
 ### Required Parameters
@@ -466,6 +480,7 @@ Name | Type | Description  | Notes
 ## AgentGetResourceResourceIdinspect
 
 > map[string]interface{} AgentGetResourceResourceIdinspect(ctx, agentId, resourceId)
+
 /resource/:resourceId/inspect
 
 ### Required Parameters
@@ -498,6 +513,7 @@ Name | Type | Description  | Notes
 ## AgentGetServicesServiceId
 
 > AgentServices AgentGetServicesServiceId(ctx, agentId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -530,6 +546,7 @@ Name | Type | Description  | Notes
 ## AgentGetTag
 
 > map[string]string AgentGetTag(ctx, agentId)
+
 /tag
 
 ### Required Parameters
@@ -561,6 +578,7 @@ Name | Type | Description  | Notes
 ## AgentList
 
 > []Agent AgentList(ctx, optional)
+
 List
 
 List agent
@@ -604,6 +622,7 @@ Name | Type | Description  | Notes
 ## AgentListAccessrights
 
 > []string AgentListAccessrights(ctx, agentId)
+
 /accessrights
 
 ### Required Parameters
@@ -635,6 +654,7 @@ Name | Type | Description  | Notes
 ## AgentListCredential
 
 > []CredentialPassword AgentListCredential(ctx, agentId)
+
 /credential
 
 ### Required Parameters
@@ -666,6 +686,7 @@ Name | Type | Description  | Notes
 ## AgentListCredentialcertificate
 
 > []CredentialCertificate AgentListCredentialcertificate(ctx, agentId)
+
 /credential/certificate
 
 ### Required Parameters
@@ -697,6 +718,7 @@ Name | Type | Description  | Notes
 ## AgentListEnabledServices
 
 > []string AgentListEnabledServices(ctx, agentId)
+
 /enabledServices
 
 ### Required Parameters
@@ -727,7 +749,8 @@ Name | Type | Description  | Notes
 
 ## AgentListQueue
 
-> []Event AgentListQueue(ctx, agentId)
+> []Event AgentListQueue(ctx, agentId, optional)
+
 /queue
 
 ### Required Parameters
@@ -737,6 +760,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **agentId** | **string**| ID of agent | 
+ **optional** | ***AgentListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a AgentListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -759,6 +794,7 @@ Name | Type | Description  | Notes
 ## AgentListResource
 
 > []AgentResource AgentListResource(ctx, agentId)
+
 /resource
 
 ### Required Parameters
@@ -789,7 +825,8 @@ Name | Type | Description  | Notes
 
 ## AgentListResourceResourceIdqueue
 
-> []AgentResourceEvent AgentListResourceResourceIdqueue(ctx, agentId, resourceId)
+> []AgentResourceEvent AgentListResourceResourceIdqueue(ctx, agentId, resourceId, optional)
+
 /resource/:resourceId/queue
 
 ### Required Parameters
@@ -800,6 +837,19 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **agentId** | **string**| ID of agent | 
 **resourceId** | **string**| resourceId | 
+ **optional** | ***AgentListResourceResourceIdqueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a AgentListResourceResourceIdqueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -822,6 +872,7 @@ Name | Type | Description  | Notes
 ## AgentListServices
 
 > []AgentServices AgentListServices(ctx, agentId)
+
 /services
 
 ### Required Parameters
@@ -853,6 +904,7 @@ Name | Type | Description  | Notes
 ## AgentPatchCredentialId
 
 > CredentialPassword AgentPatchCredentialId(ctx, agentId, id, agentPatchCredentialId)
+
 /credential/:id
 
 ### Required Parameters
@@ -886,6 +938,7 @@ Name | Type | Description  | Notes
 ## AgentPatchCredentialcertificateId
 
 > CredentialCertificate AgentPatchCredentialcertificateId(ctx, agentId, id, agentPatchCredentialcertificateId)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -919,6 +972,7 @@ Name | Type | Description  | Notes
 ## AgentPatchTag
 
 > map[string]string AgentPatchTag(ctx, agentId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -951,6 +1005,7 @@ Name | Type | Description  | Notes
 ## AgentPostAccessrights
 
 > Agent AgentPostAccessrights(ctx, agentId, agentPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -983,6 +1038,7 @@ Name | Type | Description  | Notes
 ## AgentPostCredential
 
 > CredentialPassword AgentPostCredential(ctx, agentId, agentPostCredential)
+
 /credential
 
 ### Required Parameters
@@ -1015,6 +1071,7 @@ Name | Type | Description  | Notes
 ## AgentPostCredentialcertificate
 
 > CredentialCertificate AgentPostCredentialcertificate(ctx, agentId, agentPostCredentialcertificate)
+
 /credential/certificate
 
 ### Required Parameters
@@ -1047,6 +1104,7 @@ Name | Type | Description  | Notes
 ## AgentPostResourceResourceIdactionsrecreate
 
 > AgentResource AgentPostResourceResourceIdactionsrecreate(ctx, agentId, resourceId)
+
 /resource/:resourceId/actions/recreate
 
 ### Required Parameters
@@ -1079,6 +1137,7 @@ Name | Type | Description  | Notes
 ## AgentPutEnabledServices
 
 > []string AgentPutEnabledServices(ctx, agentId, requestBody)
+
 /enabledServices
 
 ### Required Parameters
@@ -1108,9 +1167,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AgentPutTag
+
+> map[string]string AgentPutTag(ctx, agentId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**agentId** | **string**| ID of agent | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AgentShow
 
 > Agent AgentShow(ctx, agentId)
+
 Get
 
 Returns a single agent
@@ -1144,6 +1237,7 @@ Name | Type | Description  | Notes
 ## AgentUpdate
 
 > Agent AgentUpdate(ctx, agentId, agentUpdate)
+
 Update
 
 Returns modified agent

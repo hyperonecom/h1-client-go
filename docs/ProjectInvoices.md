@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
 **InvoiceNo** | **string** |  | [optional] 
 **IssueDate** | **string** |  | [optional] 
 **Summary** | **string** |  | [optional] 

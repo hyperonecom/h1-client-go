@@ -8,20 +8,10 @@
  */
 
 package openapi
-import (
-	"time"
-)
 
+// InlineResponse200 struct for InlineResponse200
 type InlineResponse200 struct {
+	Id   string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
-	Description string `json:"description,omitempty"`
-	CreatedOn time.Time `json:"createdOn,omitempty"`
-	CreatedBy string `json:"createdBy,omitempty"`
-	ModifiedOn time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy string `json:"modifiedBy,omitempty"`
-	Priority float32 `json:"priority"`
-	Action string `json:"action"`
-	Filter []string `json:"filter,omitempty"`
-	External []string `json:"external,omitempty"`
-	Internal []string `json:"internal,omitempty"`
+	Type string `json:"type,omitempty"`
 }

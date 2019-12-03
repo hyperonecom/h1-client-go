@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**VmDeleteHddDiskId**](VmApi.md#VmDeleteHddDiskId) | **Delete** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
 [**VmDeleteNetadpNetadpId**](VmApi.md#VmDeleteNetadpNetadpId) | **Delete** /vm/{vmId}/netadp/{netadpId} | /netadp/:netadpId
 [**VmDeleteTagKey**](VmApi.md#VmDeleteTagKey) | **Delete** /vm/{vmId}/tag/{key} | /tag/:key
+[**VmGetConsole**](VmApi.md#VmGetConsole) | **Get** /vm/{vmId}/console | /console
 [**VmGetServicesServiceId**](VmApi.md#VmGetServicesServiceId) | **Get** /vm/{vmId}/services/{serviceId} | /services/:serviceId
 [**VmGetTag**](VmApi.md#VmGetTag) | **Get** /vm/{vmId}/tag | /tag
 [**VmList**](VmApi.md#VmList) | **Get** /vm | List
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**VmPostAccessrights**](VmApi.md#VmPostAccessrights) | **Post** /vm/{vmId}/accessrights | /accessrights
 [**VmPostHdd**](VmApi.md#VmPostHdd) | **Post** /vm/{vmId}/hdd | /hdd
 [**VmPostNetadp**](VmApi.md#VmPostNetadp) | **Post** /vm/{vmId}/netadp | /netadp
+[**VmPutTag**](VmApi.md#VmPutTag) | **Put** /vm/{vmId}/tag | /tag
 [**VmShow**](VmApi.md#VmShow) | **Get** /vm/{vmId} | Get
 [**VmUpdate**](VmApi.md#VmUpdate) | **Patch** /vm/{vmId} | Update
 
@@ -38,6 +40,7 @@ Method | HTTP request | Description
 ## VmActionFlavour
 
 > Vm VmActionFlavour(ctx, vmId, vmActionFlavour)
+
 /actions/flavour
 
 Action flavour
@@ -72,6 +75,7 @@ Name | Type | Description  | Notes
 ## VmActionImage
 
 > Vm VmActionImage(ctx, vmId, vmActionImage)
+
 /actions/image
 
 Action image
@@ -106,6 +110,7 @@ Name | Type | Description  | Notes
 ## VmActionPasswordReset
 
 > Vm VmActionPasswordReset(ctx, vmId, vmActionPasswordReset)
+
 /actions/password_reset
 
 Action password_reset
@@ -140,6 +145,7 @@ Name | Type | Description  | Notes
 ## VmActionRename
 
 > Vm VmActionRename(ctx, vmId, vmActionRename)
+
 /actions/rename
 
 Action rename
@@ -174,6 +180,7 @@ Name | Type | Description  | Notes
 ## VmActionRestart
 
 > Vm VmActionRestart(ctx, vmId)
+
 /actions/restart
 
 Action restart
@@ -207,6 +214,7 @@ Name | Type | Description  | Notes
 ## VmActionStart
 
 > Vm VmActionStart(ctx, vmId)
+
 /actions/start
 
 Action start
@@ -240,6 +248,7 @@ Name | Type | Description  | Notes
 ## VmActionStop
 
 > Vm VmActionStop(ctx, vmId)
+
 /actions/stop
 
 Action stop
@@ -273,6 +282,7 @@ Name | Type | Description  | Notes
 ## VmActionTurnoff
 
 > Vm VmActionTurnoff(ctx, vmId)
+
 /actions/turnoff
 
 Action turnoff
@@ -306,6 +316,7 @@ Name | Type | Description  | Notes
 ## VmCreate
 
 > Vm VmCreate(ctx, vmCreate)
+
 Create
 
 Create vm
@@ -339,6 +350,7 @@ Name | Type | Description  | Notes
 ## VmDelete
 
 > VmDelete(ctx, vmId, vmDelete)
+
 Delete
 
 ### Required Parameters
@@ -371,6 +383,7 @@ Name | Type | Description  | Notes
 ## VmDeleteAccessrightsIdentity
 
 > Vm VmDeleteAccessrightsIdentity(ctx, vmId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -402,7 +415,8 @@ Name | Type | Description  | Notes
 
 ## VmDeleteHddDiskId
 
-> Vm VmDeleteHddDiskId(ctx, vmId, diskId)
+> Hdd VmDeleteHddDiskId(ctx, vmId, diskId)
+
 /hdd/:diskId
 
 ### Required Parameters
@@ -416,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](vm.md)
+[**Hdd**](hdd.md)
 
 ### Authorization
 
@@ -434,7 +448,8 @@ Name | Type | Description  | Notes
 
 ## VmDeleteNetadpNetadpId
 
-> Vm VmDeleteNetadpNetadpId(ctx, vmId, netadpId)
+> Netadp VmDeleteNetadpNetadpId(ctx, vmId, netadpId)
+
 /netadp/:netadpId
 
 ### Required Parameters
@@ -448,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](vm.md)
+[**Netadp**](netadp.md)
 
 ### Authorization
 
@@ -467,6 +482,7 @@ Name | Type | Description  | Notes
 ## VmDeleteTagKey
 
 > map[string]string VmDeleteTagKey(ctx, vmId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -496,9 +512,42 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## VmGetConsole
+
+> VmGetConsole(ctx, vmId)
+
+/console
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vmId** | **string**| ID of vm | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## VmGetServicesServiceId
 
 > VmServices VmGetServicesServiceId(ctx, vmId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -531,6 +580,7 @@ Name | Type | Description  | Notes
 ## VmGetTag
 
 > map[string]string VmGetTag(ctx, vmId)
+
 /tag
 
 ### Required Parameters
@@ -562,6 +612,7 @@ Name | Type | Description  | Notes
 ## VmList
 
 > []Vm VmList(ctx, optional)
+
 List
 
 List vm
@@ -605,6 +656,7 @@ Name | Type | Description  | Notes
 ## VmListAccessrights
 
 > []string VmListAccessrights(ctx, vmId)
+
 /accessrights
 
 ### Required Parameters
@@ -636,6 +688,7 @@ Name | Type | Description  | Notes
 ## VmListHdd
 
 > []Hdd VmListHdd(ctx, vmId)
+
 /hdd
 
 ### Required Parameters
@@ -667,6 +720,7 @@ Name | Type | Description  | Notes
 ## VmListNetadp
 
 > []Netadp VmListNetadp(ctx, vmId)
+
 /netadp
 
 ### Required Parameters
@@ -697,7 +751,8 @@ Name | Type | Description  | Notes
 
 ## VmListQueue
 
-> []Event VmListQueue(ctx, vmId)
+> []Event VmListQueue(ctx, vmId, optional)
+
 /queue
 
 ### Required Parameters
@@ -707,6 +762,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **vmId** | **string**| ID of vm | 
+ **optional** | ***VmListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a VmListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -729,6 +796,7 @@ Name | Type | Description  | Notes
 ## VmListServices
 
 > []VmServices VmListServices(ctx, vmId)
+
 /services
 
 ### Required Parameters
@@ -760,6 +828,7 @@ Name | Type | Description  | Notes
 ## VmPatchTag
 
 > map[string]string VmPatchTag(ctx, vmId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -792,6 +861,7 @@ Name | Type | Description  | Notes
 ## VmPostAccessrights
 
 > Vm VmPostAccessrights(ctx, vmId, vmPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -823,7 +893,8 @@ Name | Type | Description  | Notes
 
 ## VmPostHdd
 
-> Vm VmPostHdd(ctx, vmId, vmPostHdd)
+> Hdd VmPostHdd(ctx, vmId, vmPostHdd)
+
 /hdd
 
 ### Required Parameters
@@ -837,7 +908,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](vm.md)
+[**Hdd**](hdd.md)
 
 ### Authorization
 
@@ -855,7 +926,8 @@ Name | Type | Description  | Notes
 
 ## VmPostNetadp
 
-> Vm VmPostNetadp(ctx, vmId, vmPostNetadp)
+> Netadp VmPostNetadp(ctx, vmId, vmPostNetadp)
+
 /netadp
 
 ### Required Parameters
@@ -869,7 +941,40 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](vm.md)
+[**Netadp**](netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VmPutTag
+
+> map[string]string VmPutTag(ctx, vmId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vmId** | **string**| ID of vm | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
 
 ### Authorization
 
@@ -888,6 +993,7 @@ Name | Type | Description  | Notes
 ## VmShow
 
 > Vm VmShow(ctx, vmId)
+
 Get
 
 Returns a single vm
@@ -921,6 +1027,7 @@ Name | Type | Description  | Notes
 ## VmUpdate
 
 > Vm VmUpdate(ctx, vmId, vmUpdate)
+
 Update
 
 Returns modified vm

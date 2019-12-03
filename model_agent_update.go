@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentUpdate struct for AgentUpdate
 type AgentUpdate struct {
 	Name string `json:"name,omitempty"`
 }

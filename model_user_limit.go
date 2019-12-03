@@ -9,6 +9,7 @@
 
 package openapi
 
+// UserLimit struct for UserLimit
 type UserLimit struct {
 	Organisation ProjectLimitNetwork `json:"organisation,omitempty"`
 }

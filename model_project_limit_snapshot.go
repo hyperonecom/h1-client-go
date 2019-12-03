@@ -9,6 +9,7 @@
 
 package openapi
 
+// ProjectLimitSnapshot struct for ProjectLimitSnapshot
 type ProjectLimitSnapshot struct {
 	Count float32 `json:"count"`
 }

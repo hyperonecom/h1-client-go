@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**DatabasePostAccessrights**](DatabaseApi.md#DatabasePostAccessrights) | **Post** /database/{databaseId}/accessrights | /accessrights
 [**DatabasePostCredential**](DatabaseApi.md#DatabasePostCredential) | **Post** /database/{databaseId}/credential | /credential
 [**DatabasePostCredentialpassword**](DatabaseApi.md#DatabasePostCredentialpassword) | **Post** /database/{databaseId}/credential/password | /credential/password
+[**DatabasePutTag**](DatabaseApi.md#DatabasePutTag) | **Put** /database/{databaseId}/tag | /tag
 [**DatabaseShow**](DatabaseApi.md#DatabaseShow) | **Get** /database/{databaseId} | Get
 [**DatabaseUpdate**](DatabaseApi.md#DatabaseUpdate) | **Patch** /database/{databaseId} | Update
 
@@ -37,6 +38,7 @@ Method | HTTP request | Description
 ## DatabaseActionStart
 
 > Database DatabaseActionStart(ctx, databaseId)
+
 /actions/start
 
 Action start
@@ -70,6 +72,7 @@ Name | Type | Description  | Notes
 ## DatabaseActionStop
 
 > Database DatabaseActionStop(ctx, databaseId)
+
 /actions/stop
 
 Action stop
@@ -103,6 +106,7 @@ Name | Type | Description  | Notes
 ## DatabaseActionTransfer
 
 > Database DatabaseActionTransfer(ctx, databaseId, databaseActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -137,6 +141,7 @@ Name | Type | Description  | Notes
 ## DatabaseCreate
 
 > Database DatabaseCreate(ctx, databaseCreate)
+
 Create
 
 Create database
@@ -170,6 +175,7 @@ Name | Type | Description  | Notes
 ## DatabaseDelete
 
 > DatabaseDelete(ctx, databaseId)
+
 Delete
 
 ### Required Parameters
@@ -201,6 +207,7 @@ Name | Type | Description  | Notes
 ## DatabaseDeleteAccessrightsIdentity
 
 > Database DatabaseDeleteAccessrightsIdentity(ctx, databaseId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -233,6 +240,7 @@ Name | Type | Description  | Notes
 ## DatabaseDeleteCredentialId
 
 > Database DatabaseDeleteCredentialId(ctx, databaseId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -265,6 +273,7 @@ Name | Type | Description  | Notes
 ## DatabaseDeleteCredentialpasswordId
 
 > Database DatabaseDeleteCredentialpasswordId(ctx, databaseId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -297,6 +306,7 @@ Name | Type | Description  | Notes
 ## DatabaseDeleteTagKey
 
 > map[string]string DatabaseDeleteTagKey(ctx, databaseId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -329,6 +339,7 @@ Name | Type | Description  | Notes
 ## DatabaseGetCredentialId
 
 > CredentialPassword DatabaseGetCredentialId(ctx, databaseId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -361,6 +372,7 @@ Name | Type | Description  | Notes
 ## DatabaseGetCredentialpasswordId
 
 > CredentialPassword DatabaseGetCredentialpasswordId(ctx, databaseId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -393,6 +405,7 @@ Name | Type | Description  | Notes
 ## DatabaseGetServicesServiceId
 
 > DatabaseServices DatabaseGetServicesServiceId(ctx, databaseId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -425,6 +438,7 @@ Name | Type | Description  | Notes
 ## DatabaseGetTag
 
 > map[string]string DatabaseGetTag(ctx, databaseId)
+
 /tag
 
 ### Required Parameters
@@ -456,6 +470,7 @@ Name | Type | Description  | Notes
 ## DatabaseList
 
 > []Database DatabaseList(ctx, optional)
+
 List
 
 List database
@@ -499,6 +514,7 @@ Name | Type | Description  | Notes
 ## DatabaseListAccessrights
 
 > []string DatabaseListAccessrights(ctx, databaseId)
+
 /accessrights
 
 ### Required Parameters
@@ -530,6 +546,7 @@ Name | Type | Description  | Notes
 ## DatabaseListCredential
 
 > []CredentialPassword DatabaseListCredential(ctx, databaseId)
+
 /credential
 
 ### Required Parameters
@@ -561,6 +578,7 @@ Name | Type | Description  | Notes
 ## DatabaseListCredentialpassword
 
 > []CredentialPassword DatabaseListCredentialpassword(ctx, databaseId)
+
 /credential/password
 
 ### Required Parameters
@@ -591,7 +609,8 @@ Name | Type | Description  | Notes
 
 ## DatabaseListQueue
 
-> []Event DatabaseListQueue(ctx, databaseId)
+> []Event DatabaseListQueue(ctx, databaseId, optional)
+
 /queue
 
 ### Required Parameters
@@ -601,6 +620,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **databaseId** | **string**| ID of database | 
+ **optional** | ***DatabaseListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a DatabaseListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -623,6 +654,7 @@ Name | Type | Description  | Notes
 ## DatabaseListServices
 
 > []DatabaseServices DatabaseListServices(ctx, databaseId)
+
 /services
 
 ### Required Parameters
@@ -654,6 +686,7 @@ Name | Type | Description  | Notes
 ## DatabasePatchCredentialId
 
 > CredentialPassword DatabasePatchCredentialId(ctx, databaseId, id, databasePatchCredentialId)
+
 /credential/:id
 
 ### Required Parameters
@@ -687,6 +720,7 @@ Name | Type | Description  | Notes
 ## DatabasePatchCredentialpasswordId
 
 > CredentialPassword DatabasePatchCredentialpasswordId(ctx, databaseId, id, databasePatchCredentialpasswordId)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -720,6 +754,7 @@ Name | Type | Description  | Notes
 ## DatabasePatchTag
 
 > map[string]string DatabasePatchTag(ctx, databaseId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -752,6 +787,7 @@ Name | Type | Description  | Notes
 ## DatabasePostAccessrights
 
 > Database DatabasePostAccessrights(ctx, databaseId, databasePostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -784,6 +820,7 @@ Name | Type | Description  | Notes
 ## DatabasePostCredential
 
 > CredentialPassword DatabasePostCredential(ctx, databaseId, databasePostCredential)
+
 /credential
 
 ### Required Parameters
@@ -816,6 +853,7 @@ Name | Type | Description  | Notes
 ## DatabasePostCredentialpassword
 
 > CredentialPassword DatabasePostCredentialpassword(ctx, databaseId, databasePostCredentialpassword)
+
 /credential/password
 
 ### Required Parameters
@@ -845,9 +883,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DatabasePutTag
+
+> map[string]string DatabasePutTag(ctx, databaseId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**databaseId** | **string**| ID of database | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DatabaseShow
 
 > Database DatabaseShow(ctx, databaseId)
+
 Get
 
 Returns a single database
@@ -881,6 +953,7 @@ Name | Type | Description  | Notes
 ## DatabaseUpdate
 
 > Database DatabaseUpdate(ctx, databaseId, databaseUpdate)
+
 Update
 
 Returns modified database

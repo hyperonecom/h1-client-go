@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Replica** | **string** |  | [optional] 
 **Service** | **string** |  | [optional] [default to 564639bc052c084e2f2e3266]
 **Description** | **string** |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | **map[string]string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

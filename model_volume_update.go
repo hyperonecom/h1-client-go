@@ -9,6 +9,7 @@
 
 package openapi
 
+// VolumeUpdate struct for VolumeUpdate
 type VolumeUpdate struct {
 	Name string `json:"name,omitempty"`
 }

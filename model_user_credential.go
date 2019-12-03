@@ -9,7 +9,8 @@
 
 package openapi
 
+// UserCredential struct for UserCredential
 type UserCredential struct {
-	Password UserCredentialPassword `json:"password,omitempty"`
+	Password    UserCredentialPassword `json:"password,omitempty"`
 	Certificate UserCredentialPassword `json:"certificate,omitempty"`
 }

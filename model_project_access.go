@@ -11,5 +11,5 @@ package openapi
 
 type ProjectAccess struct {
 	Method string `json:"method"`
-	Path string `json:"path"`
+	Path   string `json:"path"`
 }

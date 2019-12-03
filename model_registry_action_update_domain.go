@@ -9,6 +9,7 @@
 
 package openapi
 
+// RegistryActionUpdateDomain struct for RegistryActionUpdateDomain
 type RegistryActionUpdateDomain struct {
 	Domain []string `json:"domain"`
 }

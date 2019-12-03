@@ -9,8 +9,9 @@
 
 package openapi
 
+// ContainerVolumes struct for ContainerVolumes
 type ContainerVolumes struct {
-	Source string `json:"source"`
+	Source     string `json:"source"`
 	SourcePath string `json:"sourcePath,omitempty"`
-	Target string `json:"target"`
+	Target     string `json:"target"`
 }

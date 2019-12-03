@@ -9,7 +9,8 @@
 
 package openapi
 
+// UserServices struct for UserServices
 type UserServices struct {
-	Type string `json:"type,omitempty"`
+	Type          string `json:"type,omitempty"`
 	SourceService string `json:"sourceService,omitempty"`
 }

@@ -9,6 +9,7 @@
 
 package openapi
 
+// DatabasePostAccessrights struct for DatabasePostAccessrights
 type DatabasePostAccessrights struct {
 	Identity string `json:"identity,omitempty"`
 }

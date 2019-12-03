@@ -4,6 +4,7 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**WebsiteActionRestart**](WebsiteApi.md#WebsiteActionRestart) | **Post** /website/{websiteId}/actions/restart | /actions/restart
 [**WebsiteActionStart**](WebsiteApi.md#WebsiteActionStart) | **Post** /website/{websiteId}/actions/start | /actions/start
 [**WebsiteActionStop**](WebsiteApi.md#WebsiteActionStop) | **Post** /website/{websiteId}/actions/stop | /actions/stop
 [**WebsiteActionTransfer**](WebsiteApi.md#WebsiteActionTransfer) | **Post** /website/{websiteId}/actions/transfer | /actions/transfer
@@ -40,14 +41,50 @@ Method | HTTP request | Description
 [**WebsitePostCredentialcertificate**](WebsiteApi.md#WebsitePostCredentialcertificate) | **Post** /website/{websiteId}/credential/certificate | /credential/certificate
 [**WebsitePostCredentialpassword**](WebsiteApi.md#WebsitePostCredentialpassword) | **Post** /website/{websiteId}/credential/password | /credential/password
 [**WebsitePostSnapshot**](WebsiteApi.md#WebsitePostSnapshot) | **Post** /website/{websiteId}/snapshot | /snapshot
+[**WebsitePutTag**](WebsiteApi.md#WebsitePutTag) | **Put** /website/{websiteId}/tag | /tag
 [**WebsiteShow**](WebsiteApi.md#WebsiteShow) | **Get** /website/{websiteId} | Get
 [**WebsiteUpdate**](WebsiteApi.md#WebsiteUpdate) | **Patch** /website/{websiteId} | Update
 
 
 
+## WebsiteActionRestart
+
+> Website WebsiteActionRestart(ctx, websiteId)
+
+/actions/restart
+
+Action restart
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+
+### Return type
+
+[**Website**](website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsiteActionStart
 
 > Website WebsiteActionStart(ctx, websiteId)
+
 /actions/start
 
 Action start
@@ -81,6 +118,7 @@ Name | Type | Description  | Notes
 ## WebsiteActionStop
 
 > Website WebsiteActionStop(ctx, websiteId)
+
 /actions/stop
 
 Action stop
@@ -114,6 +152,7 @@ Name | Type | Description  | Notes
 ## WebsiteActionTransfer
 
 > Website WebsiteActionTransfer(ctx, websiteId, websiteActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -148,6 +187,7 @@ Name | Type | Description  | Notes
 ## WebsiteActionUpdateDomain
 
 > Website WebsiteActionUpdateDomain(ctx, websiteId, websiteActionUpdateDomain)
+
 /actions/update_domain
 
 Action update_domain
@@ -182,6 +222,7 @@ Name | Type | Description  | Notes
 ## WebsiteCreate
 
 > Website WebsiteCreate(ctx, websiteCreate)
+
 Create
 
 Create website
@@ -215,6 +256,7 @@ Name | Type | Description  | Notes
 ## WebsiteDelete
 
 > WebsiteDelete(ctx, websiteId)
+
 Delete
 
 ### Required Parameters
@@ -246,6 +288,7 @@ Name | Type | Description  | Notes
 ## WebsiteDeleteAccessrightsIdentity
 
 > Website WebsiteDeleteAccessrightsIdentity(ctx, websiteId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -278,6 +321,7 @@ Name | Type | Description  | Notes
 ## WebsiteDeleteCredentialId
 
 > Website WebsiteDeleteCredentialId(ctx, websiteId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -309,7 +353,8 @@ Name | Type | Description  | Notes
 
 ## WebsiteDeleteCredentialcertificateId
 
-> CredentialCertificate WebsiteDeleteCredentialcertificateId(ctx, websiteId, id)
+> InlineResponse2003 WebsiteDeleteCredentialcertificateId(ctx, websiteId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -323,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialCertificate**](credential.certificate.md)
+[**InlineResponse2003**](inline_response_200_3.md)
 
 ### Authorization
 
@@ -342,6 +387,7 @@ Name | Type | Description  | Notes
 ## WebsiteDeleteCredentialpasswordId
 
 > Website WebsiteDeleteCredentialpasswordId(ctx, websiteId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -374,6 +420,7 @@ Name | Type | Description  | Notes
 ## WebsiteDeleteSnapshotId
 
 > Website WebsiteDeleteSnapshotId(ctx, websiteId, id)
+
 /snapshot/:id
 
 ### Required Parameters
@@ -406,6 +453,7 @@ Name | Type | Description  | Notes
 ## WebsiteDeleteTagKey
 
 > map[string]string WebsiteDeleteTagKey(ctx, websiteId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -438,6 +486,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetCredentialId
 
 > CredentialPassword WebsiteGetCredentialId(ctx, websiteId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -470,6 +519,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetCredentialcertificateId
 
 > CredentialCertificate WebsiteGetCredentialcertificateId(ctx, websiteId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -502,6 +552,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetCredentialpasswordId
 
 > CredentialPassword WebsiteGetCredentialpasswordId(ctx, websiteId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -534,6 +585,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetServicesServiceId
 
 > WebsiteServices WebsiteGetServicesServiceId(ctx, websiteId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -566,6 +618,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetSnapshotId
 
 > WebsiteGetSnapshotId(ctx, websiteId, id)
+
 /snapshot/:id
 
 ### Required Parameters
@@ -597,7 +650,8 @@ Name | Type | Description  | Notes
 
 ## WebsiteGetSnapshotIddownload
 
-> WebsiteGetSnapshotIddownload(ctx, websiteId)
+> WebsiteGetSnapshotIddownload(ctx, websiteId, optional)
+
 /snapshot/:id/download
 
 ### Required Parameters
@@ -607,6 +661,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **websiteId** | **string**| ID of website | 
+ **optional** | ***WebsiteGetSnapshotIddownloadOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a WebsiteGetSnapshotIddownloadOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **incremental** | **optional.String**| incremental | 
 
 ### Return type
 
@@ -629,6 +694,7 @@ Name | Type | Description  | Notes
 ## WebsiteGetTag
 
 > map[string]string WebsiteGetTag(ctx, websiteId)
+
 /tag
 
 ### Required Parameters
@@ -660,6 +726,7 @@ Name | Type | Description  | Notes
 ## WebsiteList
 
 > []Website WebsiteList(ctx, optional)
+
 List
 
 List website
@@ -703,6 +770,7 @@ Name | Type | Description  | Notes
 ## WebsiteListAccessrights
 
 > []string WebsiteListAccessrights(ctx, websiteId)
+
 /accessrights
 
 ### Required Parameters
@@ -734,6 +802,7 @@ Name | Type | Description  | Notes
 ## WebsiteListCredential
 
 > []CredentialPassword WebsiteListCredential(ctx, websiteId)
+
 /credential
 
 ### Required Parameters
@@ -765,6 +834,7 @@ Name | Type | Description  | Notes
 ## WebsiteListCredentialcertificate
 
 > []CredentialCertificate WebsiteListCredentialcertificate(ctx, websiteId)
+
 /credential/certificate
 
 ### Required Parameters
@@ -796,6 +866,7 @@ Name | Type | Description  | Notes
 ## WebsiteListCredentialpassword
 
 > []CredentialPassword WebsiteListCredentialpassword(ctx, websiteId)
+
 /credential/password
 
 ### Required Parameters
@@ -826,7 +897,8 @@ Name | Type | Description  | Notes
 
 ## WebsiteListQueue
 
-> []Event WebsiteListQueue(ctx, websiteId)
+> []Event WebsiteListQueue(ctx, websiteId, optional)
+
 /queue
 
 ### Required Parameters
@@ -836,6 +908,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **websiteId** | **string**| ID of website | 
+ **optional** | ***WebsiteListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a WebsiteListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -858,6 +942,7 @@ Name | Type | Description  | Notes
 ## WebsiteListServices
 
 > []WebsiteServices WebsiteListServices(ctx, websiteId)
+
 /services
 
 ### Required Parameters
@@ -889,6 +974,7 @@ Name | Type | Description  | Notes
 ## WebsiteListSnapshot
 
 > WebsiteListSnapshot(ctx, websiteId)
+
 /snapshot
 
 ### Required Parameters
@@ -920,6 +1006,7 @@ Name | Type | Description  | Notes
 ## WebsitePatchCredentialId
 
 > CredentialPassword WebsitePatchCredentialId(ctx, websiteId, id, websitePatchCredentialId)
+
 /credential/:id
 
 ### Required Parameters
@@ -953,6 +1040,7 @@ Name | Type | Description  | Notes
 ## WebsitePatchCredentialcertificateId
 
 > CredentialCertificate WebsitePatchCredentialcertificateId(ctx, websiteId, id, websitePatchCredentialcertificateId)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -986,6 +1074,7 @@ Name | Type | Description  | Notes
 ## WebsitePatchCredentialpasswordId
 
 > CredentialPassword WebsitePatchCredentialpasswordId(ctx, websiteId, id, websitePatchCredentialpasswordId)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -1019,6 +1108,7 @@ Name | Type | Description  | Notes
 ## WebsitePatchTag
 
 > map[string]string WebsitePatchTag(ctx, websiteId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -1051,6 +1141,7 @@ Name | Type | Description  | Notes
 ## WebsitePostAccessrights
 
 > Website WebsitePostAccessrights(ctx, websiteId, websitePostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -1083,6 +1174,7 @@ Name | Type | Description  | Notes
 ## WebsitePostCredential
 
 > CredentialPassword WebsitePostCredential(ctx, websiteId, websitePostCredential)
+
 /credential
 
 ### Required Parameters
@@ -1115,6 +1207,7 @@ Name | Type | Description  | Notes
 ## WebsitePostCredentialcertificate
 
 > CredentialCertificate WebsitePostCredentialcertificate(ctx, websiteId, websitePostCredentialcertificate)
+
 /credential/certificate
 
 ### Required Parameters
@@ -1147,6 +1240,7 @@ Name | Type | Description  | Notes
 ## WebsitePostCredentialpassword
 
 > CredentialPassword WebsitePostCredentialpassword(ctx, websiteId, websitePostCredentialpassword)
+
 /credential/password
 
 ### Required Parameters
@@ -1179,6 +1273,7 @@ Name | Type | Description  | Notes
 ## WebsitePostSnapshot
 
 > Website WebsitePostSnapshot(ctx, websiteId, websitePostSnapshot)
+
 /snapshot
 
 ### Required Parameters
@@ -1208,9 +1303,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## WebsitePutTag
+
+> map[string]string WebsitePutTag(ctx, websiteId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**websiteId** | **string**| ID of website | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebsiteShow
 
 > Website WebsiteShow(ctx, websiteId)
+
 Get
 
 Returns a single website
@@ -1244,6 +1373,7 @@ Name | Type | Description  | Notes
 ## WebsiteUpdate
 
 > Website WebsiteUpdate(ctx, websiteId, websiteUpdate)
+
 Update
 
 Returns modified website

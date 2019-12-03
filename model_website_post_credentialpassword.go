@@ -9,9 +9,10 @@
 
 package openapi
 
+// WebsitePostCredentialpassword struct for WebsitePostCredentialpassword
 type WebsitePostCredentialpassword struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	Name  string `json:"name"`
+	Type  string `json:"type"`
 	Value string `json:"value"`
 	Token string `json:"token,omitempty"`
 }

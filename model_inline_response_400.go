@@ -9,6 +9,7 @@
 
 package openapi
 
+// InlineResponse400 struct for InlineResponse400
 type InlineResponse400 struct {
 	// error description
 	Message string `json:"message,omitempty"`

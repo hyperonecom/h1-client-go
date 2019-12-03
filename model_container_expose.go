@@ -9,6 +9,7 @@
 
 package openapi
 
+// ContainerExpose struct for ContainerExpose
 type ContainerExpose struct {
 	Internal string `json:"internal"`
 	External string `json:"external"`

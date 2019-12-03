@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**VolumeListServices**](VolumeApi.md#VolumeListServices) | **Get** /volume/{volumeId}/services | /services
 [**VolumePatchTag**](VolumeApi.md#VolumePatchTag) | **Patch** /volume/{volumeId}/tag | /tag
 [**VolumePostAccessrights**](VolumeApi.md#VolumePostAccessrights) | **Post** /volume/{volumeId}/accessrights | /accessrights
+[**VolumePutTag**](VolumeApi.md#VolumePutTag) | **Put** /volume/{volumeId}/tag | /tag
 [**VolumeShow**](VolumeApi.md#VolumeShow) | **Get** /volume/{volumeId} | Get
 [**VolumeUpdate**](VolumeApi.md#VolumeUpdate) | **Patch** /volume/{volumeId} | Update
 
@@ -24,6 +25,7 @@ Method | HTTP request | Description
 ## VolumeCreate
 
 > Volume VolumeCreate(ctx, volumeCreate)
+
 Create
 
 Create volume
@@ -57,6 +59,7 @@ Name | Type | Description  | Notes
 ## VolumeDelete
 
 > VolumeDelete(ctx, volumeId)
+
 Delete
 
 ### Required Parameters
@@ -88,6 +91,7 @@ Name | Type | Description  | Notes
 ## VolumeDeleteAccessrightsIdentity
 
 > Volume VolumeDeleteAccessrightsIdentity(ctx, volumeId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -120,6 +124,7 @@ Name | Type | Description  | Notes
 ## VolumeDeleteTagKey
 
 > map[string]string VolumeDeleteTagKey(ctx, volumeId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
 ## VolumeGetServicesServiceId
 
 > VolumeServices VolumeGetServicesServiceId(ctx, volumeId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -184,6 +190,7 @@ Name | Type | Description  | Notes
 ## VolumeGetTag
 
 > map[string]string VolumeGetTag(ctx, volumeId)
+
 /tag
 
 ### Required Parameters
@@ -215,6 +222,7 @@ Name | Type | Description  | Notes
 ## VolumeList
 
 > []Volume VolumeList(ctx, optional)
+
 List
 
 List volume
@@ -258,6 +266,7 @@ Name | Type | Description  | Notes
 ## VolumeListAccessrights
 
 > []string VolumeListAccessrights(ctx, volumeId)
+
 /accessrights
 
 ### Required Parameters
@@ -288,7 +297,8 @@ Name | Type | Description  | Notes
 
 ## VolumeListQueue
 
-> []Event VolumeListQueue(ctx, volumeId)
+> []Event VolumeListQueue(ctx, volumeId, optional)
+
 /queue
 
 ### Required Parameters
@@ -298,6 +308,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **volumeId** | **string**| ID of volume | 
+ **optional** | ***VolumeListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a VolumeListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -320,6 +342,7 @@ Name | Type | Description  | Notes
 ## VolumeListServices
 
 > []VolumeServices VolumeListServices(ctx, volumeId)
+
 /services
 
 ### Required Parameters
@@ -351,6 +374,7 @@ Name | Type | Description  | Notes
 ## VolumePatchTag
 
 > map[string]string VolumePatchTag(ctx, volumeId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -383,6 +407,7 @@ Name | Type | Description  | Notes
 ## VolumePostAccessrights
 
 > Volume VolumePostAccessrights(ctx, volumeId, volumePostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -412,9 +437,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## VolumePutTag
+
+> map[string]string VolumePutTag(ctx, volumeId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**volumeId** | **string**| ID of volume | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## VolumeShow
 
 > Volume VolumeShow(ctx, volumeId)
+
 Get
 
 Returns a single volume
@@ -448,6 +507,7 @@ Name | Type | Description  | Notes
 ## VolumeUpdate
 
 > Volume VolumeUpdate(ctx, volumeId, volumeUpdate)
+
 Update
 
 Returns modified volume

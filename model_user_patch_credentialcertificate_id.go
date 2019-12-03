@@ -9,6 +9,7 @@
 
 package openapi
 
+// UserPatchCredentialcertificateId struct for UserPatchCredentialcertificateId
 type UserPatchCredentialcertificateId struct {
 	Name string `json:"name,omitempty"`
 }

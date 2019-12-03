@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**ContainerListServices**](ContainerApi.md#ContainerListServices) | **Get** /container/{containerId}/services | /services
 [**ContainerPatchTag**](ContainerApi.md#ContainerPatchTag) | **Patch** /container/{containerId}/tag | /tag
 [**ContainerPostAccessrights**](ContainerApi.md#ContainerPostAccessrights) | **Post** /container/{containerId}/accessrights | /accessrights
+[**ContainerPutTag**](ContainerApi.md#ContainerPutTag) | **Put** /container/{containerId}/tag | /tag
 [**ContainerShow**](ContainerApi.md#ContainerShow) | **Get** /container/{containerId} | Get
 [**ContainerUpdate**](ContainerApi.md#ContainerUpdate) | **Patch** /container/{containerId} | Update
 
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 ## ContainerActionRestart
 
 > Container ContainerActionRestart(ctx, containerId)
+
 /actions/restart
 
 Action restart
@@ -61,6 +63,7 @@ Name | Type | Description  | Notes
 ## ContainerActionStart
 
 > Container ContainerActionStart(ctx, containerId)
+
 /actions/start
 
 Action start
@@ -94,6 +97,7 @@ Name | Type | Description  | Notes
 ## ContainerActionStop
 
 > Container ContainerActionStop(ctx, containerId)
+
 /actions/stop
 
 Action stop
@@ -127,6 +131,7 @@ Name | Type | Description  | Notes
 ## ContainerCreate
 
 > Container ContainerCreate(ctx, containerCreate)
+
 Create
 
 Create container
@@ -160,6 +165,7 @@ Name | Type | Description  | Notes
 ## ContainerDelete
 
 > ContainerDelete(ctx, containerId)
+
 Delete
 
 ### Required Parameters
@@ -191,6 +197,7 @@ Name | Type | Description  | Notes
 ## ContainerDeleteAccessrightsIdentity
 
 > Container ContainerDeleteAccessrightsIdentity(ctx, containerId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -223,6 +230,7 @@ Name | Type | Description  | Notes
 ## ContainerDeleteTagKey
 
 > map[string]string ContainerDeleteTagKey(ctx, containerId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -255,6 +263,7 @@ Name | Type | Description  | Notes
 ## ContainerGetServicesServiceId
 
 > ContainerServices ContainerGetServicesServiceId(ctx, containerId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -287,6 +296,7 @@ Name | Type | Description  | Notes
 ## ContainerGetTag
 
 > map[string]string ContainerGetTag(ctx, containerId)
+
 /tag
 
 ### Required Parameters
@@ -318,6 +328,7 @@ Name | Type | Description  | Notes
 ## ContainerList
 
 > []Container ContainerList(ctx, optional)
+
 List
 
 List container
@@ -361,6 +372,7 @@ Name | Type | Description  | Notes
 ## ContainerListAccessrights
 
 > []string ContainerListAccessrights(ctx, containerId)
+
 /accessrights
 
 ### Required Parameters
@@ -391,7 +403,8 @@ Name | Type | Description  | Notes
 
 ## ContainerListProcess
 
-> []ContainerProcess ContainerListProcess(ctx, containerId)
+> []InlineResponse2004 ContainerListProcess(ctx, containerId)
+
 /process
 
 ### Required Parameters
@@ -404,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ContainerProcess**](container.process.md)
+[**[]InlineResponse2004**](inline_response_200_4.md)
 
 ### Authorization
 
@@ -422,7 +435,8 @@ Name | Type | Description  | Notes
 
 ## ContainerListQueue
 
-> []Event ContainerListQueue(ctx, containerId)
+> []Event ContainerListQueue(ctx, containerId, optional)
+
 /queue
 
 ### Required Parameters
@@ -432,6 +446,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **containerId** | **string**| ID of container | 
+ **optional** | ***ContainerListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ContainerListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -454,6 +480,7 @@ Name | Type | Description  | Notes
 ## ContainerListServices
 
 > []ContainerServices ContainerListServices(ctx, containerId)
+
 /services
 
 ### Required Parameters
@@ -485,6 +512,7 @@ Name | Type | Description  | Notes
 ## ContainerPatchTag
 
 > map[string]string ContainerPatchTag(ctx, containerId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -517,6 +545,7 @@ Name | Type | Description  | Notes
 ## ContainerPostAccessrights
 
 > Container ContainerPostAccessrights(ctx, containerId, containerPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -546,9 +575,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ContainerPutTag
+
+> map[string]string ContainerPutTag(ctx, containerId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**containerId** | **string**| ID of container | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ContainerShow
 
 > Container ContainerShow(ctx, containerId)
+
 Get
 
 Returns a single container
@@ -582,6 +645,7 @@ Name | Type | Description  | Notes
 ## ContainerUpdate
 
 > Container ContainerUpdate(ctx, containerId, containerUpdate)
+
 Update
 
 Returns modified container

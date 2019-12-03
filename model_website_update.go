@@ -9,6 +9,7 @@
 
 package openapi
 
+// WebsiteUpdate struct for WebsiteUpdate
 type WebsiteUpdate struct {
 	Name string `json:"name,omitempty"`
 }

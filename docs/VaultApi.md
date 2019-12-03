@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**VaultPostCredential**](VaultApi.md#VaultPostCredential) | **Post** /vault/{vaultId}/credential | /credential
 [**VaultPostCredentialcertificate**](VaultApi.md#VaultPostCredentialcertificate) | **Post** /vault/{vaultId}/credential/certificate | /credential/certificate
 [**VaultPostCredentialpassword**](VaultApi.md#VaultPostCredentialpassword) | **Post** /vault/{vaultId}/credential/password | /credential/password
+[**VaultPutTag**](VaultApi.md#VaultPutTag) | **Put** /vault/{vaultId}/tag | /tag
 [**VaultShow**](VaultApi.md#VaultShow) | **Get** /vault/{vaultId} | Get
 [**VaultUpdate**](VaultApi.md#VaultUpdate) | **Patch** /vault/{vaultId} | Update
 
@@ -43,6 +44,7 @@ Method | HTTP request | Description
 ## VaultActionResize
 
 > Vault VaultActionResize(ctx, vaultId, vaultActionResize)
+
 /actions/resize
 
 Action resize
@@ -77,6 +79,7 @@ Name | Type | Description  | Notes
 ## VaultActionSnapshot
 
 > Vault VaultActionSnapshot(ctx, vaultId, vaultActionSnapshot)
+
 /actions/snapshot
 
 Action snapshot
@@ -111,6 +114,7 @@ Name | Type | Description  | Notes
 ## VaultActionStart
 
 > Vault VaultActionStart(ctx, vaultId)
+
 /actions/start
 
 Action start
@@ -144,6 +148,7 @@ Name | Type | Description  | Notes
 ## VaultActionStop
 
 > Vault VaultActionStop(ctx, vaultId)
+
 /actions/stop
 
 Action stop
@@ -177,6 +182,7 @@ Name | Type | Description  | Notes
 ## VaultCreate
 
 > Vault VaultCreate(ctx, vaultCreate)
+
 Create
 
 Create vault
@@ -210,6 +216,7 @@ Name | Type | Description  | Notes
 ## VaultDelete
 
 > VaultDelete(ctx, vaultId, vaultDelete)
+
 Delete
 
 ### Required Parameters
@@ -242,6 +249,7 @@ Name | Type | Description  | Notes
 ## VaultDeleteAccessrightsIdentity
 
 > Vault VaultDeleteAccessrightsIdentity(ctx, vaultId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -274,6 +282,7 @@ Name | Type | Description  | Notes
 ## VaultDeleteCredentialId
 
 > Vault VaultDeleteCredentialId(ctx, vaultId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -305,7 +314,8 @@ Name | Type | Description  | Notes
 
 ## VaultDeleteCredentialcertificateId
 
-> CredentialCertificate VaultDeleteCredentialcertificateId(ctx, vaultId, id)
+> InlineResponse2003 VaultDeleteCredentialcertificateId(ctx, vaultId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -319,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialCertificate**](credential.certificate.md)
+[**InlineResponse2003**](inline_response_200_3.md)
 
 ### Authorization
 
@@ -338,6 +348,7 @@ Name | Type | Description  | Notes
 ## VaultDeleteCredentialpasswordId
 
 > Vault VaultDeleteCredentialpasswordId(ctx, vaultId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -370,6 +381,7 @@ Name | Type | Description  | Notes
 ## VaultDeleteTagKey
 
 > map[string]string VaultDeleteTagKey(ctx, vaultId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -402,6 +414,7 @@ Name | Type | Description  | Notes
 ## VaultGetCredentialId
 
 > CredentialPassword VaultGetCredentialId(ctx, vaultId, id)
+
 /credential/:id
 
 ### Required Parameters
@@ -434,6 +447,7 @@ Name | Type | Description  | Notes
 ## VaultGetCredentialcertificateId
 
 > CredentialCertificate VaultGetCredentialcertificateId(ctx, vaultId, id)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -466,6 +480,7 @@ Name | Type | Description  | Notes
 ## VaultGetCredentialpasswordId
 
 > CredentialPassword VaultGetCredentialpasswordId(ctx, vaultId, id)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -498,6 +513,7 @@ Name | Type | Description  | Notes
 ## VaultGetServicesServiceId
 
 > VaultServices VaultGetServicesServiceId(ctx, vaultId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -530,6 +546,7 @@ Name | Type | Description  | Notes
 ## VaultGetTag
 
 > map[string]string VaultGetTag(ctx, vaultId)
+
 /tag
 
 ### Required Parameters
@@ -561,6 +578,7 @@ Name | Type | Description  | Notes
 ## VaultList
 
 > []Vault VaultList(ctx, optional)
+
 List
 
 List vault
@@ -604,6 +622,7 @@ Name | Type | Description  | Notes
 ## VaultListAccessrights
 
 > []string VaultListAccessrights(ctx, vaultId)
+
 /accessrights
 
 ### Required Parameters
@@ -635,6 +654,7 @@ Name | Type | Description  | Notes
 ## VaultListCredential
 
 > []CredentialPassword VaultListCredential(ctx, vaultId)
+
 /credential
 
 ### Required Parameters
@@ -666,6 +686,7 @@ Name | Type | Description  | Notes
 ## VaultListCredentialcertificate
 
 > []CredentialCertificate VaultListCredentialcertificate(ctx, vaultId)
+
 /credential/certificate
 
 ### Required Parameters
@@ -697,6 +718,7 @@ Name | Type | Description  | Notes
 ## VaultListCredentialpassword
 
 > []CredentialPassword VaultListCredentialpassword(ctx, vaultId)
+
 /credential/password
 
 ### Required Parameters
@@ -727,7 +749,8 @@ Name | Type | Description  | Notes
 
 ## VaultListQueue
 
-> []Event VaultListQueue(ctx, vaultId)
+> []Event VaultListQueue(ctx, vaultId, optional)
+
 /queue
 
 ### Required Parameters
@@ -737,6 +760,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **vaultId** | **string**| ID of vault | 
+ **optional** | ***VaultListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a VaultListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -759,6 +794,7 @@ Name | Type | Description  | Notes
 ## VaultListServices
 
 > []VaultServices VaultListServices(ctx, vaultId)
+
 /services
 
 ### Required Parameters
@@ -790,6 +826,7 @@ Name | Type | Description  | Notes
 ## VaultPatchCredentialId
 
 > CredentialPassword VaultPatchCredentialId(ctx, vaultId, id, vaultPatchCredentialId)
+
 /credential/:id
 
 ### Required Parameters
@@ -823,6 +860,7 @@ Name | Type | Description  | Notes
 ## VaultPatchCredentialcertificateId
 
 > CredentialCertificate VaultPatchCredentialcertificateId(ctx, vaultId, id, vaultPatchCredentialcertificateId)
+
 /credential/certificate/:id
 
 ### Required Parameters
@@ -856,6 +894,7 @@ Name | Type | Description  | Notes
 ## VaultPatchCredentialpasswordId
 
 > CredentialPassword VaultPatchCredentialpasswordId(ctx, vaultId, id, vaultPatchCredentialpasswordId)
+
 /credential/password/:id
 
 ### Required Parameters
@@ -889,6 +928,7 @@ Name | Type | Description  | Notes
 ## VaultPatchTag
 
 > map[string]string VaultPatchTag(ctx, vaultId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -921,6 +961,7 @@ Name | Type | Description  | Notes
 ## VaultPostAccessrights
 
 > Vault VaultPostAccessrights(ctx, vaultId, vaultPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -953,6 +994,7 @@ Name | Type | Description  | Notes
 ## VaultPostCredential
 
 > CredentialPassword VaultPostCredential(ctx, vaultId, vaultPostCredential)
+
 /credential
 
 ### Required Parameters
@@ -985,6 +1027,7 @@ Name | Type | Description  | Notes
 ## VaultPostCredentialcertificate
 
 > CredentialCertificate VaultPostCredentialcertificate(ctx, vaultId, vaultPostCredentialcertificate)
+
 /credential/certificate
 
 ### Required Parameters
@@ -1017,6 +1060,7 @@ Name | Type | Description  | Notes
 ## VaultPostCredentialpassword
 
 > CredentialPassword VaultPostCredentialpassword(ctx, vaultId, vaultPostCredentialpassword)
+
 /credential/password
 
 ### Required Parameters
@@ -1046,9 +1090,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## VaultPutTag
+
+> map[string]string VaultPutTag(ctx, vaultId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**vaultId** | **string**| ID of vault | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## VaultShow
 
 > Vault VaultShow(ctx, vaultId)
+
 Get
 
 Returns a single vault
@@ -1082,6 +1160,7 @@ Name | Type | Description  | Notes
 ## VaultUpdate
 
 > Vault VaultUpdate(ctx, vaultId, vaultUpdate)
+
 Update
 
 Returns modified vault

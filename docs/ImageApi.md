@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**ImageListServices**](ImageApi.md#ImageListServices) | **Get** /image/{imageId}/services | /services
 [**ImagePatchTag**](ImageApi.md#ImagePatchTag) | **Patch** /image/{imageId}/tag | /tag
 [**ImagePostAccessrights**](ImageApi.md#ImagePostAccessrights) | **Post** /image/{imageId}/accessrights | /accessrights
+[**ImagePutTag**](ImageApi.md#ImagePutTag) | **Put** /image/{imageId}/tag | /tag
 [**ImageShow**](ImageApi.md#ImageShow) | **Get** /image/{imageId} | Get
 [**ImageUpdate**](ImageApi.md#ImageUpdate) | **Patch** /image/{imageId} | Update
 
@@ -25,6 +26,7 @@ Method | HTTP request | Description
 ## ImageActionTransfer
 
 > Image ImageActionTransfer(ctx, imageId, imageActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -59,6 +61,7 @@ Name | Type | Description  | Notes
 ## ImageCreate
 
 > Image ImageCreate(ctx, imageCreate)
+
 Create
 
 Create image
@@ -92,6 +95,7 @@ Name | Type | Description  | Notes
 ## ImageDelete
 
 > ImageDelete(ctx, imageId)
+
 Delete
 
 ### Required Parameters
@@ -123,6 +127,7 @@ Name | Type | Description  | Notes
 ## ImageDeleteAccessrightsIdentity
 
 > Image ImageDeleteAccessrightsIdentity(ctx, imageId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
 ## ImageDeleteTagKey
 
 > map[string]string ImageDeleteTagKey(ctx, imageId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -187,6 +193,7 @@ Name | Type | Description  | Notes
 ## ImageGetServicesServiceId
 
 > ImageServices ImageGetServicesServiceId(ctx, imageId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -219,6 +226,7 @@ Name | Type | Description  | Notes
 ## ImageGetTag
 
 > map[string]string ImageGetTag(ctx, imageId)
+
 /tag
 
 ### Required Parameters
@@ -250,6 +258,7 @@ Name | Type | Description  | Notes
 ## ImageList
 
 > []Image ImageList(ctx, optional)
+
 List
 
 List image
@@ -293,6 +302,7 @@ Name | Type | Description  | Notes
 ## ImageListAccessrights
 
 > []string ImageListAccessrights(ctx, imageId)
+
 /accessrights
 
 ### Required Parameters
@@ -323,7 +333,8 @@ Name | Type | Description  | Notes
 
 ## ImageListQueue
 
-> []Event ImageListQueue(ctx, imageId)
+> []Event ImageListQueue(ctx, imageId, optional)
+
 /queue
 
 ### Required Parameters
@@ -333,6 +344,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **imageId** | **string**| ID of image | 
+ **optional** | ***ImageListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ImageListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -355,6 +378,7 @@ Name | Type | Description  | Notes
 ## ImageListServices
 
 > []ImageServices ImageListServices(ctx, imageId)
+
 /services
 
 ### Required Parameters
@@ -386,6 +410,7 @@ Name | Type | Description  | Notes
 ## ImagePatchTag
 
 > map[string]string ImagePatchTag(ctx, imageId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -418,6 +443,7 @@ Name | Type | Description  | Notes
 ## ImagePostAccessrights
 
 > Image ImagePostAccessrights(ctx, imageId, imagePostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -447,9 +473,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ImagePutTag
+
+> map[string]string ImagePutTag(ctx, imageId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**imageId** | **string**| ID of image | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ImageShow
 
 > Image ImageShow(ctx, imageId)
+
 Get
 
 Returns a single image
@@ -483,6 +543,7 @@ Name | Type | Description  | Notes
 ## ImageUpdate
 
 > Image ImageUpdate(ctx, imageId, imageUpdate)
+
 Update
 
 Returns modified image

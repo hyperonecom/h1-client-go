@@ -9,6 +9,7 @@
 
 package openapi
 
+// WebsiteActionUpdateDomain struct for WebsiteActionUpdateDomain
 type WebsiteActionUpdateDomain struct {
 	Domain []string `json:"domain"`
 }

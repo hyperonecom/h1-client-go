@@ -9,6 +9,7 @@
 
 package openapi
 
+// RegistryPatchCredentialId struct for RegistryPatchCredentialId
 type RegistryPatchCredentialId struct {
 	Name string `json:"name,omitempty"`
 }

@@ -8,12 +8,14 @@
  */
 
 package openapi
+
 import (
 	"time"
 )
 
+// UserPasswordReset struct for UserPasswordReset
 type UserPasswordReset struct {
-	Hash string `json:"hash,omitempty"`
-	Expiry time.Time `json:"expiry,omitempty"`
+	Hash      string    `json:"hash,omitempty"`
+	Expiry    time.Time `json:"expiry,omitempty"`
 	CreatedOn time.Time `json:"createdOn,omitempty"`
 }

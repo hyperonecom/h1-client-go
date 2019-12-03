@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | **map[string]string** |  | [optional] 
 **Service** | **string** |  | [optional] [default to 5bacaf7202deee0c100eda3b]
 **Ingress** | [**[]FirewallCreateIngress**](firewall_create_ingress.md) |  | [optional] 
 **Egress** | [**[]FirewallCreateIngress**](firewall_create_ingress.md) |  | [optional] 

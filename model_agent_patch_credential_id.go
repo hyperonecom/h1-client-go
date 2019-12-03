@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentPatchCredentialId struct for AgentPatchCredentialId
 type AgentPatchCredentialId struct {
 	Name string `json:"name,omitempty"`
 }

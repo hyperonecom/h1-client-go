@@ -9,7 +9,8 @@
 
 package openapi
 
+// ProjectLimitVault struct for ProjectLimitVault
 type ProjectLimitVault struct {
 	Count float32 `json:"count"`
-	Size float32 `json:"size"`
+	Size  float32 `json:"size"`
 }

@@ -9,6 +9,7 @@
 
 package openapi
 
+// AgentCreateCredential struct for AgentCreateCredential
 type AgentCreateCredential struct {
-	Certificate []VaultCreateCredentialCertificate `json:"certificate,omitempty"`
+	Certificate []AgentCreateCredentialCertificate `json:"certificate,omitempty"`
 }

@@ -9,6 +9,7 @@
 
 package openapi
 
+// VolumePostAccessrights struct for VolumePostAccessrights
 type VolumePostAccessrights struct {
 	Identity string `json:"identity,omitempty"`
 }

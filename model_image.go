@@ -13,8 +13,9 @@ import (
 	"time"
 )
 
+// Image struct for Image
 type Image struct {
-	Id           string            `json:"_id,omitempty"`
+	Id           string            `json:"id,omitempty"`
 	Name         string            `json:"name,omitempty"`
 	Services     []ProjectServices `json:"services,omitempty"`
 	Flavour      string            `json:"flavour,omitempty"`
@@ -31,6 +32,6 @@ type Image struct {
 	Project      string            `json:"project,omitempty"`
 	Disks        []ImageDisks      `json:"disks,omitempty"`
 	FileSize     float32           `json:"fileSize,omitempty"`
-	Vm           ImageVm           `json:"vm,omitempty"`
 	Description  string            `json:"description,omitempty"`
+	License      []string          `json:"license,omitempty"`
 }

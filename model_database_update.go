@@ -9,6 +9,7 @@
 
 package openapi
 
+// DatabaseUpdate struct for DatabaseUpdate
 type DatabaseUpdate struct {
 	Name string `json:"name,omitempty"`
 }

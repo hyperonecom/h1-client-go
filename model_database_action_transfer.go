@@ -9,6 +9,7 @@
 
 package openapi
 
+// DatabaseActionTransfer struct for DatabaseActionTransfer
 type DatabaseActionTransfer struct {
 	Project string `json:"project"`
 }

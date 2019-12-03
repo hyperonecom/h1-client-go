@@ -9,6 +9,7 @@
 
 package openapi
 
+// WebsitePostAccessrights struct for WebsitePostAccessrights
 type WebsitePostAccessrights struct {
 	Identity string `json:"identity,omitempty"`
 }

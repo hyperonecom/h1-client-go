@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Env** | **[]string** |  | [optional] 
 **Command** | **string** |  | [optional] 
 **Volumes** | [**[]ContainerCreateVolumes**](container_create_volumes.md) |  | [optional] 
-**Tag** | [**map[string]interface{}**](.md) |  | [optional] 
+**Tag** | **map[string]string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

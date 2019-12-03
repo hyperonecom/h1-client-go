@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**IsoListServices**](IsoApi.md#IsoListServices) | **Get** /iso/{isoId}/services | /services
 [**IsoPatchTag**](IsoApi.md#IsoPatchTag) | **Patch** /iso/{isoId}/tag | /tag
 [**IsoPostAccessrights**](IsoApi.md#IsoPostAccessrights) | **Post** /iso/{isoId}/accessrights | /accessrights
+[**IsoPutTag**](IsoApi.md#IsoPutTag) | **Put** /iso/{isoId}/tag | /tag
 [**IsoShow**](IsoApi.md#IsoShow) | **Get** /iso/{isoId} | Get
 [**IsoUpdate**](IsoApi.md#IsoUpdate) | **Patch** /iso/{isoId} | Update
 
@@ -25,6 +26,7 @@ Method | HTTP request | Description
 ## IsoActionTransfer
 
 > Iso IsoActionTransfer(ctx, isoId, isoActionTransfer)
+
 /actions/transfer
 
 Action transfer
@@ -59,6 +61,7 @@ Name | Type | Description  | Notes
 ## IsoCreate
 
 > Iso IsoCreate(ctx, isoCreate)
+
 Create
 
 Create iso
@@ -92,6 +95,7 @@ Name | Type | Description  | Notes
 ## IsoDelete
 
 > IsoDelete(ctx, isoId)
+
 Delete
 
 ### Required Parameters
@@ -123,6 +127,7 @@ Name | Type | Description  | Notes
 ## IsoDeleteAccessrightsIdentity
 
 > Iso IsoDeleteAccessrightsIdentity(ctx, isoId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
 ## IsoDeleteTagKey
 
 > map[string]string IsoDeleteTagKey(ctx, isoId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -187,6 +193,7 @@ Name | Type | Description  | Notes
 ## IsoGetServicesServiceId
 
 > IsoServices IsoGetServicesServiceId(ctx, isoId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -219,6 +226,7 @@ Name | Type | Description  | Notes
 ## IsoGetTag
 
 > map[string]string IsoGetTag(ctx, isoId)
+
 /tag
 
 ### Required Parameters
@@ -250,6 +258,7 @@ Name | Type | Description  | Notes
 ## IsoList
 
 > []Iso IsoList(ctx, optional)
+
 List
 
 List iso
@@ -293,6 +302,7 @@ Name | Type | Description  | Notes
 ## IsoListAccessrights
 
 > []string IsoListAccessrights(ctx, isoId)
+
 /accessrights
 
 ### Required Parameters
@@ -323,7 +333,8 @@ Name | Type | Description  | Notes
 
 ## IsoListQueue
 
-> []Event IsoListQueue(ctx, isoId)
+> []Event IsoListQueue(ctx, isoId, optional)
+
 /queue
 
 ### Required Parameters
@@ -333,6 +344,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **isoId** | **string**| ID of iso | 
+ **optional** | ***IsoListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a IsoListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -355,6 +378,7 @@ Name | Type | Description  | Notes
 ## IsoListServices
 
 > []IsoServices IsoListServices(ctx, isoId)
+
 /services
 
 ### Required Parameters
@@ -386,6 +410,7 @@ Name | Type | Description  | Notes
 ## IsoPatchTag
 
 > map[string]string IsoPatchTag(ctx, isoId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -418,6 +443,7 @@ Name | Type | Description  | Notes
 ## IsoPostAccessrights
 
 > Iso IsoPostAccessrights(ctx, isoId, isoPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -447,9 +473,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## IsoPutTag
+
+> map[string]string IsoPutTag(ctx, isoId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**isoId** | **string**| ID of iso | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## IsoShow
 
 > Iso IsoShow(ctx, isoId)
+
 Get
 
 Returns a single iso
@@ -483,6 +543,7 @@ Name | Type | Description  | Notes
 ## IsoUpdate
 
 > Iso IsoUpdate(ctx, isoId, isoUpdate)
+
 Update
 
 Returns modified iso

@@ -9,9 +9,10 @@
 
 package openapi
 
+// ProjectPostCredentialStore struct for ProjectPostCredentialStore
 type ProjectPostCredentialStore struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	Name  string `json:"name"`
+	Type  string `json:"type"`
 	Value string `json:"value"`
 	Token string `json:"token,omitempty"`
 }

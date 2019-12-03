@@ -9,6 +9,7 @@
 
 package openapi
 
+// RegistryActionTransfer struct for RegistryActionTransfer
 type RegistryActionTransfer struct {
 	Project string `json:"project"`
 }

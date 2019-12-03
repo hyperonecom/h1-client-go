@@ -9,7 +9,8 @@
 
 package openapi
 
+// ProjectRoles struct for ProjectRoles
 type ProjectRoles struct {
-	Name string `json:"name"`
-	Access []ProjectAccess `json:"access,omitempty"`
+	Name   string            `json:"name"`
+	Access []AuthTokenAccess `json:"access,omitempty"`
 }

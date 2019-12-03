@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**SnapshotListServices**](SnapshotApi.md#SnapshotListServices) | **Get** /snapshot/{snapshotId}/services | /services
 [**SnapshotPatchTag**](SnapshotApi.md#SnapshotPatchTag) | **Patch** /snapshot/{snapshotId}/tag | /tag
 [**SnapshotPostAccessrights**](SnapshotApi.md#SnapshotPostAccessrights) | **Post** /snapshot/{snapshotId}/accessrights | /accessrights
+[**SnapshotPutTag**](SnapshotApi.md#SnapshotPutTag) | **Put** /snapshot/{snapshotId}/tag | /tag
 [**SnapshotShow**](SnapshotApi.md#SnapshotShow) | **Get** /snapshot/{snapshotId} | Get
 [**SnapshotUpdate**](SnapshotApi.md#SnapshotUpdate) | **Patch** /snapshot/{snapshotId} | Update
 
@@ -24,6 +25,7 @@ Method | HTTP request | Description
 ## SnapshotCreate
 
 > Snapshot SnapshotCreate(ctx, snapshotCreate)
+
 Create
 
 Create snapshot
@@ -57,6 +59,7 @@ Name | Type | Description  | Notes
 ## SnapshotDelete
 
 > SnapshotDelete(ctx, snapshotId)
+
 Delete
 
 ### Required Parameters
@@ -88,6 +91,7 @@ Name | Type | Description  | Notes
 ## SnapshotDeleteAccessrightsIdentity
 
 > Snapshot SnapshotDeleteAccessrightsIdentity(ctx, snapshotId, identity)
+
 /accessrights/:identity
 
 ### Required Parameters
@@ -120,6 +124,7 @@ Name | Type | Description  | Notes
 ## SnapshotDeleteTagKey
 
 > map[string]string SnapshotDeleteTagKey(ctx, snapshotId, key)
+
 /tag/:key
 
 ### Required Parameters
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
 ## SnapshotGetServicesServiceId
 
 > SnapshotServices SnapshotGetServicesServiceId(ctx, snapshotId, serviceId)
+
 /services/:serviceId
 
 ### Required Parameters
@@ -184,6 +190,7 @@ Name | Type | Description  | Notes
 ## SnapshotGetTag
 
 > map[string]string SnapshotGetTag(ctx, snapshotId)
+
 /tag
 
 ### Required Parameters
@@ -215,6 +222,7 @@ Name | Type | Description  | Notes
 ## SnapshotList
 
 > []Snapshot SnapshotList(ctx, optional)
+
 List
 
 List snapshot
@@ -259,6 +267,7 @@ Name | Type | Description  | Notes
 ## SnapshotListAccessrights
 
 > []string SnapshotListAccessrights(ctx, snapshotId)
+
 /accessrights
 
 ### Required Parameters
@@ -289,7 +298,8 @@ Name | Type | Description  | Notes
 
 ## SnapshotListQueue
 
-> []Event SnapshotListQueue(ctx, snapshotId)
+> []Event SnapshotListQueue(ctx, snapshotId, optional)
+
 /queue
 
 ### Required Parameters
@@ -299,6 +309,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **snapshotId** | **string**| ID of snapshot | 
+ **optional** | ***SnapshotListQueueOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a SnapshotListQueueOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **limit** | **optional.Float32**| $limit | 
+ **skip** | **optional.Float32**| $skip | 
 
 ### Return type
 
@@ -321,6 +343,7 @@ Name | Type | Description  | Notes
 ## SnapshotListServices
 
 > []SnapshotServices SnapshotListServices(ctx, snapshotId)
+
 /services
 
 ### Required Parameters
@@ -352,6 +375,7 @@ Name | Type | Description  | Notes
 ## SnapshotPatchTag
 
 > map[string]string SnapshotPatchTag(ctx, snapshotId, requestBody)
+
 /tag
 
 ### Required Parameters
@@ -384,6 +408,7 @@ Name | Type | Description  | Notes
 ## SnapshotPostAccessrights
 
 > Snapshot SnapshotPostAccessrights(ctx, snapshotId, snapshotPostAccessrights)
+
 /accessrights
 
 ### Required Parameters
@@ -413,9 +438,43 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## SnapshotPutTag
+
+> map[string]string SnapshotPutTag(ctx, snapshotId, requestBody)
+
+/tag
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**snapshotId** | **string**| ID of snapshot | 
+**requestBody** | [**map[string]string**](string.md)|  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SnapshotShow
 
 > Snapshot SnapshotShow(ctx, snapshotId)
+
 Get
 
 Returns a single snapshot
@@ -449,6 +508,7 @@ Name | Type | Description  | Notes
 ## SnapshotUpdate
 
 > Snapshot SnapshotUpdate(ctx, snapshotId, snapshotUpdate)
+
 Update
 
 Returns modified snapshot

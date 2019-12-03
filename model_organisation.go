@@ -13,8 +13,9 @@ import (
 	"time"
 )
 
+// Organisation struct for Organisation
 type Organisation struct {
-	Id           string                `json:"_id,omitempty"`
+	Id           string                `json:"id,omitempty"`
 	Name         string                `json:"name,omitempty"`
 	Services     string                `json:"services,omitempty"`
 	Flavour      string                `json:"flavour,omitempty"`
