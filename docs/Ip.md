@@ -1,0 +1,27 @@
+# Ip
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Flavour** | **string** |  | [optional] 
+**ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
+**ModifiedBy** | **string** |  | [optional] 
+**CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
+**State** | **string** |  | [optional] 
+**Project** | **string** |  | [optional] 
+**Uri** | **string** |  | [optional] 
+**Address** | **string** |  | [optional] 
+**Fqdn** | **string** |  | [optional] 
+**Network** | **string** |  | [optional] 
+**PtrRecord** | **string** |  | [optional] 
+**Persistent** | **bool** |  | [optional] 
+**Associated** | [**IpAssociated**](ip_associated.md) |  | [optional] 
+**Tag** | [**[]Tag**](tag.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,15 @@
+# DnsProjectZoneCreate
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | **string** |  | 
+**Service** | **string** |  | 
+**DnsName** | **string** |  | 
+**Source** | [**ZoneSource**](Zone_source.md) |  | [optional] 
+**Tag** | [**[]Tag**](tag.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
