@@ -164,7 +164,7 @@ paths:
   /iam/user/{userId}:
     get:
       description: Returns a single user
-      operationId: user_get
+      operationId: iam_user_get
       parameters:
       - description: User Id
         explode: false
@@ -197,7 +197,7 @@ paths:
       - iam/user/get
     patch:
       description: Returns modified user
-      operationId: user_update
+      operationId: iam_user_update
       parameters:
       - description: User Id
         explode: false
@@ -212,7 +212,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/user_update'
+              $ref: '#/components/schemas/iam_user_update'
         required: true
       responses:
         "200":
@@ -235,7 +235,7 @@ paths:
   /iam/user/{userId}/credential/authtoken:
     get:
       description: List iam/user.credential
-      operationId: user_credential_authtoken_list
+      operationId: iam_user_credential_authtoken_list
       parameters:
       - description: User Id
         explode: false
@@ -272,7 +272,7 @@ paths:
   /iam/user/{userId}/credential/authtoken/{authtokenId}:
     delete:
       description: Delete iam/user.credential
-      operationId: user_credential_authtoken_delete
+      operationId: iam_user_credential_authtoken_delete
       parameters:
       - description: User Id
         explode: false
@@ -309,7 +309,7 @@ paths:
       - iam/user.credential/delete
     get:
       description: Get iam/user.credential
-      operationId: user_credential_authtoken_get
+      operationId: iam_user_credential_authtoken_get
       parameters:
       - description: User Id
         explode: false
@@ -351,7 +351,7 @@ paths:
   /iam/user/{userId}/credential:
     get:
       description: List iam/user.credential
-      operationId: user_credential_list
+      operationId: iam_user_credential_list
       parameters:
       - description: User Id
         explode: false
@@ -387,7 +387,7 @@ paths:
       - iam/user.credential/list
     post:
       description: Create iam/user.credential
-      operationId: user_credential_create
+      operationId: iam_user_credential_create
       parameters:
       - description: User Id
         explode: false
@@ -427,7 +427,7 @@ paths:
   /iam/user/{userId}/credential/{credentialId}:
     delete:
       description: Delete iam/user.credential
-      operationId: user_credential_delete
+      operationId: iam_user_credential_delete
       parameters:
       - description: User Id
         explode: false
@@ -474,7 +474,7 @@ paths:
       - iam/user.credential/delete
     get:
       description: Get iam/user.credential
-      operationId: user_credential_get
+      operationId: iam_user_credential_get
       parameters:
       - description: User Id
         explode: false
@@ -515,7 +515,7 @@ paths:
       - iam/user.credential/get
     patch:
       description: Update iam/user.credential
-      operationId: user_credential_patch
+      operationId: iam_user_credential_patch
       parameters:
       - description: User Id
         explode: false
@@ -538,7 +538,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/user_credential_patch'
+              $ref: '#/components/schemas/iam_user_credential_patch'
         required: true
       responses:
         "200":
@@ -561,7 +561,7 @@ paths:
   /iam/user/{userId}/service:
     get:
       description: List iam/user.service
-      operationId: user_service_list
+      operationId: iam_user_service_list
       parameters:
       - description: User Id
         explode: false
@@ -598,7 +598,7 @@ paths:
   /iam/user/{userId}/service/{serviceId}:
     get:
       description: Get iam/user.service
-      operationId: user_service_get
+      operationId: iam_user_service_get
       parameters:
       - description: User Id
         explode: false
@@ -640,7 +640,7 @@ paths:
   /iam/project:
     get:
       description: List project
-      operationId: project_list
+      operationId: iam_project_list
       parameters:
       - description: Filter by name
         explode: true
@@ -728,7 +728,7 @@ paths:
       x-permissions: []
     post:
       description: Create project
-      operationId: project_create
+      operationId: iam_project_create
       parameters:
       - description: Idempotency key
         explode: false
@@ -742,7 +742,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_create'
+              $ref: '#/components/schemas/iam_project_create'
         required: true
       responses:
         "200":
@@ -772,7 +772,7 @@ paths:
   /iam/project/{projectId}:
     delete:
       description: Delete project
-      operationId: project_delete
+      operationId: iam_project_delete
       parameters:
       - description: Project Id
         explode: false
@@ -801,7 +801,7 @@ paths:
       - Active
     get:
       description: Returns a single project
-      operationId: project_get
+      operationId: iam_project_get
       parameters:
       - description: Project Id
         explode: false
@@ -834,7 +834,7 @@ paths:
       - iam/project/get
     patch:
       description: Returns modified project
-      operationId: project_update
+      operationId: iam_project_update
       parameters:
       - description: Project Id
         explode: false
@@ -849,7 +849,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_update'
+              $ref: '#/components/schemas/iam_project_update'
         required: true
       responses:
         "200":
@@ -872,7 +872,7 @@ paths:
   /iam/project/{projectId}/billing:
     get:
       description: List iam/project.billing
-      operationId: project_billing_list
+      operationId: iam_project_billing_list
       parameters:
       - description: Project Id
         explode: false
@@ -936,7 +936,7 @@ paths:
   /iam/project/{projectId}/payment:
     get:
       description: List iam/project.payment
-      operationId: project_payment_list
+      operationId: iam_project_payment_list
       parameters:
       - description: Project Id
         explode: false
@@ -973,7 +973,7 @@ paths:
   /iam/project/{projectId}/invoice:
     get:
       description: List iam/project.invoice
-      operationId: project_invoice_list
+      operationId: iam_project_invoice_list
       parameters:
       - description: Project Id
         explode: false
@@ -1010,7 +1010,7 @@ paths:
   /iam/project/{projectId}/proforma:
     get:
       description: List iam/project.proforma
-      operationId: project_proforma_list
+      operationId: iam_project_proforma_list
       parameters:
       - description: Project Id
         explode: false
@@ -1044,10 +1044,165 @@ paths:
       - iam_project
       x-permissions:
       - iam/project.proforma/list
+  /iam/project/{projectId}/threshold:
+    get:
+      description: List iam/project.threshold
+      operationId: iam_project_threshold_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/project.threshold'
+                title: Project.threshold collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List iam/project.threshold
+      tags:
+      - iam_project
+      x-permissions:
+      - iam/project.threshold/list
+    post:
+      description: Create iam/project.threshold
+      operationId: iam_project_threshold_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/iam_project_threshold_create'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project.threshold'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create iam/project.threshold
+      tags:
+      - iam_project
+      x-permissions:
+      - iam/project.threshold/create
+  /iam/project/{projectId}/threshold/{thresholdId}:
+    delete:
+      description: Delete iam/project.threshold
+      operationId: iam_project_threshold_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: thresholdId
+        explode: false
+        in: path
+        name: thresholdId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete iam/project.threshold
+      tags:
+      - iam_project
+      x-permissions:
+      - iam/project.threshold/delete
+    get:
+      description: Get iam/project.threshold
+      operationId: iam_project_threshold_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: thresholdId
+        explode: false
+        in: path
+        name: thresholdId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project.threshold'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get iam/project.threshold
+      tags:
+      - iam_project
+      x-permissions:
+      - iam/project.threshold/get
   /iam/project/{projectId}/credentialStore:
     get:
       description: List iam/project.credentialStore
-      operationId: project_credentialStore_list
+      operationId: iam_project_credentialStore_list
       parameters:
       - description: Project Id
         explode: false
@@ -1083,7 +1238,7 @@ paths:
       - iam/project.credentialStore/list
     post:
       description: Create iam/project.credentialStore
-      operationId: project_credentialStore_create
+      operationId: iam_project_credentialStore_create
       parameters:
       - description: Project Id
         explode: false
@@ -1120,10 +1275,10 @@ paths:
       - iam_project
       x-permissions:
       - iam/project.credentialStore/create
-  /iam/project/{projectId}/credentialStore/{credentialId}:
+  /iam/project/{projectId}/credentialStore/{credentialStoreId}:
     delete:
       description: Delete iam/project.credentialStore
-      operationId: project_credentialStore_delete
+      operationId: iam_project_credentialStore_delete
       parameters:
       - description: Project Id
         explode: false
@@ -1134,10 +1289,10 @@ paths:
           format: ObjectId
           type: string
         style: simple
-      - description: credentialId
+      - description: credentialStoreId
         explode: false
         in: path
-        name: credentialId
+        name: credentialStoreId
         required: true
         schema:
           type: string
@@ -1170,7 +1325,7 @@ paths:
       - iam/project.credentialStore/delete
     get:
       description: Get iam/project.credentialStore
-      operationId: project_credentialStore_get
+      operationId: iam_project_credentialStore_get
       parameters:
       - description: Project Id
         explode: false
@@ -1181,10 +1336,10 @@ paths:
           format: ObjectId
           type: string
         style: simple
-      - description: credentialId
+      - description: credentialStoreId
         explode: false
         in: path
-        name: credentialId
+        name: credentialStoreId
         required: true
         schema:
           type: string
@@ -1211,7 +1366,7 @@ paths:
       - iam/project.credentialStore/get
     patch:
       description: Update iam/project.credentialStore
-      operationId: project_credentialStore_patch
+      operationId: iam_project_credentialStore_patch
       parameters:
       - description: Project Id
         explode: false
@@ -1222,10 +1377,10 @@ paths:
           format: ObjectId
           type: string
         style: simple
-      - description: credentialId
+      - description: credentialStoreId
         explode: false
         in: path
-        name: credentialId
+        name: credentialStoreId
         required: true
         schema:
           type: string
@@ -1234,7 +1389,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_credentialStore_patch'
+              $ref: '#/components/schemas/iam_project_credentialStore_patch'
         required: true
       responses:
         "200":
@@ -1257,7 +1412,7 @@ paths:
   /iam/project/{projectId}/quota:
     get:
       description: List iam/project.quota
-      operationId: project_quota_list
+      operationId: iam_project_quota_list
       parameters:
       - description: Project Id
         explode: false
@@ -1294,7 +1449,7 @@ paths:
   /iam/project/{projectId}/quota/{quotaId}:
     get:
       description: Get iam/project.quota
-      operationId: project_quota_get
+      operationId: iam_project_quota_get
       parameters:
       - description: Project Id
         explode: false
@@ -1336,7 +1491,7 @@ paths:
   /iam/project/{projectId}/quota/{quotaId}/limit:
     patch:
       description: Update iam/project.limit
-      operationId: project_quota_limit_patch
+      operationId: iam_project_quota_limit_patch
       parameters:
       - description: Project Id
         explode: false
@@ -1359,7 +1514,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_quota_limit_patch'
+              $ref: '#/components/schemas/iam_project_quota_limit_patch'
         required: true
       responses:
         "200":
@@ -1382,7 +1537,7 @@ paths:
   /iam/project/{projectId}/invitation:
     get:
       description: List iam/project.invitation
-      operationId: project_invitation_list
+      operationId: iam_project_invitation_list
       parameters:
       - description: Project Id
         explode: false
@@ -1427,7 +1582,7 @@ paths:
   /iam/project/{projectId}/invitation/{invitationId}:
     delete:
       description: Delete iam/project.invitation
-      operationId: project_invitation_delete
+      operationId: iam_project_invitation_delete
       parameters:
       - description: Project Id
         explode: false
@@ -1464,7 +1619,7 @@ paths:
       - iam/project.invitation/delete
     get:
       description: Get iam/project.invitation
-      operationId: project_invitation_get
+      operationId: iam_project_invitation_get
       parameters:
       - description: Project Id
         explode: false
@@ -1505,8 +1660,8 @@ paths:
       - iam/project.invitation/get
   /iam/project/{projectId}/invitation/{invitationId}/actions/accept:
     post:
-      description: Create iam/project.actions
-      operationId: project_invitation_accept
+      description: action accept
+      operationId: iam_project_invitation_accept
       parameters:
       - description: Project Id
         explode: false
@@ -1529,7 +1684,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_invitation_accept'
+              $ref: '#/components/schemas/iam_project_invitation_accept'
         required: true
       responses:
         "200":
@@ -1546,7 +1701,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create iam/project.actions
+      summary: Accept iam/project.invitation
       tags:
       - iam_project
       x-permissions: []
@@ -1554,7 +1709,7 @@ paths:
   /iam/project/{projectId}/ownership:
     get:
       description: List iam/project.ownership
-      operationId: project_ownership_list
+      operationId: iam_project_ownership_list
       parameters:
       - description: Project Id
         explode: false
@@ -1577,7 +1732,7 @@ paths:
           description: successful operation
           links:
             invitation:
-              operationId: project_invitation_list
+              operationId: iam_project_invitation_list
               parameters:
                 resource: $path
         "400":
@@ -1595,7 +1750,7 @@ paths:
       - iam/project.ownership/list
     post:
       description: Create iam/project.ownership
-      operationId: project_ownership_create
+      operationId: iam_project_ownership_create
       parameters:
       - description: Project Id
         explode: false
@@ -1610,7 +1765,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/project_ownership_create'
+              $ref: '#/components/schemas/iam_project_ownership_create'
         required: true
       responses:
         "200":
@@ -1641,7 +1796,7 @@ paths:
   /iam/project/{projectId}/ownership/{ownershipId}:
     delete:
       description: Delete iam/project.ownership
-      operationId: project_ownership_delete
+      operationId: iam_project_ownership_delete
       parameters:
       - description: Project Id
         explode: false
@@ -1678,7 +1833,7 @@ paths:
       - iam/project.ownership/delete
     get:
       description: Get iam/project.ownership
-      operationId: project_ownership_get
+      operationId: iam_project_ownership_get
       parameters:
       - description: Project Id
         explode: false
@@ -1720,7 +1875,7 @@ paths:
   /iam/project/{projectId}/service:
     get:
       description: List iam/project.service
-      operationId: project_service_list
+      operationId: iam_project_service_list
       parameters:
       - description: Project Id
         explode: false
@@ -1757,7 +1912,7 @@ paths:
   /iam/project/{projectId}/service/{serviceId}:
     get:
       description: Get iam/project.service
-      operationId: project_service_get
+      operationId: iam_project_service_get
       parameters:
       - description: Project Id
         explode: false
@@ -1799,7 +1954,7 @@ paths:
   /iam/project/{projectId}/tag:
     get:
       description: List iam/project.tag
-      operationId: project_tag_list
+      operationId: iam_project_tag_list
       parameters:
       - description: Project Id
         explode: false
@@ -1835,7 +1990,7 @@ paths:
       - iam/project.tag/list
     post:
       description: Create iam/project.tag
-      operationId: project_tag_create
+      operationId: iam_project_tag_create
       parameters:
       - description: Project Id
         explode: false
@@ -1874,7 +2029,7 @@ paths:
       - iam/project.tag/create
     put:
       description: Replace iam/project.tag
-      operationId: project_tag_put
+      operationId: iam_project_tag_put
       parameters:
       - description: Project Id
         explode: false
@@ -1918,7 +2073,7 @@ paths:
   /iam/project/{projectId}/tag/{tagId}:
     delete:
       description: Delete iam/project.tag
-      operationId: project_tag_delete
+      operationId: iam_project_tag_delete
       parameters:
       - description: Project Id
         explode: false
@@ -1955,7 +2110,7 @@ paths:
       - iam/project.tag/delete
     get:
       description: Get iam/project.tag
-      operationId: project_tag_get
+      operationId: iam_project_tag_get
       parameters:
       - description: Project Id
         explode: false
@@ -1997,7 +2152,7 @@ paths:
   /iam/project/{projectId}/event:
     get:
       description: List iam/project.event
-      operationId: project_event_list
+      operationId: iam_project_event_list
       parameters:
       - description: Project Id
         explode: false
@@ -2053,7 +2208,7 @@ paths:
   /iam/project/{projectId}/event/{eventId}:
     get:
       description: Get iam/project.event
-      operationId: project_event_get
+      operationId: iam_project_event_get
       parameters:
       - description: Project Id
         explode: false
@@ -2440,7 +2595,7 @@ paths:
   /iam/organisation:
     get:
       description: List organisation
-      operationId: organisation_list
+      operationId: iam_organisation_list
       parameters:
       - description: Filter by name
         explode: true
@@ -2499,7 +2654,7 @@ paths:
       x-permissions: []
     post:
       description: Create organisation
-      operationId: organisation_create
+      operationId: iam_organisation_create
       parameters:
       - description: Idempotency key
         explode: false
@@ -2513,7 +2668,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_create'
+              $ref: '#/components/schemas/iam_organisation_create'
         required: true
       responses:
         "200":
@@ -2543,7 +2698,7 @@ paths:
   /iam/organisation/{organisationId}:
     delete:
       description: Delete organisation
-      operationId: organisation_delete
+      operationId: iam_organisation_delete
       parameters:
       - description: Organisation Id
         explode: false
@@ -2572,7 +2727,7 @@ paths:
       - Active
     get:
       description: Returns a single organisation
-      operationId: organisation_get
+      operationId: iam_organisation_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -2592,7 +2747,7 @@ paths:
           description: successful operation
           links:
             project:
-              operationId: project_list
+              operationId: iam_project_list
               parameters:
                 organisation: $request.path.organisationId
         "400":
@@ -2610,7 +2765,7 @@ paths:
       - iam/organisation/get
     patch:
       description: Returns modified organisation
-      operationId: organisation_update
+      operationId: iam_organisation_update
       parameters:
       - description: Organisation Id
         explode: false
@@ -2625,7 +2780,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_update'
+              $ref: '#/components/schemas/iam_organisation_update'
         required: true
       responses:
         "200":
@@ -2648,7 +2803,7 @@ paths:
   /iam/organisation/{organisationId}/actions/transfer_accept:
     post:
       description: action transfer_accept
-      operationId: organisation_transfer_accept
+      operationId: iam_organisation_transfer_accept
       parameters:
       - description: Organisation Id
         explode: false
@@ -2671,7 +2826,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_transfer_accept'
+              $ref: '#/components/schemas/iam_organisation_transfer_accept'
         required: true
       responses:
         "200":
@@ -2704,7 +2859,7 @@ paths:
   /iam/organisation/{organisationId}/billing:
     get:
       description: List iam/organisation.billing
-      operationId: organisation_billing_list
+      operationId: iam_organisation_billing_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -2768,7 +2923,7 @@ paths:
   /iam/organisation/{organisationId}/payment:
     get:
       description: List iam/organisation.payment
-      operationId: organisation_payment_list
+      operationId: iam_organisation_payment_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -2805,7 +2960,7 @@ paths:
   /iam/organisation/{organisationId}/payment/{paymentId}:
     get:
       description: Get iam/organisation.payment
-      operationId: organisation_payment_get
+      operationId: iam_organisation_payment_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -2846,8 +3001,8 @@ paths:
       - iam/organisation.payment/get
   /iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate:
     post:
-      description: Create iam/organisation.actions
-      operationId: organisation_payment_allocate
+      description: action allocate
+      operationId: iam_organisation_payment_allocate
       parameters:
       - description: Organisation Id
         explode: false
@@ -2870,7 +3025,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_payment_allocate'
+              $ref: '#/components/schemas/iam_organisation_payment_allocate'
         required: true
       responses:
         "200":
@@ -2887,7 +3042,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create iam/organisation.actions
+      summary: Allocate iam/organisation.payment
       tags:
       - iam_organisation
       x-permissions:
@@ -2897,7 +3052,7 @@ paths:
   /iam/organisation/{organisationId}/invoice:
     get:
       description: List iam/organisation.invoice
-      operationId: organisation_invoice_list
+      operationId: iam_organisation_invoice_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -2934,7 +3089,7 @@ paths:
   /iam/organisation/{organisationId}/invoice/{invoiceId}:
     get:
       description: Get iam/organisation.invoice
-      operationId: organisation_invoice_get
+      operationId: iam_organisation_invoice_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -2975,8 +3130,8 @@ paths:
       - iam/organisation.invoice/get
   /iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download:
     post:
-      description: Create iam/organisation.actions
-      operationId: organisation_invoice_download
+      description: action download
+      operationId: iam_organisation_invoice_download
       parameters:
       - description: Organisation Id
         explode: false
@@ -3011,7 +3166,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create iam/organisation.actions
+      summary: Download iam/organisation.invoice
       tags:
       - iam_organisation
       x-permissions:
@@ -3019,7 +3174,7 @@ paths:
   /iam/organisation/{organisationId}/proforma:
     get:
       description: List iam/organisation.proforma
-      operationId: organisation_proforma_list
+      operationId: iam_organisation_proforma_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -3055,7 +3210,7 @@ paths:
       - iam/organisation.proforma/list
     post:
       description: Create iam/organisation.proforma
-      operationId: organisation_proforma_create
+      operationId: iam_organisation_proforma_create
       parameters:
       - description: Organisation Id
         explode: false
@@ -3070,7 +3225,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_proforma_create'
+              $ref: '#/components/schemas/iam_organisation_proforma_create'
         required: true
       responses:
         "200":
@@ -3095,7 +3250,7 @@ paths:
   /iam/organisation/{organisationId}/proforma/{proformaId}:
     get:
       description: Get iam/organisation.proforma
-      operationId: organisation_proforma_get
+      operationId: iam_organisation_proforma_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -3136,8 +3291,8 @@ paths:
       - iam/organisation.proforma/get
   /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download:
     post:
-      description: Create iam/organisation.actions
-      operationId: organisation_proforma_download
+      description: action download
+      operationId: iam_organisation_proforma_download
       parameters:
       - description: Organisation Id
         explode: false
@@ -3172,7 +3327,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create iam/organisation.actions
+      summary: Download iam/organisation.proforma
       tags:
       - iam_organisation
       x-permissions:
@@ -3180,7 +3335,7 @@ paths:
   /iam/organisation/{organisationId}/invitation:
     get:
       description: List iam/organisation.invitation
-      operationId: organisation_invitation_list
+      operationId: iam_organisation_invitation_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -3225,7 +3380,7 @@ paths:
   /iam/organisation/{organisationId}/invitation/{invitationId}:
     delete:
       description: Delete iam/organisation.invitation
-      operationId: organisation_invitation_delete
+      operationId: iam_organisation_invitation_delete
       parameters:
       - description: Organisation Id
         explode: false
@@ -3262,7 +3417,7 @@ paths:
       - iam/organisation.invitation/delete
     get:
       description: Get iam/organisation.invitation
-      operationId: organisation_invitation_get
+      operationId: iam_organisation_invitation_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -3303,8 +3458,8 @@ paths:
       - iam/organisation.invitation/get
   /iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept:
     post:
-      description: Create iam/organisation.actions
-      operationId: organisation_invitation_accept
+      description: action accept
+      operationId: iam_organisation_invitation_accept
       parameters:
       - description: Organisation Id
         explode: false
@@ -3327,7 +3482,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_invitation_accept'
+              $ref: '#/components/schemas/iam_organisation_invitation_accept'
         required: true
       responses:
         "200":
@@ -3344,7 +3499,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create iam/organisation.actions
+      summary: Accept iam/organisation.invitation
       tags:
       - iam_organisation
       x-permissions: []
@@ -3352,7 +3507,7 @@ paths:
   /iam/organisation/{organisationId}/ownership:
     get:
       description: List iam/organisation.ownership
-      operationId: organisation_ownership_list
+      operationId: iam_organisation_ownership_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -3375,7 +3530,7 @@ paths:
           description: successful operation
           links:
             invitation:
-              operationId: organisation_invitation_list
+              operationId: iam_organisation_invitation_list
               parameters:
                 resource: $path
         "400":
@@ -3393,7 +3548,7 @@ paths:
       - iam/organisation.ownership/list
     post:
       description: Create iam/organisation.ownership
-      operationId: organisation_ownership_create
+      operationId: iam_organisation_ownership_create
       parameters:
       - description: Organisation Id
         explode: false
@@ -3408,7 +3563,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/organisation_ownership_create'
+              $ref: '#/components/schemas/iam_organisation_ownership_create'
         required: true
       responses:
         "200":
@@ -3439,7 +3594,7 @@ paths:
   /iam/organisation/{organisationId}/ownership/{ownershipId}:
     delete:
       description: Delete iam/organisation.ownership
-      operationId: organisation_ownership_delete
+      operationId: iam_organisation_ownership_delete
       parameters:
       - description: Organisation Id
         explode: false
@@ -3476,7 +3631,7 @@ paths:
       - iam/organisation.ownership/delete
     get:
       description: Get iam/organisation.ownership
-      operationId: organisation_ownership_get
+      operationId: iam_organisation_ownership_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -3518,7 +3673,7 @@ paths:
   /iam/organisation/{organisationId}/event:
     get:
       description: List iam/organisation.event
-      operationId: organisation_event_list
+      operationId: iam_organisation_event_list
       parameters:
       - description: Organisation Id
         explode: false
@@ -3574,7 +3729,7 @@ paths:
   /iam/organisation/{organisationId}/event/{eventId}:
     get:
       description: Get iam/organisation.event
-      operationId: organisation_event_get
+      operationId: iam_organisation_event_get
       parameters:
       - description: Organisation Id
         explode: false
@@ -3682,6 +3837,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_list/index.json
     post:
       description: Create agent
       operationId: provider_project_agent_create
@@ -3743,6 +3900,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent/create
+      x-examples:
+        $ref: ./docs/provider_project_agent_create/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}:
     delete:
       description: Delete agent
@@ -3790,6 +3949,8 @@ paths:
       - provider/agent/delete
       x-state:
       - Unknown
+      x-examples:
+        $ref: ./docs/provider_project_agent_delete/index.json
     get:
       description: Returns a single agent
       operationId: provider_project_agent_get
@@ -3840,6 +4001,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_get/index.json
     patch:
       description: Returns modified agent
       operationId: provider_project_agent_update
@@ -3894,6 +4057,8 @@ paths:
       summary: Update provider/agent
       tags:
       - provider_project_agent
+      x-examples:
+        $ref: ./docs/provider_project_agent_update/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/start:
     post:
       description: action start
@@ -4226,7 +4391,7 @@ paths:
       - provider/agent.resource/list
   /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate:
     post:
-      description: Create provider/agent.actions
+      description: action recreate
       operationId: provider_project_agent_resource_recreate
       parameters:
       - description: Project Id
@@ -4278,14 +4443,14 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create provider/agent.actions
+      summary: Recreate provider/agent.resource
       tags:
       - provider_project_agent
       x-permissions:
       - provider/agent.resource/recreate
   /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect:
     post:
-      description: Create provider/agent.actions
+      description: action inspect
       operationId: provider_project_agent_resource_inspect
       parameters:
       - description: Project Id
@@ -4336,7 +4501,7 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create provider/agent.actions
+      summary: Inspect provider/agent.resource
       tags:
       - provider_project_agent
       x-permissions:
@@ -4473,6 +4638,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.credential/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_credential_list/index.json
     post:
       description: Create provider/agent.credential
       operationId: provider_project_agent_credential_create
@@ -4529,6 +4696,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.credential/create
+      x-examples:
+        $ref: ./docs/provider_project_agent_credential_create/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/credential/{credentialId}:
     delete:
       description: Delete provider/agent.credential
@@ -4594,6 +4763,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.credential/delete
+      x-examples:
+        $ref: ./docs/provider_project_agent_credential_delete/index.json
     get:
       description: Get provider/agent.credential
       operationId: provider_project_agent_credential_get
@@ -4652,6 +4823,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.credential/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_credential_get/index.json
     patch:
       description: Update provider/agent.credential
       operationId: provider_project_agent_credential_patch
@@ -4768,6 +4941,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.enabledService/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_enabledService_list/index.json
     post:
       description: Create provider/agent.enabledService
       operationId: provider_project_agent_enabledService_create
@@ -4824,6 +4999,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.enabledService/create
+      x-examples:
+        $ref: ./docs/provider_project_agent_enabledService_create/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/enabledService/{enabledServiceId}:
     delete:
       description: Delete provider/agent.enabledService
@@ -4889,6 +5066,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.enabledService/delete
+      x-examples:
+        $ref: ./docs/provider_project_agent_enabledService_delete/index.json
     get:
       description: Get provider/agent.enabledService
       operationId: provider_project_agent_enabledService_get
@@ -4947,6 +5126,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.enabledService/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_enabledService_get/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/service:
     get:
       description: List provider/agent.service
@@ -5001,6 +5182,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.service/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_service_list/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/service/{serviceId}:
     get:
       description: Get provider/agent.service
@@ -5060,6 +5243,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.service/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_service_get/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/tag:
     get:
       description: List provider/agent.tag
@@ -5114,6 +5299,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.tag/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_tag_list/index.json
     post:
       description: Create provider/agent.tag
       operationId: provider_project_agent_tag_create
@@ -5170,6 +5357,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.tag/create
+      x-examples:
+        $ref: ./docs/provider_project_agent_tag_create/index.json
     put:
       description: Replace provider/agent.tag
       operationId: provider_project_agent_tag_put
@@ -5285,6 +5474,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.tag/delete
+      x-examples:
+        $ref: ./docs/provider_project_agent_tag_delete/index.json
     get:
       description: Get provider/agent.tag
       operationId: provider_project_agent_tag_get
@@ -5343,6 +5534,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.tag/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_tag_get/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/event:
     get:
       description: List provider/agent.event
@@ -5416,6 +5609,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.event/list
+      x-examples:
+        $ref: ./docs/provider_project_agent_event_list/index.json
   /provider/{locationId}/project/{projectId}/agent/{agentId}/event/{eventId}:
     get:
       description: Get provider/agent.event
@@ -5475,6 +5670,8 @@ paths:
       - provider_project_agent
       x-permissions:
       - provider/agent.event/get
+      x-examples:
+        $ref: ./docs/provider_project_agent_event_get/index.json
   /database/{locationId}/project/{projectId}/instance:
     get:
       description: List instance
@@ -5544,6 +5741,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance/list
+      x-examples:
+        $ref: ./docs/database_project_instance_list/index.json
     post:
       description: Create instance
       operationId: database_project_instance_create
@@ -5605,6 +5804,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance/create
+      x-examples:
+        $ref: ./docs/database_project_instance_create/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}:
     delete:
       description: Delete instance
@@ -5653,6 +5854,8 @@ paths:
       x-state:
       - Running
       - "Off"
+      x-examples:
+        $ref: ./docs/database_project_instance_delete/index.json
     get:
       description: Returns a single instance
       operationId: database_project_instance_get
@@ -5703,6 +5906,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance/get
+      x-examples:
+        $ref: ./docs/database_project_instance_get/index.json
     patch:
       description: Returns modified instance
       operationId: database_project_instance_update
@@ -5757,6 +5962,8 @@ paths:
       summary: Update database/instance
       tags:
       - database_project_instance
+      x-examples:
+        $ref: ./docs/database_project_instance_update/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/start:
     post:
       description: action start
@@ -5824,6 +6031,8 @@ paths:
       - database/instance/start
       x-state:
       - "Off"
+      x-examples:
+        $ref: ./docs/database_project_instance_start/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/stop:
     post:
       description: action stop
@@ -5891,6 +6100,8 @@ paths:
       - database/instance/stop
       x-state:
       - Running
+      x-examples:
+        $ref: ./docs/database_project_instance_stop/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer:
     post:
       description: action transfer
@@ -6019,6 +6230,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.credential/list
+      x-examples:
+        $ref: ./docs/database_project_instance_credential_list/index.json
     post:
       description: Create database/instance.credential
       operationId: database_project_instance_credential_create
@@ -6075,6 +6288,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.credential/create
+      x-examples:
+        $ref: ./docs/database_project_instance_credential_create/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId}:
     delete:
       description: Delete database/instance.credential
@@ -6140,6 +6355,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.credential/delete
+      x-examples:
+        $ref: ./docs/database_project_instance_credential_delete/index.json
     get:
       description: Get database/instance.credential
       operationId: database_project_instance_credential_get
@@ -6198,6 +6415,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.credential/get
+      x-examples:
+        $ref: ./docs/database_project_instance_credential_get/index.json
     patch:
       description: Update database/instance.credential
       operationId: database_project_instance_credential_patch
@@ -6314,6 +6533,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.service/list
+      x-examples:
+        $ref: ./docs/database_project_instance_service_list/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId}:
     get:
       description: Get database/instance.service
@@ -6373,6 +6594,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.service/get
+      x-examples:
+        $ref: ./docs/database_project_instance_service_get/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/tag:
     get:
       description: List database/instance.tag
@@ -6427,6 +6650,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.tag/list
+      x-examples:
+        $ref: ./docs/database_project_instance_tag_list/index.json
     post:
       description: Create database/instance.tag
       operationId: database_project_instance_tag_create
@@ -6483,6 +6708,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.tag/create
+      x-examples:
+        $ref: ./docs/database_project_instance_tag_create/index.json
     put:
       description: Replace database/instance.tag
       operationId: database_project_instance_tag_put
@@ -6598,6 +6825,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.tag/delete
+      x-examples:
+        $ref: ./docs/database_project_instance_tag_delete/index.json
     get:
       description: Get database/instance.tag
       operationId: database_project_instance_tag_get
@@ -6656,6 +6885,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.tag/get
+      x-examples:
+        $ref: ./docs/database_project_instance_tag_get/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/event:
     get:
       description: List database/instance.event
@@ -6729,6 +6960,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.event/list
+      x-examples:
+        $ref: ./docs/database_project_instance_event_list/index.json
   /database/{locationId}/project/{projectId}/instance/{instanceId}/event/{eventId}:
     get:
       description: Get database/instance.event
@@ -6788,6 +7021,8 @@ paths:
       - database_project_instance
       x-permissions:
       - database/instance.event/get
+      x-examples:
+        $ref: ./docs/database_project_instance_event_get/index.json
   /insight/{locationId}/project/{projectId}/journal:
     get:
       description: List journal
@@ -6857,6 +7092,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal/list
+      x-examples:
+        $ref: ./docs/insight_project_journal_list/index.json
     post:
       description: Create journal
       operationId: insight_project_journal_create
@@ -6918,6 +7155,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal/create
+      x-examples:
+        $ref: ./docs/insight_project_journal_create/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}:
     delete:
       description: Delete journal
@@ -6965,6 +7204,8 @@ paths:
       - insight/journal/delete
       x-state:
       - Online
+      x-examples:
+        $ref: ./docs/insight_project_journal_delete/index.json
     get:
       description: Returns a single journal
       operationId: insight_project_journal_get
@@ -7015,6 +7256,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal/get
+      x-examples:
+        $ref: ./docs/insight_project_journal_get/index.json
     patch:
       description: Returns modified journal
       operationId: insight_project_journal_update
@@ -7069,6 +7312,8 @@ paths:
       summary: Update insight/journal
       tags:
       - insight_project_journal
+      x-examples:
+        $ref: ./docs/insight_project_journal_update/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/actions/transfer:
     post:
       description: action transfer
@@ -7286,6 +7531,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.credential/list
+      x-examples:
+        $ref: ./docs/insight_project_journal_credential_list/index.json
     post:
       description: Create insight/journal.credential
       operationId: insight_project_journal_credential_create
@@ -7342,6 +7589,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.credential/create
+      x-examples:
+        $ref: ./docs/insight_project_journal_credential_create/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/credential/{credentialId}:
     delete:
       description: Delete insight/journal.credential
@@ -7407,6 +7656,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.credential/delete
+      x-examples:
+        $ref: ./docs/insight_project_journal_credential_delete/index.json
     get:
       description: Get insight/journal.credential
       operationId: insight_project_journal_credential_get
@@ -7465,6 +7716,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.credential/get
+      x-examples:
+        $ref: ./docs/insight_project_journal_credential_get/index.json
     patch:
       description: Update insight/journal.credential
       operationId: insight_project_journal_credential_patch
@@ -7581,6 +7834,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.service/list
+      x-examples:
+        $ref: ./docs/insight_project_journal_service_list/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/service/{serviceId}:
     get:
       description: Get insight/journal.service
@@ -7640,6 +7895,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.service/get
+      x-examples:
+        $ref: ./docs/insight_project_journal_service_get/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/tag:
     get:
       description: List insight/journal.tag
@@ -7694,6 +7951,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.tag/list
+      x-examples:
+        $ref: ./docs/insight_project_journal_tag_list/index.json
     post:
       description: Create insight/journal.tag
       operationId: insight_project_journal_tag_create
@@ -7750,6 +8009,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.tag/create
+      x-examples:
+        $ref: ./docs/insight_project_journal_tag_create/index.json
     put:
       description: Replace insight/journal.tag
       operationId: insight_project_journal_tag_put
@@ -7865,6 +8126,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.tag/delete
+      x-examples:
+        $ref: ./docs/insight_project_journal_tag_delete/index.json
     get:
       description: Get insight/journal.tag
       operationId: insight_project_journal_tag_get
@@ -7923,6 +8186,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.tag/get
+      x-examples:
+        $ref: ./docs/insight_project_journal_tag_get/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/event:
     get:
       description: List insight/journal.event
@@ -7996,6 +8261,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.event/list
+      x-examples:
+        $ref: ./docs/insight_project_journal_event_list/index.json
   /insight/{locationId}/project/{projectId}/journal/{journalId}/event/{eventId}:
     get:
       description: Get insight/journal.event
@@ -8055,6 +8322,8 @@ paths:
       - insight_project_journal
       x-permissions:
       - insight/journal.event/get
+      x-examples:
+        $ref: ./docs/insight_project_journal_event_get/index.json
   /container/{locationId}/project/{projectId}/registry:
     get:
       description: List registry
@@ -8124,6 +8393,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry/list
+      x-examples:
+        $ref: ./docs/container_project_registry_list/index.json
     post:
       description: Create registry
       operationId: container_project_registry_create
@@ -8185,6 +8456,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry/create
+      x-examples:
+        $ref: ./docs/container_project_registry_create/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}:
     delete:
       description: Delete registry
@@ -8233,6 +8506,8 @@ paths:
       x-state:
       - Running
       - "Off"
+      x-examples:
+        $ref: ./docs/container_project_registry_delete/index.json
     get:
       description: Returns a single registry
       operationId: container_project_registry_get
@@ -8283,6 +8558,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry/get
+      x-examples:
+        $ref: ./docs/container_project_registry_get/index.json
     patch:
       description: Returns modified registry
       operationId: container_project_registry_update
@@ -8337,6 +8614,8 @@ paths:
       summary: Update container/registry
       tags:
       - container_project_registry
+      x-examples:
+        $ref: ./docs/container_project_registry_update/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/actions/start:
     post:
       description: action start
@@ -8471,6 +8750,8 @@ paths:
       - container/registry/stop
       x-state:
       - Running
+      x-examples:
+        $ref: ./docs/container_project_registry_stop/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/actions/transfer:
     post:
       description: action transfer
@@ -8579,7 +8860,12 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/container.repository'
+                title: Container.repository collection
+                type: array
           description: successful operation
         "400":
           content:
@@ -8636,7 +8922,9 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.repository'
           description: successful operation
         "400":
           content:
@@ -8693,7 +8981,12 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/container.image'
+                title: Container.image collection
+                type: array
           description: successful operation
         "400":
           content:
@@ -8756,10 +9049,8 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json: {}
-          description: successful operation
+        "204":
+          description: No Content
         "400":
           content:
             application/json:
@@ -8822,7 +9113,9 @@ paths:
       responses:
         "200":
           content:
-            application/json: {}
+            application/json:
+              schema:
+                $ref: '#/components/schemas/container.image'
           description: successful operation
         "400":
           content:
@@ -8891,6 +9184,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.credential/list
+      x-examples:
+        $ref: ./docs/container_project_registry_credential_list/index.json
     post:
       description: Create container/registry.credential
       operationId: container_project_registry_credential_create
@@ -8947,6 +9242,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.credential/create
+      x-examples:
+        $ref: ./docs/container_project_registry_credential_create/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/credential/{credentialId}:
     delete:
       description: Delete container/registry.credential
@@ -9012,6 +9309,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.credential/delete
+      x-examples:
+        $ref: ./docs/container_project_registry_credential_delete/index.json
     get:
       description: Get container/registry.credential
       operationId: container_project_registry_credential_get
@@ -9070,6 +9369,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.credential/get
+      x-examples:
+        $ref: ./docs/container_project_registry_credential_get/index.json
     patch:
       description: Update container/registry.credential
       operationId: container_project_registry_credential_patch
@@ -9409,6 +9710,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.service/list
+      x-examples:
+        $ref: ./docs/container_project_registry_service_list/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/service/{serviceId}:
     get:
       description: Get container/registry.service
@@ -9468,6 +9771,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.service/get
+      x-examples:
+        $ref: ./docs/container_project_registry_service_get/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/tag:
     get:
       description: List container/registry.tag
@@ -9522,6 +9827,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.tag/list
+      x-examples:
+        $ref: ./docs/container_project_registry_tag_list/index.json
     post:
       description: Create container/registry.tag
       operationId: container_project_registry_tag_create
@@ -9578,6 +9885,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.tag/create
+      x-examples:
+        $ref: ./docs/container_project_registry_tag_create/index.json
     put:
       description: Replace container/registry.tag
       operationId: container_project_registry_tag_put
@@ -9693,6 +10002,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.tag/delete
+      x-examples:
+        $ref: ./docs/container_project_registry_tag_delete/index.json
     get:
       description: Get container/registry.tag
       operationId: container_project_registry_tag_get
@@ -9751,6 +10062,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.tag/get
+      x-examples:
+        $ref: ./docs/container_project_registry_tag_get/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/event:
     get:
       description: List container/registry.event
@@ -9824,6 +10137,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.event/list
+      x-examples:
+        $ref: ./docs/container_project_registry_event_list/index.json
   /container/{locationId}/project/{projectId}/registry/{registryId}/event/{eventId}:
     get:
       description: Get container/registry.event
@@ -9883,6 +10198,8 @@ paths:
       - container_project_registry
       x-permissions:
       - container/registry.event/get
+      x-examples:
+        $ref: ./docs/container_project_registry_event_get/index.json
   /website/{locationId}/project/{projectId}/instance:
     get:
       description: List instance
@@ -9952,6 +10269,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance/list
+      x-examples:
+        $ref: ./docs/website_project_instance_list/index.json
     post:
       description: Create instance
       operationId: website_project_instance_create
@@ -10013,6 +10332,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance/create
+      x-examples:
+        $ref: ./docs/website_project_instance_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}:
     delete:
       description: Delete instance
@@ -10062,6 +10383,8 @@ paths:
       - Running
       - "Off"
       - Restarting
+      x-examples:
+        $ref: ./docs/website_project_instance_delete/index.json
     get:
       description: Returns a single instance
       operationId: website_project_instance_get
@@ -10112,6 +10435,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance/get
+      x-examples:
+        $ref: ./docs/website_project_instance_get/index.json
     patch:
       description: Returns modified instance
       operationId: website_project_instance_update
@@ -10166,6 +10491,8 @@ paths:
       summary: Update website/instance
       tags:
       - website_project_instance
+      x-examples:
+        $ref: ./docs/website_project_instance_update/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/start:
     post:
       description: action start
@@ -10497,6 +10824,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.snapshot/list
+      x-examples:
+        $ref: ./docs/website_project_instance_snapshot_list/index.json
     post:
       description: Create website/instance.snapshot
       operationId: website_project_instance_snapshot_create
@@ -10553,6 +10882,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.snapshot/create
+      x-examples:
+        $ref: ./docs/website_project_instance_snapshot_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}:
     delete:
       description: Delete website/instance.snapshot
@@ -10618,6 +10949,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.snapshot/delete
+      x-examples:
+        $ref: ./docs/website_project_instance_snapshot_delete/index.json
     get:
       description: Get website/instance.snapshot
       operationId: website_project_instance_snapshot_get
@@ -10676,9 +11009,11 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.snapshot/get
+      x-examples:
+        $ref: ./docs/website_project_instance_snapshot_get/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download:
     post:
-      description: Create website/instance.actions
+      description: action download
       operationId: website_project_instance_snapshot_download
       parameters:
       - description: Project Id
@@ -10740,14 +11075,11 @@ paths:
           description: Bad Request
         "401":
           description: Access token is missing or invalid
-      summary: Create website/instance.actions
+      summary: Download website/instance.snapshot
       tags:
       - website_project_instance
       x-permissions:
       - website/instance.snapshot/read
-      x-state:
-      - TODO
-      - IGNORE
   /website/{locationId}/project/{projectId}/instance/{instanceId}/env:
     get:
       description: List website/instance.env
@@ -10802,6 +11134,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.env/list
+      x-examples:
+        $ref: ./docs/website_project_instance_env_list/index.json
     post:
       description: Create website/instance.env
       operationId: website_project_instance_env_create
@@ -10858,6 +11192,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.env/create
+      x-examples:
+        $ref: ./docs/website_project_instance_env_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/env/{envId}:
     delete:
       description: Delete website/instance.env
@@ -10913,6 +11249,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.env/delete
+      x-examples:
+        $ref: ./docs/website_project_instance_env_delete/index.json
     get:
       description: Get website/instance.env
       operationId: website_project_instance_env_get
@@ -10971,6 +11309,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.env/get
+      x-examples:
+        $ref: ./docs/website_project_instance_env_get/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/link:
     get:
       description: List website/instance.link
@@ -11248,6 +11588,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.sideapp/list
+      x-examples:
+        $ref: ./docs/website_project_instance_sideapp_list/index.json
     post:
       description: Create website/instance.sideapp
       operationId: website_project_instance_sideapp_create
@@ -11304,6 +11646,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.sideapp/create
+      x-examples:
+        $ref: ./docs/website_project_instance_sideapp_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId}:
     delete:
       description: Delete website/instance.sideapp
@@ -11359,6 +11703,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.sideapp/delete
+      x-examples:
+        $ref: ./docs/website_project_instance_sideapp_delete/index.json
     get:
       description: Get website/instance.sideapp
       operationId: website_project_instance_sideapp_get
@@ -11417,6 +11763,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.sideapp/get
+      x-examples:
+        $ref: ./docs/website_project_instance_sideapp_get/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/credential:
     get:
       description: List website/instance.credential
@@ -11471,6 +11819,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.credential/list
+      x-examples:
+        $ref: ./docs/website_project_instance_credential_list/index.json
     post:
       description: Create website/instance.credential
       operationId: website_project_instance_credential_create
@@ -11527,6 +11877,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.credential/create
+      x-examples:
+        $ref: ./docs/website_project_instance_credential_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId}:
     delete:
       description: Delete website/instance.credential
@@ -11592,6 +11944,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.credential/delete
+      x-examples:
+        $ref: ./docs/website_project_instance_credential_delete/index.json
     get:
       description: Get website/instance.credential
       operationId: website_project_instance_credential_get
@@ -11650,6 +12004,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.credential/get
+      x-examples:
+        $ref: ./docs/website_project_instance_credential_get/index.json
     patch:
       description: Update website/instance.credential
       operationId: website_project_instance_credential_patch
@@ -11989,6 +12345,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.service/list
+      x-examples:
+        $ref: ./docs/website_project_instance_service_list/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId}:
     get:
       description: Get website/instance.service
@@ -12048,6 +12406,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.service/get
+      x-examples:
+        $ref: ./docs/website_project_instance_service_get/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/tag:
     get:
       description: List website/instance.tag
@@ -12102,6 +12462,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.tag/list
+      x-examples:
+        $ref: ./docs/website_project_instance_tag_list/index.json
     post:
       description: Create website/instance.tag
       operationId: website_project_instance_tag_create
@@ -12158,6 +12520,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.tag/create
+      x-examples:
+        $ref: ./docs/website_project_instance_tag_create/index.json
     put:
       description: Replace website/instance.tag
       operationId: website_project_instance_tag_put
@@ -12273,6 +12637,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.tag/delete
+      x-examples:
+        $ref: ./docs/website_project_instance_tag_delete/index.json
     get:
       description: Get website/instance.tag
       operationId: website_project_instance_tag_get
@@ -12331,6 +12697,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.tag/get
+      x-examples:
+        $ref: ./docs/website_project_instance_tag_get/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/event:
     get:
       description: List website/instance.event
@@ -12404,6 +12772,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.event/list
+      x-examples:
+        $ref: ./docs/website_project_instance_event_list/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/event/{eventId}:
     get:
       description: Get website/instance.event
@@ -12463,6 +12833,8 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.event/get
+      x-examples:
+        $ref: ./docs/website_project_instance_event_get/index.json
   /dns/{locationId}/project/{projectId}/zone:
     get:
       description: List zone
@@ -12532,6 +12904,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone/list
+      x-examples:
+        $ref: ./docs/dns_project_zone_list/index.json
     post:
       description: Create zone
       operationId: dns_project_zone_create
@@ -12593,6 +12967,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone/create
+      x-examples:
+        $ref: ./docs/dns_project_zone_create/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}:
     delete:
       description: Delete zone
@@ -12640,6 +13016,8 @@ paths:
       - dns/zone/delete
       x-state:
       - Online
+      x-examples:
+        $ref: ./docs/dns_project_zone_delete/index.json
     get:
       description: Returns a single zone
       operationId: dns_project_zone_get
@@ -12690,6 +13068,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone/get
+      x-examples:
+        $ref: ./docs/dns_project_zone_get/index.json
     patch:
       description: Returns modified zone
       operationId: dns_project_zone_update
@@ -12744,6 +13124,8 @@ paths:
       summary: Update dns/zone
       tags:
       - dns_project_zone
+      x-examples:
+        $ref: ./docs/dns_project_zone_update/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/recordset:
     get:
       description: List dns/zone.recordset
@@ -12798,6 +13180,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.recordset/list
+      x-examples:
+        $ref: ./docs/dns_project_zone_recordset_list/index.json
     post:
       description: Create dns/zone.recordset
       operationId: dns_project_zone_recordset_create
@@ -12854,6 +13238,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.recordset/create
+      x-examples:
+        $ref: ./docs/dns_project_zone_recordset_create/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/recordset/{recordsetId}:
     delete:
       description: Delete dns/zone.recordset
@@ -12919,6 +13305,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.recordset/delete
+      x-examples:
+        $ref: ./docs/dns_project_zone_recordset_delete/index.json
     get:
       description: Get dns/zone.recordset
       operationId: dns_project_zone_recordset_get
@@ -12977,6 +13365,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.recordset/get
+      x-examples:
+        $ref: ./docs/dns_project_zone_recordset_get/index.json
     patch:
       description: Update dns/zone.recordset
       operationId: dns_project_zone_recordset_patch
@@ -13416,6 +13806,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.service/list
+      x-examples:
+        $ref: ./docs/dns_project_zone_service_list/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/service/{serviceId}:
     get:
       description: Get dns/zone.service
@@ -13475,6 +13867,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.service/get
+      x-examples:
+        $ref: ./docs/dns_project_zone_service_get/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/tag:
     get:
       description: List dns/zone.tag
@@ -13529,6 +13923,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.tag/list
+      x-examples:
+        $ref: ./docs/dns_project_zone_tag_list/index.json
     post:
       description: Create dns/zone.tag
       operationId: dns_project_zone_tag_create
@@ -13585,6 +13981,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.tag/create
+      x-examples:
+        $ref: ./docs/dns_project_zone_tag_create/index.json
     put:
       description: Replace dns/zone.tag
       operationId: dns_project_zone_tag_put
@@ -13700,6 +14098,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.tag/delete
+      x-examples:
+        $ref: ./docs/dns_project_zone_tag_delete/index.json
     get:
       description: Get dns/zone.tag
       operationId: dns_project_zone_tag_get
@@ -13758,6 +14158,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.tag/get
+      x-examples:
+        $ref: ./docs/dns_project_zone_tag_get/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/event:
     get:
       description: List dns/zone.event
@@ -13831,6 +14233,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.event/list
+      x-examples:
+        $ref: ./docs/dns_project_zone_event_list/index.json
   /dns/{locationId}/project/{projectId}/zone/{zoneId}/event/{eventId}:
     get:
       description: Get dns/zone.event
@@ -13890,6 +14294,8 @@ paths:
       - dns_project_zone
       x-permissions:
       - dns/zone.event/get
+      x-examples:
+        $ref: ./docs/dns_project_zone_event_get/index.json
   /storage/{locationId}/project/{projectId}/disk:
     get:
       description: List disk
@@ -13967,6 +14373,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk/list
+      x-examples:
+        $ref: ./docs/storage_project_disk_list/index.json
     post:
       description: Create disk
       operationId: storage_project_disk_create
@@ -14028,6 +14436,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk/create
+      x-examples:
+        $ref: ./docs/storage_project_disk_create/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}:
     delete:
       description: Delete disk
@@ -14075,6 +14485,8 @@ paths:
       - storage/disk/delete
       x-state:
       - Detached
+      x-examples:
+        $ref: ./docs/storage_project_disk_delete/index.json
     get:
       description: Returns a single disk
       operationId: storage_project_disk_get
@@ -14125,6 +14537,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk/get
+      x-examples:
+        $ref: ./docs/storage_project_disk_get/index.json
     patch:
       description: Returns modified disk
       operationId: storage_project_disk_update
@@ -14179,6 +14593,8 @@ paths:
       summary: Update storage/disk
       tags:
       - storage_project_disk
+      x-examples:
+        $ref: ./docs/storage_project_disk_update/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/resize:
     post:
       description: action resize
@@ -14253,6 +14669,8 @@ paths:
       x-state:
       - Attached
       - Detached
+      x-examples:
+        $ref: ./docs/storage_project_disk_resize/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/attach:
     post:
       description: action attach
@@ -14587,6 +15005,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.service/list
+      x-examples:
+        $ref: ./docs/storage_project_disk_service_list/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/service/{serviceId}:
     get:
       description: Get storage/disk.service
@@ -14646,6 +15066,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.service/get
+      x-examples:
+        $ref: ./docs/storage_project_disk_service_get/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/tag:
     get:
       description: List storage/disk.tag
@@ -14700,6 +15122,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.tag/list
+      x-examples:
+        $ref: ./docs/storage_project_disk_tag_list/index.json
     post:
       description: Create storage/disk.tag
       operationId: storage_project_disk_tag_create
@@ -14756,6 +15180,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.tag/create
+      x-examples:
+        $ref: ./docs/storage_project_disk_tag_create/index.json
     put:
       description: Replace storage/disk.tag
       operationId: storage_project_disk_tag_put
@@ -14871,6 +15297,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.tag/delete
+      x-examples:
+        $ref: ./docs/storage_project_disk_tag_delete/index.json
     get:
       description: Get storage/disk.tag
       operationId: storage_project_disk_tag_get
@@ -14929,6 +15357,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.tag/get
+      x-examples:
+        $ref: ./docs/storage_project_disk_tag_get/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/event:
     get:
       description: List storage/disk.event
@@ -15002,6 +15432,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.event/list
+      x-examples:
+        $ref: ./docs/storage_project_disk_event_list/index.json
   /storage/{locationId}/project/{projectId}/disk/{diskId}/event/{eventId}:
     get:
       description: Get storage/disk.event
@@ -15061,6 +15493,8 @@ paths:
       - storage_project_disk
       x-permissions:
       - storage/disk.event/get
+      x-examples:
+        $ref: ./docs/storage_project_disk_event_get/index.json
   /networking/{locationId}/project/{projectId}/firewall:
     get:
       description: List firewall
@@ -15130,6 +15564,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_list/index.json
     post:
       description: Create firewall
       operationId: networking_project_firewall_create
@@ -15191,6 +15627,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall/create
+      x-examples:
+        $ref: ./docs/networking_project_firewall_create/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}:
     delete:
       description: Delete firewall
@@ -15238,6 +15676,8 @@ paths:
       - networking/firewall/delete
       x-state:
       - Detached
+      x-examples:
+        $ref: ./docs/networking_project_firewall_delete/index.json
     get:
       description: Returns a single firewall
       operationId: networking_project_firewall_get
@@ -15288,6 +15728,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_get/index.json
     patch:
       description: Returns modified firewall
       operationId: networking_project_firewall_update
@@ -15342,6 +15784,8 @@ paths:
       summary: Update networking/firewall
       tags:
       - networking_project_firewall
+      x-examples:
+        $ref: ./docs/networking_project_firewall_update/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/actions/transfer:
     post:
       description: action transfer
@@ -15469,6 +15913,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.ingress/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_ingress_list/index.json
     post:
       description: Create networking/firewall.ingress
       operationId: networking_project_firewall_ingress_create
@@ -15525,6 +15971,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.ingress/create
+      x-examples:
+        $ref: ./docs/networking_project_firewall_ingress_create/index.json
     put:
       description: Replace networking/firewall.ingress
       operationId: networking_project_firewall_ingress_put
@@ -15640,6 +16088,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.ingress/delete
+      x-examples:
+        $ref: ./docs/networking_project_firewall_ingress_delete/index.json
     get:
       description: Get networking/firewall.ingress
       operationId: networking_project_firewall_ingress_get
@@ -15698,6 +16148,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.ingress/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_ingress_get/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/egress:
     get:
       description: List networking/firewall.egress
@@ -15752,6 +16204,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.egress/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_egress_list/index.json
     post:
       description: Create networking/firewall.egress
       operationId: networking_project_firewall_egress_create
@@ -15808,6 +16262,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.egress/create
+      x-examples:
+        $ref: ./docs/networking_project_firewall_egress_create/index.json
     put:
       description: Replace networking/firewall.egress
       operationId: networking_project_firewall_egress_put
@@ -15923,6 +16379,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.egress/delete
+      x-examples:
+        $ref: ./docs/networking_project_firewall_egress_delete/index.json
     get:
       description: Get networking/firewall.egress
       operationId: networking_project_firewall_egress_get
@@ -15981,6 +16439,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.egress/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_egress_get/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/service:
     get:
       description: List networking/firewall.service
@@ -16035,6 +16495,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.service/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_service_list/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/service/{serviceId}:
     get:
       description: Get networking/firewall.service
@@ -16094,6 +16556,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.service/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_service_get/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/tag:
     get:
       description: List networking/firewall.tag
@@ -16148,6 +16612,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.tag/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_tag_list/index.json
     post:
       description: Create networking/firewall.tag
       operationId: networking_project_firewall_tag_create
@@ -16204,6 +16670,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.tag/create
+      x-examples:
+        $ref: ./docs/networking_project_firewall_tag_create/index.json
     put:
       description: Replace networking/firewall.tag
       operationId: networking_project_firewall_tag_put
@@ -16319,6 +16787,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.tag/delete
+      x-examples:
+        $ref: ./docs/networking_project_firewall_tag_delete/index.json
     get:
       description: Get networking/firewall.tag
       operationId: networking_project_firewall_tag_get
@@ -16377,6 +16847,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.tag/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_tag_get/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/event:
     get:
       description: List networking/firewall.event
@@ -16450,6 +16922,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.event/list
+      x-examples:
+        $ref: ./docs/networking_project_firewall_event_list/index.json
   /networking/{locationId}/project/{projectId}/firewall/{firewallId}/event/{eventId}:
     get:
       description: Get networking/firewall.event
@@ -16509,6 +16983,8 @@ paths:
       - networking_project_firewall
       x-permissions:
       - networking/firewall.event/get
+      x-examples:
+        $ref: ./docs/networking_project_firewall_event_get/index.json
   /storage/{locationId}/project/{projectId}/image:
     get:
       description: List image
@@ -17530,6 +18006,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip/list
+      x-examples:
+        $ref: ./docs/networking_project_ip_list/index.json
     post:
       description: Create ip
       operationId: networking_project_ip_create
@@ -17591,6 +18069,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip/create
+      x-examples:
+        $ref: ./docs/networking_project_ip_create/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}:
     delete:
       description: Delete ip
@@ -17638,6 +18118,8 @@ paths:
       - networking/ip/delete
       x-state:
       - Unallocated
+      x-examples:
+        $ref: ./docs/networking_project_ip_delete/index.json
     get:
       description: Returns a single ip
       operationId: networking_project_ip_get
@@ -17688,6 +18170,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip/get
+      x-examples:
+        $ref: ./docs/networking_project_ip_get/index.json
     patch:
       description: Returns modified ip
       operationId: networking_project_ip_update
@@ -17742,6 +18226,8 @@ paths:
       summary: Update networking/ip
       tags:
       - networking_project_ip
+      x-examples:
+        $ref: ./docs/networking_project_ip_update/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}/actions/persist:
     post:
       description: action persist
@@ -18076,6 +18562,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.service/list
+      x-examples:
+        $ref: ./docs/networking_project_ip_service_list/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}/service/{serviceId}:
     get:
       description: Get networking/ip.service
@@ -18135,6 +18623,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.service/get
+      x-examples:
+        $ref: ./docs/networking_project_ip_service_get/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}/tag:
     get:
       description: List networking/ip.tag
@@ -18189,6 +18679,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.tag/list
+      x-examples:
+        $ref: ./docs/networking_project_ip_tag_list/index.json
     post:
       description: Create networking/ip.tag
       operationId: networking_project_ip_tag_create
@@ -18245,6 +18737,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.tag/create
+      x-examples:
+        $ref: ./docs/networking_project_ip_tag_create/index.json
     put:
       description: Replace networking/ip.tag
       operationId: networking_project_ip_tag_put
@@ -18360,6 +18854,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.tag/delete
+      x-examples:
+        $ref: ./docs/networking_project_ip_tag_delete/index.json
     get:
       description: Get networking/ip.tag
       operationId: networking_project_ip_tag_get
@@ -18418,6 +18914,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.tag/get
+      x-examples:
+        $ref: ./docs/networking_project_ip_tag_get/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}/event:
     get:
       description: List networking/ip.event
@@ -18491,6 +18989,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.event/list
+      x-examples:
+        $ref: ./docs/networking_project_ip_event_list/index.json
   /networking/{locationId}/project/{projectId}/ip/{ipId}/event/{eventId}:
     get:
       description: Get networking/ip.event
@@ -18550,6 +19050,8 @@ paths:
       - networking_project_ip
       x-permissions:
       - networking/ip.event/get
+      x-examples:
+        $ref: ./docs/networking_project_ip_event_get/index.json
   /storage/{locationId}/project/{projectId}/iso:
     get:
       description: List iso
@@ -18619,6 +19121,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso/list
+      x-examples:
+        $ref: ./docs/storage_project_iso_list/index.json
     post:
       description: Create iso
       operationId: storage_project_iso_create
@@ -18680,6 +19184,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso/create
+      x-examples:
+        $ref: ./docs/storage_project_iso_create/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}:
     delete:
       description: Delete iso
@@ -18727,6 +19233,8 @@ paths:
       - storage/iso/delete
       x-state:
       - Online
+      x-examples:
+        $ref: ./docs/storage_project_iso_delete/index.json
     get:
       description: Returns a single iso
       operationId: storage_project_iso_get
@@ -18777,6 +19285,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso/get
+      x-examples:
+        $ref: ./docs/storage_project_iso_get/index.json
     patch:
       description: Returns modified iso
       operationId: storage_project_iso_update
@@ -18831,6 +19341,8 @@ paths:
       summary: Update storage/iso
       tags:
       - storage_project_iso
+      x-examples:
+        $ref: ./docs/storage_project_iso_update/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}/actions/detach:
     post:
       description: action detach
@@ -19031,6 +19543,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.service/list
+      x-examples:
+        $ref: ./docs/storage_project_iso_service_list/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}/service/{serviceId}:
     get:
       description: Get storage/iso.service
@@ -19090,6 +19604,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.service/get
+      x-examples:
+        $ref: ./docs/storage_project_iso_service_get/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}/tag:
     get:
       description: List storage/iso.tag
@@ -19144,6 +19660,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.tag/list
+      x-examples:
+        $ref: ./docs/storage_project_iso_tag_list/index.json
     post:
       description: Create storage/iso.tag
       operationId: storage_project_iso_tag_create
@@ -19200,6 +19718,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.tag/create
+      x-examples:
+        $ref: ./docs/storage_project_iso_tag_create/index.json
     put:
       description: Replace storage/iso.tag
       operationId: storage_project_iso_tag_put
@@ -19315,6 +19835,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.tag/delete
+      x-examples:
+        $ref: ./docs/storage_project_iso_tag_delete/index.json
     get:
       description: Get storage/iso.tag
       operationId: storage_project_iso_tag_get
@@ -19373,6 +19895,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.tag/get
+      x-examples:
+        $ref: ./docs/storage_project_iso_tag_get/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}/event:
     get:
       description: List storage/iso.event
@@ -19446,6 +19970,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.event/list
+      x-examples:
+        $ref: ./docs/storage_project_iso_event_list/index.json
   /storage/{locationId}/project/{projectId}/iso/{isoId}/event/{eventId}:
     get:
       description: Get storage/iso.event
@@ -19505,6 +20031,8 @@ paths:
       - storage_project_iso
       x-permissions:
       - storage/iso.event/get
+      x-examples:
+        $ref: ./docs/storage_project_iso_event_get/index.json
   /networking/{locationId}/project/{projectId}/netadp:
     get:
       description: List netadp
@@ -20404,6 +20932,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw/list
+      x-examples:
+        $ref: ./docs/networking_project_netgw_list/index.json
     post:
       description: Create netgw
       operationId: networking_project_netgw_create
@@ -20465,6 +20995,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw/create
+      x-examples:
+        $ref: ./docs/networking_project_netgw_create/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}:
     delete:
       description: Delete netgw
@@ -20512,6 +21044,8 @@ paths:
       - networking/netgw/delete
       x-state:
       - Detached
+      x-examples:
+        $ref: ./docs/networking_project_netgw_delete/index.json
     get:
       description: Returns a single netgw
       operationId: networking_project_netgw_get
@@ -20562,6 +21096,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw/get
+      x-examples:
+        $ref: ./docs/networking_project_netgw_get/index.json
     patch:
       description: Returns modified netgw
       operationId: networking_project_netgw_update
@@ -20616,6 +21152,8 @@ paths:
       summary: Update networking/netgw
       tags:
       - networking_project_netgw
+      x-examples:
+        $ref: ./docs/networking_project_netgw_update/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}/actions/attach:
     post:
       description: action attach
@@ -20810,6 +21348,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.service/list
+      x-examples:
+        $ref: ./docs/networking_project_netgw_service_list/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}/service/{serviceId}:
     get:
       description: Get networking/netgw.service
@@ -20869,6 +21409,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.service/get
+      x-examples:
+        $ref: ./docs/networking_project_netgw_service_get/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}/tag:
     get:
       description: List networking/netgw.tag
@@ -20923,6 +21465,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.tag/list
+      x-examples:
+        $ref: ./docs/networking_project_netgw_tag_list/index.json
     post:
       description: Create networking/netgw.tag
       operationId: networking_project_netgw_tag_create
@@ -20979,6 +21523,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.tag/create
+      x-examples:
+        $ref: ./docs/networking_project_netgw_tag_create/index.json
     put:
       description: Replace networking/netgw.tag
       operationId: networking_project_netgw_tag_put
@@ -21094,6 +21640,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.tag/delete
+      x-examples:
+        $ref: ./docs/networking_project_netgw_tag_delete/index.json
     get:
       description: Get networking/netgw.tag
       operationId: networking_project_netgw_tag_get
@@ -21152,6 +21700,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.tag/get
+      x-examples:
+        $ref: ./docs/networking_project_netgw_tag_get/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}/event:
     get:
       description: List networking/netgw.event
@@ -21225,6 +21775,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.event/list
+      x-examples:
+        $ref: ./docs/networking_project_netgw_event_list/index.json
   /networking/{locationId}/project/{projectId}/netgw/{netgwId}/event/{eventId}:
     get:
       description: Get networking/netgw.event
@@ -21284,6 +21836,8 @@ paths:
       - networking_project_netgw
       x-permissions:
       - networking/netgw.event/get
+      x-examples:
+        $ref: ./docs/networking_project_netgw_event_get/index.json
   /networking/{locationId}/project/{projectId}/network:
     get:
       description: List network
@@ -21353,6 +21907,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network/list
+      x-examples:
+        $ref: ./docs/networking_project_network_list/index.json
     post:
       description: Create network
       operationId: networking_project_network_create
@@ -21414,6 +21970,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network/create
+      x-examples:
+        $ref: ./docs/networking_project_network_create/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}:
     delete:
       description: Delete network
@@ -21461,6 +22019,8 @@ paths:
       - networking/network/delete
       x-state:
       - Online
+      x-examples:
+        $ref: ./docs/networking_project_network_delete/index.json
     get:
       description: Returns a single network
       operationId: networking_project_network_get
@@ -21520,6 +22080,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network/get
+      x-examples:
+        $ref: ./docs/networking_project_network_get/index.json
     patch:
       description: Returns modified network
       operationId: networking_project_network_update
@@ -21574,6 +22136,8 @@ paths:
       summary: Update networking/network
       tags:
       - networking_project_network
+      x-examples:
+        $ref: ./docs/networking_project_network_update/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}/service:
     get:
       description: List networking/network.service
@@ -21628,6 +22192,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.service/list
+      x-examples:
+        $ref: ./docs/networking_project_network_service_list/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}/service/{serviceId}:
     get:
       description: Get networking/network.service
@@ -21687,6 +22253,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.service/get
+      x-examples:
+        $ref: ./docs/networking_project_network_service_get/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}/tag:
     get:
       description: List networking/network.tag
@@ -21741,6 +22309,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.tag/list
+      x-examples:
+        $ref: ./docs/networking_project_network_tag_list/index.json
     post:
       description: Create networking/network.tag
       operationId: networking_project_network_tag_create
@@ -21797,6 +22367,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.tag/create
+      x-examples:
+        $ref: ./docs/networking_project_network_tag_create/index.json
     put:
       description: Replace networking/network.tag
       operationId: networking_project_network_tag_put
@@ -21912,6 +22484,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.tag/delete
+      x-examples:
+        $ref: ./docs/networking_project_network_tag_delete/index.json
     get:
       description: Get networking/network.tag
       operationId: networking_project_network_tag_get
@@ -21970,6 +22544,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.tag/get
+      x-examples:
+        $ref: ./docs/networking_project_network_tag_get/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}/event:
     get:
       description: List networking/network.event
@@ -22043,6 +22619,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.event/list
+      x-examples:
+        $ref: ./docs/networking_project_network_event_list/index.json
   /networking/{locationId}/project/{projectId}/network/{networkId}/event/{eventId}:
     get:
       description: Get networking/network.event
@@ -22102,6 +22680,8 @@ paths:
       - networking_project_network
       x-permissions:
       - networking/network.event/get
+      x-examples:
+        $ref: ./docs/networking_project_network_event_get/index.json
   /iam/project/{projectId}/policy:
     get:
       description: List policy
@@ -22619,7 +23199,7 @@ paths:
           description: successful operation
           links:
             invitation:
-              operationId: project_invitation_list
+              operationId: iam_project_invitation_list
               parameters:
                 resource: $path
         "400":
@@ -22718,7 +23298,7 @@ paths:
           description: successful operation
           links:
             invitation:
-              operationId: organisation_invitation_list
+              operationId: iam_organisation_invitation_list
               parameters:
                 resource: $path
         "400":
@@ -27545,6 +28125,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_list/index.json
     post:
       description: Create vault
       operationId: storage_project_vault_create
@@ -27606,6 +28188,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault/create
+      x-examples:
+        $ref: ./docs/storage_project_vault_create/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}:
     delete:
       description: Delete vault
@@ -27660,6 +28244,8 @@ paths:
       x-state:
       - Online
       - "Off"
+      x-examples:
+        $ref: ./docs/storage_project_vault_delete/index.json
     get:
       description: Returns a single vault
       operationId: storage_project_vault_get
@@ -27710,6 +28296,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_get/index.json
     patch:
       description: Returns modified vault
       operationId: storage_project_vault_update
@@ -27764,6 +28352,8 @@ paths:
       summary: Update storage/vault
       tags:
       - storage_project_vault
+      x-examples:
+        $ref: ./docs/storage_project_vault_update/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/actions/start:
     post:
       description: action start
@@ -27898,6 +28488,8 @@ paths:
       - storage/vault/stop
       x-state:
       - Online
+      x-examples:
+        $ref: ./docs/storage_project_vault_stop/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/actions/resize:
     post:
       description: action resize
@@ -27972,6 +28564,8 @@ paths:
       x-state:
       - Online
       - "Off"
+      x-examples:
+        $ref: ./docs/storage_project_vault_resize/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/snapshot:
     get:
       description: List storage/vault.snapshot
@@ -28026,6 +28620,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.snapshot/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_snapshot_list/index.json
     post:
       description: Create storage/vault.snapshot
       operationId: storage_project_vault_snapshot_create
@@ -28082,6 +28678,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.snapshot/create
+      x-examples:
+        $ref: ./docs/storage_project_vault_snapshot_create/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/snapshot/{snapshotId}:
     delete:
       description: Delete storage/vault.snapshot
@@ -28141,6 +28739,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.snapshot/delete
+      x-examples:
+        $ref: ./docs/storage_project_vault_snapshot_delete/index.json
     get:
       description: Get storage/vault.snapshot
       operationId: storage_project_vault_snapshot_get
@@ -28199,6 +28799,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.snapshot/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_snapshot_get/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential:
     get:
       description: List storage/vault.credential
@@ -28253,6 +28855,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.credential/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_credential_list/index.json
     post:
       description: Create storage/vault.credential
       operationId: storage_project_vault_credential_create
@@ -28309,6 +28913,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.credential/create
+      x-examples:
+        $ref: ./docs/storage_project_vault_credential_create/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential/{credentialId}:
     delete:
       description: Delete storage/vault.credential
@@ -28374,6 +28980,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.credential/delete
+      x-examples:
+        $ref: ./docs/storage_project_vault_credential_delete/index.json
     get:
       description: Get storage/vault.credential
       operationId: storage_project_vault_credential_get
@@ -28432,6 +29040,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.credential/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_credential_get/index.json
     patch:
       description: Update storage/vault.credential
       operationId: storage_project_vault_credential_patch
@@ -28548,6 +29158,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.service/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_service_list/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/service/{serviceId}:
     get:
       description: Get storage/vault.service
@@ -28607,6 +29219,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.service/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_service_get/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/tag:
     get:
       description: List storage/vault.tag
@@ -28661,6 +29275,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.tag/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_tag_list/index.json
     post:
       description: Create storage/vault.tag
       operationId: storage_project_vault_tag_create
@@ -28717,6 +29333,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.tag/create
+      x-examples:
+        $ref: ./docs/storage_project_vault_tag_create/index.json
     put:
       description: Replace storage/vault.tag
       operationId: storage_project_vault_tag_put
@@ -28832,6 +29450,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.tag/delete
+      x-examples:
+        $ref: ./docs/storage_project_vault_tag_delete/index.json
     get:
       description: Get storage/vault.tag
       operationId: storage_project_vault_tag_get
@@ -28890,6 +29510,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.tag/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_tag_get/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/event:
     get:
       description: List storage/vault.event
@@ -28963,6 +29585,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.event/list
+      x-examples:
+        $ref: ./docs/storage_project_vault_event_list/index.json
   /storage/{locationId}/project/{projectId}/vault/{vaultId}/event/{eventId}:
     get:
       description: Get storage/vault.event
@@ -29022,6 +29646,8 @@ paths:
       - storage_project_vault
       x-permissions:
       - storage/vault.event/get
+      x-examples:
+        $ref: ./docs/storage_project_vault_event_get/index.json
   /compute/{locationId}/project/{projectId}/vm:
     get:
       description: List vm
@@ -29091,6 +29717,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm/list
+      x-examples:
+        $ref: ./docs/compute_project_vm_list/index.json
     post:
       description: Create vm
       operationId: compute_project_vm_create
@@ -29152,6 +29780,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm/create
+      x-examples:
+        $ref: ./docs/compute_project_vm_create/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}:
     delete:
       description: Delete vm
@@ -29200,6 +29830,8 @@ paths:
       x-state:
       - Running
       - "Off"
+      x-examples:
+        $ref: ./docs/compute_project_vm_delete/index.json
     get:
       description: Returns a single vm
       operationId: compute_project_vm_get
@@ -29255,6 +29887,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm/get
+      x-examples:
+        $ref: ./docs/compute_project_vm_get/index.json
     patch:
       description: Returns modified vm
       operationId: compute_project_vm_update
@@ -29309,6 +29943,8 @@ paths:
       summary: Update compute/vm
       tags:
       - compute_project_vm
+      x-examples:
+        $ref: ./docs/compute_project_vm_update/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/start:
     post:
       description: action start
@@ -29856,6 +30492,74 @@ paths:
       - compute/vm.serialport/read
       x-state:
       - Running
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/metric:
+    get:
+      description: List compute/vm.metric
+      operationId: compute_project_vm_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: period
+        explode: true
+        in: query
+        name: period
+        required: false
+        schema:
+          default: 1d
+          enum:
+          - 1d
+          - 12h
+          - 6h
+          - 1h
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List compute/vm.metric
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.metric/list
   /compute/{locationId}/project/{projectId}/vm/{vmId}/disk:
     get:
       description: List compute/vm.disk
@@ -30130,6 +30834,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.service/list
+      x-examples:
+        $ref: ./docs/compute_project_vm_service_list/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}/service/{serviceId}:
     get:
       description: Get compute/vm.service
@@ -30189,6 +30895,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.service/get
+      x-examples:
+        $ref: ./docs/compute_project_vm_service_get/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}/tag:
     get:
       description: List compute/vm.tag
@@ -30243,6 +30951,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.tag/list
+      x-examples:
+        $ref: ./docs/compute_project_vm_tag_list/index.json
     post:
       description: Create compute/vm.tag
       operationId: compute_project_vm_tag_create
@@ -30299,6 +31009,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.tag/create
+      x-examples:
+        $ref: ./docs/compute_project_vm_tag_create/index.json
     put:
       description: Replace compute/vm.tag
       operationId: compute_project_vm_tag_put
@@ -30414,6 +31126,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.tag/delete
+      x-examples:
+        $ref: ./docs/compute_project_vm_tag_delete/index.json
     get:
       description: Get compute/vm.tag
       operationId: compute_project_vm_tag_get
@@ -30472,6 +31186,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.tag/get
+      x-examples:
+        $ref: ./docs/compute_project_vm_tag_get/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}/event:
     get:
       description: List compute/vm.event
@@ -30545,6 +31261,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.event/list
+      x-examples:
+        $ref: ./docs/compute_project_vm_event_list/index.json
   /compute/{locationId}/project/{projectId}/vm/{vmId}/event/{eventId}:
     get:
       description: Get compute/vm.event
@@ -30604,6 +31322,8 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.event/get
+      x-examples:
+        $ref: ./docs/compute_project_vm_event_get/index.json
   /billing/project/{projectId}/reservation:
     get:
       description: List reservation
@@ -32955,7 +33675,7 @@ components:
         userAgent:
           type: string
       type: object
-    user_update:
+    iam_user_update:
       format: patch user
       properties:
         phone:
@@ -33035,7 +33755,7 @@ components:
         $ref: '#/components/schemas/tag'
       title: Tag collection
       type: array
-    user_credential_patch:
+    iam_user_credential_patch:
       properties:
         name:
           title: Credential name
@@ -33100,6 +33820,34 @@ components:
           default: false
           title: Feature earlyAdopter
           type: boolean
+      type: object
+    project.threshold:
+      example:
+        name: name
+        id: id
+        type: type
+        value: 0.8008281904610115
+        uri: uri
+      properties:
+        id:
+          readOnly: true
+          title: Threshold id
+          type: string
+        name:
+          readOnly: true
+          title: Threshold name
+          type: string
+        type:
+          readOnly: true
+          title: Threshold type
+          type: string
+        value:
+          title: Threshold value
+          type: number
+        uri:
+          readOnly: true
+          title: Threshold uri
+          type: string
       type: object
     project.credential:
       example:
@@ -33226,7 +33974,7 @@ components:
       - id
       - user
       type: object
-    project_create:
+    iam_project_create:
       format: create project
       properties:
         name:
@@ -33249,7 +33997,7 @@ components:
       - name
       - organisation
       type: object
-    project_update:
+    iam_project_update:
       format: patch project
       properties:
         name:
@@ -33291,7 +34039,29 @@ components:
           x-resource:
             kind: provider/agent
       type: object
-    project_credentialStore_patch:
+    iam_project_threshold_create:
+      properties:
+        id:
+          readOnly: true
+          title: Threshold id
+          type: string
+        name:
+          readOnly: true
+          title: Threshold name
+          type: string
+        type:
+          readOnly: true
+          title: Threshold type
+          type: string
+        value:
+          title: Threshold value
+          type: number
+        uri:
+          readOnly: true
+          title: Threshold uri
+          type: string
+      type: object
+    iam_project_credentialStore_patch:
       properties:
         name:
           title: CredentialStore name
@@ -33301,7 +34071,7 @@ components:
       required:
       - name
       type: object
-    project_quota_limit_patch:
+    iam_project_quota_limit_patch:
       properties:
         user:
           title: Limit user
@@ -33315,15 +34085,15 @@ components:
           x-permissions:
           - iam/project.quota.effective/update
       type: object
-    project_invitation_accept:
+    iam_project_invitation_accept:
       properties:
         token:
-          title: Accept token
+          title: Invitation token
           type: string
       required:
       - token
       type: object
-    project_ownership_create:
+    iam_project_ownership_create:
       properties:
         email:
           format: email
@@ -33347,12 +34117,6 @@ components:
           value: value
         flavour: flavour
         organisation: https://openapi-generator.tech
-        active: true
-        threshold:
-          credits:
-            levels:
-            - 5.962133916683182
-            - 5.962133916683182
         createdOn: 2000-01-23T04:56:07.000+00:00
         uri: uri
         billing:
@@ -33416,11 +34180,6 @@ components:
           type: string
         billing:
           $ref: '#/components/schemas/project_billing'
-        active:
-          default: true
-          type: boolean
-        threshold:
-          $ref: '#/components/schemas/project_threshold'
         networkAcl:
           items:
             $ref: '#/components/schemas/project_networkAcl'
@@ -33532,7 +34291,7 @@ components:
         modifiedBy:
           type: string
       type: object
-    organisation_create:
+    iam_organisation_create:
       format: create organisation
       properties:
         name:
@@ -33543,7 +34302,7 @@ components:
       required:
       - name
       type: object
-    organisation_update:
+    iam_organisation_update:
       format: patch organisation
       properties:
         name:
@@ -33554,7 +34313,7 @@ components:
         billing:
           $ref: '#/components/schemas/Organisation_billing_1'
       type: object
-    organisation_transfer_accept:
+    iam_organisation_transfer_accept:
       format: Action transfer_accept
       properties:
         payment:
@@ -33567,20 +34326,22 @@ components:
       - payment
       - project
       type: object
-    organisation_payment_allocate:
+    iam_organisation_payment_allocate:
       properties:
         project:
           format: uri
-          title: Allocate project
+          title: Payment project
           type: string
           x-resource:
             kind: iam/project
+            filter:
+              organisation: $request.path.organisationId
           x-permissions:
           - iam/project/get
       required:
       - project
       type: object
-    organisation_proforma_create:
+    iam_organisation_proforma_create:
       properties:
         amount:
           minimum: 1
@@ -33598,15 +34359,15 @@ components:
       - amount
       - project
       type: object
-    organisation_invitation_accept:
+    iam_organisation_invitation_accept:
       properties:
         token:
-          title: Accept token
+          title: Invitation token
           type: string
       required:
       - token
       type: object
-    organisation_ownership_create:
+    iam_organisation_ownership_create:
       properties:
         email:
           format: email
@@ -33868,6 +34629,7 @@ components:
         state:
           enum:
           - Online
+          - Suspended
           - Unknown
           - Processing
           - NotCreated
@@ -34258,6 +35020,53 @@ components:
           type: array
           x-permissions:
           - insight/journal.tag/list
+      type: object
+    container.repository:
+      example:
+        name: name
+        id: id
+      properties:
+        id:
+          readOnly: true
+          title: Repository id
+          type: string
+        name:
+          title: Repository name
+          type: string
+      required:
+      - name
+      type: object
+    container.image:
+      example:
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        name: name
+        digest: digest
+        id: id
+        createdOn: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          readOnly: true
+          title: Image id
+          type: string
+        name:
+          title: Image name
+          type: string
+        digest:
+          title: Image digest
+          type: string
+        createdOn:
+          format: date-time
+          title: Image createdOn
+          type: string
+        modifiedOn:
+          format: date-time
+          title: Image modifiedOn
+          type: string
+      required:
+      - createdOn
+      - digest
+      - modifiedOn
+      - name
       type: object
     registry.credential:
       example:
@@ -34689,7 +35498,7 @@ components:
       properties:
         incremental:
           pattern: /^[\w-]+$/
-          title: Download incremental
+          title: Snapshot incremental
           type: string
       type: object
     website_project_instance_credential_patch:
@@ -35013,13 +35822,21 @@ components:
           title: Disk size
           type: number
         source:
-          format: uri
+          oneOf:
+          - format: uri
+            pattern: ^/
+            title: disk
+            x-resource:
+              kind: storage/disk
+            x-permission:
+            - storage/disk/use
+          - format: uri-upload
+            pattern: ^http
+            title: file
+            x-file:
+              accept: .vhdx
           title: Disk source
           type: string
-          x-resource:
-            kind: storage/disk
-          x-permissions:
-          - storage/disk/use
         vm:
           format: uri
           title: Disk vm
@@ -35028,8 +35845,6 @@ components:
             kind: compute/vm
           x-permissions:
           - compute/vm/use
-        metadata:
-          $ref: '#/components/schemas/Disk_metadata'
         tag:
           items:
             $ref: '#/components/schemas/tag'
@@ -35430,6 +36245,7 @@ components:
     image:
       example:
         flavour: flavour
+        disks: 0.8008281904610115
         project: https://openapi-generator.tech
         description: description
         createdOn: 2000-01-23T04:56:07.000+00:00
@@ -35439,7 +36255,7 @@ components:
         - license
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: https://openapi-generator.tech
-        fileSize: 0.8008281904610115
+        fileSize: 6.027456183070403
         name: name
         modifiedBy: https://openapi-generator.tech
         id: id
@@ -35493,6 +36309,8 @@ components:
             kind: storage/image
         description:
           type: string
+        disks:
+          type: number
         fileSize:
           type: number
         license:
@@ -35662,15 +36480,12 @@ components:
         name:
           title: Iso name
           type: string
-        size:
-          title: Iso size
-          type: number
-          x-audience: developer
         source:
+          format: uri-upload
           title: Iso source
           type: string
-        metadata:
-          $ref: '#/components/schemas/Disk_metadata'
+          x-file:
+            accept: .iso
         tag:
           items:
             $ref: '#/components/schemas/tag'
@@ -35678,6 +36493,7 @@ components:
           type: array
       required:
       - name
+      - source
       type: object
     storage_project_iso_update:
       format: patch iso
@@ -35801,6 +36617,8 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+            state:
+            - "Off"
           x-permissions:
           - compute/vm/use
         network:
@@ -35809,6 +36627,8 @@ components:
           type: string
           x-resource:
             kind: networking/network
+            state:
+            - Online
           x-permissions:
           - networking/network/use
         firewall:
@@ -35825,6 +36645,10 @@ components:
             type: string
             x-resource:
               kind: networking/ip
+              state:
+              - Unallocated
+              filter:
+                network: $request.body#/network
             x-permissions:
             - networking/ip/use
           title: Ip collection
@@ -36962,6 +37786,57 @@ components:
           x-permissions:
           - storage/vault.tag/list
       type: object
+    metric:
+      example:
+        unit: unit
+        resource: resource
+        columns:
+        - columns
+        - columns
+        values:
+        - - 1.4658129805029452
+          - 1.4658129805029452
+        - - 1.4658129805029452
+          - 1.4658129805029452
+        name: name
+        scale:
+          min: 0.8008281904610115
+          max: 6.027456183070403
+        id: id
+      properties:
+        id:
+          title: Metric id
+          type: string
+        name:
+          title: Metric name
+          type: string
+        unit:
+          title: Metric unit
+          type: string
+        resource:
+          title: Metric resource
+          type: string
+        scale:
+          $ref: '#/components/schemas/Metric_scale'
+        columns:
+          items:
+            type: string
+          title: Columns collection
+          type: array
+        values:
+          items:
+            items:
+              type: number
+            title: Values collection
+            type: array
+          title: Values collection
+          type: array
+      required:
+      - id
+      - name
+      - resource
+      - unit
+      type: object
     compute_project_vm_create:
       format: create vm
       properties:
@@ -37769,25 +38644,6 @@ components:
           type: number
         creditLimit:
           type: number
-    project_threshold_credits:
-      example:
-        levels:
-        - 5.962133916683182
-        - 5.962133916683182
-      properties:
-        levels:
-          items:
-            type: number
-          type: array
-    project_threshold:
-      example:
-        credits:
-          levels:
-          - 5.962133916683182
-          - 5.962133916683182
-      properties:
-        credits:
-          $ref: '#/components/schemas/project_threshold_credits'
     project_networkAcl:
       example:
         name: name
@@ -37982,18 +38838,6 @@ components:
           type: string
         ttl:
           type: number
-    Metadata_source:
-      properties:
-        filename:
-          title: Source filename
-          type: string
-        size:
-          title: Source size
-          type: number
-    Disk_metadata:
-      properties:
-        source:
-          $ref: '#/components/schemas/Metadata_source'
     disk_metadata:
       example:
         source: source
@@ -38072,6 +38916,17 @@ components:
           items:
             type: string
           type: array
+    Metric_scale:
+      example:
+        min: 0.8008281904610115
+        max: 6.027456183070403
+      properties:
+        min:
+          title: Scale min
+          type: number
+        max:
+          title: Scale max
+          type: number
     compute_project_vm_create_credential:
       properties:
         type:
@@ -38137,6 +38992,10 @@ components:
             type: string
             x-resource:
               kind: networking/ip
+              state:
+              - Unallocated
+              filter:
+                network: $request.body#/network
             x-permissions:
             - networking/ip/use
           title: Ip collection
@@ -38261,6 +39120,10 @@ components:
             iam/project.payment/list: ""
             iam/project.invoice/list: ""
             iam/project.proforma/list: ""
+            iam/project.threshold/list: ""
+            iam/project.threshold/create: ""
+            iam/project.threshold/get: ""
+            iam/project.threshold/delete: ""
             iam/project.credentialStore/list: ""
             iam/project.credentialStore/create: ""
             iam/project.credentialStore/get: ""
@@ -38492,7 +39355,6 @@ components:
             dns/zone.tag/get: ""
             dns/zone.event/list: ""
             dns/zone.event/get: ""
-            storage/disk/use: ""
             compute/vm/use: ""
             storage/disk/create: ""
             storage/disk/list: ""
@@ -38738,6 +39600,7 @@ components:
             compute/vm/flavour: ""
             compute/vm/console: ""
             compute/vm.serialport/read: ""
+            compute/vm.metric/list: ""
             storage/iso/attach: ""
             compute/vm.service/list: ""
             compute/vm.service/get: ""

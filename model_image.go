@@ -24,6 +24,7 @@ type Image struct {
 	Project string `json:"project,omitempty"`
 	Uri string `json:"uri,omitempty"`
 	Description string `json:"description,omitempty"`
+	Disks float32 `json:"disks,omitempty"`
 	FileSize float32 `json:"fileSize,omitempty"`
 	License []string `json:"license,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`

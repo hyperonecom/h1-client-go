@@ -11,8 +11,6 @@ package h1
 // StorageProjectIsoCreate struct for StorageProjectIsoCreate
 type StorageProjectIsoCreate struct {
 	Name string `json:"name"`
-	Size float32 `json:"size,omitempty"`
-	Source string `json:"source,omitempty"`
-	Metadata DiskMetadata `json:"metadata,omitempty"`
+	Source string `json:"source"`
 	Tag []Tag `json:"tag,omitempty"`
 }

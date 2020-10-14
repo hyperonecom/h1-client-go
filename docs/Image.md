@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Project** | **string** |  | [optional] 
 **Uri** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
+**Disks** | **float32** |  | [optional] 
 **FileSize** | **float32** |  | [optional] 
 **License** | **[]string** |  | [optional] 
 **Tag** | [**[]Tag**](tag.md) |  | [optional] 

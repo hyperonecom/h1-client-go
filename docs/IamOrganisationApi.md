@@ -4,39 +4,39 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OrganisationBillingList**](IamOrganisationApi.md#OrganisationBillingList) | **Get** /iam/organisation/{organisationId}/billing | List iam/organisation.billing
-[**OrganisationCreate**](IamOrganisationApi.md#OrganisationCreate) | **Post** /iam/organisation | Create iam/organisation
-[**OrganisationDelete**](IamOrganisationApi.md#OrganisationDelete) | **Delete** /iam/organisation/{organisationId} | Delete iam/organisation
-[**OrganisationEventGet**](IamOrganisationApi.md#OrganisationEventGet) | **Get** /iam/organisation/{organisationId}/event/{eventId} | Get iam/organisation.event
-[**OrganisationEventList**](IamOrganisationApi.md#OrganisationEventList) | **Get** /iam/organisation/{organisationId}/event | List iam/organisation.event
-[**OrganisationGet**](IamOrganisationApi.md#OrganisationGet) | **Get** /iam/organisation/{organisationId} | Get iam/organisation
-[**OrganisationInvitationAccept**](IamOrganisationApi.md#OrganisationInvitationAccept) | **Post** /iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept | Create iam/organisation.actions
-[**OrganisationInvitationDelete**](IamOrganisationApi.md#OrganisationInvitationDelete) | **Delete** /iam/organisation/{organisationId}/invitation/{invitationId} | Delete iam/organisation.invitation
-[**OrganisationInvitationGet**](IamOrganisationApi.md#OrganisationInvitationGet) | **Get** /iam/organisation/{organisationId}/invitation/{invitationId} | Get iam/organisation.invitation
-[**OrganisationInvitationList**](IamOrganisationApi.md#OrganisationInvitationList) | **Get** /iam/organisation/{organisationId}/invitation | List iam/organisation.invitation
-[**OrganisationInvoiceDownload**](IamOrganisationApi.md#OrganisationInvoiceDownload) | **Post** /iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download | Create iam/organisation.actions
-[**OrganisationInvoiceGet**](IamOrganisationApi.md#OrganisationInvoiceGet) | **Get** /iam/organisation/{organisationId}/invoice/{invoiceId} | Get iam/organisation.invoice
-[**OrganisationInvoiceList**](IamOrganisationApi.md#OrganisationInvoiceList) | **Get** /iam/organisation/{organisationId}/invoice | List iam/organisation.invoice
-[**OrganisationList**](IamOrganisationApi.md#OrganisationList) | **Get** /iam/organisation | List iam/organisation
-[**OrganisationOwnershipCreate**](IamOrganisationApi.md#OrganisationOwnershipCreate) | **Post** /iam/organisation/{organisationId}/ownership | Create iam/organisation.ownership
-[**OrganisationOwnershipDelete**](IamOrganisationApi.md#OrganisationOwnershipDelete) | **Delete** /iam/organisation/{organisationId}/ownership/{ownershipId} | Delete iam/organisation.ownership
-[**OrganisationOwnershipGet**](IamOrganisationApi.md#OrganisationOwnershipGet) | **Get** /iam/organisation/{organisationId}/ownership/{ownershipId} | Get iam/organisation.ownership
-[**OrganisationOwnershipList**](IamOrganisationApi.md#OrganisationOwnershipList) | **Get** /iam/organisation/{organisationId}/ownership | List iam/organisation.ownership
-[**OrganisationPaymentAllocate**](IamOrganisationApi.md#OrganisationPaymentAllocate) | **Post** /iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate | Create iam/organisation.actions
-[**OrganisationPaymentGet**](IamOrganisationApi.md#OrganisationPaymentGet) | **Get** /iam/organisation/{organisationId}/payment/{paymentId} | Get iam/organisation.payment
-[**OrganisationPaymentList**](IamOrganisationApi.md#OrganisationPaymentList) | **Get** /iam/organisation/{organisationId}/payment | List iam/organisation.payment
-[**OrganisationProformaCreate**](IamOrganisationApi.md#OrganisationProformaCreate) | **Post** /iam/organisation/{organisationId}/proforma | Create iam/organisation.proforma
-[**OrganisationProformaDownload**](IamOrganisationApi.md#OrganisationProformaDownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Create iam/organisation.actions
-[**OrganisationProformaGet**](IamOrganisationApi.md#OrganisationProformaGet) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
-[**OrganisationProformaList**](IamOrganisationApi.md#OrganisationProformaList) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
-[**OrganisationTransferAccept**](IamOrganisationApi.md#OrganisationTransferAccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
-[**OrganisationUpdate**](IamOrganisationApi.md#OrganisationUpdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
+[**IamOrganisationBillingList**](IamOrganisationApi.md#IamOrganisationBillingList) | **Get** /iam/organisation/{organisationId}/billing | List iam/organisation.billing
+[**IamOrganisationCreate**](IamOrganisationApi.md#IamOrganisationCreate) | **Post** /iam/organisation | Create iam/organisation
+[**IamOrganisationDelete**](IamOrganisationApi.md#IamOrganisationDelete) | **Delete** /iam/organisation/{organisationId} | Delete iam/organisation
+[**IamOrganisationEventGet**](IamOrganisationApi.md#IamOrganisationEventGet) | **Get** /iam/organisation/{organisationId}/event/{eventId} | Get iam/organisation.event
+[**IamOrganisationEventList**](IamOrganisationApi.md#IamOrganisationEventList) | **Get** /iam/organisation/{organisationId}/event | List iam/organisation.event
+[**IamOrganisationGet**](IamOrganisationApi.md#IamOrganisationGet) | **Get** /iam/organisation/{organisationId} | Get iam/organisation
+[**IamOrganisationInvitationAccept**](IamOrganisationApi.md#IamOrganisationInvitationAccept) | **Post** /iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept | Accept iam/organisation.invitation
+[**IamOrganisationInvitationDelete**](IamOrganisationApi.md#IamOrganisationInvitationDelete) | **Delete** /iam/organisation/{organisationId}/invitation/{invitationId} | Delete iam/organisation.invitation
+[**IamOrganisationInvitationGet**](IamOrganisationApi.md#IamOrganisationInvitationGet) | **Get** /iam/organisation/{organisationId}/invitation/{invitationId} | Get iam/organisation.invitation
+[**IamOrganisationInvitationList**](IamOrganisationApi.md#IamOrganisationInvitationList) | **Get** /iam/organisation/{organisationId}/invitation | List iam/organisation.invitation
+[**IamOrganisationInvoiceDownload**](IamOrganisationApi.md#IamOrganisationInvoiceDownload) | **Post** /iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download | Download iam/organisation.invoice
+[**IamOrganisationInvoiceGet**](IamOrganisationApi.md#IamOrganisationInvoiceGet) | **Get** /iam/organisation/{organisationId}/invoice/{invoiceId} | Get iam/organisation.invoice
+[**IamOrganisationInvoiceList**](IamOrganisationApi.md#IamOrganisationInvoiceList) | **Get** /iam/organisation/{organisationId}/invoice | List iam/organisation.invoice
+[**IamOrganisationList**](IamOrganisationApi.md#IamOrganisationList) | **Get** /iam/organisation | List iam/organisation
+[**IamOrganisationOwnershipCreate**](IamOrganisationApi.md#IamOrganisationOwnershipCreate) | **Post** /iam/organisation/{organisationId}/ownership | Create iam/organisation.ownership
+[**IamOrganisationOwnershipDelete**](IamOrganisationApi.md#IamOrganisationOwnershipDelete) | **Delete** /iam/organisation/{organisationId}/ownership/{ownershipId} | Delete iam/organisation.ownership
+[**IamOrganisationOwnershipGet**](IamOrganisationApi.md#IamOrganisationOwnershipGet) | **Get** /iam/organisation/{organisationId}/ownership/{ownershipId} | Get iam/organisation.ownership
+[**IamOrganisationOwnershipList**](IamOrganisationApi.md#IamOrganisationOwnershipList) | **Get** /iam/organisation/{organisationId}/ownership | List iam/organisation.ownership
+[**IamOrganisationPaymentAllocate**](IamOrganisationApi.md#IamOrganisationPaymentAllocate) | **Post** /iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate | Allocate iam/organisation.payment
+[**IamOrganisationPaymentGet**](IamOrganisationApi.md#IamOrganisationPaymentGet) | **Get** /iam/organisation/{organisationId}/payment/{paymentId} | Get iam/organisation.payment
+[**IamOrganisationPaymentList**](IamOrganisationApi.md#IamOrganisationPaymentList) | **Get** /iam/organisation/{organisationId}/payment | List iam/organisation.payment
+[**IamOrganisationProformaCreate**](IamOrganisationApi.md#IamOrganisationProformaCreate) | **Post** /iam/organisation/{organisationId}/proforma | Create iam/organisation.proforma
+[**IamOrganisationProformaDownload**](IamOrganisationApi.md#IamOrganisationProformaDownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Download iam/organisation.proforma
+[**IamOrganisationProformaGet**](IamOrganisationApi.md#IamOrganisationProformaGet) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
+[**IamOrganisationProformaList**](IamOrganisationApi.md#IamOrganisationProformaList) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
+[**IamOrganisationTransferAccept**](IamOrganisationApi.md#IamOrganisationTransferAccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
+[**IamOrganisationUpdate**](IamOrganisationApi.md#IamOrganisationUpdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
 
 
 
-## OrganisationBillingList
+## IamOrganisationBillingList
 
-> []Billing OrganisationBillingList(ctx, organisationId, optional)
+> []Billing IamOrganisationBillingList(ctx, organisationId, optional)
 
 List iam/organisation.billing
 
@@ -49,11 +49,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
- **optional** | ***OrganisationBillingListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamOrganisationBillingListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationBillingListOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationBillingListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -81,9 +81,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationCreate
+## IamOrganisationCreate
 
-> Organisation OrganisationCreate(ctx, organisationCreate, optional)
+> Organisation IamOrganisationCreate(ctx, iamOrganisationCreate, optional)
 
 Create iam/organisation
 
@@ -95,12 +95,12 @@ Create organisation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**organisationCreate** | [**OrganisationCreate**](OrganisationCreate.md)|  | 
- **optional** | ***OrganisationCreateOpts** | optional parameters | nil if no parameters
+**iamOrganisationCreate** | [**IamOrganisationCreate**](IamOrganisationCreate.md)|  | 
+ **optional** | ***IamOrganisationCreateOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationCreateOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationCreateOpts struct
 
 
 Name | Type | Description  | Notes
@@ -126,9 +126,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationDelete
+## IamOrganisationDelete
 
-> OrganisationDelete(ctx, organisationId)
+> IamOrganisationDelete(ctx, organisationId)
 
 Delete iam/organisation
 
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationEventGet
+## IamOrganisationEventGet
 
-> Event OrganisationEventGet(ctx, organisationId, eventId)
+> Event IamOrganisationEventGet(ctx, organisationId, eventId)
 
 Get iam/organisation.event
 
@@ -195,9 +195,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationEventList
+## IamOrganisationEventList
 
-> []Event OrganisationEventList(ctx, organisationId, optional)
+> []Event IamOrganisationEventList(ctx, organisationId, optional)
 
 List iam/organisation.event
 
@@ -210,11 +210,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
- **optional** | ***OrganisationEventListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamOrganisationEventListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationEventListOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationEventListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -241,9 +241,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationGet
+## IamOrganisationGet
 
-> Organisation OrganisationGet(ctx, organisationId)
+> Organisation IamOrganisationGet(ctx, organisationId)
 
 Get iam/organisation
 
@@ -275,13 +275,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvitationAccept
+## IamOrganisationInvitationAccept
 
-> Invitation OrganisationInvitationAccept(ctx, organisationId, invitationId, organisationInvitationAccept)
+> Invitation IamOrganisationInvitationAccept(ctx, organisationId, invitationId, iamOrganisationInvitationAccept)
 
-Create iam/organisation.actions
+Accept iam/organisation.invitation
 
-Create iam/organisation.actions
+action accept
 
 ### Required Parameters
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
 **invitationId** | **string**| invitationId | 
-**organisationInvitationAccept** | [**OrganisationInvitationAccept**](OrganisationInvitationAccept.md)|  | 
+**iamOrganisationInvitationAccept** | [**IamOrganisationInvitationAccept**](IamOrganisationInvitationAccept.md)|  | 
 
 ### Return type
 
@@ -311,9 +311,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvitationDelete
+## IamOrganisationInvitationDelete
 
-> OrganisationInvitationDelete(ctx, organisationId, invitationId)
+> IamOrganisationInvitationDelete(ctx, organisationId, invitationId)
 
 Delete iam/organisation.invitation
 
@@ -346,9 +346,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvitationGet
+## IamOrganisationInvitationGet
 
-> Invitation OrganisationInvitationGet(ctx, organisationId, invitationId)
+> Invitation IamOrganisationInvitationGet(ctx, organisationId, invitationId)
 
 Get iam/organisation.invitation
 
@@ -381,9 +381,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvitationList
+## IamOrganisationInvitationList
 
-> []Invitation OrganisationInvitationList(ctx, organisationId, optional)
+> []Invitation IamOrganisationInvitationList(ctx, organisationId, optional)
 
 List iam/organisation.invitation
 
@@ -396,11 +396,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
- **optional** | ***OrganisationInvitationListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamOrganisationInvitationListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationInvitationListOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationInvitationListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -426,13 +426,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvoiceDownload
+## IamOrganisationInvoiceDownload
 
-> *os.File OrganisationInvoiceDownload(ctx, organisationId, invoiceId)
+> *os.File IamOrganisationInvoiceDownload(ctx, organisationId, invoiceId)
 
-Create iam/organisation.actions
+Download iam/organisation.invoice
 
-Create iam/organisation.actions
+action download
 
 ### Required Parameters
 
@@ -461,9 +461,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvoiceGet
+## IamOrganisationInvoiceGet
 
-> Proforma OrganisationInvoiceGet(ctx, organisationId, invoiceId)
+> Proforma IamOrganisationInvoiceGet(ctx, organisationId, invoiceId)
 
 Get iam/organisation.invoice
 
@@ -496,9 +496,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationInvoiceList
+## IamOrganisationInvoiceList
 
-> []Invoice OrganisationInvoiceList(ctx, organisationId)
+> []Invoice IamOrganisationInvoiceList(ctx, organisationId)
 
 List iam/organisation.invoice
 
@@ -530,9 +530,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationList
+## IamOrganisationList
 
-> []Organisation OrganisationList(ctx, optional)
+> []Organisation IamOrganisationList(ctx, optional)
 
 List iam/organisation
 
@@ -544,11 +544,11 @@ List organisation
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***OrganisationListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamOrganisationListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationListOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -576,9 +576,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationOwnershipCreate
+## IamOrganisationOwnershipCreate
 
-> Organisation OrganisationOwnershipCreate(ctx, organisationId, organisationOwnershipCreate)
+> Organisation IamOrganisationOwnershipCreate(ctx, organisationId, iamOrganisationOwnershipCreate)
 
 Create iam/organisation.ownership
 
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
-**organisationOwnershipCreate** | [**OrganisationOwnershipCreate**](OrganisationOwnershipCreate.md)|  | 
+**iamOrganisationOwnershipCreate** | [**IamOrganisationOwnershipCreate**](IamOrganisationOwnershipCreate.md)|  | 
 
 ### Return type
 
@@ -611,9 +611,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationOwnershipDelete
+## IamOrganisationOwnershipDelete
 
-> OrganisationOwnershipDelete(ctx, organisationId, ownershipId)
+> IamOrganisationOwnershipDelete(ctx, organisationId, ownershipId)
 
 Delete iam/organisation.ownership
 
@@ -646,9 +646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationOwnershipGet
+## IamOrganisationOwnershipGet
 
-> Ownership OrganisationOwnershipGet(ctx, organisationId, ownershipId)
+> Ownership IamOrganisationOwnershipGet(ctx, organisationId, ownershipId)
 
 Get iam/organisation.ownership
 
@@ -681,9 +681,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationOwnershipList
+## IamOrganisationOwnershipList
 
-> []Ownership OrganisationOwnershipList(ctx, organisationId)
+> []Ownership IamOrganisationOwnershipList(ctx, organisationId)
 
 List iam/organisation.ownership
 
@@ -715,13 +715,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationPaymentAllocate
+## IamOrganisationPaymentAllocate
 
-> Payment OrganisationPaymentAllocate(ctx, organisationId, paymentId, organisationPaymentAllocate)
+> Payment IamOrganisationPaymentAllocate(ctx, organisationId, paymentId, iamOrganisationPaymentAllocate)
 
-Create iam/organisation.actions
+Allocate iam/organisation.payment
 
-Create iam/organisation.actions
+action allocate
 
 ### Required Parameters
 
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
 **paymentId** | **string**| paymentId | 
-**organisationPaymentAllocate** | [**OrganisationPaymentAllocate**](OrganisationPaymentAllocate.md)|  | 
+**iamOrganisationPaymentAllocate** | [**IamOrganisationPaymentAllocate**](IamOrganisationPaymentAllocate.md)|  | 
 
 ### Return type
 
@@ -751,9 +751,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationPaymentGet
+## IamOrganisationPaymentGet
 
-> Payment OrganisationPaymentGet(ctx, organisationId, paymentId)
+> Payment IamOrganisationPaymentGet(ctx, organisationId, paymentId)
 
 Get iam/organisation.payment
 
@@ -786,9 +786,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationPaymentList
+## IamOrganisationPaymentList
 
-> []Payment OrganisationPaymentList(ctx, organisationId)
+> []Payment IamOrganisationPaymentList(ctx, organisationId)
 
 List iam/organisation.payment
 
@@ -820,9 +820,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationProformaCreate
+## IamOrganisationProformaCreate
 
-> Proforma OrganisationProformaCreate(ctx, organisationId, organisationProformaCreate)
+> Proforma IamOrganisationProformaCreate(ctx, organisationId, iamOrganisationProformaCreate)
 
 Create iam/organisation.proforma
 
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
-**organisationProformaCreate** | [**OrganisationProformaCreate**](OrganisationProformaCreate.md)|  | 
+**iamOrganisationProformaCreate** | [**IamOrganisationProformaCreate**](IamOrganisationProformaCreate.md)|  | 
 
 ### Return type
 
@@ -855,13 +855,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationProformaDownload
+## IamOrganisationProformaDownload
 
-> *os.File OrganisationProformaDownload(ctx, organisationId, proformaId)
+> *os.File IamOrganisationProformaDownload(ctx, organisationId, proformaId)
 
-Create iam/organisation.actions
+Download iam/organisation.proforma
 
-Create iam/organisation.actions
+action download
 
 ### Required Parameters
 
@@ -890,9 +890,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationProformaGet
+## IamOrganisationProformaGet
 
-> Proforma OrganisationProformaGet(ctx, organisationId, proformaId)
+> Proforma IamOrganisationProformaGet(ctx, organisationId, proformaId)
 
 Get iam/organisation.proforma
 
@@ -925,9 +925,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationProformaList
+## IamOrganisationProformaList
 
-> []Proforma OrganisationProformaList(ctx, organisationId)
+> []Proforma IamOrganisationProformaList(ctx, organisationId)
 
 List iam/organisation.proforma
 
@@ -959,9 +959,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationTransferAccept
+## IamOrganisationTransferAccept
 
-> Organisation OrganisationTransferAccept(ctx, organisationId, organisationTransferAccept, optional)
+> Organisation IamOrganisationTransferAccept(ctx, organisationId, iamOrganisationTransferAccept, optional)
 
 Transfer accept iam/organisation
 
@@ -974,12 +974,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
-**organisationTransferAccept** | [**OrganisationTransferAccept**](OrganisationTransferAccept.md)|  | 
- **optional** | ***OrganisationTransferAcceptOpts** | optional parameters | nil if no parameters
+**iamOrganisationTransferAccept** | [**IamOrganisationTransferAccept**](IamOrganisationTransferAccept.md)|  | 
+ **optional** | ***IamOrganisationTransferAcceptOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a OrganisationTransferAcceptOpts struct
+Optional parameters are passed through a pointer to a IamOrganisationTransferAcceptOpts struct
 
 
 Name | Type | Description  | Notes
@@ -1006,9 +1006,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OrganisationUpdate
+## IamOrganisationUpdate
 
-> Organisation OrganisationUpdate(ctx, organisationId, organisationUpdate)
+> Organisation IamOrganisationUpdate(ctx, organisationId, iamOrganisationUpdate)
 
 Update iam/organisation
 
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
-**organisationUpdate** | [**OrganisationUpdate**](OrganisationUpdate.md)|  | 
+**iamOrganisationUpdate** | [**IamOrganisationUpdate**](IamOrganisationUpdate.md)|  | 
 
 ### Return type
 

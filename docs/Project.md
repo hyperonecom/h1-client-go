@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **Uri** | **string** |  | [optional] 
 **BankAccount** | **string** |  | [optional] 
 **Billing** | [**ProjectBilling**](project_billing.md) |  | [optional] 
-**Active** | **bool** |  | [optional] [default to true]
-**Threshold** | [**ProjectThreshold**](project_threshold.md) |  | [optional] 
 **NetworkAcl** | [**[]ProjectNetworkAcl**](project_networkAcl.md) |  | [optional] 
 **Compliance** | [**ProjectCompliance**](project_compliance.md) |  | [optional] 
 **Transfer** | [**ProjectTransfer**](project_transfer.md) |  | [optional] 

@@ -1711,8 +1711,8 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceEventList(c
 }
 
 /*
-ProviderProjectAgentResourceInspect Create provider/agent.actions
-Create provider/agent.actions
+ProviderProjectAgentResourceInspect Inspect provider/agent.resource
+action inspect
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param locationId Location Id
@@ -1902,8 +1902,8 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceList(ctx _c
 }
 
 /*
-ProviderProjectAgentResourceRecreate Create provider/agent.actions
-Create provider/agent.actions
+ProviderProjectAgentResourceRecreate Recreate provider/agent.resource
+action recreate
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param locationId Location Id

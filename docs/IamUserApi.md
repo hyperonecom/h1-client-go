@@ -4,24 +4,24 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserCredentialAuthtokenDelete**](IamUserApi.md#UserCredentialAuthtokenDelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
-[**UserCredentialAuthtokenGet**](IamUserApi.md#UserCredentialAuthtokenGet) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
-[**UserCredentialAuthtokenList**](IamUserApi.md#UserCredentialAuthtokenList) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
-[**UserCredentialCreate**](IamUserApi.md#UserCredentialCreate) | **Post** /iam/user/{userId}/credential | Create iam/user.credential
-[**UserCredentialDelete**](IamUserApi.md#UserCredentialDelete) | **Delete** /iam/user/{userId}/credential/{credentialId} | Delete iam/user.credential
-[**UserCredentialGet**](IamUserApi.md#UserCredentialGet) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
-[**UserCredentialList**](IamUserApi.md#UserCredentialList) | **Get** /iam/user/{userId}/credential | List iam/user.credential
-[**UserCredentialPatch**](IamUserApi.md#UserCredentialPatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
-[**UserGet**](IamUserApi.md#UserGet) | **Get** /iam/user/{userId} | Get iam/user
-[**UserServiceGet**](IamUserApi.md#UserServiceGet) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
-[**UserServiceList**](IamUserApi.md#UserServiceList) | **Get** /iam/user/{userId}/service | List iam/user.service
-[**UserUpdate**](IamUserApi.md#UserUpdate) | **Patch** /iam/user/{userId} | Update iam/user
+[**IamUserCredentialAuthtokenDelete**](IamUserApi.md#IamUserCredentialAuthtokenDelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
+[**IamUserCredentialAuthtokenGet**](IamUserApi.md#IamUserCredentialAuthtokenGet) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
+[**IamUserCredentialAuthtokenList**](IamUserApi.md#IamUserCredentialAuthtokenList) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
+[**IamUserCredentialCreate**](IamUserApi.md#IamUserCredentialCreate) | **Post** /iam/user/{userId}/credential | Create iam/user.credential
+[**IamUserCredentialDelete**](IamUserApi.md#IamUserCredentialDelete) | **Delete** /iam/user/{userId}/credential/{credentialId} | Delete iam/user.credential
+[**IamUserCredentialGet**](IamUserApi.md#IamUserCredentialGet) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
+[**IamUserCredentialList**](IamUserApi.md#IamUserCredentialList) | **Get** /iam/user/{userId}/credential | List iam/user.credential
+[**IamUserCredentialPatch**](IamUserApi.md#IamUserCredentialPatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
+[**IamUserGet**](IamUserApi.md#IamUserGet) | **Get** /iam/user/{userId} | Get iam/user
+[**IamUserServiceGet**](IamUserApi.md#IamUserServiceGet) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
+[**IamUserServiceList**](IamUserApi.md#IamUserServiceList) | **Get** /iam/user/{userId}/service | List iam/user.service
+[**IamUserUpdate**](IamUserApi.md#IamUserUpdate) | **Patch** /iam/user/{userId} | Update iam/user
 
 
 
-## UserCredentialAuthtokenDelete
+## IamUserCredentialAuthtokenDelete
 
-> UserCredentialAuthtokenDelete(ctx, userId, authtokenId)
+> IamUserCredentialAuthtokenDelete(ctx, userId, authtokenId)
 
 Delete iam/user.credential
 
@@ -54,9 +54,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialAuthtokenGet
+## IamUserCredentialAuthtokenGet
 
-> AuthToken UserCredentialAuthtokenGet(ctx, userId, authtokenId)
+> AuthToken IamUserCredentialAuthtokenGet(ctx, userId, authtokenId)
 
 Get iam/user.credential
 
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialAuthtokenList
+## IamUserCredentialAuthtokenList
 
-> []AuthToken UserCredentialAuthtokenList(ctx, userId)
+> []AuthToken IamUserCredentialAuthtokenList(ctx, userId)
 
 List iam/user.credential
 
@@ -123,9 +123,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialCreate
+## IamUserCredentialCreate
 
-> UserCredential UserCredentialCreate(ctx, userId, userCredential)
+> UserCredential IamUserCredentialCreate(ctx, userId, userCredential)
 
 Create iam/user.credential
 
@@ -158,9 +158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialDelete
+## IamUserCredentialDelete
 
-> User UserCredentialDelete(ctx, userId, credentialId)
+> User IamUserCredentialDelete(ctx, userId, credentialId)
 
 Delete iam/user.credential
 
@@ -193,9 +193,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialGet
+## IamUserCredentialGet
 
-> UserCredential UserCredentialGet(ctx, userId, credentialId)
+> UserCredential IamUserCredentialGet(ctx, userId, credentialId)
 
 Get iam/user.credential
 
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialList
+## IamUserCredentialList
 
-> []UserCredential UserCredentialList(ctx, userId)
+> []UserCredential IamUserCredentialList(ctx, userId)
 
 List iam/user.credential
 
@@ -262,9 +262,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserCredentialPatch
+## IamUserCredentialPatch
 
-> UserCredential UserCredentialPatch(ctx, userId, credentialId, userCredentialPatch)
+> UserCredential IamUserCredentialPatch(ctx, userId, credentialId, iamUserCredentialPatch)
 
 Update iam/user.credential
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **userId** | **string**| User Id | 
 **credentialId** | **string**| credentialId | 
-**userCredentialPatch** | [**UserCredentialPatch**](UserCredentialPatch.md)|  | 
+**iamUserCredentialPatch** | [**IamUserCredentialPatch**](IamUserCredentialPatch.md)|  | 
 
 ### Return type
 
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserGet
+## IamUserGet
 
-> User UserGet(ctx, userId)
+> User IamUserGet(ctx, userId)
 
 Get iam/user
 
@@ -332,9 +332,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserServiceGet
+## IamUserServiceGet
 
-> ResourceService UserServiceGet(ctx, userId, serviceId)
+> ResourceService IamUserServiceGet(ctx, userId, serviceId)
 
 Get iam/user.service
 
@@ -367,9 +367,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserServiceList
+## IamUserServiceList
 
-> []ResourceService UserServiceList(ctx, userId)
+> []ResourceService IamUserServiceList(ctx, userId)
 
 List iam/user.service
 
@@ -401,9 +401,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UserUpdate
+## IamUserUpdate
 
-> User UserUpdate(ctx, userId, userUpdate)
+> User IamUserUpdate(ctx, userId, iamUserUpdate)
 
 Update iam/user
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **userId** | **string**| User Id | 
-**userUpdate** | [**UserUpdate**](UserUpdate.md)|  | 
+**iamUserUpdate** | [**IamUserUpdate**](IamUserUpdate.md)|  | 
 
 ### Return type
 

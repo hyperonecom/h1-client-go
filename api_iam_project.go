@@ -26,25 +26,25 @@ var (
 // IamProjectApiService IamProjectApi service
 type IamProjectApiService service
 
-// ProjectBillingListOpts Optional parameters for the method 'ProjectBillingList'
-type ProjectBillingListOpts struct {
+// IamProjectBillingListOpts Optional parameters for the method 'IamProjectBillingList'
+type IamProjectBillingListOpts struct {
     Start optional.Time
     End optional.Time
     ResourceType optional.String
 }
 
 /*
-ProjectBillingList List iam/project.billing
+IamProjectBillingList List iam/project.billing
 List iam/project.billing
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param optional nil or *ProjectBillingListOpts - Optional Parameters:
+ * @param optional nil or *IamProjectBillingListOpts - Optional Parameters:
  * @param "Start" (optional.Time) -  start
  * @param "End" (optional.Time) -  end
  * @param "ResourceType" (optional.String) -  resource.type
 @return []Billing
 */
-func (a *IamProjectApiService) ProjectBillingList(ctx _context.Context, projectId string, localVarOptionals *ProjectBillingListOpts) ([]Billing, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectBillingList(ctx _context.Context, projectId string, localVarOptionals *IamProjectBillingListOpts) ([]Billing, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -134,21 +134,21 @@ func (a *IamProjectApiService) ProjectBillingList(ctx _context.Context, projectI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ProjectCreateOpts Optional parameters for the method 'ProjectCreate'
-type ProjectCreateOpts struct {
+// IamProjectCreateOpts Optional parameters for the method 'IamProjectCreate'
+type IamProjectCreateOpts struct {
     XIdempotencyKey optional.String
 }
 
 /*
-ProjectCreate Create iam/project
+IamProjectCreate Create iam/project
 Create project
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param projectCreate
- * @param optional nil or *ProjectCreateOpts - Optional Parameters:
+ * @param iamProjectCreate
+ * @param optional nil or *IamProjectCreateOpts - Optional Parameters:
  * @param "XIdempotencyKey" (optional.String) -  Idempotency key
 @return Project
 */
-func (a *IamProjectApiService) ProjectCreate(ctx _context.Context, projectCreate ProjectCreate, localVarOptionals *ProjectCreateOpts) (Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCreate(ctx _context.Context, iamProjectCreate IamProjectCreate, localVarOptionals *IamProjectCreateOpts) (Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -185,7 +185,7 @@ func (a *IamProjectApiService) ProjectCreate(ctx _context.Context, projectCreate
 		localVarHeaderParams["x-idempotency-key"] = parameterToString(localVarOptionals.XIdempotencyKey.Value(), "")
 	}
 	// body params
-	localVarPostBody = &projectCreate
+	localVarPostBody = &iamProjectCreate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -233,14 +233,14 @@ func (a *IamProjectApiService) ProjectCreate(ctx _context.Context, projectCreate
 }
 
 /*
-ProjectCredentialStoreCreate Create iam/project.credentialStore
+IamProjectCredentialStoreCreate Create iam/project.credentialStore
 Create iam/project.credentialStore
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param projectCredential
 @return ProjectCredential
 */
-func (a *IamProjectApiService) ProjectCredentialStoreCreate(ctx _context.Context, projectId string, projectCredential ProjectCredential) (ProjectCredential, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCredentialStoreCreate(ctx _context.Context, projectId string, projectCredential ProjectCredential) (ProjectCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -324,14 +324,14 @@ func (a *IamProjectApiService) ProjectCredentialStoreCreate(ctx _context.Context
 }
 
 /*
-ProjectCredentialStoreDelete Delete iam/project.credentialStore
+IamProjectCredentialStoreDelete Delete iam/project.credentialStore
 Delete iam/project.credentialStore
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param credentialId credentialId
+ * @param credentialStoreId credentialStoreId
 @return Project
 */
-func (a *IamProjectApiService) ProjectCredentialStoreDelete(ctx _context.Context, projectId string, credentialId string) (Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCredentialStoreDelete(ctx _context.Context, projectId string, credentialStoreId string) (Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -342,10 +342,10 @@ func (a *IamProjectApiService) ProjectCredentialStoreDelete(ctx _context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialId}"
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialStoreId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"credentialId"+"}", _neturl.QueryEscape(parameterToString(credentialId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"credentialStoreId"+"}", _neturl.QueryEscape(parameterToString(credentialStoreId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -415,14 +415,14 @@ func (a *IamProjectApiService) ProjectCredentialStoreDelete(ctx _context.Context
 }
 
 /*
-ProjectCredentialStoreGet Get iam/project.credentialStore
+IamProjectCredentialStoreGet Get iam/project.credentialStore
 Get iam/project.credentialStore
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param credentialId credentialId
+ * @param credentialStoreId credentialStoreId
 @return ProjectCredential
 */
-func (a *IamProjectApiService) ProjectCredentialStoreGet(ctx _context.Context, projectId string, credentialId string) (ProjectCredential, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCredentialStoreGet(ctx _context.Context, projectId string, credentialStoreId string) (ProjectCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -433,10 +433,10 @@ func (a *IamProjectApiService) ProjectCredentialStoreGet(ctx _context.Context, p
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialId}"
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialStoreId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"credentialId"+"}", _neturl.QueryEscape(parameterToString(credentialId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"credentialStoreId"+"}", _neturl.QueryEscape(parameterToString(credentialStoreId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -506,13 +506,13 @@ func (a *IamProjectApiService) ProjectCredentialStoreGet(ctx _context.Context, p
 }
 
 /*
-ProjectCredentialStoreList List iam/project.credentialStore
+IamProjectCredentialStoreList List iam/project.credentialStore
 List iam/project.credentialStore
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []ProjectCredential
 */
-func (a *IamProjectApiService) ProjectCredentialStoreList(ctx _context.Context, projectId string) ([]ProjectCredential, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCredentialStoreList(ctx _context.Context, projectId string) ([]ProjectCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -594,15 +594,15 @@ func (a *IamProjectApiService) ProjectCredentialStoreList(ctx _context.Context, 
 }
 
 /*
-ProjectCredentialStorePatch Update iam/project.credentialStore
+IamProjectCredentialStorePatch Update iam/project.credentialStore
 Update iam/project.credentialStore
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param credentialId credentialId
- * @param projectCredentialStorePatch
+ * @param credentialStoreId credentialStoreId
+ * @param iamProjectCredentialStorePatch
 @return ProjectCredential
 */
-func (a *IamProjectApiService) ProjectCredentialStorePatch(ctx _context.Context, projectId string, credentialId string, projectCredentialStorePatch ProjectCredentialStorePatch) (ProjectCredential, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectCredentialStorePatch(ctx _context.Context, projectId string, credentialStoreId string, iamProjectCredentialStorePatch IamProjectCredentialStorePatch) (ProjectCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -613,10 +613,10 @@ func (a *IamProjectApiService) ProjectCredentialStorePatch(ctx _context.Context,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialId}"
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/credentialStore/{credentialStoreId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"credentialId"+"}", _neturl.QueryEscape(parameterToString(credentialId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"credentialStoreId"+"}", _neturl.QueryEscape(parameterToString(credentialStoreId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -640,7 +640,7 @@ func (a *IamProjectApiService) ProjectCredentialStorePatch(ctx _context.Context,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectCredentialStorePatch
+	localVarPostBody = &iamProjectCredentialStorePatch
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -688,12 +688,12 @@ func (a *IamProjectApiService) ProjectCredentialStorePatch(ctx _context.Context,
 }
 
 /*
-ProjectDelete Delete iam/project
+IamProjectDelete Delete iam/project
 Delete project
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 */
-func (a *IamProjectApiService) ProjectDelete(ctx _context.Context, projectId string) (*_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectDelete(ctx _context.Context, projectId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -765,14 +765,14 @@ func (a *IamProjectApiService) ProjectDelete(ctx _context.Context, projectId str
 }
 
 /*
-ProjectEventGet Get iam/project.event
+IamProjectEventGet Get iam/project.event
 Get iam/project.event
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param eventId eventId
 @return Event
 */
-func (a *IamProjectApiService) ProjectEventGet(ctx _context.Context, projectId string, eventId string) (Event, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectEventGet(ctx _context.Context, projectId string, eventId string) (Event, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -855,23 +855,23 @@ func (a *IamProjectApiService) ProjectEventGet(ctx _context.Context, projectId s
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ProjectEventListOpts Optional parameters for the method 'ProjectEventList'
-type ProjectEventListOpts struct {
+// IamProjectEventListOpts Optional parameters for the method 'IamProjectEventList'
+type IamProjectEventListOpts struct {
     Limit optional.Float32
     Skip optional.Float32
 }
 
 /*
-ProjectEventList List iam/project.event
+IamProjectEventList List iam/project.event
 List iam/project.event
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param optional nil or *ProjectEventListOpts - Optional Parameters:
+ * @param optional nil or *IamProjectEventListOpts - Optional Parameters:
  * @param "Limit" (optional.Float32) -  $limit
  * @param "Skip" (optional.Float32) -  $skip
 @return []Event
 */
-func (a *IamProjectApiService) ProjectEventList(ctx _context.Context, projectId string, localVarOptionals *ProjectEventListOpts) ([]Event, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectEventList(ctx _context.Context, projectId string, localVarOptionals *IamProjectEventListOpts) ([]Event, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -959,13 +959,13 @@ func (a *IamProjectApiService) ProjectEventList(ctx _context.Context, projectId 
 }
 
 /*
-ProjectGet Get iam/project
+IamProjectGet Get iam/project
 Returns a single project
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return Project
 */
-func (a *IamProjectApiService) ProjectGet(ctx _context.Context, projectId string) (Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectGet(ctx _context.Context, projectId string) (Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1047,15 +1047,15 @@ func (a *IamProjectApiService) ProjectGet(ctx _context.Context, projectId string
 }
 
 /*
-ProjectInvitationAccept Create iam/project.actions
-Create iam/project.actions
+IamProjectInvitationAccept Accept iam/project.invitation
+action accept
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param invitationId invitationId
- * @param projectInvitationAccept
+ * @param iamProjectInvitationAccept
 @return Invitation
 */
-func (a *IamProjectApiService) ProjectInvitationAccept(ctx _context.Context, projectId string, invitationId string, projectInvitationAccept ProjectInvitationAccept) (Invitation, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectInvitationAccept(ctx _context.Context, projectId string, invitationId string, iamProjectInvitationAccept IamProjectInvitationAccept) (Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1093,7 +1093,7 @@ func (a *IamProjectApiService) ProjectInvitationAccept(ctx _context.Context, pro
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectInvitationAccept
+	localVarPostBody = &iamProjectInvitationAccept
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1141,13 +1141,13 @@ func (a *IamProjectApiService) ProjectInvitationAccept(ctx _context.Context, pro
 }
 
 /*
-ProjectInvitationDelete Delete iam/project.invitation
+IamProjectInvitationDelete Delete iam/project.invitation
 Delete iam/project.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param invitationId invitationId
 */
-func (a *IamProjectApiService) ProjectInvitationDelete(ctx _context.Context, projectId string, invitationId string) (*_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectInvitationDelete(ctx _context.Context, projectId string, invitationId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -1221,14 +1221,14 @@ func (a *IamProjectApiService) ProjectInvitationDelete(ctx _context.Context, pro
 }
 
 /*
-ProjectInvitationGet Get iam/project.invitation
+IamProjectInvitationGet Get iam/project.invitation
 Get iam/project.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param invitationId invitationId
 @return Invitation
 */
-func (a *IamProjectApiService) ProjectInvitationGet(ctx _context.Context, projectId string, invitationId string) (Invitation, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectInvitationGet(ctx _context.Context, projectId string, invitationId string) (Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1311,21 +1311,21 @@ func (a *IamProjectApiService) ProjectInvitationGet(ctx _context.Context, projec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ProjectInvitationListOpts Optional parameters for the method 'ProjectInvitationList'
-type ProjectInvitationListOpts struct {
+// IamProjectInvitationListOpts Optional parameters for the method 'IamProjectInvitationList'
+type IamProjectInvitationListOpts struct {
     Resource optional.String
 }
 
 /*
-ProjectInvitationList List iam/project.invitation
+IamProjectInvitationList List iam/project.invitation
 List iam/project.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param optional nil or *ProjectInvitationListOpts - Optional Parameters:
+ * @param optional nil or *IamProjectInvitationListOpts - Optional Parameters:
  * @param "Resource" (optional.String) -  resource
 @return []Invitation
 */
-func (a *IamProjectApiService) ProjectInvitationList(ctx _context.Context, projectId string, localVarOptionals *ProjectInvitationListOpts) ([]Invitation, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectInvitationList(ctx _context.Context, projectId string, localVarOptionals *IamProjectInvitationListOpts) ([]Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1410,13 +1410,13 @@ func (a *IamProjectApiService) ProjectInvitationList(ctx _context.Context, proje
 }
 
 /*
-ProjectInvoiceList List iam/project.invoice
+IamProjectInvoiceList List iam/project.invoice
 List iam/project.invoice
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Invoice
 */
-func (a *IamProjectApiService) ProjectInvoiceList(ctx _context.Context, projectId string) ([]Invoice, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectInvoiceList(ctx _context.Context, projectId string) ([]Invoice, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1497,8 +1497,8 @@ func (a *IamProjectApiService) ProjectInvoiceList(ctx _context.Context, projectI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ProjectListOpts Optional parameters for the method 'ProjectList'
-type ProjectListOpts struct {
+// IamProjectListOpts Optional parameters for the method 'IamProjectList'
+type IamProjectListOpts struct {
     Name optional.String
     Limit optional.Float32
     Active optional.Bool
@@ -1509,10 +1509,10 @@ type ProjectListOpts struct {
 }
 
 /*
-ProjectList List iam/project
+IamProjectList List iam/project
 List project
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ProjectListOpts - Optional Parameters:
+ * @param optional nil or *IamProjectListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "Limit" (optional.Float32) -  Filter by $limit
  * @param "Active" (optional.Bool) -  Filter by active
@@ -1522,7 +1522,7 @@ List project
  * @param "TagKey" (optional.String) -  Filter by tag.key
 @return []Project
 */
-func (a *IamProjectApiService) ProjectList(ctx _context.Context, localVarOptionals *ProjectListOpts) ([]Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectList(ctx _context.Context, localVarOptionals *IamProjectListOpts) ([]Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1623,14 +1623,14 @@ func (a *IamProjectApiService) ProjectList(ctx _context.Context, localVarOptiona
 }
 
 /*
-ProjectOwnershipCreate Create iam/project.ownership
+IamProjectOwnershipCreate Create iam/project.ownership
 Create iam/project.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param projectOwnershipCreate
+ * @param iamProjectOwnershipCreate
 @return Project
 */
-func (a *IamProjectApiService) ProjectOwnershipCreate(ctx _context.Context, projectId string, projectOwnershipCreate ProjectOwnershipCreate) (Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectOwnershipCreate(ctx _context.Context, projectId string, iamProjectOwnershipCreate IamProjectOwnershipCreate) (Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1666,7 +1666,7 @@ func (a *IamProjectApiService) ProjectOwnershipCreate(ctx _context.Context, proj
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectOwnershipCreate
+	localVarPostBody = &iamProjectOwnershipCreate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1714,13 +1714,13 @@ func (a *IamProjectApiService) ProjectOwnershipCreate(ctx _context.Context, proj
 }
 
 /*
-ProjectOwnershipDelete Delete iam/project.ownership
+IamProjectOwnershipDelete Delete iam/project.ownership
 Delete iam/project.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param ownershipId ownershipId
 */
-func (a *IamProjectApiService) ProjectOwnershipDelete(ctx _context.Context, projectId string, ownershipId string) (*_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectOwnershipDelete(ctx _context.Context, projectId string, ownershipId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -1794,14 +1794,14 @@ func (a *IamProjectApiService) ProjectOwnershipDelete(ctx _context.Context, proj
 }
 
 /*
-ProjectOwnershipGet Get iam/project.ownership
+IamProjectOwnershipGet Get iam/project.ownership
 Get iam/project.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param ownershipId ownershipId
 @return Ownership
 */
-func (a *IamProjectApiService) ProjectOwnershipGet(ctx _context.Context, projectId string, ownershipId string) (Ownership, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectOwnershipGet(ctx _context.Context, projectId string, ownershipId string) (Ownership, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1885,13 +1885,13 @@ func (a *IamProjectApiService) ProjectOwnershipGet(ctx _context.Context, project
 }
 
 /*
-ProjectOwnershipList List iam/project.ownership
+IamProjectOwnershipList List iam/project.ownership
 List iam/project.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Ownership
 */
-func (a *IamProjectApiService) ProjectOwnershipList(ctx _context.Context, projectId string) ([]Ownership, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectOwnershipList(ctx _context.Context, projectId string) ([]Ownership, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1973,13 +1973,13 @@ func (a *IamProjectApiService) ProjectOwnershipList(ctx _context.Context, projec
 }
 
 /*
-ProjectPaymentList List iam/project.payment
+IamProjectPaymentList List iam/project.payment
 List iam/project.payment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Payment
 */
-func (a *IamProjectApiService) ProjectPaymentList(ctx _context.Context, projectId string) ([]Payment, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectPaymentList(ctx _context.Context, projectId string) ([]Payment, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2061,13 +2061,13 @@ func (a *IamProjectApiService) ProjectPaymentList(ctx _context.Context, projectI
 }
 
 /*
-ProjectProformaList List iam/project.proforma
+IamProjectProformaList List iam/project.proforma
 List iam/project.proforma
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Proforma
 */
-func (a *IamProjectApiService) ProjectProformaList(ctx _context.Context, projectId string) ([]Proforma, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectProformaList(ctx _context.Context, projectId string) ([]Proforma, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2149,14 +2149,14 @@ func (a *IamProjectApiService) ProjectProformaList(ctx _context.Context, project
 }
 
 /*
-ProjectQuotaGet Get iam/project.quota
+IamProjectQuotaGet Get iam/project.quota
 Get iam/project.quota
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param quotaId quotaId
 @return Quota
 */
-func (a *IamProjectApiService) ProjectQuotaGet(ctx _context.Context, projectId string, quotaId string) (Quota, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectQuotaGet(ctx _context.Context, projectId string, quotaId string) (Quota, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2240,15 +2240,15 @@ func (a *IamProjectApiService) ProjectQuotaGet(ctx _context.Context, projectId s
 }
 
 /*
-ProjectQuotaLimitPatch Update iam/project.limit
+IamProjectQuotaLimitPatch Update iam/project.limit
 Update iam/project.limit
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param quotaId quotaId
- * @param projectQuotaLimitPatch
+ * @param iamProjectQuotaLimitPatch
 @return QuotaLimit
 */
-func (a *IamProjectApiService) ProjectQuotaLimitPatch(ctx _context.Context, projectId string, quotaId string, projectQuotaLimitPatch ProjectQuotaLimitPatch) (QuotaLimit, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectQuotaLimitPatch(ctx _context.Context, projectId string, quotaId string, iamProjectQuotaLimitPatch IamProjectQuotaLimitPatch) (QuotaLimit, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -2286,7 +2286,7 @@ func (a *IamProjectApiService) ProjectQuotaLimitPatch(ctx _context.Context, proj
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectQuotaLimitPatch
+	localVarPostBody = &iamProjectQuotaLimitPatch
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2334,13 +2334,13 @@ func (a *IamProjectApiService) ProjectQuotaLimitPatch(ctx _context.Context, proj
 }
 
 /*
-ProjectQuotaList List iam/project.quota
+IamProjectQuotaList List iam/project.quota
 List iam/project.quota
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Quota
 */
-func (a *IamProjectApiService) ProjectQuotaList(ctx _context.Context, projectId string) ([]Quota, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectQuotaList(ctx _context.Context, projectId string) ([]Quota, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2422,14 +2422,14 @@ func (a *IamProjectApiService) ProjectQuotaList(ctx _context.Context, projectId 
 }
 
 /*
-ProjectServiceGet Get iam/project.service
+IamProjectServiceGet Get iam/project.service
 Get iam/project.service
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param serviceId serviceId
 @return ResourceService
 */
-func (a *IamProjectApiService) ProjectServiceGet(ctx _context.Context, projectId string, serviceId string) (ResourceService, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectServiceGet(ctx _context.Context, projectId string, serviceId string) (ResourceService, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2513,13 +2513,13 @@ func (a *IamProjectApiService) ProjectServiceGet(ctx _context.Context, projectId
 }
 
 /*
-ProjectServiceList List iam/project.service
+IamProjectServiceList List iam/project.service
 List iam/project.service
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []ResourceService
 */
-func (a *IamProjectApiService) ProjectServiceList(ctx _context.Context, projectId string) ([]ResourceService, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectServiceList(ctx _context.Context, projectId string) ([]ResourceService, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2601,14 +2601,14 @@ func (a *IamProjectApiService) ProjectServiceList(ctx _context.Context, projectI
 }
 
 /*
-ProjectTagCreate Create iam/project.tag
+IamProjectTagCreate Create iam/project.tag
 Create iam/project.tag
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param tag
 @return Tag
 */
-func (a *IamProjectApiService) ProjectTagCreate(ctx _context.Context, projectId string, tag Tag) (Tag, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectTagCreate(ctx _context.Context, projectId string, tag Tag) (Tag, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2692,13 +2692,13 @@ func (a *IamProjectApiService) ProjectTagCreate(ctx _context.Context, projectId 
 }
 
 /*
-ProjectTagDelete Delete iam/project.tag
+IamProjectTagDelete Delete iam/project.tag
 Delete iam/project.tag
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param tagId tagId
 */
-func (a *IamProjectApiService) ProjectTagDelete(ctx _context.Context, projectId string, tagId string) (*_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectTagDelete(ctx _context.Context, projectId string, tagId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -2772,14 +2772,14 @@ func (a *IamProjectApiService) ProjectTagDelete(ctx _context.Context, projectId 
 }
 
 /*
-ProjectTagGet Get iam/project.tag
+IamProjectTagGet Get iam/project.tag
 Get iam/project.tag
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param tagId tagId
 @return Tag
 */
-func (a *IamProjectApiService) ProjectTagGet(ctx _context.Context, projectId string, tagId string) (Tag, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectTagGet(ctx _context.Context, projectId string, tagId string) (Tag, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2863,13 +2863,13 @@ func (a *IamProjectApiService) ProjectTagGet(ctx _context.Context, projectId str
 }
 
 /*
-ProjectTagList List iam/project.tag
+IamProjectTagList List iam/project.tag
 List iam/project.tag
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
 @return []Tag
 */
-func (a *IamProjectApiService) ProjectTagList(ctx _context.Context, projectId string) ([]Tag, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectTagList(ctx _context.Context, projectId string) ([]Tag, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2951,14 +2951,14 @@ func (a *IamProjectApiService) ProjectTagList(ctx _context.Context, projectId st
 }
 
 /*
-ProjectTagPut Replace iam/project.tag
+IamProjectTagPut Replace iam/project.tag
 Replace iam/project.tag
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param tag
 @return []Tag
 */
-func (a *IamProjectApiService) ProjectTagPut(ctx _context.Context, projectId string, tag []Tag) ([]Tag, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectTagPut(ctx _context.Context, projectId string, tag []Tag) ([]Tag, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -3042,14 +3042,364 @@ func (a *IamProjectApiService) ProjectTagPut(ctx _context.Context, projectId str
 }
 
 /*
-ProjectUpdate Update iam/project
+IamProjectThresholdCreate Create iam/project.threshold
+Create iam/project.threshold
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param iamProjectThresholdCreate
+@return ProjectThreshold
+*/
+func (a *IamProjectApiService) IamProjectThresholdCreate(ctx _context.Context, projectId string, iamProjectThresholdCreate IamProjectThresholdCreate) (ProjectThreshold, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  ProjectThreshold
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/threshold"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = &iamProjectThresholdCreate
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+IamProjectThresholdDelete Delete iam/project.threshold
+Delete iam/project.threshold
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param thresholdId thresholdId
+*/
+func (a *IamProjectApiService) IamProjectThresholdDelete(ctx _context.Context, projectId string, thresholdId string) (*_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodDelete
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/threshold/{thresholdId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"thresholdId"+"}", _neturl.QueryEscape(parameterToString(thresholdId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarHTTPResponse, newErr
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+/*
+IamProjectThresholdGet Get iam/project.threshold
+Get iam/project.threshold
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param thresholdId thresholdId
+@return ProjectThreshold
+*/
+func (a *IamProjectApiService) IamProjectThresholdGet(ctx _context.Context, projectId string, thresholdId string) (ProjectThreshold, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  ProjectThreshold
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/threshold/{thresholdId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"thresholdId"+"}", _neturl.QueryEscape(parameterToString(thresholdId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+IamProjectThresholdList List iam/project.threshold
+List iam/project.threshold
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+@return []ProjectThreshold
+*/
+func (a *IamProjectApiService) IamProjectThresholdList(ctx _context.Context, projectId string) ([]ProjectThreshold, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []ProjectThreshold
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/iam/project/{projectId}/threshold"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+IamProjectUpdate Update iam/project
 Returns modified project
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
- * @param projectUpdate
+ * @param iamProjectUpdate
 @return Project
 */
-func (a *IamProjectApiService) ProjectUpdate(ctx _context.Context, projectId string, projectUpdate ProjectUpdate) (Project, *_nethttp.Response, error) {
+func (a *IamProjectApiService) IamProjectUpdate(ctx _context.Context, projectId string, iamProjectUpdate IamProjectUpdate) (Project, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -3085,7 +3435,7 @@ func (a *IamProjectApiService) ProjectUpdate(ctx _context.Context, projectId str
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &projectUpdate
+	localVarPostBody = &iamProjectUpdate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

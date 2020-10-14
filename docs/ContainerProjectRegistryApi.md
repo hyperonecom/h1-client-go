@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryGet
 
-> ContainerProjectRegistryRepositoryGet(ctx, projectId, locationId, registryId, repositoryId)
+> ContainerRepository ContainerProjectRegistryRepositoryGet(ctx, projectId, locationId, registryId, repositoryId)
 
 Get container/registry.repository
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ContainerRepository**](container.repository.md)
 
 ### Authorization
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryImageGet
 
-> ContainerProjectRegistryRepositoryImageGet(ctx, projectId, locationId, registryId, repositoryId, imageId)
+> ContainerImage ContainerProjectRegistryRepositoryImageGet(ctx, projectId, locationId, registryId, repositoryId, imageId)
 
 Get container/registry.image
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ContainerImage**](container.image.md)
 
 ### Authorization
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryImageList
 
-> ContainerProjectRegistryRepositoryImageList(ctx, projectId, locationId, registryId, repositoryId)
+> []ContainerImage ContainerProjectRegistryRepositoryImageList(ctx, projectId, locationId, registryId, repositoryId)
 
 List container/registry.image
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]ContainerImage**](container.image.md)
 
 ### Authorization
 
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryList
 
-> ContainerProjectRegistryRepositoryList(ctx, projectId, locationId, registryId)
+> []ContainerRepository ContainerProjectRegistryRepositoryList(ctx, projectId, locationId, registryId)
 
 List container/registry.repository
 
@@ -797,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]ContainerRepository**](container.repository.md)
 
 ### Authorization
 

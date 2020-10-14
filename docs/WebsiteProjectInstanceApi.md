@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**WebsiteProjectInstanceSideappList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSideappList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp | List website/instance.sideapp
 [**WebsiteProjectInstanceSnapshotCreate**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotCreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | Create website/instance.snapshot
 [**WebsiteProjectInstanceSnapshotDelete**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotDelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Delete website/instance.snapshot
-[**WebsiteProjectInstanceSnapshotDownload**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotDownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Create website/instance.actions
+[**WebsiteProjectInstanceSnapshotDownload**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotDownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Download website/instance.snapshot
 [**WebsiteProjectInstanceSnapshotGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Get website/instance.snapshot
 [**WebsiteProjectInstanceSnapshotList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceSnapshotList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | List website/instance.snapshot
 [**WebsiteProjectInstanceStart**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceStart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start website/instance
@@ -1281,9 +1281,9 @@ Name | Type | Description  | Notes
 
 > WebsiteProjectInstanceSnapshotDownload(ctx, projectId, locationId, instanceId, snapshotId, websiteProjectInstanceSnapshotDownload)
 
-Create website/instance.actions
+Download website/instance.snapshot
 
-Create website/instance.actions
+action download
 
 ### Required Parameters
 

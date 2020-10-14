@@ -25,8 +25,6 @@ type Project struct {
 	Uri string `json:"uri,omitempty"`
 	BankAccount string `json:"bankAccount,omitempty"`
 	Billing ProjectBilling `json:"billing,omitempty"`
-	Active bool `json:"active,omitempty"`
-	Threshold ProjectThreshold `json:"threshold,omitempty"`
 	NetworkAcl []ProjectNetworkAcl `json:"networkAcl,omitempty"`
 	Compliance ProjectCompliance `json:"compliance,omitempty"`
 	Transfer ProjectTransfer `json:"transfer,omitempty"`

@@ -26,13 +26,13 @@ var (
 type IamUserApiService service
 
 /*
-UserCredentialAuthtokenDelete Delete iam/user.credential
+IamUserCredentialAuthtokenDelete Delete iam/user.credential
 Delete iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param authtokenId authtokenId
 */
-func (a *IamUserApiService) UserCredentialAuthtokenDelete(ctx _context.Context, userId string, authtokenId string) (*_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialAuthtokenDelete(ctx _context.Context, userId string, authtokenId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -106,14 +106,14 @@ func (a *IamUserApiService) UserCredentialAuthtokenDelete(ctx _context.Context, 
 }
 
 /*
-UserCredentialAuthtokenGet Get iam/user.credential
+IamUserCredentialAuthtokenGet Get iam/user.credential
 Get iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param authtokenId authtokenId
 @return AuthToken
 */
-func (a *IamUserApiService) UserCredentialAuthtokenGet(ctx _context.Context, userId string, authtokenId string) (AuthToken, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialAuthtokenGet(ctx _context.Context, userId string, authtokenId string) (AuthToken, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -197,13 +197,13 @@ func (a *IamUserApiService) UserCredentialAuthtokenGet(ctx _context.Context, use
 }
 
 /*
-UserCredentialAuthtokenList List iam/user.credential
+IamUserCredentialAuthtokenList List iam/user.credential
 List iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
 @return []AuthToken
 */
-func (a *IamUserApiService) UserCredentialAuthtokenList(ctx _context.Context, userId string) ([]AuthToken, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialAuthtokenList(ctx _context.Context, userId string) ([]AuthToken, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -285,14 +285,14 @@ func (a *IamUserApiService) UserCredentialAuthtokenList(ctx _context.Context, us
 }
 
 /*
-UserCredentialCreate Create iam/user.credential
+IamUserCredentialCreate Create iam/user.credential
 Create iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param userCredential
 @return UserCredential
 */
-func (a *IamUserApiService) UserCredentialCreate(ctx _context.Context, userId string, userCredential UserCredential) (UserCredential, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialCreate(ctx _context.Context, userId string, userCredential UserCredential) (UserCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -376,14 +376,14 @@ func (a *IamUserApiService) UserCredentialCreate(ctx _context.Context, userId st
 }
 
 /*
-UserCredentialDelete Delete iam/user.credential
+IamUserCredentialDelete Delete iam/user.credential
 Delete iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param credentialId credentialId
 @return User
 */
-func (a *IamUserApiService) UserCredentialDelete(ctx _context.Context, userId string, credentialId string) (User, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialDelete(ctx _context.Context, userId string, credentialId string) (User, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -467,14 +467,14 @@ func (a *IamUserApiService) UserCredentialDelete(ctx _context.Context, userId st
 }
 
 /*
-UserCredentialGet Get iam/user.credential
+IamUserCredentialGet Get iam/user.credential
 Get iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param credentialId credentialId
 @return UserCredential
 */
-func (a *IamUserApiService) UserCredentialGet(ctx _context.Context, userId string, credentialId string) (UserCredential, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialGet(ctx _context.Context, userId string, credentialId string) (UserCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -558,13 +558,13 @@ func (a *IamUserApiService) UserCredentialGet(ctx _context.Context, userId strin
 }
 
 /*
-UserCredentialList List iam/user.credential
+IamUserCredentialList List iam/user.credential
 List iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
 @return []UserCredential
 */
-func (a *IamUserApiService) UserCredentialList(ctx _context.Context, userId string) ([]UserCredential, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialList(ctx _context.Context, userId string) ([]UserCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -646,15 +646,15 @@ func (a *IamUserApiService) UserCredentialList(ctx _context.Context, userId stri
 }
 
 /*
-UserCredentialPatch Update iam/user.credential
+IamUserCredentialPatch Update iam/user.credential
 Update iam/user.credential
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param credentialId credentialId
- * @param userCredentialPatch
+ * @param iamUserCredentialPatch
 @return UserCredential
 */
-func (a *IamUserApiService) UserCredentialPatch(ctx _context.Context, userId string, credentialId string, userCredentialPatch UserCredentialPatch) (UserCredential, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserCredentialPatch(ctx _context.Context, userId string, credentialId string, iamUserCredentialPatch IamUserCredentialPatch) (UserCredential, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -692,7 +692,7 @@ func (a *IamUserApiService) UserCredentialPatch(ctx _context.Context, userId str
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &userCredentialPatch
+	localVarPostBody = &iamUserCredentialPatch
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -740,13 +740,13 @@ func (a *IamUserApiService) UserCredentialPatch(ctx _context.Context, userId str
 }
 
 /*
-UserGet Get iam/user
+IamUserGet Get iam/user
 Returns a single user
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
 @return User
 */
-func (a *IamUserApiService) UserGet(ctx _context.Context, userId string) (User, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserGet(ctx _context.Context, userId string) (User, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -828,14 +828,14 @@ func (a *IamUserApiService) UserGet(ctx _context.Context, userId string) (User, 
 }
 
 /*
-UserServiceGet Get iam/user.service
+IamUserServiceGet Get iam/user.service
 Get iam/user.service
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
  * @param serviceId serviceId
 @return ResourceService
 */
-func (a *IamUserApiService) UserServiceGet(ctx _context.Context, userId string, serviceId string) (ResourceService, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserServiceGet(ctx _context.Context, userId string, serviceId string) (ResourceService, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -919,13 +919,13 @@ func (a *IamUserApiService) UserServiceGet(ctx _context.Context, userId string, 
 }
 
 /*
-UserServiceList List iam/user.service
+IamUserServiceList List iam/user.service
 List iam/user.service
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
 @return []ResourceService
 */
-func (a *IamUserApiService) UserServiceList(ctx _context.Context, userId string) ([]ResourceService, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserServiceList(ctx _context.Context, userId string) ([]ResourceService, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1007,14 +1007,14 @@ func (a *IamUserApiService) UserServiceList(ctx _context.Context, userId string)
 }
 
 /*
-UserUpdate Update iam/user
+IamUserUpdate Update iam/user
 Returns modified user
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param userId User Id
- * @param userUpdate
+ * @param iamUserUpdate
 @return User
 */
-func (a *IamUserApiService) UserUpdate(ctx _context.Context, userId string, userUpdate UserUpdate) (User, *_nethttp.Response, error) {
+func (a *IamUserApiService) IamUserUpdate(ctx _context.Context, userId string, iamUserUpdate IamUserUpdate) (User, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -1050,7 +1050,7 @@ func (a *IamUserApiService) UserUpdate(ctx _context.Context, userId string, user
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &userUpdate
+	localVarPostBody = &iamUserUpdate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -27,25 +27,25 @@ var (
 // IamOrganisationApiService IamOrganisationApi service
 type IamOrganisationApiService service
 
-// OrganisationBillingListOpts Optional parameters for the method 'OrganisationBillingList'
-type OrganisationBillingListOpts struct {
+// IamOrganisationBillingListOpts Optional parameters for the method 'IamOrganisationBillingList'
+type IamOrganisationBillingListOpts struct {
     Start optional.Time
     End optional.Time
     ResourceType optional.String
 }
 
 /*
-OrganisationBillingList List iam/organisation.billing
+IamOrganisationBillingList List iam/organisation.billing
 List iam/organisation.billing
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param optional nil or *OrganisationBillingListOpts - Optional Parameters:
+ * @param optional nil or *IamOrganisationBillingListOpts - Optional Parameters:
  * @param "Start" (optional.Time) -  start
  * @param "End" (optional.Time) -  end
  * @param "ResourceType" (optional.String) -  resource.type
 @return []Billing
 */
-func (a *IamOrganisationApiService) OrganisationBillingList(ctx _context.Context, organisationId string, localVarOptionals *OrganisationBillingListOpts) ([]Billing, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationBillingList(ctx _context.Context, organisationId string, localVarOptionals *IamOrganisationBillingListOpts) ([]Billing, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -135,21 +135,21 @@ func (a *IamOrganisationApiService) OrganisationBillingList(ctx _context.Context
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// OrganisationCreateOpts Optional parameters for the method 'OrganisationCreate'
-type OrganisationCreateOpts struct {
+// IamOrganisationCreateOpts Optional parameters for the method 'IamOrganisationCreate'
+type IamOrganisationCreateOpts struct {
     XIdempotencyKey optional.String
 }
 
 /*
-OrganisationCreate Create iam/organisation
+IamOrganisationCreate Create iam/organisation
 Create organisation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param organisationCreate
- * @param optional nil or *OrganisationCreateOpts - Optional Parameters:
+ * @param iamOrganisationCreate
+ * @param optional nil or *IamOrganisationCreateOpts - Optional Parameters:
  * @param "XIdempotencyKey" (optional.String) -  Idempotency key
 @return Organisation
 */
-func (a *IamOrganisationApiService) OrganisationCreate(ctx _context.Context, organisationCreate OrganisationCreate, localVarOptionals *OrganisationCreateOpts) (Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationCreate(ctx _context.Context, iamOrganisationCreate IamOrganisationCreate, localVarOptionals *IamOrganisationCreateOpts) (Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -186,7 +186,7 @@ func (a *IamOrganisationApiService) OrganisationCreate(ctx _context.Context, org
 		localVarHeaderParams["x-idempotency-key"] = parameterToString(localVarOptionals.XIdempotencyKey.Value(), "")
 	}
 	// body params
-	localVarPostBody = &organisationCreate
+	localVarPostBody = &iamOrganisationCreate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -234,12 +234,12 @@ func (a *IamOrganisationApiService) OrganisationCreate(ctx _context.Context, org
 }
 
 /*
-OrganisationDelete Delete iam/organisation
+IamOrganisationDelete Delete iam/organisation
 Delete organisation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 */
-func (a *IamOrganisationApiService) OrganisationDelete(ctx _context.Context, organisationId string) (*_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationDelete(ctx _context.Context, organisationId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -311,14 +311,14 @@ func (a *IamOrganisationApiService) OrganisationDelete(ctx _context.Context, org
 }
 
 /*
-OrganisationEventGet Get iam/organisation.event
+IamOrganisationEventGet Get iam/organisation.event
 Get iam/organisation.event
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param eventId eventId
 @return Event
 */
-func (a *IamOrganisationApiService) OrganisationEventGet(ctx _context.Context, organisationId string, eventId string) (Event, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationEventGet(ctx _context.Context, organisationId string, eventId string) (Event, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -401,23 +401,23 @@ func (a *IamOrganisationApiService) OrganisationEventGet(ctx _context.Context, o
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// OrganisationEventListOpts Optional parameters for the method 'OrganisationEventList'
-type OrganisationEventListOpts struct {
+// IamOrganisationEventListOpts Optional parameters for the method 'IamOrganisationEventList'
+type IamOrganisationEventListOpts struct {
     Limit optional.Float32
     Skip optional.Float32
 }
 
 /*
-OrganisationEventList List iam/organisation.event
+IamOrganisationEventList List iam/organisation.event
 List iam/organisation.event
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param optional nil or *OrganisationEventListOpts - Optional Parameters:
+ * @param optional nil or *IamOrganisationEventListOpts - Optional Parameters:
  * @param "Limit" (optional.Float32) -  $limit
  * @param "Skip" (optional.Float32) -  $skip
 @return []Event
 */
-func (a *IamOrganisationApiService) OrganisationEventList(ctx _context.Context, organisationId string, localVarOptionals *OrganisationEventListOpts) ([]Event, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationEventList(ctx _context.Context, organisationId string, localVarOptionals *IamOrganisationEventListOpts) ([]Event, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -505,13 +505,13 @@ func (a *IamOrganisationApiService) OrganisationEventList(ctx _context.Context, 
 }
 
 /*
-OrganisationGet Get iam/organisation
+IamOrganisationGet Get iam/organisation
 Returns a single organisation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 @return Organisation
 */
-func (a *IamOrganisationApiService) OrganisationGet(ctx _context.Context, organisationId string) (Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationGet(ctx _context.Context, organisationId string) (Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -593,15 +593,15 @@ func (a *IamOrganisationApiService) OrganisationGet(ctx _context.Context, organi
 }
 
 /*
-OrganisationInvitationAccept Create iam/organisation.actions
-Create iam/organisation.actions
+IamOrganisationInvitationAccept Accept iam/organisation.invitation
+action accept
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invitationId invitationId
- * @param organisationInvitationAccept
+ * @param iamOrganisationInvitationAccept
 @return Invitation
 */
-func (a *IamOrganisationApiService) OrganisationInvitationAccept(ctx _context.Context, organisationId string, invitationId string, organisationInvitationAccept OrganisationInvitationAccept) (Invitation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvitationAccept(ctx _context.Context, organisationId string, invitationId string, iamOrganisationInvitationAccept IamOrganisationInvitationAccept) (Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -639,7 +639,7 @@ func (a *IamOrganisationApiService) OrganisationInvitationAccept(ctx _context.Co
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationInvitationAccept
+	localVarPostBody = &iamOrganisationInvitationAccept
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -687,13 +687,13 @@ func (a *IamOrganisationApiService) OrganisationInvitationAccept(ctx _context.Co
 }
 
 /*
-OrganisationInvitationDelete Delete iam/organisation.invitation
+IamOrganisationInvitationDelete Delete iam/organisation.invitation
 Delete iam/organisation.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invitationId invitationId
 */
-func (a *IamOrganisationApiService) OrganisationInvitationDelete(ctx _context.Context, organisationId string, invitationId string) (*_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvitationDelete(ctx _context.Context, organisationId string, invitationId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -767,14 +767,14 @@ func (a *IamOrganisationApiService) OrganisationInvitationDelete(ctx _context.Co
 }
 
 /*
-OrganisationInvitationGet Get iam/organisation.invitation
+IamOrganisationInvitationGet Get iam/organisation.invitation
 Get iam/organisation.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invitationId invitationId
 @return Invitation
 */
-func (a *IamOrganisationApiService) OrganisationInvitationGet(ctx _context.Context, organisationId string, invitationId string) (Invitation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvitationGet(ctx _context.Context, organisationId string, invitationId string) (Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -857,21 +857,21 @@ func (a *IamOrganisationApiService) OrganisationInvitationGet(ctx _context.Conte
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// OrganisationInvitationListOpts Optional parameters for the method 'OrganisationInvitationList'
-type OrganisationInvitationListOpts struct {
+// IamOrganisationInvitationListOpts Optional parameters for the method 'IamOrganisationInvitationList'
+type IamOrganisationInvitationListOpts struct {
     Resource optional.String
 }
 
 /*
-OrganisationInvitationList List iam/organisation.invitation
+IamOrganisationInvitationList List iam/organisation.invitation
 List iam/organisation.invitation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param optional nil or *OrganisationInvitationListOpts - Optional Parameters:
+ * @param optional nil or *IamOrganisationInvitationListOpts - Optional Parameters:
  * @param "Resource" (optional.String) -  resource
 @return []Invitation
 */
-func (a *IamOrganisationApiService) OrganisationInvitationList(ctx _context.Context, organisationId string, localVarOptionals *OrganisationInvitationListOpts) ([]Invitation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvitationList(ctx _context.Context, organisationId string, localVarOptionals *IamOrganisationInvitationListOpts) ([]Invitation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -956,14 +956,14 @@ func (a *IamOrganisationApiService) OrganisationInvitationList(ctx _context.Cont
 }
 
 /*
-OrganisationInvoiceDownload Create iam/organisation.actions
-Create iam/organisation.actions
+IamOrganisationInvoiceDownload Download iam/organisation.invoice
+action download
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invoiceId invoiceId
 @return *os.File
 */
-func (a *IamOrganisationApiService) OrganisationInvoiceDownload(ctx _context.Context, organisationId string, invoiceId string) (*os.File, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvoiceDownload(ctx _context.Context, organisationId string, invoiceId string) (*os.File, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1047,14 +1047,14 @@ func (a *IamOrganisationApiService) OrganisationInvoiceDownload(ctx _context.Con
 }
 
 /*
-OrganisationInvoiceGet Get iam/organisation.invoice
+IamOrganisationInvoiceGet Get iam/organisation.invoice
 Get iam/organisation.invoice
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invoiceId invoiceId
 @return Proforma
 */
-func (a *IamOrganisationApiService) OrganisationInvoiceGet(ctx _context.Context, organisationId string, invoiceId string) (Proforma, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvoiceGet(ctx _context.Context, organisationId string, invoiceId string) (Proforma, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1138,13 +1138,13 @@ func (a *IamOrganisationApiService) OrganisationInvoiceGet(ctx _context.Context,
 }
 
 /*
-OrganisationInvoiceList List iam/organisation.invoice
+IamOrganisationInvoiceList List iam/organisation.invoice
 List iam/organisation.invoice
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 @return []Invoice
 */
-func (a *IamOrganisationApiService) OrganisationInvoiceList(ctx _context.Context, organisationId string) ([]Invoice, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvoiceList(ctx _context.Context, organisationId string) ([]Invoice, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1225,8 +1225,8 @@ func (a *IamOrganisationApiService) OrganisationInvoiceList(ctx _context.Context
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// OrganisationListOpts Optional parameters for the method 'OrganisationList'
-type OrganisationListOpts struct {
+// IamOrganisationListOpts Optional parameters for the method 'IamOrganisationList'
+type IamOrganisationListOpts struct {
     Name optional.String
     BillingCompany optional.String
     Limit optional.Float32
@@ -1234,17 +1234,17 @@ type OrganisationListOpts struct {
 }
 
 /*
-OrganisationList List iam/organisation
+IamOrganisationList List iam/organisation
 List organisation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *OrganisationListOpts - Optional Parameters:
+ * @param optional nil or *IamOrganisationListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
  * @param "BillingCompany" (optional.String) -  Filter by billing.company
  * @param "Limit" (optional.Float32) -  Filter by $limit
  * @param "Active" (optional.Bool) -  Filter by active
 @return []Organisation
 */
-func (a *IamOrganisationApiService) OrganisationList(ctx _context.Context, localVarOptionals *OrganisationListOpts) ([]Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationList(ctx _context.Context, localVarOptionals *IamOrganisationListOpts) ([]Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1336,14 +1336,14 @@ func (a *IamOrganisationApiService) OrganisationList(ctx _context.Context, local
 }
 
 /*
-OrganisationOwnershipCreate Create iam/organisation.ownership
+IamOrganisationOwnershipCreate Create iam/organisation.ownership
 Create iam/organisation.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param organisationOwnershipCreate
+ * @param iamOrganisationOwnershipCreate
 @return Organisation
 */
-func (a *IamOrganisationApiService) OrganisationOwnershipCreate(ctx _context.Context, organisationId string, organisationOwnershipCreate OrganisationOwnershipCreate) (Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationOwnershipCreate(ctx _context.Context, organisationId string, iamOrganisationOwnershipCreate IamOrganisationOwnershipCreate) (Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1379,7 +1379,7 @@ func (a *IamOrganisationApiService) OrganisationOwnershipCreate(ctx _context.Con
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationOwnershipCreate
+	localVarPostBody = &iamOrganisationOwnershipCreate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1427,13 +1427,13 @@ func (a *IamOrganisationApiService) OrganisationOwnershipCreate(ctx _context.Con
 }
 
 /*
-OrganisationOwnershipDelete Delete iam/organisation.ownership
+IamOrganisationOwnershipDelete Delete iam/organisation.ownership
 Delete iam/organisation.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param ownershipId ownershipId
 */
-func (a *IamOrganisationApiService) OrganisationOwnershipDelete(ctx _context.Context, organisationId string, ownershipId string) (*_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationOwnershipDelete(ctx _context.Context, organisationId string, ownershipId string) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -1507,14 +1507,14 @@ func (a *IamOrganisationApiService) OrganisationOwnershipDelete(ctx _context.Con
 }
 
 /*
-OrganisationOwnershipGet Get iam/organisation.ownership
+IamOrganisationOwnershipGet Get iam/organisation.ownership
 Get iam/organisation.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param ownershipId ownershipId
 @return Ownership
 */
-func (a *IamOrganisationApiService) OrganisationOwnershipGet(ctx _context.Context, organisationId string, ownershipId string) (Ownership, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationOwnershipGet(ctx _context.Context, organisationId string, ownershipId string) (Ownership, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1598,13 +1598,13 @@ func (a *IamOrganisationApiService) OrganisationOwnershipGet(ctx _context.Contex
 }
 
 /*
-OrganisationOwnershipList List iam/organisation.ownership
+IamOrganisationOwnershipList List iam/organisation.ownership
 List iam/organisation.ownership
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 @return []Ownership
 */
-func (a *IamOrganisationApiService) OrganisationOwnershipList(ctx _context.Context, organisationId string) ([]Ownership, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationOwnershipList(ctx _context.Context, organisationId string) ([]Ownership, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1686,15 +1686,15 @@ func (a *IamOrganisationApiService) OrganisationOwnershipList(ctx _context.Conte
 }
 
 /*
-OrganisationPaymentAllocate Create iam/organisation.actions
-Create iam/organisation.actions
+IamOrganisationPaymentAllocate Allocate iam/organisation.payment
+action allocate
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param paymentId paymentId
- * @param organisationPaymentAllocate
+ * @param iamOrganisationPaymentAllocate
 @return Payment
 */
-func (a *IamOrganisationApiService) OrganisationPaymentAllocate(ctx _context.Context, organisationId string, paymentId string, organisationPaymentAllocate OrganisationPaymentAllocate) (Payment, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationPaymentAllocate(ctx _context.Context, organisationId string, paymentId string, iamOrganisationPaymentAllocate IamOrganisationPaymentAllocate) (Payment, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1732,7 +1732,7 @@ func (a *IamOrganisationApiService) OrganisationPaymentAllocate(ctx _context.Con
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationPaymentAllocate
+	localVarPostBody = &iamOrganisationPaymentAllocate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1780,14 +1780,14 @@ func (a *IamOrganisationApiService) OrganisationPaymentAllocate(ctx _context.Con
 }
 
 /*
-OrganisationPaymentGet Get iam/organisation.payment
+IamOrganisationPaymentGet Get iam/organisation.payment
 Get iam/organisation.payment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param paymentId paymentId
 @return Payment
 */
-func (a *IamOrganisationApiService) OrganisationPaymentGet(ctx _context.Context, organisationId string, paymentId string) (Payment, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationPaymentGet(ctx _context.Context, organisationId string, paymentId string) (Payment, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1871,13 +1871,13 @@ func (a *IamOrganisationApiService) OrganisationPaymentGet(ctx _context.Context,
 }
 
 /*
-OrganisationPaymentList List iam/organisation.payment
+IamOrganisationPaymentList List iam/organisation.payment
 List iam/organisation.payment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 @return []Payment
 */
-func (a *IamOrganisationApiService) OrganisationPaymentList(ctx _context.Context, organisationId string) ([]Payment, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationPaymentList(ctx _context.Context, organisationId string) ([]Payment, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1959,14 +1959,14 @@ func (a *IamOrganisationApiService) OrganisationPaymentList(ctx _context.Context
 }
 
 /*
-OrganisationProformaCreate Create iam/organisation.proforma
+IamOrganisationProformaCreate Create iam/organisation.proforma
 Create iam/organisation.proforma
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param organisationProformaCreate
+ * @param iamOrganisationProformaCreate
 @return Proforma
 */
-func (a *IamOrganisationApiService) OrganisationProformaCreate(ctx _context.Context, organisationId string, organisationProformaCreate OrganisationProformaCreate) (Proforma, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationProformaCreate(ctx _context.Context, organisationId string, iamOrganisationProformaCreate IamOrganisationProformaCreate) (Proforma, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2002,7 +2002,7 @@ func (a *IamOrganisationApiService) OrganisationProformaCreate(ctx _context.Cont
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationProformaCreate
+	localVarPostBody = &iamOrganisationProformaCreate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2050,14 +2050,14 @@ func (a *IamOrganisationApiService) OrganisationProformaCreate(ctx _context.Cont
 }
 
 /*
-OrganisationProformaDownload Create iam/organisation.actions
-Create iam/organisation.actions
+IamOrganisationProformaDownload Download iam/organisation.proforma
+action download
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param proformaId proformaId
 @return *os.File
 */
-func (a *IamOrganisationApiService) OrganisationProformaDownload(ctx _context.Context, organisationId string, proformaId string) (*os.File, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationProformaDownload(ctx _context.Context, organisationId string, proformaId string) (*os.File, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2141,14 +2141,14 @@ func (a *IamOrganisationApiService) OrganisationProformaDownload(ctx _context.Co
 }
 
 /*
-OrganisationProformaGet Get iam/organisation.proforma
+IamOrganisationProformaGet Get iam/organisation.proforma
 Get iam/organisation.proforma
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param proformaId proformaId
 @return Proforma
 */
-func (a *IamOrganisationApiService) OrganisationProformaGet(ctx _context.Context, organisationId string, proformaId string) (Proforma, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationProformaGet(ctx _context.Context, organisationId string, proformaId string) (Proforma, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2232,13 +2232,13 @@ func (a *IamOrganisationApiService) OrganisationProformaGet(ctx _context.Context
 }
 
 /*
-OrganisationProformaList List iam/organisation.proforma
+IamOrganisationProformaList List iam/organisation.proforma
 List iam/organisation.proforma
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
 @return []Proforma
 */
-func (a *IamOrganisationApiService) OrganisationProformaList(ctx _context.Context, organisationId string) ([]Proforma, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationProformaList(ctx _context.Context, organisationId string) ([]Proforma, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -2319,22 +2319,22 @@ func (a *IamOrganisationApiService) OrganisationProformaList(ctx _context.Contex
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// OrganisationTransferAcceptOpts Optional parameters for the method 'OrganisationTransferAccept'
-type OrganisationTransferAcceptOpts struct {
+// IamOrganisationTransferAcceptOpts Optional parameters for the method 'IamOrganisationTransferAccept'
+type IamOrganisationTransferAcceptOpts struct {
     XIdempotencyKey optional.String
 }
 
 /*
-OrganisationTransferAccept Transfer accept iam/organisation
+IamOrganisationTransferAccept Transfer accept iam/organisation
 action transfer_accept
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param organisationTransferAccept
- * @param optional nil or *OrganisationTransferAcceptOpts - Optional Parameters:
+ * @param iamOrganisationTransferAccept
+ * @param optional nil or *IamOrganisationTransferAcceptOpts - Optional Parameters:
  * @param "XIdempotencyKey" (optional.String) -  Idempotency key
 @return Organisation
 */
-func (a *IamOrganisationApiService) OrganisationTransferAccept(ctx _context.Context, organisationId string, organisationTransferAccept OrganisationTransferAccept, localVarOptionals *OrganisationTransferAcceptOpts) (Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationTransferAccept(ctx _context.Context, organisationId string, iamOrganisationTransferAccept IamOrganisationTransferAccept, localVarOptionals *IamOrganisationTransferAcceptOpts) (Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2373,7 +2373,7 @@ func (a *IamOrganisationApiService) OrganisationTransferAccept(ctx _context.Cont
 		localVarHeaderParams["x-idempotency-key"] = parameterToString(localVarOptionals.XIdempotencyKey.Value(), "")
 	}
 	// body params
-	localVarPostBody = &organisationTransferAccept
+	localVarPostBody = &iamOrganisationTransferAccept
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2421,14 +2421,14 @@ func (a *IamOrganisationApiService) OrganisationTransferAccept(ctx _context.Cont
 }
 
 /*
-OrganisationUpdate Update iam/organisation
+IamOrganisationUpdate Update iam/organisation
 Returns modified organisation
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
- * @param organisationUpdate
+ * @param iamOrganisationUpdate
 @return Organisation
 */
-func (a *IamOrganisationApiService) OrganisationUpdate(ctx _context.Context, organisationId string, organisationUpdate OrganisationUpdate) (Organisation, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationUpdate(ctx _context.Context, organisationId string, iamOrganisationUpdate IamOrganisationUpdate) (Organisation, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPatch
 		localVarPostBody     interface{}
@@ -2464,7 +2464,7 @@ func (a *IamOrganisationApiService) OrganisationUpdate(ctx _context.Context, org
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &organisationUpdate
+	localVarPostBody = &iamOrganisationUpdate
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -75,6 +75,7 @@ Class | Method | HTTP request | Description
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoCreate**](docs/ComputeProjectVmApi.md#computeprojectvmisocreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | Create compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoList**](docs/ComputeProjectVmApi.md#computeprojectvmisolist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | List compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmList**](docs/ComputeProjectVmApi.md#computeprojectvmlist) | **Get** /compute/{locationId}/project/{projectId}/vm | List compute/vm
+*ComputeProjectVmApi* | [**ComputeProjectVmMetricList**](docs/ComputeProjectVmApi.md#computeprojectvmmetriclist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric | List compute/vm.metric
 *ComputeProjectVmApi* | [**ComputeProjectVmPasswordReset**](docs/ComputeProjectVmApi.md#computeprojectvmpasswordreset) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/password_reset | Password reset compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmRestart**](docs/ComputeProjectVmApi.md#computeprojectvmrestart) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/restart | Restart compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmSerialport**](docs/ComputeProjectVmApi.md#computeprojectvmserialport) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport | Serialport compute/vm
@@ -166,33 +167,33 @@ Class | Method | HTTP request | Description
 *DnsProjectZoneApi* | [**DnsProjectZoneTagList**](docs/DnsProjectZoneApi.md#dnsprojectzonetaglist) | **Get** /dns/{locationId}/project/{projectId}/zone/{zoneId}/tag | List dns/zone.tag
 *DnsProjectZoneApi* | [**DnsProjectZoneTagPut**](docs/DnsProjectZoneApi.md#dnsprojectzonetagput) | **Put** /dns/{locationId}/project/{projectId}/zone/{zoneId}/tag | Replace dns/zone.tag
 *DnsProjectZoneApi* | [**DnsProjectZoneUpdate**](docs/DnsProjectZoneApi.md#dnsprojectzoneupdate) | **Patch** /dns/{locationId}/project/{projectId}/zone/{zoneId} | Update dns/zone
-*IamOrganisationApi* | [**OrganisationBillingList**](docs/IamOrganisationApi.md#organisationbillinglist) | **Get** /iam/organisation/{organisationId}/billing | List iam/organisation.billing
-*IamOrganisationApi* | [**OrganisationCreate**](docs/IamOrganisationApi.md#organisationcreate) | **Post** /iam/organisation | Create iam/organisation
-*IamOrganisationApi* | [**OrganisationDelete**](docs/IamOrganisationApi.md#organisationdelete) | **Delete** /iam/organisation/{organisationId} | Delete iam/organisation
-*IamOrganisationApi* | [**OrganisationEventGet**](docs/IamOrganisationApi.md#organisationeventget) | **Get** /iam/organisation/{organisationId}/event/{eventId} | Get iam/organisation.event
-*IamOrganisationApi* | [**OrganisationEventList**](docs/IamOrganisationApi.md#organisationeventlist) | **Get** /iam/organisation/{organisationId}/event | List iam/organisation.event
-*IamOrganisationApi* | [**OrganisationGet**](docs/IamOrganisationApi.md#organisationget) | **Get** /iam/organisation/{organisationId} | Get iam/organisation
-*IamOrganisationApi* | [**OrganisationInvitationAccept**](docs/IamOrganisationApi.md#organisationinvitationaccept) | **Post** /iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept | Create iam/organisation.actions
-*IamOrganisationApi* | [**OrganisationInvitationDelete**](docs/IamOrganisationApi.md#organisationinvitationdelete) | **Delete** /iam/organisation/{organisationId}/invitation/{invitationId} | Delete iam/organisation.invitation
-*IamOrganisationApi* | [**OrganisationInvitationGet**](docs/IamOrganisationApi.md#organisationinvitationget) | **Get** /iam/organisation/{organisationId}/invitation/{invitationId} | Get iam/organisation.invitation
-*IamOrganisationApi* | [**OrganisationInvitationList**](docs/IamOrganisationApi.md#organisationinvitationlist) | **Get** /iam/organisation/{organisationId}/invitation | List iam/organisation.invitation
-*IamOrganisationApi* | [**OrganisationInvoiceDownload**](docs/IamOrganisationApi.md#organisationinvoicedownload) | **Post** /iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download | Create iam/organisation.actions
-*IamOrganisationApi* | [**OrganisationInvoiceGet**](docs/IamOrganisationApi.md#organisationinvoiceget) | **Get** /iam/organisation/{organisationId}/invoice/{invoiceId} | Get iam/organisation.invoice
-*IamOrganisationApi* | [**OrganisationInvoiceList**](docs/IamOrganisationApi.md#organisationinvoicelist) | **Get** /iam/organisation/{organisationId}/invoice | List iam/organisation.invoice
-*IamOrganisationApi* | [**OrganisationList**](docs/IamOrganisationApi.md#organisationlist) | **Get** /iam/organisation | List iam/organisation
-*IamOrganisationApi* | [**OrganisationOwnershipCreate**](docs/IamOrganisationApi.md#organisationownershipcreate) | **Post** /iam/organisation/{organisationId}/ownership | Create iam/organisation.ownership
-*IamOrganisationApi* | [**OrganisationOwnershipDelete**](docs/IamOrganisationApi.md#organisationownershipdelete) | **Delete** /iam/organisation/{organisationId}/ownership/{ownershipId} | Delete iam/organisation.ownership
-*IamOrganisationApi* | [**OrganisationOwnershipGet**](docs/IamOrganisationApi.md#organisationownershipget) | **Get** /iam/organisation/{organisationId}/ownership/{ownershipId} | Get iam/organisation.ownership
-*IamOrganisationApi* | [**OrganisationOwnershipList**](docs/IamOrganisationApi.md#organisationownershiplist) | **Get** /iam/organisation/{organisationId}/ownership | List iam/organisation.ownership
-*IamOrganisationApi* | [**OrganisationPaymentAllocate**](docs/IamOrganisationApi.md#organisationpaymentallocate) | **Post** /iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate | Create iam/organisation.actions
-*IamOrganisationApi* | [**OrganisationPaymentGet**](docs/IamOrganisationApi.md#organisationpaymentget) | **Get** /iam/organisation/{organisationId}/payment/{paymentId} | Get iam/organisation.payment
-*IamOrganisationApi* | [**OrganisationPaymentList**](docs/IamOrganisationApi.md#organisationpaymentlist) | **Get** /iam/organisation/{organisationId}/payment | List iam/organisation.payment
-*IamOrganisationApi* | [**OrganisationProformaCreate**](docs/IamOrganisationApi.md#organisationproformacreate) | **Post** /iam/organisation/{organisationId}/proforma | Create iam/organisation.proforma
-*IamOrganisationApi* | [**OrganisationProformaDownload**](docs/IamOrganisationApi.md#organisationproformadownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Create iam/organisation.actions
-*IamOrganisationApi* | [**OrganisationProformaGet**](docs/IamOrganisationApi.md#organisationproformaget) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
-*IamOrganisationApi* | [**OrganisationProformaList**](docs/IamOrganisationApi.md#organisationproformalist) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
-*IamOrganisationApi* | [**OrganisationTransferAccept**](docs/IamOrganisationApi.md#organisationtransferaccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
-*IamOrganisationApi* | [**OrganisationUpdate**](docs/IamOrganisationApi.md#organisationupdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
+*IamOrganisationApi* | [**IamOrganisationBillingList**](docs/IamOrganisationApi.md#iamorganisationbillinglist) | **Get** /iam/organisation/{organisationId}/billing | List iam/organisation.billing
+*IamOrganisationApi* | [**IamOrganisationCreate**](docs/IamOrganisationApi.md#iamorganisationcreate) | **Post** /iam/organisation | Create iam/organisation
+*IamOrganisationApi* | [**IamOrganisationDelete**](docs/IamOrganisationApi.md#iamorganisationdelete) | **Delete** /iam/organisation/{organisationId} | Delete iam/organisation
+*IamOrganisationApi* | [**IamOrganisationEventGet**](docs/IamOrganisationApi.md#iamorganisationeventget) | **Get** /iam/organisation/{organisationId}/event/{eventId} | Get iam/organisation.event
+*IamOrganisationApi* | [**IamOrganisationEventList**](docs/IamOrganisationApi.md#iamorganisationeventlist) | **Get** /iam/organisation/{organisationId}/event | List iam/organisation.event
+*IamOrganisationApi* | [**IamOrganisationGet**](docs/IamOrganisationApi.md#iamorganisationget) | **Get** /iam/organisation/{organisationId} | Get iam/organisation
+*IamOrganisationApi* | [**IamOrganisationInvitationAccept**](docs/IamOrganisationApi.md#iamorganisationinvitationaccept) | **Post** /iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept | Accept iam/organisation.invitation
+*IamOrganisationApi* | [**IamOrganisationInvitationDelete**](docs/IamOrganisationApi.md#iamorganisationinvitationdelete) | **Delete** /iam/organisation/{organisationId}/invitation/{invitationId} | Delete iam/organisation.invitation
+*IamOrganisationApi* | [**IamOrganisationInvitationGet**](docs/IamOrganisationApi.md#iamorganisationinvitationget) | **Get** /iam/organisation/{organisationId}/invitation/{invitationId} | Get iam/organisation.invitation
+*IamOrganisationApi* | [**IamOrganisationInvitationList**](docs/IamOrganisationApi.md#iamorganisationinvitationlist) | **Get** /iam/organisation/{organisationId}/invitation | List iam/organisation.invitation
+*IamOrganisationApi* | [**IamOrganisationInvoiceDownload**](docs/IamOrganisationApi.md#iamorganisationinvoicedownload) | **Post** /iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download | Download iam/organisation.invoice
+*IamOrganisationApi* | [**IamOrganisationInvoiceGet**](docs/IamOrganisationApi.md#iamorganisationinvoiceget) | **Get** /iam/organisation/{organisationId}/invoice/{invoiceId} | Get iam/organisation.invoice
+*IamOrganisationApi* | [**IamOrganisationInvoiceList**](docs/IamOrganisationApi.md#iamorganisationinvoicelist) | **Get** /iam/organisation/{organisationId}/invoice | List iam/organisation.invoice
+*IamOrganisationApi* | [**IamOrganisationList**](docs/IamOrganisationApi.md#iamorganisationlist) | **Get** /iam/organisation | List iam/organisation
+*IamOrganisationApi* | [**IamOrganisationOwnershipCreate**](docs/IamOrganisationApi.md#iamorganisationownershipcreate) | **Post** /iam/organisation/{organisationId}/ownership | Create iam/organisation.ownership
+*IamOrganisationApi* | [**IamOrganisationOwnershipDelete**](docs/IamOrganisationApi.md#iamorganisationownershipdelete) | **Delete** /iam/organisation/{organisationId}/ownership/{ownershipId} | Delete iam/organisation.ownership
+*IamOrganisationApi* | [**IamOrganisationOwnershipGet**](docs/IamOrganisationApi.md#iamorganisationownershipget) | **Get** /iam/organisation/{organisationId}/ownership/{ownershipId} | Get iam/organisation.ownership
+*IamOrganisationApi* | [**IamOrganisationOwnershipList**](docs/IamOrganisationApi.md#iamorganisationownershiplist) | **Get** /iam/organisation/{organisationId}/ownership | List iam/organisation.ownership
+*IamOrganisationApi* | [**IamOrganisationPaymentAllocate**](docs/IamOrganisationApi.md#iamorganisationpaymentallocate) | **Post** /iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate | Allocate iam/organisation.payment
+*IamOrganisationApi* | [**IamOrganisationPaymentGet**](docs/IamOrganisationApi.md#iamorganisationpaymentget) | **Get** /iam/organisation/{organisationId}/payment/{paymentId} | Get iam/organisation.payment
+*IamOrganisationApi* | [**IamOrganisationPaymentList**](docs/IamOrganisationApi.md#iamorganisationpaymentlist) | **Get** /iam/organisation/{organisationId}/payment | List iam/organisation.payment
+*IamOrganisationApi* | [**IamOrganisationProformaCreate**](docs/IamOrganisationApi.md#iamorganisationproformacreate) | **Post** /iam/organisation/{organisationId}/proforma | Create iam/organisation.proforma
+*IamOrganisationApi* | [**IamOrganisationProformaDownload**](docs/IamOrganisationApi.md#iamorganisationproformadownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Download iam/organisation.proforma
+*IamOrganisationApi* | [**IamOrganisationProformaGet**](docs/IamOrganisationApi.md#iamorganisationproformaget) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
+*IamOrganisationApi* | [**IamOrganisationProformaList**](docs/IamOrganisationApi.md#iamorganisationproformalist) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
+*IamOrganisationApi* | [**IamOrganisationTransferAccept**](docs/IamOrganisationApi.md#iamorganisationtransferaccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
+*IamOrganisationApi* | [**IamOrganisationUpdate**](docs/IamOrganisationApi.md#iamorganisationupdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
 *IamOrganisationPolicyApi* | [**IamOrganisationPolicyActorCreate**](docs/IamOrganisationPolicyApi.md#iamorganisationpolicyactorcreate) | **Post** /iam/organisation/{organisationId}/policy/{policyId}/actor | Create iam/policy.actor
 *IamOrganisationPolicyApi* | [**IamOrganisationPolicyActorDelete**](docs/IamOrganisationPolicyApi.md#iamorganisationpolicyactordelete) | **Delete** /iam/organisation/{organisationId}/policy/{policyId}/actor/{actorId} | Delete iam/policy.actor
 *IamOrganisationPolicyApi* | [**IamOrganisationPolicyActorGet**](docs/IamOrganisationPolicyApi.md#iamorganisationpolicyactorget) | **Get** /iam/organisation/{organisationId}/policy/{policyId}/actor/{actorId} | Get iam/policy.actor
@@ -230,40 +231,44 @@ Class | Method | HTTP request | Description
 *IamOrganisationRoleApi* | [**IamOrganisationRoleTagList**](docs/IamOrganisationRoleApi.md#iamorganisationroletaglist) | **Get** /iam/organisation/{organisationId}/role/{roleId}/tag | List iam/role.tag
 *IamOrganisationRoleApi* | [**IamOrganisationRoleTagPut**](docs/IamOrganisationRoleApi.md#iamorganisationroletagput) | **Put** /iam/organisation/{organisationId}/role/{roleId}/tag | Replace iam/role.tag
 *IamOrganisationRoleApi* | [**IamOrganisationRoleUpdate**](docs/IamOrganisationRoleApi.md#iamorganisationroleupdate) | **Patch** /iam/organisation/{organisationId}/role/{roleId} | Update iam/role
-*IamProjectApi* | [**ProjectBillingList**](docs/IamProjectApi.md#projectbillinglist) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
-*IamProjectApi* | [**ProjectCreate**](docs/IamProjectApi.md#projectcreate) | **Post** /iam/project | Create iam/project
-*IamProjectApi* | [**ProjectCredentialStoreCreate**](docs/IamProjectApi.md#projectcredentialstorecreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
-*IamProjectApi* | [**ProjectCredentialStoreDelete**](docs/IamProjectApi.md#projectcredentialstoredelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialId} | Delete iam/project.credentialStore
-*IamProjectApi* | [**ProjectCredentialStoreGet**](docs/IamProjectApi.md#projectcredentialstoreget) | **Get** /iam/project/{projectId}/credentialStore/{credentialId} | Get iam/project.credentialStore
-*IamProjectApi* | [**ProjectCredentialStoreList**](docs/IamProjectApi.md#projectcredentialstorelist) | **Get** /iam/project/{projectId}/credentialStore | List iam/project.credentialStore
-*IamProjectApi* | [**ProjectCredentialStorePatch**](docs/IamProjectApi.md#projectcredentialstorepatch) | **Patch** /iam/project/{projectId}/credentialStore/{credentialId} | Update iam/project.credentialStore
-*IamProjectApi* | [**ProjectDelete**](docs/IamProjectApi.md#projectdelete) | **Delete** /iam/project/{projectId} | Delete iam/project
-*IamProjectApi* | [**ProjectEventGet**](docs/IamProjectApi.md#projecteventget) | **Get** /iam/project/{projectId}/event/{eventId} | Get iam/project.event
-*IamProjectApi* | [**ProjectEventList**](docs/IamProjectApi.md#projecteventlist) | **Get** /iam/project/{projectId}/event | List iam/project.event
-*IamProjectApi* | [**ProjectGet**](docs/IamProjectApi.md#projectget) | **Get** /iam/project/{projectId} | Get iam/project
-*IamProjectApi* | [**ProjectInvitationAccept**](docs/IamProjectApi.md#projectinvitationaccept) | **Post** /iam/project/{projectId}/invitation/{invitationId}/actions/accept | Create iam/project.actions
-*IamProjectApi* | [**ProjectInvitationDelete**](docs/IamProjectApi.md#projectinvitationdelete) | **Delete** /iam/project/{projectId}/invitation/{invitationId} | Delete iam/project.invitation
-*IamProjectApi* | [**ProjectInvitationGet**](docs/IamProjectApi.md#projectinvitationget) | **Get** /iam/project/{projectId}/invitation/{invitationId} | Get iam/project.invitation
-*IamProjectApi* | [**ProjectInvitationList**](docs/IamProjectApi.md#projectinvitationlist) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
-*IamProjectApi* | [**ProjectInvoiceList**](docs/IamProjectApi.md#projectinvoicelist) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
-*IamProjectApi* | [**ProjectList**](docs/IamProjectApi.md#projectlist) | **Get** /iam/project | List iam/project
-*IamProjectApi* | [**ProjectOwnershipCreate**](docs/IamProjectApi.md#projectownershipcreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
-*IamProjectApi* | [**ProjectOwnershipDelete**](docs/IamProjectApi.md#projectownershipdelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
-*IamProjectApi* | [**ProjectOwnershipGet**](docs/IamProjectApi.md#projectownershipget) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
-*IamProjectApi* | [**ProjectOwnershipList**](docs/IamProjectApi.md#projectownershiplist) | **Get** /iam/project/{projectId}/ownership | List iam/project.ownership
-*IamProjectApi* | [**ProjectPaymentList**](docs/IamProjectApi.md#projectpaymentlist) | **Get** /iam/project/{projectId}/payment | List iam/project.payment
-*IamProjectApi* | [**ProjectProformaList**](docs/IamProjectApi.md#projectproformalist) | **Get** /iam/project/{projectId}/proforma | List iam/project.proforma
-*IamProjectApi* | [**ProjectQuotaGet**](docs/IamProjectApi.md#projectquotaget) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
-*IamProjectApi* | [**ProjectQuotaLimitPatch**](docs/IamProjectApi.md#projectquotalimitpatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
-*IamProjectApi* | [**ProjectQuotaList**](docs/IamProjectApi.md#projectquotalist) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
-*IamProjectApi* | [**ProjectServiceGet**](docs/IamProjectApi.md#projectserviceget) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
-*IamProjectApi* | [**ProjectServiceList**](docs/IamProjectApi.md#projectservicelist) | **Get** /iam/project/{projectId}/service | List iam/project.service
-*IamProjectApi* | [**ProjectTagCreate**](docs/IamProjectApi.md#projecttagcreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
-*IamProjectApi* | [**ProjectTagDelete**](docs/IamProjectApi.md#projecttagdelete) | **Delete** /iam/project/{projectId}/tag/{tagId} | Delete iam/project.tag
-*IamProjectApi* | [**ProjectTagGet**](docs/IamProjectApi.md#projecttagget) | **Get** /iam/project/{projectId}/tag/{tagId} | Get iam/project.tag
-*IamProjectApi* | [**ProjectTagList**](docs/IamProjectApi.md#projecttaglist) | **Get** /iam/project/{projectId}/tag | List iam/project.tag
-*IamProjectApi* | [**ProjectTagPut**](docs/IamProjectApi.md#projecttagput) | **Put** /iam/project/{projectId}/tag | Replace iam/project.tag
-*IamProjectApi* | [**ProjectUpdate**](docs/IamProjectApi.md#projectupdate) | **Patch** /iam/project/{projectId} | Update iam/project
+*IamProjectApi* | [**IamProjectBillingList**](docs/IamProjectApi.md#iamprojectbillinglist) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
+*IamProjectApi* | [**IamProjectCreate**](docs/IamProjectApi.md#iamprojectcreate) | **Post** /iam/project | Create iam/project
+*IamProjectApi* | [**IamProjectCredentialStoreCreate**](docs/IamProjectApi.md#iamprojectcredentialstorecreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
+*IamProjectApi* | [**IamProjectCredentialStoreDelete**](docs/IamProjectApi.md#iamprojectcredentialstoredelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Delete iam/project.credentialStore
+*IamProjectApi* | [**IamProjectCredentialStoreGet**](docs/IamProjectApi.md#iamprojectcredentialstoreget) | **Get** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Get iam/project.credentialStore
+*IamProjectApi* | [**IamProjectCredentialStoreList**](docs/IamProjectApi.md#iamprojectcredentialstorelist) | **Get** /iam/project/{projectId}/credentialStore | List iam/project.credentialStore
+*IamProjectApi* | [**IamProjectCredentialStorePatch**](docs/IamProjectApi.md#iamprojectcredentialstorepatch) | **Patch** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Update iam/project.credentialStore
+*IamProjectApi* | [**IamProjectDelete**](docs/IamProjectApi.md#iamprojectdelete) | **Delete** /iam/project/{projectId} | Delete iam/project
+*IamProjectApi* | [**IamProjectEventGet**](docs/IamProjectApi.md#iamprojecteventget) | **Get** /iam/project/{projectId}/event/{eventId} | Get iam/project.event
+*IamProjectApi* | [**IamProjectEventList**](docs/IamProjectApi.md#iamprojecteventlist) | **Get** /iam/project/{projectId}/event | List iam/project.event
+*IamProjectApi* | [**IamProjectGet**](docs/IamProjectApi.md#iamprojectget) | **Get** /iam/project/{projectId} | Get iam/project
+*IamProjectApi* | [**IamProjectInvitationAccept**](docs/IamProjectApi.md#iamprojectinvitationaccept) | **Post** /iam/project/{projectId}/invitation/{invitationId}/actions/accept | Accept iam/project.invitation
+*IamProjectApi* | [**IamProjectInvitationDelete**](docs/IamProjectApi.md#iamprojectinvitationdelete) | **Delete** /iam/project/{projectId}/invitation/{invitationId} | Delete iam/project.invitation
+*IamProjectApi* | [**IamProjectInvitationGet**](docs/IamProjectApi.md#iamprojectinvitationget) | **Get** /iam/project/{projectId}/invitation/{invitationId} | Get iam/project.invitation
+*IamProjectApi* | [**IamProjectInvitationList**](docs/IamProjectApi.md#iamprojectinvitationlist) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
+*IamProjectApi* | [**IamProjectInvoiceList**](docs/IamProjectApi.md#iamprojectinvoicelist) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
+*IamProjectApi* | [**IamProjectList**](docs/IamProjectApi.md#iamprojectlist) | **Get** /iam/project | List iam/project
+*IamProjectApi* | [**IamProjectOwnershipCreate**](docs/IamProjectApi.md#iamprojectownershipcreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
+*IamProjectApi* | [**IamProjectOwnershipDelete**](docs/IamProjectApi.md#iamprojectownershipdelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
+*IamProjectApi* | [**IamProjectOwnershipGet**](docs/IamProjectApi.md#iamprojectownershipget) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
+*IamProjectApi* | [**IamProjectOwnershipList**](docs/IamProjectApi.md#iamprojectownershiplist) | **Get** /iam/project/{projectId}/ownership | List iam/project.ownership
+*IamProjectApi* | [**IamProjectPaymentList**](docs/IamProjectApi.md#iamprojectpaymentlist) | **Get** /iam/project/{projectId}/payment | List iam/project.payment
+*IamProjectApi* | [**IamProjectProformaList**](docs/IamProjectApi.md#iamprojectproformalist) | **Get** /iam/project/{projectId}/proforma | List iam/project.proforma
+*IamProjectApi* | [**IamProjectQuotaGet**](docs/IamProjectApi.md#iamprojectquotaget) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
+*IamProjectApi* | [**IamProjectQuotaLimitPatch**](docs/IamProjectApi.md#iamprojectquotalimitpatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
+*IamProjectApi* | [**IamProjectQuotaList**](docs/IamProjectApi.md#iamprojectquotalist) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
+*IamProjectApi* | [**IamProjectServiceGet**](docs/IamProjectApi.md#iamprojectserviceget) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
+*IamProjectApi* | [**IamProjectServiceList**](docs/IamProjectApi.md#iamprojectservicelist) | **Get** /iam/project/{projectId}/service | List iam/project.service
+*IamProjectApi* | [**IamProjectTagCreate**](docs/IamProjectApi.md#iamprojecttagcreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
+*IamProjectApi* | [**IamProjectTagDelete**](docs/IamProjectApi.md#iamprojecttagdelete) | **Delete** /iam/project/{projectId}/tag/{tagId} | Delete iam/project.tag
+*IamProjectApi* | [**IamProjectTagGet**](docs/IamProjectApi.md#iamprojecttagget) | **Get** /iam/project/{projectId}/tag/{tagId} | Get iam/project.tag
+*IamProjectApi* | [**IamProjectTagList**](docs/IamProjectApi.md#iamprojecttaglist) | **Get** /iam/project/{projectId}/tag | List iam/project.tag
+*IamProjectApi* | [**IamProjectTagPut**](docs/IamProjectApi.md#iamprojecttagput) | **Put** /iam/project/{projectId}/tag | Replace iam/project.tag
+*IamProjectApi* | [**IamProjectThresholdCreate**](docs/IamProjectApi.md#iamprojectthresholdcreate) | **Post** /iam/project/{projectId}/threshold | Create iam/project.threshold
+*IamProjectApi* | [**IamProjectThresholdDelete**](docs/IamProjectApi.md#iamprojectthresholddelete) | **Delete** /iam/project/{projectId}/threshold/{thresholdId} | Delete iam/project.threshold
+*IamProjectApi* | [**IamProjectThresholdGet**](docs/IamProjectApi.md#iamprojectthresholdget) | **Get** /iam/project/{projectId}/threshold/{thresholdId} | Get iam/project.threshold
+*IamProjectApi* | [**IamProjectThresholdList**](docs/IamProjectApi.md#iamprojectthresholdlist) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
+*IamProjectApi* | [**IamProjectUpdate**](docs/IamProjectApi.md#iamprojectupdate) | **Patch** /iam/project/{projectId} | Update iam/project
 *IamProjectPolicyApi* | [**IamProjectPolicyActorCreate**](docs/IamProjectPolicyApi.md#iamprojectpolicyactorcreate) | **Post** /iam/project/{projectId}/policy/{policyId}/actor | Create iam/policy.actor
 *IamProjectPolicyApi* | [**IamProjectPolicyActorDelete**](docs/IamProjectPolicyApi.md#iamprojectpolicyactordelete) | **Delete** /iam/project/{projectId}/policy/{policyId}/actor/{actorId} | Delete iam/policy.actor
 *IamProjectPolicyApi* | [**IamProjectPolicyActorGet**](docs/IamProjectPolicyApi.md#iamprojectpolicyactorget) | **Get** /iam/project/{projectId}/policy/{policyId}/actor/{actorId} | Get iam/policy.actor
@@ -320,18 +325,18 @@ Class | Method | HTTP request | Description
 *IamProjectSaApi* | [**IamProjectSaTagList**](docs/IamProjectSaApi.md#iamprojectsataglist) | **Get** /iam/project/{projectId}/sa/{saId}/tag | List iam/sa.tag
 *IamProjectSaApi* | [**IamProjectSaTagPut**](docs/IamProjectSaApi.md#iamprojectsatagput) | **Put** /iam/project/{projectId}/sa/{saId}/tag | Replace iam/sa.tag
 *IamProjectSaApi* | [**IamProjectSaUpdate**](docs/IamProjectSaApi.md#iamprojectsaupdate) | **Patch** /iam/project/{projectId}/sa/{saId} | Update iam/sa
-*IamUserApi* | [**UserCredentialAuthtokenDelete**](docs/IamUserApi.md#usercredentialauthtokendelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
-*IamUserApi* | [**UserCredentialAuthtokenGet**](docs/IamUserApi.md#usercredentialauthtokenget) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
-*IamUserApi* | [**UserCredentialAuthtokenList**](docs/IamUserApi.md#usercredentialauthtokenlist) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
-*IamUserApi* | [**UserCredentialCreate**](docs/IamUserApi.md#usercredentialcreate) | **Post** /iam/user/{userId}/credential | Create iam/user.credential
-*IamUserApi* | [**UserCredentialDelete**](docs/IamUserApi.md#usercredentialdelete) | **Delete** /iam/user/{userId}/credential/{credentialId} | Delete iam/user.credential
-*IamUserApi* | [**UserCredentialGet**](docs/IamUserApi.md#usercredentialget) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
-*IamUserApi* | [**UserCredentialList**](docs/IamUserApi.md#usercredentiallist) | **Get** /iam/user/{userId}/credential | List iam/user.credential
-*IamUserApi* | [**UserCredentialPatch**](docs/IamUserApi.md#usercredentialpatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
-*IamUserApi* | [**UserGet**](docs/IamUserApi.md#userget) | **Get** /iam/user/{userId} | Get iam/user
-*IamUserApi* | [**UserServiceGet**](docs/IamUserApi.md#userserviceget) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
-*IamUserApi* | [**UserServiceList**](docs/IamUserApi.md#userservicelist) | **Get** /iam/user/{userId}/service | List iam/user.service
-*IamUserApi* | [**UserUpdate**](docs/IamUserApi.md#userupdate) | **Patch** /iam/user/{userId} | Update iam/user
+*IamUserApi* | [**IamUserCredentialAuthtokenDelete**](docs/IamUserApi.md#iamusercredentialauthtokendelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
+*IamUserApi* | [**IamUserCredentialAuthtokenGet**](docs/IamUserApi.md#iamusercredentialauthtokenget) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
+*IamUserApi* | [**IamUserCredentialAuthtokenList**](docs/IamUserApi.md#iamusercredentialauthtokenlist) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
+*IamUserApi* | [**IamUserCredentialCreate**](docs/IamUserApi.md#iamusercredentialcreate) | **Post** /iam/user/{userId}/credential | Create iam/user.credential
+*IamUserApi* | [**IamUserCredentialDelete**](docs/IamUserApi.md#iamusercredentialdelete) | **Delete** /iam/user/{userId}/credential/{credentialId} | Delete iam/user.credential
+*IamUserApi* | [**IamUserCredentialGet**](docs/IamUserApi.md#iamusercredentialget) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
+*IamUserApi* | [**IamUserCredentialList**](docs/IamUserApi.md#iamusercredentiallist) | **Get** /iam/user/{userId}/credential | List iam/user.credential
+*IamUserApi* | [**IamUserCredentialPatch**](docs/IamUserApi.md#iamusercredentialpatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
+*IamUserApi* | [**IamUserGet**](docs/IamUserApi.md#iamuserget) | **Get** /iam/user/{userId} | Get iam/user
+*IamUserApi* | [**IamUserServiceGet**](docs/IamUserApi.md#iamuserserviceget) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
+*IamUserApi* | [**IamUserServiceList**](docs/IamUserApi.md#iamuserservicelist) | **Get** /iam/user/{userId}/service | List iam/user.service
+*IamUserApi* | [**IamUserUpdate**](docs/IamUserApi.md#iamuserupdate) | **Patch** /iam/user/{userId} | Update iam/user
 *InsightProjectJournalApi* | [**InsightProjectJournalCreate**](docs/InsightProjectJournalApi.md#insightprojectjournalcreate) | **Post** /insight/{locationId}/project/{projectId}/journal | Create insight/journal
 *InsightProjectJournalApi* | [**InsightProjectJournalCredentialCreate**](docs/InsightProjectJournalApi.md#insightprojectjournalcredentialcreate) | **Post** /insight/{locationId}/project/{projectId}/journal/{journalId}/credential | Create insight/journal.credential
 *InsightProjectJournalApi* | [**InsightProjectJournalCredentialDelete**](docs/InsightProjectJournalApi.md#insightprojectjournalcredentialdelete) | **Delete** /insight/{locationId}/project/{projectId}/journal/{journalId}/credential/{credentialId} | Delete insight/journal.credential
@@ -457,9 +462,9 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentInspect**](docs/ProviderProjectAgentApi.md#providerprojectagentinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/inspect | Inspect provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentList**](docs/ProviderProjectAgentApi.md#providerprojectagentlist) | **Get** /provider/{locationId}/project/{projectId}/agent | List provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceEventList**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceeventlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
-*ProviderProjectAgentApi* | [**ProviderProjectAgentResourceInspect**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Create provider/agent.actions
+*ProviderProjectAgentApi* | [**ProviderProjectAgentResourceInspect**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceList**](docs/ProviderProjectAgentApi.md#providerprojectagentresourcelist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
-*ProviderProjectAgentApi* | [**ProviderProjectAgentResourceRecreate**](docs/ProviderProjectAgentApi.md#providerprojectagentresourcerecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Create provider/agent.actions
+*ProviderProjectAgentApi* | [**ProviderProjectAgentResourceRecreate**](docs/ProviderProjectAgentApi.md#providerprojectagentresourcerecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Recreate provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentServiceGet**](docs/ProviderProjectAgentApi.md#providerprojectagentserviceget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/service/{serviceId} | Get provider/agent.service
 *ProviderProjectAgentApi* | [**ProviderProjectAgentServiceList**](docs/ProviderProjectAgentApi.md#providerprojectagentservicelist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/service | List provider/agent.service
 *ProviderProjectAgentApi* | [**ProviderProjectAgentStart**](docs/ProviderProjectAgentApi.md#providerprojectagentstart) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/start | Start provider/agent
@@ -598,7 +603,7 @@ Class | Method | HTTP request | Description
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesideapplist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp | List website/instance.sideapp
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | Create website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Delete website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDownload**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Create website/instance.actions
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDownload**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Download website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Get website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | List website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceStart**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start website/instance
@@ -641,10 +646,12 @@ Class | Method | HTTP request | Description
  - [ComputeProjectVmPasswordReset](docs/ComputeProjectVmPasswordReset.md)
  - [ComputeProjectVmSerialport](docs/ComputeProjectVmSerialport.md)
  - [ComputeProjectVmUpdate](docs/ComputeProjectVmUpdate.md)
+ - [ContainerImage](docs/ContainerImage.md)
  - [ContainerProjectRegistryCreate](docs/ContainerProjectRegistryCreate.md)
  - [ContainerProjectRegistryCredentialPatch](docs/ContainerProjectRegistryCredentialPatch.md)
  - [ContainerProjectRegistryTransfer](docs/ContainerProjectRegistryTransfer.md)
  - [ContainerProjectRegistryUpdate](docs/ContainerProjectRegistryUpdate.md)
+ - [ContainerRepository](docs/ContainerRepository.md)
  - [Database](docs/Database.md)
  - [DatabaseCredential](docs/DatabaseCredential.md)
  - [DatabaseProjectInstanceCreate](docs/DatabaseProjectInstanceCreate.md)
@@ -664,14 +671,30 @@ Class | Method | HTTP request | Description
  - [Firewall](docs/Firewall.md)
  - [Hdd](docs/Hdd.md)
  - [IamActor](docs/IamActor.md)
+ - [IamOrganisationCreate](docs/IamOrganisationCreate.md)
+ - [IamOrganisationInvitationAccept](docs/IamOrganisationInvitationAccept.md)
+ - [IamOrganisationOwnershipCreate](docs/IamOrganisationOwnershipCreate.md)
+ - [IamOrganisationPaymentAllocate](docs/IamOrganisationPaymentAllocate.md)
+ - [IamOrganisationProformaCreate](docs/IamOrganisationProformaCreate.md)
+ - [IamOrganisationTransferAccept](docs/IamOrganisationTransferAccept.md)
+ - [IamOrganisationUpdate](docs/IamOrganisationUpdate.md)
  - [IamPermission](docs/IamPermission.md)
+ - [IamProjectCreate](docs/IamProjectCreate.md)
+ - [IamProjectCredentialStorePatch](docs/IamProjectCredentialStorePatch.md)
+ - [IamProjectInvitationAccept](docs/IamProjectInvitationAccept.md)
+ - [IamProjectOwnershipCreate](docs/IamProjectOwnershipCreate.md)
  - [IamProjectPolicyCreate](docs/IamProjectPolicyCreate.md)
  - [IamProjectPolicyUpdate](docs/IamProjectPolicyUpdate.md)
+ - [IamProjectQuotaLimitPatch](docs/IamProjectQuotaLimitPatch.md)
  - [IamProjectRoleCreate](docs/IamProjectRoleCreate.md)
  - [IamProjectRoleUpdate](docs/IamProjectRoleUpdate.md)
  - [IamProjectSaCreate](docs/IamProjectSaCreate.md)
  - [IamProjectSaCredentialPatch](docs/IamProjectSaCredentialPatch.md)
  - [IamProjectSaUpdate](docs/IamProjectSaUpdate.md)
+ - [IamProjectThresholdCreate](docs/IamProjectThresholdCreate.md)
+ - [IamProjectUpdate](docs/IamProjectUpdate.md)
+ - [IamUserCredentialPatch](docs/IamUserCredentialPatch.md)
+ - [IamUserUpdate](docs/IamUserUpdate.md)
  - [Image](docs/Image.md)
  - [InlineResponse400](docs/InlineResponse400.md)
  - [InsightProjectJournalCreate](docs/InsightProjectJournalCreate.md)
@@ -694,7 +717,8 @@ Class | Method | HTTP request | Description
  - [Journal](docs/Journal.md)
  - [JournalCredential](docs/JournalCredential.md)
  - [MessageData](docs/MessageData.md)
- - [MetadataSource](docs/MetadataSource.md)
+ - [Metric](docs/Metric.md)
+ - [MetricScale](docs/MetricScale.md)
  - [Netadp](docs/Netadp.md)
  - [Netgw](docs/Netgw.md)
  - [NetgwPrivate](docs/NetgwPrivate.md)
@@ -719,14 +743,7 @@ Class | Method | HTTP request | Description
  - [Organisation](docs/Organisation.md)
  - [OrganisationBilling](docs/OrganisationBilling.md)
  - [OrganisationBilling1](docs/OrganisationBilling1.md)
- - [OrganisationCreate](docs/OrganisationCreate.md)
- - [OrganisationInvitationAccept](docs/OrganisationInvitationAccept.md)
- - [OrganisationOwnershipCreate](docs/OrganisationOwnershipCreate.md)
- - [OrganisationPaymentAllocate](docs/OrganisationPaymentAllocate.md)
- - [OrganisationProformaCreate](docs/OrganisationProformaCreate.md)
  - [OrganisationTransfer](docs/OrganisationTransfer.md)
- - [OrganisationTransferAccept](docs/OrganisationTransferAccept.md)
- - [OrganisationUpdate](docs/OrganisationUpdate.md)
  - [Ownership](docs/Ownership.md)
  - [Payment](docs/Payment.md)
  - [Policy](docs/Policy.md)
@@ -736,18 +753,11 @@ Class | Method | HTTP request | Description
  - [Project](docs/Project.md)
  - [ProjectBilling](docs/ProjectBilling.md)
  - [ProjectCompliance](docs/ProjectCompliance.md)
- - [ProjectCreate](docs/ProjectCreate.md)
  - [ProjectCredential](docs/ProjectCredential.md)
- - [ProjectCredentialStorePatch](docs/ProjectCredentialStorePatch.md)
  - [ProjectFeature](docs/ProjectFeature.md)
- - [ProjectInvitationAccept](docs/ProjectInvitationAccept.md)
  - [ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
- - [ProjectOwnershipCreate](docs/ProjectOwnershipCreate.md)
- - [ProjectQuotaLimitPatch](docs/ProjectQuotaLimitPatch.md)
  - [ProjectThreshold](docs/ProjectThreshold.md)
- - [ProjectThresholdCredits](docs/ProjectThresholdCredits.md)
  - [ProjectTransfer](docs/ProjectTransfer.md)
- - [ProjectUpdate](docs/ProjectUpdate.md)
  - [ProviderProjectAgentCreate](docs/ProviderProjectAgentCreate.md)
  - [ProviderProjectAgentCredentialPatch](docs/ProviderProjectAgentCredentialPatch.md)
  - [ProviderProjectAgentTransfer](docs/ProviderProjectAgentTransfer.md)
@@ -794,10 +804,8 @@ Class | Method | HTTP request | Description
  - [Ticket](docs/Ticket.md)
  - [User](docs/User.md)
  - [UserCredential](docs/UserCredential.md)
- - [UserCredentialPatch](docs/UserCredentialPatch.md)
  - [UserLimit](docs/UserLimit.md)
  - [UserLimitOrganisation](docs/UserLimitOrganisation.md)
- - [UserUpdate](docs/UserUpdate.md)
  - [Vault](docs/Vault.md)
  - [VaultCredential](docs/VaultCredential.md)
  - [Vm](docs/Vm.md)
@@ -862,6 +870,10 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project.payment/list**: 
  - **iam/project.invoice/list**: 
  - **iam/project.proforma/list**: 
+ - **iam/project.threshold/list**: 
+ - **iam/project.threshold/create**: 
+ - **iam/project.threshold/get**: 
+ - **iam/project.threshold/delete**: 
  - **iam/project.credentialStore/list**: 
  - **iam/project.credentialStore/create**: 
  - **iam/project.credentialStore/get**: 
@@ -1093,7 +1105,6 @@ r, err := client.Service.Operation(auth, args)
  - **dns/zone.tag/get**: 
  - **dns/zone.event/list**: 
  - **dns/zone.event/get**: 
- - **storage/disk/use**: 
  - **compute/vm/use**: 
  - **storage/disk/create**: 
  - **storage/disk/list**: 
@@ -1339,6 +1350,7 @@ r, err := client.Service.Operation(auth, args)
  - **compute/vm/flavour**: 
  - **compute/vm/console**: 
  - **compute/vm.serialport/read**: 
+ - **compute/vm.metric/list**: 
  - **storage/iso/attach**: 
  - **compute/vm.service/list**: 
  - **compute/vm.service/get**: 

@@ -4,46 +4,50 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ProjectBillingList**](IamProjectApi.md#ProjectBillingList) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
-[**ProjectCreate**](IamProjectApi.md#ProjectCreate) | **Post** /iam/project | Create iam/project
-[**ProjectCredentialStoreCreate**](IamProjectApi.md#ProjectCredentialStoreCreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
-[**ProjectCredentialStoreDelete**](IamProjectApi.md#ProjectCredentialStoreDelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialId} | Delete iam/project.credentialStore
-[**ProjectCredentialStoreGet**](IamProjectApi.md#ProjectCredentialStoreGet) | **Get** /iam/project/{projectId}/credentialStore/{credentialId} | Get iam/project.credentialStore
-[**ProjectCredentialStoreList**](IamProjectApi.md#ProjectCredentialStoreList) | **Get** /iam/project/{projectId}/credentialStore | List iam/project.credentialStore
-[**ProjectCredentialStorePatch**](IamProjectApi.md#ProjectCredentialStorePatch) | **Patch** /iam/project/{projectId}/credentialStore/{credentialId} | Update iam/project.credentialStore
-[**ProjectDelete**](IamProjectApi.md#ProjectDelete) | **Delete** /iam/project/{projectId} | Delete iam/project
-[**ProjectEventGet**](IamProjectApi.md#ProjectEventGet) | **Get** /iam/project/{projectId}/event/{eventId} | Get iam/project.event
-[**ProjectEventList**](IamProjectApi.md#ProjectEventList) | **Get** /iam/project/{projectId}/event | List iam/project.event
-[**ProjectGet**](IamProjectApi.md#ProjectGet) | **Get** /iam/project/{projectId} | Get iam/project
-[**ProjectInvitationAccept**](IamProjectApi.md#ProjectInvitationAccept) | **Post** /iam/project/{projectId}/invitation/{invitationId}/actions/accept | Create iam/project.actions
-[**ProjectInvitationDelete**](IamProjectApi.md#ProjectInvitationDelete) | **Delete** /iam/project/{projectId}/invitation/{invitationId} | Delete iam/project.invitation
-[**ProjectInvitationGet**](IamProjectApi.md#ProjectInvitationGet) | **Get** /iam/project/{projectId}/invitation/{invitationId} | Get iam/project.invitation
-[**ProjectInvitationList**](IamProjectApi.md#ProjectInvitationList) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
-[**ProjectInvoiceList**](IamProjectApi.md#ProjectInvoiceList) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
-[**ProjectList**](IamProjectApi.md#ProjectList) | **Get** /iam/project | List iam/project
-[**ProjectOwnershipCreate**](IamProjectApi.md#ProjectOwnershipCreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
-[**ProjectOwnershipDelete**](IamProjectApi.md#ProjectOwnershipDelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
-[**ProjectOwnershipGet**](IamProjectApi.md#ProjectOwnershipGet) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
-[**ProjectOwnershipList**](IamProjectApi.md#ProjectOwnershipList) | **Get** /iam/project/{projectId}/ownership | List iam/project.ownership
-[**ProjectPaymentList**](IamProjectApi.md#ProjectPaymentList) | **Get** /iam/project/{projectId}/payment | List iam/project.payment
-[**ProjectProformaList**](IamProjectApi.md#ProjectProformaList) | **Get** /iam/project/{projectId}/proforma | List iam/project.proforma
-[**ProjectQuotaGet**](IamProjectApi.md#ProjectQuotaGet) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
-[**ProjectQuotaLimitPatch**](IamProjectApi.md#ProjectQuotaLimitPatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
-[**ProjectQuotaList**](IamProjectApi.md#ProjectQuotaList) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
-[**ProjectServiceGet**](IamProjectApi.md#ProjectServiceGet) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
-[**ProjectServiceList**](IamProjectApi.md#ProjectServiceList) | **Get** /iam/project/{projectId}/service | List iam/project.service
-[**ProjectTagCreate**](IamProjectApi.md#ProjectTagCreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
-[**ProjectTagDelete**](IamProjectApi.md#ProjectTagDelete) | **Delete** /iam/project/{projectId}/tag/{tagId} | Delete iam/project.tag
-[**ProjectTagGet**](IamProjectApi.md#ProjectTagGet) | **Get** /iam/project/{projectId}/tag/{tagId} | Get iam/project.tag
-[**ProjectTagList**](IamProjectApi.md#ProjectTagList) | **Get** /iam/project/{projectId}/tag | List iam/project.tag
-[**ProjectTagPut**](IamProjectApi.md#ProjectTagPut) | **Put** /iam/project/{projectId}/tag | Replace iam/project.tag
-[**ProjectUpdate**](IamProjectApi.md#ProjectUpdate) | **Patch** /iam/project/{projectId} | Update iam/project
+[**IamProjectBillingList**](IamProjectApi.md#IamProjectBillingList) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
+[**IamProjectCreate**](IamProjectApi.md#IamProjectCreate) | **Post** /iam/project | Create iam/project
+[**IamProjectCredentialStoreCreate**](IamProjectApi.md#IamProjectCredentialStoreCreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
+[**IamProjectCredentialStoreDelete**](IamProjectApi.md#IamProjectCredentialStoreDelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Delete iam/project.credentialStore
+[**IamProjectCredentialStoreGet**](IamProjectApi.md#IamProjectCredentialStoreGet) | **Get** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Get iam/project.credentialStore
+[**IamProjectCredentialStoreList**](IamProjectApi.md#IamProjectCredentialStoreList) | **Get** /iam/project/{projectId}/credentialStore | List iam/project.credentialStore
+[**IamProjectCredentialStorePatch**](IamProjectApi.md#IamProjectCredentialStorePatch) | **Patch** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Update iam/project.credentialStore
+[**IamProjectDelete**](IamProjectApi.md#IamProjectDelete) | **Delete** /iam/project/{projectId} | Delete iam/project
+[**IamProjectEventGet**](IamProjectApi.md#IamProjectEventGet) | **Get** /iam/project/{projectId}/event/{eventId} | Get iam/project.event
+[**IamProjectEventList**](IamProjectApi.md#IamProjectEventList) | **Get** /iam/project/{projectId}/event | List iam/project.event
+[**IamProjectGet**](IamProjectApi.md#IamProjectGet) | **Get** /iam/project/{projectId} | Get iam/project
+[**IamProjectInvitationAccept**](IamProjectApi.md#IamProjectInvitationAccept) | **Post** /iam/project/{projectId}/invitation/{invitationId}/actions/accept | Accept iam/project.invitation
+[**IamProjectInvitationDelete**](IamProjectApi.md#IamProjectInvitationDelete) | **Delete** /iam/project/{projectId}/invitation/{invitationId} | Delete iam/project.invitation
+[**IamProjectInvitationGet**](IamProjectApi.md#IamProjectInvitationGet) | **Get** /iam/project/{projectId}/invitation/{invitationId} | Get iam/project.invitation
+[**IamProjectInvitationList**](IamProjectApi.md#IamProjectInvitationList) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
+[**IamProjectInvoiceList**](IamProjectApi.md#IamProjectInvoiceList) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
+[**IamProjectList**](IamProjectApi.md#IamProjectList) | **Get** /iam/project | List iam/project
+[**IamProjectOwnershipCreate**](IamProjectApi.md#IamProjectOwnershipCreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
+[**IamProjectOwnershipDelete**](IamProjectApi.md#IamProjectOwnershipDelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
+[**IamProjectOwnershipGet**](IamProjectApi.md#IamProjectOwnershipGet) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
+[**IamProjectOwnershipList**](IamProjectApi.md#IamProjectOwnershipList) | **Get** /iam/project/{projectId}/ownership | List iam/project.ownership
+[**IamProjectPaymentList**](IamProjectApi.md#IamProjectPaymentList) | **Get** /iam/project/{projectId}/payment | List iam/project.payment
+[**IamProjectProformaList**](IamProjectApi.md#IamProjectProformaList) | **Get** /iam/project/{projectId}/proforma | List iam/project.proforma
+[**IamProjectQuotaGet**](IamProjectApi.md#IamProjectQuotaGet) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
+[**IamProjectQuotaLimitPatch**](IamProjectApi.md#IamProjectQuotaLimitPatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
+[**IamProjectQuotaList**](IamProjectApi.md#IamProjectQuotaList) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
+[**IamProjectServiceGet**](IamProjectApi.md#IamProjectServiceGet) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
+[**IamProjectServiceList**](IamProjectApi.md#IamProjectServiceList) | **Get** /iam/project/{projectId}/service | List iam/project.service
+[**IamProjectTagCreate**](IamProjectApi.md#IamProjectTagCreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
+[**IamProjectTagDelete**](IamProjectApi.md#IamProjectTagDelete) | **Delete** /iam/project/{projectId}/tag/{tagId} | Delete iam/project.tag
+[**IamProjectTagGet**](IamProjectApi.md#IamProjectTagGet) | **Get** /iam/project/{projectId}/tag/{tagId} | Get iam/project.tag
+[**IamProjectTagList**](IamProjectApi.md#IamProjectTagList) | **Get** /iam/project/{projectId}/tag | List iam/project.tag
+[**IamProjectTagPut**](IamProjectApi.md#IamProjectTagPut) | **Put** /iam/project/{projectId}/tag | Replace iam/project.tag
+[**IamProjectThresholdCreate**](IamProjectApi.md#IamProjectThresholdCreate) | **Post** /iam/project/{projectId}/threshold | Create iam/project.threshold
+[**IamProjectThresholdDelete**](IamProjectApi.md#IamProjectThresholdDelete) | **Delete** /iam/project/{projectId}/threshold/{thresholdId} | Delete iam/project.threshold
+[**IamProjectThresholdGet**](IamProjectApi.md#IamProjectThresholdGet) | **Get** /iam/project/{projectId}/threshold/{thresholdId} | Get iam/project.threshold
+[**IamProjectThresholdList**](IamProjectApi.md#IamProjectThresholdList) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
+[**IamProjectUpdate**](IamProjectApi.md#IamProjectUpdate) | **Patch** /iam/project/{projectId} | Update iam/project
 
 
 
-## ProjectBillingList
+## IamProjectBillingList
 
-> []Billing ProjectBillingList(ctx, projectId, optional)
+> []Billing IamProjectBillingList(ctx, projectId, optional)
 
 List iam/project.billing
 
@@ -56,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
- **optional** | ***ProjectBillingListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamProjectBillingListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a ProjectBillingListOpts struct
+Optional parameters are passed through a pointer to a IamProjectBillingListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -88,9 +92,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCreate
+## IamProjectCreate
 
-> Project ProjectCreate(ctx, projectCreate, optional)
+> Project IamProjectCreate(ctx, iamProjectCreate, optional)
 
 Create iam/project
 
@@ -102,12 +106,12 @@ Create project
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectCreate** | [**ProjectCreate**](ProjectCreate.md)|  | 
- **optional** | ***ProjectCreateOpts** | optional parameters | nil if no parameters
+**iamProjectCreate** | [**IamProjectCreate**](IamProjectCreate.md)|  | 
+ **optional** | ***IamProjectCreateOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a ProjectCreateOpts struct
+Optional parameters are passed through a pointer to a IamProjectCreateOpts struct
 
 
 Name | Type | Description  | Notes
@@ -133,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCredentialStoreCreate
+## IamProjectCredentialStoreCreate
 
-> ProjectCredential ProjectCredentialStoreCreate(ctx, projectId, projectCredential)
+> ProjectCredential IamProjectCredentialStoreCreate(ctx, projectId, projectCredential)
 
 Create iam/project.credentialStore
 
@@ -168,9 +172,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCredentialStoreDelete
+## IamProjectCredentialStoreDelete
 
-> Project ProjectCredentialStoreDelete(ctx, projectId, credentialId)
+> Project IamProjectCredentialStoreDelete(ctx, projectId, credentialStoreId)
 
 Delete iam/project.credentialStore
 
@@ -183,7 +187,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
-**credentialId** | **string**| credentialId | 
+**credentialStoreId** | **string**| credentialStoreId | 
 
 ### Return type
 
@@ -203,9 +207,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCredentialStoreGet
+## IamProjectCredentialStoreGet
 
-> ProjectCredential ProjectCredentialStoreGet(ctx, projectId, credentialId)
+> ProjectCredential IamProjectCredentialStoreGet(ctx, projectId, credentialStoreId)
 
 Get iam/project.credentialStore
 
@@ -218,7 +222,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
-**credentialId** | **string**| credentialId | 
+**credentialStoreId** | **string**| credentialStoreId | 
 
 ### Return type
 
@@ -238,9 +242,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCredentialStoreList
+## IamProjectCredentialStoreList
 
-> []ProjectCredential ProjectCredentialStoreList(ctx, projectId)
+> []ProjectCredential IamProjectCredentialStoreList(ctx, projectId)
 
 List iam/project.credentialStore
 
@@ -272,9 +276,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectCredentialStorePatch
+## IamProjectCredentialStorePatch
 
-> ProjectCredential ProjectCredentialStorePatch(ctx, projectId, credentialId, projectCredentialStorePatch)
+> ProjectCredential IamProjectCredentialStorePatch(ctx, projectId, credentialStoreId, iamProjectCredentialStorePatch)
 
 Update iam/project.credentialStore
 
@@ -287,8 +291,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
-**credentialId** | **string**| credentialId | 
-**projectCredentialStorePatch** | [**ProjectCredentialStorePatch**](ProjectCredentialStorePatch.md)|  | 
+**credentialStoreId** | **string**| credentialStoreId | 
+**iamProjectCredentialStorePatch** | [**IamProjectCredentialStorePatch**](IamProjectCredentialStorePatch.md)|  | 
 
 ### Return type
 
@@ -308,9 +312,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectDelete
+## IamProjectDelete
 
-> ProjectDelete(ctx, projectId)
+> IamProjectDelete(ctx, projectId)
 
 Delete iam/project
 
@@ -342,9 +346,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectEventGet
+## IamProjectEventGet
 
-> Event ProjectEventGet(ctx, projectId, eventId)
+> Event IamProjectEventGet(ctx, projectId, eventId)
 
 Get iam/project.event
 
@@ -377,9 +381,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectEventList
+## IamProjectEventList
 
-> []Event ProjectEventList(ctx, projectId, optional)
+> []Event IamProjectEventList(ctx, projectId, optional)
 
 List iam/project.event
 
@@ -392,11 +396,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
- **optional** | ***ProjectEventListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamProjectEventListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a ProjectEventListOpts struct
+Optional parameters are passed through a pointer to a IamProjectEventListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -423,9 +427,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectGet
+## IamProjectGet
 
-> Project ProjectGet(ctx, projectId)
+> Project IamProjectGet(ctx, projectId)
 
 Get iam/project
 
@@ -457,13 +461,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectInvitationAccept
+## IamProjectInvitationAccept
 
-> Invitation ProjectInvitationAccept(ctx, projectId, invitationId, projectInvitationAccept)
+> Invitation IamProjectInvitationAccept(ctx, projectId, invitationId, iamProjectInvitationAccept)
 
-Create iam/project.actions
+Accept iam/project.invitation
 
-Create iam/project.actions
+action accept
 
 ### Required Parameters
 
@@ -473,7 +477,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
 **invitationId** | **string**| invitationId | 
-**projectInvitationAccept** | [**ProjectInvitationAccept**](ProjectInvitationAccept.md)|  | 
+**iamProjectInvitationAccept** | [**IamProjectInvitationAccept**](IamProjectInvitationAccept.md)|  | 
 
 ### Return type
 
@@ -493,9 +497,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectInvitationDelete
+## IamProjectInvitationDelete
 
-> ProjectInvitationDelete(ctx, projectId, invitationId)
+> IamProjectInvitationDelete(ctx, projectId, invitationId)
 
 Delete iam/project.invitation
 
@@ -528,9 +532,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectInvitationGet
+## IamProjectInvitationGet
 
-> Invitation ProjectInvitationGet(ctx, projectId, invitationId)
+> Invitation IamProjectInvitationGet(ctx, projectId, invitationId)
 
 Get iam/project.invitation
 
@@ -563,9 +567,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectInvitationList
+## IamProjectInvitationList
 
-> []Invitation ProjectInvitationList(ctx, projectId, optional)
+> []Invitation IamProjectInvitationList(ctx, projectId, optional)
 
 List iam/project.invitation
 
@@ -578,11 +582,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
- **optional** | ***ProjectInvitationListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamProjectInvitationListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a ProjectInvitationListOpts struct
+Optional parameters are passed through a pointer to a IamProjectInvitationListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -608,9 +612,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectInvoiceList
+## IamProjectInvoiceList
 
-> []Invoice ProjectInvoiceList(ctx, projectId)
+> []Invoice IamProjectInvoiceList(ctx, projectId)
 
 List iam/project.invoice
 
@@ -642,9 +646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectList
+## IamProjectList
 
-> []Project ProjectList(ctx, optional)
+> []Project IamProjectList(ctx, optional)
 
 List iam/project
 
@@ -656,11 +660,11 @@ List project
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **optional** | ***ProjectListOpts** | optional parameters | nil if no parameters
+ **optional** | ***IamProjectListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
 
-Optional parameters are passed through a pointer to a ProjectListOpts struct
+Optional parameters are passed through a pointer to a IamProjectListOpts struct
 
 
 Name | Type | Description  | Notes
@@ -691,9 +695,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectOwnershipCreate
+## IamProjectOwnershipCreate
 
-> Project ProjectOwnershipCreate(ctx, projectId, projectOwnershipCreate)
+> Project IamProjectOwnershipCreate(ctx, projectId, iamProjectOwnershipCreate)
 
 Create iam/project.ownership
 
@@ -706,7 +710,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
-**projectOwnershipCreate** | [**ProjectOwnershipCreate**](ProjectOwnershipCreate.md)|  | 
+**iamProjectOwnershipCreate** | [**IamProjectOwnershipCreate**](IamProjectOwnershipCreate.md)|  | 
 
 ### Return type
 
@@ -726,9 +730,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectOwnershipDelete
+## IamProjectOwnershipDelete
 
-> ProjectOwnershipDelete(ctx, projectId, ownershipId)
+> IamProjectOwnershipDelete(ctx, projectId, ownershipId)
 
 Delete iam/project.ownership
 
@@ -761,9 +765,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectOwnershipGet
+## IamProjectOwnershipGet
 
-> Ownership ProjectOwnershipGet(ctx, projectId, ownershipId)
+> Ownership IamProjectOwnershipGet(ctx, projectId, ownershipId)
 
 Get iam/project.ownership
 
@@ -796,9 +800,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectOwnershipList
+## IamProjectOwnershipList
 
-> []Ownership ProjectOwnershipList(ctx, projectId)
+> []Ownership IamProjectOwnershipList(ctx, projectId)
 
 List iam/project.ownership
 
@@ -830,9 +834,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectPaymentList
+## IamProjectPaymentList
 
-> []Payment ProjectPaymentList(ctx, projectId)
+> []Payment IamProjectPaymentList(ctx, projectId)
 
 List iam/project.payment
 
@@ -864,9 +868,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectProformaList
+## IamProjectProformaList
 
-> []Proforma ProjectProformaList(ctx, projectId)
+> []Proforma IamProjectProformaList(ctx, projectId)
 
 List iam/project.proforma
 
@@ -898,9 +902,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectQuotaGet
+## IamProjectQuotaGet
 
-> Quota ProjectQuotaGet(ctx, projectId, quotaId)
+> Quota IamProjectQuotaGet(ctx, projectId, quotaId)
 
 Get iam/project.quota
 
@@ -933,9 +937,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectQuotaLimitPatch
+## IamProjectQuotaLimitPatch
 
-> QuotaLimit ProjectQuotaLimitPatch(ctx, projectId, quotaId, projectQuotaLimitPatch)
+> QuotaLimit IamProjectQuotaLimitPatch(ctx, projectId, quotaId, iamProjectQuotaLimitPatch)
 
 Update iam/project.limit
 
@@ -949,7 +953,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
 **quotaId** | **string**| quotaId | 
-**projectQuotaLimitPatch** | [**ProjectQuotaLimitPatch**](ProjectQuotaLimitPatch.md)|  | 
+**iamProjectQuotaLimitPatch** | [**IamProjectQuotaLimitPatch**](IamProjectQuotaLimitPatch.md)|  | 
 
 ### Return type
 
@@ -969,9 +973,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectQuotaList
+## IamProjectQuotaList
 
-> []Quota ProjectQuotaList(ctx, projectId)
+> []Quota IamProjectQuotaList(ctx, projectId)
 
 List iam/project.quota
 
@@ -1003,9 +1007,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectServiceGet
+## IamProjectServiceGet
 
-> ResourceService ProjectServiceGet(ctx, projectId, serviceId)
+> ResourceService IamProjectServiceGet(ctx, projectId, serviceId)
 
 Get iam/project.service
 
@@ -1038,9 +1042,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectServiceList
+## IamProjectServiceList
 
-> []ResourceService ProjectServiceList(ctx, projectId)
+> []ResourceService IamProjectServiceList(ctx, projectId)
 
 List iam/project.service
 
@@ -1072,9 +1076,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectTagCreate
+## IamProjectTagCreate
 
-> Tag ProjectTagCreate(ctx, projectId, tag)
+> Tag IamProjectTagCreate(ctx, projectId, tag)
 
 Create iam/project.tag
 
@@ -1107,9 +1111,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectTagDelete
+## IamProjectTagDelete
 
-> ProjectTagDelete(ctx, projectId, tagId)
+> IamProjectTagDelete(ctx, projectId, tagId)
 
 Delete iam/project.tag
 
@@ -1142,9 +1146,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectTagGet
+## IamProjectTagGet
 
-> Tag ProjectTagGet(ctx, projectId, tagId)
+> Tag IamProjectTagGet(ctx, projectId, tagId)
 
 Get iam/project.tag
 
@@ -1177,9 +1181,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectTagList
+## IamProjectTagList
 
-> []Tag ProjectTagList(ctx, projectId)
+> []Tag IamProjectTagList(ctx, projectId)
 
 List iam/project.tag
 
@@ -1211,9 +1215,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectTagPut
+## IamProjectTagPut
 
-> []Tag ProjectTagPut(ctx, projectId, tag)
+> []Tag IamProjectTagPut(ctx, projectId, tag)
 
 Replace iam/project.tag
 
@@ -1246,9 +1250,148 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ProjectUpdate
+## IamProjectThresholdCreate
 
-> Project ProjectUpdate(ctx, projectId, projectUpdate)
+> ProjectThreshold IamProjectThresholdCreate(ctx, projectId, iamProjectThresholdCreate)
+
+Create iam/project.threshold
+
+Create iam/project.threshold
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**iamProjectThresholdCreate** | [**IamProjectThresholdCreate**](IamProjectThresholdCreate.md)|  | 
+
+### Return type
+
+[**ProjectThreshold**](project.threshold.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectThresholdDelete
+
+> IamProjectThresholdDelete(ctx, projectId, thresholdId)
+
+Delete iam/project.threshold
+
+Delete iam/project.threshold
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**thresholdId** | **string**| thresholdId | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectThresholdGet
+
+> ProjectThreshold IamProjectThresholdGet(ctx, projectId, thresholdId)
+
+Get iam/project.threshold
+
+Get iam/project.threshold
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**thresholdId** | **string**| thresholdId | 
+
+### Return type
+
+[**ProjectThreshold**](project.threshold.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectThresholdList
+
+> []ProjectThreshold IamProjectThresholdList(ctx, projectId)
+
+List iam/project.threshold
+
+List iam/project.threshold
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+
+### Return type
+
+[**[]ProjectThreshold**](project.threshold.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectUpdate
+
+> Project IamProjectUpdate(ctx, projectId, iamProjectUpdate)
 
 Update iam/project
 
@@ -1261,7 +1404,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **projectId** | **string**| Project Id | 
-**projectUpdate** | [**ProjectUpdate**](ProjectUpdate.md)|  | 
+**iamProjectUpdate** | [**IamProjectUpdate**](IamProjectUpdate.md)|  | 
 
 ### Return type
 

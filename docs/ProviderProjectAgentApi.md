@@ -21,9 +21,9 @@ Method | HTTP request | Description
 [**ProviderProjectAgentInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/inspect | Inspect provider/agent
 [**ProviderProjectAgentList**](ProviderProjectAgentApi.md#ProviderProjectAgentList) | **Get** /provider/{locationId}/project/{projectId}/agent | List provider/agent
 [**ProviderProjectAgentResourceEventList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceEventList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
-[**ProviderProjectAgentResourceInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Create provider/agent.actions
+[**ProviderProjectAgentResourceInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 [**ProviderProjectAgentResourceList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
-[**ProviderProjectAgentResourceRecreate**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceRecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Create provider/agent.actions
+[**ProviderProjectAgentResourceRecreate**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceRecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Recreate provider/agent.resource
 [**ProviderProjectAgentServiceGet**](ProviderProjectAgentApi.md#ProviderProjectAgentServiceGet) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/service/{serviceId} | Get provider/agent.service
 [**ProviderProjectAgentServiceList**](ProviderProjectAgentApi.md#ProviderProjectAgentServiceList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/service | List provider/agent.service
 [**ProviderProjectAgentStart**](ProviderProjectAgentApi.md#ProviderProjectAgentStart) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/start | Start provider/agent
@@ -732,9 +732,9 @@ Name | Type | Description  | Notes
 
 > interface{} ProviderProjectAgentResourceInspect(ctx, projectId, locationId, agentId, resourceId)
 
-Create provider/agent.actions
+Inspect provider/agent.resource
 
-Create provider/agent.actions
+action inspect
 
 ### Required Parameters
 
@@ -805,9 +805,9 @@ Name | Type | Description  | Notes
 
 > AgentResource ProviderProjectAgentResourceRecreate(ctx, projectId, locationId, agentId, resourceId)
 
-Create provider/agent.actions
+Recreate provider/agent.resource
 
-Create provider/agent.actions
+action recreate
 
 ### Required Parameters
 

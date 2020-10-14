@@ -10,5 +10,9 @@
 package h1
 // ProjectThreshold struct for ProjectThreshold
 type ProjectThreshold struct {
-	Credits ProjectThresholdCredits `json:"credits,omitempty"`
+	Id string `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
+	Type string `json:"type,omitempty"`
+	Value float32 `json:"value,omitempty"`
+	Uri string `json:"uri,omitempty"`
 }

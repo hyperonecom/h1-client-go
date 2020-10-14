@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**ComputeProjectVmIsoCreate**](ComputeProjectVmApi.md#ComputeProjectVmIsoCreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | Create compute/vm.iso
 [**ComputeProjectVmIsoList**](ComputeProjectVmApi.md#ComputeProjectVmIsoList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | List compute/vm.iso
 [**ComputeProjectVmList**](ComputeProjectVmApi.md#ComputeProjectVmList) | **Get** /compute/{locationId}/project/{projectId}/vm | List compute/vm
+[**ComputeProjectVmMetricList**](ComputeProjectVmApi.md#ComputeProjectVmMetricList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric | List compute/vm.metric
 [**ComputeProjectVmPasswordReset**](ComputeProjectVmApi.md#ComputeProjectVmPasswordReset) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/password_reset | Password reset compute/vm
 [**ComputeProjectVmRestart**](ComputeProjectVmApi.md#ComputeProjectVmRestart) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/restart | Restart compute/vm
 [**ComputeProjectVmSerialport**](ComputeProjectVmApi.md#ComputeProjectVmSerialport) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport | Serialport compute/vm
@@ -521,6 +522,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Vm**](vm.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ComputeProjectVmMetricList
+
+> []Metric ComputeProjectVmMetricList(ctx, projectId, locationId, vmId, optional)
+
+List compute/vm.metric
+
+List compute/vm.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**vmId** | **string**| Vm Id | 
+ **optional** | ***ComputeProjectVmMetricListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ComputeProjectVmMetricListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **period** | **optional.String**| period | [default to 1d]
+
+### Return type
+
+[**[]Metric**](metric.md)
 
 ### Authorization
 

@@ -3095,8 +3095,8 @@ func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceSnapshotDelete(
 }
 
 /*
-WebsiteProjectInstanceSnapshotDownload Create website/instance.actions
-Create website/instance.actions
+WebsiteProjectInstanceSnapshotDownload Download website/instance.snapshot
+action download
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param locationId Location Id
