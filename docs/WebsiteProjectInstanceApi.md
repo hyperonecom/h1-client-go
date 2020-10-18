@@ -27,6 +27,9 @@ Method | HTTP request | Description
 [**WebsiteProjectInstanceLinkGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLinkGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
 [**WebsiteProjectInstanceLinkList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLinkList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
 [**WebsiteProjectInstanceList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceList) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
+[**WebsiteProjectInstanceMetricGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
+[**WebsiteProjectInstanceMetricList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
+[**WebsiteProjectInstanceMetricPointList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricPointList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
 [**WebsiteProjectInstanceRestart**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceRestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/restart | Restart website/instance
 [**WebsiteProjectInstanceServiceGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceServiceGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get website/instance.service
 [**WebsiteProjectInstanceServiceList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceServiceList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service | List website/instance.service
@@ -919,6 +922,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Website**](website.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteProjectInstanceMetricGet
+
+> Metric WebsiteProjectInstanceMetricGet(ctx, projectId, locationId, instanceId, metricId)
+
+Get website/instance.metric
+
+Get website/instance.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+**metricId** | **string**| metricId | 
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteProjectInstanceMetricList
+
+> []Metric WebsiteProjectInstanceMetricList(ctx, projectId, locationId, instanceId)
+
+List website/instance.metric
+
+List website/instance.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteProjectInstanceMetricPointList
+
+> []Serie WebsiteProjectInstanceMetricPointList(ctx, projectId, locationId, instanceId, metricId, optional)
+
+List website/instance.point
+
+List website/instance.point
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+**metricId** | **string**| metricId | 
+ **optional** | ***WebsiteProjectInstanceMetricPointListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a WebsiteProjectInstanceMetricPointListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **optional.String**| interval | 
+ **timespan** | **optional.String**| timespan | 
+
+### Return type
+
+[**[]Serie**](serie.md)
 
 ### Authorization
 

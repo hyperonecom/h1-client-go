@@ -8,10 +8,8 @@
  */
 
 package h1
-// Metric struct for Metric
-type Metric struct {
-	Id string `json:"id"`
+// MetricDimension struct for MetricDimension
+type MetricDimension struct {
 	Name string `json:"name"`
-	Unit string `json:"unit"`
-	Dimension []MetricDimension `json:"dimension,omitempty"`
+	Description string `json:"description"`
 }

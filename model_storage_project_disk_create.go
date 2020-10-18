@@ -13,7 +13,7 @@ type StorageProjectDiskCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service"`
 	Size float32 `json:"size"`
-	Source OneOfAnyTypeAnyType `json:"source,omitempty"`
+	Source interface{} `json:"source,omitempty"`
 	Vm string `json:"vm,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }

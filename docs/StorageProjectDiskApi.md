@@ -13,6 +13,9 @@ Method | HTTP request | Description
 [**StorageProjectDiskEventList**](StorageProjectDiskApi.md#StorageProjectDiskEventList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/event | List storage/disk.event
 [**StorageProjectDiskGet**](StorageProjectDiskApi.md#StorageProjectDiskGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId} | Get storage/disk
 [**StorageProjectDiskList**](StorageProjectDiskApi.md#StorageProjectDiskList) | **Get** /storage/{locationId}/project/{projectId}/disk | List storage/disk
+[**StorageProjectDiskMetricGet**](StorageProjectDiskApi.md#StorageProjectDiskMetricGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId} | Get storage/disk.metric
+[**StorageProjectDiskMetricList**](StorageProjectDiskApi.md#StorageProjectDiskMetricList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric | List storage/disk.metric
+[**StorageProjectDiskMetricPointList**](StorageProjectDiskApi.md#StorageProjectDiskMetricPointList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/point | List storage/disk.point
 [**StorageProjectDiskResize**](StorageProjectDiskApi.md#StorageProjectDiskResize) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/resize | Resize storage/disk
 [**StorageProjectDiskServiceGet**](StorageProjectDiskApi.md#StorageProjectDiskServiceGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service/{serviceId} | Get storage/disk.service
 [**StorageProjectDiskServiceList**](StorageProjectDiskApi.md#StorageProjectDiskServiceList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service | List storage/disk.service
@@ -418,6 +421,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Disk**](disk.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricGet
+
+> Metric StorageProjectDiskMetricGet(ctx, projectId, locationId, diskId, metricId)
+
+Get storage/disk.metric
+
+Get storage/disk.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**diskId** | **string**| Disk Id | 
+**metricId** | **string**| metricId | 
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricList
+
+> []Metric StorageProjectDiskMetricList(ctx, projectId, locationId, diskId)
+
+List storage/disk.metric
+
+List storage/disk.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**diskId** | **string**| Disk Id | 
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricPointList
+
+> []Serie StorageProjectDiskMetricPointList(ctx, projectId, locationId, diskId, metricId, optional)
+
+List storage/disk.point
+
+List storage/disk.point
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**diskId** | **string**| Disk Id | 
+**metricId** | **string**| metricId | 
+ **optional** | ***StorageProjectDiskMetricPointListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a StorageProjectDiskMetricPointListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **optional.String**| interval | 
+ **timespan** | **optional.String**| timespan | 
+
+### Return type
+
+[**[]Serie**](serie.md)
 
 ### Authorization
 

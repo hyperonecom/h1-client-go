@@ -75,7 +75,9 @@ Class | Method | HTTP request | Description
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoCreate**](docs/ComputeProjectVmApi.md#computeprojectvmisocreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | Create compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoList**](docs/ComputeProjectVmApi.md#computeprojectvmisolist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | List compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmList**](docs/ComputeProjectVmApi.md#computeprojectvmlist) | **Get** /compute/{locationId}/project/{projectId}/vm | List compute/vm
+*ComputeProjectVmApi* | [**ComputeProjectVmMetricGet**](docs/ComputeProjectVmApi.md#computeprojectvmmetricget) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId} | Get compute/vm.metric
 *ComputeProjectVmApi* | [**ComputeProjectVmMetricList**](docs/ComputeProjectVmApi.md#computeprojectvmmetriclist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric | List compute/vm.metric
+*ComputeProjectVmApi* | [**ComputeProjectVmMetricPointList**](docs/ComputeProjectVmApi.md#computeprojectvmmetricpointlist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}/point | List compute/vm.point
 *ComputeProjectVmApi* | [**ComputeProjectVmPasswordReset**](docs/ComputeProjectVmApi.md#computeprojectvmpasswordreset) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/password_reset | Password reset compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmRestart**](docs/ComputeProjectVmApi.md#computeprojectvmrestart) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/restart | Restart compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmSerialport**](docs/ComputeProjectVmApi.md#computeprojectvmserialport) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport | Serialport compute/vm
@@ -407,6 +409,9 @@ Class | Method | HTTP request | Description
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpEventList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpeventlist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/event | List networking/netadp.event
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId} | Get networking/netadp
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadplist) | **Get** /networking/{locationId}/project/{projectId}/netadp | List networking/netadp
+*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetricget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId} | Get networking/netadp.metric
+*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetriclist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric | List networking/netadp.metric
+*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricPointList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetricpointlist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}/point | List networking/netadp.point
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpServiceGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpserviceget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service/{serviceId} | Get networking/netadp.service
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpServiceList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpservicelist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service | List networking/netadp.service
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpTagCreate**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadptagcreate) | **Post** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/tag | Create networking/netadp.tag
@@ -485,6 +490,9 @@ Class | Method | HTTP request | Description
 *StorageProjectDiskApi* | [**StorageProjectDiskEventList**](docs/StorageProjectDiskApi.md#storageprojectdiskeventlist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/event | List storage/disk.event
 *StorageProjectDiskApi* | [**StorageProjectDiskGet**](docs/StorageProjectDiskApi.md#storageprojectdiskget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId} | Get storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskList**](docs/StorageProjectDiskApi.md#storageprojectdisklist) | **Get** /storage/{locationId}/project/{projectId}/disk | List storage/disk
+*StorageProjectDiskApi* | [**StorageProjectDiskMetricGet**](docs/StorageProjectDiskApi.md#storageprojectdiskmetricget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId} | Get storage/disk.metric
+*StorageProjectDiskApi* | [**StorageProjectDiskMetricList**](docs/StorageProjectDiskApi.md#storageprojectdiskmetriclist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric | List storage/disk.metric
+*StorageProjectDiskApi* | [**StorageProjectDiskMetricPointList**](docs/StorageProjectDiskApi.md#storageprojectdiskmetricpointlist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/point | List storage/disk.point
 *StorageProjectDiskApi* | [**StorageProjectDiskResize**](docs/StorageProjectDiskApi.md#storageprojectdiskresize) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/resize | Resize storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskServiceGet**](docs/StorageProjectDiskApi.md#storageprojectdiskserviceget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service/{serviceId} | Get storage/disk.service
 *StorageProjectDiskApi* | [**StorageProjectDiskServiceList**](docs/StorageProjectDiskApi.md#storageprojectdiskservicelist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service | List storage/disk.service
@@ -594,6 +602,9 @@ Class | Method | HTTP request | Description
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinkget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinklist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelist) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetriclist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricPointList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricpointlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceRestart**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancerestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/restart | Restart website/instance
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceserviceget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get website/instance.service
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceservicelist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service | List website/instance.service
@@ -718,7 +729,7 @@ Class | Method | HTTP request | Description
  - [JournalCredential](docs/JournalCredential.md)
  - [MessageData](docs/MessageData.md)
  - [Metric](docs/Metric.md)
- - [MetricScale](docs/MetricScale.md)
+ - [MetricDimension](docs/MetricDimension.md)
  - [Netadp](docs/Netadp.md)
  - [Netgw](docs/Netgw.md)
  - [NetgwPrivate](docs/NetgwPrivate.md)
@@ -773,6 +784,7 @@ Class | Method | HTTP request | Description
  - [Role](docs/Role.md)
  - [Sa](docs/Sa.md)
  - [SaCredential](docs/SaCredential.md)
+ - [Serie](docs/Serie.md)
  - [Service](docs/Service.md)
  - [ServiceBilling](docs/ServiceBilling.md)
  - [ServiceBillingPrice](docs/ServiceBillingPrice.md)
@@ -1075,6 +1087,9 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.domain/create**: 
  - **website/instance.domain/get**: 
  - **website/instance.domain/delete**: 
+ - **website/instance.metric/list**: 
+ - **website/instance.metric/get**: 
+ - **website/instance.point/list**: 
  - **website/instance.service/list**: 
  - **website/instance.service/get**: 
  - **website/instance.tag/list**: 
@@ -1116,6 +1131,9 @@ r, err := client.Service.Operation(auth, args)
  - **storage/disk/detach**: 
  - **storage/disk/read**: 
  - **storage/disk/transfer**: 
+ - **storage/disk.metric/list**: 
+ - **storage/disk.metric/get**: 
+ - **storage/disk.point/list**: 
  - **storage/disk.service/list**: 
  - **storage/disk.service/get**: 
  - **storage/disk.tag/list**: 
@@ -1203,6 +1221,9 @@ r, err := client.Service.Operation(auth, args)
  - **networking/netadp/get**: 
  - **networking/netadp.firewall/update**: 
  - **networking/netadp/delete**: 
+ - **networking/netadp.metric/list**: 
+ - **networking/netadp.metric/get**: 
+ - **networking/netadp.point/list**: 
  - **networking/netadp.service/list**: 
  - **networking/netadp.service/get**: 
  - **networking/netadp.tag/list**: 
@@ -1350,8 +1371,10 @@ r, err := client.Service.Operation(auth, args)
  - **compute/vm/flavour**: 
  - **compute/vm/console**: 
  - **compute/vm.serialport/read**: 
- - **compute/vm.metric/list**: 
  - **storage/iso/attach**: 
+ - **compute/vm.metric/list**: 
+ - **compute/vm.metric/get**: 
+ - **compute/vm.point/list**: 
  - **compute/vm.service/list**: 
  - **compute/vm.service/get**: 
  - **compute/vm.tag/list**: 

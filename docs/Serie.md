@@ -1,13 +1,11 @@
-# Metric
+# Serie
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
-**Name** | **string** |  | 
-**Unit** | **string** |  | 
-**Dimension** | [**[]MetricDimension**](metric_dimension.md) |  | [optional] 
+**Time** | [**time.Time**](time.Time.md) |  | 
+**Value** | **float32** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12291,6 +12291,197 @@ paths:
       - website_project_instance
       x-permissions:
       - website/instance.domain/get
+  /website/{locationId}/project/{projectId}/instance/{instanceId}/metric:
+    get:
+      description: List website/instance.metric
+      operationId: website_project_instance_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Instance Id
+        explode: false
+        in: path
+        name: instanceId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List website/instance.metric
+      tags:
+      - website_project_instance
+      x-permissions:
+      - website/instance.metric/list
+  /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}:
+    get:
+      description: Get website/instance.metric
+      operationId: website_project_instance_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Instance Id
+        explode: false
+        in: path
+        name: instanceId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get website/instance.metric
+      tags:
+      - website_project_instance
+      x-permissions:
+      - website/instance.metric/get
+  /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point:
+    get:
+      description: List website/instance.point
+      operationId: website_project_instance_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Instance Id
+        explode: false
+        in: path
+        name: instanceId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/serie'
+                title: Serie collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List website/instance.point
+      tags:
+      - website_project_instance
+      x-permissions:
+      - website/instance.point/list
   /website/{locationId}/project/{projectId}/instance/{instanceId}/service:
     get:
       description: List website/instance.service
@@ -14951,6 +15142,197 @@ paths:
       - storage/disk/transfer
       x-state:
       - Detached
+  /storage/{locationId}/project/{projectId}/disk/{diskId}/metric:
+    get:
+      description: List storage/disk.metric
+      operationId: storage_project_disk_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Disk Id
+        explode: false
+        in: path
+        name: diskId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List storage/disk.metric
+      tags:
+      - storage_project_disk
+      x-permissions:
+      - storage/disk.metric/list
+  /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}:
+    get:
+      description: Get storage/disk.metric
+      operationId: storage_project_disk_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Disk Id
+        explode: false
+        in: path
+        name: diskId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get storage/disk.metric
+      tags:
+      - storage_project_disk
+      x-permissions:
+      - storage/disk.metric/get
+  /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/point:
+    get:
+      description: List storage/disk.point
+      operationId: storage_project_disk_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Disk Id
+        explode: false
+        in: path
+        name: diskId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/serie'
+                title: Serie collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List storage/disk.point
+      tags:
+      - storage_project_disk
+      x-permissions:
+      - storage/disk.point/list
   /storage/{locationId}/project/{projectId}/disk/{diskId}/service:
     get:
       description: List storage/disk.service
@@ -20335,6 +20717,197 @@ paths:
       summary: Update networking/netadp
       tags:
       - networking_project_netadp
+  /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric:
+    get:
+      description: List networking/netadp.metric
+      operationId: networking_project_netadp_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Netadp Id
+        explode: false
+        in: path
+        name: netadpId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List networking/netadp.metric
+      tags:
+      - networking_project_netadp
+      x-permissions:
+      - networking/netadp.metric/list
+  /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}:
+    get:
+      description: Get networking/netadp.metric
+      operationId: networking_project_netadp_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Netadp Id
+        explode: false
+        in: path
+        name: netadpId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get networking/netadp.metric
+      tags:
+      - networking_project_netadp
+      x-permissions:
+      - networking/netadp.metric/get
+  /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}/point:
+    get:
+      description: List networking/netadp.point
+      operationId: networking_project_netadp_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Netadp Id
+        explode: false
+        in: path
+        name: netadpId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/serie'
+                title: Serie collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List networking/netadp.point
+      tags:
+      - networking_project_netadp
+      x-permissions:
+      - networking/netadp.point/list
   /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service:
     get:
       description: List networking/netadp.service
@@ -30492,74 +31065,6 @@ paths:
       - compute/vm.serialport/read
       x-state:
       - Running
-  /compute/{locationId}/project/{projectId}/vm/{vmId}/metric:
-    get:
-      description: List compute/vm.metric
-      operationId: compute_project_vm_metric_list
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Location Id
-        explode: false
-        in: path
-        name: locationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Vm Id
-        explode: false
-        in: path
-        name: vmId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: period
-        explode: true
-        in: query
-        name: period
-        required: false
-        schema:
-          default: 1d
-          enum:
-          - 1d
-          - 12h
-          - 6h
-          - 1h
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/metric'
-                title: Metric collection
-                type: array
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: List compute/vm.metric
-      tags:
-      - compute_project_vm
-      x-permissions:
-      - compute/vm.metric/list
   /compute/{locationId}/project/{projectId}/vm/{vmId}/disk:
     get:
       description: List compute/vm.disk
@@ -30780,6 +31285,197 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm/use
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/metric:
+    get:
+      description: List compute/vm.metric
+      operationId: compute_project_vm_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List compute/vm.metric
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.metric/list
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}:
+    get:
+      description: Get compute/vm.metric
+      operationId: compute_project_vm_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get compute/vm.metric
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.metric/get
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}/point:
+    get:
+      description: List compute/vm.point
+      operationId: compute_project_vm_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/serie'
+                title: Serie collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List compute/vm.point
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.point/list
   /compute/{locationId}/project/{projectId}/vm/{vmId}/service:
     get:
       description: List compute/vm.service
@@ -35419,6 +36115,52 @@ components:
       - type
       - value
       type: object
+    metric:
+      example:
+        unit: unit
+        name: name
+        id: id
+        dimension:
+        - name: name
+          description: description
+        - name: name
+          description: description
+      properties:
+        id:
+          title: Metric id
+          type: string
+        name:
+          title: Metric name
+          type: string
+        unit:
+          title: Metric unit
+          type: string
+        dimension:
+          items:
+            $ref: '#/components/schemas/metric_dimension'
+          title: Dimension collection
+          type: array
+      required:
+      - id
+      - name
+      - unit
+      type: object
+    serie:
+      example:
+        time: 2000-01-23T04:56:07.000+00:00
+        value: 0.8008281904610115
+      properties:
+        time:
+          format: date-time
+          title: Serie time
+          type: string
+        value:
+          title: Serie value
+          type: number
+      required:
+      - time
+      - value
+      type: object
     website_project_instance_create:
       format: create instance
       properties:
@@ -37786,57 +38528,6 @@ components:
           x-permissions:
           - storage/vault.tag/list
       type: object
-    metric:
-      example:
-        unit: unit
-        resource: resource
-        columns:
-        - columns
-        - columns
-        values:
-        - - 1.4658129805029452
-          - 1.4658129805029452
-        - - 1.4658129805029452
-          - 1.4658129805029452
-        name: name
-        scale:
-          min: 0.8008281904610115
-          max: 6.027456183070403
-        id: id
-      properties:
-        id:
-          title: Metric id
-          type: string
-        name:
-          title: Metric name
-          type: string
-        unit:
-          title: Metric unit
-          type: string
-        resource:
-          title: Metric resource
-          type: string
-        scale:
-          $ref: '#/components/schemas/Metric_scale'
-        columns:
-          items:
-            type: string
-          title: Columns collection
-          type: array
-        values:
-          items:
-            items:
-              type: number
-            title: Values collection
-            type: array
-          title: Values collection
-          type: array
-      required:
-      - id
-      - name
-      - resource
-      - unit
-      type: object
     compute_project_vm_create:
       format: create vm
       properties:
@@ -38817,6 +39508,20 @@ components:
           type: string
         id:
           type: string
+    metric_dimension:
+      example:
+        name: name
+        description: description
+      properties:
+        name:
+          title: Dimension name
+          type: string
+        description:
+          title: Dimension description
+          type: string
+      required:
+      - description
+      - name
     Zone_source:
       properties:
         dnsProbing:
@@ -38916,17 +39621,6 @@ components:
           items:
             type: string
           type: array
-    Metric_scale:
-      example:
-        min: 0.8008281904610115
-        max: 6.027456183070403
-      properties:
-        min:
-          title: Scale min
-          type: number
-        max:
-          title: Scale max
-          type: number
     compute_project_vm_create_credential:
       properties:
         type:
@@ -39325,6 +40019,9 @@ components:
             website/instance.domain/create: ""
             website/instance.domain/get: ""
             website/instance.domain/delete: ""
+            website/instance.metric/list: ""
+            website/instance.metric/get: ""
+            website/instance.point/list: ""
             website/instance.service/list: ""
             website/instance.service/get: ""
             website/instance.tag/list: ""
@@ -39366,6 +40063,9 @@ components:
             storage/disk/detach: ""
             storage/disk/read: ""
             storage/disk/transfer: ""
+            storage/disk.metric/list: ""
+            storage/disk.metric/get: ""
+            storage/disk.point/list: ""
             storage/disk.service/list: ""
             storage/disk.service/get: ""
             storage/disk.tag/list: ""
@@ -39453,6 +40153,9 @@ components:
             networking/netadp/get: ""
             networking/netadp.firewall/update: ""
             networking/netadp/delete: ""
+            networking/netadp.metric/list: ""
+            networking/netadp.metric/get: ""
+            networking/netadp.point/list: ""
             networking/netadp.service/list: ""
             networking/netadp.service/get: ""
             networking/netadp.tag/list: ""
@@ -39600,8 +40303,10 @@ components:
             compute/vm/flavour: ""
             compute/vm/console: ""
             compute/vm.serialport/read: ""
-            compute/vm.metric/list: ""
             storage/iso/attach: ""
+            compute/vm.metric/list: ""
+            compute/vm.metric/get: ""
+            compute/vm.point/list: ""
             compute/vm.service/list: ""
             compute/vm.service/get: ""
             compute/vm.tag/list: ""

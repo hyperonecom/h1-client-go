@@ -1,13 +1,11 @@
-# Metric
+# MetricDimension
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
 **Name** | **string** |  | 
-**Unit** | **string** |  | 
-**Dimension** | [**[]MetricDimension**](metric_dimension.md) |  | [optional] 
+**Description** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

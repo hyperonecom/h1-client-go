@@ -10,6 +10,9 @@ Method | HTTP request | Description
 [**NetworkingProjectNetadpEventList**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpEventList) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/event | List networking/netadp.event
 [**NetworkingProjectNetadpGet**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpGet) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId} | Get networking/netadp
 [**NetworkingProjectNetadpList**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpList) | **Get** /networking/{locationId}/project/{projectId}/netadp | List networking/netadp
+[**NetworkingProjectNetadpMetricGet**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpMetricGet) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId} | Get networking/netadp.metric
+[**NetworkingProjectNetadpMetricList**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpMetricList) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric | List networking/netadp.metric
+[**NetworkingProjectNetadpMetricPointList**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpMetricPointList) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}/point | List networking/netadp.point
 [**NetworkingProjectNetadpServiceGet**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpServiceGet) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service/{serviceId} | Get networking/netadp.service
 [**NetworkingProjectNetadpServiceList**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpServiceList) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service | List networking/netadp.service
 [**NetworkingProjectNetadpTagCreate**](NetworkingProjectNetadpApi.md#NetworkingProjectNetadpTagCreate) | **Post** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/tag | Create networking/netadp.tag
@@ -265,6 +268,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Netadp**](netadp.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NetworkingProjectNetadpMetricGet
+
+> Metric NetworkingProjectNetadpMetricGet(ctx, projectId, locationId, netadpId, metricId)
+
+Get networking/netadp.metric
+
+Get networking/netadp.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**netadpId** | **string**| Netadp Id | 
+**metricId** | **string**| metricId | 
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NetworkingProjectNetadpMetricList
+
+> []Metric NetworkingProjectNetadpMetricList(ctx, projectId, locationId, netadpId)
+
+List networking/netadp.metric
+
+List networking/netadp.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**netadpId** | **string**| Netadp Id | 
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NetworkingProjectNetadpMetricPointList
+
+> []Serie NetworkingProjectNetadpMetricPointList(ctx, projectId, locationId, netadpId, metricId, optional)
+
+List networking/netadp.point
+
+List networking/netadp.point
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**netadpId** | **string**| Netadp Id | 
+**metricId** | **string**| metricId | 
+ **optional** | ***NetworkingProjectNetadpMetricPointListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a NetworkingProjectNetadpMetricPointListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **optional.String**| interval | 
+ **timespan** | **optional.String**| timespan | 
+
+### Return type
+
+[**[]Serie**](serie.md)
 
 ### Authorization
 
