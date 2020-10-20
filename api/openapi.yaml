@@ -10695,6 +10695,78 @@ paths:
       - website/instance/restart
       x-state:
       - Running
+  /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log:
+    post:
+      description: action log
+      operationId: website_project_instance_log
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Instance Id
+        explode: false
+        in: path
+        name: instanceId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/website_project_instance_log'
+        required: true
+      responses:
+        "201":
+          description: Log request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Log website/instance
+      tags:
+      - website_project_instance
+      x-permissions:
+      - website/instance/log
+      x-state:
+      - Running
+      - Restarting
   /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer:
     post:
       description: action transfer
@@ -36222,6 +36294,17 @@ components:
           x-permissions:
           - website/instance.image/update
       type: object
+    website_project_instance_log:
+      format: Action log
+      properties:
+        type:
+          default: runtime
+          enum:
+          - runtime
+          - access
+          title: Instance type
+          type: string
+      type: object
     website_project_instance_transfer:
       format: Action transfer
       properties:
@@ -39992,6 +40075,7 @@ components:
             website/instance/start: ""
             website/instance/stop: ""
             website/instance/restart: ""
+            website/instance/log: ""
             website/instance/transfer: ""
             website/instance.snapshot/list: ""
             website/instance.snapshot/create: ""

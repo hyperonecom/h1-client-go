@@ -602,6 +602,7 @@ Class | Method | HTTP request | Description
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinkget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinklist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelist) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLog**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelog) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log | Log website/instance
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetriclist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricPointList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricpointlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
@@ -828,6 +829,7 @@ Class | Method | HTTP request | Description
  - [WebsiteLink](docs/WebsiteLink.md)
  - [WebsiteProjectInstanceCreate](docs/WebsiteProjectInstanceCreate.md)
  - [WebsiteProjectInstanceCredentialPatch](docs/WebsiteProjectInstanceCredentialPatch.md)
+ - [WebsiteProjectInstanceLog](docs/WebsiteProjectInstanceLog.md)
  - [WebsiteProjectInstanceSnapshotDownload](docs/WebsiteProjectInstanceSnapshotDownload.md)
  - [WebsiteProjectInstanceTransfer](docs/WebsiteProjectInstanceTransfer.md)
  - [WebsiteProjectInstanceUpdate](docs/WebsiteProjectInstanceUpdate.md)
@@ -1060,6 +1062,7 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance/start**: 
  - **website/instance/stop**: 
  - **website/instance/restart**: 
+ - **website/instance/log**: 
  - **website/instance/transfer**: 
  - **website/instance.snapshot/list**: 
  - **website/instance.snapshot/create**: 
