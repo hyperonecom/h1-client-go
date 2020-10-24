@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 
 **State** | **string** |  | [optional] 
+**Organisation** | **string** |  | [optional] 
 **Uri** | **string** |  | [optional] 
 **Billing** | [**OrganisationBilling**](organisation_billing.md) |  | [optional] 
 **Transfer** | [**OrganisationTransfer**](organisation_transfer.md) |  | [optional] 

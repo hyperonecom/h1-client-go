@@ -27,32 +27,124 @@ var (
 // ComputeProjectVmApiService ComputeProjectVmApi service
 type ComputeProjectVmApiService service
 
-// ComputeProjectVmConsoleOpts Optional parameters for the method 'ComputeProjectVmConsole'
-type ComputeProjectVmConsoleOpts struct {
-    XIdempotencyKey optional.String
-}
-
 /*
-ComputeProjectVmConsole Console compute/vm
-action console
+ComputeProjectVmConnectGet Get compute/vm.connect
+Get compute/vm.connect
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param locationId Location Id
  * @param vmId Vm Id
- * @param optional nil or *ComputeProjectVmConsoleOpts - Optional Parameters:
- * @param "XIdempotencyKey" (optional.String) -  Idempotency key
+ * @param connectId connectId
+@return Connect
 */
-func (a *ComputeProjectVmApiService) ComputeProjectVmConsole(ctx _context.Context, projectId string, locationId string, vmId string, localVarOptionals *ComputeProjectVmConsoleOpts) (*_nethttp.Response, error) {
+func (a *ComputeProjectVmApiService) ComputeProjectVmConnectGet(ctx _context.Context, projectId string, locationId string, vmId string, connectId string) (Connect, *_nethttp.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
+		localVarReturnValue  Connect
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/compute/{locationId}/project/{projectId}/vm/{vmId}/actions/console"
+	localVarPath := a.client.cfg.BasePath + "/compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", _neturl.QueryEscape(parameterToString(vmId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"connectId"+"}", _neturl.QueryEscape(parameterToString(connectId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+ComputeProjectVmConnectList List compute/vm.connect
+List compute/vm.connect
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param vmId Vm Id
+@return []Connect
+*/
+func (a *ComputeProjectVmApiService) ComputeProjectVmConnectList(ctx _context.Context, projectId string, locationId string, vmId string) ([]Connect, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Connect
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/compute/{locationId}/project/{projectId}/vm/{vmId}/connect"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
@@ -80,9 +172,104 @@ func (a *ComputeProjectVmApiService) ComputeProjectVmConsole(ctx _context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if localVarOptionals != nil && localVarOptionals.XIdempotencyKey.IsSet() {
-		localVarHeaderParams["x-idempotency-key"] = parameterToString(localVarOptionals.XIdempotencyKey.Value(), "")
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
 	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+ComputeProjectVmConnectOpen Open compute/vm.connect
+action open
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param vmId Vm Id
+ * @param connectId connectId
+ * @param computeProjectVmConnectOpen
+*/
+func (a *ComputeProjectVmApiService) ComputeProjectVmConnectOpen(ctx _context.Context, projectId string, locationId string, vmId string, connectId string, computeProjectVmConnectOpen ComputeProjectVmConnectOpen) (*_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}/actions/open"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"vmId"+"}", _neturl.QueryEscape(parameterToString(vmId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"connectId"+"}", _neturl.QueryEscape(parameterToString(connectId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = &computeProjectVmConnectOpen
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -1415,16 +1602,16 @@ List compute/vm.point
  * @param optional nil or *ComputeProjectVmMetricPointListOpts - Optional Parameters:
  * @param "Interval" (optional.String) -  interval
  * @param "Timespan" (optional.String) -  timespan
-@return []Serie
+@return []Point
 */
-func (a *ComputeProjectVmApiService) ComputeProjectVmMetricPointList(ctx _context.Context, projectId string, locationId string, vmId string, metricId string, localVarOptionals *ComputeProjectVmMetricPointListOpts) ([]Serie, *_nethttp.Response, error) {
+func (a *ComputeProjectVmApiService) ComputeProjectVmMetricPointList(ctx _context.Context, projectId string, locationId string, vmId string, metricId string, localVarOptionals *ComputeProjectVmMetricPointListOpts) ([]Point, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Serie
+		localVarReturnValue  []Point
 	)
 
 	// create path and map variables

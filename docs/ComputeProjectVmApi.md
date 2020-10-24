@@ -4,7 +4,9 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ComputeProjectVmConsole**](ComputeProjectVmApi.md#ComputeProjectVmConsole) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/console | Console compute/vm
+[**ComputeProjectVmConnectGet**](ComputeProjectVmApi.md#ComputeProjectVmConnectGet) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId} | Get compute/vm.connect
+[**ComputeProjectVmConnectList**](ComputeProjectVmApi.md#ComputeProjectVmConnectList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect | List compute/vm.connect
+[**ComputeProjectVmConnectOpen**](ComputeProjectVmApi.md#ComputeProjectVmConnectOpen) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}/actions/open | Open compute/vm.connect
 [**ComputeProjectVmCreate**](ComputeProjectVmApi.md#ComputeProjectVmCreate) | **Post** /compute/{locationId}/project/{projectId}/vm | Create compute/vm
 [**ComputeProjectVmDelete**](ComputeProjectVmApi.md#ComputeProjectVmDelete) | **Delete** /compute/{locationId}/project/{projectId}/vm/{vmId} | Delete compute/vm
 [**ComputeProjectVmDiskCreate**](ComputeProjectVmApi.md#ComputeProjectVmDiskCreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/disk | Create compute/vm.disk
@@ -36,13 +38,13 @@ Method | HTTP request | Description
 
 
 
-## ComputeProjectVmConsole
+## ComputeProjectVmConnectGet
 
-> ComputeProjectVmConsole(ctx, projectId, locationId, vmId, optional)
+> Connect ComputeProjectVmConnectGet(ctx, projectId, locationId, vmId, connectId)
 
-Console compute/vm
+Get compute/vm.connect
 
-action console
+Get compute/vm.connect
 
 ### Required Parameters
 
@@ -53,19 +55,81 @@ Name | Type | Description  | Notes
 **projectId** | **string**| Project Id | 
 **locationId** | **string**| Location Id | 
 **vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmConsoleOpts** | optional parameters | nil if no parameters
+**connectId** | **string**| connectId | 
 
-### Optional Parameters
+### Return type
 
-Optional parameters are passed through a pointer to a ComputeProjectVmConsoleOpts struct
+[**Connect**](connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ComputeProjectVmConnectList
+
+> []Connect ComputeProjectVmConnectList(ctx, projectId, locationId, vmId)
+
+List compute/vm.connect
+
+List compute/vm.connect
+
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**vmId** | **string**| Vm Id | 
+
+### Return type
+
+[**[]Connect**](connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
+## ComputeProjectVmConnectOpen
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+> ComputeProjectVmConnectOpen(ctx, projectId, locationId, vmId, connectId, computeProjectVmConnectOpen)
+
+Open compute/vm.connect
+
+action open
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**vmId** | **string**| Vm Id | 
+**connectId** | **string**| connectId | 
+**computeProjectVmConnectOpen** | [**ComputeProjectVmConnectOpen**](ComputeProjectVmConnectOpen.md)|  | 
 
 ### Return type
 
@@ -77,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -614,7 +678,7 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmMetricPointList
 
-> []Serie ComputeProjectVmMetricPointList(ctx, projectId, locationId, vmId, metricId, optional)
+> []Point ComputeProjectVmMetricPointList(ctx, projectId, locationId, vmId, metricId, optional)
 
 List compute/vm.point
 
@@ -648,7 +712,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Serie**](serie.md)
+[**[]Point**](point.md)
 
 ### Authorization
 

@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpMetricPointList
 
-> []Serie NetworkingProjectNetadpMetricPointList(ctx, projectId, locationId, netadpId, metricId, optional)
+> []Point NetworkingProjectNetadpMetricPointList(ctx, projectId, locationId, netadpId, metricId, optional)
 
 List networking/netadp.point
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Serie**](serie.md)
+[**[]Point**](point.md)
 
 ### Authorization
 

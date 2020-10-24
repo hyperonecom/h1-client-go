@@ -21,6 +21,7 @@ type Organisation struct {
 	CreatedOn time.Time `json:"createdOn,omitempty"`
 	CreatedBy string `json:"createdBy,omitempty"`
 	State string `json:"state,omitempty"`
+	Organisation string `json:"organisation,omitempty"`
 	Uri string `json:"uri,omitempty"`
 	Billing OrganisationBilling `json:"billing,omitempty"`
 	Transfer OrganisationTransfer `json:"transfer,omitempty"`

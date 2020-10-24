@@ -1064,7 +1064,7 @@ Name | Type | Description  | Notes
 
 ## WebsiteProjectInstanceMetricPointList
 
-> []Serie WebsiteProjectInstanceMetricPointList(ctx, projectId, locationId, instanceId, metricId, optional)
+> []Point WebsiteProjectInstanceMetricPointList(ctx, projectId, locationId, instanceId, metricId, optional)
 
 List website/instance.point
 
@@ -1098,7 +1098,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Serie**](serie.md)
+[**[]Point**](point.md)
 
 ### Authorization
 

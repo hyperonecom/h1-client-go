@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskMetricPointList
 
-> []Serie StorageProjectDiskMetricPointList(ctx, projectId, locationId, diskId, metricId, optional)
+> []Point StorageProjectDiskMetricPointList(ctx, projectId, locationId, diskId, metricId, optional)
 
 List storage/disk.point
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Serie**](serie.md)
+[**[]Point**](point.md)
 
 ### Authorization
 

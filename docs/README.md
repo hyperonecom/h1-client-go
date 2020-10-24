@@ -63,7 +63,9 @@ Class | Method | HTTP request | Description
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaTagGet**](docs/ComputeProjectReplicaApi.md#computeprojectreplicatagget) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/tag/{tagId} | Get compute/replica.tag
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaTagList**](docs/ComputeProjectReplicaApi.md#computeprojectreplicataglist) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/tag | List compute/replica.tag
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaTagPut**](docs/ComputeProjectReplicaApi.md#computeprojectreplicatagput) | **Put** /compute/{locationId}/project/{projectId}/replica/{replicaId}/tag | Replace compute/replica.tag
-*ComputeProjectVmApi* | [**ComputeProjectVmConsole**](docs/ComputeProjectVmApi.md#computeprojectvmconsole) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/console | Console compute/vm
+*ComputeProjectVmApi* | [**ComputeProjectVmConnectGet**](docs/ComputeProjectVmApi.md#computeprojectvmconnectget) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId} | Get compute/vm.connect
+*ComputeProjectVmApi* | [**ComputeProjectVmConnectList**](docs/ComputeProjectVmApi.md#computeprojectvmconnectlist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect | List compute/vm.connect
+*ComputeProjectVmApi* | [**ComputeProjectVmConnectOpen**](docs/ComputeProjectVmApi.md#computeprojectvmconnectopen) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}/actions/open | Open compute/vm.connect
 *ComputeProjectVmApi* | [**ComputeProjectVmCreate**](docs/ComputeProjectVmApi.md#computeprojectvmcreate) | **Post** /compute/{locationId}/project/{projectId}/vm | Create compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmDelete**](docs/ComputeProjectVmApi.md#computeprojectvmdelete) | **Delete** /compute/{locationId}/project/{projectId}/vm/{vmId} | Delete compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmDiskCreate**](docs/ComputeProjectVmApi.md#computeprojectvmdiskcreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/disk | Create compute/vm.disk
@@ -648,6 +650,7 @@ Class | Method | HTTP request | Description
  - [BillingResource](docs/BillingResource.md)
  - [BillingService](docs/BillingService.md)
  - [ComputeProjectReplicaCreate](docs/ComputeProjectReplicaCreate.md)
+ - [ComputeProjectVmConnectOpen](docs/ComputeProjectVmConnectOpen.md)
  - [ComputeProjectVmCreate](docs/ComputeProjectVmCreate.md)
  - [ComputeProjectVmCreateCredential](docs/ComputeProjectVmCreateCredential.md)
  - [ComputeProjectVmCreateDisk](docs/ComputeProjectVmCreateDisk.md)
@@ -658,6 +661,7 @@ Class | Method | HTTP request | Description
  - [ComputeProjectVmPasswordReset](docs/ComputeProjectVmPasswordReset.md)
  - [ComputeProjectVmSerialport](docs/ComputeProjectVmSerialport.md)
  - [ComputeProjectVmUpdate](docs/ComputeProjectVmUpdate.md)
+ - [Connect](docs/Connect.md)
  - [ContainerImage](docs/ContainerImage.md)
  - [ContainerProjectRegistryCreate](docs/ContainerProjectRegistryCreate.md)
  - [ContainerProjectRegistryCredentialPatch](docs/ContainerProjectRegistryCredentialPatch.md)
@@ -758,6 +762,7 @@ Class | Method | HTTP request | Description
  - [OrganisationTransfer](docs/OrganisationTransfer.md)
  - [Ownership](docs/Ownership.md)
  - [Payment](docs/Payment.md)
+ - [Point](docs/Point.md)
  - [Policy](docs/Policy.md)
  - [Proforma](docs/Proforma.md)
  - [ProformaArray](docs/ProformaArray.md)
@@ -785,7 +790,6 @@ Class | Method | HTTP request | Description
  - [Role](docs/Role.md)
  - [Sa](docs/Sa.md)
  - [SaCredential](docs/SaCredential.md)
- - [Serie](docs/Serie.md)
  - [Service](docs/Service.md)
  - [ServiceBilling](docs/ServiceBilling.md)
  - [ServiceBillingPrice](docs/ServiceBillingPrice.md)
@@ -1145,6 +1149,7 @@ r, err := client.Service.Operation(auth, args)
  - **storage/disk.tag/get**: 
  - **storage/disk.event/list**: 
  - **storage/disk.event/get**: 
+ - **storage/disk/use**: 
  - **networking/firewall/create**: 
  - **networking/firewall/list**: 
  - **networking/firewall/get**: 
@@ -1372,12 +1377,13 @@ r, err := client.Service.Operation(auth, args)
  - **compute/vm/turnoff**: 
  - **compute/vm/passwordReset**: 
  - **compute/vm/flavour**: 
- - **compute/vm/console**: 
  - **compute/vm.serialport/read**: 
  - **storage/iso/attach**: 
  - **compute/vm.metric/list**: 
  - **compute/vm.metric/get**: 
  - **compute/vm.point/list**: 
+ - **compute/vm.connect/list**: 
+ - **compute/vm.connect/get**: 
  - **compute/vm.service/list**: 
  - **compute/vm.service/get**: 
  - **compute/vm.tag/list**: 

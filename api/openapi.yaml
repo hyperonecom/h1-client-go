@@ -12537,8 +12537,8 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/serie'
-                title: Serie collection
+                  $ref: '#/components/schemas/point'
+                title: Point collection
                 type: array
           description: successful operation
         "400":
@@ -15388,8 +15388,8 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/serie'
-                title: Serie collection
+                  $ref: '#/components/schemas/point'
+                title: Point collection
                 type: array
           description: successful operation
         "400":
@@ -20963,8 +20963,8 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/serie'
-                title: Serie collection
+                  $ref: '#/components/schemas/point'
+                title: Point collection
                 type: array
           description: successful operation
         "400":
@@ -31004,71 +31004,6 @@ paths:
       - compute/vm/flavour
       x-state:
       - "Off"
-  /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/console:
-    post:
-      description: action console
-      operationId: compute_project_vm_console
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Location Id
-        explode: false
-        in: path
-        name: locationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Vm Id
-        explode: false
-        in: path
-        name: vmId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Idempotency key
-        explode: false
-        in: header
-        name: x-idempotency-key
-        required: false
-        schema:
-          type: string
-        style: simple
-      responses:
-        "201":
-          description: Console request accepted
-          headers:
-            location:
-              description: Absolute URL
-              explode: false
-              schema:
-                format: uri
-                type: string
-              style: simple
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Console compute/vm
-      tags:
-      - compute_project_vm
-      x-permissions:
-      - compute/vm/console
-      x-state:
-      - Running
   /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport:
     post:
       description: action serialport
@@ -31531,8 +31466,8 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/serie'
-                title: Serie collection
+                  $ref: '#/components/schemas/point'
+                title: Point collection
                 type: array
           description: successful operation
         "400":
@@ -31548,6 +31483,191 @@ paths:
       - compute_project_vm
       x-permissions:
       - compute/vm.point/list
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/connect:
+    get:
+      description: List compute/vm.connect
+      operationId: compute_project_vm_connect_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/connect'
+                title: Connect collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List compute/vm.connect
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.connect/list
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}:
+    get:
+      description: Get compute/vm.connect
+      operationId: compute_project_vm_connect_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: connectId
+        explode: false
+        in: path
+        name: connectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connect'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get compute/vm.connect
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm.connect/get
+  /compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}/actions/open:
+    post:
+      description: action open
+      operationId: compute_project_vm_connect_open
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Vm Id
+        explode: false
+        in: path
+        name: vmId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: connectId
+        explode: false
+        in: path
+        name: connectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/compute_project_vm_connect_open'
+        required: true
+      responses:
+        "201":
+          description: Console request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Open compute/vm.connect
+      tags:
+      - compute_project_vm
+      x-permissions:
+      - compute/vm/use
+      x-audience: developer
+      x-state:
+      - Running
   /compute/{locationId}/project/{projectId}/vm/{vmId}/service:
     get:
       description: List compute/vm.service
@@ -35149,6 +35269,7 @@ components:
       example:
         bankAccount: bankAccount
         flavour: flavour
+        organisation: https://openapi-generator.tech
         createdOn: 2000-01-23T04:56:07.000+00:00
         uri: uri
         billing:
@@ -35206,6 +35327,11 @@ components:
           - Inactive
           - Limited
           type: string
+        organisation:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/organisation
         uri:
           type: string
         billing:
@@ -36217,17 +36343,17 @@ components:
       - name
       - unit
       type: object
-    serie:
+    point:
       example:
         time: 2000-01-23T04:56:07.000+00:00
         value: 0.8008281904610115
       properties:
         time:
           format: date-time
-          title: Serie time
+          title: Point time
           type: string
         value:
-          title: Serie value
+          title: Point value
           type: number
       required:
       - time
@@ -36649,7 +36775,7 @@ components:
         source:
           oneOf:
           - format: uri
-            pattern: ^/
+            pattern: ^/storage/
             title: disk
             x-resource:
               kind: storage/disk
@@ -37307,6 +37433,7 @@ components:
           type: string
         source:
           format: uri-upload
+          pattern: /^https:\/\/minio.hyperone.cloud/
           title: Iso source
           type: string
           x-file:
@@ -38611,6 +38738,28 @@ components:
           x-permissions:
           - storage/vault.tag/list
       type: object
+    connect:
+      example:
+        name: name
+        id: id
+        type: console
+      properties:
+        id:
+          title: Connect id
+          type: string
+        name:
+          title: Connect name
+          type: string
+        type:
+          enum:
+          - console
+          title: Connect type
+          type: string
+      required:
+      - id
+      - name
+      - type
+      type: object
     compute_project_vm_create:
       format: create vm
       properties:
@@ -38760,6 +38909,16 @@ components:
             kind: storage/iso
           x-permissions:
           - storage/iso/attach
+      type: object
+    compute_project_vm_connect_open:
+      properties:
+        protocol:
+          default: http
+          enum:
+          - http
+          - ws
+          title: Connect protocol
+          type: string
       type: object
     vm:
       example:
@@ -40158,6 +40317,7 @@ components:
             storage/disk.tag/get: ""
             storage/disk.event/list: ""
             storage/disk.event/get: ""
+            storage/disk/use: ""
             networking/firewall/create: ""
             networking/firewall/list: ""
             networking/firewall/get: ""
@@ -40385,12 +40545,13 @@ components:
             compute/vm/turnoff: ""
             compute/vm/passwordReset: ""
             compute/vm/flavour: ""
-            compute/vm/console: ""
             compute/vm.serialport/read: ""
             storage/iso/attach: ""
             compute/vm.metric/list: ""
             compute/vm.metric/get: ""
             compute/vm.point/list: ""
+            compute/vm.connect/list: ""
+            compute/vm.connect/get: ""
             compute/vm.service/list: ""
             compute/vm.service/get: ""
             compute/vm.tag/list: ""

@@ -2535,16 +2535,16 @@ List website/instance.point
  * @param optional nil or *WebsiteProjectInstanceMetricPointListOpts - Optional Parameters:
  * @param "Interval" (optional.String) -  interval
  * @param "Timespan" (optional.String) -  timespan
-@return []Serie
+@return []Point
 */
-func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceMetricPointList(ctx _context.Context, projectId string, locationId string, instanceId string, metricId string, localVarOptionals *WebsiteProjectInstanceMetricPointListOpts) ([]Serie, *_nethttp.Response, error) {
+func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceMetricPointList(ctx _context.Context, projectId string, locationId string, instanceId string, metricId string, localVarOptionals *WebsiteProjectInstanceMetricPointListOpts) ([]Point, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Serie
+		localVarReturnValue  []Point
 	)
 
 	// create path and map variables

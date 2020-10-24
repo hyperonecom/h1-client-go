@@ -1141,16 +1141,16 @@ List storage/disk.point
  * @param optional nil or *StorageProjectDiskMetricPointListOpts - Optional Parameters:
  * @param "Interval" (optional.String) -  interval
  * @param "Timespan" (optional.String) -  timespan
-@return []Serie
+@return []Point
 */
-func (a *StorageProjectDiskApiService) StorageProjectDiskMetricPointList(ctx _context.Context, projectId string, locationId string, diskId string, metricId string, localVarOptionals *StorageProjectDiskMetricPointListOpts) ([]Serie, *_nethttp.Response, error) {
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricPointList(ctx _context.Context, projectId string, locationId string, diskId string, metricId string, localVarOptionals *StorageProjectDiskMetricPointListOpts) ([]Point, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Serie
+		localVarReturnValue  []Point
 	)
 
 	// create path and map variables
