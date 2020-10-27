@@ -8,7 +8,7 @@ require (
 	github.com/kuskoman/h1-credentials-helper-go v0.0.0-20201018141558-516d84665378
 	github.com/stretchr/testify v1.6.1
 	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
-	golang.org/x/net v0.0.0-20201026091529-146b70c837a4 // indirect
+	golang.org/x/net v0.0.0-20201027133719-8eef5233e2a1 // indirect
 	golang.org/x/oauth2 v0.0.0-20200902213428-5d25da1a8d43
 	google.golang.org/appengine v1.6.7 // indirect
 
