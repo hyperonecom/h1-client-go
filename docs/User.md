@@ -5,10 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
+**FirstName** | **string** |  | [optional] 
+**FamilyName** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**Lang** | **string** |  | [optional] [default to LANG_EN]
+**Lang** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 
 **Limit** | [**UserLimit**](user_limit.md) |  | [optional] 
 **Uri** | **string** |  | [optional] 

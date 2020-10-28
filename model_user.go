@@ -14,6 +14,8 @@ import (
 // User struct for User
 type User struct {
 	Id string `json:"id,omitempty"`
+	FirstName string `json:"firstName,omitempty"`
+	FamilyName string `json:"familyName,omitempty"`
 	Name string `json:"name,omitempty"`
 	CreatedOn time.Time `json:"createdOn,omitempty"`
 	ModifiedOn time.Time `json:"modifiedOn,omitempty"`

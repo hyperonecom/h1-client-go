@@ -11,5 +11,7 @@ package h1
 // IamUserUpdate struct for IamUserUpdate
 type IamUserUpdate struct {
 	Phone string `json:"phone,omitempty"`
+	FirstName string `json:"firstName,omitempty"`
+	FamilyName string `json:"familyName,omitempty"`
 	Lang string `json:"lang,omitempty"`
 }

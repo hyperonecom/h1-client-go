@@ -34571,6 +34571,16 @@ components:
           type: string
           x-permissions:
           - iam/user.phone/update
+        firstName:
+          title: User firstName
+          type: string
+          x-permissions:
+          - iam/user.firstName/update
+        familyName:
+          title: User familyName
+          type: string
+          x-permissions:
+          - iam/user.familyName/update
         lang:
           enum:
           - en
@@ -34655,8 +34665,10 @@ components:
       type: object
     user:
       example:
+        firstName: firstName
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         phone: phone
+        familyName: familyName
         name: name
         limit:
           organisation:
@@ -34675,6 +34687,10 @@ components:
       properties:
         id:
           type: string
+        firstName:
+          type: string
+        familyName:
+          type: string
         name:
           type: string
         createdOn:
@@ -34684,7 +34700,6 @@ components:
           format: date-time
           type: string
         lang:
-          default: en
           enum:
           - en
           - pl
@@ -40040,6 +40055,8 @@ components:
           scopes:
             iam/user/get: ""
             iam/user.phone/update: ""
+            iam/user.firstName/update: ""
+            iam/user.familyName/update: ""
             iam/user.lang/update: ""
             iam/user.credential/list: ""
             iam/user.credential/get: ""

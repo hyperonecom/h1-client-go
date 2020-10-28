@@ -872,6 +872,8 @@ r, err := client.Service.Operation(auth, args)
 - **Scopes**: 
  - **iam/user/get**: 
  - **iam/user.phone/update**: 
+ - **iam/user.firstName/update**: 
+ - **iam/user.familyName/update**: 
  - **iam/user.lang/update**: 
  - **iam/user.credential/list**: 
  - **iam/user.credential/get**: 
