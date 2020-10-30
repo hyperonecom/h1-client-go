@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ## IamOrganisationInvoiceGet
 
-> Proforma IamOrganisationInvoiceGet(ctx, organisationId, invoiceId)
+> Invoice IamOrganisationInvoiceGet(ctx, organisationId, invoiceId)
 
 Get iam/organisation.invoice
 
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Proforma**](proforma.md)
+[**Invoice**](invoice.md)
 
 ### Authorization
 

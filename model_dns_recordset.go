@@ -11,7 +11,8 @@ package h1
 // DnsRecordset struct for DnsRecordset
 type DnsRecordset struct {
 	Id string `json:"id,omitempty"`
-	Name string `json:"name"`
+	// use '@' to reference the zone origin
+	Name string `json:"name,omitempty"`
 	Type string `json:"type"`
 	Ttl float32 `json:"ttl,omitempty"`
 	Record []DnsRecord `json:"record,omitempty"`

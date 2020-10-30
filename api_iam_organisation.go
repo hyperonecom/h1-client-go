@@ -1052,16 +1052,16 @@ Get iam/organisation.invoice
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param organisationId Organisation Id
  * @param invoiceId invoiceId
-@return Proforma
+@return Invoice
 */
-func (a *IamOrganisationApiService) IamOrganisationInvoiceGet(ctx _context.Context, organisationId string, invoiceId string) (Proforma, *_nethttp.Response, error) {
+func (a *IamOrganisationApiService) IamOrganisationInvoiceGet(ctx _context.Context, organisationId string, invoiceId string) (Invoice, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Proforma
+		localVarReturnValue  Invoice
 	)
 
 	// create path and map variables

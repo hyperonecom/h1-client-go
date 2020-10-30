@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
-**Name** | **string** |  | 
+**Name** | **string** | use &#39;@&#39; to reference the zone origin | [optional] [default to @]
 **Type** | **string** |  | 
 **Ttl** | **float32** |  | [optional] [default to 3600]
 **Record** | [**[]DnsRecord**](dns.record.md) |  | [optional] 

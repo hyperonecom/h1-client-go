@@ -12,6 +12,6 @@ package h1
 type BillingAddress struct {
 	Country string `json:"country,omitempty"`
 	City string `json:"city"`
-	Zipcode string `json:"zipcode"`
 	Street string `json:"street"`
+	Zipcode string `json:"zipcode"`
 }
