@@ -469,6 +469,9 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentGet**](./ProviderProjectAgentApi.md#providerprojectagentget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId} | Get provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentInspect**](./ProviderProjectAgentApi.md#providerprojectagentinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/inspect | Inspect provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentList**](./ProviderProjectAgentApi.md#providerprojectagentlist) | **Get** /provider/{locationId}/project/{projectId}/agent | List provider/agent
+*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricGet**](./ProviderProjectAgentApi.md#providerprojectagentmetricget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId} | Get provider/agent.metric
+*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricList**](./ProviderProjectAgentApi.md#providerprojectagentmetriclist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric | List provider/agent.metric
+*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricPointList**](./ProviderProjectAgentApi.md#providerprojectagentmetricpointlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point | List provider/agent.point
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceEventList**](./ProviderProjectAgentApi.md#providerprojectagentresourceeventlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceInspect**](./ProviderProjectAgentApi.md#providerprojectagentresourceinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceList**](./ProviderProjectAgentApi.md#providerprojectagentresourcelist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
@@ -973,6 +976,9 @@ r, err := client.Service.Operation(auth, args)
  - **provider/agent.enabledService/create**: 
  - **provider/agent.enabledService/get**: 
  - **provider/agent.enabledService/delete**: 
+ - **provider/agent.metric/list**: 
+ - **provider/agent.metric/get**: 
+ - **provider/agent.point/list**: 
  - **provider/agent.service/list**: 
  - **provider/agent.service/get**: 
  - **provider/agent.tag/list**: 

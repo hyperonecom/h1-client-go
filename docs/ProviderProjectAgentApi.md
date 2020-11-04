@@ -20,6 +20,9 @@ Method | HTTP request | Description
 [**ProviderProjectAgentGet**](ProviderProjectAgentApi.md#ProviderProjectAgentGet) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId} | Get provider/agent
 [**ProviderProjectAgentInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/inspect | Inspect provider/agent
 [**ProviderProjectAgentList**](ProviderProjectAgentApi.md#ProviderProjectAgentList) | **Get** /provider/{locationId}/project/{projectId}/agent | List provider/agent
+[**ProviderProjectAgentMetricGet**](ProviderProjectAgentApi.md#ProviderProjectAgentMetricGet) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId} | Get provider/agent.metric
+[**ProviderProjectAgentMetricList**](ProviderProjectAgentApi.md#ProviderProjectAgentMetricList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric | List provider/agent.metric
+[**ProviderProjectAgentMetricPointList**](ProviderProjectAgentApi.md#ProviderProjectAgentMetricPointList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point | List provider/agent.point
 [**ProviderProjectAgentResourceEventList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceEventList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
 [**ProviderProjectAgentResourceInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 [**ProviderProjectAgentResourceList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
@@ -661,6 +664,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Agent**](agent.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProviderProjectAgentMetricGet
+
+> Metric ProviderProjectAgentMetricGet(ctx, projectId, locationId, agentId, metricId)
+
+Get provider/agent.metric
+
+Get provider/agent.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**agentId** | **string**| Agent Id | 
+**metricId** | **string**| metricId | 
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProviderProjectAgentMetricList
+
+> []Metric ProviderProjectAgentMetricList(ctx, projectId, locationId, agentId)
+
+List provider/agent.metric
+
+List provider/agent.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**agentId** | **string**| Agent Id | 
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProviderProjectAgentMetricPointList
+
+> []Point ProviderProjectAgentMetricPointList(ctx, projectId, locationId, agentId, metricId, optional)
+
+List provider/agent.point
+
+List provider/agent.point
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**agentId** | **string**| Agent Id | 
+**metricId** | **string**| metricId | 
+ **optional** | ***ProviderProjectAgentMetricPointListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a ProviderProjectAgentMetricPointListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **optional.String**| interval | 
+ **timespan** | **optional.String**| timespan | 
+
+### Return type
+
+[**[]Point**](point.md)
 
 ### Authorization
 

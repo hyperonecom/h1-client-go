@@ -801,6 +801,7 @@ paths:
       - iam/project/delete
       x-state:
       - Active
+      - Limited
     get:
       description: Returns a single project
       operationId: iam_project_get
@@ -5148,6 +5149,197 @@ paths:
       - provider/agent.enabledService/get
       x-examples:
         $ref: ./docs/provider_project_agent_enabledService_get/index.json
+  /provider/{locationId}/project/{projectId}/agent/{agentId}/metric:
+    get:
+      description: List provider/agent.metric
+      operationId: provider_project_agent_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Agent Id
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/agent.metric
+      tags:
+      - provider_project_agent
+      x-permissions:
+      - provider/agent.metric/list
+  /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}:
+    get:
+      description: Get provider/agent.metric
+      operationId: provider_project_agent_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Agent Id
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/agent.metric
+      tags:
+      - provider_project_agent
+      x-permissions:
+      - provider/agent.metric/get
+  /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point:
+    get:
+      description: List provider/agent.point
+      operationId: provider_project_agent_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Agent Id
+        explode: false
+        in: path
+        name: agentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/point'
+                title: Point collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/agent.point
+      tags:
+      - provider_project_agent
+      x-permissions:
+      - provider/agent.point/list
   /provider/{locationId}/project/{projectId}/agent/{agentId}/service:
     get:
       description: List provider/agent.service
@@ -35713,6 +35905,52 @@ components:
       - id
       - name
       type: object
+    metric:
+      example:
+        unit: unit
+        name: name
+        id: id
+        dimension:
+        - name: name
+          description: description
+        - name: name
+          description: description
+      properties:
+        id:
+          title: Metric id
+          type: string
+        name:
+          title: Metric name
+          type: string
+        unit:
+          title: Metric unit
+          type: string
+        dimension:
+          items:
+            $ref: '#/components/schemas/metric_dimension'
+          title: Dimension collection
+          type: array
+      required:
+      - id
+      - name
+      - unit
+      type: object
+    point:
+      example:
+        time: 2000-01-23T04:56:07.000+00:00
+        value: 0.8008281904610115
+      properties:
+        time:
+          format: date-time
+          title: Point time
+          type: string
+        value:
+          title: Point value
+          type: number
+      required:
+      - time
+      - value
+      type: object
     provider_project_agent_create:
       format: create agent
       properties:
@@ -36604,52 +36842,6 @@ components:
       required:
       - name
       - type
-      - value
-      type: object
-    metric:
-      example:
-        unit: unit
-        name: name
-        id: id
-        dimension:
-        - name: name
-          description: description
-        - name: name
-          description: description
-      properties:
-        id:
-          title: Metric id
-          type: string
-        name:
-          title: Metric name
-          type: string
-        unit:
-          title: Metric unit
-          type: string
-        dimension:
-          items:
-            $ref: '#/components/schemas/metric_dimension'
-          title: Dimension collection
-          type: array
-      required:
-      - id
-      - name
-      - unit
-      type: object
-    point:
-      example:
-        time: 2000-01-23T04:56:07.000+00:00
-        value: 0.8008281904610115
-      properties:
-        time:
-          format: date-time
-          title: Point time
-          type: string
-        value:
-          title: Point value
-          type: number
-      required:
-      - time
       - value
       type: object
     website_project_instance_create:
@@ -40434,6 +40626,9 @@ components:
             provider/agent.enabledService/create: ""
             provider/agent.enabledService/get: ""
             provider/agent.enabledService/delete: ""
+            provider/agent.metric/list: ""
+            provider/agent.metric/get: ""
+            provider/agent.point/list: ""
             provider/agent.service/list: ""
             provider/agent.service/get: ""
             provider/agent.tag/list: ""
