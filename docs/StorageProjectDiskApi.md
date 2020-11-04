@@ -4,7 +4,6 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**StorageProjectDiskAttach**](StorageProjectDiskApi.md#StorageProjectDiskAttach) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/attach | Attach storage/disk
 [**StorageProjectDiskCreate**](StorageProjectDiskApi.md#StorageProjectDiskCreate) | **Post** /storage/{locationId}/project/{projectId}/disk | Create storage/disk
 [**StorageProjectDiskDelete**](StorageProjectDiskApi.md#StorageProjectDiskDelete) | **Delete** /storage/{locationId}/project/{projectId}/disk/{diskId} | Delete storage/disk
 [**StorageProjectDiskDetach**](StorageProjectDiskApi.md#StorageProjectDiskDetach) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/detach | Detach storage/disk
@@ -27,57 +26,6 @@ Method | HTTP request | Description
 [**StorageProjectDiskTransfer**](StorageProjectDiskApi.md#StorageProjectDiskTransfer) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/transfer | Transfer storage/disk
 [**StorageProjectDiskUpdate**](StorageProjectDiskApi.md#StorageProjectDiskUpdate) | **Patch** /storage/{locationId}/project/{projectId}/disk/{diskId} | Update storage/disk
 
-
-
-## StorageProjectDiskAttach
-
-> Disk StorageProjectDiskAttach(ctx, projectId, locationId, diskId, storageProjectDiskAttach, optional)
-
-Attach storage/disk
-
-action attach
-
-### Required Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**storageProjectDiskAttach** | [**StorageProjectDiskAttach**](StorageProjectDiskAttach.md)|  | 
- **optional** | ***StorageProjectDiskAttachOpts** | optional parameters | nil if no parameters
-
-### Optional Parameters
-
-Optional parameters are passed through a pointer to a StorageProjectDiskAttachOpts struct
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
-
-### Return type
-
-[**Disk**](disk.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
 
 
 ## StorageProjectDiskCreate

@@ -874,6 +874,7 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyGet(ctx _context.Context, p
 // IamProjectPolicyListOpts Optional parameters for the method 'IamProjectPolicyList'
 type IamProjectPolicyListOpts struct {
     Name optional.String
+    Resource optional.String
     TagValue optional.String
     TagKey optional.String
 }
@@ -885,6 +886,7 @@ List policy
  * @param projectId Project Id
  * @param optional nil or *IamProjectPolicyListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
+ * @param "Resource" (optional.String) -  Filter by resource
  * @param "TagValue" (optional.String) -  Filter by tag.value
  * @param "TagKey" (optional.String) -  Filter by tag.key
 @return []Policy
@@ -909,6 +911,9 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyList(ctx _context.Context, 
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Resource.IsSet() {
+		localVarQueryParams.Add("resource", parameterToString(localVarOptionals.Resource.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TagValue.IsSet() {
 		localVarQueryParams.Add("tag.value", parameterToString(localVarOptionals.TagValue.Value(), ""))

@@ -874,6 +874,7 @@ func (a *IamOrganisationPolicyApiService) IamOrganisationPolicyGet(ctx _context.
 // IamOrganisationPolicyListOpts Optional parameters for the method 'IamOrganisationPolicyList'
 type IamOrganisationPolicyListOpts struct {
     Name optional.String
+    Resource optional.String
     TagValue optional.String
     TagKey optional.String
 }
@@ -885,6 +886,7 @@ List policy
  * @param organisationId Organisation Id
  * @param optional nil or *IamOrganisationPolicyListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
+ * @param "Resource" (optional.String) -  Filter by resource
  * @param "TagValue" (optional.String) -  Filter by tag.value
  * @param "TagKey" (optional.String) -  Filter by tag.key
 @return []Policy
@@ -909,6 +911,9 @@ func (a *IamOrganisationPolicyApiService) IamOrganisationPolicyList(ctx _context
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Resource.IsSet() {
+		localVarQueryParams.Add("resource", parameterToString(localVarOptionals.Resource.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TagValue.IsSet() {
 		localVarQueryParams.Add("tag.value", parameterToString(localVarOptionals.TagValue.Value(), ""))

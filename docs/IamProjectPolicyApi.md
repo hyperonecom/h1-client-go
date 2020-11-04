@@ -395,6 +395,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **name** | **optional.String**| Filter by name | 
+ **resource** | **optional.String**| Filter by resource | 
  **tagValue** | **optional.String**| Filter by tag.value | 
  **tagKey** | **optional.String**| Filter by tag.key | 
 

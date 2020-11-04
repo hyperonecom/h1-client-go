@@ -822,6 +822,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/project'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -2394,6 +2399,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ticket'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -2769,6 +2779,10 @@ paths:
               operationId: iam_project_list
               parameters:
                 organisation: $request.path.organisationId
+            policy:
+              operationId: iam_organisation_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -4007,6 +4021,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/agent'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -6105,6 +6124,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/database'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -7457,6 +7481,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/journal'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -8761,6 +8790,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/registry'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -10660,6 +10694,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/website'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -13572,6 +13611,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/zone'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -15049,6 +15093,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/disk'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -15196,79 +15245,6 @@ paths:
       - Detached
       x-examples:
         $ref: ./docs/storage_project_disk_resize/index.json
-  /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/attach:
-    post:
-      description: action attach
-      operationId: storage_project_disk_attach
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Location Id
-        explode: false
-        in: path
-        name: locationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Disk Id
-        explode: false
-        in: path
-        name: diskId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Idempotency key
-        explode: false
-        in: header
-        name: x-idempotency-key
-        required: false
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/storage_project_disk_attach'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/disk'
-          description: successful operation
-        "202":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/disk'
-          description: operation queued
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Attach storage/disk
-      tags:
-      - storage_project_disk
-      x-permissions:
-      - storage/disk/attach
-      x-state:
-      - Detached
   /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/detach:
     post:
       description: action detach
@@ -16433,6 +16409,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/firewall'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -17923,6 +17904,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/image'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -18903,6 +18889,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ip'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -20018,6 +20009,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/iso'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -21020,6 +21016,10 @@ paths:
               operationId: networking_project_ip_list
               parameters:
                 associated.netadp: $request.path.netadpId
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -22044,6 +22044,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/netgw'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -23028,6 +23033,10 @@ paths:
               operationId: networking_project_netadp_list
               parameters:
                 network: $request.path.networkId
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -23665,6 +23674,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by resource
+        explode: true
+        in: query
+        name: resource
+        required: false
+        schema:
+          format: uri
+          pattern: /^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$/
+          type: string
+          x-resource:
+            kind: '*'
+        style: form
       - description: Filter by tag.value
         explode: true
         in: query
@@ -23782,6 +23803,18 @@ paths:
         required: false
         schema:
           type: string
+        style: form
+      - description: Filter by resource
+        explode: true
+        in: query
+        name: resource
+        required: false
+        schema:
+          format: uri
+          pattern: /^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$/
+          type: string
+          x-resource:
+            kind: '*'
         style: form
       - description: Filter by tag.value
         explode: true
@@ -23945,6 +23978,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/policy'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -24076,6 +24114,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/policy'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_organisation_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -25670,6 +25713,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/replica'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -26513,6 +26561,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/role'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -26644,6 +26697,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/role'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_organisation_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -28321,6 +28379,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/sa'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -29348,6 +29411,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/vault'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -30943,6 +31011,10 @@ paths:
               operationId: networking_project_netadp_list
               parameters:
                 assigned.id: $request.path.vmId
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -32840,6 +32912,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/reservation'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -33595,6 +33672,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/vmhost'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -34228,6 +34310,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/service'
           description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
         "400":
           content:
             application/json:
@@ -35754,7 +35841,6 @@ components:
       example:
         bankAccount: bankAccount
         flavour: flavour
-        organisation: https://openapi-generator.tech
         createdOn: 2000-01-23T04:56:07.000+00:00
         uri: uri
         billing:
@@ -35812,11 +35898,6 @@ components:
           - Inactive
           - Limited
           type: string
-        organisation:
-          format: uri
-          type: string
-          x-resource:
-            kind: iam/organisation
         uri:
           type: string
         billing:
@@ -37310,20 +37391,6 @@ components:
       required:
       - size
       type: object
-    storage_project_disk_attach:
-      format: Action attach
-      properties:
-        vm:
-          format: uri
-          title: Disk vm
-          type: string
-          x-resource:
-            kind: compute/vm
-          x-permissions:
-          - compute/vm/use
-      required:
-      - vm
-      type: object
     storage_project_disk_transfer:
       format: Action transfer
       properties:
@@ -38479,9 +38546,12 @@ components:
           x-permissions:
           - iam/role/use
         resource:
+          format: uri
           pattern: /^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$/
           title: Policy resource
           type: string
+          x-resource:
+            kind: '*'
         tag:
           items:
             $ref: '#/components/schemas/tag'
@@ -40793,7 +40863,6 @@ components:
             storage/disk.name/update: ""
             storage/disk/delete: ""
             storage/disk.size/update: ""
-            storage/disk/attach: ""
             storage/disk/detach: ""
             storage/disk/read: ""
             storage/disk/transfer: ""
@@ -41037,6 +41106,7 @@ components:
             compute/vm/passwordReset: ""
             compute/vm/flavour: ""
             compute/vm.serialport/read: ""
+            storage/disk/attach: ""
             storage/iso/attach: ""
             compute/vm.metric/list: ""
             compute/vm.metric/get: ""
