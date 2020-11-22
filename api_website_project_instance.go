@@ -2231,45 +2231,42 @@ func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceList(ctx _conte
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// WebsiteProjectInstanceLogOpts Optional parameters for the method 'WebsiteProjectInstanceLog'
-type WebsiteProjectInstanceLogOpts struct {
-    XIdempotencyKey optional.String
-}
-
 /*
-WebsiteProjectInstanceLog Log website/instance
-action log
+WebsiteProjectInstanceLogGet Get website/instance.log
+Get website/instance.log
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param projectId Project Id
  * @param locationId Location Id
  * @param instanceId Instance Id
- * @param websiteProjectInstanceLog
- * @param optional nil or *WebsiteProjectInstanceLogOpts - Optional Parameters:
- * @param "XIdempotencyKey" (optional.String) -  Idempotency key
+ * @param logId logId
+@return Log
 */
-func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceLog(ctx _context.Context, projectId string, locationId string, instanceId string, websiteProjectInstanceLog WebsiteProjectInstanceLog, localVarOptionals *WebsiteProjectInstanceLogOpts) (*_nethttp.Response, error) {
+func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceLogGet(ctx _context.Context, projectId string, locationId string, instanceId string, logId string) (Log, *_nethttp.Response, error) {
 	var (
-		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
+		localVarReturnValue  Log
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log"
+	localVarPath := a.client.cfg.BasePath + "/website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.QueryEscape(parameterToString(instanceId, "")) , -1)
 
+	localVarPath = strings.Replace(localVarPath, "{"+"logId"+"}", _neturl.QueryEscape(parameterToString(logId, "")) , -1)
+
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -2285,11 +2282,195 @@ func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceLog(ctx _contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if localVarOptionals != nil && localVarOptionals.XIdempotencyKey.IsSet() {
-		localVarHeaderParams["x-idempotency-key"] = parameterToString(localVarOptionals.XIdempotencyKey.Value(), "")
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
 	}
-	// body params
-	localVarPostBody = &websiteProjectInstanceLog
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+WebsiteProjectInstanceLogList List website/instance.log
+List website/instance.log
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param instanceId Instance Id
+@return []Log
+*/
+func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceLogList(ctx _context.Context, projectId string, locationId string, instanceId string) ([]Log, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Log
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/website/{locationId}/project/{projectId}/instance/{instanceId}/log"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.QueryEscape(parameterToString(instanceId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+WebsiteProjectInstanceLogRead Read website/instance.log
+action read
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param instanceId Instance Id
+ * @param logId logId
+*/
+func (a *WebsiteProjectInstanceApiService) WebsiteProjectInstanceLogRead(ctx _context.Context, projectId string, locationId string, instanceId string, logId string) (*_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}/actions/read"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.QueryEscape(parameterToString(instanceId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"logId"+"}", _neturl.QueryEscape(parameterToString(logId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err

@@ -197,7 +197,11 @@ Class | Method | HTTP request | Description
 *IamOrganisationApi* | [**IamOrganisationProformaDownload**](./IamOrganisationApi.md#iamorganisationproformadownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Download iam/organisation.proforma
 *IamOrganisationApi* | [**IamOrganisationProformaGet**](./IamOrganisationApi.md#iamorganisationproformaget) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
 *IamOrganisationApi* | [**IamOrganisationProformaList**](./IamOrganisationApi.md#iamorganisationproformalist) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
-*IamOrganisationApi* | [**IamOrganisationTransferAccept**](./IamOrganisationApi.md#iamorganisationtransferaccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
+*IamOrganisationApi* | [**IamOrganisationServiceGet**](./IamOrganisationApi.md#iamorganisationserviceget) | **Get** /iam/organisation/{organisationId}/service/{serviceId} | Get iam/organisation.service
+*IamOrganisationApi* | [**IamOrganisationServiceList**](./IamOrganisationApi.md#iamorganisationservicelist) | **Get** /iam/organisation/{organisationId}/service | List iam/organisation.service
+*IamOrganisationApi* | [**IamOrganisationTransferAccept**](./IamOrganisationApi.md#iamorganisationtransferaccept) | **Post** /iam/organisation/{organisationId}/transfer/{transferId}/actions/accept | Accept iam/organisation.transfer
+*IamOrganisationApi* | [**IamOrganisationTransferGet**](./IamOrganisationApi.md#iamorganisationtransferget) | **Get** /iam/organisation/{organisationId}/transfer/{transferId} | Get iam/organisation.transfer
+*IamOrganisationApi* | [**IamOrganisationTransferList**](./IamOrganisationApi.md#iamorganisationtransferlist) | **Get** /iam/organisation/{organisationId}/transfer | List iam/organisation.transfer
 *IamOrganisationApi* | [**IamOrganisationUpdate**](./IamOrganisationApi.md#iamorganisationupdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
 *IamOrganisationPolicyApi* | [**IamOrganisationPolicyActorCreate**](./IamOrganisationPolicyApi.md#iamorganisationpolicyactorcreate) | **Post** /iam/organisation/{organisationId}/policy/{policyId}/actor | Create iam/policy.actor
 *IamOrganisationPolicyApi* | [**IamOrganisationPolicyActorDelete**](./IamOrganisationPolicyApi.md#iamorganisationpolicyactordelete) | **Delete** /iam/organisation/{organisationId}/policy/{policyId}/actor/{actorId} | Delete iam/policy.actor
@@ -273,6 +277,7 @@ Class | Method | HTTP request | Description
 *IamProjectApi* | [**IamProjectThresholdDelete**](./IamProjectApi.md#iamprojectthresholddelete) | **Delete** /iam/project/{projectId}/threshold/{thresholdId} | Delete iam/project.threshold
 *IamProjectApi* | [**IamProjectThresholdGet**](./IamProjectApi.md#iamprojectthresholdget) | **Get** /iam/project/{projectId}/threshold/{thresholdId} | Get iam/project.threshold
 *IamProjectApi* | [**IamProjectThresholdList**](./IamProjectApi.md#iamprojectthresholdlist) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
+*IamProjectApi* | [**IamProjectTransfer**](./IamProjectApi.md#iamprojecttransfer) | **Post** /iam/project/{projectId}/actions/transfer | Transfer iam/project
 *IamProjectApi* | [**IamProjectUpdate**](./IamProjectApi.md#iamprojectupdate) | **Patch** /iam/project/{projectId} | Update iam/project
 *IamProjectPolicyApi* | [**IamProjectPolicyActorCreate**](./IamProjectPolicyApi.md#iamprojectpolicyactorcreate) | **Post** /iam/project/{projectId}/policy/{policyId}/actor | Create iam/policy.actor
 *IamProjectPolicyApi* | [**IamProjectPolicyActorDelete**](./IamProjectPolicyApi.md#iamprojectpolicyactordelete) | **Delete** /iam/project/{projectId}/policy/{policyId}/actor/{actorId} | Delete iam/policy.actor
@@ -487,6 +492,20 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTagPut**](./ProviderProjectAgentApi.md#providerprojectagenttagput) | **Put** /provider/{locationId}/project/{projectId}/agent/{agentId}/tag | Replace provider/agent.tag
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTransfer**](./ProviderProjectAgentApi.md#providerprojectagenttransfer) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/transfer | Transfer provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentUpdate**](./ProviderProjectAgentApi.md#providerprojectagentupdate) | **Patch** /provider/{locationId}/project/{projectId}/agent/{agentId} | Update provider/agent
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupCreate**](./RecoveryProjectBackupApi.md#recoveryprojectbackupcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup | Create recovery/backup
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupDelete**](./RecoveryProjectBackupApi.md#recoveryprojectbackupdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Delete recovery/backup
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupeventget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId} | Get recovery/backup.event
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupeventlist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event | List recovery/backup.event
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Get recovery/backup
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupList**](./RecoveryProjectBackupApi.md#recoveryprojectbackuplist) | **Get** /recovery/{locationId}/project/{projectId}/backup | List recovery/backup
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupserviceget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service/{serviceId} | Get recovery/backup.service
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupservicelist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service | List recovery/backup.service
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagCreate**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Create recovery/backup.tag
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagDelete**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId} | Delete recovery/backup.tag
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId} | Get recovery/backup.tag
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagList**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptaglist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | List recovery/backup.tag
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagPut**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagput) | **Put** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Replace recovery/backup.tag
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupUpdate**](./RecoveryProjectBackupApi.md#recoveryprojectbackupupdate) | **Patch** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Update recovery/backup
 *StorageProjectDiskApi* | [**StorageProjectDiskCreate**](./StorageProjectDiskApi.md#storageprojectdiskcreate) | **Post** /storage/{locationId}/project/{projectId}/disk | Create storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskDelete**](./StorageProjectDiskApi.md#storageprojectdiskdelete) | **Delete** /storage/{locationId}/project/{projectId}/disk/{diskId} | Delete storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskDetach**](./StorageProjectDiskApi.md#storageprojectdiskdetach) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/detach | Detach storage/disk
@@ -607,7 +626,9 @@ Class | Method | HTTP request | Description
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelinkget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkList**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelinklist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceList**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelist) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLog**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelog) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log | Log website/instance
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelogget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId} | Get website/instance.log
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogList**](./WebsiteProjectInstanceApi.md#websiteprojectinstanceloglist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log | List website/instance.log
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogRead**](./WebsiteProjectInstanceApi.md#websiteprojectinstancelogread) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}/actions/read | Read website/instance.log
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstancemetricget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricList**](./WebsiteProjectInstanceApi.md#websiteprojectinstancemetriclist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricPointList**](./WebsiteProjectInstanceApi.md#websiteprojectinstancemetricpointlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
@@ -643,6 +664,7 @@ Class | Method | HTTP request | Description
  - [Attempt](./Attempt.md)
  - [AuthToken](./AuthToken.md)
  - [AuthTokenAccess](./AuthTokenAccess.md)
+ - [Backup](./Backup.md)
  - [Billing](./Billing.md)
  - [BillingAddress](./BillingAddress.md)
  - [BillingAddress1](./BillingAddress1.md)
@@ -711,6 +733,7 @@ Class | Method | HTTP request | Description
  - [IamProjectSaCredentialPatch](./IamProjectSaCredentialPatch.md)
  - [IamProjectSaUpdate](./IamProjectSaUpdate.md)
  - [IamProjectThresholdCreate](./IamProjectThresholdCreate.md)
+ - [IamProjectTransfer](./IamProjectTransfer.md)
  - [IamProjectUpdate](./IamProjectUpdate.md)
  - [IamUserCredentialPatch](./IamUserCredentialPatch.md)
  - [IamUserUpdate](./IamUserUpdate.md)
@@ -735,6 +758,7 @@ Class | Method | HTTP request | Description
  - [IsoMetadataSource](./IsoMetadataSource.md)
  - [Journal](./Journal.md)
  - [JournalCredential](./JournalCredential.md)
+ - [Log](./Log.md)
  - [MessageData](./MessageData.md)
  - [Metric](./Metric.md)
  - [MetricDimension](./MetricDimension.md)
@@ -785,6 +809,8 @@ Class | Method | HTTP request | Description
  - [Quota](./Quota.md)
  - [QuotaLimit](./QuotaLimit.md)
  - [QuotaMetric](./QuotaMetric.md)
+ - [RecoveryProjectBackupCreate](./RecoveryProjectBackupCreate.md)
+ - [RecoveryProjectBackupUpdate](./RecoveryProjectBackupUpdate.md)
  - [Registry](./Registry.md)
  - [RegistryCredential](./RegistryCredential.md)
  - [Replica](./Replica.md)
@@ -821,6 +847,7 @@ Class | Method | HTTP request | Description
  - [SupportProjectTicketCreate](./SupportProjectTicketCreate.md)
  - [Tag](./Tag.md)
  - [Ticket](./Ticket.md)
+ - [Transfer](./Transfer.md)
  - [User](./User.md)
  - [UserCredential](./UserCredential.md)
  - [UserLimit](./UserLimit.md)
@@ -835,7 +862,6 @@ Class | Method | HTTP request | Description
  - [WebsiteLink](./WebsiteLink.md)
  - [WebsiteProjectInstanceCreate](./WebsiteProjectInstanceCreate.md)
  - [WebsiteProjectInstanceCredentialPatch](./WebsiteProjectInstanceCredentialPatch.md)
- - [WebsiteProjectInstanceLog](./WebsiteProjectInstanceLog.md)
  - [WebsiteProjectInstanceSnapshotDownload](./WebsiteProjectInstanceSnapshotDownload.md)
  - [WebsiteProjectInstanceTransfer](./WebsiteProjectInstanceTransfer.md)
  - [WebsiteProjectInstanceUpdate](./WebsiteProjectInstanceUpdate.md)
@@ -888,6 +914,7 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project/get**: 
  - **iam/project.name/update**: 
  - **iam/project/delete**: 
+ - **iam/project/transfer**: 
  - **iam/project.billing/list**: 
  - **iam/project.payment/list**: 
  - **iam/project.invoice/list**: 
@@ -931,11 +958,13 @@ r, err := client.Service.Operation(auth, args)
  - **iam/organisation.name/update**: 
  - **iam/organisation.billing/update**: 
  - **iam/organisation/delete**: 
- - **iam/organisation.transfer/accept**: 
  - **iam/organisation.billing/list**: 
+ - **iam/organisation.transfer/list**: 
+ - **iam/organisation.transfer/get**: 
+ - **iam/organisation.payment/allocate**: 
+ - **iam/organisation.transfer/accept**: 
  - **iam/organisation.payment/list**: 
  - **iam/organisation.payment/get**: 
- - **iam/organisation.payment/allocate**: 
  - **iam/organisation.invoice/list**: 
  - **iam/organisation.invoice/get**: 
  - **iam/organisation.invoice/download**: 
@@ -950,6 +979,8 @@ r, err := client.Service.Operation(auth, args)
  - **iam/organisation.ownership/list**: 
  - **iam/organisation.ownership/get**: 
  - **iam/organisation.ownership/delete**: 
+ - **iam/organisation.service/list**: 
+ - **iam/organisation.service/get**: 
  - **iam/organisation.event/list**: 
  - **iam/organisation.event/get**: 
  - **provider/agent/create**: 
@@ -985,6 +1016,20 @@ r, err := client.Service.Operation(auth, args)
  - **provider/agent.tag/get**: 
  - **provider/agent.event/list**: 
  - **provider/agent.event/get**: 
+ - **website/instance/use**: 
+ - **recovery/backup/create**: 
+ - **recovery/backup/list**: 
+ - **recovery/backup/get**: 
+ - **recovery/backup.name/update**: 
+ - **recovery/backup/delete**: 
+ - **recovery/backup.service/list**: 
+ - **recovery/backup.service/get**: 
+ - **recovery/backup.tag/list**: 
+ - **recovery/backup.tag/create**: 
+ - **recovery/backup.tag/delete**: 
+ - **recovery/backup.tag/get**: 
+ - **recovery/backup.event/list**: 
+ - **recovery/backup.event/get**: 
  - **database/instance/create**: 
  - **database/instance/list**: 
  - **database/instance/get**: 
@@ -1063,7 +1108,6 @@ r, err := client.Service.Operation(auth, args)
  - **container/registry.repository/read**: pull image
  - **iam/sa/use**: 
  - **insight/journal/use**: 
- - **website/instance.snapshot/use**: 
  - **website/instance/create**: 
  - **website/instance/list**: 
  - **website/instance/get**: 
@@ -1073,7 +1117,6 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance/start**: 
  - **website/instance/stop**: 
  - **website/instance/restart**: 
- - **website/instance/log**: 
  - **website/instance/transfer**: 
  - **website/instance.snapshot/list**: 
  - **website/instance.snapshot/create**: 
@@ -1104,6 +1147,9 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.metric/list**: 
  - **website/instance.metric/get**: 
  - **website/instance.point/list**: 
+ - **website/instance.log/list**: 
+ - **website/instance.log/get**: 
+ - **database/instance.log/read**: 
  - **website/instance.service/list**: 
  - **website/instance.service/get**: 
  - **website/instance.tag/list**: 

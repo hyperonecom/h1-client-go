@@ -27,7 +27,9 @@ Method | HTTP request | Description
 [**WebsiteProjectInstanceLinkGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLinkGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
 [**WebsiteProjectInstanceLinkList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLinkList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
 [**WebsiteProjectInstanceList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceList) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
-[**WebsiteProjectInstanceLog**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLog) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log | Log website/instance
+[**WebsiteProjectInstanceLogGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLogGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId} | Get website/instance.log
+[**WebsiteProjectInstanceLogList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLogList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log | List website/instance.log
+[**WebsiteProjectInstanceLogRead**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceLogRead) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}/actions/read | Read website/instance.log
 [**WebsiteProjectInstanceMetricGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
 [**WebsiteProjectInstanceMetricList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
 [**WebsiteProjectInstanceMetricPointList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceMetricPointList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
@@ -938,13 +940,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## WebsiteProjectInstanceLog
+## WebsiteProjectInstanceLogGet
 
-> WebsiteProjectInstanceLog(ctx, projectId, locationId, instanceId, websiteProjectInstanceLog, optional)
+> Log WebsiteProjectInstanceLogGet(ctx, projectId, locationId, instanceId, logId)
 
-Log website/instance
+Get website/instance.log
 
-action log
+Get website/instance.log
 
 ### Required Parameters
 
@@ -955,21 +957,80 @@ Name | Type | Description  | Notes
 **projectId** | **string**| Project Id | 
 **locationId** | **string**| Location Id | 
 **instanceId** | **string**| Instance Id | 
-**websiteProjectInstanceLog** | [**WebsiteProjectInstanceLog**](WebsiteProjectInstanceLog.md)|  | 
- **optional** | ***WebsiteProjectInstanceLogOpts** | optional parameters | nil if no parameters
+**logId** | **string**| logId | 
 
-### Optional Parameters
+### Return type
 
-Optional parameters are passed through a pointer to a WebsiteProjectInstanceLogOpts struct
+[**Log**](log.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteProjectInstanceLogList
+
+> []Log WebsiteProjectInstanceLogList(ctx, projectId, locationId, instanceId)
+
+List website/instance.log
+
+List website/instance.log
+
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+
+### Return type
+
+[**[]Log**](log.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
+## WebsiteProjectInstanceLogRead
+
+> WebsiteProjectInstanceLogRead(ctx, projectId, locationId, instanceId, logId)
+
+Read website/instance.log
+
+action read
+
+### Required Parameters
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+**logId** | **string**| logId | 
 
 ### Return type
 
@@ -981,7 +1042,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -92,6 +92,8 @@ type APIClient struct {
 
 	ProviderProjectAgentApi *ProviderProjectAgentApiService
 
+	RecoveryProjectBackupApi *RecoveryProjectBackupApiService
+
 	StorageProjectDiskApi *StorageProjectDiskApiService
 
 	StorageProjectImageApi *StorageProjectImageApiService
@@ -145,6 +147,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.NetworkingProjectNetgwApi = (*NetworkingProjectNetgwApiService)(&c.common)
 	c.NetworkingProjectNetworkApi = (*NetworkingProjectNetworkApiService)(&c.common)
 	c.ProviderProjectAgentApi = (*ProviderProjectAgentApiService)(&c.common)
+	c.RecoveryProjectBackupApi = (*RecoveryProjectBackupApiService)(&c.common)
 	c.StorageProjectDiskApi = (*StorageProjectDiskApiService)(&c.common)
 	c.StorageProjectImageApi = (*StorageProjectImageApiService)(&c.common)
 	c.StorageProjectIsoApi = (*StorageProjectIsoApiService)(&c.common)

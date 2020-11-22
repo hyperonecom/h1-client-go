@@ -41,6 +41,7 @@ Method | HTTP request | Description
 [**IamProjectThresholdDelete**](IamProjectApi.md#IamProjectThresholdDelete) | **Delete** /iam/project/{projectId}/threshold/{thresholdId} | Delete iam/project.threshold
 [**IamProjectThresholdGet**](IamProjectApi.md#IamProjectThresholdGet) | **Get** /iam/project/{projectId}/threshold/{thresholdId} | Get iam/project.threshold
 [**IamProjectThresholdList**](IamProjectApi.md#IamProjectThresholdList) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
+[**IamProjectTransfer**](IamProjectApi.md#IamProjectTransfer) | **Post** /iam/project/{projectId}/actions/transfer | Transfer iam/project
 [**IamProjectUpdate**](IamProjectApi.md#IamProjectUpdate) | **Patch** /iam/project/{projectId} | Update iam/project
 
 
@@ -1382,6 +1383,53 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectTransfer
+
+> Project IamProjectTransfer(ctx, projectId, iamProjectTransfer, optional)
+
+Transfer iam/project
+
+action transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**iamProjectTransfer** | [**IamProjectTransfer**](IamProjectTransfer.md)|  | 
+ **optional** | ***IamProjectTransferOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a IamProjectTransferOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **xIdempotencyKey** | **optional.String**| Idempotency key | 
+
+### Return type
+
+[**Project**](project.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

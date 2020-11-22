@@ -1,10 +1,12 @@
-# IamOrganisationTransferAccept
+# Transfer
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Payment** | **string** |  | 
+**Id** | **string** |  | [optional] [readonly] 
+**Name** | **string** |  | 
+**State** | **string** |  | [optional] [default to Active]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

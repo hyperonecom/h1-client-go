@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Service** | **string** |  | 
 **Image** | **string** |  | 
-**Source** | **string** |  | [optional] 
+**Source** | [**OneOfAnyTypeAnyType**](oneOf&lt;AnyType,AnyType&gt;.md) |  | [optional] 
 **Env** | [**[]WebsiteEnv**](website.env.md) |  | [optional] 
 **Tag** | [**[]Tag**](tag.md) |  | [optional] 
 

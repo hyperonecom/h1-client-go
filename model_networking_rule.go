@@ -15,6 +15,6 @@ type NetworkingRule struct {
 	Action string `json:"action"`
 	Priority float32 `json:"priority"`
 	Filter []string `json:"filter"`
-	External []string `json:"external"`
+	External []string `json:"external,omitempty"`
 	Internal []string `json:"internal,omitempty"`
 }

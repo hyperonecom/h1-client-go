@@ -8,9 +8,9 @@
  */
 
 package h1
-// IamActor struct for IamActor
-type IamActor struct {
+// Transfer struct for Transfer
+type Transfer struct {
 	Id string `json:"id,omitempty"`
-	// one of: * E-mail * User URI * Service Account URI * 'me' -§ requestor
-	Value string `json:"value"`
+	Name string `json:"name"`
+	State string `json:"state,omitempty"`
 }

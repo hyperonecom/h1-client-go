@@ -29,7 +29,11 @@ Method | HTTP request | Description
 [**IamOrganisationProformaDownload**](IamOrganisationApi.md#IamOrganisationProformaDownload) | **Post** /iam/organisation/{organisationId}/proforma/{proformaId}/actions/download | Download iam/organisation.proforma
 [**IamOrganisationProformaGet**](IamOrganisationApi.md#IamOrganisationProformaGet) | **Get** /iam/organisation/{organisationId}/proforma/{proformaId} | Get iam/organisation.proforma
 [**IamOrganisationProformaList**](IamOrganisationApi.md#IamOrganisationProformaList) | **Get** /iam/organisation/{organisationId}/proforma | List iam/organisation.proforma
-[**IamOrganisationTransferAccept**](IamOrganisationApi.md#IamOrganisationTransferAccept) | **Post** /iam/organisation/{organisationId}/actions/transfer_accept | Transfer accept iam/organisation
+[**IamOrganisationServiceGet**](IamOrganisationApi.md#IamOrganisationServiceGet) | **Get** /iam/organisation/{organisationId}/service/{serviceId} | Get iam/organisation.service
+[**IamOrganisationServiceList**](IamOrganisationApi.md#IamOrganisationServiceList) | **Get** /iam/organisation/{organisationId}/service | List iam/organisation.service
+[**IamOrganisationTransferAccept**](IamOrganisationApi.md#IamOrganisationTransferAccept) | **Post** /iam/organisation/{organisationId}/transfer/{transferId}/actions/accept | Accept iam/organisation.transfer
+[**IamOrganisationTransferGet**](IamOrganisationApi.md#IamOrganisationTransferGet) | **Get** /iam/organisation/{organisationId}/transfer/{transferId} | Get iam/organisation.transfer
+[**IamOrganisationTransferList**](IamOrganisationApi.md#IamOrganisationTransferList) | **Get** /iam/organisation/{organisationId}/transfer | List iam/organisation.transfer
 [**IamOrganisationUpdate**](IamOrganisationApi.md#IamOrganisationUpdate) | **Patch** /iam/organisation/{organisationId} | Update iam/organisation
 
 
@@ -959,13 +963,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## IamOrganisationTransferAccept
+## IamOrganisationServiceGet
 
-> Organisation IamOrganisationTransferAccept(ctx, organisationId, iamOrganisationTransferAccept, optional)
+> ResourceService IamOrganisationServiceGet(ctx, organisationId, serviceId)
 
-Transfer accept iam/organisation
+Get iam/organisation.service
 
-action transfer_accept
+Get iam/organisation.service
 
 ### Required Parameters
 
@@ -974,23 +978,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **organisationId** | **string**| Organisation Id | 
-**iamOrganisationTransferAccept** | [**IamOrganisationTransferAccept**](IamOrganisationTransferAccept.md)|  | 
- **optional** | ***IamOrganisationTransferAcceptOpts** | optional parameters | nil if no parameters
+**serviceId** | **string**| serviceId | 
 
-### Optional Parameters
+### Return type
 
-Optional parameters are passed through a pointer to a IamOrganisationTransferAcceptOpts struct
+[**ResourceService**](resourceService.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamOrganisationServiceList
+
+> []ResourceService IamOrganisationServiceList(ctx, organisationId)
+
+List iam/organisation.service
+
+List iam/organisation.service
+
+### Required Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| Organisation Id | 
 
 ### Return type
 
-[**Organisation**](organisation.md)
+[**[]ResourceService**](resourceService.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamOrganisationTransferAccept
+
+> Transfer IamOrganisationTransferAccept(ctx, organisationId, transferId, iamOrganisationTransferAccept)
+
+Accept iam/organisation.transfer
+
+action accept
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| Organisation Id | 
+**transferId** | **string**| transferId | 
+**iamOrganisationTransferAccept** | [**IamOrganisationTransferAccept**](IamOrganisationTransferAccept.md)|  | 
+
+### Return type
+
+[**Transfer**](transfer.md)
 
 ### Authorization
 
@@ -999,6 +1061,75 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamOrganisationTransferGet
+
+> Transfer IamOrganisationTransferGet(ctx, organisationId, transferId)
+
+Get iam/organisation.transfer
+
+Get iam/organisation.transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| Organisation Id | 
+**transferId** | **string**| transferId | 
+
+### Return type
+
+[**Transfer**](transfer.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamOrganisationTransferList
+
+> []Transfer IamOrganisationTransferList(ctx, organisationId)
+
+List iam/organisation.transfer
+
+List iam/organisation.transfer
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**organisationId** | **string**| Organisation Id | 
+
+### Return type
+
+[**[]Transfer**](transfer.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

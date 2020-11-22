@@ -8,12 +8,10 @@
  */
 
 package h1
-// WebsiteProjectInstanceCreate struct for WebsiteProjectInstanceCreate
-type WebsiteProjectInstanceCreate struct {
+// RecoveryProjectBackupCreate struct for RecoveryProjectBackupCreate
+type RecoveryProjectBackupCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service"`
-	Image string `json:"image"`
-	Source interface{} `json:"source,omitempty"`
-	Env []WebsiteEnv `json:"env,omitempty"`
+	Source string `json:"source,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
