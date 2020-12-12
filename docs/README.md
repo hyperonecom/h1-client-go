@@ -126,6 +126,8 @@ Class | Method | HTTP request | Description
 *ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagPut**](./ContainerProjectRegistryApi.md#containerprojectregistrytagput) | **Put** /container/{locationId}/project/{projectId}/registry/{registryId}/tag | Replace container/registry.tag
 *ContainerProjectRegistryApi* | [**ContainerProjectRegistryTransfer**](./ContainerProjectRegistryApi.md#containerprojectregistrytransfer) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/actions/transfer | Transfer container/registry
 *ContainerProjectRegistryApi* | [**ContainerProjectRegistryUpdate**](./ContainerProjectRegistryApi.md#containerprojectregistryupdate) | **Patch** /container/{locationId}/project/{projectId}/registry/{registryId} | Update container/registry
+*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceConnectGet**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceconnectget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get database/instance.connect
+*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceConnectList**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceconnectlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect | List database/instance.connect
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCreate**](./DatabaseProjectInstanceApi.md#databaseprojectinstancecreate) | **Post** /database/{locationId}/project/{projectId}/instance | Create database/instance
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialCreate**](./DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialcreate) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create database/instance.credential
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialDelete**](./DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialdelete) | **Delete** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete database/instance.credential
@@ -478,6 +480,7 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentMetricList**](./ProviderProjectAgentApi.md#providerprojectagentmetriclist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric | List provider/agent.metric
 *ProviderProjectAgentApi* | [**ProviderProjectAgentMetricPointList**](./ProviderProjectAgentApi.md#providerprojectagentmetricpointlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point | List provider/agent.point
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceEventList**](./ProviderProjectAgentApi.md#providerprojectagentresourceeventlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
+*ProviderProjectAgentApi* | [**ProviderProjectAgentResourceGet**](./ProviderProjectAgentApi.md#providerprojectagentresourceget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId} | Get provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceInspect**](./ProviderProjectAgentApi.md#providerprojectagentresourceinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceList**](./ProviderProjectAgentApi.md#providerprojectagentresourcelist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceRecreate**](./ProviderProjectAgentApi.md#providerprojectagentresourcerecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Recreate provider/agent.resource
@@ -496,8 +499,12 @@ Class | Method | HTTP request | Description
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupDelete**](./RecoveryProjectBackupApi.md#recoveryprojectbackupdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Delete recovery/backup
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupeventget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId} | Get recovery/backup.event
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupeventlist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event | List recovery/backup.event
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupExport**](./RecoveryProjectBackupApi.md#recoveryprojectbackupexport) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/actions/export | Export recovery/backup
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Get recovery/backup
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupList**](./RecoveryProjectBackupApi.md#recoveryprojectbackuplist) | **Get** /recovery/{locationId}/project/{projectId}/backup | List recovery/backup
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupmetricget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId} | Get recovery/backup.metric
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupmetriclist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric | List recovery/backup.metric
+*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricPointList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupmetricpointlist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId}/point | List recovery/backup.point
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupserviceget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service/{serviceId} | Get recovery/backup.service
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceList**](./RecoveryProjectBackupApi.md#recoveryprojectbackupservicelist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service | List recovery/backup.service
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagCreate**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Create recovery/backup.tag
@@ -506,6 +513,13 @@ Class | Method | HTTP request | Description
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagList**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptaglist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | List recovery/backup.tag
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagPut**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagput) | **Put** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Replace recovery/backup.tag
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupUpdate**](./RecoveryProjectBackupApi.md#recoveryprojectbackupupdate) | **Patch** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Update recovery/backup
+*StorageProjectBucketApi* | [**StorageProjectBucketGet**](./StorageProjectBucketApi.md#storageprojectbucketget) | **Get** /storage/{locationId}/project/{projectId}/bucket/{bucketId} | Get storage/bucket
+*StorageProjectBucketApi* | [**StorageProjectBucketList**](./StorageProjectBucketApi.md#storageprojectbucketlist) | **Get** /storage/{locationId}/project/{projectId}/bucket | List storage/bucket
+*StorageProjectBucketApi* | [**StorageProjectBucketObjectDelete**](./StorageProjectBucketApi.md#storageprojectbucketobjectdelete) | **Delete** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object/{objectId} | Delete storage/bucket.object
+*StorageProjectBucketApi* | [**StorageProjectBucketObjectDownload**](./StorageProjectBucketApi.md#storageprojectbucketobjectdownload) | **Post** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object/{objectId}/actions/download | Download storage/bucket.object
+*StorageProjectBucketApi* | [**StorageProjectBucketObjectGet**](./StorageProjectBucketApi.md#storageprojectbucketobjectget) | **Get** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object/{objectId} | Get storage/bucket.object
+*StorageProjectBucketApi* | [**StorageProjectBucketObjectList**](./StorageProjectBucketApi.md#storageprojectbucketobjectlist) | **Get** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object | List storage/bucket.object
+*StorageProjectBucketApi* | [**StorageProjectBucketUpload**](./StorageProjectBucketApi.md#storageprojectbucketupload) | **Post** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/actions/upload | Upload storage/bucket
 *StorageProjectDiskApi* | [**StorageProjectDiskCreate**](./StorageProjectDiskApi.md#storageprojectdiskcreate) | **Post** /storage/{locationId}/project/{projectId}/disk | Create storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskDelete**](./StorageProjectDiskApi.md#storageprojectdiskdelete) | **Delete** /storage/{locationId}/project/{projectId}/disk/{diskId} | Delete storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskDetach**](./StorageProjectDiskApi.md#storageprojectdiskdetach) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/detach | Detach storage/disk
@@ -559,6 +573,8 @@ Class | Method | HTTP request | Description
 *StorageProjectIsoApi* | [**StorageProjectIsoTagPut**](./StorageProjectIsoApi.md#storageprojectisotagput) | **Put** /storage/{locationId}/project/{projectId}/iso/{isoId}/tag | Replace storage/iso.tag
 *StorageProjectIsoApi* | [**StorageProjectIsoTransfer**](./StorageProjectIsoApi.md#storageprojectisotransfer) | **Post** /storage/{locationId}/project/{projectId}/iso/{isoId}/actions/transfer | Transfer storage/iso
 *StorageProjectIsoApi* | [**StorageProjectIsoUpdate**](./StorageProjectIsoApi.md#storageprojectisoupdate) | **Patch** /storage/{locationId}/project/{projectId}/iso/{isoId} | Update storage/iso
+*StorageProjectVaultApi* | [**StorageProjectVaultConnectGet**](./StorageProjectVaultApi.md#storageprojectvaultconnectget) | **Get** /storage/{locationId}/project/{projectId}/vault/{vaultId}/connect/{connectId} | Get storage/vault.connect
+*StorageProjectVaultApi* | [**StorageProjectVaultConnectList**](./StorageProjectVaultApi.md#storageprojectvaultconnectlist) | **Get** /storage/{locationId}/project/{projectId}/vault/{vaultId}/connect | List storage/vault.connect
 *StorageProjectVaultApi* | [**StorageProjectVaultCreate**](./StorageProjectVaultApi.md#storageprojectvaultcreate) | **Post** /storage/{locationId}/project/{projectId}/vault | Create storage/vault
 *StorageProjectVaultApi* | [**StorageProjectVaultCredentialCreate**](./StorageProjectVaultApi.md#storageprojectvaultcredentialcreate) | **Post** /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential | Create storage/vault.credential
 *StorageProjectVaultApi* | [**StorageProjectVaultCredentialDelete**](./StorageProjectVaultApi.md#storageprojectvaultcredentialdelete) | **Delete** /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential/{credentialId} | Delete storage/vault.credential
@@ -603,6 +619,8 @@ Class | Method | HTTP request | Description
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagGet**](./VmhostProjectInstanceApi.md#vmhostprojectinstancetagget) | **Get** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Get vmhost/instance.tag
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagList**](./VmhostProjectInstanceApi.md#vmhostprojectinstancetaglist) | **Get** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag | List vmhost/instance.tag
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagPut**](./VmhostProjectInstanceApi.md#vmhostprojectinstancetagput) | **Put** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag | Replace vmhost/instance.tag
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceConnectGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstanceconnectget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get website/instance.connect
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceConnectList**](./WebsiteProjectInstanceApi.md#websiteprojectinstanceconnectlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect | List website/instance.connect
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCreate**](./WebsiteProjectInstanceApi.md#websiteprojectinstancecreate) | **Post** /website/{locationId}/project/{projectId}/instance | Create website/instance
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialCreate**](./WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create website/instance.credential
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialDelete**](./WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete website/instance.credential
@@ -659,8 +677,6 @@ Class | Method | HTTP request | Description
 
  - [Agent](./Agent.md)
  - [AgentCredential](./AgentCredential.md)
- - [AgentResource](./AgentResource.md)
- - [AgentResourceEvent](./AgentResourceEvent.md)
  - [Attempt](./Attempt.md)
  - [AuthToken](./AuthToken.md)
  - [AuthTokenAccess](./AuthTokenAccess.md)
@@ -674,6 +690,7 @@ Class | Method | HTTP request | Description
  - [BillingProjectReservationUpdate](./BillingProjectReservationUpdate.md)
  - [BillingResource](./BillingResource.md)
  - [BillingService](./BillingService.md)
+ - [Bucket](./Bucket.md)
  - [ComputeProjectReplicaCreate](./ComputeProjectReplicaCreate.md)
  - [ComputeProjectVmConnectOpen](./ComputeProjectVmConnectOpen.md)
  - [ComputeProjectVmCreate](./ComputeProjectVmCreate.md)
@@ -725,6 +742,7 @@ Class | Method | HTTP request | Description
  - [IamProjectInvitationAccept](./IamProjectInvitationAccept.md)
  - [IamProjectOwnershipCreate](./IamProjectOwnershipCreate.md)
  - [IamProjectPolicyCreate](./IamProjectPolicyCreate.md)
+ - [IamProjectPolicyCreateActor](./IamProjectPolicyCreateActor.md)
  - [IamProjectPolicyUpdate](./IamProjectPolicyUpdate.md)
  - [IamProjectQuotaLimitPatch](./IamProjectQuotaLimitPatch.md)
  - [IamProjectRoleCreate](./IamProjectRoleCreate.md)
@@ -786,7 +804,6 @@ Class | Method | HTTP request | Description
  - [Organisation](./Organisation.md)
  - [OrganisationBilling](./OrganisationBilling.md)
  - [OrganisationBilling1](./OrganisationBilling1.md)
- - [OrganisationTransfer](./OrganisationTransfer.md)
  - [Ownership](./Ownership.md)
  - [Payment](./Payment.md)
  - [Point](./Point.md)
@@ -796,12 +813,11 @@ Class | Method | HTTP request | Description
  - [ProformaSeller](./ProformaSeller.md)
  - [Project](./Project.md)
  - [ProjectBilling](./ProjectBilling.md)
- - [ProjectCompliance](./ProjectCompliance.md)
  - [ProjectCredential](./ProjectCredential.md)
  - [ProjectFeature](./ProjectFeature.md)
- - [ProjectNetworkAcl](./ProjectNetworkAcl.md)
  - [ProjectThreshold](./ProjectThreshold.md)
- - [ProjectTransfer](./ProjectTransfer.md)
+ - [ProviderAgentResource](./ProviderAgentResource.md)
+ - [ProviderAgentResourceEvent](./ProviderAgentResourceEvent.md)
  - [ProviderProjectAgentCreate](./ProviderProjectAgentCreate.md)
  - [ProviderProjectAgentCredentialPatch](./ProviderProjectAgentCredentialPatch.md)
  - [ProviderProjectAgentTransfer](./ProviderProjectAgentTransfer.md)
@@ -810,11 +826,13 @@ Class | Method | HTTP request | Description
  - [QuotaLimit](./QuotaLimit.md)
  - [QuotaMetric](./QuotaMetric.md)
  - [RecoveryProjectBackupCreate](./RecoveryProjectBackupCreate.md)
+ - [RecoveryProjectBackupExport](./RecoveryProjectBackupExport.md)
  - [RecoveryProjectBackupUpdate](./RecoveryProjectBackupUpdate.md)
  - [Registry](./Registry.md)
  - [RegistryCredential](./RegistryCredential.md)
  - [Replica](./Replica.md)
  - [Reservation](./Reservation.md)
+ - [ResourceConnect](./ResourceConnect.md)
  - [ResourceService](./ResourceService.md)
  - [Role](./Role.md)
  - [Sa](./Sa.md)
@@ -825,6 +843,8 @@ Class | Method | HTTP request | Description
  - [ServiceBillingReservations](./ServiceBillingReservations.md)
  - [ServiceDisplay](./ServiceDisplay.md)
  - [ServiceDisplayUnit](./ServiceDisplayUnit.md)
+ - [StorageObject](./StorageObject.md)
+ - [StorageProjectBucketUpload](./StorageProjectBucketUpload.md)
  - [StorageProjectDiskCreate](./StorageProjectDiskCreate.md)
  - [StorageProjectDiskResize](./StorageProjectDiskResize.md)
  - [StorageProjectDiskTransfer](./StorageProjectDiskTransfer.md)
@@ -842,6 +862,7 @@ Class | Method | HTTP request | Description
  - [StorageProjectVaultResize](./StorageProjectVaultResize.md)
  - [StorageProjectVaultSnapshotCreate](./StorageProjectVaultSnapshotCreate.md)
  - [StorageProjectVaultUpdate](./StorageProjectVaultUpdate.md)
+ - [StorageS3credential](./StorageS3credential.md)
  - [StorageSnapshot](./StorageSnapshot.md)
  - [SupportMessage](./SupportMessage.md)
  - [SupportProjectTicketCreate](./SupportProjectTicketCreate.md)
@@ -931,7 +952,6 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project.quota/list**: 
  - **iam/project.quota/get**: 
  - **iam/project.quota.user/update**: 
- - **iam/project.quota.effective/update**: 
  - **iam/project.invitation/list**: 
  - **iam/project.invitation/get**: 
  - **iam/project.invitation/delete**: 
@@ -947,13 +967,6 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project.tag/get**: 
  - **iam/project.event/list**: 
  - **iam/project.event/get**: 
- - **support/ticket/create**: 
- - **support/ticket/list**: 
- - **support/ticket/get**: 
- - **support/ticket/close**: 
- - **support/ticket.message/list**: 
- - **support/ticket.message/create**: 
- - **support/ticket.message/get**: 
  - **iam/organisation/get**: 
  - **iam/organisation.name/update**: 
  - **iam/organisation.billing/update**: 
@@ -992,10 +1005,6 @@ r, err := client.Service.Operation(auth, args)
  - **provider/agent/suspend**: 
  - **provider/agent/inspect**: 
  - **provider/agent/transfer**: 
- - **provider/agent.resource/list**: 
- - **provider/agent.resource/recreate**: 
- - **provider/agent.resource/inspect**: 
- - **provider/agent.resource.event/list**: 
  - **provider/agent.credential/list**: 
  - **provider/agent.credential/create**: 
  - **provider/agent.credential/get**: 
@@ -1005,6 +1014,11 @@ r, err := client.Service.Operation(auth, args)
  - **provider/agent.enabledService/create**: 
  - **provider/agent.enabledService/get**: 
  - **provider/agent.enabledService/delete**: 
+ - **provider/agent.resource/list**: 
+ - **provider/agent.resource/get**: 
+ - **provider/agent.resource/recreate**: 
+ - **provider/agent.resource/inspect**: 
+ - **provider/agent.resource.event/list**: 
  - **provider/agent.metric/list**: 
  - **provider/agent.metric/get**: 
  - **provider/agent.point/list**: 
@@ -1016,12 +1030,16 @@ r, err := client.Service.Operation(auth, args)
  - **provider/agent.tag/get**: 
  - **provider/agent.event/list**: 
  - **provider/agent.event/get**: 
- - **website/instance/use**: 
  - **recovery/backup/create**: 
  - **recovery/backup/list**: 
  - **recovery/backup/get**: 
  - **recovery/backup.name/update**: 
  - **recovery/backup/delete**: 
+ - **storage/bucket/upload**: 
+ - **recovery/backup/export**: 
+ - **recovery/backup.metric/list**: 
+ - **recovery/backup.metric/get**: 
+ - **recovery/backup.point/list**: 
  - **recovery/backup.service/list**: 
  - **recovery/backup.service/get**: 
  - **recovery/backup.tag/list**: 
@@ -1030,6 +1048,7 @@ r, err := client.Service.Operation(auth, args)
  - **recovery/backup.tag/get**: 
  - **recovery/backup.event/list**: 
  - **recovery/backup.event/get**: 
+ - **recovery/backup/use**: 
  - **database/instance/create**: 
  - **database/instance/list**: 
  - **database/instance/get**: 
@@ -1043,6 +1062,8 @@ r, err := client.Service.Operation(auth, args)
  - **database/instance.credential/get**: 
  - **database/instance.credential.name/update**: 
  - **database/instance.credential/delete**: 
+ - **database/instance.connect/list**: 
+ - **database/instance.connect/get**: 
  - **database/instance.service/list**: 
  - **database/instance.service/get**: 
  - **database/instance.tag/list**: 
@@ -1051,6 +1072,8 @@ r, err := client.Service.Operation(auth, args)
  - **database/instance.tag/get**: 
  - **database/instance.event/list**: 
  - **database/instance.event/get**: 
+ - **database/instance/read**: 
+ - **database/instance/use**: 
  - **insight/journal/create**: 
  - **insight/journal/list**: 
  - **insight/journal/get**: 
@@ -1140,6 +1163,8 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.credential/get**: 
  - **website/instance.credential.name/update**: 
  - **website/instance.credential/delete**: 
+ - **website/instance.connect/list**: 
+ - **website/instance.connect/get**: 
  - **website/instance.domain/list**: 
  - **website/instance.domain/create**: 
  - **website/instance.domain/get**: 
@@ -1158,6 +1183,7 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.tag/get**: 
  - **website/instance.event/list**: 
  - **website/instance.event/get**: 
+ - **website/instance/use**: 
  - **dns/zone/create**: 
  - **dns/zone/list**: 
  - **dns/zone/get**: 
@@ -1407,6 +1433,8 @@ r, err := client.Service.Operation(auth, args)
  - **storage/vault.credential/get**: 
  - **storage/vault.credential.name/update**: 
  - **storage/vault.credential/delete**: 
+ - **storage/vault.connect/list**: 
+ - **storage/vault.connect/get**: 
  - **storage/vault.service/list**: 
  - **storage/vault.service/get**: 
  - **storage/vault.tag/list**: 
@@ -1470,6 +1498,19 @@ r, err := client.Service.Operation(auth, args)
  - **vmhost/instance.tag/get**: 
  - **vmhost/instance.event/list**: 
  - **vmhost/instance.event/get**: 
+ - **storage/bucket/list**: 
+ - **storage/bucket/get**: 
+ - **storage/bucket.object/list**: 
+ - **storage/bucket.object/get**: 
+ - **storage/bucket.object/delete**: 
+ - **storage/bucket.actions/create**: 
+ - **support/ticket/create**: 
+ - **support/ticket/list**: 
+ - **support/ticket/get**: 
+ - **support/ticket/close**: 
+ - **support/ticket.message/list**: 
+ - **support/ticket.message/create**: 
+ - **support/ticket.message/get**: 
  - **billing/service/list**: 
  - **billing/service/get**: 
 

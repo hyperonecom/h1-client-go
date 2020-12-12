@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**WebsiteProjectInstanceConnectGet**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceConnectGet) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get website/instance.connect
+[**WebsiteProjectInstanceConnectList**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceConnectList) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect | List website/instance.connect
 [**WebsiteProjectInstanceCreate**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceCreate) | **Post** /website/{locationId}/project/{projectId}/instance | Create website/instance
 [**WebsiteProjectInstanceCredentialCreate**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceCredentialCreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create website/instance.credential
 [**WebsiteProjectInstanceCredentialDelete**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceCredentialDelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete website/instance.credential
@@ -55,6 +57,79 @@ Method | HTTP request | Description
 [**WebsiteProjectInstanceTransfer**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceTransfer) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer | Transfer website/instance
 [**WebsiteProjectInstanceUpdate**](WebsiteProjectInstanceApi.md#WebsiteProjectInstanceUpdate) | **Patch** /website/{locationId}/project/{projectId}/instance/{instanceId} | Update website/instance
 
+
+
+## WebsiteProjectInstanceConnectGet
+
+> ResourceConnect WebsiteProjectInstanceConnectGet(ctx, projectId, locationId, instanceId, connectId)
+
+Get website/instance.connect
+
+Get website/instance.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+**connectId** | **string**| connectId | 
+
+### Return type
+
+[**ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebsiteProjectInstanceConnectList
+
+> []ResourceConnect WebsiteProjectInstanceConnectList(ctx, projectId, locationId, instanceId)
+
+List website/instance.connect
+
+List website/instance.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+
+### Return type
+
+[**[]ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## WebsiteProjectInstanceCreate

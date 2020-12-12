@@ -1,4 +1,4 @@
-# Project
+# Bucket
 
 ## Properties
 
@@ -12,11 +12,10 @@ Name | Type | Description | Notes
 **CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 
 **State** | **string** |  | [optional] 
+**Project** | **string** |  | [optional] 
 **Organisation** | **string** |  | [optional] 
 **Uri** | **string** |  | [optional] 
-**BankAccount** | **string** |  | [optional] 
-**Billing** | [**ProjectBilling**](project_billing.md) |  | [optional] 
-**Tag** | [**[]Tag**](tag.md) |  | [optional] 
+**SizeUsed** | **float32** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

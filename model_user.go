@@ -23,5 +23,4 @@ type User struct {
 	Phone string `json:"phone,omitempty"`
 	Limit UserLimit `json:"limit,omitempty"`
 	Uri string `json:"uri,omitempty"`
-	Tag []Tag `json:"tag,omitempty"`
 }

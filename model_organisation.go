@@ -23,7 +23,5 @@ type Organisation struct {
 	State string `json:"state,omitempty"`
 	Uri string `json:"uri,omitempty"`
 	Billing OrganisationBilling `json:"billing,omitempty"`
-	Transfer OrganisationTransfer `json:"transfer,omitempty"`
 	BankAccount string `json:"bankAccount,omitempty"`
-	Tag []Tag `json:"tag,omitempty"`
 }

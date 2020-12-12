@@ -11,8 +11,8 @@ package h1
 import (
 	"time"
 )
-// Project struct for Project
-type Project struct {
+// Bucket struct for Bucket
+type Bucket struct {
 	Id string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 	Flavour string `json:"flavour,omitempty"`
@@ -21,9 +21,8 @@ type Project struct {
 	CreatedOn time.Time `json:"createdOn,omitempty"`
 	CreatedBy string `json:"createdBy,omitempty"`
 	State string `json:"state,omitempty"`
+	Project string `json:"project,omitempty"`
 	Organisation string `json:"organisation,omitempty"`
 	Uri string `json:"uri,omitempty"`
-	BankAccount string `json:"bankAccount,omitempty"`
-	Billing ProjectBilling `json:"billing,omitempty"`
-	Tag []Tag `json:"tag,omitempty"`
+	SizeUsed float32 `json:"sizeUsed,omitempty"`
 }

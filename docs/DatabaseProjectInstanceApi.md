@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DatabaseProjectInstanceConnectGet**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceConnectGet) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get database/instance.connect
+[**DatabaseProjectInstanceConnectList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceConnectList) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect | List database/instance.connect
 [**DatabaseProjectInstanceCreate**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceCreate) | **Post** /database/{locationId}/project/{projectId}/instance | Create database/instance
 [**DatabaseProjectInstanceCredentialCreate**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceCredentialCreate) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create database/instance.credential
 [**DatabaseProjectInstanceCredentialDelete**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceCredentialDelete) | **Delete** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete database/instance.credential
@@ -27,6 +29,79 @@ Method | HTTP request | Description
 [**DatabaseProjectInstanceTransfer**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceTransfer) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer | Transfer database/instance
 [**DatabaseProjectInstanceUpdate**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceUpdate) | **Patch** /database/{locationId}/project/{projectId}/instance/{instanceId} | Update database/instance
 
+
+
+## DatabaseProjectInstanceConnectGet
+
+> ResourceConnect DatabaseProjectInstanceConnectGet(ctx, projectId, locationId, instanceId, connectId)
+
+Get database/instance.connect
+
+Get database/instance.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+**connectId** | **string**| connectId | 
+
+### Return type
+
+[**ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseProjectInstanceConnectList
+
+> []ResourceConnect DatabaseProjectInstanceConnectList(ctx, projectId, locationId, instanceId)
+
+List database/instance.connect
+
+List database/instance.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**instanceId** | **string**| Instance Id | 
+
+### Return type
+
+[**[]ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## DatabaseProjectInstanceCreate

@@ -8,8 +8,12 @@ Method | HTTP request | Description
 [**RecoveryProjectBackupDelete**](RecoveryProjectBackupApi.md#RecoveryProjectBackupDelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Delete recovery/backup
 [**RecoveryProjectBackupEventGet**](RecoveryProjectBackupApi.md#RecoveryProjectBackupEventGet) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId} | Get recovery/backup.event
 [**RecoveryProjectBackupEventList**](RecoveryProjectBackupApi.md#RecoveryProjectBackupEventList) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event | List recovery/backup.event
+[**RecoveryProjectBackupExport**](RecoveryProjectBackupApi.md#RecoveryProjectBackupExport) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/actions/export | Export recovery/backup
 [**RecoveryProjectBackupGet**](RecoveryProjectBackupApi.md#RecoveryProjectBackupGet) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Get recovery/backup
 [**RecoveryProjectBackupList**](RecoveryProjectBackupApi.md#RecoveryProjectBackupList) | **Get** /recovery/{locationId}/project/{projectId}/backup | List recovery/backup
+[**RecoveryProjectBackupMetricGet**](RecoveryProjectBackupApi.md#RecoveryProjectBackupMetricGet) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId} | Get recovery/backup.metric
+[**RecoveryProjectBackupMetricList**](RecoveryProjectBackupApi.md#RecoveryProjectBackupMetricList) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric | List recovery/backup.metric
+[**RecoveryProjectBackupMetricPointList**](RecoveryProjectBackupApi.md#RecoveryProjectBackupMetricPointList) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId}/point | List recovery/backup.point
 [**RecoveryProjectBackupServiceGet**](RecoveryProjectBackupApi.md#RecoveryProjectBackupServiceGet) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service/{serviceId} | Get recovery/backup.service
 [**RecoveryProjectBackupServiceList**](RecoveryProjectBackupApi.md#RecoveryProjectBackupServiceList) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service | List recovery/backup.service
 [**RecoveryProjectBackupTagCreate**](RecoveryProjectBackupApi.md#RecoveryProjectBackupTagCreate) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Create recovery/backup.tag
@@ -193,6 +197,57 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## RecoveryProjectBackupExport
+
+> Backup RecoveryProjectBackupExport(ctx, projectId, locationId, backupId, recoveryProjectBackupExport, optional)
+
+Export recovery/backup
+
+action export
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**backupId** | **string**| Backup Id | 
+**recoveryProjectBackupExport** | [**RecoveryProjectBackupExport**](RecoveryProjectBackupExport.md)|  | 
+ **optional** | ***RecoveryProjectBackupExportOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a RecoveryProjectBackupExportOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **xIdempotencyKey** | **optional.String**| Idempotency key | 
+
+### Return type
+
+[**Backup**](backup.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## RecoveryProjectBackupGet
 
 > Backup RecoveryProjectBackupGet(ctx, projectId, locationId, backupId)
@@ -264,6 +319,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Backup**](backup.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RecoveryProjectBackupMetricGet
+
+> Metric RecoveryProjectBackupMetricGet(ctx, projectId, locationId, backupId, metricId)
+
+Get recovery/backup.metric
+
+Get recovery/backup.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**backupId** | **string**| Backup Id | 
+**metricId** | **string**| metricId | 
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RecoveryProjectBackupMetricList
+
+> []Metric RecoveryProjectBackupMetricList(ctx, projectId, locationId, backupId)
+
+List recovery/backup.metric
+
+List recovery/backup.metric
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**backupId** | **string**| Backup Id | 
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RecoveryProjectBackupMetricPointList
+
+> []Point RecoveryProjectBackupMetricPointList(ctx, projectId, locationId, backupId, metricId, optional)
+
+List recovery/backup.point
+
+List recovery/backup.point
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**backupId** | **string**| Backup Id | 
+**metricId** | **string**| metricId | 
+ **optional** | ***RecoveryProjectBackupMetricPointListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a RecoveryProjectBackupMetricPointListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **optional.String**| interval | 
+ **timespan** | **optional.String**| timespan | 
+
+### Return type
+
+[**[]Point**](point.md)
 
 ### Authorization
 

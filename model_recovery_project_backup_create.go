@@ -11,7 +11,6 @@ package h1
 // RecoveryProjectBackupCreate struct for RecoveryProjectBackupCreate
 type RecoveryProjectBackupCreate struct {
 	Name string `json:"name"`
-	Service string `json:"service"`
-	Source string `json:"source,omitempty"`
+	Source interface{} `json:"source"`
 	Tag []Tag `json:"tag,omitempty"`
 }

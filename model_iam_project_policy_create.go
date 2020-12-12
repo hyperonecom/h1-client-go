@@ -13,5 +13,6 @@ type IamProjectPolicyCreate struct {
 	Name string `json:"name"`
 	Role string `json:"role"`
 	Resource string `json:"resource"`
+	Actor []IamProjectPolicyCreateActor `json:"actor,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }

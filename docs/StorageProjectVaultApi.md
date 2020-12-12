@@ -4,6 +4,8 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**StorageProjectVaultConnectGet**](StorageProjectVaultApi.md#StorageProjectVaultConnectGet) | **Get** /storage/{locationId}/project/{projectId}/vault/{vaultId}/connect/{connectId} | Get storage/vault.connect
+[**StorageProjectVaultConnectList**](StorageProjectVaultApi.md#StorageProjectVaultConnectList) | **Get** /storage/{locationId}/project/{projectId}/vault/{vaultId}/connect | List storage/vault.connect
 [**StorageProjectVaultCreate**](StorageProjectVaultApi.md#StorageProjectVaultCreate) | **Post** /storage/{locationId}/project/{projectId}/vault | Create storage/vault
 [**StorageProjectVaultCredentialCreate**](StorageProjectVaultApi.md#StorageProjectVaultCredentialCreate) | **Post** /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential | Create storage/vault.credential
 [**StorageProjectVaultCredentialDelete**](StorageProjectVaultApi.md#StorageProjectVaultCredentialDelete) | **Delete** /storage/{locationId}/project/{projectId}/vault/{vaultId}/credential/{credentialId} | Delete storage/vault.credential
@@ -31,6 +33,79 @@ Method | HTTP request | Description
 [**StorageProjectVaultTagPut**](StorageProjectVaultApi.md#StorageProjectVaultTagPut) | **Put** /storage/{locationId}/project/{projectId}/vault/{vaultId}/tag | Replace storage/vault.tag
 [**StorageProjectVaultUpdate**](StorageProjectVaultApi.md#StorageProjectVaultUpdate) | **Patch** /storage/{locationId}/project/{projectId}/vault/{vaultId} | Update storage/vault
 
+
+
+## StorageProjectVaultConnectGet
+
+> ResourceConnect StorageProjectVaultConnectGet(ctx, projectId, locationId, vaultId, connectId)
+
+Get storage/vault.connect
+
+Get storage/vault.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**vaultId** | **string**| Vault Id | 
+**connectId** | **string**| connectId | 
+
+### Return type
+
+[**ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectVaultConnectList
+
+> []ResourceConnect StorageProjectVaultConnectList(ctx, projectId, locationId, vaultId)
+
+List storage/vault.connect
+
+List storage/vault.connect
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**vaultId** | **string**| Vault Id | 
+
+### Return type
+
+[**[]ResourceConnect**](resource.connect.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## StorageProjectVaultCreate

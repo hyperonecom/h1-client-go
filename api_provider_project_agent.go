@@ -1490,6 +1490,7 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentInspect(ctx _contex
 // ProviderProjectAgentListOpts Optional parameters for the method 'ProviderProjectAgentList'
 type ProviderProjectAgentListOpts struct {
     Name optional.String
+    EnabledServices optional.String
     TagValue optional.String
     TagKey optional.String
 }
@@ -1502,6 +1503,7 @@ List agent
  * @param locationId Location Id
  * @param optional nil or *ProviderProjectAgentListOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Filter by name
+ * @param "EnabledServices" (optional.String) -  Filter by enabledServices
  * @param "TagValue" (optional.String) -  Filter by tag.value
  * @param "TagKey" (optional.String) -  Filter by tag.key
 @return []Agent
@@ -1528,6 +1530,9 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentList(ctx _context.C
 
 	if localVarOptionals != nil && localVarOptionals.Name.IsSet() {
 		localVarQueryParams.Add("name", parameterToString(localVarOptionals.Name.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.EnabledServices.IsSet() {
+		localVarQueryParams.Add("enabledServices", parameterToString(localVarOptionals.EnabledServices.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TagValue.IsSet() {
 		localVarQueryParams.Add("tag.value", parameterToString(localVarOptionals.TagValue.Value(), ""))
@@ -1918,16 +1923,16 @@ List provider/agent.event
  * @param optional nil or *ProviderProjectAgentResourceEventListOpts - Optional Parameters:
  * @param "Limit" (optional.Float32) -  $limit
  * @param "Skip" (optional.Float32) -  $skip
-@return []AgentResourceEvent
+@return []ProviderAgentResourceEvent
 */
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceEventList(ctx _context.Context, projectId string, locationId string, agentId string, resourceId string, localVarOptionals *ProviderProjectAgentResourceEventListOpts) ([]AgentResourceEvent, *_nethttp.Response, error) {
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceEventList(ctx _context.Context, projectId string, locationId string, agentId string, resourceId string, localVarOptionals *ProviderProjectAgentResourceEventListOpts) ([]ProviderAgentResourceEvent, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []AgentResourceEvent
+		localVarReturnValue  []ProviderAgentResourceEvent
 	)
 
 	// create path and map variables
@@ -1950,6 +1955,103 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceEventList(c
 	if localVarOptionals != nil && localVarOptionals.Skip.IsSet() {
 		localVarQueryParams.Add("$skip", parameterToString(localVarOptionals.Skip.Value(), ""))
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+ProviderProjectAgentResourceGet Get provider/agent.resource
+Get provider/agent.resource
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param agentId Agent Id
+ * @param resourceId resourceId
+@return ProviderAgentResource
+*/
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceGet(ctx _context.Context, projectId string, locationId string, agentId string, resourceId string) (ProviderAgentResource, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  ProviderAgentResource
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.QueryEscape(parameterToString(projectId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.QueryEscape(parameterToString(locationId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"agentId"+"}", _neturl.QueryEscape(parameterToString(agentId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"resourceId"+"}", _neturl.QueryEscape(parameterToString(resourceId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2117,16 +2219,16 @@ List provider/agent.resource
  * @param projectId Project Id
  * @param locationId Location Id
  * @param agentId Agent Id
-@return []AgentResource
+@return []ProviderAgentResource
 */
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceList(ctx _context.Context, projectId string, locationId string, agentId string) ([]AgentResource, *_nethttp.Response, error) {
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceList(ctx _context.Context, projectId string, locationId string, agentId string) ([]ProviderAgentResource, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []AgentResource
+		localVarReturnValue  []ProviderAgentResource
 	)
 
 	// create path and map variables
@@ -2212,16 +2314,16 @@ action recreate
  * @param locationId Location Id
  * @param agentId Agent Id
  * @param resourceId resourceId
-@return AgentResource
+@return ProviderAgentResource
 */
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceRecreate(ctx _context.Context, projectId string, locationId string, agentId string, resourceId string) (AgentResource, *_nethttp.Response, error) {
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceRecreate(ctx _context.Context, projectId string, locationId string, agentId string, resourceId string) (ProviderAgentResource, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  AgentResource
+		localVarReturnValue  ProviderAgentResource
 	)
 
 	// create path and map variables

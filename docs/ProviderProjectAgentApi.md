@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**ProviderProjectAgentMetricList**](ProviderProjectAgentApi.md#ProviderProjectAgentMetricList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric | List provider/agent.metric
 [**ProviderProjectAgentMetricPointList**](ProviderProjectAgentApi.md#ProviderProjectAgentMetricPointList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point | List provider/agent.point
 [**ProviderProjectAgentResourceEventList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceEventList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
+[**ProviderProjectAgentResourceGet**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceGet) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId} | Get provider/agent.resource
 [**ProviderProjectAgentResourceInspect**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceInspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
 [**ProviderProjectAgentResourceList**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceList) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource | List provider/agent.resource
 [**ProviderProjectAgentResourceRecreate**](ProviderProjectAgentApi.md#ProviderProjectAgentResourceRecreate) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/recreate | Recreate provider/agent.resource
@@ -658,6 +659,7 @@ Name | Type | Description  | Notes
 
 
  **name** | **optional.String**| Filter by name | 
+ **enabledServices** | **optional.String**| Filter by enabledServices | 
  **tagValue** | **optional.String**| Filter by tag.value | 
  **tagKey** | **optional.String**| Filter by tag.key | 
 
@@ -806,7 +808,7 @@ Name | Type | Description  | Notes
 
 ## ProviderProjectAgentResourceEventList
 
-> []AgentResourceEvent ProviderProjectAgentResourceEventList(ctx, projectId, locationId, agentId, resourceId, optional)
+> []ProviderAgentResourceEvent ProviderProjectAgentResourceEventList(ctx, projectId, locationId, agentId, resourceId, optional)
 
 List provider/agent.event
 
@@ -840,7 +842,44 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AgentResourceEvent**](agentResourceEvent.md)
+[**[]ProviderAgentResourceEvent**](provider.agent.resource.event.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ProviderProjectAgentResourceGet
+
+> ProviderAgentResource ProviderProjectAgentResourceGet(ctx, projectId, locationId, agentId, resourceId)
+
+Get provider/agent.resource
+
+Get provider/agent.resource
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string**| Project Id | 
+**locationId** | **string**| Location Id | 
+**agentId** | **string**| Agent Id | 
+**resourceId** | **string**| resourceId | 
+
+### Return type
+
+[**ProviderAgentResource**](provider.agent.resource.md)
 
 ### Authorization
 
@@ -895,7 +934,7 @@ Name | Type | Description  | Notes
 
 ## ProviderProjectAgentResourceList
 
-> []AgentResource ProviderProjectAgentResourceList(ctx, projectId, locationId, agentId)
+> []ProviderAgentResource ProviderProjectAgentResourceList(ctx, projectId, locationId, agentId)
 
 List provider/agent.resource
 
@@ -913,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AgentResource**](agentResource.md)
+[**[]ProviderAgentResource**](provider.agent.resource.md)
 
 ### Authorization
 
@@ -931,7 +970,7 @@ Name | Type | Description  | Notes
 
 ## ProviderProjectAgentResourceRecreate
 
-> AgentResource ProviderProjectAgentResourceRecreate(ctx, projectId, locationId, agentId, resourceId)
+> ProviderAgentResource ProviderProjectAgentResourceRecreate(ctx, projectId, locationId, agentId, resourceId)
 
 Recreate provider/agent.resource
 
@@ -950,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgentResource**](agentResource.md)
+[**ProviderAgentResource**](provider.agent.resource.md)
 
 ### Authorization
 

@@ -8,7 +8,7 @@
  */
 
 package h1
-// IamProjectQuotaLimitPatch struct for IamProjectQuotaLimitPatch
-type IamProjectQuotaLimitPatch struct {
-	User float32 `json:"user,omitempty"`
+// RecoveryProjectBackupExport struct for RecoveryProjectBackupExport
+type RecoveryProjectBackupExport struct {
+	Bucket string `json:"bucket"`
 }

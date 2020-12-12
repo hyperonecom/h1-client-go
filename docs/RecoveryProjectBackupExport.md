@@ -1,10 +1,10 @@
-# IamProjectQuotaLimitPatch
+# RecoveryProjectBackupExport
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | **float32** |  | [optional] 
+**Bucket** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

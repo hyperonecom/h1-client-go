@@ -14,9 +14,7 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Uri** | **string** |  | [optional] 
 **Billing** | [**OrganisationBilling**](organisation_billing.md) |  | [optional] 
-**Transfer** | [**OrganisationTransfer**](organisation_transfer.md) |  | [optional] 
 **BankAccount** | **string** |  | [optional] 
-**Tag** | [**[]Tag**](tag.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,5 +12,6 @@ package h1
 type DatabaseProjectInstanceCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service"`
+	Source string `json:"source,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
