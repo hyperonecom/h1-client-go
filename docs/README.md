@@ -18,13 +18,59 @@ Install the following dependencies:
 go get github.com/stretchr/testify/assert
 go get golang.org/x/oauth2
 go get golang.org/x/net/context
-go get github.com/antihax/optional
 ```
 
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "./h1"
+import sw "./h1"
+```
+
+To use a proxy, set the environment variable `HTTP_PROXY`:
+
+```golang
+os.Setenv("HTTP_PROXY", "http://proxy_name:proxy_port")
+```
+
+## Configuration of Server URL
+
+Default configuration comes with `Servers` field that contains server objects as defined in the OpenAPI specification.
+
+### Select Server Configuration
+
+For using other server than the one defined on index 0 set context value `sw.ContextServerIndex` of type `int`.
+
+```golang
+ctx := context.WithValue(context.Background(), sw.ContextServerIndex, 1)
+```
+
+### Templated Server URL
+
+Templated server URL is formatted using default variables from configuration or from context value `sw.ContextServerVariables` of type `map[string]string`.
+
+```golang
+ctx := context.WithValue(context.Background(), sw.ContextServerVariables, map[string]string{
+	"basePath": "v2",
+})
+```
+
+Note, enum values are always validated and all unused variables are silently ignored.
+
+### URLs Configuration per Operation
+
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identifield by `"{classname}Service.{nickname}"` string.
+Similar rules for overriding default operation server index and variables applies by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```
+ctx := context.WithValue(context.Background(), sw.ContextOperationServerIndices, map[string]int{
+	"{classname}Service.{nickname}": 2,
+})
+ctx = context.WithValue(context.Background(), sw.ContextOperationServerVariables, map[string]map[string]string{
+	"{classname}Service.{nickname}": {
+		"port": "8443",
+	},
+})
 ```
 
 ## Documentation for API Endpoints
@@ -513,6 +559,20 @@ Class | Method | HTTP request | Description
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagList**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptaglist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | List recovery/backup.tag
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagPut**](./RecoveryProjectBackupApi.md#recoveryprojectbackuptagput) | **Put** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Replace recovery/backup.tag
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupUpdate**](./RecoveryProjectBackupApi.md#recoveryprojectbackupupdate) | **Patch** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Update recovery/backup
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanCreate**](./RecoveryProjectPlanApi.md#recoveryprojectplancreate) | **Post** /recovery/{locationId}/project/{projectId}/plan | Create recovery/plan
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanDelete**](./RecoveryProjectPlanApi.md#recoveryprojectplandelete) | **Delete** /recovery/{locationId}/project/{projectId}/plan/{planId} | Delete recovery/plan
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanEventGet**](./RecoveryProjectPlanApi.md#recoveryprojectplaneventget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/event/{eventId} | Get recovery/plan.event
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanEventList**](./RecoveryProjectPlanApi.md#recoveryprojectplaneventlist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/event | List recovery/plan.event
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanGet**](./RecoveryProjectPlanApi.md#recoveryprojectplanget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId} | Get recovery/plan
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanList**](./RecoveryProjectPlanApi.md#recoveryprojectplanlist) | **Get** /recovery/{locationId}/project/{projectId}/plan | List recovery/plan
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanServiceGet**](./RecoveryProjectPlanApi.md#recoveryprojectplanserviceget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/service/{serviceId} | Get recovery/plan.service
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanServiceList**](./RecoveryProjectPlanApi.md#recoveryprojectplanservicelist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/service | List recovery/plan.service
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagCreate**](./RecoveryProjectPlanApi.md#recoveryprojectplantagcreate) | **Post** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | Create recovery/plan.tag
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagDelete**](./RecoveryProjectPlanApi.md#recoveryprojectplantagdelete) | **Delete** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag/{tagId} | Delete recovery/plan.tag
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagGet**](./RecoveryProjectPlanApi.md#recoveryprojectplantagget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag/{tagId} | Get recovery/plan.tag
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagList**](./RecoveryProjectPlanApi.md#recoveryprojectplantaglist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | List recovery/plan.tag
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagPut**](./RecoveryProjectPlanApi.md#recoveryprojectplantagput) | **Put** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | Replace recovery/plan.tag
+*RecoveryProjectPlanApi* | [**RecoveryProjectPlanUpdate**](./RecoveryProjectPlanApi.md#recoveryprojectplanupdate) | **Patch** /recovery/{locationId}/project/{projectId}/plan/{planId} | Update recovery/plan
 *StorageProjectBucketApi* | [**StorageProjectBucketGet**](./StorageProjectBucketApi.md#storageprojectbucketget) | **Get** /storage/{locationId}/project/{projectId}/bucket/{bucketId} | Get storage/bucket
 *StorageProjectBucketApi* | [**StorageProjectBucketList**](./StorageProjectBucketApi.md#storageprojectbucketlist) | **Get** /storage/{locationId}/project/{projectId}/bucket | List storage/bucket
 *StorageProjectBucketApi* | [**StorageProjectBucketObjectDelete**](./StorageProjectBucketApi.md#storageprojectbucketobjectdelete) | **Delete** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object/{objectId} | Delete storage/bucket.object
@@ -653,10 +713,9 @@ Class | Method | HTTP request | Description
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceRestart**](./WebsiteProjectInstanceApi.md#websiteprojectinstancerestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/restart | Restart website/instance
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstanceserviceget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get website/instance.service
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceList**](./WebsiteProjectInstanceApi.md#websiteprojectinstanceservicelist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service | List website/instance.service
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappCreate**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesideappcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp | Create website/instance.sideapp
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappDelete**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesideappdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId} | Delete website/instance.sideapp
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappGet**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesideappget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId} | Get website/instance.sideapp
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappList**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesideapplist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp | List website/instance.sideapp
+*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappOpen**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesideappopen) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId}/actions/open | Open website/instance.sideapp
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotCreate**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | Create website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDelete**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Delete website/instance.snapshot
 *WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDownload**](./WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Download website/instance.snapshot
@@ -806,6 +865,9 @@ Class | Method | HTTP request | Description
  - [OrganisationBilling1](./OrganisationBilling1.md)
  - [Ownership](./Ownership.md)
  - [Payment](./Payment.md)
+ - [Plan](./Plan.md)
+ - [PlanRetention](./PlanRetention.md)
+ - [PlanWindow](./PlanWindow.md)
  - [Point](./Point.md)
  - [Policy](./Policy.md)
  - [Proforma](./Proforma.md)
@@ -828,6 +890,10 @@ Class | Method | HTTP request | Description
  - [RecoveryProjectBackupCreate](./RecoveryProjectBackupCreate.md)
  - [RecoveryProjectBackupExport](./RecoveryProjectBackupExport.md)
  - [RecoveryProjectBackupUpdate](./RecoveryProjectBackupUpdate.md)
+ - [RecoveryProjectPlanCreate](./RecoveryProjectPlanCreate.md)
+ - [RecoveryProjectPlanCreateRetention](./RecoveryProjectPlanCreateRetention.md)
+ - [RecoveryProjectPlanCreateWindow](./RecoveryProjectPlanCreateWindow.md)
+ - [RecoveryProjectPlanUpdate](./RecoveryProjectPlanUpdate.md)
  - [Registry](./Registry.md)
  - [RegistryCredential](./RegistryCredential.md)
  - [Replica](./Replica.md)
@@ -897,22 +963,19 @@ Class | Method | HTTP request | Description
 
 
 
-## BearerAuth
+### BearerAuth
 
-- **Type**: HTTP basic authentication
+- **Type**: HTTP Bearer token authentication
 
 Example
 
 ```golang
-auth := context.WithValue(context.Background(), sw.ContextBasicAuth, sw.BasicAuth{
-    UserName: "username",
-    Password: "password",
-})
+auth := context.WithValue(context.Background(), sw.ContextAccessToken, "BEARERTOKENSTRING")
 r, err := client.Service.Operation(auth, args)
 ```
 
 
-## iam
+### iam
 
 
 - **Type**: OAuth
@@ -1053,6 +1116,8 @@ r, err := client.Service.Operation(auth, args)
  - **database/instance/list**: 
  - **database/instance/get**: 
  - **database/instance.name/update**: 
+ - **recovery/plan/use**: 
+ - **database/instance.plan/update**: 
  - **database/instance/delete**: 
  - **database/instance/start**: 
  - **database/instance/stop**: 
@@ -1097,6 +1162,20 @@ r, err := client.Service.Operation(auth, args)
  - **insight/journal.event/get**: 
  - **insight/journal/read**: 
  - **insight/journal/write**: 
+ - **recovery/plan/create**: 
+ - **recovery/plan/list**: 
+ - **recovery/plan/get**: 
+ - **recovery/plan.name/update**: 
+ - **recovery/plan.plan/update**: 
+ - **recovery/plan/delete**: 
+ - **recovery/plan.service/list**: 
+ - **recovery/plan.service/get**: 
+ - **recovery/plan.tag/list**: 
+ - **recovery/plan.tag/create**: 
+ - **recovery/plan.tag/delete**: 
+ - **recovery/plan.tag/get**: 
+ - **recovery/plan.event/list**: 
+ - **recovery/plan.event/get**: 
  - **container/registry/create**: 
  - **container/registry/list**: 
  - **container/registry/get**: 
@@ -1136,6 +1215,7 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance/get**: 
  - **website/instance.name/update**: 
  - **website/instance.image/update**: 
+ - **website/instance.plan/update**: 
  - **website/instance/delete**: 
  - **website/instance/start**: 
  - **website/instance/stop**: 
@@ -1155,9 +1235,8 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.link/get**: 
  - **website/instance.link/delete**: 
  - **website/instance.sideapp/list**: 
- - **website/instance.sideapp/create**: 
  - **website/instance.sideapp/get**: 
- - **website/instance.sideapp/delete**: 
+ - **website/instance.sideapp/open**: 
  - **website/instance.credential/list**: 
  - **website/instance.credential/create**: 
  - **website/instance.credential/get**: 
@@ -1534,6 +1613,21 @@ r, err := client.Service.Operation(auth, args)
 ```
 
 
+## Documentation for Utility Methods
+
+Due to the fact that model structure members are all pointers, this package contains
+a number of utility functions to easily obtain pointers to values of basic types.
+Each of these functions takes a value of the given basic type and returns a pointer to it:
+
+* `PtrBool`
+* `PtrInt`
+* `PtrInt32`
+* `PtrInt64`
+* `PtrFloat`
+* `PtrFloat32`
+* `PtrFloat64`
+* `PtrString`
+* `PtrTime`
 
 ## Author
 

@@ -40,22 +40,64 @@ Method | HTTP request | Description
 
 ## ComputeProjectVmConnectGet
 
-> Connect ComputeProjectVmConnectGet(ctx, projectId, locationId, vmId, connectId)
+> Connect ComputeProjectVmConnectGet(ctx, projectId, locationId, vmId, connectId).Execute()
 
 Get compute/vm.connect
 
-Get compute/vm.connect
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    connectId := "connectId_example" // string | connectId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectGet(context.Background(), projectId, locationId, vmId, connectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmConnectGet`: Connect
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmConnectGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**connectId** | **string**| connectId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**connectId** | **string** | connectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmConnectGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -77,21 +119,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmConnectList
 
-> []Connect ComputeProjectVmConnectList(ctx, projectId, locationId, vmId)
+> []Connect ComputeProjectVmConnectList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.connect
 
-List compute/vm.connect
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmConnectList`: []Connect
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmConnectList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmConnectListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -113,23 +195,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmConnectOpen
 
-> ComputeProjectVmConnectOpen(ctx, projectId, locationId, vmId, connectId, computeProjectVmConnectOpen)
+> ComputeProjectVmConnectOpen(ctx, projectId, locationId, vmId, connectId).ComputeProjectVmConnectOpen(computeProjectVmConnectOpen).Execute()
 
 Open compute/vm.connect
 
-action open
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    connectId := "connectId_example" // string | connectId
+    computeProjectVmConnectOpen := *openapiclient.NewComputeProjectVmConnectOpen() // ComputeProjectVmConnectOpen | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectOpen(context.Background(), projectId, locationId, vmId, connectId).ComputeProjectVmConnectOpen(computeProjectVmConnectOpen).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectOpen``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**connectId** | **string**| connectId | 
-**computeProjectVmConnectOpen** | [**ComputeProjectVmConnectOpen**](ComputeProjectVmConnectOpen.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**connectId** | **string** | connectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmConnectOpenRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **computeProjectVmConnectOpen** | [**ComputeProjectVmConnectOpen**](ComputeProjectVmConnectOpen.md) |  | 
 
 ### Return type
 
@@ -151,34 +274,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmCreate
 
-> Vm ComputeProjectVmCreate(ctx, projectId, locationId, computeProjectVmCreate, optional)
+> Vm ComputeProjectVmCreate(ctx, projectId, locationId).ComputeProjectVmCreate(computeProjectVmCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create compute/vm
 
-Create vm
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    computeProjectVmCreate := *openapiclient.NewComputeProjectVmCreate("Name_example", "Service_example") // ComputeProjectVmCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmCreate(context.Background(), projectId, locationId).ComputeProjectVmCreate(computeProjectVmCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmCreate`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**computeProjectVmCreate** | [**ComputeProjectVmCreate**](ComputeProjectVmCreate.md)|  | 
- **optional** | ***ComputeProjectVmCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmCreateOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **computeProjectVmCreate** | [**ComputeProjectVmCreate**](ComputeProjectVmCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -200,21 +353,59 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmDelete
 
-> ComputeProjectVmDelete(ctx, projectId, locationId, vmId)
+> ComputeProjectVmDelete(ctx, projectId, locationId, vmId).Execute()
 
 Delete compute/vm
 
-Delete vm
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDelete(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -236,22 +427,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmDiskCreate
 
-> Disk ComputeProjectVmDiskCreate(ctx, projectId, locationId, vmId, computeProjectVmDiskCreate)
+> Disk ComputeProjectVmDiskCreate(ctx, projectId, locationId, vmId).ComputeProjectVmDiskCreate(computeProjectVmDiskCreate).Execute()
 
 Create compute/vm.disk
 
-Create compute/vm.disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmDiskCreate := *openapiclient.NewComputeProjectVmDiskCreate("Disk_example") // ComputeProjectVmDiskCreate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDiskCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmDiskCreate(computeProjectVmDiskCreate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDiskCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmDiskCreate`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmDiskCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmDiskCreate** | [**ComputeProjectVmDiskCreate**](ComputeProjectVmDiskCreate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmDiskCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **computeProjectVmDiskCreate** | [**ComputeProjectVmDiskCreate**](ComputeProjectVmDiskCreate.md) |  | 
 
 ### Return type
 
@@ -273,21 +505,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmDiskList
 
-> []Disk ComputeProjectVmDiskList(ctx, projectId, locationId, vmId)
+> []Disk ComputeProjectVmDiskList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.disk
 
-List compute/vm.disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDiskList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDiskList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmDiskList`: []Disk
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmDiskList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmDiskListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -309,22 +581,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmEventGet
 
-> Event ComputeProjectVmEventGet(ctx, projectId, locationId, vmId, eventId)
+> Event ComputeProjectVmEventGet(ctx, projectId, locationId, vmId, eventId).Execute()
 
 Get compute/vm.event
 
-Get compute/vm.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmEventGet(context.Background(), projectId, locationId, vmId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -346,26 +660,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmEventList
 
-> []Event ComputeProjectVmEventList(ctx, projectId, locationId, vmId, optional)
+> []Event ComputeProjectVmEventList(ctx, projectId, locationId, vmId).Limit(limit).Skip(skip).Execute()
 
 List compute/vm.event
 
-List compute/vm.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmEventList(context.Background(), projectId, locationId, vmId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmEventListOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -373,8 +717,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -396,27 +740,57 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmFlavour
 
-> Vm ComputeProjectVmFlavour(ctx, projectId, locationId, vmId, computeProjectVmFlavour, optional)
+> Vm ComputeProjectVmFlavour(ctx, projectId, locationId, vmId).ComputeProjectVmFlavour(computeProjectVmFlavour).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Flavour compute/vm
 
-action flavour
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmFlavour := *openapiclient.NewComputeProjectVmFlavour("Service_example") // ComputeProjectVmFlavour | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmFlavour(context.Background(), projectId, locationId, vmId).ComputeProjectVmFlavour(computeProjectVmFlavour).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmFlavour``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmFlavour`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmFlavour`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmFlavour** | [**ComputeProjectVmFlavour**](ComputeProjectVmFlavour.md)|  | 
- **optional** | ***ComputeProjectVmFlavourOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmFlavourOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmFlavourRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -424,8 +798,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **computeProjectVmFlavour** | [**ComputeProjectVmFlavour**](ComputeProjectVmFlavour.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -447,21 +822,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmGet
 
-> Vm ComputeProjectVmGet(ctx, projectId, locationId, vmId)
+> Vm ComputeProjectVmGet(ctx, projectId, locationId, vmId).Execute()
 
 Get compute/vm
 
-Returns a single vm
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmGet(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmGet`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -483,22 +898,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmIsoCreate
 
-> Iso ComputeProjectVmIsoCreate(ctx, projectId, locationId, vmId, computeProjectVmIsoCreate)
+> Iso ComputeProjectVmIsoCreate(ctx, projectId, locationId, vmId).ComputeProjectVmIsoCreate(computeProjectVmIsoCreate).Execute()
 
 Create compute/vm.iso
 
-Create compute/vm.iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmIsoCreate := *openapiclient.NewComputeProjectVmIsoCreate() // ComputeProjectVmIsoCreate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmIsoCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmIsoCreate(computeProjectVmIsoCreate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmIsoCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmIsoCreate`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmIsoCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmIsoCreate** | [**ComputeProjectVmIsoCreate**](ComputeProjectVmIsoCreate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmIsoCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **computeProjectVmIsoCreate** | [**ComputeProjectVmIsoCreate**](ComputeProjectVmIsoCreate.md) |  | 
 
 ### Return type
 
@@ -520,21 +976,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmIsoList
 
-> []Iso ComputeProjectVmIsoList(ctx, projectId, locationId, vmId)
+> []Iso ComputeProjectVmIsoList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.iso
 
-List compute/vm.iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmIsoList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmIsoList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmIsoList`: []Iso
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmIsoList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmIsoListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -556,34 +1052,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmList
 
-> []Vm ComputeProjectVmList(ctx, projectId, locationId, optional)
+> []Vm ComputeProjectVmList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List compute/vm
 
-List vm
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmList`: []Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***ComputeProjectVmListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmListOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -605,22 +1131,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmMetricGet
 
-> Metric ComputeProjectVmMetricGet(ctx, projectId, locationId, vmId, metricId)
+> Metric ComputeProjectVmMetricGet(ctx, projectId, locationId, vmId, metricId).Execute()
 
 Get compute/vm.metric
 
-Get compute/vm.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricGet(context.Background(), projectId, locationId, vmId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**metricId** | **string**| metricId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -642,21 +1210,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmMetricList
 
-> []Metric ComputeProjectVmMetricList(ctx, projectId, locationId, vmId)
+> []Metric ComputeProjectVmMetricList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.metric
 
-List compute/vm.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -678,27 +1286,58 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmMetricPointList
 
-> []Point ComputeProjectVmMetricPointList(ctx, projectId, locationId, vmId, metricId, optional)
+> []Point ComputeProjectVmMetricPointList(ctx, projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Execute()
 
 List compute/vm.point
 
-List compute/vm.point
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricPointList(context.Background(), projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricPointList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricPointList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricPointList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**metricId** | **string**| metricId | 
- **optional** | ***ComputeProjectVmMetricPointListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**metricId** | **string** | metricId | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmMetricPointListOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricPointListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -707,8 +1346,8 @@ Name | Type | Description  | Notes
 
 
 
- **interval** | **optional.String**| interval | 
- **timespan** | **optional.String**| timespan | 
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
 
 ### Return type
 
@@ -730,27 +1369,57 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmPasswordReset
 
-> Vm ComputeProjectVmPasswordReset(ctx, projectId, locationId, vmId, computeProjectVmPasswordReset, optional)
+> Vm ComputeProjectVmPasswordReset(ctx, projectId, locationId, vmId).ComputeProjectVmPasswordReset(computeProjectVmPasswordReset).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Password reset compute/vm
 
-action password_reset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmPasswordReset := *openapiclient.NewComputeProjectVmPasswordReset("UserName_example", "Modulus_example", "Exponent_example") // ComputeProjectVmPasswordReset | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmPasswordReset(context.Background(), projectId, locationId, vmId).ComputeProjectVmPasswordReset(computeProjectVmPasswordReset).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmPasswordReset``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmPasswordReset`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmPasswordReset`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmPasswordReset** | [**ComputeProjectVmPasswordReset**](ComputeProjectVmPasswordReset.md)|  | 
- **optional** | ***ComputeProjectVmPasswordResetOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmPasswordResetOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmPasswordResetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -758,8 +1427,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **computeProjectVmPasswordReset** | [**ComputeProjectVmPasswordReset**](ComputeProjectVmPasswordReset.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -781,26 +1451,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmRestart
 
-> Vm ComputeProjectVmRestart(ctx, projectId, locationId, vmId, optional)
+> Vm ComputeProjectVmRestart(ctx, projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Restart compute/vm
 
-action restart
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmRestart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmRestart``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmRestart`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmRestart`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmRestartOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmRestartOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmRestartRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -808,7 +1508,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -830,27 +1531,57 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmSerialport
 
-> *os.File ComputeProjectVmSerialport(ctx, projectId, locationId, vmId, computeProjectVmSerialport, optional)
+> *os.File ComputeProjectVmSerialport(ctx, projectId, locationId, vmId).ComputeProjectVmSerialport(computeProjectVmSerialport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Serialport compute/vm
 
-action serialport
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmSerialport := *openapiclient.NewComputeProjectVmSerialport() // ComputeProjectVmSerialport | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmSerialport(context.Background(), projectId, locationId, vmId).ComputeProjectVmSerialport(computeProjectVmSerialport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmSerialport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmSerialport`: *os.File
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmSerialport`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmSerialport** | [**ComputeProjectVmSerialport**](ComputeProjectVmSerialport.md)|  | 
- **optional** | ***ComputeProjectVmSerialportOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmSerialportOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmSerialportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -858,8 +1589,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **computeProjectVmSerialport** | [**ComputeProjectVmSerialport**](ComputeProjectVmSerialport.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -881,22 +1613,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmServiceGet
 
-> ResourceService ComputeProjectVmServiceGet(ctx, projectId, locationId, vmId, serviceId)
+> ResourceService ComputeProjectVmServiceGet(ctx, projectId, locationId, vmId, serviceId).Execute()
 
 Get compute/vm.service
 
-Get compute/vm.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmServiceGet(context.Background(), projectId, locationId, vmId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -918,21 +1692,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmServiceList
 
-> []ResourceService ComputeProjectVmServiceList(ctx, projectId, locationId, vmId)
+> []ResourceService ComputeProjectVmServiceList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.service
 
-List compute/vm.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmServiceList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -954,26 +1768,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmStart
 
-> Vm ComputeProjectVmStart(ctx, projectId, locationId, vmId, optional)
+> Vm ComputeProjectVmStart(ctx, projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Start compute/vm
 
-action start
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmStart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmStart``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmStart`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmStart`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmStartOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmStartOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmStartRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -981,7 +1825,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -1003,26 +1848,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmStop
 
-> Vm ComputeProjectVmStop(ctx, projectId, locationId, vmId, optional)
+> Vm ComputeProjectVmStop(ctx, projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Stop compute/vm
 
-action stop
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmStop(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmStop``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmStop`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmStop`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmStopOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmStopOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmStopRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1030,7 +1905,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -1052,22 +1928,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTagCreate
 
-> Tag ComputeProjectVmTagCreate(ctx, projectId, locationId, vmId, tag)
+> Tag ComputeProjectVmTagCreate(ctx, projectId, locationId, vmId).Tag(tag).Execute()
 
 Create compute/vm.tag
 
-Create compute/vm.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagCreate(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -1089,22 +2006,62 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTagDelete
 
-> ComputeProjectVmTagDelete(ctx, projectId, locationId, vmId, tagId)
+> ComputeProjectVmTagDelete(ctx, projectId, locationId, vmId, tagId).Execute()
 
 Delete compute/vm.tag
 
-Delete compute/vm.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagDelete(context.Background(), projectId, locationId, vmId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -1126,22 +2083,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTagGet
 
-> Tag ComputeProjectVmTagGet(ctx, projectId, locationId, vmId, tagId)
+> Tag ComputeProjectVmTagGet(ctx, projectId, locationId, vmId, tagId).Execute()
 
 Get compute/vm.tag
 
-Get compute/vm.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagGet(context.Background(), projectId, locationId, vmId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -1163,21 +2162,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTagList
 
-> []Tag ComputeProjectVmTagList(ctx, projectId, locationId, vmId)
+> []Tag ComputeProjectVmTagList(ctx, projectId, locationId, vmId).Execute()
 
 List compute/vm.tag
 
-List compute/vm.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -1199,22 +2238,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTagPut
 
-> []Tag ComputeProjectVmTagPut(ctx, projectId, locationId, vmId, tag)
+> []Tag ComputeProjectVmTagPut(ctx, projectId, locationId, vmId).Tag(tag).Execute()
 
 Replace compute/vm.tag
 
-Replace compute/vm.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagPut(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -1236,26 +2316,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmTurnoff
 
-> Vm ComputeProjectVmTurnoff(ctx, projectId, locationId, vmId, optional)
+> Vm ComputeProjectVmTurnoff(ctx, projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Turnoff compute/vm
 
-action turnoff
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTurnoff(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTurnoff``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmTurnoff`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmTurnoff`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
- **optional** | ***ComputeProjectVmTurnoffOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectVmTurnoffOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectVmTurnoffRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1263,7 +2373,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -1285,22 +2396,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmUpdate
 
-> Vm ComputeProjectVmUpdate(ctx, projectId, locationId, vmId, computeProjectVmUpdate)
+> Vm ComputeProjectVmUpdate(ctx, projectId, locationId, vmId).ComputeProjectVmUpdate(computeProjectVmUpdate).Execute()
 
 Update compute/vm
 
-Returns modified vm
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    computeProjectVmUpdate := *openapiclient.NewComputeProjectVmUpdate() // ComputeProjectVmUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmUpdate(context.Background(), projectId, locationId, vmId).ComputeProjectVmUpdate(computeProjectVmUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmUpdate`: Vm
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vmId** | **string**| Vm Id | 
-**computeProjectVmUpdate** | [**ComputeProjectVmUpdate**](ComputeProjectVmUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **computeProjectVmUpdate** | [**ComputeProjectVmUpdate**](ComputeProjectVmUpdate.md) |  | 
 
 ### Return type
 

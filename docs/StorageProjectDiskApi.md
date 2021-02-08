@@ -30,34 +30,64 @@ Method | HTTP request | Description
 
 ## StorageProjectDiskCreate
 
-> Disk StorageProjectDiskCreate(ctx, projectId, locationId, storageProjectDiskCreate, optional)
+> Disk StorageProjectDiskCreate(ctx, projectId, locationId).StorageProjectDiskCreate(storageProjectDiskCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create storage/disk
 
-Create disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    storageProjectDiskCreate := *openapiclient.NewStorageProjectDiskCreate("Name_example", "Service_example", float32(123)) // StorageProjectDiskCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskCreate(context.Background(), projectId, locationId).StorageProjectDiskCreate(storageProjectDiskCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskCreate`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**storageProjectDiskCreate** | [**StorageProjectDiskCreate**](StorageProjectDiskCreate.md)|  | 
- **optional** | ***StorageProjectDiskCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskCreateOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectDiskCreate** | [**StorageProjectDiskCreate**](StorageProjectDiskCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -79,21 +109,59 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskDelete
 
-> StorageProjectDiskDelete(ctx, projectId, locationId, diskId)
+> StorageProjectDiskDelete(ctx, projectId, locationId, diskId).Execute()
 
 Delete storage/disk
 
-Delete disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDelete(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -115,26 +183,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskDetach
 
-> Disk StorageProjectDiskDetach(ctx, projectId, locationId, diskId, optional)
+> Disk StorageProjectDiskDetach(ctx, projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Detach storage/disk
 
-action detach
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDetach(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDetach``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskDetach`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskDetach`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
- **optional** | ***StorageProjectDiskDetachOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskDetachOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskDetachRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,7 +240,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -164,26 +263,54 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskDownload
 
-> StorageProjectDiskDownload(ctx, projectId, locationId, diskId, optional)
+> StorageProjectDiskDownload(ctx, projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Download storage/disk
 
-action download
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDownload(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDownload``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
- **optional** | ***StorageProjectDiskDownloadOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskDownloadOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskDownloadRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -191,7 +318,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -213,22 +341,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskEventGet
 
-> Event StorageProjectDiskEventGet(ctx, projectId, locationId, diskId, eventId)
+> Event StorageProjectDiskEventGet(ctx, projectId, locationId, diskId, eventId).Execute()
 
 Get storage/disk.event
 
-Get storage/disk.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskEventGet(context.Background(), projectId, locationId, diskId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -250,26 +420,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskEventList
 
-> []Event StorageProjectDiskEventList(ctx, projectId, locationId, diskId, optional)
+> []Event StorageProjectDiskEventList(ctx, projectId, locationId, diskId).Limit(limit).Skip(skip).Execute()
 
 List storage/disk.event
 
-List storage/disk.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskEventList(context.Background(), projectId, locationId, diskId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
- **optional** | ***StorageProjectDiskEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskEventListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -277,8 +477,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -300,21 +500,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskGet
 
-> Disk StorageProjectDiskGet(ctx, projectId, locationId, diskId)
+> Disk StorageProjectDiskGet(ctx, projectId, locationId, diskId).Execute()
 
 Get storage/disk
 
-Returns a single disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskGet(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskGet`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -336,35 +576,66 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskList
 
-> []Disk StorageProjectDiskList(ctx, projectId, locationId, optional)
+> []Disk StorageProjectDiskList(ctx, projectId, locationId).Name(name).Vm(vm).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List storage/disk
 
-List disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    vm := "vm_example" // string | Filter by vm (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskList(context.Background(), projectId, locationId).Name(name).Vm(vm).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskList`: []Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***StorageProjectDiskListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **vm** | **optional.String**| Filter by vm | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **vm** | **string** | Filter by vm | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -386,22 +657,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskMetricGet
 
-> Metric StorageProjectDiskMetricGet(ctx, projectId, locationId, diskId, metricId)
+> Metric StorageProjectDiskMetricGet(ctx, projectId, locationId, diskId, metricId).Execute()
 
 Get storage/disk.metric
 
-Get storage/disk.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricGet(context.Background(), projectId, locationId, diskId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**metricId** | **string**| metricId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -423,21 +736,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskMetricList
 
-> []Metric StorageProjectDiskMetricList(ctx, projectId, locationId, diskId)
+> []Metric StorageProjectDiskMetricList(ctx, projectId, locationId, diskId).Execute()
 
 List storage/disk.metric
 
-List storage/disk.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricList(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -459,27 +812,58 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskMetricPointList
 
-> []Point StorageProjectDiskMetricPointList(ctx, projectId, locationId, diskId, metricId, optional)
+> []Point StorageProjectDiskMetricPointList(ctx, projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Execute()
 
 List storage/disk.point
 
-List storage/disk.point
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricPointList(context.Background(), projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricPointList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricPointList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricPointList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**metricId** | **string**| metricId | 
- **optional** | ***StorageProjectDiskMetricPointListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**metricId** | **string** | metricId | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskMetricPointListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricPointListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -488,8 +872,8 @@ Name | Type | Description  | Notes
 
 
 
- **interval** | **optional.String**| interval | 
- **timespan** | **optional.String**| timespan | 
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
 
 ### Return type
 
@@ -511,27 +895,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskResize
 
-> Disk StorageProjectDiskResize(ctx, projectId, locationId, diskId, storageProjectDiskResize, optional)
+> Disk StorageProjectDiskResize(ctx, projectId, locationId, diskId).StorageProjectDiskResize(storageProjectDiskResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Resize storage/disk
 
-action resize
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    storageProjectDiskResize := *openapiclient.NewStorageProjectDiskResize(float32(123)) // StorageProjectDiskResize | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskResize(context.Background(), projectId, locationId, diskId).StorageProjectDiskResize(storageProjectDiskResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskResize``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskResize`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskResize`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**storageProjectDiskResize** | [**StorageProjectDiskResize**](StorageProjectDiskResize.md)|  | 
- **optional** | ***StorageProjectDiskResizeOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskResizeOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskResizeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -539,8 +953,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectDiskResize** | [**StorageProjectDiskResize**](StorageProjectDiskResize.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -562,22 +977,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskServiceGet
 
-> ResourceService StorageProjectDiskServiceGet(ctx, projectId, locationId, diskId, serviceId)
+> ResourceService StorageProjectDiskServiceGet(ctx, projectId, locationId, diskId, serviceId).Execute()
 
 Get storage/disk.service
 
-Get storage/disk.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskServiceGet(context.Background(), projectId, locationId, diskId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -599,21 +1056,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskServiceList
 
-> []ResourceService StorageProjectDiskServiceList(ctx, projectId, locationId, diskId)
+> []ResourceService StorageProjectDiskServiceList(ctx, projectId, locationId, diskId).Execute()
 
 List storage/disk.service
 
-List storage/disk.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskServiceList(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -635,22 +1132,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTagCreate
 
-> Tag StorageProjectDiskTagCreate(ctx, projectId, locationId, diskId, tag)
+> Tag StorageProjectDiskTagCreate(ctx, projectId, locationId, diskId).Tag(tag).Execute()
 
 Create storage/disk.tag
 
-Create storage/disk.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagCreate(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -672,22 +1210,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTagDelete
 
-> StorageProjectDiskTagDelete(ctx, projectId, locationId, diskId, tagId)
+> StorageProjectDiskTagDelete(ctx, projectId, locationId, diskId, tagId).Execute()
 
 Delete storage/disk.tag
 
-Delete storage/disk.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagDelete(context.Background(), projectId, locationId, diskId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -709,22 +1287,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTagGet
 
-> Tag StorageProjectDiskTagGet(ctx, projectId, locationId, diskId, tagId)
+> Tag StorageProjectDiskTagGet(ctx, projectId, locationId, diskId, tagId).Execute()
 
 Get storage/disk.tag
 
-Get storage/disk.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagGet(context.Background(), projectId, locationId, diskId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -746,21 +1366,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTagList
 
-> []Tag StorageProjectDiskTagList(ctx, projectId, locationId, diskId)
+> []Tag StorageProjectDiskTagList(ctx, projectId, locationId, diskId).Execute()
 
 List storage/disk.tag
 
-List storage/disk.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagList(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -782,22 +1442,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTagPut
 
-> []Tag StorageProjectDiskTagPut(ctx, projectId, locationId, diskId, tag)
+> []Tag StorageProjectDiskTagPut(ctx, projectId, locationId, diskId).Tag(tag).Execute()
 
 Replace storage/disk.tag
 
-Replace storage/disk.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagPut(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -819,27 +1520,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskTransfer
 
-> Disk StorageProjectDiskTransfer(ctx, projectId, locationId, diskId, storageProjectDiskTransfer, optional)
+> Disk StorageProjectDiskTransfer(ctx, projectId, locationId, diskId).StorageProjectDiskTransfer(storageProjectDiskTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer storage/disk
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    storageProjectDiskTransfer := *openapiclient.NewStorageProjectDiskTransfer("Project_example") // StorageProjectDiskTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTransfer(context.Background(), projectId, locationId, diskId).StorageProjectDiskTransfer(storageProjectDiskTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskTransfer`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**storageProjectDiskTransfer** | [**StorageProjectDiskTransfer**](StorageProjectDiskTransfer.md)|  | 
- **optional** | ***StorageProjectDiskTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectDiskTransferOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectDiskTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -847,8 +1578,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectDiskTransfer** | [**StorageProjectDiskTransfer**](StorageProjectDiskTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -870,22 +1602,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskUpdate
 
-> Disk StorageProjectDiskUpdate(ctx, projectId, locationId, diskId, storageProjectDiskUpdate)
+> Disk StorageProjectDiskUpdate(ctx, projectId, locationId, diskId).StorageProjectDiskUpdate(storageProjectDiskUpdate).Execute()
 
 Update storage/disk
 
-Returns modified disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    storageProjectDiskUpdate := *openapiclient.NewStorageProjectDiskUpdate() // StorageProjectDiskUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskUpdate(context.Background(), projectId, locationId, diskId).StorageProjectDiskUpdate(storageProjectDiskUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskUpdate`: Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**diskId** | **string**| Disk Id | 
-**storageProjectDiskUpdate** | [**StorageProjectDiskUpdate**](StorageProjectDiskUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectDiskUpdate** | [**StorageProjectDiskUpdate**](StorageProjectDiskUpdate.md) |  | 
 
 ### Return type
 

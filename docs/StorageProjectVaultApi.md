@@ -37,22 +37,64 @@ Method | HTTP request | Description
 
 ## StorageProjectVaultConnectGet
 
-> ResourceConnect StorageProjectVaultConnectGet(ctx, projectId, locationId, vaultId, connectId)
+> ResourceConnect StorageProjectVaultConnectGet(ctx, projectId, locationId, vaultId, connectId).Execute()
 
 Get storage/vault.connect
 
-Get storage/vault.connect
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    connectId := "connectId_example" // string | connectId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultConnectGet(context.Background(), projectId, locationId, vaultId, connectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultConnectGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultConnectGet`: ResourceConnect
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultConnectGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**connectId** | **string**| connectId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**connectId** | **string** | connectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultConnectGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -74,21 +116,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultConnectList
 
-> []ResourceConnect StorageProjectVaultConnectList(ctx, projectId, locationId, vaultId)
+> []ResourceConnect StorageProjectVaultConnectList(ctx, projectId, locationId, vaultId).Execute()
 
 List storage/vault.connect
 
-List storage/vault.connect
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultConnectList(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultConnectList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultConnectList`: []ResourceConnect
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultConnectList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultConnectListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -110,34 +192,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCreate
 
-> Vault StorageProjectVaultCreate(ctx, projectId, locationId, storageProjectVaultCreate, optional)
+> Vault StorageProjectVaultCreate(ctx, projectId, locationId).StorageProjectVaultCreate(storageProjectVaultCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create storage/vault
 
-Create vault
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    storageProjectVaultCreate := *openapiclient.NewStorageProjectVaultCreate("Name_example", float32(123)) // StorageProjectVaultCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCreate(context.Background(), projectId, locationId).StorageProjectVaultCreate(storageProjectVaultCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCreate`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**storageProjectVaultCreate** | [**StorageProjectVaultCreate**](StorageProjectVaultCreate.md)|  | 
- **optional** | ***StorageProjectVaultCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultCreateOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectVaultCreate** | [**StorageProjectVaultCreate**](StorageProjectVaultCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -159,22 +271,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCredentialCreate
 
-> VaultCredential StorageProjectVaultCredentialCreate(ctx, projectId, locationId, vaultId, vaultCredential)
+> VaultCredential StorageProjectVaultCredentialCreate(ctx, projectId, locationId, vaultId).VaultCredential(vaultCredential).Execute()
 
 Create storage/vault.credential
 
-Create storage/vault.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    vaultCredential := *openapiclient.NewVaultCredential("Name_example", "Type_example", "Value_example") // VaultCredential | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialCreate(context.Background(), projectId, locationId, vaultId).VaultCredential(vaultCredential).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCredentialCreate`: VaultCredential
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCredentialCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**vaultCredential** | [**VaultCredential**](VaultCredential.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultCredentialCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **vaultCredential** | [**VaultCredential**](VaultCredential.md) |  | 
 
 ### Return type
 
@@ -196,22 +349,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCredentialDelete
 
-> Vault StorageProjectVaultCredentialDelete(ctx, projectId, locationId, vaultId, credentialId)
+> Vault StorageProjectVaultCredentialDelete(ctx, projectId, locationId, vaultId, credentialId).Execute()
 
 Delete storage/vault.credential
 
-Delete storage/vault.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialDelete(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCredentialDelete`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCredentialDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultCredentialDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -233,22 +428,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCredentialGet
 
-> VaultCredential StorageProjectVaultCredentialGet(ctx, projectId, locationId, vaultId, credentialId)
+> VaultCredential StorageProjectVaultCredentialGet(ctx, projectId, locationId, vaultId, credentialId).Execute()
 
 Get storage/vault.credential
 
-Get storage/vault.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialGet(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCredentialGet`: VaultCredential
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCredentialGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultCredentialGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -270,21 +507,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCredentialList
 
-> []VaultCredential StorageProjectVaultCredentialList(ctx, projectId, locationId, vaultId)
+> []VaultCredential StorageProjectVaultCredentialList(ctx, projectId, locationId, vaultId).Execute()
 
 List storage/vault.credential
 
-List storage/vault.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialList(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCredentialList`: []VaultCredential
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCredentialList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultCredentialListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -306,23 +583,66 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultCredentialPatch
 
-> VaultCredential StorageProjectVaultCredentialPatch(ctx, projectId, locationId, vaultId, credentialId, storageProjectVaultCredentialPatch)
+> VaultCredential StorageProjectVaultCredentialPatch(ctx, projectId, locationId, vaultId, credentialId).StorageProjectVaultCredentialPatch(storageProjectVaultCredentialPatch).Execute()
 
 Update storage/vault.credential
 
-Update storage/vault.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    credentialId := "credentialId_example" // string | credentialId
+    storageProjectVaultCredentialPatch := *openapiclient.NewStorageProjectVaultCredentialPatch("Name_example") // StorageProjectVaultCredentialPatch | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialPatch(context.Background(), projectId, locationId, vaultId, credentialId).StorageProjectVaultCredentialPatch(storageProjectVaultCredentialPatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialPatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultCredentialPatch`: VaultCredential
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultCredentialPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**credentialId** | **string**| credentialId | 
-**storageProjectVaultCredentialPatch** | [**StorageProjectVaultCredentialPatch**](StorageProjectVaultCredentialPatch.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultCredentialPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **storageProjectVaultCredentialPatch** | [**StorageProjectVaultCredentialPatch**](StorageProjectVaultCredentialPatch.md) |  | 
 
 ### Return type
 
@@ -344,22 +664,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultDelete
 
-> StorageProjectVaultDelete(ctx, projectId, locationId, vaultId, storageProjectVaultDelete)
+> StorageProjectVaultDelete(ctx, projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
 
 Delete storage/vault
 
-Delete vault
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    storageProjectVaultDelete := *openapiclient.NewStorageProjectVaultDelete() // StorageProjectVaultDelete | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultDelete(context.Background(), projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**storageProjectVaultDelete** | [**StorageProjectVaultDelete**](StorageProjectVaultDelete.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectVaultDelete** | [**StorageProjectVaultDelete**](StorageProjectVaultDelete.md) |  | 
 
 ### Return type
 
@@ -381,22 +740,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultEventGet
 
-> Event StorageProjectVaultEventGet(ctx, projectId, locationId, vaultId, eventId)
+> Event StorageProjectVaultEventGet(ctx, projectId, locationId, vaultId, eventId).Execute()
 
 Get storage/vault.event
 
-Get storage/vault.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultEventGet(context.Background(), projectId, locationId, vaultId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -418,26 +819,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultEventList
 
-> []Event StorageProjectVaultEventList(ctx, projectId, locationId, vaultId, optional)
+> []Event StorageProjectVaultEventList(ctx, projectId, locationId, vaultId).Limit(limit).Skip(skip).Execute()
 
 List storage/vault.event
 
-List storage/vault.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultEventList(context.Background(), projectId, locationId, vaultId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
- **optional** | ***StorageProjectVaultEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultEventListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -445,8 +876,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -468,21 +899,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultGet
 
-> Vault StorageProjectVaultGet(ctx, projectId, locationId, vaultId)
+> Vault StorageProjectVaultGet(ctx, projectId, locationId, vaultId).Execute()
 
 Get storage/vault
 
-Returns a single vault
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultGet(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultGet`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -504,34 +975,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultList
 
-> []Vault StorageProjectVaultList(ctx, projectId, locationId, optional)
+> []Vault StorageProjectVaultList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List storage/vault
 
-List vault
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultList`: []Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***StorageProjectVaultListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -553,27 +1054,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultResize
 
-> Vault StorageProjectVaultResize(ctx, projectId, locationId, vaultId, storageProjectVaultResize, optional)
+> Vault StorageProjectVaultResize(ctx, projectId, locationId, vaultId).StorageProjectVaultResize(storageProjectVaultResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Resize storage/vault
 
-action resize
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    storageProjectVaultResize := *openapiclient.NewStorageProjectVaultResize(float32(123)) // StorageProjectVaultResize | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultResize(context.Background(), projectId, locationId, vaultId).StorageProjectVaultResize(storageProjectVaultResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultResize``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultResize`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultResize`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**storageProjectVaultResize** | [**StorageProjectVaultResize**](StorageProjectVaultResize.md)|  | 
- **optional** | ***StorageProjectVaultResizeOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultResizeOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultResizeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -581,8 +1112,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectVaultResize** | [**StorageProjectVaultResize**](StorageProjectVaultResize.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -604,22 +1136,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultServiceGet
 
-> ResourceService StorageProjectVaultServiceGet(ctx, projectId, locationId, vaultId, serviceId)
+> ResourceService StorageProjectVaultServiceGet(ctx, projectId, locationId, vaultId, serviceId).Execute()
 
 Get storage/vault.service
 
-Get storage/vault.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultServiceGet(context.Background(), projectId, locationId, vaultId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -641,21 +1215,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultServiceList
 
-> []ResourceService StorageProjectVaultServiceList(ctx, projectId, locationId, vaultId)
+> []ResourceService StorageProjectVaultServiceList(ctx, projectId, locationId, vaultId).Execute()
 
 List storage/vault.service
 
-List storage/vault.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultServiceList(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -677,22 +1291,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultSnapshotCreate
 
-> StorageSnapshot StorageProjectVaultSnapshotCreate(ctx, projectId, locationId, vaultId, storageProjectVaultSnapshotCreate)
+> StorageSnapshot StorageProjectVaultSnapshotCreate(ctx, projectId, locationId, vaultId).StorageProjectVaultSnapshotCreate(storageProjectVaultSnapshotCreate).Execute()
 
 Create storage/vault.snapshot
 
-Create storage/vault.snapshot
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    storageProjectVaultSnapshotCreate := *openapiclient.NewStorageProjectVaultSnapshotCreate("Name_example") // StorageProjectVaultSnapshotCreate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotCreate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultSnapshotCreate(storageProjectVaultSnapshotCreate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultSnapshotCreate`: StorageSnapshot
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultSnapshotCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**storageProjectVaultSnapshotCreate** | [**StorageProjectVaultSnapshotCreate**](StorageProjectVaultSnapshotCreate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultSnapshotCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectVaultSnapshotCreate** | [**StorageProjectVaultSnapshotCreate**](StorageProjectVaultSnapshotCreate.md) |  | 
 
 ### Return type
 
@@ -714,22 +1369,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultSnapshotDelete
 
-> StorageSnapshot StorageProjectVaultSnapshotDelete(ctx, projectId, locationId, vaultId, snapshotId)
+> StorageSnapshot StorageProjectVaultSnapshotDelete(ctx, projectId, locationId, vaultId, snapshotId).Execute()
 
 Delete storage/vault.snapshot
 
-Delete storage/vault.snapshot
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    snapshotId := "snapshotId_example" // string | snapshotId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotDelete(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultSnapshotDelete`: StorageSnapshot
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultSnapshotDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**snapshotId** | **string**| snapshotId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**snapshotId** | **string** | snapshotId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultSnapshotDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -751,22 +1448,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultSnapshotGet
 
-> StorageSnapshot StorageProjectVaultSnapshotGet(ctx, projectId, locationId, vaultId, snapshotId)
+> StorageSnapshot StorageProjectVaultSnapshotGet(ctx, projectId, locationId, vaultId, snapshotId).Execute()
 
 Get storage/vault.snapshot
 
-Get storage/vault.snapshot
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    snapshotId := "snapshotId_example" // string | snapshotId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotGet(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultSnapshotGet`: StorageSnapshot
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultSnapshotGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**snapshotId** | **string**| snapshotId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**snapshotId** | **string** | snapshotId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultSnapshotGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -788,21 +1527,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultSnapshotList
 
-> []StorageSnapshot StorageProjectVaultSnapshotList(ctx, projectId, locationId, vaultId)
+> []StorageSnapshot StorageProjectVaultSnapshotList(ctx, projectId, locationId, vaultId).Execute()
 
 List storage/vault.snapshot
 
-List storage/vault.snapshot
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotList(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultSnapshotList`: []StorageSnapshot
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultSnapshotList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultSnapshotListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -824,26 +1603,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultStart
 
-> Vault StorageProjectVaultStart(ctx, projectId, locationId, vaultId, optional)
+> Vault StorageProjectVaultStart(ctx, projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Start storage/vault
 
-action start
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultStart(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultStart``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultStart`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultStart`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
- **optional** | ***StorageProjectVaultStartOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultStartOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultStartRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -851,7 +1660,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -873,26 +1683,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultStop
 
-> Vault StorageProjectVaultStop(ctx, projectId, locationId, vaultId, optional)
+> Vault StorageProjectVaultStop(ctx, projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Stop storage/vault
 
-action stop
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultStop(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultStop``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultStop`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultStop`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
- **optional** | ***StorageProjectVaultStopOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectVaultStopOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectVaultStopRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -900,7 +1740,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -922,22 +1763,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultTagCreate
 
-> Tag StorageProjectVaultTagCreate(ctx, projectId, locationId, vaultId, tag)
+> Tag StorageProjectVaultTagCreate(ctx, projectId, locationId, vaultId).Tag(tag).Execute()
 
 Create storage/vault.tag
 
-Create storage/vault.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagCreate(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -959,22 +1841,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultTagDelete
 
-> StorageProjectVaultTagDelete(ctx, projectId, locationId, vaultId, tagId)
+> StorageProjectVaultTagDelete(ctx, projectId, locationId, vaultId, tagId).Execute()
 
 Delete storage/vault.tag
 
-Delete storage/vault.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagDelete(context.Background(), projectId, locationId, vaultId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -996,22 +1918,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultTagGet
 
-> Tag StorageProjectVaultTagGet(ctx, projectId, locationId, vaultId, tagId)
+> Tag StorageProjectVaultTagGet(ctx, projectId, locationId, vaultId, tagId).Execute()
 
 Get storage/vault.tag
 
-Get storage/vault.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagGet(context.Background(), projectId, locationId, vaultId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -1033,21 +1997,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultTagList
 
-> []Tag StorageProjectVaultTagList(ctx, projectId, locationId, vaultId)
+> []Tag StorageProjectVaultTagList(ctx, projectId, locationId, vaultId).Execute()
 
 List storage/vault.tag
 
-List storage/vault.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagList(context.Background(), projectId, locationId, vaultId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -1069,22 +2073,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultTagPut
 
-> []Tag StorageProjectVaultTagPut(ctx, projectId, locationId, vaultId, tag)
+> []Tag StorageProjectVaultTagPut(ctx, projectId, locationId, vaultId).Tag(tag).Execute()
 
 Replace storage/vault.tag
 
-Replace storage/vault.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagPut(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -1106,22 +2151,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultUpdate
 
-> Vault StorageProjectVaultUpdate(ctx, projectId, locationId, vaultId, storageProjectVaultUpdate)
+> Vault StorageProjectVaultUpdate(ctx, projectId, locationId, vaultId).StorageProjectVaultUpdate(storageProjectVaultUpdate).Execute()
 
 Update storage/vault
 
-Returns modified vault
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vaultId := "vaultId_example" // string | Vault Id
+    storageProjectVaultUpdate := *openapiclient.NewStorageProjectVaultUpdate() // StorageProjectVaultUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultUpdate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultUpdate(storageProjectVaultUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectVaultUpdate`: Vault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**vaultId** | **string**| Vault Id | 
-**storageProjectVaultUpdate** | [**StorageProjectVaultUpdate**](StorageProjectVaultUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vaultId** | **string** | Vault Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectVaultUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectVaultUpdate** | [**StorageProjectVaultUpdate**](StorageProjectVaultUpdate.md) |  | 
 
 ### Return type
 

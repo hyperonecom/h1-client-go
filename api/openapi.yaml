@@ -48,6 +48,12 @@ tags:
   x-parent:
   - project
 - description: Available as part of the Early Adopters program.
+  name: recovery_project_plan
+  x-kind: recovery/plan
+  x-location: true
+  x-parent:
+  - project
+- description: Available as part of the Early Adopters program.
   name: container_project_registry
   x-kind: container/registry
   x-location: true
@@ -751,6 +757,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -907,6 +921,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -2412,6 +2434,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -3781,6 +3811,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -4016,6 +4054,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4079,6 +4125,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -4150,6 +4204,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -4214,6 +4276,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -5948,6 +6018,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -6171,6 +6249,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -7028,6 +7114,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -7268,6 +7362,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7337,6 +7439,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -7402,6 +7512,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -8503,6 +8621,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -8734,6 +8860,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -9711,6 +9845,829 @@ paths:
       - insight/journal.event/get
       x-examples:
         $ref: ./docs/insight_project_journal_event_get/index.json
+  /recovery/{locationId}/project/{projectId}/plan:
+    get:
+      description: List plan
+      operationId: recovery_project_plan_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by tag.value
+        explode: true
+        in: query
+        name: tag.value
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by tag.key
+        explode: true
+        in: query
+        name: tag.key
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/plan'
+                title: Plan collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List recovery/plan
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan/list
+    post:
+      description: Create plan
+      operationId: recovery_project_plan_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/recovery_project_plan_create'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plan'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plan'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create recovery/plan
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan/create
+  /recovery/{locationId}/project/{projectId}/plan/{planId}:
+    delete:
+      description: Delete plan
+      operationId: recovery_project_plan_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete recovery/plan
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan/delete
+      x-state:
+      - Online
+      - Unauthorized
+    get:
+      description: Returns a single plan
+      operationId: recovery_project_plan_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plan'
+          description: successful operation
+          links:
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get recovery/plan
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan/get
+    patch:
+      description: Returns modified plan
+      operationId: recovery_project_plan_update
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/recovery_project_plan_update'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plan'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Update recovery/plan
+      tags:
+      - recovery_project_plan
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/service:
+    get:
+      description: List recovery/plan.service
+      operationId: recovery_project_plan_service_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/resourceService'
+                title: ResourceService collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List recovery/plan.service
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.service/list
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/service/{serviceId}:
+    get:
+      description: Get recovery/plan.service
+      operationId: recovery_project_plan_service_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/resourceService'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get recovery/plan.service
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.service/get
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/tag:
+    get:
+      description: List recovery/plan.tag
+      operationId: recovery_project_plan_tag_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/tag'
+                title: Tag collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List recovery/plan.tag
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.tag/list
+    post:
+      description: Create recovery/plan.tag
+      operationId: recovery_project_plan_tag_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create recovery/plan.tag
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.tag/create
+    put:
+      description: Replace recovery/plan.tag
+      operationId: recovery_project_plan_tag_put
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag_array'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/tag'
+                title: Tag collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Replace recovery/plan.tag
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.tag/create
+      - recovery/plan.tag/delete
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/tag/{tagId}:
+    delete:
+      description: Delete recovery/plan.tag
+      operationId: recovery_project_plan_tag_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete recovery/plan.tag
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.tag/delete
+    get:
+      description: Get recovery/plan.tag
+      operationId: recovery_project_plan_tag_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get recovery/plan.tag
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.tag/get
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/event:
+    get:
+      description: List recovery/plan.event
+      operationId: recovery_project_plan_event_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: $limit
+        explode: true
+        in: query
+        name: $limit
+        required: false
+        schema:
+          default: 100
+          maximum: 1000
+          minimum: 1
+          type: number
+        style: form
+      - description: $skip
+        explode: true
+        in: query
+        name: $skip
+        required: false
+        schema:
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                title: Event collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List recovery/plan.event
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.event/list
+  /recovery/{locationId}/project/{projectId}/plan/{planId}/event/{eventId}:
+    get:
+      description: Get recovery/plan.event
+      operationId: recovery_project_plan_event_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Plan Id
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: eventId
+        explode: false
+        in: path
+        name: eventId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/event'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get recovery/plan.event
+      tags:
+      - recovery_project_plan
+      x-permissions:
+      - recovery/plan.event/get
   /container/{locationId}/project/{projectId}/registry:
     get:
       description: List registry
@@ -9807,6 +10764,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -10047,6 +11012,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10116,6 +11089,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -10181,6 +11162,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -11714,6 +12703,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -11955,6 +12952,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12020,6 +13025,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -12094,6 +13107,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -12159,6 +13180,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -13019,121 +14048,7 @@ paths:
       - website/instance.sideapp/list
       x-examples:
         $ref: ./docs/website_project_instance_sideapp_list/index.json
-    post:
-      description: Create website/instance.sideapp
-      operationId: website_project_instance_sideapp_create
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Location Id
-        explode: false
-        in: path
-        name: locationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Instance Id
-        explode: false
-        in: path
-        name: instanceId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/website.sideapp'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/website.sideapp'
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Create website/instance.sideapp
-      tags:
-      - website_project_instance
-      x-permissions:
-      - website/instance.sideapp/create
-      x-examples:
-        $ref: ./docs/website_project_instance_sideapp_create/index.json
   /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId}:
-    delete:
-      description: Delete website/instance.sideapp
-      operationId: website_project_instance_sideapp_delete
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: Location Id
-        explode: false
-        in: path
-        name: locationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: Instance Id
-        explode: false
-        in: path
-        name: instanceId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: sideappId
-        explode: false
-        in: path
-        name: sideappId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "204":
-          description: No Content
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Delete website/instance.sideapp
-      tags:
-      - website_project_instance
-      x-permissions:
-      - website/instance.sideapp/delete
-      x-examples:
-        $ref: ./docs/website_project_instance_sideapp_delete/index.json
     get:
       description: Get website/instance.sideapp
       operationId: website_project_instance_sideapp_get
@@ -13194,6 +14109,69 @@ paths:
       - website/instance.sideapp/get
       x-examples:
         $ref: ./docs/website_project_instance_sideapp_get/index.json
+  /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId}/actions/open:
+    post:
+      description: action open
+      operationId: website_project_instance_sideapp_open
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Instance Id
+        explode: false
+        in: path
+        name: instanceId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: sideappId
+        explode: false
+        in: path
+        name: sideappId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "201":
+          description: Request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Open website/instance.sideapp
+      tags:
+      - website_project_instance
+      x-permissions:
+      - website/instance.sideapp/open
   /website/{locationId}/project/{projectId}/instance/{instanceId}/credential:
     get:
       description: List website/instance.credential
@@ -14855,6 +15833,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -16337,6 +17323,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -16572,6 +17566,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -16648,6 +17650,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -16711,6 +17721,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -16780,6 +17798,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -17653,6 +18679,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -17884,6 +18918,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -19148,6 +20190,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -19379,6 +20429,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -20133,6 +21191,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -20368,6 +21434,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -20431,6 +21505,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -20508,6 +21590,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -20571,6 +21661,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -21253,6 +22351,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -21488,6 +22594,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -21557,6 +22671,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -22251,6 +23373,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -23288,6 +24418,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -23523,6 +24661,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -23592,6 +24738,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -24264,6 +25418,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -25112,6 +26274,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -25236,6 +26406,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -26960,6 +28138,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -27707,6 +28893,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -27819,6 +29013,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -29639,6 +30841,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -30648,6 +31858,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -30890,6 +32108,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -30959,6 +32185,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -31024,6 +32258,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -32362,6 +33604,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -32602,6 +33852,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -32667,6 +33925,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -32740,6 +34006,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -32809,6 +34083,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
@@ -32874,6 +34156,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -32951,6 +34241,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -33020,6 +34318,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -34287,6 +35593,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -34488,6 +35802,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -34551,6 +35873,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -35835,6 +37165,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -36166,6 +37504,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -36273,6 +37619,14 @@ paths:
         explode: false
         in: header
         name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
         required: false
         schema:
           type: string
@@ -36604,6 +37958,15 @@ components:
       schema:
         type: string
       style: simple
+    x-dry-run:
+      description: Dry run
+      explode: false
+      in: header
+      name: x-dry-run
+      required: false
+      schema:
+        type: string
+      style: simple
     userId:
       description: User Id
       explode: false
@@ -36667,6 +38030,16 @@ components:
       explode: false
       in: path
       name: journalId
+      required: true
+      schema:
+        format: ObjectId
+        type: string
+      style: simple
+    planId:
+      description: Plan Id
+      explode: false
+      in: path
+      name: planId
       required: true
       schema:
         format: ObjectId
@@ -37651,6 +39024,8 @@ components:
           type: string
           x-resource:
             kind: iam/organisation
+            state:
+            - Active
           x-permissions:
           - iam/project/create
         tag:
@@ -37680,6 +39055,8 @@ components:
           type: string
           x-resource:
             kind: iam/organisation
+            state:
+            - Active
           x-permissions: []
       required:
       - organisation
@@ -37914,6 +39291,9 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
+            - Limited
             filter:
               organisation: $request.path.organisationId
           x-permissions:
@@ -37933,6 +39313,9 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
+            - Limited
           x-permissions:
           - iam/project/get
       required:
@@ -38233,6 +39616,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - provider/agent/create
       required:
@@ -38332,14 +39717,20 @@ components:
             title: website
             x-resource:
               kind: website/instance
-            x-permission:
+              state:
+              - Running
+              - "Off"
+            x-permissions:
             - website/instance/use
           - format: uri
             pattern: ^/database/
             title: database
             x-resource:
               kind: database/instance
-            x-permission:
+              state:
+              - Running
+              - "Off"
+            x-permissions:
             - database/instance/use
           title: Backup source
           type: string
@@ -38370,6 +39761,8 @@ components:
           type: string
           x-resource:
             kind: storage/bucket
+            state:
+            - Online
           x-permissions:
           - storage/bucket/upload
       required:
@@ -38549,6 +39942,8 @@ components:
             kind: recovery/backup
             state:
             - Online
+            filter:
+              flavour: database
           x-permissions:
           - recovery/backup/use
         tag:
@@ -38568,6 +39963,17 @@ components:
           type: string
           x-permissions:
           - database/instance.name/update
+        plan:
+          format: uri
+          title: Instance plan
+          type: string
+          x-resource:
+            kind: recovery/plan
+            state:
+            - Online
+          x-permissions:
+          - recovery/plan/use
+          - database/instance.plan/update
       type: object
     database_project_instance_transfer:
       format: Action transfer
@@ -38578,6 +39984,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - database/instance/create
       required:
@@ -38595,12 +40003,14 @@ components:
       type: object
     database:
       example:
-        modifiedOn: 2000-01-23T04:56:07.000+00:00
         flavour: flavour
-        createdBy: https://openapi-generator.tech
         fqdn: fqdn
-        name: name
         project: https://openapi-generator.tech
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: https://openapi-generator.tech
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        createdBy: https://openapi-generator.tech
+        name: name
         modifiedBy: https://openapi-generator.tech
         id: id
         state: Running
@@ -38611,8 +40021,7 @@ components:
         - id: id
           value: value
           key: key
-        createdOn: 2000-01-23T04:56:07.000+00:00
-        uri: https://openapi-generator.tech
+        plan: https://openapi-generator.tech
       properties:
         id:
           type: string
@@ -38654,6 +40063,11 @@ components:
           type: string
           x-resource:
             kind: database/instance
+        plan:
+          format: uri
+          type: string
+          x-resource:
+            kind: recovery/plan
         fqdn:
           type: string
         tag:
@@ -38763,6 +40177,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - insight/journal/create
       required:
@@ -38852,6 +40268,139 @@ components:
           type: array
           x-permissions:
           - insight/journal.tag/list
+      type: object
+    recovery_project_plan_create:
+      format: create plan
+      properties:
+        name:
+          title: Plan name
+          type: string
+        window:
+          items:
+            $ref: '#/components/schemas/recovery_project_plan_create_window'
+          minItems: 1
+          title: Window collection
+          type: array
+        retention:
+          items:
+            $ref: '#/components/schemas/recovery_project_plan_create_retention'
+          minItems: 1
+          title: Retention collection
+          type: array
+        tag:
+          items:
+            $ref: '#/components/schemas/tag'
+          title: Tag collection
+          type: array
+      required:
+      - name
+      type: object
+    recovery_project_plan_update:
+      format: patch plan
+      properties:
+        name:
+          title: Plan name
+          type: string
+          x-permissions:
+          - recovery/plan.name/update
+        plan:
+          format: uri
+          title: Plan plan
+          type: string
+          x-resource:
+            kind: recovery/plan
+            state:
+            - Online
+          x-permissions:
+          - recovery/plan/use
+          - recovery/plan.plan/update
+      type: object
+    plan:
+      example:
+        flavour: flavour
+        project: https://openapi-generator.tech
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: https://openapi-generator.tech
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        createdBy: https://openapi-generator.tech
+        name: name
+        modifiedBy: https://openapi-generator.tech
+        id: id
+        state: Online
+        window:
+        - interval: interval
+          id: id
+        - interval: interval
+          id: id
+        tag:
+        - id: id
+          value: value
+          key: key
+        - id: id
+          value: value
+          key: key
+        retention:
+        - count: 0.8008281904610115
+          interval: interval
+          id: id
+        - count: 0.8008281904610115
+          interval: interval
+          id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/user
+        createdOn:
+          format: date-time
+          type: string
+        createdBy:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/user
+        state:
+          enum:
+          - Online
+          - Unauthorized
+          - Unknown
+          - Processing
+          - NotCreated
+          type: string
+        project:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/project
+        uri:
+          format: uri
+          type: string
+          x-resource:
+            kind: recovery/plan
+        window:
+          items:
+            $ref: '#/components/schemas/plan_window'
+          type: array
+        retention:
+          items:
+            $ref: '#/components/schemas/plan_retention'
+          type: array
+        tag:
+          items:
+            $ref: '#/components/schemas/tag'
+          type: array
+          x-permissions:
+          - recovery/plan.tag/list
       type: object
     container.repository:
       example:
@@ -39007,6 +40556,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - container/registry/create
       required:
@@ -39159,6 +40710,8 @@ components:
           type: string
           x-resource:
             kind: iam/sa
+            state:
+            - Online
           x-permissions:
           - iam/sa/use
         purpose:
@@ -39172,6 +40725,8 @@ components:
           type: string
           x-resource:
             kind: insight/journal
+            state:
+            - Online
           x-permissions:
           - insight/journal/use
       required:
@@ -39181,24 +40736,18 @@ components:
       type: object
     website.sideapp:
       example:
-        flavour: flavour
+        name: name
         id: id
-        url: url
       properties:
         id:
           readOnly: true
           title: Sideapp id
           type: string
-        flavour:
-          title: Sideapp flavour
-          type: string
-        url:
-          description: Only available on the creation response
-          readOnly: true
-          title: Sideapp url
+        name:
+          title: Sideapp name
           type: string
       required:
-      - flavour
+      - name
       type: object
     website.credential:
       example:
@@ -39301,14 +40850,20 @@ components:
             title: snapshot
             x-resource:
               kind: website/instance.snapshot
-            x-permission:
+              state:
+              - Online
+            x-permissions:
             - website/instance.snapshot/use
           - format: uri
             pattern: ^/recovery/
             title: backup
             x-resource:
               kind: recovery/backup
-            x-permission:
+              state:
+              - Online
+              filter:
+                flavour: website
+            x-permissions:
             - recovery/backup/use
           title: Instance source
           type: string
@@ -39343,6 +40898,17 @@ components:
             kind: website/image
           x-permissions:
           - website/instance.image/update
+        plan:
+          format: uri
+          title: Instance plan
+          type: string
+          x-resource:
+            kind: recovery/plan
+            state:
+            - Online
+          x-permissions:
+          - recovery/plan/use
+          - website/instance.plan/update
       type: object
     website_project_instance_transfer:
       format: Action transfer
@@ -39353,6 +40919,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - website/instance/create
       required:
@@ -39396,6 +40964,7 @@ components:
         - id: id
           value: value
           key: key
+        plan: https://openapi-generator.tech
       properties:
         id:
           type: string
@@ -39440,6 +41009,11 @@ components:
             kind: website/instance
         image:
           type: string
+        plan:
+          format: uri
+          type: string
+          x-resource:
+            kind: recovery/plan
         fqdn:
           type: string
         tag:
@@ -39453,7 +41027,6 @@ components:
       example:
         id: id
         content: content
-        enabled: true
       properties:
         id:
           readOnly: true
@@ -39465,10 +41038,6 @@ components:
             - {{REQUEST_IP}} is replaced by the requester ip address.
           title: Record content
           type: string
-        enabled:
-          default: true
-          title: Record enabled
-          type: boolean
       required:
       - content
       type: object
@@ -39482,10 +41051,8 @@ components:
         record:
         - id: id
           content: content
-          enabled: true
         - id: id
           content: content
-          enabled: true
         name: '@'
         id: id
         type: A
@@ -39693,7 +41260,10 @@ components:
             title: disk
             x-resource:
               kind: storage/disk
-            x-permission:
+              state:
+              - Attached
+              - Detached
+            x-permissions:
             - storage/disk/use
           - format: uri-upload
             pattern: ^http
@@ -39708,6 +41278,9 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+            state:
+            - Running
+            - "Off"
           x-permissions:
           - compute/vm/use
         tag:
@@ -39747,6 +41320,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - storage/disk/create
       required:
@@ -39953,6 +41528,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - networking/firewall/create
       required:
@@ -40047,6 +41624,9 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+            state:
+            - Running
+            - "Off"
           x-permissions:
           - compute/vm/use
         replica:
@@ -40055,6 +41635,8 @@ components:
           type: string
           x-resource:
             kind: compute/replica
+            state:
+            - Replicating
           x-permissions:
           - compute/replica/use
         description:
@@ -40091,6 +41673,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - storage/image/create
       required:
@@ -40187,6 +41771,8 @@ components:
           type: string
           x-resource:
             kind: networking/network
+            state:
+            - Online
           x-permissions:
           - networking/network/use
         ptrRecord:
@@ -40220,6 +41806,8 @@ components:
           type: string
           x-resource:
             kind: networking/ip
+            state:
+            - Unallocated
           x-permissions:
           - networking/ip/use
       required:
@@ -40234,6 +41822,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - networking/ip/create
       required:
@@ -40368,6 +41958,9 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+            state:
+            - Running
+            - "Off"
           x-permissions:
           - compute/vm/use
       required:
@@ -40382,6 +41975,8 @@ components:
           type: string
           x-resource:
             kind: iam/project
+            state:
+            - Active
           x-permissions:
           - storage/iso/create
       required:
@@ -40492,6 +42087,9 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
+            state:
+            - Attached
+            - Detached
           x-permissions:
           - networking/firewall/use
         ip:
@@ -40526,6 +42124,9 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
+            state:
+            - Attached
+            - Detached
           x-permissions:
           - networking/firewall/use
           - networking/netadp.firewall/update
@@ -40765,6 +42366,9 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
+            state:
+            - Attached
+            - Detached
           x-permissions:
           - networking/firewall/use
           - networking/network.firewall/update
@@ -40898,6 +42502,8 @@ components:
           type: string
           x-resource:
             kind: iam/role
+            state:
+            - Online
           x-permissions:
           - iam/role/use
         resource:
@@ -41529,6 +43135,8 @@ components:
           type: string
           x-resource:
             kind: storage/vault.snapshot
+            state:
+            - Online
           x-permissions:
           - storage/vault.snapshot/use
         tag:
@@ -41703,6 +43311,8 @@ components:
           type: string
           x-resource:
             kind: storage/image
+            state:
+            - Online
           x-permissions:
           - storage/image/use
         iso:
@@ -41711,6 +43321,8 @@ components:
           type: string
           x-resource:
             kind: storage/iso
+            state:
+            - Online
           x-permissions:
           - storage/iso/use
         username:
@@ -41829,6 +43441,8 @@ components:
           type: string
           x-resource:
             kind: storage/iso
+            state:
+            - Online
           x-permissions:
           - storage/iso/attach
       type: object
@@ -41987,6 +43601,9 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+            state:
+            - Running
+            - "Off"
           x-permissions:
           - compute/vm/use
       type: object
@@ -42421,6 +44038,7 @@ components:
         message:
           description: error description
           type: string
+      type: object
     billing_service:
       example:
         name: name
@@ -42433,6 +44051,7 @@ components:
           type: string
         name:
           type: string
+      type: object
     billing_resource:
       example:
         deleted: true
@@ -42448,6 +44067,7 @@ components:
           type: string
         deleted:
           type: boolean
+      type: object
     billing_charges:
       example:
         quantity: 5.637376656633329
@@ -42475,6 +44095,7 @@ components:
           type: string
         paidOn:
           type: string
+      type: object
     invoice_seller_address:
       example:
         zipcode: zipcode
@@ -42495,6 +44116,7 @@ components:
       - country
       - street
       - zipcode
+      type: object
     invoice_seller:
       example:
         address:
@@ -42514,6 +44136,7 @@ components:
       required:
       - company
       - nip
+      type: object
     invoice_items:
       example:
         brutto: brutto
@@ -42546,6 +44169,7 @@ components:
       - quantity
       - vatAmount
       - vatRate
+      type: object
     invoice_buyer_address:
       example:
         zipcode: zipcode
@@ -42565,6 +44189,7 @@ components:
       - city
       - country
       - street
+      type: object
     invoice_buyer:
       example:
         address:
@@ -42586,6 +44211,7 @@ components:
           type: string
       required:
       - company
+      type: object
     invoice_duplicate:
       example:
         id: id
@@ -42595,6 +44221,7 @@ components:
           type: string
         id:
           type: string
+      type: object
     proforma_seller:
       example:
         address:
@@ -42618,6 +44245,7 @@ components:
       - company
       - iban
       - nip
+      type: object
     proforma___array__:
       example:
         summary: summary
@@ -42640,6 +44268,7 @@ components:
           type: string
         uri:
           type: string
+      type: object
     authToken_access:
       example:
         path: path
@@ -42658,6 +44287,7 @@ components:
       required:
       - method
       - path
+      type: object
     user_limit_organisation:
       example:
         count: 0.8008281904610115
@@ -42667,6 +44297,7 @@ components:
           type: number
       required:
       - count
+      type: object
     user_limit:
       example:
         organisation:
@@ -42674,6 +44305,7 @@ components:
       properties:
         organisation:
           $ref: '#/components/schemas/user_limit_organisation'
+      type: object
     Quota_metric:
       example:
         unit: unit
@@ -42685,6 +44317,8 @@ components:
         unit:
           title: Metric unit
           type: string
+      title: Quota metric
+      type: object
     Quota_limit:
       example:
         effective: 5.962133916683182
@@ -42701,6 +44335,8 @@ components:
           readOnly: true
           title: Limit effective
           type: number
+      title: Quota limit
+      type: object
     project_billing:
       example:
         creditsBonus: 6.027456183070403
@@ -42713,6 +44349,7 @@ components:
           type: number
         creditLimit:
           type: number
+      type: object
     Billing_address:
       properties:
         country:
@@ -42759,6 +44396,8 @@ components:
       - city
       - street
       - zipcode
+      title: Billing address
+      type: object
     Organisation_billing:
       properties:
         nip:
@@ -42780,6 +44419,8 @@ components:
           $ref: '#/components/schemas/Billing_address'
       required:
       - company
+      title: Organisation billing
+      type: object
     Billing_address_1:
       properties:
         city:
@@ -42791,6 +44432,8 @@ components:
         street:
           title: Address street
           type: string
+      title: Billing address
+      type: object
     Organisation_billing_1:
       properties:
         email:
@@ -42801,6 +44444,10 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/Billing_address_1'
+      title: Organisation billing
+      type: object
+      x-permissions:
+      - iam/organisation.billing/update
     organisation_billing:
       example:
         address:
@@ -42823,6 +44470,7 @@ components:
           $ref: '#/components/schemas/invoice_seller_address'
         nip:
           type: string
+      type: object
     metric_dimension:
       example:
         name: name
@@ -42837,12 +44485,68 @@ components:
       required:
       - description
       - name
+      type: object
+    recovery_project_plan_create_window:
+      properties:
+        interval:
+          enum:
+          - R/2021-01-01T01:00:00Z/P1D
+          - R/2021-01-01T03:00:00Z/P1D
+          - R/2021-01-01T05:00:00Z/P1D
+          title: Window interval
+          type: string
+      required:
+      - interval
+      type: object
+    recovery_project_plan_create_retention:
+      properties:
+        interval:
+          enum:
+          - R/2021-01-01T00:00:00Z/P1D
+          - R/2021-01-01T00:00:00Z/P1W
+          - R/2021-01-01T00:00:00Z/P1M
+          title: Retention interval
+          type: string
+        count:
+          maximum: 100
+          minimum: 1
+          title: Retention count
+          type: number
+      required:
+      - count
+      - interval
+      type: object
+    plan_window:
+      example:
+        interval: interval
+        id: id
+      properties:
+        id:
+          type: string
+        interval:
+          type: string
+      type: object
+    plan_retention:
+      example:
+        count: 0.8008281904610115
+        interval: interval
+        id: id
+      properties:
+        id:
+          type: string
+        interval:
+          type: string
+        count:
+          type: number
+      type: object
     Zone_source:
       properties:
         dnsProbing:
           default: false
           title: Source dnsProbing
           type: boolean
+      title: Zone source
+      type: object
     zone_rrsets:
       example:
         records: records
@@ -42858,12 +44562,14 @@ components:
           type: string
         ttl:
           type: number
+      type: object
     disk_metadata:
       example:
         source: source
       properties:
         source:
           type: string
+      type: object
     ip_associated:
       example:
         ip: https://openapi-generator.tech
@@ -42885,6 +44591,7 @@ components:
           type: string
           x-resource:
             kind: networking/netadp
+      type: object
     iso_metadata_source:
       example:
         filename: filename
@@ -42894,6 +44601,7 @@ components:
           type: string
         size:
           type: number
+      type: object
     iso_metadata:
       example:
         source:
@@ -42902,6 +44610,7 @@ components:
       properties:
         source:
           $ref: '#/components/schemas/iso_metadata_source'
+      type: object
     Netgw_public:
       properties:
         ip:
@@ -42910,10 +44619,14 @@ components:
           type: string
           x-resource:
             kind: networking/ip
+            state:
+            - Unallocated
           x-permissions:
           - networking/ip/use
       required:
       - ip
+      title: Netgw public
+      type: object
     Netgw_private:
       properties:
         network:
@@ -42922,10 +44635,14 @@ components:
           type: string
           x-resource:
             kind: networking/network
+            state:
+            - Online
           x-permissions:
           - networking/network/use
       required:
       - network
+      title: Netgw private
+      type: object
     network_dns:
       example:
         nameservers:
@@ -42939,13 +44656,16 @@ components:
           items:
             type: string
           type: array
+      type: object
     iam_project_policy_create_actor:
       properties:
         value:
           pattern: /^\/iam\/project\/[a-f0-9]{24}\/sa\/[a-f0-9]{24}$/
           title: Actor value
           type: string
+      type: object
     compute_project_vm_create_credential:
+      format: credential
       properties:
         type:
           enum:
@@ -42965,6 +44685,7 @@ components:
       required:
       - type
       - value
+      type: object
     compute_project_vm_create_disk:
       properties:
         name:
@@ -42986,6 +44707,7 @@ components:
       - name
       - service
       - size
+      type: object
     compute_project_vm_create_netadp:
       properties:
         network:
@@ -42994,6 +44716,8 @@ components:
           type: string
           x-resource:
             kind: networking/network
+            state:
+            - Online
           x-permissions:
           - networking/network/use
         firewall:
@@ -43002,6 +44726,9 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
+            state:
+            - Attached
+            - Detached
           x-permissions:
           - networking/firewall/use
         ip:
@@ -43020,6 +44747,7 @@ components:
           type: array
       required:
       - network
+      type: object
     Message_data:
       example:
         mime: text/plain
@@ -43042,6 +44770,8 @@ components:
           type: string
       required:
       - mime
+      title: Message data
+      type: object
     service_billing_price:
       example:
         PLN: 0.8008281904610115
@@ -43057,6 +44787,7 @@ components:
           type: number
         GBP:
           type: number
+      type: object
     service_billing_reservations:
       example:
         period: period
@@ -43080,6 +44811,7 @@ components:
           $ref: '#/components/schemas/service_billing_price'
         resourcePrice:
           $ref: '#/components/schemas/service_billing_price'
+      type: object
     service_billing:
       example:
         period: period
@@ -43114,6 +44846,7 @@ components:
           type: boolean
         reservations:
           $ref: '#/components/schemas/service_billing_reservations'
+      type: object
     service_display_unit:
       example:
         usage: usage
@@ -43123,6 +44856,7 @@ components:
           type: string
         billing:
           type: string
+      type: object
     service_display:
       example:
         unit:
@@ -43131,6 +44865,7 @@ components:
       properties:
         unit:
           $ref: '#/components/schemas/service_display_unit'
+      type: object
   securitySchemes:
     BearerAuth:
       bearerFormat: JWT
@@ -43276,6 +45011,8 @@ components:
             database/instance/list: ""
             database/instance/get: ""
             database/instance.name/update: ""
+            recovery/plan/use: ""
+            database/instance.plan/update: ""
             database/instance/delete: ""
             database/instance/start: ""
             database/instance/stop: ""
@@ -43320,6 +45057,20 @@ components:
             insight/journal.event/get: ""
             insight/journal/read: ""
             insight/journal/write: ""
+            recovery/plan/create: ""
+            recovery/plan/list: ""
+            recovery/plan/get: ""
+            recovery/plan.name/update: ""
+            recovery/plan.plan/update: ""
+            recovery/plan/delete: ""
+            recovery/plan.service/list: ""
+            recovery/plan.service/get: ""
+            recovery/plan.tag/list: ""
+            recovery/plan.tag/create: ""
+            recovery/plan.tag/delete: ""
+            recovery/plan.tag/get: ""
+            recovery/plan.event/list: ""
+            recovery/plan.event/get: ""
             container/registry/create: ""
             container/registry/list: ""
             container/registry/get: ""
@@ -43359,6 +45110,7 @@ components:
             website/instance/get: ""
             website/instance.name/update: ""
             website/instance.image/update: ""
+            website/instance.plan/update: ""
             website/instance/delete: ""
             website/instance/start: ""
             website/instance/stop: ""
@@ -43378,9 +45130,8 @@ components:
             website/instance.link/get: ""
             website/instance.link/delete: ""
             website/instance.sideapp/list: ""
-            website/instance.sideapp/create: ""
             website/instance.sideapp/get: ""
-            website/instance.sideapp/delete: ""
+            website/instance.sideapp/open: ""
             website/instance.credential/list: ""
             website/instance.credential/create: ""
             website/instance.credential/get: ""
@@ -43754,6 +45505,7 @@ x-tagGroups:
 - name: recovery
   tags:
   - recovery_project_backup
+  - recovery_project_plan
 - name: database
   tags:
   - database_project_instance

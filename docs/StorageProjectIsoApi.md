@@ -25,34 +25,64 @@ Method | HTTP request | Description
 
 ## StorageProjectIsoCreate
 
-> Iso StorageProjectIsoCreate(ctx, projectId, locationId, storageProjectIsoCreate, optional)
+> Iso StorageProjectIsoCreate(ctx, projectId, locationId).StorageProjectIsoCreate(storageProjectIsoCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create storage/iso
 
-Create iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    storageProjectIsoCreate := *openapiclient.NewStorageProjectIsoCreate("Name_example", "Source_example") // StorageProjectIsoCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoCreate(context.Background(), projectId, locationId).StorageProjectIsoCreate(storageProjectIsoCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoCreate`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**storageProjectIsoCreate** | [**StorageProjectIsoCreate**](StorageProjectIsoCreate.md)|  | 
- **optional** | ***StorageProjectIsoCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectIsoCreateOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectIsoCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectIsoCreate** | [**StorageProjectIsoCreate**](StorageProjectIsoCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -74,21 +104,59 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoDelete
 
-> StorageProjectIsoDelete(ctx, projectId, locationId, isoId)
+> StorageProjectIsoDelete(ctx, projectId, locationId, isoId).Execute()
 
 Delete storage/iso
 
-Delete iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoDelete(context.Background(), projectId, locationId, isoId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -110,27 +178,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoDetach
 
-> Iso StorageProjectIsoDetach(ctx, projectId, locationId, isoId, storageProjectIsoDetach, optional)
+> Iso StorageProjectIsoDetach(ctx, projectId, locationId, isoId).StorageProjectIsoDetach(storageProjectIsoDetach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Detach storage/iso
 
-action detach
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    storageProjectIsoDetach := *openapiclient.NewStorageProjectIsoDetach("Vm_example") // StorageProjectIsoDetach | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoDetach(context.Background(), projectId, locationId, isoId).StorageProjectIsoDetach(storageProjectIsoDetach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoDetach``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoDetach`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoDetach`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**storageProjectIsoDetach** | [**StorageProjectIsoDetach**](StorageProjectIsoDetach.md)|  | 
- **optional** | ***StorageProjectIsoDetachOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectIsoDetachOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectIsoDetachRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,8 +236,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectIsoDetach** | [**StorageProjectIsoDetach**](StorageProjectIsoDetach.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -161,22 +260,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoEventGet
 
-> Event StorageProjectIsoEventGet(ctx, projectId, locationId, isoId, eventId)
+> Event StorageProjectIsoEventGet(ctx, projectId, locationId, isoId, eventId).Execute()
 
 Get storage/iso.event
 
-Get storage/iso.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoEventGet(context.Background(), projectId, locationId, isoId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -198,26 +339,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoEventList
 
-> []Event StorageProjectIsoEventList(ctx, projectId, locationId, isoId, optional)
+> []Event StorageProjectIsoEventList(ctx, projectId, locationId, isoId).Limit(limit).Skip(skip).Execute()
 
 List storage/iso.event
 
-List storage/iso.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoEventList(context.Background(), projectId, locationId, isoId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
- **optional** | ***StorageProjectIsoEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectIsoEventListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectIsoEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -225,8 +396,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -248,21 +419,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoGet
 
-> Iso StorageProjectIsoGet(ctx, projectId, locationId, isoId)
+> Iso StorageProjectIsoGet(ctx, projectId, locationId, isoId).Execute()
 
 Get storage/iso
 
-Returns a single iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoGet(context.Background(), projectId, locationId, isoId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoGet`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -284,34 +495,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoList
 
-> []Iso StorageProjectIsoList(ctx, projectId, locationId, optional)
+> []Iso StorageProjectIsoList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List storage/iso
 
-List iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoList`: []Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***StorageProjectIsoListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectIsoListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectIsoListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -333,22 +574,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoServiceGet
 
-> ResourceService StorageProjectIsoServiceGet(ctx, projectId, locationId, isoId, serviceId)
+> ResourceService StorageProjectIsoServiceGet(ctx, projectId, locationId, isoId, serviceId).Execute()
 
 Get storage/iso.service
 
-Get storage/iso.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoServiceGet(context.Background(), projectId, locationId, isoId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -370,21 +653,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoServiceList
 
-> []ResourceService StorageProjectIsoServiceList(ctx, projectId, locationId, isoId)
+> []ResourceService StorageProjectIsoServiceList(ctx, projectId, locationId, isoId).Execute()
 
 List storage/iso.service
 
-List storage/iso.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoServiceList(context.Background(), projectId, locationId, isoId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -406,22 +729,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTagCreate
 
-> Tag StorageProjectIsoTagCreate(ctx, projectId, locationId, isoId, tag)
+> Tag StorageProjectIsoTagCreate(ctx, projectId, locationId, isoId).Tag(tag).Execute()
 
 Create storage/iso.tag
 
-Create storage/iso.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagCreate(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -443,22 +807,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTagDelete
 
-> StorageProjectIsoTagDelete(ctx, projectId, locationId, isoId, tagId)
+> StorageProjectIsoTagDelete(ctx, projectId, locationId, isoId, tagId).Execute()
 
 Delete storage/iso.tag
 
-Delete storage/iso.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagDelete(context.Background(), projectId, locationId, isoId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -480,22 +884,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTagGet
 
-> Tag StorageProjectIsoTagGet(ctx, projectId, locationId, isoId, tagId)
+> Tag StorageProjectIsoTagGet(ctx, projectId, locationId, isoId, tagId).Execute()
 
 Get storage/iso.tag
 
-Get storage/iso.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagGet(context.Background(), projectId, locationId, isoId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -517,21 +963,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTagList
 
-> []Tag StorageProjectIsoTagList(ctx, projectId, locationId, isoId)
+> []Tag StorageProjectIsoTagList(ctx, projectId, locationId, isoId).Execute()
 
 List storage/iso.tag
 
-List storage/iso.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagList(context.Background(), projectId, locationId, isoId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -553,22 +1039,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTagPut
 
-> []Tag StorageProjectIsoTagPut(ctx, projectId, locationId, isoId, tag)
+> []Tag StorageProjectIsoTagPut(ctx, projectId, locationId, isoId).Tag(tag).Execute()
 
 Replace storage/iso.tag
 
-Replace storage/iso.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagPut(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -590,27 +1117,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoTransfer
 
-> Iso StorageProjectIsoTransfer(ctx, projectId, locationId, isoId, storageProjectIsoTransfer, optional)
+> Iso StorageProjectIsoTransfer(ctx, projectId, locationId, isoId).StorageProjectIsoTransfer(storageProjectIsoTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer storage/iso
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    storageProjectIsoTransfer := *openapiclient.NewStorageProjectIsoTransfer("Project_example") // StorageProjectIsoTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTransfer(context.Background(), projectId, locationId, isoId).StorageProjectIsoTransfer(storageProjectIsoTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoTransfer`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**storageProjectIsoTransfer** | [**StorageProjectIsoTransfer**](StorageProjectIsoTransfer.md)|  | 
- **optional** | ***StorageProjectIsoTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectIsoTransferOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectIsoTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -618,8 +1175,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectIsoTransfer** | [**StorageProjectIsoTransfer**](StorageProjectIsoTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -641,22 +1199,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoUpdate
 
-> Iso StorageProjectIsoUpdate(ctx, projectId, locationId, isoId, storageProjectIsoUpdate)
+> Iso StorageProjectIsoUpdate(ctx, projectId, locationId, isoId).StorageProjectIsoUpdate(storageProjectIsoUpdate).Execute()
 
 Update storage/iso
 
-Returns modified iso
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    isoId := "isoId_example" // string | Iso Id
+    storageProjectIsoUpdate := *openapiclient.NewStorageProjectIsoUpdate() // StorageProjectIsoUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoUpdate(context.Background(), projectId, locationId, isoId).StorageProjectIsoUpdate(storageProjectIsoUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectIsoUpdate`: Iso
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**isoId** | **string**| Iso Id | 
-**storageProjectIsoUpdate** | [**StorageProjectIsoUpdate**](StorageProjectIsoUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**isoId** | **string** | Iso Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectIsoUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectIsoUpdate** | [**StorageProjectIsoUpdate**](StorageProjectIsoUpdate.md) |  | 
 
 ### Return type
 

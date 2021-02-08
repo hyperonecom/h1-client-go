@@ -11,20 +11,58 @@ Method | HTTP request | Description
 
 ## BillingProjectServiceGet
 
-> Service BillingProjectServiceGet(ctx, projectId, serviceId)
+> Service BillingProjectServiceGet(ctx, projectId, serviceId).Execute()
 
 Get billing/service
 
-Returns a single service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    serviceId := "serviceId_example" // string | Service Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectServiceApi.BillingProjectServiceGet(context.Background(), projectId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectServiceApi.BillingProjectServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectServiceGet`: Service
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectServiceApi.BillingProjectServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**serviceId** | **string**| Service Id | 
+**projectId** | **string** | Project Id | 
+**serviceId** | **string** | Service Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -46,32 +84,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectServiceList
 
-> []Service BillingProjectServiceList(ctx, projectId, optional)
+> []Service BillingProjectServiceList(ctx, projectId).Kind(kind).Name(name).Type_(type_).Execute()
 
 List billing/service
 
-List service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    kind := "kind_example" // string | Filter by kind (optional)
+    name := "name_example" // string | Filter by name (optional)
+    type_ := "type__example" // string | Filter by type (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectServiceApi.BillingProjectServiceList(context.Background(), projectId).Kind(kind).Name(name).Type_(type_).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectServiceApi.BillingProjectServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectServiceList`: []Service
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectServiceApi.BillingProjectServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***BillingProjectServiceListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectServiceListOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectServiceListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **kind** | **optional.String**| Filter by kind | 
- **name** | **optional.String**| Filter by name | 
- **type_** | **optional.String**| Filter by type | 
+ **kind** | **string** | Filter by kind | 
+ **name** | **string** | Filter by name | 
+ **type_** | **string** | Filter by type | 
 
 ### Return type
 

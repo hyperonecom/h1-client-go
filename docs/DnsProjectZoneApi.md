@@ -33,34 +33,64 @@ Method | HTTP request | Description
 
 ## DnsProjectZoneCreate
 
-> Zone DnsProjectZoneCreate(ctx, projectId, locationId, dnsProjectZoneCreate, optional)
+> Zone DnsProjectZoneCreate(ctx, projectId, locationId).DnsProjectZoneCreate(dnsProjectZoneCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create dns/zone
 
-Create zone
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    dnsProjectZoneCreate := *openapiclient.NewDnsProjectZoneCreate("Name_example", "Service_example", "DnsName_example") // DnsProjectZoneCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneCreate(context.Background(), projectId, locationId).DnsProjectZoneCreate(dnsProjectZoneCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneCreate`: Zone
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**dnsProjectZoneCreate** | [**DnsProjectZoneCreate**](DnsProjectZoneCreate.md)|  | 
- **optional** | ***DnsProjectZoneCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a DnsProjectZoneCreateOpts struct
+Other parameters are passed through a pointer to a apiDnsProjectZoneCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **dnsProjectZoneCreate** | [**DnsProjectZoneCreate**](DnsProjectZoneCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -82,21 +112,59 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneDelete
 
-> DnsProjectZoneDelete(ctx, projectId, locationId, zoneId)
+> DnsProjectZoneDelete(ctx, projectId, locationId, zoneId).Execute()
 
 Delete dns/zone
 
-Delete zone
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneDelete(context.Background(), projectId, locationId, zoneId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -118,22 +186,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneEventGet
 
-> Event DnsProjectZoneEventGet(ctx, projectId, locationId, zoneId, eventId)
+> Event DnsProjectZoneEventGet(ctx, projectId, locationId, zoneId, eventId).Execute()
 
 Get dns/zone.event
 
-Get dns/zone.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneEventGet(context.Background(), projectId, locationId, zoneId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -155,26 +265,56 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneEventList
 
-> []Event DnsProjectZoneEventList(ctx, projectId, locationId, zoneId, optional)
+> []Event DnsProjectZoneEventList(ctx, projectId, locationId, zoneId).Limit(limit).Skip(skip).Execute()
 
 List dns/zone.event
 
-List dns/zone.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneEventList(context.Background(), projectId, locationId, zoneId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
- **optional** | ***DnsProjectZoneEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a DnsProjectZoneEventListOpts struct
+Other parameters are passed through a pointer to a apiDnsProjectZoneEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -182,8 +322,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -205,21 +345,61 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneGet
 
-> Zone DnsProjectZoneGet(ctx, projectId, locationId, zoneId)
+> Zone DnsProjectZoneGet(ctx, projectId, locationId, zoneId).Execute()
 
 Get dns/zone
 
-Returns a single zone
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneGet(context.Background(), projectId, locationId, zoneId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneGet`: Zone
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -241,34 +421,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneList
 
-> []Zone DnsProjectZoneList(ctx, projectId, locationId, optional)
+> []Zone DnsProjectZoneList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List dns/zone
 
-List zone
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneList`: []Zone
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***DnsProjectZoneListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a DnsProjectZoneListOpts struct
+Other parameters are passed through a pointer to a apiDnsProjectZoneListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -290,22 +500,63 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetCreate
 
-> DnsRecordset DnsProjectZoneRecordsetCreate(ctx, projectId, locationId, zoneId, dnsRecordset)
+> DnsRecordset DnsProjectZoneRecordsetCreate(ctx, projectId, locationId, zoneId).DnsRecordset(dnsRecordset).Execute()
 
 Create dns/zone.recordset
 
-Create dns/zone.recordset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    dnsRecordset := *openapiclient.NewDnsRecordset("Type_example") // DnsRecordset | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetCreate(context.Background(), projectId, locationId, zoneId).DnsRecordset(dnsRecordset).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetCreate`: DnsRecordset
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**dnsRecordset** | [**DnsRecordset**](DnsRecordset.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **dnsRecordset** | [**DnsRecordset**](DnsRecordset.md) |  | 
 
 ### Return type
 
@@ -327,22 +578,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetDelete
 
-> Zone DnsProjectZoneRecordsetDelete(ctx, projectId, locationId, zoneId, recordsetId)
+> Zone DnsProjectZoneRecordsetDelete(ctx, projectId, locationId, zoneId, recordsetId).Execute()
 
 Delete dns/zone.recordset
 
-Delete dns/zone.recordset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetDelete(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetDelete`: Zone
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -364,22 +657,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetGet
 
-> DnsRecordset DnsProjectZoneRecordsetGet(ctx, projectId, locationId, zoneId, recordsetId)
+> DnsRecordset DnsProjectZoneRecordsetGet(ctx, projectId, locationId, zoneId, recordsetId).Execute()
 
 Get dns/zone.recordset
 
-Get dns/zone.recordset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetGet(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetGet`: DnsRecordset
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -401,21 +736,61 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetList
 
-> []DnsRecordset DnsProjectZoneRecordsetList(ctx, projectId, locationId, zoneId)
+> []DnsRecordset DnsProjectZoneRecordsetList(ctx, projectId, locationId, zoneId).Execute()
 
 List dns/zone.recordset
 
-List dns/zone.recordset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetList(context.Background(), projectId, locationId, zoneId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetList`: []DnsRecordset
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -437,23 +812,66 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetPatch
 
-> DnsRecordset DnsProjectZoneRecordsetPatch(ctx, projectId, locationId, zoneId, recordsetId, dnsProjectZoneRecordsetPatch)
+> DnsRecordset DnsProjectZoneRecordsetPatch(ctx, projectId, locationId, zoneId, recordsetId).DnsProjectZoneRecordsetPatch(dnsProjectZoneRecordsetPatch).Execute()
 
 Update dns/zone.recordset
 
-Update dns/zone.recordset
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+    dnsProjectZoneRecordsetPatch := *openapiclient.NewDnsProjectZoneRecordsetPatch() // DnsProjectZoneRecordsetPatch | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetPatch(context.Background(), projectId, locationId, zoneId, recordsetId).DnsProjectZoneRecordsetPatch(dnsProjectZoneRecordsetPatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetPatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetPatch`: DnsRecordset
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
-**dnsProjectZoneRecordsetPatch** | [**DnsProjectZoneRecordsetPatch**](DnsProjectZoneRecordsetPatch.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **dnsProjectZoneRecordsetPatch** | [**DnsProjectZoneRecordsetPatch**](DnsProjectZoneRecordsetPatch.md) |  | 
 
 ### Return type
 
@@ -475,23 +893,66 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetRecordCreate
 
-> DnsRecord DnsProjectZoneRecordsetRecordCreate(ctx, projectId, locationId, zoneId, recordsetId, dnsRecord)
+> DnsRecord DnsProjectZoneRecordsetRecordCreate(ctx, projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
 
 Create dns/zone.record
 
-Create dns/zone.record
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+    dnsRecord := *openapiclient.NewDnsRecord("Content_example") // DnsRecord | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetRecordCreate`: DnsRecord
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
-**dnsRecord** | [**DnsRecord**](DnsRecord.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetRecordCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **dnsRecord** | [**DnsRecord**](DnsRecord.md) |  | 
 
 ### Return type
 
@@ -513,23 +974,65 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetRecordDelete
 
-> DnsProjectZoneRecordsetRecordDelete(ctx, projectId, locationId, zoneId, recordsetId, recordId)
+> DnsProjectZoneRecordsetRecordDelete(ctx, projectId, locationId, zoneId, recordsetId, recordId).Execute()
 
 Delete dns/zone.record
 
-Delete dns/zone.record
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+    recordId := "recordId_example" // string | recordId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordDelete(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
-**recordId** | **string**| recordId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+**recordId** | **string** | recordId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetRecordDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
 
 ### Return type
 
@@ -551,23 +1054,67 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetRecordGet
 
-> DnsRecord DnsProjectZoneRecordsetRecordGet(ctx, projectId, locationId, zoneId, recordsetId, recordId)
+> DnsRecord DnsProjectZoneRecordsetRecordGet(ctx, projectId, locationId, zoneId, recordsetId, recordId).Execute()
 
 Get dns/zone.record
 
-Get dns/zone.record
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+    recordId := "recordId_example" // string | recordId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetRecordGet`: DnsRecord
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
-**recordId** | **string**| recordId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+**recordId** | **string** | recordId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetRecordGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
 
 ### Return type
 
@@ -589,22 +1136,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetRecordList
 
-> []DnsRecord DnsProjectZoneRecordsetRecordList(ctx, projectId, locationId, zoneId, recordsetId)
+> []DnsRecord DnsProjectZoneRecordsetRecordList(ctx, projectId, locationId, zoneId, recordsetId).Execute()
 
 List dns/zone.record
 
-List dns/zone.record
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetRecordList`: []DnsRecord
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetRecordListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -626,23 +1215,66 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneRecordsetRecordPut
 
-> []DnsRecord DnsProjectZoneRecordsetRecordPut(ctx, projectId, locationId, zoneId, recordsetId, dnsRecord)
+> []DnsRecord DnsProjectZoneRecordsetRecordPut(ctx, projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
 
 Replace dns/zone.record
 
-Replace dns/zone.record
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    recordsetId := "recordsetId_example" // string | recordsetId
+    dnsRecord := []openapiclient.DnsRecord{*openapiclient.NewDnsRecord("Content_example")} // []DnsRecord | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneRecordsetRecordPut`: []DnsRecord
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**recordsetId** | **string**| recordsetId | 
-**dnsRecord** | [**[]DnsRecord**](dns.record.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**recordsetId** | **string** | recordsetId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneRecordsetRecordPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **dnsRecord** | [**[]DnsRecord**](dns.record.md) |  | 
 
 ### Return type
 
@@ -664,22 +1296,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneServiceGet
 
-> ResourceService DnsProjectZoneServiceGet(ctx, projectId, locationId, zoneId, serviceId)
+> ResourceService DnsProjectZoneServiceGet(ctx, projectId, locationId, zoneId, serviceId).Execute()
 
 Get dns/zone.service
 
-Get dns/zone.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneServiceGet(context.Background(), projectId, locationId, zoneId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -701,21 +1375,61 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneServiceList
 
-> []ResourceService DnsProjectZoneServiceList(ctx, projectId, locationId, zoneId)
+> []ResourceService DnsProjectZoneServiceList(ctx, projectId, locationId, zoneId).Execute()
 
 List dns/zone.service
 
-List dns/zone.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneServiceList(context.Background(), projectId, locationId, zoneId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -737,22 +1451,63 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneTagCreate
 
-> Tag DnsProjectZoneTagCreate(ctx, projectId, locationId, zoneId, tag)
+> Tag DnsProjectZoneTagCreate(ctx, projectId, locationId, zoneId).Tag(tag).Execute()
 
 Create dns/zone.tag
 
-Create dns/zone.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagCreate(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -774,22 +1529,62 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneTagDelete
 
-> DnsProjectZoneTagDelete(ctx, projectId, locationId, zoneId, tagId)
+> DnsProjectZoneTagDelete(ctx, projectId, locationId, zoneId, tagId).Execute()
 
 Delete dns/zone.tag
 
-Delete dns/zone.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagDelete(context.Background(), projectId, locationId, zoneId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -811,22 +1606,64 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneTagGet
 
-> Tag DnsProjectZoneTagGet(ctx, projectId, locationId, zoneId, tagId)
+> Tag DnsProjectZoneTagGet(ctx, projectId, locationId, zoneId, tagId).Execute()
 
 Get dns/zone.tag
 
-Get dns/zone.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagGet(context.Background(), projectId, locationId, zoneId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -848,21 +1685,61 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneTagList
 
-> []Tag DnsProjectZoneTagList(ctx, projectId, locationId, zoneId)
+> []Tag DnsProjectZoneTagList(ctx, projectId, locationId, zoneId).Execute()
 
 List dns/zone.tag
 
-List dns/zone.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagList(context.Background(), projectId, locationId, zoneId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -884,22 +1761,63 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneTagPut
 
-> []Tag DnsProjectZoneTagPut(ctx, projectId, locationId, zoneId, tag)
+> []Tag DnsProjectZoneTagPut(ctx, projectId, locationId, zoneId).Tag(tag).Execute()
 
 Replace dns/zone.tag
 
-Replace dns/zone.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagPut(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -921,22 +1839,63 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneUpdate
 
-> Zone DnsProjectZoneUpdate(ctx, projectId, locationId, zoneId, dnsProjectZoneUpdate)
+> Zone DnsProjectZoneUpdate(ctx, projectId, locationId, zoneId).DnsProjectZoneUpdate(dnsProjectZoneUpdate).Execute()
 
 Update dns/zone
 
-Returns modified zone
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    zoneId := "zoneId_example" // string | Zone Id
+    dnsProjectZoneUpdate := *openapiclient.NewDnsProjectZoneUpdate() // DnsProjectZoneUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneUpdate(context.Background(), projectId, locationId, zoneId).DnsProjectZoneUpdate(dnsProjectZoneUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DnsProjectZoneUpdate`: Zone
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**zoneId** | **string**| Zone Id | 
-**dnsProjectZoneUpdate** | [**DnsProjectZoneUpdate**](DnsProjectZoneUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**zoneId** | **string** | Zone Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDnsProjectZoneUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **dnsProjectZoneUpdate** | [**DnsProjectZoneUpdate**](DnsProjectZoneUpdate.md) |  | 
 
 ### Return type
 

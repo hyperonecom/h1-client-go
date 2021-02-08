@@ -4,19 +4,364 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Flavour** | **string** |  | [optional] 
-**ModifiedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**ModifiedBy** | **string** |  | [optional] 
-**CreatedOn** | [**time.Time**](time.Time.md) |  | [optional] 
-**CreatedBy** | **string** |  | [optional] 
-**State** | **string** |  | [optional] 
-**Project** | **string** |  | [optional] 
-**Uri** | **string** |  | [optional] 
-**SizeUsed** | **float32** |  | [optional] 
-**Fqdn** | **string** |  | [optional] 
-**Tag** | [**[]Tag**](tag.md) |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Flavour** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**ModifiedBy** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
+**CreatedBy** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
+**SizeUsed** | Pointer to **float32** |  | [optional] 
+**Fqdn** | Pointer to **string** |  | [optional] 
+**Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+
+## Methods
+
+### NewRegistry
+
+`func NewRegistry() *Registry`
+
+NewRegistry instantiates a new Registry object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewRegistryWithDefaults
+
+`func NewRegistryWithDefaults() *Registry`
+
+NewRegistryWithDefaults instantiates a new Registry object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *Registry) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Registry) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Registry) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *Registry) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Registry) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Registry) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Registry) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Registry) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetFlavour
+
+`func (o *Registry) GetFlavour() string`
+
+GetFlavour returns the Flavour field if non-nil, zero value otherwise.
+
+### GetFlavourOk
+
+`func (o *Registry) GetFlavourOk() (*string, bool)`
+
+GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlavour
+
+`func (o *Registry) SetFlavour(v string)`
+
+SetFlavour sets Flavour field to given value.
+
+### HasFlavour
+
+`func (o *Registry) HasFlavour() bool`
+
+HasFlavour returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Registry) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Registry) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Registry) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Registry) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetModifiedBy
+
+`func (o *Registry) GetModifiedBy() string`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *Registry) GetModifiedByOk() (*string, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *Registry) SetModifiedBy(v string)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *Registry) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *Registry) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *Registry) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *Registry) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *Registry) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetCreatedBy
+
+`func (o *Registry) GetCreatedBy() string`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Registry) GetCreatedByOk() (*string, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Registry) SetCreatedBy(v string)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *Registry) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *Registry) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *Registry) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *Registry) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *Registry) HasState() bool`
+
+HasState returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *Registry) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *Registry) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *Registry) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *Registry) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Registry) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Registry) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Registry) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Registry) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
+
+### GetSizeUsed
+
+`func (o *Registry) GetSizeUsed() float32`
+
+GetSizeUsed returns the SizeUsed field if non-nil, zero value otherwise.
+
+### GetSizeUsedOk
+
+`func (o *Registry) GetSizeUsedOk() (*float32, bool)`
+
+GetSizeUsedOk returns a tuple with the SizeUsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSizeUsed
+
+`func (o *Registry) SetSizeUsed(v float32)`
+
+SetSizeUsed sets SizeUsed field to given value.
+
+### HasSizeUsed
+
+`func (o *Registry) HasSizeUsed() bool`
+
+HasSizeUsed returns a boolean if a field has been set.
+
+### GetFqdn
+
+`func (o *Registry) GetFqdn() string`
+
+GetFqdn returns the Fqdn field if non-nil, zero value otherwise.
+
+### GetFqdnOk
+
+`func (o *Registry) GetFqdnOk() (*string, bool)`
+
+GetFqdnOk returns a tuple with the Fqdn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFqdn
+
+`func (o *Registry) SetFqdn(v string)`
+
+SetFqdn sets Fqdn field to given value.
+
+### HasFqdn
+
+`func (o *Registry) HasFqdn() bool`
+
+HasFqdn returns a boolean if a field has been set.
+
+### GetTag
+
+`func (o *Registry) GetTag() []Tag`
+
+GetTag returns the Tag field if non-nil, zero value otherwise.
+
+### GetTagOk
+
+`func (o *Registry) GetTagOk() (*[]Tag, bool)`
+
+GetTagOk returns a tuple with the Tag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTag
+
+`func (o *Registry) SetTag(v []Tag)`
+
+SetTag sets Tag field to given value.
+
+### HasTag
+
+`func (o *Registry) HasTag() bool`
+
+HasTag returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

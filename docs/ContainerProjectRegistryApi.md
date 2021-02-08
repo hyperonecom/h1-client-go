@@ -40,34 +40,64 @@ Method | HTTP request | Description
 
 ## ContainerProjectRegistryCreate
 
-> Registry ContainerProjectRegistryCreate(ctx, projectId, locationId, containerProjectRegistryCreate, optional)
+> Registry ContainerProjectRegistryCreate(ctx, projectId, locationId).ContainerProjectRegistryCreate(containerProjectRegistryCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create container/registry
 
-Create registry
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    containerProjectRegistryCreate := *openapiclient.NewContainerProjectRegistryCreate("Name_example", "Service_example") // ContainerProjectRegistryCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCreate(context.Background(), projectId, locationId).ContainerProjectRegistryCreate(containerProjectRegistryCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCreate`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**containerProjectRegistryCreate** | [**ContainerProjectRegistryCreate**](ContainerProjectRegistryCreate.md)|  | 
- **optional** | ***ContainerProjectRegistryCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryCreateOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **containerProjectRegistryCreate** | [**ContainerProjectRegistryCreate**](ContainerProjectRegistryCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -89,22 +119,63 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryCredentialCreate
 
-> RegistryCredential ContainerProjectRegistryCredentialCreate(ctx, projectId, locationId, registryId, registryCredential)
+> RegistryCredential ContainerProjectRegistryCredentialCreate(ctx, projectId, locationId, registryId).RegistryCredential(registryCredential).Execute()
 
 Create container/registry.credential
 
-Create container/registry.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    registryCredential := *openapiclient.NewRegistryCredential("Name_example", "Type_example", "Value_example") // RegistryCredential | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate(context.Background(), projectId, locationId, registryId).RegistryCredential(registryCredential).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCredentialCreate`: RegistryCredential
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**registryCredential** | [**RegistryCredential**](RegistryCredential.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCredentialCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **registryCredential** | [**RegistryCredential**](RegistryCredential.md) |  | 
 
 ### Return type
 
@@ -126,22 +197,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryCredentialDelete
 
-> Registry ContainerProjectRegistryCredentialDelete(ctx, projectId, locationId, registryId, credentialId)
+> Registry ContainerProjectRegistryCredentialDelete(ctx, projectId, locationId, registryId, credentialId).Execute()
 
 Delete container/registry.credential
 
-Delete container/registry.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete(context.Background(), projectId, locationId, registryId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCredentialDelete`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCredentialDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -163,22 +276,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryCredentialGet
 
-> RegistryCredential ContainerProjectRegistryCredentialGet(ctx, projectId, locationId, registryId, credentialId)
+> RegistryCredential ContainerProjectRegistryCredentialGet(ctx, projectId, locationId, registryId, credentialId).Execute()
 
 Get container/registry.credential
 
-Get container/registry.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet(context.Background(), projectId, locationId, registryId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCredentialGet`: RegistryCredential
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCredentialGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -200,21 +355,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryCredentialList
 
-> []RegistryCredential ContainerProjectRegistryCredentialList(ctx, projectId, locationId, registryId)
+> []RegistryCredential ContainerProjectRegistryCredentialList(ctx, projectId, locationId, registryId).Execute()
 
 List container/registry.credential
 
-List container/registry.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCredentialList`: []RegistryCredential
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCredentialListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -236,23 +431,66 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryCredentialPatch
 
-> RegistryCredential ContainerProjectRegistryCredentialPatch(ctx, projectId, locationId, registryId, credentialId, containerProjectRegistryCredentialPatch)
+> RegistryCredential ContainerProjectRegistryCredentialPatch(ctx, projectId, locationId, registryId, credentialId).ContainerProjectRegistryCredentialPatch(containerProjectRegistryCredentialPatch).Execute()
 
 Update container/registry.credential
 
-Update container/registry.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    credentialId := "credentialId_example" // string | credentialId
+    containerProjectRegistryCredentialPatch := *openapiclient.NewContainerProjectRegistryCredentialPatch("Name_example") // ContainerProjectRegistryCredentialPatch | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch(context.Background(), projectId, locationId, registryId, credentialId).ContainerProjectRegistryCredentialPatch(containerProjectRegistryCredentialPatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryCredentialPatch`: RegistryCredential
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**credentialId** | **string**| credentialId | 
-**containerProjectRegistryCredentialPatch** | [**ContainerProjectRegistryCredentialPatch**](ContainerProjectRegistryCredentialPatch.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryCredentialPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **containerProjectRegistryCredentialPatch** | [**ContainerProjectRegistryCredentialPatch**](ContainerProjectRegistryCredentialPatch.md) |  | 
 
 ### Return type
 
@@ -274,21 +512,59 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDelete
 
-> ContainerProjectRegistryDelete(ctx, projectId, locationId, registryId)
+> ContainerProjectRegistryDelete(ctx, projectId, locationId, registryId).Execute()
 
 Delete container/registry
 
-Delete registry
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDelete(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -310,22 +586,63 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDomainCreate
 
-> Domain ContainerProjectRegistryDomainCreate(ctx, projectId, locationId, registryId, domain)
+> Domain ContainerProjectRegistryDomainCreate(ctx, projectId, locationId, registryId).Domain(domain).Execute()
 
 Create container/registry.domain
 
-Create container/registry.domain
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    domain := *openapiclient.NewDomain("Value_example") // Domain | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate(context.Background(), projectId, locationId, registryId).Domain(domain).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryDomainCreate`: Domain
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**domain** | [**Domain**](Domain.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryDomainCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **domain** | [**Domain**](Domain.md) |  | 
 
 ### Return type
 
@@ -347,22 +664,62 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDomainDelete
 
-> ContainerProjectRegistryDomainDelete(ctx, projectId, locationId, registryId, domainId)
+> ContainerProjectRegistryDomainDelete(ctx, projectId, locationId, registryId, domainId).Execute()
 
 Delete container/registry.domain
 
-Delete container/registry.domain
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    domainId := "domainId_example" // string | domainId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainDelete(context.Background(), projectId, locationId, registryId, domainId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**domainId** | **string**| domainId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**domainId** | **string** | domainId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryDomainDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -384,22 +741,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDomainGet
 
-> Domain ContainerProjectRegistryDomainGet(ctx, projectId, locationId, registryId, domainId)
+> Domain ContainerProjectRegistryDomainGet(ctx, projectId, locationId, registryId, domainId).Execute()
 
 Get container/registry.domain
 
-Get container/registry.domain
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    domainId := "domainId_example" // string | domainId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet(context.Background(), projectId, locationId, registryId, domainId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryDomainGet`: Domain
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**domainId** | **string**| domainId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**domainId** | **string** | domainId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryDomainGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -421,21 +820,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDomainList
 
-> []Domain ContainerProjectRegistryDomainList(ctx, projectId, locationId, registryId)
+> []Domain ContainerProjectRegistryDomainList(ctx, projectId, locationId, registryId).Execute()
 
 List container/registry.domain
 
-List container/registry.domain
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainList(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryDomainList`: []Domain
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryDomainList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryDomainListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -457,22 +896,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryEventGet
 
-> Event ContainerProjectRegistryEventGet(ctx, projectId, locationId, registryId, eventId)
+> Event ContainerProjectRegistryEventGet(ctx, projectId, locationId, registryId, eventId).Execute()
 
 Get container/registry.event
 
-Get container/registry.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryEventGet(context.Background(), projectId, locationId, registryId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -494,26 +975,56 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryEventList
 
-> []Event ContainerProjectRegistryEventList(ctx, projectId, locationId, registryId, optional)
+> []Event ContainerProjectRegistryEventList(ctx, projectId, locationId, registryId).Limit(limit).Skip(skip).Execute()
 
 List container/registry.event
 
-List container/registry.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryEventList(context.Background(), projectId, locationId, registryId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
- **optional** | ***ContainerProjectRegistryEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryEventListOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -521,8 +1032,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -544,21 +1055,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryGet
 
-> Registry ContainerProjectRegistryGet(ctx, projectId, locationId, registryId)
+> Registry ContainerProjectRegistryGet(ctx, projectId, locationId, registryId).Execute()
 
 Get container/registry
 
-Returns a single registry
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryGet(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryGet`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -580,34 +1131,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryList
 
-> []Registry ContainerProjectRegistryList(ctx, projectId, locationId, optional)
+> []Registry ContainerProjectRegistryList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List container/registry
 
-List registry
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryList`: []Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***ContainerProjectRegistryListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryListOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -629,22 +1210,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryGet
 
-> ContainerRepository ContainerProjectRegistryRepositoryGet(ctx, projectId, locationId, registryId, repositoryId)
+> ContainerRepository ContainerProjectRegistryRepositoryGet(ctx, projectId, locationId, registryId, repositoryId).Execute()
 
 Get container/registry.repository
 
-Get container/registry.repository
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    repositoryId := "repositoryId_example" // string | repositoryId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryRepositoryGet`: ContainerRepository
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**repositoryId** | **string**| repositoryId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**repositoryId** | **string** | repositoryId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryRepositoryGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -666,23 +1289,65 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryImageDelete
 
-> ContainerProjectRegistryRepositoryImageDelete(ctx, projectId, locationId, registryId, repositoryId, imageId)
+> ContainerProjectRegistryRepositoryImageDelete(ctx, projectId, locationId, registryId, repositoryId, imageId).Execute()
 
 Delete container/registry.image
 
-Delete container/registry.image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    repositoryId := "repositoryId_example" // string | repositoryId
+    imageId := "imageId_example" // string | imageId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageDelete(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**repositoryId** | **string**| repositoryId | 
-**imageId** | **string**| imageId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**repositoryId** | **string** | repositoryId | 
+**imageId** | **string** | imageId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryRepositoryImageDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
 
 ### Return type
 
@@ -704,23 +1369,67 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryImageGet
 
-> ContainerImage ContainerProjectRegistryRepositoryImageGet(ctx, projectId, locationId, registryId, repositoryId, imageId)
+> ContainerImage ContainerProjectRegistryRepositoryImageGet(ctx, projectId, locationId, registryId, repositoryId, imageId).Execute()
 
 Get container/registry.image
 
-Get container/registry.image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    repositoryId := "repositoryId_example" // string | repositoryId
+    imageId := "imageId_example" // string | imageId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryRepositoryImageGet`: ContainerImage
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**repositoryId** | **string**| repositoryId | 
-**imageId** | **string**| imageId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**repositoryId** | **string** | repositoryId | 
+**imageId** | **string** | imageId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryRepositoryImageGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
 
 ### Return type
 
@@ -742,22 +1451,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryImageList
 
-> []ContainerImage ContainerProjectRegistryRepositoryImageList(ctx, projectId, locationId, registryId, repositoryId)
+> []ContainerImage ContainerProjectRegistryRepositoryImageList(ctx, projectId, locationId, registryId, repositoryId).Execute()
 
 List container/registry.image
 
-List container/registry.image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    repositoryId := "repositoryId_example" // string | repositoryId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryRepositoryImageList`: []ContainerImage
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**repositoryId** | **string**| repositoryId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**repositoryId** | **string** | repositoryId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryRepositoryImageListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -779,21 +1530,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryRepositoryList
 
-> []ContainerRepository ContainerProjectRegistryRepositoryList(ctx, projectId, locationId, registryId)
+> []ContainerRepository ContainerProjectRegistryRepositoryList(ctx, projectId, locationId, registryId).Execute()
 
 List container/registry.repository
 
-List container/registry.repository
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryRepositoryList`: []ContainerRepository
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryRepositoryListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -815,22 +1606,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryServiceGet
 
-> ResourceService ContainerProjectRegistryServiceGet(ctx, projectId, locationId, registryId, serviceId)
+> ResourceService ContainerProjectRegistryServiceGet(ctx, projectId, locationId, registryId, serviceId).Execute()
 
 Get container/registry.service
 
-Get container/registry.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet(context.Background(), projectId, locationId, registryId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -852,21 +1685,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryServiceList
 
-> []ResourceService ContainerProjectRegistryServiceList(ctx, projectId, locationId, registryId)
+> []ResourceService ContainerProjectRegistryServiceList(ctx, projectId, locationId, registryId).Execute()
 
 List container/registry.service
 
-List container/registry.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryServiceList(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -888,26 +1761,56 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryStart
 
-> Registry ContainerProjectRegistryStart(ctx, projectId, locationId, registryId, optional)
+> Registry ContainerProjectRegistryStart(ctx, projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Start container/registry
 
-action start
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryStart(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryStart``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryStart`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryStart`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
- **optional** | ***ContainerProjectRegistryStartOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryStartOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryStartRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -915,7 +1818,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -937,26 +1841,56 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryStop
 
-> Registry ContainerProjectRegistryStop(ctx, projectId, locationId, registryId, optional)
+> Registry ContainerProjectRegistryStop(ctx, projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Stop container/registry
 
-action stop
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryStop(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryStop``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryStop`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryStop`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
- **optional** | ***ContainerProjectRegistryStopOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryStopOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryStopRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -964,7 +1898,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -986,22 +1921,63 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTagCreate
 
-> Tag ContainerProjectRegistryTagCreate(ctx, projectId, locationId, registryId, tag)
+> Tag ContainerProjectRegistryTagCreate(ctx, projectId, locationId, registryId).Tag(tag).Execute()
 
 Create container/registry.tag
 
-Create container/registry.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -1023,22 +1999,62 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTagDelete
 
-> ContainerProjectRegistryTagDelete(ctx, projectId, locationId, registryId, tagId)
+> ContainerProjectRegistryTagDelete(ctx, projectId, locationId, registryId, tagId).Execute()
 
 Delete container/registry.tag
 
-Delete container/registry.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagDelete(context.Background(), projectId, locationId, registryId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -1060,22 +2076,64 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTagGet
 
-> Tag ContainerProjectRegistryTagGet(ctx, projectId, locationId, registryId, tagId)
+> Tag ContainerProjectRegistryTagGet(ctx, projectId, locationId, registryId, tagId).Execute()
 
 Get container/registry.tag
 
-Get container/registry.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagGet(context.Background(), projectId, locationId, registryId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -1097,21 +2155,61 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTagList
 
-> []Tag ContainerProjectRegistryTagList(ctx, projectId, locationId, registryId)
+> []Tag ContainerProjectRegistryTagList(ctx, projectId, locationId, registryId).Execute()
 
 List container/registry.tag
 
-List container/registry.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagList(context.Background(), projectId, locationId, registryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -1133,22 +2231,63 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTagPut
 
-> []Tag ContainerProjectRegistryTagPut(ctx, projectId, locationId, registryId, tag)
+> []Tag ContainerProjectRegistryTagPut(ctx, projectId, locationId, registryId).Tag(tag).Execute()
 
 Replace container/registry.tag
 
-Replace container/registry.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagPut(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -1170,27 +2309,57 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryTransfer
 
-> Registry ContainerProjectRegistryTransfer(ctx, projectId, locationId, registryId, containerProjectRegistryTransfer, optional)
+> Registry ContainerProjectRegistryTransfer(ctx, projectId, locationId, registryId).ContainerProjectRegistryTransfer(containerProjectRegistryTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer container/registry
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    containerProjectRegistryTransfer := *openapiclient.NewContainerProjectRegistryTransfer("Project_example") // ContainerProjectRegistryTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTransfer(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryTransfer(containerProjectRegistryTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryTransfer`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**containerProjectRegistryTransfer** | [**ContainerProjectRegistryTransfer**](ContainerProjectRegistryTransfer.md)|  | 
- **optional** | ***ContainerProjectRegistryTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ContainerProjectRegistryTransferOpts struct
+Other parameters are passed through a pointer to a apiContainerProjectRegistryTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1198,8 +2367,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **containerProjectRegistryTransfer** | [**ContainerProjectRegistryTransfer**](ContainerProjectRegistryTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -1221,22 +2391,63 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryUpdate
 
-> Registry ContainerProjectRegistryUpdate(ctx, projectId, locationId, registryId, containerProjectRegistryUpdate)
+> Registry ContainerProjectRegistryUpdate(ctx, projectId, locationId, registryId).ContainerProjectRegistryUpdate(containerProjectRegistryUpdate).Execute()
 
 Update container/registry
 
-Returns modified registry
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    registryId := "registryId_example" // string | Registry Id
+    containerProjectRegistryUpdate := *openapiclient.NewContainerProjectRegistryUpdate() // ContainerProjectRegistryUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryUpdate(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryUpdate(containerProjectRegistryUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ContainerProjectRegistryUpdate`: Registry
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**registryId** | **string**| Registry Id | 
-**containerProjectRegistryUpdate** | [**ContainerProjectRegistryUpdate**](ContainerProjectRegistryUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**registryId** | **string** | Registry Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiContainerProjectRegistryUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **containerProjectRegistryUpdate** | [**ContainerProjectRegistryUpdate**](ContainerProjectRegistryUpdate.md) |  | 
 
 ### Return type
 

@@ -28,32 +28,61 @@ Method | HTTP request | Description
 
 ## IamProjectSaCreate
 
-> Sa IamProjectSaCreate(ctx, projectId, iamProjectSaCreate, optional)
+> Sa IamProjectSaCreate(ctx, projectId).IamProjectSaCreate(iamProjectSaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create iam/sa
 
-Create sa
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    iamProjectSaCreate := *openapiclient.NewIamProjectSaCreate("Name_example") // IamProjectSaCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCreate(context.Background(), projectId).IamProjectSaCreate(iamProjectSaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCreate`: Sa
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**iamProjectSaCreate** | [**IamProjectSaCreate**](IamProjectSaCreate.md)|  | 
- **optional** | ***IamProjectSaCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectSaCreateOpts struct
+Other parameters are passed through a pointer to a apiIamProjectSaCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **iamProjectSaCreate** | [**IamProjectSaCreate**](IamProjectSaCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -75,21 +104,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaCredentialCreate
 
-> SaCredential IamProjectSaCredentialCreate(ctx, projectId, saId, saCredential)
+> SaCredential IamProjectSaCredentialCreate(ctx, projectId, saId).SaCredential(saCredential).Execute()
 
 Create iam/sa.credential
 
-Create iam/sa.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    saCredential := *openapiclient.NewSaCredential("Name_example", "Type_example", "Value_example") // SaCredential | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialCreate(context.Background(), projectId, saId).SaCredential(saCredential).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCredentialCreate`: SaCredential
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCredentialCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**saCredential** | [**SaCredential**](SaCredential.md)|  | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaCredentialCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **saCredential** | [**SaCredential**](SaCredential.md) |  | 
 
 ### Return type
 
@@ -111,21 +179,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaCredentialDelete
 
-> Sa IamProjectSaCredentialDelete(ctx, projectId, saId, credentialId)
+> Sa IamProjectSaCredentialDelete(ctx, projectId, saId, credentialId).Execute()
 
 Delete iam/sa.credential
 
-Delete iam/sa.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialDelete(context.Background(), projectId, saId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCredentialDelete`: Sa
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCredentialDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaCredentialDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -147,21 +255,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaCredentialGet
 
-> SaCredential IamProjectSaCredentialGet(ctx, projectId, saId, credentialId)
+> SaCredential IamProjectSaCredentialGet(ctx, projectId, saId, credentialId).Execute()
 
 Get iam/sa.credential
 
-Get iam/sa.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    credentialId := "credentialId_example" // string | credentialId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialGet(context.Background(), projectId, saId, credentialId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCredentialGet`: SaCredential
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCredentialGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**credentialId** | **string**| credentialId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaCredentialGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -183,20 +331,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaCredentialList
 
-> []SaCredential IamProjectSaCredentialList(ctx, projectId, saId)
+> []SaCredential IamProjectSaCredentialList(ctx, projectId, saId).Execute()
 
 List iam/sa.credential
 
-List iam/sa.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialList(context.Background(), projectId, saId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCredentialList`: []SaCredential
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCredentialList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaCredentialListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -218,22 +404,63 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaCredentialPatch
 
-> SaCredential IamProjectSaCredentialPatch(ctx, projectId, saId, credentialId, iamProjectSaCredentialPatch)
+> SaCredential IamProjectSaCredentialPatch(ctx, projectId, saId, credentialId).IamProjectSaCredentialPatch(iamProjectSaCredentialPatch).Execute()
 
 Update iam/sa.credential
 
-Update iam/sa.credential
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    credentialId := "credentialId_example" // string | credentialId
+    iamProjectSaCredentialPatch := *openapiclient.NewIamProjectSaCredentialPatch("Name_example") // IamProjectSaCredentialPatch | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialPatch(context.Background(), projectId, saId, credentialId).IamProjectSaCredentialPatch(iamProjectSaCredentialPatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialPatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaCredentialPatch`: SaCredential
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaCredentialPatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**credentialId** | **string**| credentialId | 
-**iamProjectSaCredentialPatch** | [**IamProjectSaCredentialPatch**](IamProjectSaCredentialPatch.md)|  | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**credentialId** | **string** | credentialId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaCredentialPatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **iamProjectSaCredentialPatch** | [**IamProjectSaCredentialPatch**](IamProjectSaCredentialPatch.md) |  | 
 
 ### Return type
 
@@ -255,20 +482,56 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaDelete
 
-> IamProjectSaDelete(ctx, projectId, saId)
+> IamProjectSaDelete(ctx, projectId, saId).Execute()
 
 Delete iam/sa
 
-Delete sa
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaDelete(context.Background(), projectId, saId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -290,21 +553,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaEventGet
 
-> Event IamProjectSaEventGet(ctx, projectId, saId, eventId)
+> Event IamProjectSaEventGet(ctx, projectId, saId, eventId).Execute()
 
 Get iam/sa.event
 
-Get iam/sa.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaEventGet(context.Background(), projectId, saId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -326,33 +629,62 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaEventList
 
-> []Event IamProjectSaEventList(ctx, projectId, saId, optional)
+> []Event IamProjectSaEventList(ctx, projectId, saId).Limit(limit).Skip(skip).Execute()
 
 List iam/sa.event
 
-List iam/sa.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaEventList(context.Background(), projectId, saId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
- **optional** | ***IamProjectSaEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectSaEventListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectSaEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -374,20 +706,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaGet
 
-> Sa IamProjectSaGet(ctx, projectId, saId)
+> Sa IamProjectSaGet(ctx, projectId, saId).Execute()
 
 Get iam/sa
 
-Returns a single sa
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaGet(context.Background(), projectId, saId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaGet`: Sa
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -409,32 +779,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaList
 
-> []Sa IamProjectSaList(ctx, projectId, optional)
+> []Sa IamProjectSaList(ctx, projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List iam/sa
 
-List sa
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaList`: []Sa
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***IamProjectSaListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectSaListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectSaListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -456,21 +855,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaServiceGet
 
-> ResourceService IamProjectSaServiceGet(ctx, projectId, saId, serviceId)
+> ResourceService IamProjectSaServiceGet(ctx, projectId, saId, serviceId).Execute()
 
 Get iam/sa.service
 
-Get iam/sa.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaServiceGet(context.Background(), projectId, saId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -492,20 +931,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaServiceList
 
-> []ResourceService IamProjectSaServiceList(ctx, projectId, saId)
+> []ResourceService IamProjectSaServiceList(ctx, projectId, saId).Execute()
 
 List iam/sa.service
 
-List iam/sa.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaServiceList(context.Background(), projectId, saId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -527,21 +1004,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaTagCreate
 
-> Tag IamProjectSaTagCreate(ctx, projectId, saId, tag)
+> Tag IamProjectSaTagCreate(ctx, projectId, saId).Tag(tag).Execute()
 
 Create iam/sa.tag
 
-Create iam/sa.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagCreate(context.Background(), projectId, saId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -563,21 +1079,59 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaTagDelete
 
-> IamProjectSaTagDelete(ctx, projectId, saId, tagId)
+> IamProjectSaTagDelete(ctx, projectId, saId, tagId).Execute()
 
 Delete iam/sa.tag
 
-Delete iam/sa.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagDelete(context.Background(), projectId, saId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -599,21 +1153,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaTagGet
 
-> Tag IamProjectSaTagGet(ctx, projectId, saId, tagId)
+> Tag IamProjectSaTagGet(ctx, projectId, saId, tagId).Execute()
 
 Get iam/sa.tag
 
-Get iam/sa.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagGet(context.Background(), projectId, saId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -635,20 +1229,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaTagList
 
-> []Tag IamProjectSaTagList(ctx, projectId, saId)
+> []Tag IamProjectSaTagList(ctx, projectId, saId).Execute()
 
 List iam/sa.tag
 
-List iam/sa.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagList(context.Background(), projectId, saId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -670,21 +1302,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaTagPut
 
-> []Tag IamProjectSaTagPut(ctx, projectId, saId, tag)
+> []Tag IamProjectSaTagPut(ctx, projectId, saId).Tag(tag).Execute()
 
 Replace iam/sa.tag
 
-Replace iam/sa.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagPut(context.Background(), projectId, saId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -706,21 +1377,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaUpdate
 
-> Sa IamProjectSaUpdate(ctx, projectId, saId, iamProjectSaUpdate)
+> Sa IamProjectSaUpdate(ctx, projectId, saId).IamProjectSaUpdate(iamProjectSaUpdate).Execute()
 
 Update iam/sa
 
-Returns modified sa
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    saId := "saId_example" // string | Sa Id
+    iamProjectSaUpdate := *openapiclient.NewIamProjectSaUpdate() // IamProjectSaUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectSaApi.IamProjectSaUpdate(context.Background(), projectId, saId).IamProjectSaUpdate(iamProjectSaUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectSaUpdate`: Sa
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**saId** | **string**| Sa Id | 
-**iamProjectSaUpdate** | [**IamProjectSaUpdate**](IamProjectSaUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**saId** | **string** | Sa Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectSaUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamProjectSaUpdate** | [**IamProjectSaUpdate**](IamProjectSaUpdate.md) |  | 
 
 ### Return type
 

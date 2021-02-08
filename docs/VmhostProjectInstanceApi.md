@@ -20,22 +20,64 @@ Method | HTTP request | Description
 
 ## VmhostProjectInstanceEventGet
 
-> Event VmhostProjectInstanceEventGet(ctx, projectId, locationId, instanceId, eventId)
+> Event VmhostProjectInstanceEventGet(ctx, projectId, locationId, instanceId, eventId).Execute()
 
 Get vmhost/instance.event
 
-Get vmhost/instance.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -57,26 +99,56 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceEventList
 
-> []Event VmhostProjectInstanceEventList(ctx, projectId, locationId, instanceId, optional)
+> []Event VmhostProjectInstanceEventList(ctx, projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
 
 List vmhost/instance.event
 
-List vmhost/instance.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
- **optional** | ***VmhostProjectInstanceEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a VmhostProjectInstanceEventListOpts struct
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -84,8 +156,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -107,21 +179,61 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceGet
 
-> Vmhost VmhostProjectInstanceGet(ctx, projectId, locationId, instanceId)
+> Vmhost VmhostProjectInstanceGet(ctx, projectId, locationId, instanceId).Execute()
 
 Get vmhost/instance
 
-Returns a single instance
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceGet`: Vmhost
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -143,32 +255,60 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceList
 
-> []Vmhost VmhostProjectInstanceList(ctx, projectId, locationId, optional)
+> []Vmhost VmhostProjectInstanceList(ctx, projectId, locationId).EnabledServices(enabledServices).Execute()
 
 List vmhost/instance
 
-List instance
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    enabledServices := "enabledServices_example" // string | Filter by enabledServices (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceList(context.Background(), projectId, locationId).EnabledServices(enabledServices).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceList`: []Vmhost
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***VmhostProjectInstanceListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a VmhostProjectInstanceListOpts struct
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **enabledServices** | **optional.String**| Filter by enabledServices | 
+ **enabledServices** | **string** | Filter by enabledServices | 
 
 ### Return type
 
@@ -190,22 +330,64 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceServiceGet
 
-> ResourceService VmhostProjectInstanceServiceGet(ctx, projectId, locationId, instanceId, serviceId)
+> ResourceService VmhostProjectInstanceServiceGet(ctx, projectId, locationId, instanceId, serviceId).Execute()
 
 Get vmhost/instance.service
 
-Get vmhost/instance.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -227,21 +409,61 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceServiceList
 
-> []ResourceService VmhostProjectInstanceServiceList(ctx, projectId, locationId, instanceId)
+> []ResourceService VmhostProjectInstanceServiceList(ctx, projectId, locationId, instanceId).Execute()
 
 List vmhost/instance.service
 
-List vmhost/instance.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -263,22 +485,63 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceTagCreate
 
-> Tag VmhostProjectInstanceTagCreate(ctx, projectId, locationId, instanceId, tag)
+> Tag VmhostProjectInstanceTagCreate(ctx, projectId, locationId, instanceId).Tag(tag).Execute()
 
 Create vmhost/instance.tag
 
-Create vmhost/instance.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -300,22 +563,62 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceTagDelete
 
-> VmhostProjectInstanceTagDelete(ctx, projectId, locationId, instanceId, tagId)
+> VmhostProjectInstanceTagDelete(ctx, projectId, locationId, instanceId, tagId).Execute()
 
 Delete vmhost/instance.tag
 
-Delete vmhost/instance.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -337,22 +640,64 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceTagGet
 
-> Tag VmhostProjectInstanceTagGet(ctx, projectId, locationId, instanceId, tagId)
+> Tag VmhostProjectInstanceTagGet(ctx, projectId, locationId, instanceId, tagId).Execute()
 
 Get vmhost/instance.tag
 
-Get vmhost/instance.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -374,21 +719,61 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceTagList
 
-> []Tag VmhostProjectInstanceTagList(ctx, projectId, locationId, instanceId)
+> []Tag VmhostProjectInstanceTagList(ctx, projectId, locationId, instanceId).Execute()
 
 List vmhost/instance.tag
 
-List vmhost/instance.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -410,22 +795,63 @@ Name | Type | Description  | Notes
 
 ## VmhostProjectInstanceTagPut
 
-> []Tag VmhostProjectInstanceTagPut(ctx, projectId, locationId, instanceId, tag)
+> []Tag VmhostProjectInstanceTagPut(ctx, projectId, locationId, instanceId).Tag(tag).Execute()
 
 Replace vmhost/instance.tag
 
-Replace vmhost/instance.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `VmhostProjectInstanceTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `VmhostProjectInstanceApi.VmhostProjectInstanceTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**instanceId** | **string**| Instance Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVmhostProjectInstanceTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 

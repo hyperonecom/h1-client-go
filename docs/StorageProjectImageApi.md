@@ -25,34 +25,64 @@ Method | HTTP request | Description
 
 ## StorageProjectImageCreate
 
-> Image StorageProjectImageCreate(ctx, projectId, locationId, storageProjectImageCreate, optional)
+> Image StorageProjectImageCreate(ctx, projectId, locationId).StorageProjectImageCreate(storageProjectImageCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create storage/image
 
-Create image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    storageProjectImageCreate := *openapiclient.NewStorageProjectImageCreate("Name_example") // StorageProjectImageCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageCreate(context.Background(), projectId, locationId).StorageProjectImageCreate(storageProjectImageCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageCreate`: Image
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**storageProjectImageCreate** | [**StorageProjectImageCreate**](StorageProjectImageCreate.md)|  | 
- **optional** | ***StorageProjectImageCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectImageCreateOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectImageCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectImageCreate** | [**StorageProjectImageCreate**](StorageProjectImageCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -74,21 +104,59 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageDelete
 
-> StorageProjectImageDelete(ctx, projectId, locationId, imageId)
+> StorageProjectImageDelete(ctx, projectId, locationId, imageId).Execute()
 
 Delete storage/image
 
-Delete image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageDelete(context.Background(), projectId, locationId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -110,21 +178,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageDiskList
 
-> []Disk StorageProjectImageDiskList(ctx, projectId, locationId, imageId)
+> []Disk StorageProjectImageDiskList(ctx, projectId, locationId, imageId).Execute()
 
 List storage/image.disk
 
-List storage/image.disk
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageDiskList(context.Background(), projectId, locationId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDiskList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageDiskList`: []Disk
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageDiskList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageDiskListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -146,22 +254,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageEventGet
 
-> Event StorageProjectImageEventGet(ctx, projectId, locationId, imageId, eventId)
+> Event StorageProjectImageEventGet(ctx, projectId, locationId, imageId, eventId).Execute()
 
 Get storage/image.event
 
-Get storage/image.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageEventGet(context.Background(), projectId, locationId, imageId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -183,26 +333,56 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageEventList
 
-> []Event StorageProjectImageEventList(ctx, projectId, locationId, imageId, optional)
+> []Event StorageProjectImageEventList(ctx, projectId, locationId, imageId).Limit(limit).Skip(skip).Execute()
 
 List storage/image.event
 
-List storage/image.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageEventList(context.Background(), projectId, locationId, imageId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
- **optional** | ***StorageProjectImageEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectImageEventListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectImageEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,8 +390,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -233,21 +413,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageGet
 
-> Image StorageProjectImageGet(ctx, projectId, locationId, imageId)
+> Image StorageProjectImageGet(ctx, projectId, locationId, imageId).Execute()
 
 Get storage/image
 
-Returns a single image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageGet(context.Background(), projectId, locationId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageGet`: Image
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -269,34 +489,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageList
 
-> []Image StorageProjectImageList(ctx, projectId, locationId, optional)
+> []Image StorageProjectImageList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List storage/image
 
-List image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageList`: []Image
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***StorageProjectImageListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectImageListOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectImageListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -318,22 +568,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageServiceGet
 
-> ResourceService StorageProjectImageServiceGet(ctx, projectId, locationId, imageId, serviceId)
+> ResourceService StorageProjectImageServiceGet(ctx, projectId, locationId, imageId, serviceId).Execute()
 
 Get storage/image.service
 
-Get storage/image.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageServiceGet(context.Background(), projectId, locationId, imageId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -355,21 +647,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageServiceList
 
-> []ResourceService StorageProjectImageServiceList(ctx, projectId, locationId, imageId)
+> []ResourceService StorageProjectImageServiceList(ctx, projectId, locationId, imageId).Execute()
 
 List storage/image.service
 
-List storage/image.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageServiceList(context.Background(), projectId, locationId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -391,22 +723,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTagCreate
 
-> Tag StorageProjectImageTagCreate(ctx, projectId, locationId, imageId, tag)
+> Tag StorageProjectImageTagCreate(ctx, projectId, locationId, imageId).Tag(tag).Execute()
 
 Create storage/image.tag
 
-Create storage/image.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagCreate(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -428,22 +801,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTagDelete
 
-> StorageProjectImageTagDelete(ctx, projectId, locationId, imageId, tagId)
+> StorageProjectImageTagDelete(ctx, projectId, locationId, imageId, tagId).Execute()
 
 Delete storage/image.tag
 
-Delete storage/image.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagDelete(context.Background(), projectId, locationId, imageId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -465,22 +878,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTagGet
 
-> Tag StorageProjectImageTagGet(ctx, projectId, locationId, imageId, tagId)
+> Tag StorageProjectImageTagGet(ctx, projectId, locationId, imageId, tagId).Execute()
 
 Get storage/image.tag
 
-Get storage/image.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagGet(context.Background(), projectId, locationId, imageId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -502,21 +957,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTagList
 
-> []Tag StorageProjectImageTagList(ctx, projectId, locationId, imageId)
+> []Tag StorageProjectImageTagList(ctx, projectId, locationId, imageId).Execute()
 
 List storage/image.tag
 
-List storage/image.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagList(context.Background(), projectId, locationId, imageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -538,22 +1033,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTagPut
 
-> []Tag StorageProjectImageTagPut(ctx, projectId, locationId, imageId, tag)
+> []Tag StorageProjectImageTagPut(ctx, projectId, locationId, imageId).Tag(tag).Execute()
 
 Replace storage/image.tag
 
-Replace storage/image.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagPut(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -575,27 +1111,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageTransfer
 
-> Image StorageProjectImageTransfer(ctx, projectId, locationId, imageId, storageProjectImageTransfer, optional)
+> Image StorageProjectImageTransfer(ctx, projectId, locationId, imageId).StorageProjectImageTransfer(storageProjectImageTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer storage/image
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    storageProjectImageTransfer := *openapiclient.NewStorageProjectImageTransfer("Project_example") // StorageProjectImageTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTransfer(context.Background(), projectId, locationId, imageId).StorageProjectImageTransfer(storageProjectImageTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageTransfer`: Image
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**storageProjectImageTransfer** | [**StorageProjectImageTransfer**](StorageProjectImageTransfer.md)|  | 
- **optional** | ***StorageProjectImageTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectImageTransferOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectImageTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -603,8 +1169,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectImageTransfer** | [**StorageProjectImageTransfer**](StorageProjectImageTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -626,22 +1193,63 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageUpdate
 
-> Image StorageProjectImageUpdate(ctx, projectId, locationId, imageId, storageProjectImageUpdate)
+> Image StorageProjectImageUpdate(ctx, projectId, locationId, imageId).StorageProjectImageUpdate(storageProjectImageUpdate).Execute()
 
 Update storage/image
 
-Returns modified image
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    imageId := "imageId_example" // string | Image Id
+    storageProjectImageUpdate := *openapiclient.NewStorageProjectImageUpdate() // StorageProjectImageUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageUpdate(context.Background(), projectId, locationId, imageId).StorageProjectImageUpdate(storageProjectImageUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectImageUpdate`: Image
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**imageId** | **string**| Image Id | 
-**storageProjectImageUpdate** | [**StorageProjectImageUpdate**](StorageProjectImageUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**imageId** | **string** | Image Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectImageUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **storageProjectImageUpdate** | [**StorageProjectImageUpdate**](StorageProjectImageUpdate.md) |  | 
 
 ### Return type
 

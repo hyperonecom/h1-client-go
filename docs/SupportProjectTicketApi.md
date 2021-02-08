@@ -16,32 +16,62 @@ Method | HTTP request | Description
 
 ## SupportProjectTicketClose
 
-> Ticket SupportProjectTicketClose(ctx, projectId, ticketId, optional)
+> Ticket SupportProjectTicketClose(ctx, projectId, ticketId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Close support/ticket
 
-action close
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    ticketId := "ticketId_example" // string | Ticket Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketClose(context.Background(), projectId, ticketId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketClose``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketClose`: Ticket
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketClose`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**ticketId** | **string**| Ticket Id | 
- **optional** | ***SupportProjectTicketCloseOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**ticketId** | **string** | Ticket Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SupportProjectTicketCloseOpts struct
+Other parameters are passed through a pointer to a apiSupportProjectTicketCloseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -63,32 +93,61 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketCreate
 
-> Ticket SupportProjectTicketCreate(ctx, projectId, supportProjectTicketCreate, optional)
+> Ticket SupportProjectTicketCreate(ctx, projectId).SupportProjectTicketCreate(supportProjectTicketCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create support/ticket
 
-Create ticket
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    supportProjectTicketCreate := *openapiclient.NewSupportProjectTicketCreate("Type_example", "Subject_example", "Message_example") // SupportProjectTicketCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketCreate(context.Background(), projectId).SupportProjectTicketCreate(supportProjectTicketCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketCreate`: Ticket
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**supportProjectTicketCreate** | [**SupportProjectTicketCreate**](SupportProjectTicketCreate.md)|  | 
- **optional** | ***SupportProjectTicketCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SupportProjectTicketCreateOpts struct
+Other parameters are passed through a pointer to a apiSupportProjectTicketCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **supportProjectTicketCreate** | [**SupportProjectTicketCreate**](SupportProjectTicketCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -110,20 +169,58 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketGet
 
-> Ticket SupportProjectTicketGet(ctx, projectId, ticketId)
+> Ticket SupportProjectTicketGet(ctx, projectId, ticketId).Execute()
 
 Get support/ticket
 
-Returns a single ticket
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    ticketId := "ticketId_example" // string | Ticket Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketGet(context.Background(), projectId, ticketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketGet`: Ticket
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**ticketId** | **string**| Ticket Id | 
+**projectId** | **string** | Project Id | 
+**ticketId** | **string** | Ticket Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSupportProjectTicketGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -145,30 +242,57 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketList
 
-> []Ticket SupportProjectTicketList(ctx, projectId, optional)
+> []Ticket SupportProjectTicketList(ctx, projectId).State(state).Execute()
 
 List support/ticket
 
-List ticket
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    state := "state_example" // string | Filter by state (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketList`: []Ticket
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***SupportProjectTicketListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a SupportProjectTicketListOpts struct
+Other parameters are passed through a pointer to a apiSupportProjectTicketListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **state** | **optional.String**| Filter by state | 
+ **state** | **string** | Filter by state | 
 
 ### Return type
 
@@ -190,21 +314,60 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketMessageCreate
 
-> SupportMessage SupportProjectTicketMessageCreate(ctx, projectId, ticketId, supportMessage)
+> SupportMessage SupportProjectTicketMessageCreate(ctx, projectId, ticketId).SupportMessage(supportMessage).Execute()
 
 Create support/ticket.message
 
-Create support/ticket.message
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    ticketId := "ticketId_example" // string | Ticket Id
+    supportMessage := *openapiclient.NewSupportMessage("Type_example") // SupportMessage | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageCreate(context.Background(), projectId, ticketId).SupportMessage(supportMessage).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketMessageCreate`: SupportMessage
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketMessageCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**ticketId** | **string**| Ticket Id | 
-**supportMessage** | [**SupportMessage**](SupportMessage.md)|  | 
+**projectId** | **string** | Project Id | 
+**ticketId** | **string** | Ticket Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSupportProjectTicketMessageCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **supportMessage** | [**SupportMessage**](SupportMessage.md) |  | 
 
 ### Return type
 
@@ -226,21 +389,61 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketMessageGet
 
-> SupportMessage SupportProjectTicketMessageGet(ctx, projectId, ticketId, messageId)
+> SupportMessage SupportProjectTicketMessageGet(ctx, projectId, ticketId, messageId).Execute()
 
 Get support/ticket.message
 
-Get support/ticket.message
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    ticketId := "ticketId_example" // string | Ticket Id
+    messageId := "messageId_example" // string | messageId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageGet(context.Background(), projectId, ticketId, messageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketMessageGet`: SupportMessage
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketMessageGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**ticketId** | **string**| Ticket Id | 
-**messageId** | **string**| messageId | 
+**projectId** | **string** | Project Id | 
+**ticketId** | **string** | Ticket Id | 
+**messageId** | **string** | messageId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSupportProjectTicketMessageGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -262,20 +465,58 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketMessageList
 
-> []SupportMessage SupportProjectTicketMessageList(ctx, projectId, ticketId)
+> []SupportMessage SupportProjectTicketMessageList(ctx, projectId, ticketId).Execute()
 
 List support/ticket.message
 
-List support/ticket.message
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    ticketId := "ticketId_example" // string | Ticket Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageList(context.Background(), projectId, ticketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SupportProjectTicketMessageList`: []SupportMessage
+    fmt.Fprintf(os.Stdout, "Response from `SupportProjectTicketApi.SupportProjectTicketMessageList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**ticketId** | **string**| Ticket Id | 
+**projectId** | **string** | Project Id | 
+**ticketId** | **string** | Ticket Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSupportProjectTicketMessageListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 

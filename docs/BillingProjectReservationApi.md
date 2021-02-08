@@ -25,34 +25,64 @@ Method | HTTP request | Description
 
 ## BillingProjectReservationAssign
 
-> Reservation BillingProjectReservationAssign(ctx, projectId, reservationId, billingProjectReservationAssign, optional)
+> Reservation BillingProjectReservationAssign(ctx, projectId, reservationId).BillingProjectReservationAssign(billingProjectReservationAssign).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Assign billing/reservation
 
-action assign
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    billingProjectReservationAssign := *openapiclient.NewBillingProjectReservationAssign() // BillingProjectReservationAssign | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationAssign(context.Background(), projectId, reservationId).BillingProjectReservationAssign(billingProjectReservationAssign).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationAssign``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationAssign`: Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationAssign`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**billingProjectReservationAssign** | [**BillingProjectReservationAssign**](BillingProjectReservationAssign.md)|  | 
- **optional** | ***BillingProjectReservationAssignOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectReservationAssignOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectReservationAssignRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **billingProjectReservationAssign** | [**BillingProjectReservationAssign**](BillingProjectReservationAssign.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -74,32 +104,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationCreate
 
-> Reservation BillingProjectReservationCreate(ctx, projectId, billingProjectReservationCreate, optional)
+> Reservation BillingProjectReservationCreate(ctx, projectId).BillingProjectReservationCreate(billingProjectReservationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create billing/reservation
 
-Create reservation
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    billingProjectReservationCreate := *openapiclient.NewBillingProjectReservationCreate("Name_example", "Service_example") // BillingProjectReservationCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationCreate(context.Background(), projectId).BillingProjectReservationCreate(billingProjectReservationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationCreate`: Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**billingProjectReservationCreate** | [**BillingProjectReservationCreate**](BillingProjectReservationCreate.md)|  | 
- **optional** | ***BillingProjectReservationCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectReservationCreateOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectReservationCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **billingProjectReservationCreate** | [**BillingProjectReservationCreate**](BillingProjectReservationCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -121,20 +180,56 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationDelete
 
-> BillingProjectReservationDelete(ctx, projectId, reservationId)
+> BillingProjectReservationDelete(ctx, projectId, reservationId).Execute()
 
 Delete billing/reservation
 
-Delete reservation
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationDelete(context.Background(), projectId, reservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -156,21 +251,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationEventGet
 
-> Event BillingProjectReservationEventGet(ctx, projectId, reservationId, eventId)
+> Event BillingProjectReservationEventGet(ctx, projectId, reservationId, eventId).Execute()
 
 Get billing/reservation.event
 
-Get billing/reservation.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationEventGet(context.Background(), projectId, reservationId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -192,33 +327,62 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationEventList
 
-> []Event BillingProjectReservationEventList(ctx, projectId, reservationId, optional)
+> []Event BillingProjectReservationEventList(ctx, projectId, reservationId).Limit(limit).Skip(skip).Execute()
 
 List billing/reservation.event
 
-List billing/reservation.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationEventList(context.Background(), projectId, reservationId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
- **optional** | ***BillingProjectReservationEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectReservationEventListOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectReservationEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -240,32 +404,62 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationExtend
 
-> Reservation BillingProjectReservationExtend(ctx, projectId, reservationId, optional)
+> Reservation BillingProjectReservationExtend(ctx, projectId, reservationId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Extend billing/reservation
 
-action extend
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationExtend(context.Background(), projectId, reservationId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationExtend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationExtend`: Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationExtend`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
- **optional** | ***BillingProjectReservationExtendOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectReservationExtendOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectReservationExtendRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -287,20 +481,58 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationGet
 
-> Reservation BillingProjectReservationGet(ctx, projectId, reservationId)
+> Reservation BillingProjectReservationGet(ctx, projectId, reservationId).Execute()
 
 Get billing/reservation
 
-Returns a single reservation
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationGet(context.Background(), projectId, reservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationGet`: Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -322,32 +554,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationList
 
-> []Reservation BillingProjectReservationList(ctx, projectId, optional)
+> []Reservation BillingProjectReservationList(ctx, projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List billing/reservation
 
-List reservation
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationList`: []Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***BillingProjectReservationListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a BillingProjectReservationListOpts struct
+Other parameters are passed through a pointer to a apiBillingProjectReservationListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -369,21 +630,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationServiceGet
 
-> ResourceService BillingProjectReservationServiceGet(ctx, projectId, reservationId, serviceId)
+> ResourceService BillingProjectReservationServiceGet(ctx, projectId, reservationId, serviceId).Execute()
 
 Get billing/reservation.service
 
-Get billing/reservation.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationServiceGet(context.Background(), projectId, reservationId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -405,20 +706,58 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationServiceList
 
-> []ResourceService BillingProjectReservationServiceList(ctx, projectId, reservationId)
+> []ResourceService BillingProjectReservationServiceList(ctx, projectId, reservationId).Execute()
 
 List billing/reservation.service
 
-List billing/reservation.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationServiceList(context.Background(), projectId, reservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -440,21 +779,60 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationTagCreate
 
-> Tag BillingProjectReservationTagCreate(ctx, projectId, reservationId, tag)
+> Tag BillingProjectReservationTagCreate(ctx, projectId, reservationId).Tag(tag).Execute()
 
 Create billing/reservation.tag
 
-Create billing/reservation.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagCreate(context.Background(), projectId, reservationId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -476,21 +854,59 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationTagDelete
 
-> BillingProjectReservationTagDelete(ctx, projectId, reservationId, tagId)
+> BillingProjectReservationTagDelete(ctx, projectId, reservationId, tagId).Execute()
 
 Delete billing/reservation.tag
 
-Delete billing/reservation.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagDelete(context.Background(), projectId, reservationId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -512,21 +928,61 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationTagGet
 
-> Tag BillingProjectReservationTagGet(ctx, projectId, reservationId, tagId)
+> Tag BillingProjectReservationTagGet(ctx, projectId, reservationId, tagId).Execute()
 
 Get billing/reservation.tag
 
-Get billing/reservation.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagGet(context.Background(), projectId, reservationId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -548,20 +1004,58 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationTagList
 
-> []Tag BillingProjectReservationTagList(ctx, projectId, reservationId)
+> []Tag BillingProjectReservationTagList(ctx, projectId, reservationId).Execute()
 
 List billing/reservation.tag
 
-List billing/reservation.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagList(context.Background(), projectId, reservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -583,21 +1077,60 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationTagPut
 
-> []Tag BillingProjectReservationTagPut(ctx, projectId, reservationId, tag)
+> []Tag BillingProjectReservationTagPut(ctx, projectId, reservationId).Tag(tag).Execute()
 
 Replace billing/reservation.tag
 
-Replace billing/reservation.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagPut(context.Background(), projectId, reservationId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -619,21 +1152,60 @@ Name | Type | Description  | Notes
 
 ## BillingProjectReservationUpdate
 
-> Reservation BillingProjectReservationUpdate(ctx, projectId, reservationId, billingProjectReservationUpdate)
+> Reservation BillingProjectReservationUpdate(ctx, projectId, reservationId).BillingProjectReservationUpdate(billingProjectReservationUpdate).Execute()
 
 Update billing/reservation
 
-Returns modified reservation
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reservationId := "reservationId_example" // string | Reservation Id
+    billingProjectReservationUpdate := *openapiclient.NewBillingProjectReservationUpdate() // BillingProjectReservationUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationUpdate(context.Background(), projectId, reservationId).BillingProjectReservationUpdate(billingProjectReservationUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BillingProjectReservationUpdate`: Reservation
+    fmt.Fprintf(os.Stdout, "Response from `BillingProjectReservationApi.BillingProjectReservationUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**reservationId** | **string**| Reservation Id | 
-**billingProjectReservationUpdate** | [**BillingProjectReservationUpdate**](BillingProjectReservationUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**reservationId** | **string** | Reservation Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBillingProjectReservationUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **billingProjectReservationUpdate** | [**BillingProjectReservationUpdate**](BillingProjectReservationUpdate.md) |  | 
 
 ### Return type
 

@@ -34,34 +34,64 @@ Method | HTTP request | Description
 
 ## NetworkingProjectFirewallCreate
 
-> Firewall NetworkingProjectFirewallCreate(ctx, projectId, locationId, networkingProjectFirewallCreate, optional)
+> Firewall NetworkingProjectFirewallCreate(ctx, projectId, locationId).NetworkingProjectFirewallCreate(networkingProjectFirewallCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create networking/firewall
 
-Create firewall
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    networkingProjectFirewallCreate := *openapiclient.NewNetworkingProjectFirewallCreate("Name_example") // NetworkingProjectFirewallCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate(context.Background(), projectId, locationId).NetworkingProjectFirewallCreate(networkingProjectFirewallCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallCreate`: Firewall
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**networkingProjectFirewallCreate** | [**NetworkingProjectFirewallCreate**](NetworkingProjectFirewallCreate.md)|  | 
- **optional** | ***NetworkingProjectFirewallCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectFirewallCreateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectFirewallCreate** | [**NetworkingProjectFirewallCreate**](NetworkingProjectFirewallCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -83,21 +113,59 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallDelete
 
-> NetworkingProjectFirewallDelete(ctx, projectId, locationId, firewallId)
+> NetworkingProjectFirewallDelete(ctx, projectId, locationId, firewallId).Execute()
 
 Delete networking/firewall
 
-Delete firewall
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -119,22 +187,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEgressCreate
 
-> NetworkingRule NetworkingProjectFirewallEgressCreate(ctx, projectId, locationId, firewallId, networkingRule)
+> NetworkingRule NetworkingProjectFirewallEgressCreate(ctx, projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
 
 Create networking/firewall.egress
 
-Create networking/firewall.egress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEgressCreate`: NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingRule** | [**NetworkingRule**](NetworkingRule.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEgressCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingRule** | [**NetworkingRule**](NetworkingRule.md) |  | 
 
 ### Return type
 
@@ -156,22 +265,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEgressDelete
 
-> NetworkingProjectFirewallEgressDelete(ctx, projectId, locationId, firewallId, egressId)
+> NetworkingProjectFirewallEgressDelete(ctx, projectId, locationId, firewallId, egressId).Execute()
 
 Delete networking/firewall.egress
 
-Delete networking/firewall.egress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    egressId := "egressId_example" // string | egressId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressDelete(context.Background(), projectId, locationId, firewallId, egressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**egressId** | **string**| egressId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**egressId** | **string** | egressId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEgressDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -193,22 +342,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEgressGet
 
-> NetworkingRule NetworkingProjectFirewallEgressGet(ctx, projectId, locationId, firewallId, egressId)
+> NetworkingRule NetworkingProjectFirewallEgressGet(ctx, projectId, locationId, firewallId, egressId).Execute()
 
 Get networking/firewall.egress
 
-Get networking/firewall.egress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    egressId := "egressId_example" // string | egressId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet(context.Background(), projectId, locationId, firewallId, egressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEgressGet`: NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**egressId** | **string**| egressId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**egressId** | **string** | egressId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEgressGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -230,21 +421,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEgressList
 
-> []NetworkingRule NetworkingProjectFirewallEgressList(ctx, projectId, locationId, firewallId)
+> []NetworkingRule NetworkingProjectFirewallEgressList(ctx, projectId, locationId, firewallId).Execute()
 
 List networking/firewall.egress
 
-List networking/firewall.egress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEgressList`: []NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEgressListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -266,22 +497,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEgressPut
 
-> []NetworkingRule NetworkingProjectFirewallEgressPut(ctx, projectId, locationId, firewallId, networkingRule)
+> []NetworkingRule NetworkingProjectFirewallEgressPut(ctx, projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
 
 Replace networking/firewall.egress
 
-Replace networking/firewall.egress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEgressPut`: []NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingRule** | [**[]NetworkingRule**](networking.rule.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEgressPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingRule** | [**[]NetworkingRule**](networking.rule.md) |  | 
 
 ### Return type
 
@@ -303,22 +575,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEventGet
 
-> Event NetworkingProjectFirewallEventGet(ctx, projectId, locationId, firewallId, eventId)
+> Event NetworkingProjectFirewallEventGet(ctx, projectId, locationId, firewallId, eventId).Execute()
 
 Get networking/firewall.event
 
-Get networking/firewall.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet(context.Background(), projectId, locationId, firewallId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -340,26 +654,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallEventList
 
-> []Event NetworkingProjectFirewallEventList(ctx, projectId, locationId, firewallId, optional)
+> []Event NetworkingProjectFirewallEventList(ctx, projectId, locationId, firewallId).Limit(limit).Skip(skip).Execute()
 
 List networking/firewall.event
 
-List networking/firewall.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList(context.Background(), projectId, locationId, firewallId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
- **optional** | ***NetworkingProjectFirewallEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectFirewallEventListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -367,8 +711,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -390,21 +734,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallGet
 
-> Firewall NetworkingProjectFirewallGet(ctx, projectId, locationId, firewallId)
+> Firewall NetworkingProjectFirewallGet(ctx, projectId, locationId, firewallId).Execute()
 
 Get networking/firewall
 
-Returns a single firewall
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallGet(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallGet`: Firewall
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -426,22 +810,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallIngressCreate
 
-> NetworkingRule NetworkingProjectFirewallIngressCreate(ctx, projectId, locationId, firewallId, networkingRule)
+> NetworkingRule NetworkingProjectFirewallIngressCreate(ctx, projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
 
 Create networking/firewall.ingress
 
-Create networking/firewall.ingress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallIngressCreate`: NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingRule** | [**NetworkingRule**](NetworkingRule.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallIngressCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingRule** | [**NetworkingRule**](NetworkingRule.md) |  | 
 
 ### Return type
 
@@ -463,22 +888,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallIngressDelete
 
-> NetworkingProjectFirewallIngressDelete(ctx, projectId, locationId, firewallId, ingressId)
+> NetworkingProjectFirewallIngressDelete(ctx, projectId, locationId, firewallId, ingressId).Execute()
 
 Delete networking/firewall.ingress
 
-Delete networking/firewall.ingress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    ingressId := "ingressId_example" // string | ingressId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressDelete(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**ingressId** | **string**| ingressId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**ingressId** | **string** | ingressId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallIngressDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -500,22 +965,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallIngressGet
 
-> NetworkingRule NetworkingProjectFirewallIngressGet(ctx, projectId, locationId, firewallId, ingressId)
+> NetworkingRule NetworkingProjectFirewallIngressGet(ctx, projectId, locationId, firewallId, ingressId).Execute()
 
 Get networking/firewall.ingress
 
-Get networking/firewall.ingress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    ingressId := "ingressId_example" // string | ingressId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallIngressGet`: NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**ingressId** | **string**| ingressId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**ingressId** | **string** | ingressId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallIngressGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -537,21 +1044,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallIngressList
 
-> []NetworkingRule NetworkingProjectFirewallIngressList(ctx, projectId, locationId, firewallId)
+> []NetworkingRule NetworkingProjectFirewallIngressList(ctx, projectId, locationId, firewallId).Execute()
 
 List networking/firewall.ingress
 
-List networking/firewall.ingress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallIngressList`: []NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallIngressListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -573,22 +1120,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallIngressPut
 
-> []NetworkingRule NetworkingProjectFirewallIngressPut(ctx, projectId, locationId, firewallId, networkingRule)
+> []NetworkingRule NetworkingProjectFirewallIngressPut(ctx, projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
 
 Replace networking/firewall.ingress
 
-Replace networking/firewall.ingress
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallIngressPut`: []NetworkingRule
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingRule** | [**[]NetworkingRule**](networking.rule.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallIngressPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingRule** | [**[]NetworkingRule**](networking.rule.md) |  | 
 
 ### Return type
 
@@ -610,34 +1198,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallList
 
-> []Firewall NetworkingProjectFirewallList(ctx, projectId, locationId, optional)
+> []Firewall NetworkingProjectFirewallList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List networking/firewall
 
-List firewall
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallList`: []Firewall
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***NetworkingProjectFirewallListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectFirewallListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -659,22 +1277,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallServiceGet
 
-> ResourceService NetworkingProjectFirewallServiceGet(ctx, projectId, locationId, firewallId, serviceId)
+> ResourceService NetworkingProjectFirewallServiceGet(ctx, projectId, locationId, firewallId, serviceId).Execute()
 
 Get networking/firewall.service
 
-Get networking/firewall.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet(context.Background(), projectId, locationId, firewallId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -696,21 +1356,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallServiceList
 
-> []ResourceService NetworkingProjectFirewallServiceList(ctx, projectId, locationId, firewallId)
+> []ResourceService NetworkingProjectFirewallServiceList(ctx, projectId, locationId, firewallId).Execute()
 
 List networking/firewall.service
 
-List networking/firewall.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -732,22 +1432,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTagCreate
 
-> Tag NetworkingProjectFirewallTagCreate(ctx, projectId, locationId, firewallId, tag)
+> Tag NetworkingProjectFirewallTagCreate(ctx, projectId, locationId, firewallId).Tag(tag).Execute()
 
 Create networking/firewall.tag
 
-Create networking/firewall.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -769,22 +1510,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTagDelete
 
-> NetworkingProjectFirewallTagDelete(ctx, projectId, locationId, firewallId, tagId)
+> NetworkingProjectFirewallTagDelete(ctx, projectId, locationId, firewallId, tagId).Execute()
 
 Delete networking/firewall.tag
 
-Delete networking/firewall.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagDelete(context.Background(), projectId, locationId, firewallId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -806,22 +1587,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTagGet
 
-> Tag NetworkingProjectFirewallTagGet(ctx, projectId, locationId, firewallId, tagId)
+> Tag NetworkingProjectFirewallTagGet(ctx, projectId, locationId, firewallId, tagId).Execute()
 
 Get networking/firewall.tag
 
-Get networking/firewall.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet(context.Background(), projectId, locationId, firewallId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -843,21 +1666,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTagList
 
-> []Tag NetworkingProjectFirewallTagList(ctx, projectId, locationId, firewallId)
+> []Tag NetworkingProjectFirewallTagList(ctx, projectId, locationId, firewallId).Execute()
 
 List networking/firewall.tag
 
-List networking/firewall.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList(context.Background(), projectId, locationId, firewallId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -879,22 +1742,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTagPut
 
-> []Tag NetworkingProjectFirewallTagPut(ctx, projectId, locationId, firewallId, tag)
+> []Tag NetworkingProjectFirewallTagPut(ctx, projectId, locationId, firewallId).Tag(tag).Execute()
 
 Replace networking/firewall.tag
 
-Replace networking/firewall.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -916,27 +1820,57 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallTransfer
 
-> Firewall NetworkingProjectFirewallTransfer(ctx, projectId, locationId, firewallId, networkingProjectFirewallTransfer, optional)
+> Firewall NetworkingProjectFirewallTransfer(ctx, projectId, locationId, firewallId).NetworkingProjectFirewallTransfer(networkingProjectFirewallTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer networking/firewall
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingProjectFirewallTransfer := *openapiclient.NewNetworkingProjectFirewallTransfer("Project_example") // NetworkingProjectFirewallTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallTransfer(networkingProjectFirewallTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallTransfer`: Firewall
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingProjectFirewallTransfer** | [**NetworkingProjectFirewallTransfer**](NetworkingProjectFirewallTransfer.md)|  | 
- **optional** | ***NetworkingProjectFirewallTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectFirewallTransferOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -944,8 +1878,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectFirewallTransfer** | [**NetworkingProjectFirewallTransfer**](NetworkingProjectFirewallTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -967,22 +1902,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallUpdate
 
-> Firewall NetworkingProjectFirewallUpdate(ctx, projectId, locationId, firewallId, networkingProjectFirewallUpdate)
+> Firewall NetworkingProjectFirewallUpdate(ctx, projectId, locationId, firewallId).NetworkingProjectFirewallUpdate(networkingProjectFirewallUpdate).Execute()
 
 Update networking/firewall
 
-Returns modified firewall
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    firewallId := "firewallId_example" // string | Firewall Id
+    networkingProjectFirewallUpdate := *openapiclient.NewNetworkingProjectFirewallUpdate() // NetworkingProjectFirewallUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallUpdate(networkingProjectFirewallUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectFirewallUpdate`: Firewall
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**firewallId** | **string**| Firewall Id | 
-**networkingProjectFirewallUpdate** | [**NetworkingProjectFirewallUpdate**](NetworkingProjectFirewallUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**firewallId** | **string** | Firewall Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectFirewallUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingProjectFirewallUpdate** | [**NetworkingProjectFirewallUpdate**](NetworkingProjectFirewallUpdate.md) |  | 
 
 ### Return type
 

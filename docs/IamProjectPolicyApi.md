@@ -27,21 +27,60 @@ Method | HTTP request | Description
 
 ## IamProjectPolicyActorCreate
 
-> IamActor IamProjectPolicyActorCreate(ctx, projectId, policyId, iamActor)
+> IamActor IamProjectPolicyActorCreate(ctx, projectId, policyId).IamActor(iamActor).Execute()
 
 Create iam/policy.actor
 
-Create iam/policy.actor
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    iamActor := *openapiclient.NewIamActor("Value_example") // IamActor | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorCreate(context.Background(), projectId, policyId).IamActor(iamActor).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyActorCreate`: IamActor
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**iamActor** | [**IamActor**](IamActor.md)|  | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyActorCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamActor** | [**IamActor**](IamActor.md) |  | 
 
 ### Return type
 
@@ -63,21 +102,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorDelete
 
-> IamActor IamProjectPolicyActorDelete(ctx, projectId, policyId, actorId)
+> IamActor IamProjectPolicyActorDelete(ctx, projectId, policyId, actorId).Execute()
 
 Delete iam/policy.actor
 
-Delete iam/policy.actor
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    actorId := "actorId_example" // string | actorId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorDelete(context.Background(), projectId, policyId, actorId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyActorDelete`: IamActor
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**actorId** | **string**| actorId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**actorId** | **string** | actorId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyActorDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -99,21 +178,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorGet
 
-> IamActor IamProjectPolicyActorGet(ctx, projectId, policyId, actorId)
+> IamActor IamProjectPolicyActorGet(ctx, projectId, policyId, actorId).Execute()
 
 Get iam/policy.actor
 
-Get iam/policy.actor
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    actorId := "actorId_example" // string | actorId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorGet(context.Background(), projectId, policyId, actorId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyActorGet`: IamActor
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**actorId** | **string**| actorId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**actorId** | **string** | actorId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyActorGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -135,20 +254,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorList
 
-> []IamActor IamProjectPolicyActorList(ctx, projectId, policyId)
+> []IamActor IamProjectPolicyActorList(ctx, projectId, policyId).Execute()
 
 List iam/policy.actor
 
-List iam/policy.actor
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorList(context.Background(), projectId, policyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyActorList`: []IamActor
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyActorListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -170,32 +327,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyCreate
 
-> Policy IamProjectPolicyCreate(ctx, projectId, iamProjectPolicyCreate, optional)
+> Policy IamProjectPolicyCreate(ctx, projectId).IamProjectPolicyCreate(iamProjectPolicyCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create iam/policy
 
-Create policy
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    iamProjectPolicyCreate := *openapiclient.NewIamProjectPolicyCreate("Name_example", "Role_example", "Resource_example") // IamProjectPolicyCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyCreate(context.Background(), projectId).IamProjectPolicyCreate(iamProjectPolicyCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyCreate`: Policy
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**iamProjectPolicyCreate** | [**IamProjectPolicyCreate**](IamProjectPolicyCreate.md)|  | 
- **optional** | ***IamProjectPolicyCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectPolicyCreateOpts struct
+Other parameters are passed through a pointer to a apiIamProjectPolicyCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **iamProjectPolicyCreate** | [**IamProjectPolicyCreate**](IamProjectPolicyCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -217,20 +403,56 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyDelete
 
-> IamProjectPolicyDelete(ctx, projectId, policyId)
+> IamProjectPolicyDelete(ctx, projectId, policyId).Execute()
 
 Delete iam/policy
 
-Delete policy
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyDelete(context.Background(), projectId, policyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -252,21 +474,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyEventGet
 
-> Event IamProjectPolicyEventGet(ctx, projectId, policyId, eventId)
+> Event IamProjectPolicyEventGet(ctx, projectId, policyId, eventId).Execute()
 
 Get iam/policy.event
 
-Get iam/policy.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyEventGet(context.Background(), projectId, policyId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -288,33 +550,62 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyEventList
 
-> []Event IamProjectPolicyEventList(ctx, projectId, policyId, optional)
+> []Event IamProjectPolicyEventList(ctx, projectId, policyId).Limit(limit).Skip(skip).Execute()
 
 List iam/policy.event
 
-List iam/policy.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyEventList(context.Background(), projectId, policyId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
- **optional** | ***IamProjectPolicyEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectPolicyEventListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectPolicyEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -336,20 +627,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyGet
 
-> Policy IamProjectPolicyGet(ctx, projectId, policyId)
+> Policy IamProjectPolicyGet(ctx, projectId, policyId).Execute()
 
 Get iam/policy
 
-Returns a single policy
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyGet(context.Background(), projectId, policyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyGet`: Policy
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -371,33 +700,63 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyList
 
-> []Policy IamProjectPolicyList(ctx, projectId, optional)
+> []Policy IamProjectPolicyList(ctx, projectId).Name(name).Resource(resource).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List iam/policy
 
-List policy
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    name := "name_example" // string | Filter by name (optional)
+    resource := "resource_example" // string | Filter by resource (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyList(context.Background(), projectId).Name(name).Resource(resource).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyList`: []Policy
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***IamProjectPolicyListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectPolicyListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectPolicyListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **name** | **optional.String**| Filter by name | 
- **resource** | **optional.String**| Filter by resource | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **resource** | **string** | Filter by resource | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -419,21 +778,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyServiceGet
 
-> ResourceService IamProjectPolicyServiceGet(ctx, projectId, policyId, serviceId)
+> ResourceService IamProjectPolicyServiceGet(ctx, projectId, policyId, serviceId).Execute()
 
 Get iam/policy.service
 
-Get iam/policy.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyServiceGet(context.Background(), projectId, policyId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -455,20 +854,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyServiceList
 
-> []ResourceService IamProjectPolicyServiceList(ctx, projectId, policyId)
+> []ResourceService IamProjectPolicyServiceList(ctx, projectId, policyId).Execute()
 
 List iam/policy.service
 
-List iam/policy.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyServiceList(context.Background(), projectId, policyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -490,21 +927,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyTagCreate
 
-> Tag IamProjectPolicyTagCreate(ctx, projectId, policyId, tag)
+> Tag IamProjectPolicyTagCreate(ctx, projectId, policyId).Tag(tag).Execute()
 
 Create iam/policy.tag
 
-Create iam/policy.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagCreate(context.Background(), projectId, policyId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -526,21 +1002,59 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyTagDelete
 
-> IamProjectPolicyTagDelete(ctx, projectId, policyId, tagId)
+> IamProjectPolicyTagDelete(ctx, projectId, policyId, tagId).Execute()
 
 Delete iam/policy.tag
 
-Delete iam/policy.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagDelete(context.Background(), projectId, policyId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -562,21 +1076,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyTagGet
 
-> Tag IamProjectPolicyTagGet(ctx, projectId, policyId, tagId)
+> Tag IamProjectPolicyTagGet(ctx, projectId, policyId, tagId).Execute()
 
 Get iam/policy.tag
 
-Get iam/policy.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagGet(context.Background(), projectId, policyId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -598,20 +1152,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyTagList
 
-> []Tag IamProjectPolicyTagList(ctx, projectId, policyId)
+> []Tag IamProjectPolicyTagList(ctx, projectId, policyId).Execute()
 
 List iam/policy.tag
 
-List iam/policy.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagList(context.Background(), projectId, policyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -633,21 +1225,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyTagPut
 
-> []Tag IamProjectPolicyTagPut(ctx, projectId, policyId, tag)
+> []Tag IamProjectPolicyTagPut(ctx, projectId, policyId).Tag(tag).Execute()
 
 Replace iam/policy.tag
 
-Replace iam/policy.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagPut(context.Background(), projectId, policyId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -669,21 +1300,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyUpdate
 
-> Policy IamProjectPolicyUpdate(ctx, projectId, policyId, iamProjectPolicyUpdate)
+> Policy IamProjectPolicyUpdate(ctx, projectId, policyId).IamProjectPolicyUpdate(iamProjectPolicyUpdate).Execute()
 
 Update iam/policy
 
-Returns modified policy
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    policyId := "policyId_example" // string | Policy Id
+    iamProjectPolicyUpdate := *openapiclient.NewIamProjectPolicyUpdate() // IamProjectPolicyUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyUpdate(context.Background(), projectId, policyId).IamProjectPolicyUpdate(iamProjectPolicyUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectPolicyUpdate`: Policy
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**policyId** | **string**| Policy Id | 
-**iamProjectPolicyUpdate** | [**IamProjectPolicyUpdate**](IamProjectPolicyUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**policyId** | **string** | Policy Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectPolicyUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamProjectPolicyUpdate** | [**IamProjectPolicyUpdate**](IamProjectPolicyUpdate.md) |  | 
 
 ### Return type
 

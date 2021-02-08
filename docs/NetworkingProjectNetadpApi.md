@@ -26,34 +26,64 @@ Method | HTTP request | Description
 
 ## NetworkingProjectNetadpCreate
 
-> Netadp NetworkingProjectNetadpCreate(ctx, projectId, locationId, networkingProjectNetadpCreate, optional)
+> Netadp NetworkingProjectNetadpCreate(ctx, projectId, locationId).NetworkingProjectNetadpCreate(networkingProjectNetadpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create networking/netadp
 
-Create netadp
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    networkingProjectNetadpCreate := *openapiclient.NewNetworkingProjectNetadpCreate("Vm_example", "Network_example") // NetworkingProjectNetadpCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate(context.Background(), projectId, locationId).NetworkingProjectNetadpCreate(networkingProjectNetadpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpCreate`: Netadp
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**networkingProjectNetadpCreate** | [**NetworkingProjectNetadpCreate**](NetworkingProjectNetadpCreate.md)|  | 
- **optional** | ***NetworkingProjectNetadpCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetadpCreateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectNetadpCreate** | [**NetworkingProjectNetadpCreate**](NetworkingProjectNetadpCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -75,21 +105,59 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpDelete
 
-> NetworkingProjectNetadpDelete(ctx, projectId, locationId, netadpId)
+> NetworkingProjectNetadpDelete(ctx, projectId, locationId, netadpId).Execute()
 
 Delete networking/netadp
 
-Delete netadp
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete(context.Background(), projectId, locationId, netadpId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -111,22 +179,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpEventGet
 
-> Event NetworkingProjectNetadpEventGet(ctx, projectId, locationId, netadpId, eventId)
+> Event NetworkingProjectNetadpEventGet(ctx, projectId, locationId, netadpId, eventId).Execute()
 
 Get networking/netadp.event
 
-Get networking/netadp.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet(context.Background(), projectId, locationId, netadpId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -148,26 +258,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpEventList
 
-> []Event NetworkingProjectNetadpEventList(ctx, projectId, locationId, netadpId, optional)
+> []Event NetworkingProjectNetadpEventList(ctx, projectId, locationId, netadpId).Limit(limit).Skip(skip).Execute()
 
 List networking/netadp.event
 
-List networking/netadp.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList(context.Background(), projectId, locationId, netadpId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
- **optional** | ***NetworkingProjectNetadpEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetadpEventListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -175,8 +315,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -198,21 +338,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpGet
 
-> Netadp NetworkingProjectNetadpGet(ctx, projectId, locationId, netadpId)
+> Netadp NetworkingProjectNetadpGet(ctx, projectId, locationId, netadpId).Execute()
 
 Get networking/netadp
 
-Returns a single netadp
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpGet(context.Background(), projectId, locationId, netadpId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpGet`: Netadp
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -234,36 +414,68 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpList
 
-> []Netadp NetworkingProjectNetadpList(ctx, projectId, locationId, optional)
+> []Netadp NetworkingProjectNetadpList(ctx, projectId, locationId).AssignedResource(assignedResource).AssignedId(assignedId).Network(network).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List networking/netadp
 
-List netadp
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    assignedResource := "assignedResource_example" // string | Filter by assigned.resource (optional)
+    assignedId := "assignedId_example" // string | Filter by assigned.id (optional)
+    network := "network_example" // string | Filter by network (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpList(context.Background(), projectId, locationId).AssignedResource(assignedResource).AssignedId(assignedId).Network(network).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpList`: []Netadp
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***NetworkingProjectNetadpListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetadpListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **assignedResource** | **optional.String**| Filter by assigned.resource | 
- **assignedId** | **optional.String**| Filter by assigned.id | 
- **network** | **optional.String**| Filter by network | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **assignedResource** | **string** | Filter by assigned.resource | 
+ **assignedId** | **string** | Filter by assigned.id | 
+ **network** | **string** | Filter by network | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -285,22 +497,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpMetricGet
 
-> Metric NetworkingProjectNetadpMetricGet(ctx, projectId, locationId, netadpId, metricId)
+> Metric NetworkingProjectNetadpMetricGet(ctx, projectId, locationId, netadpId, metricId).Execute()
 
 Get networking/netadp.metric
 
-Get networking/netadp.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet(context.Background(), projectId, locationId, netadpId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**metricId** | **string**| metricId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -322,21 +576,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpMetricList
 
-> []Metric NetworkingProjectNetadpMetricList(ctx, projectId, locationId, netadpId)
+> []Metric NetworkingProjectNetadpMetricList(ctx, projectId, locationId, netadpId).Execute()
 
 List networking/netadp.metric
 
-List networking/netadp.metric
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList(context.Background(), projectId, locationId, netadpId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -358,27 +652,58 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpMetricPointList
 
-> []Point NetworkingProjectNetadpMetricPointList(ctx, projectId, locationId, netadpId, metricId, optional)
+> []Point NetworkingProjectNetadpMetricPointList(ctx, projectId, locationId, netadpId, metricId).Interval(interval).Timespan(timespan).Execute()
 
 List networking/netadp.point
 
-List networking/netadp.point
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList(context.Background(), projectId, locationId, netadpId, metricId).Interval(interval).Timespan(timespan).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpMetricPointList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**metricId** | **string**| metricId | 
- **optional** | ***NetworkingProjectNetadpMetricPointListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**metricId** | **string** | metricId | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetadpMetricPointListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpMetricPointListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -387,8 +712,8 @@ Name | Type | Description  | Notes
 
 
 
- **interval** | **optional.String**| interval | 
- **timespan** | **optional.String**| timespan | 
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
 
 ### Return type
 
@@ -410,22 +735,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpServiceGet
 
-> ResourceService NetworkingProjectNetadpServiceGet(ctx, projectId, locationId, netadpId, serviceId)
+> ResourceService NetworkingProjectNetadpServiceGet(ctx, projectId, locationId, netadpId, serviceId).Execute()
 
 Get networking/netadp.service
 
-Get networking/netadp.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet(context.Background(), projectId, locationId, netadpId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -447,21 +814,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpServiceList
 
-> []ResourceService NetworkingProjectNetadpServiceList(ctx, projectId, locationId, netadpId)
+> []ResourceService NetworkingProjectNetadpServiceList(ctx, projectId, locationId, netadpId).Execute()
 
 List networking/netadp.service
 
-List networking/netadp.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList(context.Background(), projectId, locationId, netadpId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -483,22 +890,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpTagCreate
 
-> Tag NetworkingProjectNetadpTagCreate(ctx, projectId, locationId, netadpId, tag)
+> Tag NetworkingProjectNetadpTagCreate(ctx, projectId, locationId, netadpId).Tag(tag).Execute()
 
 Create networking/netadp.tag
 
-Create networking/netadp.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -520,22 +968,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpTagDelete
 
-> NetworkingProjectNetadpTagDelete(ctx, projectId, locationId, netadpId, tagId)
+> NetworkingProjectNetadpTagDelete(ctx, projectId, locationId, netadpId, tagId).Execute()
 
 Delete networking/netadp.tag
 
-Delete networking/netadp.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagDelete(context.Background(), projectId, locationId, netadpId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -557,22 +1045,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpTagGet
 
-> Tag NetworkingProjectNetadpTagGet(ctx, projectId, locationId, netadpId, tagId)
+> Tag NetworkingProjectNetadpTagGet(ctx, projectId, locationId, netadpId, tagId).Execute()
 
 Get networking/netadp.tag
 
-Get networking/netadp.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet(context.Background(), projectId, locationId, netadpId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -594,21 +1124,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpTagList
 
-> []Tag NetworkingProjectNetadpTagList(ctx, projectId, locationId, netadpId)
+> []Tag NetworkingProjectNetadpTagList(ctx, projectId, locationId, netadpId).Execute()
 
 List networking/netadp.tag
 
-List networking/netadp.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList(context.Background(), projectId, locationId, netadpId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -630,22 +1200,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpTagPut
 
-> []Tag NetworkingProjectNetadpTagPut(ctx, projectId, locationId, netadpId, tag)
+> []Tag NetworkingProjectNetadpTagPut(ctx, projectId, locationId, netadpId).Tag(tag).Execute()
 
 Replace networking/netadp.tag
 
-Replace networking/netadp.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -667,22 +1278,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpUpdate
 
-> Netadp NetworkingProjectNetadpUpdate(ctx, projectId, locationId, netadpId, networkingProjectNetadpUpdate)
+> Netadp NetworkingProjectNetadpUpdate(ctx, projectId, locationId, netadpId).NetworkingProjectNetadpUpdate(networkingProjectNetadpUpdate).Execute()
 
 Update networking/netadp
 
-Returns modified netadp
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netadpId := "netadpId_example" // string | Netadp Id
+    networkingProjectNetadpUpdate := *openapiclient.NewNetworkingProjectNetadpUpdate() // NetworkingProjectNetadpUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate(context.Background(), projectId, locationId, netadpId).NetworkingProjectNetadpUpdate(networkingProjectNetadpUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetadpUpdate`: Netadp
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netadpId** | **string**| Netadp Id | 
-**networkingProjectNetadpUpdate** | [**NetworkingProjectNetadpUpdate**](NetworkingProjectNetadpUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netadpId** | **string** | Netadp Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetadpUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingProjectNetadpUpdate** | [**NetworkingProjectNetadpUpdate**](NetworkingProjectNetadpUpdate.md) |  | 
 
 ### Return type
 

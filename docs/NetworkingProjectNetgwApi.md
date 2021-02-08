@@ -25,27 +25,57 @@ Method | HTTP request | Description
 
 ## NetworkingProjectNetgwAttach
 
-> Netgw NetworkingProjectNetgwAttach(ctx, projectId, locationId, netgwId, networkingProjectNetgwAttach, optional)
+> Netgw NetworkingProjectNetgwAttach(ctx, projectId, locationId, netgwId).NetworkingProjectNetgwAttach(networkingProjectNetgwAttach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Attach networking/netgw
 
-action attach
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    networkingProjectNetgwAttach := *openapiclient.NewNetworkingProjectNetgwAttach() // NetworkingProjectNetgwAttach | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwAttach(context.Background(), projectId, locationId, netgwId).NetworkingProjectNetgwAttach(networkingProjectNetgwAttach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwAttach``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwAttach`: Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwAttach`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**networkingProjectNetgwAttach** | [**NetworkingProjectNetgwAttach**](NetworkingProjectNetgwAttach.md)|  | 
- **optional** | ***NetworkingProjectNetgwAttachOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetgwAttachOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwAttachRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -53,8 +83,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectNetgwAttach** | [**NetworkingProjectNetgwAttach**](NetworkingProjectNetgwAttach.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -76,34 +107,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwCreate
 
-> Netgw NetworkingProjectNetgwCreate(ctx, projectId, locationId, networkingProjectNetgwCreate, optional)
+> Netgw NetworkingProjectNetgwCreate(ctx, projectId, locationId).NetworkingProjectNetgwCreate(networkingProjectNetgwCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create networking/netgw
 
-Create netgw
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    networkingProjectNetgwCreate := *openapiclient.NewNetworkingProjectNetgwCreate() // NetworkingProjectNetgwCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwCreate(context.Background(), projectId, locationId).NetworkingProjectNetgwCreate(networkingProjectNetgwCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwCreate`: Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**networkingProjectNetgwCreate** | [**NetworkingProjectNetgwCreate**](NetworkingProjectNetgwCreate.md)|  | 
- **optional** | ***NetworkingProjectNetgwCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetgwCreateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectNetgwCreate** | [**NetworkingProjectNetgwCreate**](NetworkingProjectNetgwCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -125,21 +186,59 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwDelete
 
-> NetworkingProjectNetgwDelete(ctx, projectId, locationId, netgwId)
+> NetworkingProjectNetgwDelete(ctx, projectId, locationId, netgwId).Execute()
 
 Delete networking/netgw
 
-Delete netgw
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwDelete(context.Background(), projectId, locationId, netgwId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -161,26 +260,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwDetach
 
-> Netgw NetworkingProjectNetgwDetach(ctx, projectId, locationId, netgwId, optional)
+> Netgw NetworkingProjectNetgwDetach(ctx, projectId, locationId, netgwId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Detach networking/netgw
 
-action detach
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwDetach(context.Background(), projectId, locationId, netgwId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwDetach``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwDetach`: Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwDetach`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
- **optional** | ***NetworkingProjectNetgwDetachOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetgwDetachOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwDetachRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -188,7 +317,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -210,22 +340,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwEventGet
 
-> Event NetworkingProjectNetgwEventGet(ctx, projectId, locationId, netgwId, eventId)
+> Event NetworkingProjectNetgwEventGet(ctx, projectId, locationId, netgwId, eventId).Execute()
 
 Get networking/netgw.event
 
-Get networking/netgw.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwEventGet(context.Background(), projectId, locationId, netgwId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -247,26 +419,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwEventList
 
-> []Event NetworkingProjectNetgwEventList(ctx, projectId, locationId, netgwId, optional)
+> []Event NetworkingProjectNetgwEventList(ctx, projectId, locationId, netgwId).Limit(limit).Skip(skip).Execute()
 
 List networking/netgw.event
 
-List networking/netgw.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwEventList(context.Background(), projectId, locationId, netgwId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
- **optional** | ***NetworkingProjectNetgwEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetgwEventListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -274,8 +476,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -297,21 +499,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwGet
 
-> Netgw NetworkingProjectNetgwGet(ctx, projectId, locationId, netgwId)
+> Netgw NetworkingProjectNetgwGet(ctx, projectId, locationId, netgwId).Execute()
 
 Get networking/netgw
 
-Returns a single netgw
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwGet(context.Background(), projectId, locationId, netgwId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwGet`: Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -333,34 +575,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwList
 
-> []Netgw NetworkingProjectNetgwList(ctx, projectId, locationId, optional)
+> []Netgw NetworkingProjectNetgwList(ctx, projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List networking/netgw
 
-List netgw
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwList`: []Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***NetworkingProjectNetgwListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectNetgwListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -382,22 +654,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwServiceGet
 
-> ResourceService NetworkingProjectNetgwServiceGet(ctx, projectId, locationId, netgwId, serviceId)
+> ResourceService NetworkingProjectNetgwServiceGet(ctx, projectId, locationId, netgwId, serviceId).Execute()
 
 Get networking/netgw.service
 
-Get networking/netgw.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceGet(context.Background(), projectId, locationId, netgwId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -419,21 +733,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwServiceList
 
-> []ResourceService NetworkingProjectNetgwServiceList(ctx, projectId, locationId, netgwId)
+> []ResourceService NetworkingProjectNetgwServiceList(ctx, projectId, locationId, netgwId).Execute()
 
 List networking/netgw.service
 
-List networking/netgw.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceList(context.Background(), projectId, locationId, netgwId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -455,22 +809,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwTagCreate
 
-> Tag NetworkingProjectNetgwTagCreate(ctx, projectId, locationId, netgwId, tag)
+> Tag NetworkingProjectNetgwTagCreate(ctx, projectId, locationId, netgwId).Tag(tag).Execute()
 
 Create networking/netgw.tag
 
-Create networking/netgw.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwTagCreate(context.Background(), projectId, locationId, netgwId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -492,22 +887,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwTagDelete
 
-> NetworkingProjectNetgwTagDelete(ctx, projectId, locationId, netgwId, tagId)
+> NetworkingProjectNetgwTagDelete(ctx, projectId, locationId, netgwId, tagId).Execute()
 
 Delete networking/netgw.tag
 
-Delete networking/netgw.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwTagDelete(context.Background(), projectId, locationId, netgwId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -529,22 +964,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwTagGet
 
-> Tag NetworkingProjectNetgwTagGet(ctx, projectId, locationId, netgwId, tagId)
+> Tag NetworkingProjectNetgwTagGet(ctx, projectId, locationId, netgwId, tagId).Execute()
 
 Get networking/netgw.tag
 
-Get networking/netgw.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwTagGet(context.Background(), projectId, locationId, netgwId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -566,21 +1043,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwTagList
 
-> []Tag NetworkingProjectNetgwTagList(ctx, projectId, locationId, netgwId)
+> []Tag NetworkingProjectNetgwTagList(ctx, projectId, locationId, netgwId).Execute()
 
 List networking/netgw.tag
 
-List networking/netgw.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwTagList(context.Background(), projectId, locationId, netgwId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -602,22 +1119,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwTagPut
 
-> []Tag NetworkingProjectNetgwTagPut(ctx, projectId, locationId, netgwId, tag)
+> []Tag NetworkingProjectNetgwTagPut(ctx, projectId, locationId, netgwId).Tag(tag).Execute()
 
 Replace networking/netgw.tag
 
-Replace networking/netgw.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwTagPut(context.Background(), projectId, locationId, netgwId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -639,22 +1197,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetgwUpdate
 
-> Netgw NetworkingProjectNetgwUpdate(ctx, projectId, locationId, netgwId, networkingProjectNetgwUpdate)
+> Netgw NetworkingProjectNetgwUpdate(ctx, projectId, locationId, netgwId).NetworkingProjectNetgwUpdate(networkingProjectNetgwUpdate).Execute()
 
 Update networking/netgw
 
-Returns modified netgw
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    netgwId := "netgwId_example" // string | Netgw Id
+    networkingProjectNetgwUpdate := *openapiclient.NewNetworkingProjectNetgwUpdate() // NetworkingProjectNetgwUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectNetgwApi.NetworkingProjectNetgwUpdate(context.Background(), projectId, locationId, netgwId).NetworkingProjectNetgwUpdate(networkingProjectNetgwUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetgwApi.NetworkingProjectNetgwUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectNetgwUpdate`: Netgw
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetgwApi.NetworkingProjectNetgwUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**netgwId** | **string**| Netgw Id | 
-**networkingProjectNetgwUpdate** | [**NetworkingProjectNetgwUpdate**](NetworkingProjectNetgwUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**netgwId** | **string** | Netgw Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectNetgwUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingProjectNetgwUpdate** | [**NetworkingProjectNetgwUpdate**](NetworkingProjectNetgwUpdate.md) |  | 
 
 ### Return type
 

@@ -16,21 +16,61 @@ Method | HTTP request | Description
 
 ## StorageProjectBucketGet
 
-> Bucket StorageProjectBucketGet(ctx, projectId, locationId, bucketId)
+> Bucket StorageProjectBucketGet(ctx, projectId, locationId, bucketId).Execute()
 
 Get storage/bucket
 
-Returns a single bucket
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketGet(context.Background(), projectId, locationId, bucketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectBucketGet`: Bucket
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectBucketApi.StorageProjectBucketGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -52,20 +92,58 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketList
 
-> []Bucket StorageProjectBucketList(ctx, projectId, locationId)
+> []Bucket StorageProjectBucketList(ctx, projectId, locationId).Execute()
 
 List storage/bucket
 
-List bucket
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketList(context.Background(), projectId, locationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectBucketList`: []Bucket
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectBucketApi.StorageProjectBucketList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -87,22 +165,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketObjectDelete
 
-> StorageProjectBucketObjectDelete(ctx, projectId, locationId, bucketId, objectId)
+> StorageProjectBucketObjectDelete(ctx, projectId, locationId, bucketId, objectId).Execute()
 
 Delete storage/bucket.object
 
-Delete storage/bucket.object
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+    objectId := "objectId_example" // string | objectId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectDelete(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
-**objectId** | **string**| objectId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
+**objectId** | **string** | objectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketObjectDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -124,22 +242,62 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketObjectDownload
 
-> StorageProjectBucketObjectDownload(ctx, projectId, locationId, bucketId, objectId)
+> StorageProjectBucketObjectDownload(ctx, projectId, locationId, bucketId, objectId).Execute()
 
 Download storage/bucket.object
 
-action download
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+    objectId := "objectId_example" // string | objectId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectDownload(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectDownload``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
-**objectId** | **string**| objectId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
+**objectId** | **string** | objectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketObjectDownloadRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -161,22 +319,64 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketObjectGet
 
-> StorageObject StorageProjectBucketObjectGet(ctx, projectId, locationId, bucketId, objectId)
+> StorageObject StorageProjectBucketObjectGet(ctx, projectId, locationId, bucketId, objectId).Execute()
 
 Get storage/bucket.object
 
-Get storage/bucket.object
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+    objectId := "objectId_example" // string | objectId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectGet(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectBucketObjectGet`: StorageObject
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectBucketApi.StorageProjectBucketObjectGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
-**objectId** | **string**| objectId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
+**objectId** | **string** | objectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketObjectGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -198,21 +398,61 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketObjectList
 
-> []StorageObject StorageProjectBucketObjectList(ctx, projectId, locationId, bucketId)
+> []StorageObject StorageProjectBucketObjectList(ctx, projectId, locationId, bucketId).Execute()
 
 List storage/bucket.object
 
-List storage/bucket.object
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectList(context.Background(), projectId, locationId, bucketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectBucketObjectList`: []StorageObject
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectBucketApi.StorageProjectBucketObjectList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectBucketObjectListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -234,27 +474,57 @@ Name | Type | Description  | Notes
 
 ## StorageProjectBucketUpload
 
-> Bucket StorageProjectBucketUpload(ctx, projectId, locationId, bucketId, storageProjectBucketUpload, optional)
+> Bucket StorageProjectBucketUpload(ctx, projectId, locationId, bucketId).StorageProjectBucketUpload(storageProjectBucketUpload).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Upload storage/bucket
 
-action upload
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    bucketId := "bucketId_example" // string | Bucket Id
+    storageProjectBucketUpload := *openapiclient.NewStorageProjectBucketUpload("Name_example") // StorageProjectBucketUpload | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketUpload(context.Background(), projectId, locationId, bucketId).StorageProjectBucketUpload(storageProjectBucketUpload).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketUpload``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectBucketUpload`: Bucket
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectBucketApi.StorageProjectBucketUpload`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**bucketId** | **string**| Bucket Id | 
-**storageProjectBucketUpload** | [**StorageProjectBucketUpload**](StorageProjectBucketUpload.md)|  | 
- **optional** | ***StorageProjectBucketUploadOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**bucketId** | **string** | Bucket Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a StorageProjectBucketUploadOpts struct
+Other parameters are passed through a pointer to a apiStorageProjectBucketUploadRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -262,8 +532,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **storageProjectBucketUpload** | [**StorageProjectBucketUpload**](StorageProjectBucketUpload.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 

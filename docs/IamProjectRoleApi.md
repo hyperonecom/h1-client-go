@@ -28,32 +28,61 @@ Method | HTTP request | Description
 
 ## IamProjectRoleCreate
 
-> Role IamProjectRoleCreate(ctx, projectId, iamProjectRoleCreate, optional)
+> Role IamProjectRoleCreate(ctx, projectId).IamProjectRoleCreate(iamProjectRoleCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create iam/role
 
-Create role
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    iamProjectRoleCreate := *openapiclient.NewIamProjectRoleCreate("Name_example") // IamProjectRoleCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleCreate(context.Background(), projectId).IamProjectRoleCreate(iamProjectRoleCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleCreate`: Role
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**iamProjectRoleCreate** | [**IamProjectRoleCreate**](IamProjectRoleCreate.md)|  | 
- **optional** | ***IamProjectRoleCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectRoleCreateOpts struct
+Other parameters are passed through a pointer to a apiIamProjectRoleCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **iamProjectRoleCreate** | [**IamProjectRoleCreate**](IamProjectRoleCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -75,20 +104,56 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleDelete
 
-> IamProjectRoleDelete(ctx, projectId, roleId)
+> IamProjectRoleDelete(ctx, projectId, roleId).Execute()
 
 Delete iam/role
 
-Delete role
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleDelete(context.Background(), projectId, roleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -110,21 +175,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleEventGet
 
-> Event IamProjectRoleEventGet(ctx, projectId, roleId, eventId)
+> Event IamProjectRoleEventGet(ctx, projectId, roleId, eventId).Execute()
 
 Get iam/role.event
 
-Get iam/role.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleEventGet(context.Background(), projectId, roleId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -146,33 +251,62 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleEventList
 
-> []Event IamProjectRoleEventList(ctx, projectId, roleId, optional)
+> []Event IamProjectRoleEventList(ctx, projectId, roleId).Limit(limit).Skip(skip).Execute()
 
 List iam/role.event
 
-List iam/role.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleEventList(context.Background(), projectId, roleId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
- **optional** | ***IamProjectRoleEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectRoleEventListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectRoleEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -194,20 +328,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleGet
 
-> Role IamProjectRoleGet(ctx, projectId, roleId)
+> Role IamProjectRoleGet(ctx, projectId, roleId).Execute()
 
 Get iam/role
 
-Returns a single role
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleGet(context.Background(), projectId, roleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleGet`: Role
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -229,32 +401,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleList
 
-> []Role IamProjectRoleList(ctx, projectId, optional)
+> []Role IamProjectRoleList(ctx, projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List iam/role
 
-List role
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    name := "name_example" // string | Filter by name (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleList`: []Role
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
- **optional** | ***IamProjectRoleListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a IamProjectRoleListOpts struct
+Other parameters are passed through a pointer to a apiIamProjectRoleListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **name** | **optional.String**| Filter by name | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **name** | **string** | Filter by name | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -276,21 +477,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectRolePermissionCreate
 
-> IamPermission IamProjectRolePermissionCreate(ctx, projectId, roleId, iamPermission)
+> IamPermission IamProjectRolePermissionCreate(ctx, projectId, roleId).IamPermission(iamPermission).Execute()
 
 Create iam/role.permission
 
-Create iam/role.permission
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    iamPermission := *openapiclient.NewIamPermission("Value_example") // IamPermission | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRolePermissionCreate(context.Background(), projectId, roleId).IamPermission(iamPermission).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRolePermissionCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRolePermissionCreate`: IamPermission
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRolePermissionCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**iamPermission** | [**IamPermission**](IamPermission.md)|  | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRolePermissionCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamPermission** | [**IamPermission**](IamPermission.md) |  | 
 
 ### Return type
 
@@ -312,21 +552,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRolePermissionDelete
 
-> IamPermission IamProjectRolePermissionDelete(ctx, projectId, roleId, permissionId)
+> IamPermission IamProjectRolePermissionDelete(ctx, projectId, roleId, permissionId).Execute()
 
 Delete iam/role.permission
 
-Delete iam/role.permission
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    permissionId := "permissionId_example" // string | permissionId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRolePermissionDelete(context.Background(), projectId, roleId, permissionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRolePermissionDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRolePermissionDelete`: IamPermission
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRolePermissionDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**permissionId** | **string**| permissionId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**permissionId** | **string** | permissionId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRolePermissionDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -348,21 +628,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRolePermissionGet
 
-> IamPermission IamProjectRolePermissionGet(ctx, projectId, roleId, permissionId)
+> IamPermission IamProjectRolePermissionGet(ctx, projectId, roleId, permissionId).Execute()
 
 Get iam/role.permission
 
-Get iam/role.permission
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    permissionId := "permissionId_example" // string | permissionId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRolePermissionGet(context.Background(), projectId, roleId, permissionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRolePermissionGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRolePermissionGet`: IamPermission
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRolePermissionGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**permissionId** | **string**| permissionId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**permissionId** | **string** | permissionId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRolePermissionGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -384,20 +704,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectRolePermissionList
 
-> []IamPermission IamProjectRolePermissionList(ctx, projectId, roleId)
+> []IamPermission IamProjectRolePermissionList(ctx, projectId, roleId).Execute()
 
 List iam/role.permission
 
-List iam/role.permission
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRolePermissionList(context.Background(), projectId, roleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRolePermissionList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRolePermissionList`: []IamPermission
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRolePermissionList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRolePermissionListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -419,21 +777,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectRolePermissionPut
 
-> []IamPermission IamProjectRolePermissionPut(ctx, projectId, roleId, iamPermission)
+> []IamPermission IamProjectRolePermissionPut(ctx, projectId, roleId).IamPermission(iamPermission).Execute()
 
 Replace iam/role.permission
 
-Replace iam/role.permission
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    iamPermission := []openapiclient.IamPermission{*openapiclient.NewIamPermission("Value_example")} // []IamPermission | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRolePermissionPut(context.Background(), projectId, roleId).IamPermission(iamPermission).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRolePermissionPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRolePermissionPut`: []IamPermission
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRolePermissionPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**iamPermission** | [**[]IamPermission**](iam.permission.md)|  | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRolePermissionPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamPermission** | [**[]IamPermission**](iam.permission.md) |  | 
 
 ### Return type
 
@@ -455,21 +852,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleServiceGet
 
-> ResourceService IamProjectRoleServiceGet(ctx, projectId, roleId, serviceId)
+> ResourceService IamProjectRoleServiceGet(ctx, projectId, roleId, serviceId).Execute()
 
 Get iam/role.service
 
-Get iam/role.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleServiceGet(context.Background(), projectId, roleId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -491,20 +928,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleServiceList
 
-> []ResourceService IamProjectRoleServiceList(ctx, projectId, roleId)
+> []ResourceService IamProjectRoleServiceList(ctx, projectId, roleId).Execute()
 
 List iam/role.service
 
-List iam/role.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleServiceList(context.Background(), projectId, roleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -526,21 +1001,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleTagCreate
 
-> Tag IamProjectRoleTagCreate(ctx, projectId, roleId, tag)
+> Tag IamProjectRoleTagCreate(ctx, projectId, roleId).Tag(tag).Execute()
 
 Create iam/role.tag
 
-Create iam/role.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleTagCreate(context.Background(), projectId, roleId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -562,21 +1076,59 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleTagDelete
 
-> IamProjectRoleTagDelete(ctx, projectId, roleId, tagId)
+> IamProjectRoleTagDelete(ctx, projectId, roleId, tagId).Execute()
 
 Delete iam/role.tag
 
-Delete iam/role.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleTagDelete(context.Background(), projectId, roleId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -598,21 +1150,61 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleTagGet
 
-> Tag IamProjectRoleTagGet(ctx, projectId, roleId, tagId)
+> Tag IamProjectRoleTagGet(ctx, projectId, roleId, tagId).Execute()
 
 Get iam/role.tag
 
-Get iam/role.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleTagGet(context.Background(), projectId, roleId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -634,20 +1226,58 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleTagList
 
-> []Tag IamProjectRoleTagList(ctx, projectId, roleId)
+> []Tag IamProjectRoleTagList(ctx, projectId, roleId).Execute()
 
 List iam/role.tag
 
-List iam/role.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleTagList(context.Background(), projectId, roleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
 
 ### Return type
 
@@ -669,21 +1299,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleTagPut
 
-> []Tag IamProjectRoleTagPut(ctx, projectId, roleId, tag)
+> []Tag IamProjectRoleTagPut(ctx, projectId, roleId).Tag(tag).Execute()
 
 Replace iam/role.tag
 
-Replace iam/role.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleTagPut(context.Background(), projectId, roleId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -705,21 +1374,60 @@ Name | Type | Description  | Notes
 
 ## IamProjectRoleUpdate
 
-> Role IamProjectRoleUpdate(ctx, projectId, roleId, iamProjectRoleUpdate)
+> Role IamProjectRoleUpdate(ctx, projectId, roleId).IamProjectRoleUpdate(iamProjectRoleUpdate).Execute()
 
 Update iam/role
 
-Returns modified role
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    roleId := "roleId_example" // string | Role Id
+    iamProjectRoleUpdate := *openapiclient.NewIamProjectRoleUpdate() // IamProjectRoleUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.IamProjectRoleApi.IamProjectRoleUpdate(context.Background(), projectId, roleId).IamProjectRoleUpdate(iamProjectRoleUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectRoleApi.IamProjectRoleUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectRoleUpdate`: Role
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectRoleApi.IamProjectRoleUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**roleId** | **string**| Role Id | 
-**iamProjectRoleUpdate** | [**IamProjectRoleUpdate**](IamProjectRoleUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**roleId** | **string** | Role Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectRoleUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamProjectRoleUpdate** | [**IamProjectRoleUpdate**](IamProjectRoleUpdate.md) |  | 
 
 ### Return type
 

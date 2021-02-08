@@ -22,34 +22,64 @@ Method | HTTP request | Description
 
 ## ComputeProjectReplicaCreate
 
-> Replica ComputeProjectReplicaCreate(ctx, projectId, locationId, computeProjectReplicaCreate, optional)
+> Replica ComputeProjectReplicaCreate(ctx, projectId, locationId).ComputeProjectReplicaCreate(computeProjectReplicaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create compute/replica
 
-Create replica
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    computeProjectReplicaCreate := *openapiclient.NewComputeProjectReplicaCreate("Hostname_example", "Secret_example") // ComputeProjectReplicaCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaCreate(context.Background(), projectId, locationId).ComputeProjectReplicaCreate(computeProjectReplicaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaCreate`: Replica
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**computeProjectReplicaCreate** | [**ComputeProjectReplicaCreate**](ComputeProjectReplicaCreate.md)|  | 
- **optional** | ***ComputeProjectReplicaCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectReplicaCreateOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectReplicaCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **computeProjectReplicaCreate** | [**ComputeProjectReplicaCreate**](ComputeProjectReplicaCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -71,21 +101,59 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaDelete
 
-> ComputeProjectReplicaDelete(ctx, projectId, locationId, replicaId)
+> ComputeProjectReplicaDelete(ctx, projectId, locationId, replicaId).Execute()
 
 Delete compute/replica
 
-Delete replica
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaDelete(context.Background(), projectId, locationId, replicaId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -107,22 +175,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaEventGet
 
-> Event ComputeProjectReplicaEventGet(ctx, projectId, locationId, replicaId, eventId)
+> Event ComputeProjectReplicaEventGet(ctx, projectId, locationId, replicaId, eventId).Execute()
 
 Get compute/replica.event
 
-Get compute/replica.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaEventGet(context.Background(), projectId, locationId, replicaId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -144,26 +254,56 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaEventList
 
-> []Event ComputeProjectReplicaEventList(ctx, projectId, locationId, replicaId, optional)
+> []Event ComputeProjectReplicaEventList(ctx, projectId, locationId, replicaId).Limit(limit).Skip(skip).Execute()
 
 List compute/replica.event
 
-List compute/replica.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaEventList(context.Background(), projectId, locationId, replicaId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
- **optional** | ***ComputeProjectReplicaEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectReplicaEventListOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectReplicaEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -171,8 +311,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -194,21 +334,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaGet
 
-> Replica ComputeProjectReplicaGet(ctx, projectId, locationId, replicaId)
+> Replica ComputeProjectReplicaGet(ctx, projectId, locationId, replicaId).Execute()
 
 Get compute/replica
 
-Returns a single replica
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaGet(context.Background(), projectId, locationId, replicaId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaGet`: Replica
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -230,32 +410,60 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaList
 
-> []Replica ComputeProjectReplicaList(ctx, projectId, locationId, optional)
+> []Replica ComputeProjectReplicaList(ctx, projectId, locationId).Name(name).Execute()
 
 List compute/replica
 
-List replica
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    name := "name_example" // string | Filter by name (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaList(context.Background(), projectId, locationId).Name(name).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaList`: []Replica
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***ComputeProjectReplicaListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a ComputeProjectReplicaListOpts struct
+Other parameters are passed through a pointer to a apiComputeProjectReplicaListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **name** | **optional.String**| Filter by name | 
+ **name** | **string** | Filter by name | 
 
 ### Return type
 
@@ -277,22 +485,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaServiceGet
 
-> ResourceService ComputeProjectReplicaServiceGet(ctx, projectId, locationId, replicaId, serviceId)
+> ResourceService ComputeProjectReplicaServiceGet(ctx, projectId, locationId, replicaId, serviceId).Execute()
 
 Get compute/replica.service
 
-Get compute/replica.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet(context.Background(), projectId, locationId, replicaId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -314,21 +564,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaServiceList
 
-> []ResourceService ComputeProjectReplicaServiceList(ctx, projectId, locationId, replicaId)
+> []ResourceService ComputeProjectReplicaServiceList(ctx, projectId, locationId, replicaId).Execute()
 
 List compute/replica.service
 
-List compute/replica.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaServiceList(context.Background(), projectId, locationId, replicaId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -350,22 +640,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaTagCreate
 
-> Tag ComputeProjectReplicaTagCreate(ctx, projectId, locationId, replicaId, tag)
+> Tag ComputeProjectReplicaTagCreate(ctx, projectId, locationId, replicaId).Tag(tag).Execute()
 
 Create compute/replica.tag
 
-Create compute/replica.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -387,22 +718,62 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaTagDelete
 
-> ComputeProjectReplicaTagDelete(ctx, projectId, locationId, replicaId, tagId)
+> ComputeProjectReplicaTagDelete(ctx, projectId, locationId, replicaId, tagId).Execute()
 
 Delete compute/replica.tag
 
-Delete compute/replica.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagDelete(context.Background(), projectId, locationId, replicaId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -424,22 +795,64 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaTagGet
 
-> Tag ComputeProjectReplicaTagGet(ctx, projectId, locationId, replicaId, tagId)
+> Tag ComputeProjectReplicaTagGet(ctx, projectId, locationId, replicaId, tagId).Execute()
 
 Get compute/replica.tag
 
-Get compute/replica.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagGet(context.Background(), projectId, locationId, replicaId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -461,21 +874,61 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaTagList
 
-> []Tag ComputeProjectReplicaTagList(ctx, projectId, locationId, replicaId)
+> []Tag ComputeProjectReplicaTagList(ctx, projectId, locationId, replicaId).Execute()
 
 List compute/replica.tag
 
-List compute/replica.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagList(context.Background(), projectId, locationId, replicaId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -497,22 +950,63 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaTagPut
 
-> []Tag ComputeProjectReplicaTagPut(ctx, projectId, locationId, replicaId, tag)
+> []Tag ComputeProjectReplicaTagPut(ctx, projectId, locationId, replicaId).Tag(tag).Execute()
 
 Replace compute/replica.tag
 
-Replace compute/replica.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagPut(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**replicaId** | **string**| Replica Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 

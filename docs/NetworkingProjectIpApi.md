@@ -27,27 +27,57 @@ Method | HTTP request | Description
 
 ## NetworkingProjectIpAssociate
 
-> Ip NetworkingProjectIpAssociate(ctx, projectId, locationId, ipId, networkingProjectIpAssociate, optional)
+> Ip NetworkingProjectIpAssociate(ctx, projectId, locationId, ipId).NetworkingProjectIpAssociate(networkingProjectIpAssociate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Associate networking/ip
 
-action associate
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    networkingProjectIpAssociate := *openapiclient.NewNetworkingProjectIpAssociate("Ip_example") // NetworkingProjectIpAssociate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpAssociate(context.Background(), projectId, locationId, ipId).NetworkingProjectIpAssociate(networkingProjectIpAssociate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpAssociate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpAssociate`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpAssociate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**networkingProjectIpAssociate** | [**NetworkingProjectIpAssociate**](NetworkingProjectIpAssociate.md)|  | 
- **optional** | ***NetworkingProjectIpAssociateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpAssociateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpAssociateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -55,8 +85,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectIpAssociate** | [**NetworkingProjectIpAssociate**](NetworkingProjectIpAssociate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -78,34 +109,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpCreate
 
-> Ip NetworkingProjectIpCreate(ctx, projectId, locationId, networkingProjectIpCreate, optional)
+> Ip NetworkingProjectIpCreate(ctx, projectId, locationId).NetworkingProjectIpCreate(networkingProjectIpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Create networking/ip
 
-Create ip
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    networkingProjectIpCreate := *openapiclient.NewNetworkingProjectIpCreate() // NetworkingProjectIpCreate | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpCreate(context.Background(), projectId, locationId).NetworkingProjectIpCreate(networkingProjectIpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpCreate`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**networkingProjectIpCreate** | [**NetworkingProjectIpCreate**](NetworkingProjectIpCreate.md)|  | 
- **optional** | ***NetworkingProjectIpCreateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpCreateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectIpCreate** | [**NetworkingProjectIpCreate**](NetworkingProjectIpCreate.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -127,21 +188,59 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpDelete
 
-> NetworkingProjectIpDelete(ctx, projectId, locationId, ipId)
+> NetworkingProjectIpDelete(ctx, projectId, locationId, ipId).Execute()
 
 Delete networking/ip
 
-Delete ip
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpDelete(context.Background(), projectId, locationId, ipId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -163,26 +262,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpDisassociate
 
-> Ip NetworkingProjectIpDisassociate(ctx, projectId, locationId, ipId, optional)
+> Ip NetworkingProjectIpDisassociate(ctx, projectId, locationId, ipId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Disassociate networking/ip
 
-action disassociate
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpDisassociate(context.Background(), projectId, locationId, ipId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpDisassociate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpDisassociate`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpDisassociate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
- **optional** | ***NetworkingProjectIpDisassociateOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpDisassociateOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpDisassociateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -190,7 +319,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -212,22 +342,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpEventGet
 
-> Event NetworkingProjectIpEventGet(ctx, projectId, locationId, ipId, eventId)
+> Event NetworkingProjectIpEventGet(ctx, projectId, locationId, ipId, eventId).Execute()
 
 Get networking/ip.event
 
-Get networking/ip.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    eventId := "eventId_example" // string | eventId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpEventGet(context.Background(), projectId, locationId, ipId, eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpEventGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpEventGet`: Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpEventGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**eventId** | **string**| eventId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+**eventId** | **string** | eventId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpEventGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -249,26 +421,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpEventList
 
-> []Event NetworkingProjectIpEventList(ctx, projectId, locationId, ipId, optional)
+> []Event NetworkingProjectIpEventList(ctx, projectId, locationId, ipId).Limit(limit).Skip(skip).Execute()
 
 List networking/ip.event
 
-List networking/ip.event
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    limit := float32(8.14) // float32 | $limit (optional) (default to 100)
+    skip := float32(8.14) // float32 | $skip (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpEventList(context.Background(), projectId, locationId, ipId).Limit(limit).Skip(skip).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpEventList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpEventList`: []Event
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpEventList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
- **optional** | ***NetworkingProjectIpEventListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpEventListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpEventListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -276,8 +478,8 @@ Name | Type | Description  | Notes
 
 
 
- **limit** | **optional.Float32**| $limit | [default to 100]
- **skip** | **optional.Float32**| $skip | 
+ **limit** | **float32** | $limit | [default to 100]
+ **skip** | **float32** | $skip | 
 
 ### Return type
 
@@ -299,21 +501,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpGet
 
-> Ip NetworkingProjectIpGet(ctx, projectId, locationId, ipId)
+> Ip NetworkingProjectIpGet(ctx, projectId, locationId, ipId).Execute()
 
 Get networking/ip
 
-Returns a single ip
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpGet(context.Background(), projectId, locationId, ipId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpGet`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -335,35 +577,66 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpList
 
-> []Ip NetworkingProjectIpList(ctx, projectId, locationId, optional)
+> []Ip NetworkingProjectIpList(ctx, projectId, locationId).Network(network).AssociatedNetadp(associatedNetadp).TagValue(tagValue).TagKey(tagKey).Execute()
 
 List networking/ip
 
-List ip
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    network := "network_example" // string | Filter by network (optional)
+    associatedNetadp := "associatedNetadp_example" // string | Filter by associated.netadp (optional)
+    tagValue := "tagValue_example" // string | Filter by tag.value (optional)
+    tagKey := "tagKey_example" // string | Filter by tag.key (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpList(context.Background(), projectId, locationId).Network(network).AssociatedNetadp(associatedNetadp).TagValue(tagValue).TagKey(tagKey).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpList`: []Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
- **optional** | ***NetworkingProjectIpListOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpListOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **network** | **optional.String**| Filter by network | 
- **associatedNetadp** | **optional.String**| Filter by associated.netadp | 
- **tagValue** | **optional.String**| Filter by tag.value | 
- **tagKey** | **optional.String**| Filter by tag.key | 
+ **network** | **string** | Filter by network | 
+ **associatedNetadp** | **string** | Filter by associated.netadp | 
+ **tagValue** | **string** | Filter by tag.value | 
+ **tagKey** | **string** | Filter by tag.key | 
 
 ### Return type
 
@@ -385,26 +658,56 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpPersist
 
-> Ip NetworkingProjectIpPersist(ctx, projectId, locationId, ipId, optional)
+> Ip NetworkingProjectIpPersist(ctx, projectId, locationId, ipId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Persist networking/ip
 
-action persist
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpPersist(context.Background(), projectId, locationId, ipId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpPersist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpPersist`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpPersist`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
- **optional** | ***NetworkingProjectIpPersistOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpPersistOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpPersistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -412,7 +715,8 @@ Name | Type | Description  | Notes
 
 
 
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -434,22 +738,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpServiceGet
 
-> ResourceService NetworkingProjectIpServiceGet(ctx, projectId, locationId, ipId, serviceId)
+> ResourceService NetworkingProjectIpServiceGet(ctx, projectId, locationId, ipId, serviceId).Execute()
 
 Get networking/ip.service
 
-Get networking/ip.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    serviceId := "serviceId_example" // string | serviceId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpServiceGet(context.Background(), projectId, locationId, ipId, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpServiceGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpServiceGet`: ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpServiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**serviceId** | **string**| serviceId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+**serviceId** | **string** | serviceId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpServiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -471,21 +817,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpServiceList
 
-> []ResourceService NetworkingProjectIpServiceList(ctx, projectId, locationId, ipId)
+> []ResourceService NetworkingProjectIpServiceList(ctx, projectId, locationId, ipId).Execute()
 
 List networking/ip.service
 
-List networking/ip.service
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpServiceList(context.Background(), projectId, locationId, ipId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpServiceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpServiceList`: []ResourceService
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpServiceList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpServiceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -507,22 +893,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTagCreate
 
-> Tag NetworkingProjectIpTagCreate(ctx, projectId, locationId, ipId, tag)
+> Tag NetworkingProjectIpTagCreate(ctx, projectId, locationId, ipId).Tag(tag).Execute()
 
 Create networking/ip.tag
 
-Create networking/ip.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTagCreate(context.Background(), projectId, locationId, ipId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTagCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpTagCreate`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpTagCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**tag** | [**Tag**](Tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTagCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**Tag**](Tag.md) |  | 
 
 ### Return type
 
@@ -544,22 +971,62 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTagDelete
 
-> NetworkingProjectIpTagDelete(ctx, projectId, locationId, ipId, tagId)
+> NetworkingProjectIpTagDelete(ctx, projectId, locationId, ipId, tagId).Execute()
 
 Delete networking/ip.tag
 
-Delete networking/ip.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTagDelete(context.Background(), projectId, locationId, ipId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTagDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTagDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -581,22 +1048,64 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTagGet
 
-> Tag NetworkingProjectIpTagGet(ctx, projectId, locationId, ipId, tagId)
+> Tag NetworkingProjectIpTagGet(ctx, projectId, locationId, ipId, tagId).Execute()
 
 Get networking/ip.tag
 
-Get networking/ip.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    tagId := "tagId_example" // string | tagId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTagGet(context.Background(), projectId, locationId, ipId, tagId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTagGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpTagGet`: Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpTagGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**tagId** | **string**| tagId | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+**tagId** | **string** | tagId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTagGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
 
 ### Return type
 
@@ -618,21 +1127,61 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTagList
 
-> []Tag NetworkingProjectIpTagList(ctx, projectId, locationId, ipId)
+> []Tag NetworkingProjectIpTagList(ctx, projectId, locationId, ipId).Execute()
 
 List networking/ip.tag
 
-List networking/ip.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTagList(context.Background(), projectId, locationId, ipId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTagList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpTagList`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpTagList`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTagListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
 
 ### Return type
 
@@ -654,22 +1203,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTagPut
 
-> []Tag NetworkingProjectIpTagPut(ctx, projectId, locationId, ipId, tag)
+> []Tag NetworkingProjectIpTagPut(ctx, projectId, locationId, ipId).Tag(tag).Execute()
 
 Replace networking/ip.tag
 
-Replace networking/ip.tag
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTagPut(context.Background(), projectId, locationId, ipId).Tag(tag).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTagPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpTagPut`: []Tag
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpTagPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**tag** | [**[]Tag**](tag.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTagPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **tag** | [**[]Tag**](tag.md) |  | 
 
 ### Return type
 
@@ -691,27 +1281,57 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpTransfer
 
-> Ip NetworkingProjectIpTransfer(ctx, projectId, locationId, ipId, networkingProjectIpTransfer, optional)
+> Ip NetworkingProjectIpTransfer(ctx, projectId, locationId, ipId).NetworkingProjectIpTransfer(networkingProjectIpTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Transfer networking/ip
 
-action transfer
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    networkingProjectIpTransfer := *openapiclient.NewNetworkingProjectIpTransfer("Project_example") // NetworkingProjectIpTransfer | 
+    xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
+    xDryRun := "xDryRun_example" // string | Dry run (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpTransfer(context.Background(), projectId, locationId, ipId).NetworkingProjectIpTransfer(networkingProjectIpTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpTransfer`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpTransfer`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**networkingProjectIpTransfer** | [**NetworkingProjectIpTransfer**](NetworkingProjectIpTransfer.md)|  | 
- **optional** | ***NetworkingProjectIpTransferOpts** | optional parameters | nil if no parameters
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
 
-### Optional Parameters
+### Other Parameters
 
-Optional parameters are passed through a pointer to a NetworkingProjectIpTransferOpts struct
+Other parameters are passed through a pointer to a apiNetworkingProjectIpTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -719,8 +1339,9 @@ Name | Type | Description  | Notes
 
 
 
-
- **xIdempotencyKey** | **optional.String**| Idempotency key | 
+ **networkingProjectIpTransfer** | [**NetworkingProjectIpTransfer**](NetworkingProjectIpTransfer.md) |  | 
+ **xIdempotencyKey** | **string** | Idempotency key | 
+ **xDryRun** | **string** | Dry run | 
 
 ### Return type
 
@@ -742,22 +1363,63 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpUpdate
 
-> Ip NetworkingProjectIpUpdate(ctx, projectId, locationId, ipId, networkingProjectIpUpdate)
+> Ip NetworkingProjectIpUpdate(ctx, projectId, locationId, ipId).NetworkingProjectIpUpdate(networkingProjectIpUpdate).Execute()
 
 Update networking/ip
 
-Returns modified ip
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    ipId := "ipId_example" // string | Ip Id
+    networkingProjectIpUpdate := *openapiclient.NewNetworkingProjectIpUpdate() // NetworkingProjectIpUpdate | 
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.NetworkingProjectIpApi.NetworkingProjectIpUpdate(context.Background(), projectId, locationId, ipId).NetworkingProjectIpUpdate(networkingProjectIpUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `NetworkingProjectIpUpdate`: Ip
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string**| Project Id | 
-**locationId** | **string**| Location Id | 
-**ipId** | **string**| Ip Id | 
-**networkingProjectIpUpdate** | [**NetworkingProjectIpUpdate**](NetworkingProjectIpUpdate.md)|  | 
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**ipId** | **string** | Ip Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNetworkingProjectIpUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **networkingProjectIpUpdate** | [**NetworkingProjectIpUpdate**](NetworkingProjectIpUpdate.md) |  | 
 
 ### Return type
 
