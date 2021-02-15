@@ -17,7 +17,6 @@ import (
 // RecoveryProjectPlanUpdate struct for RecoveryProjectPlanUpdate
 type RecoveryProjectPlanUpdate struct {
 	Name *string `json:"name,omitempty"`
-	Plan *string `json:"plan,omitempty"`
 }
 
 // NewRecoveryProjectPlanUpdate instantiates a new RecoveryProjectPlanUpdate object
@@ -69,45 +68,10 @@ func (o *RecoveryProjectPlanUpdate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *RecoveryProjectPlanUpdate) GetPlan() string {
-	if o == nil || o.Plan == nil {
-		var ret string
-		return ret
-	}
-	return *o.Plan
-}
-
-// GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RecoveryProjectPlanUpdate) GetPlanOk() (*string, bool) {
-	if o == nil || o.Plan == nil {
-		return nil, false
-	}
-	return o.Plan, true
-}
-
-// HasPlan returns a boolean if a field has been set.
-func (o *RecoveryProjectPlanUpdate) HasPlan() bool {
-	if o != nil && o.Plan != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPlan gets a reference to the given string and assigns it to the Plan field.
-func (o *RecoveryProjectPlanUpdate) SetPlan(v string) {
-	o.Plan = &v
-}
-
 func (o RecoveryProjectPlanUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.Plan != nil {
-		toSerialize["plan"] = o.Plan
 	}
 	return json.Marshal(toSerialize)
 }

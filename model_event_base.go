@@ -15,35 +15,33 @@ import (
 	"time"
 )
 
-// Event struct for Event
-type Event struct {
+// EventBase struct for EventBase
+type EventBase struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	State *string `json:"state,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	Resource *string `json:"resource,omitempty"`
 }
 
-// NewEvent instantiates a new Event object
+// NewEventBase instantiates a new EventBase object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEvent() *Event {
-	this := Event{}
+func NewEventBase() *EventBase {
+	this := EventBase{}
 	return &this
 }
 
-// NewEventWithDefaults instantiates a new Event object
+// NewEventBaseWithDefaults instantiates a new EventBase object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEventWithDefaults() *Event {
-	this := Event{}
+func NewEventBaseWithDefaults() *EventBase {
+	this := EventBase{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Event) GetId() string {
+func (o *EventBase) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -53,7 +51,7 @@ func (o *Event) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Event) GetIdOk() (*string, bool) {
+func (o *EventBase) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -61,7 +59,7 @@ func (o *Event) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *Event) HasId() bool {
+func (o *EventBase) HasId() bool {
 	if o != nil && o.Id != nil {
 		return true
 	}
@@ -70,12 +68,12 @@ func (o *Event) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Event) SetId(v string) {
+func (o *EventBase) SetId(v string) {
 	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *Event) GetName() string {
+func (o *EventBase) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -85,7 +83,7 @@ func (o *Event) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Event) GetNameOk() (*string, bool) {
+func (o *EventBase) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -93,7 +91,7 @@ func (o *Event) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *Event) HasName() bool {
+func (o *EventBase) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -102,12 +100,12 @@ func (o *Event) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Event) SetName(v string) {
+func (o *EventBase) SetName(v string) {
 	o.Name = &v
 }
 
 // GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Event) GetCreatedOn() time.Time {
+func (o *EventBase) GetCreatedOn() time.Time {
 	if o == nil || o.CreatedOn == nil {
 		var ret time.Time
 		return ret
@@ -117,7 +115,7 @@ func (o *Event) GetCreatedOn() time.Time {
 
 // GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Event) GetCreatedOnOk() (*time.Time, bool) {
+func (o *EventBase) GetCreatedOnOk() (*time.Time, bool) {
 	if o == nil || o.CreatedOn == nil {
 		return nil, false
 	}
@@ -125,7 +123,7 @@ func (o *Event) GetCreatedOnOk() (*time.Time, bool) {
 }
 
 // HasCreatedOn returns a boolean if a field has been set.
-func (o *Event) HasCreatedOn() bool {
+func (o *EventBase) HasCreatedOn() bool {
 	if o != nil && o.CreatedOn != nil {
 		return true
 	}
@@ -134,12 +132,12 @@ func (o *Event) HasCreatedOn() bool {
 }
 
 // SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Event) SetCreatedOn(v time.Time) {
+func (o *EventBase) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *Event) GetState() string {
+func (o *EventBase) GetState() string {
 	if o == nil || o.State == nil {
 		var ret string
 		return ret
@@ -149,7 +147,7 @@ func (o *Event) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Event) GetStateOk() (*string, bool) {
+func (o *EventBase) GetStateOk() (*string, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -157,7 +155,7 @@ func (o *Event) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *Event) HasState() bool {
+func (o *EventBase) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -166,75 +164,11 @@ func (o *Event) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *Event) SetState(v string) {
+func (o *EventBase) SetState(v string) {
 	o.State = &v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Event) GetCreatedBy() string {
-	if o == nil || o.CreatedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.CreatedBy
-}
-
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Event) GetCreatedByOk() (*string, bool) {
-	if o == nil || o.CreatedBy == nil {
-		return nil, false
-	}
-	return o.CreatedBy, true
-}
-
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *Event) HasCreatedBy() bool {
-	if o != nil && o.CreatedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *Event) SetCreatedBy(v string) {
-	o.CreatedBy = &v
-}
-
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *Event) GetResource() string {
-	if o == nil || o.Resource == nil {
-		var ret string
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Event) GetResourceOk() (*string, bool) {
-	if o == nil || o.Resource == nil {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// HasResource returns a boolean if a field has been set.
-func (o *Event) HasResource() bool {
-	if o != nil && o.Resource != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *Event) SetResource(v string) {
-	o.Resource = &v
-}
-
-func (o Event) MarshalJSON() ([]byte, error) {
+func (o EventBase) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -248,47 +182,41 @@ func (o Event) MarshalJSON() ([]byte, error) {
 	if o.State != nil {
 		toSerialize["state"] = o.State
 	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
-	}
-	if o.Resource != nil {
-		toSerialize["resource"] = o.Resource
-	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableEvent struct {
-	value *Event
+type NullableEventBase struct {
+	value *EventBase
 	isSet bool
 }
 
-func (v NullableEvent) Get() *Event {
+func (v NullableEventBase) Get() *EventBase {
 	return v.value
 }
 
-func (v *NullableEvent) Set(val *Event) {
+func (v *NullableEventBase) Set(val *EventBase) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEvent) IsSet() bool {
+func (v NullableEventBase) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEvent) Unset() {
+func (v *NullableEventBase) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEvent(val *Event) *NullableEvent {
-	return &NullableEvent{value: val, isSet: true}
+func NewNullableEventBase(val *EventBase) *NullableEventBase {
+	return &NullableEventBase{value: val, isSet: true}
 }
 
-func (v NullableEvent) MarshalJSON() ([]byte, error) {
+func (v NullableEventBase) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEvent) UnmarshalJSON(src []byte) error {
+func (v *NullableEventBase) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

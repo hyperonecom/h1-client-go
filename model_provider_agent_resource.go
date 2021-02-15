@@ -21,7 +21,7 @@ type ProviderAgentResource struct {
 	Name *string `json:"name,omitempty"`
 	State *string `json:"state,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	Project *time.Time `json:"project,omitempty"`
+	Project *string `json:"project,omitempty"`
 	Resource *string `json:"resource,omitempty"`
 }
 
@@ -171,9 +171,9 @@ func (o *ProviderAgentResource) SetCreatedOn(v time.Time) {
 }
 
 // GetProject returns the Project field value if set, zero value otherwise.
-func (o *ProviderAgentResource) GetProject() time.Time {
+func (o *ProviderAgentResource) GetProject() string {
 	if o == nil || o.Project == nil {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.Project
@@ -181,7 +181,7 @@ func (o *ProviderAgentResource) GetProject() time.Time {
 
 // GetProjectOk returns a tuple with the Project field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProviderAgentResource) GetProjectOk() (*time.Time, bool) {
+func (o *ProviderAgentResource) GetProjectOk() (*string, bool) {
 	if o == nil || o.Project == nil {
 		return nil, false
 	}
@@ -197,8 +197,8 @@ func (o *ProviderAgentResource) HasProject() bool {
 	return false
 }
 
-// SetProject gets a reference to the given time.Time and assigns it to the Project field.
-func (o *ProviderAgentResource) SetProject(v time.Time) {
+// SetProject gets a reference to the given string and assigns it to the Project field.
+func (o *ProviderAgentResource) SetProject(v string) {
 	o.Project = &v
 }
 

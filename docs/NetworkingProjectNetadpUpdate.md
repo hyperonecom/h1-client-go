@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Firewall** | Pointer to **string** |  | [optional] 
+**Firewall** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -50,6 +50,16 @@ SetFirewall sets Firewall field to given value.
 
 HasFirewall returns a boolean if a field has been set.
 
+### SetFirewallNil
+
+`func (o *NetworkingProjectNetadpUpdate) SetFirewallNil(b bool)`
+
+ SetFirewallNil sets the value for Firewall to be an explicit nil
+
+### UnsetFirewall
+`func (o *NetworkingProjectNetadpUpdate) UnsetFirewall()`
+
+UnsetFirewall ensures that no value is present for Firewall, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

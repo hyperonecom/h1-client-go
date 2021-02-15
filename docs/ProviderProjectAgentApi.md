@@ -1137,7 +1137,7 @@ Name | Type | Description  | Notes
 
 ## ProviderProjectAgentInspect
 
-> Agent ProviderProjectAgentInspect(ctx, projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+> map[string]interface{} ProviderProjectAgentInspect(ctx, projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
 
 Inspect provider/agent
 
@@ -1169,7 +1169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentInspect``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ProviderProjectAgentInspect`: Agent
+    // response from `ProviderProjectAgentInspect`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `ProviderProjectAgentApi.ProviderProjectAgentInspect`: %v\n", resp)
 }
 ```
@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+**map[string]interface{}**
 
 ### Authorization
 

@@ -185,6 +185,9 @@ Class | Method | HTTP request | Description
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceEventList**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceeventlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/event | List database/instance.event
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceGet**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId} | Get database/instance
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceList**](./DatabaseProjectInstanceApi.md#databaseprojectinstancelist) | **Get** /database/{locationId}/project/{projectId}/instance | List database/instance
+*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricGet**](./DatabaseProjectInstanceApi.md#databaseprojectinstancemetricget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get database/instance.metric
+*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricList**](./DatabaseProjectInstanceApi.md#databaseprojectinstancemetriclist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric | List database/instance.metric
+*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricPointList**](./DatabaseProjectInstanceApi.md#databaseprojectinstancemetricpointlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List database/instance.point
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceServiceGet**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceserviceget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get database/instance.service
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceServiceList**](./DatabaseProjectInstanceApi.md#databaseprojectinstanceservicelist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service | List database/instance.service
 *DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceStart**](./DatabaseProjectInstanceApi.md#databaseprojectinstancestart) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start database/instance
@@ -785,6 +788,7 @@ Class | Method | HTTP request | Description
  - [Domain](./Domain.md)
  - [EnabledService](./EnabledService.md)
  - [Event](./Event.md)
+ - [EventBase](./EventBase.md)
  - [Firewall](./Firewall.md)
  - [Hdd](./Hdd.md)
  - [IamActor](./IamActor.md)
@@ -1129,6 +1133,9 @@ r, err := client.Service.Operation(auth, args)
  - **database/instance.credential/delete**: 
  - **database/instance.connect/list**: 
  - **database/instance.connect/get**: 
+ - **database/instance.metric/list**: 
+ - **database/instance.metric/get**: 
+ - **database/instance.point/list**: 
  - **database/instance.service/list**: 
  - **database/instance.service/get**: 
  - **database/instance.tag/list**: 
@@ -1166,7 +1173,6 @@ r, err := client.Service.Operation(auth, args)
  - **recovery/plan/list**: 
  - **recovery/plan/get**: 
  - **recovery/plan.name/update**: 
- - **recovery/plan.plan/update**: 
  - **recovery/plan/delete**: 
  - **recovery/plan.service/list**: 
  - **recovery/plan.service/get**: 

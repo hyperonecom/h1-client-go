@@ -1863,7 +1863,7 @@ func (r ApiProviderProjectAgentInspectRequest) XDryRun(xDryRun string) ApiProvid
 	return r
 }
 
-func (r ApiProviderProjectAgentInspectRequest) Execute() (Agent, *_nethttp.Response, error) {
+func (r ApiProviderProjectAgentInspectRequest) Execute() (map[string]interface{}, *_nethttp.Response, error) {
 	return r.ApiService.ProviderProjectAgentInspectExecute(r)
 }
 
@@ -1888,16 +1888,16 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentInspect(ctx _contex
 
 /*
  * Execute executes the request
- * @return Agent
+ * @return map[string]interface{}
  */
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentInspectExecute(r ApiProviderProjectAgentInspectRequest) (Agent, *_nethttp.Response, error) {
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentInspectExecute(r ApiProviderProjectAgentInspectRequest) (map[string]interface{}, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  Agent
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProviderProjectAgentApiService.ProviderProjectAgentInspect")

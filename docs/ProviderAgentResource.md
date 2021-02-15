@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**Project** | Pointer to **time.Time** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasCreatedOn returns a boolean if a field has been set.
 
 ### GetProject
 
-`func (o *ProviderAgentResource) GetProject() time.Time`
+`func (o *ProviderAgentResource) GetProject() string`
 
 GetProject returns the Project field if non-nil, zero value otherwise.
 
 ### GetProjectOk
 
-`func (o *ProviderAgentResource) GetProjectOk() (*time.Time, bool)`
+`func (o *ProviderAgentResource) GetProjectOk() (*string, bool)`
 
 GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProject
 
-`func (o *ProviderAgentResource) SetProject(v time.Time)`
+`func (o *ProviderAgentResource) SetProject(v string)`
 
 SetProject sets Project field to given value.
 

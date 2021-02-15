@@ -17,6 +17,9 @@ Method | HTTP request | Description
 [**DatabaseProjectInstanceEventList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceEventList) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/event | List database/instance.event
 [**DatabaseProjectInstanceGet**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceGet) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId} | Get database/instance
 [**DatabaseProjectInstanceList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceList) | **Get** /database/{locationId}/project/{projectId}/instance | List database/instance
+[**DatabaseProjectInstanceMetricGet**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceMetricGet) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get database/instance.metric
+[**DatabaseProjectInstanceMetricList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceMetricList) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric | List database/instance.metric
+[**DatabaseProjectInstanceMetricPointList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceMetricPointList) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List database/instance.point
 [**DatabaseProjectInstanceServiceGet**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceServiceGet) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get database/instance.service
 [**DatabaseProjectInstanceServiceList**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceServiceList) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service | List database/instance.service
 [**DatabaseProjectInstanceStart**](DatabaseProjectInstanceApi.md#DatabaseProjectInstanceStart) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start database/instance
@@ -1031,6 +1034,244 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Database**](database.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseProjectInstanceMetricGet
+
+> Metric DatabaseProjectInstanceMetricGet(ctx, projectId, locationId, instanceId, metricId).Execute()
+
+Get database/instance.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet(context.Background(), projectId, locationId, instanceId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DatabaseProjectInstanceMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDatabaseProjectInstanceMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseProjectInstanceMetricList
+
+> []Metric DatabaseProjectInstanceMetricList(ctx, projectId, locationId, instanceId).Execute()
+
+List database/instance.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList(context.Background(), projectId, locationId, instanceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DatabaseProjectInstanceMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDatabaseProjectInstanceMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**[]Metric**](metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DatabaseProjectInstanceMetricPointList
+
+> []Point DatabaseProjectInstanceMetricPointList(ctx, projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
+
+List database/instance.point
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    instanceId := "instanceId_example" // string | Instance Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList(context.Background(), projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DatabaseProjectInstanceMetricPointList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**instanceId** | **string** | Instance Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDatabaseProjectInstanceMetricPointListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
+
+### Return type
+
+[**[]Point**](point.md)
 
 ### Authorization
 

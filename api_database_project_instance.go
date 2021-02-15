@@ -1726,6 +1726,402 @@ func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceListExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiDatabaseProjectInstanceMetricGetRequest struct {
+	ctx _context.Context
+	ApiService *DatabaseProjectInstanceApiService
+	projectId string
+	locationId string
+	instanceId string
+	metricId string
+}
+
+
+func (r ApiDatabaseProjectInstanceMetricGetRequest) Execute() (Metric, *_nethttp.Response, error) {
+	return r.ApiService.DatabaseProjectInstanceMetricGetExecute(r)
+}
+
+/*
+ * DatabaseProjectInstanceMetricGet Get database/instance.metric
+ * Get database/instance.metric
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param instanceId Instance Id
+ * @param metricId metricId
+ * @return ApiDatabaseProjectInstanceMetricGetRequest
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricGet(ctx _context.Context, projectId string, locationId string, instanceId string, metricId string) ApiDatabaseProjectInstanceMetricGetRequest {
+	return ApiDatabaseProjectInstanceMetricGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		instanceId: instanceId,
+		metricId: metricId,
+	}
+}
+
+/*
+ * Execute executes the request
+ * @return Metric
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricGetExecute(r ApiDatabaseProjectInstanceMetricGetRequest) (Metric, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  Metric
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatabaseProjectInstanceApiService.DatabaseProjectInstanceMetricGet")
+	if err != nil {
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"metricId"+"}", _neturl.PathEscape(parameterToString(r.metricId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDatabaseProjectInstanceMetricListRequest struct {
+	ctx _context.Context
+	ApiService *DatabaseProjectInstanceApiService
+	projectId string
+	locationId string
+	instanceId string
+}
+
+
+func (r ApiDatabaseProjectInstanceMetricListRequest) Execute() ([]Metric, *_nethttp.Response, error) {
+	return r.ApiService.DatabaseProjectInstanceMetricListExecute(r)
+}
+
+/*
+ * DatabaseProjectInstanceMetricList List database/instance.metric
+ * List database/instance.metric
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param instanceId Instance Id
+ * @return ApiDatabaseProjectInstanceMetricListRequest
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricList(ctx _context.Context, projectId string, locationId string, instanceId string) ApiDatabaseProjectInstanceMetricListRequest {
+	return ApiDatabaseProjectInstanceMetricListRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		instanceId: instanceId,
+	}
+}
+
+/*
+ * Execute executes the request
+ * @return []Metric
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricListExecute(r ApiDatabaseProjectInstanceMetricListRequest) ([]Metric, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Metric
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatabaseProjectInstanceApiService.DatabaseProjectInstanceMetricList")
+	if err != nil {
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/database/{locationId}/project/{projectId}/instance/{instanceId}/metric"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.PathEscape(parameterToString(r.instanceId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDatabaseProjectInstanceMetricPointListRequest struct {
+	ctx _context.Context
+	ApiService *DatabaseProjectInstanceApiService
+	projectId string
+	locationId string
+	instanceId string
+	metricId string
+	interval *string
+	timespan *string
+}
+
+func (r ApiDatabaseProjectInstanceMetricPointListRequest) Interval(interval string) ApiDatabaseProjectInstanceMetricPointListRequest {
+	r.interval = &interval
+	return r
+}
+func (r ApiDatabaseProjectInstanceMetricPointListRequest) Timespan(timespan string) ApiDatabaseProjectInstanceMetricPointListRequest {
+	r.timespan = &timespan
+	return r
+}
+
+func (r ApiDatabaseProjectInstanceMetricPointListRequest) Execute() ([]Point, *_nethttp.Response, error) {
+	return r.ApiService.DatabaseProjectInstanceMetricPointListExecute(r)
+}
+
+/*
+ * DatabaseProjectInstanceMetricPointList List database/instance.point
+ * List database/instance.point
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param projectId Project Id
+ * @param locationId Location Id
+ * @param instanceId Instance Id
+ * @param metricId metricId
+ * @return ApiDatabaseProjectInstanceMetricPointListRequest
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricPointList(ctx _context.Context, projectId string, locationId string, instanceId string, metricId string) ApiDatabaseProjectInstanceMetricPointListRequest {
+	return ApiDatabaseProjectInstanceMetricPointListRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		instanceId: instanceId,
+		metricId: metricId,
+	}
+}
+
+/*
+ * Execute executes the request
+ * @return []Point
+ */
+func (a *DatabaseProjectInstanceApiService) DatabaseProjectInstanceMetricPointListExecute(r ApiDatabaseProjectInstanceMetricPointListRequest) ([]Point, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  []Point
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatabaseProjectInstanceApiService.DatabaseProjectInstanceMetricPointList")
+	if err != nil {
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", _neturl.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", _neturl.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", _neturl.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"metricId"+"}", _neturl.PathEscape(parameterToString(r.metricId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	if r.interval != nil {
+		localVarQueryParams.Add("interval", parameterToString(*r.interval, ""))
+	}
+	if r.timespan != nil {
+		localVarQueryParams.Add("timespan", parameterToString(*r.timespan, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiDatabaseProjectInstanceServiceGetRequest struct {
 	ctx _context.Context
 	ApiService *DatabaseProjectInstanceApiService

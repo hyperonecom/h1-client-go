@@ -95,6 +95,7 @@ docs/DnsRecordset.md
 docs/Domain.md
 docs/EnabledService.md
 docs/Event.md
+docs/EventBase.md
 docs/Firewall.md
 docs/Hdd.md
 docs/IamActor.md
@@ -346,6 +347,7 @@ model_dns_recordset.go
 model_domain.go
 model_enabled_service.go
 model_event.go
+model_event_base.go
 model_firewall.go
 model_hdd.go
 model_iam_actor.go
