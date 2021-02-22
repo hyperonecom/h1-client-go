@@ -39281,7 +39281,7 @@ components:
       type: array
     event:
       example:
-        createdBy: createdBy
+        createdBy: https://openapi-generator.tech
         resource: https://openapi-generator.tech
         name: name
         id: id
@@ -39307,8 +39307,11 @@ components:
           title: Event state
           type: string
         createdBy:
+          format: uri
           title: Event createdBy
           type: string
+          x-resource:
+            kind: iam/user
         resource:
           format: uri
           pattern: ^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$
@@ -41667,7 +41670,9 @@ components:
           type: number
         filter:
           items:
-            description: <protocol>:<port> eg, tcp:80
+            description: |-
+              <protocol> eg, tcp
+              <protocol>:<port> eg, tcp:80
             type: string
           minItems: 1
           title: Filter collection
