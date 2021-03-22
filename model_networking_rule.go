@@ -29,7 +29,7 @@ type NetworkingRule struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingRule(name string, action string, priority float32, filter []string, ) *NetworkingRule {
+func NewNetworkingRule(name string, action string, priority float32, filter []string) *NetworkingRule {
 	this := NetworkingRule{}
 	this.Name = name
 	this.Action = action
@@ -80,7 +80,7 @@ func (o *NetworkingRule) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *NetworkingRule) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *NetworkingRule) SetName(v string) {
 
 // GetAction returns the Action field value
 func (o *NetworkingRule) GetAction() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *NetworkingRule) SetAction(v string) {
 
 // GetPriority returns the Priority field value
 func (o *NetworkingRule) GetPriority() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *NetworkingRule) SetPriority(v float32) {
 
 // GetFilter returns the Filter field value
 func (o *NetworkingRule) GetFilter() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}

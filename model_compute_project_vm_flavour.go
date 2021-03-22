@@ -23,7 +23,7 @@ type ComputeProjectVmFlavour struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmFlavour(service string, ) *ComputeProjectVmFlavour {
+func NewComputeProjectVmFlavour(service string) *ComputeProjectVmFlavour {
 	this := ComputeProjectVmFlavour{}
 	this.Service = service
 	return &this
@@ -39,7 +39,7 @@ func NewComputeProjectVmFlavourWithDefaults() *ComputeProjectVmFlavour {
 
 // GetService returns the Service field value
 func (o *ComputeProjectVmFlavour) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

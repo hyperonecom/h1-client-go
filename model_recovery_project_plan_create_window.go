@@ -23,7 +23,7 @@ type RecoveryProjectPlanCreateWindow struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecoveryProjectPlanCreateWindow(interval string, ) *RecoveryProjectPlanCreateWindow {
+func NewRecoveryProjectPlanCreateWindow(interval string) *RecoveryProjectPlanCreateWindow {
 	this := RecoveryProjectPlanCreateWindow{}
 	this.Interval = interval
 	return &this
@@ -39,7 +39,7 @@ func NewRecoveryProjectPlanCreateWindowWithDefaults() *RecoveryProjectPlanCreate
 
 // GetInterval returns the Interval field value
 func (o *RecoveryProjectPlanCreateWindow) GetInterval() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

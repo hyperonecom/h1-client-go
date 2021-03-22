@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegistryCredential**](registry.credential.md)
+[**RegistryCredential**](RegistryCredential.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegistryCredential**](registry.credential.md)
+[**RegistryCredential**](RegistryCredential.md)
 
 ### Authorization
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RegistryCredential**](registry.credential.md)
+[**[]RegistryCredential**](RegistryCredential.md)
 
 ### Authorization
 
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RegistryCredential**](registry.credential.md)
+[**RegistryCredential**](RegistryCredential.md)
 
 ### Authorization
 
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Domain**](domain.md)
+[**Domain**](Domain.md)
 
 ### Authorization
 
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Domain**](domain.md)
+[**Domain**](Domain.md)
 
 ### Authorization
 
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Domain**](domain.md)
+[**[]Domain**](Domain.md)
 
 ### Authorization
 
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -1192,7 +1192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Registry**](registry.md)
+[**[]Registry**](Registry.md)
 
 ### Authorization
 
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContainerRepository**](container.repository.md)
+[**ContainerRepository**](ContainerRepository.md)
 
 ### Authorization
 
@@ -1433,7 +1433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ContainerImage**](container.image.md)
+[**ContainerImage**](ContainerImage.md)
 
 ### Authorization
 
@@ -1512,7 +1512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ContainerImage**](container.image.md)
+[**[]ContainerImage**](ContainerImage.md)
 
 ### Authorization
 
@@ -1588,7 +1588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ContainerRepository**](container.repository.md)
+[**[]ContainerRepository**](ContainerRepository.md)
 
 ### Authorization
 
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1743,7 +1743,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1823,7 +1823,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -1903,7 +1903,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -1981,7 +1981,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2137,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2213,7 +2213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2287,11 +2287,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2373,7 +2373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 
@@ -2451,7 +2451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Registry**](registry.md)
+[**Registry**](Registry.md)
 
 ### Authorization
 

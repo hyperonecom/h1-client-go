@@ -25,7 +25,7 @@ type ComputeProjectVmCreateDisk struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmCreateDisk(name string, service string, size float32, ) *ComputeProjectVmCreateDisk {
+func NewComputeProjectVmCreateDisk(name string, service string, size float32) *ComputeProjectVmCreateDisk {
 	this := ComputeProjectVmCreateDisk{}
 	this.Name = name
 	this.Service = service
@@ -43,7 +43,7 @@ func NewComputeProjectVmCreateDiskWithDefaults() *ComputeProjectVmCreateDisk {
 
 // GetName returns the Name field value
 func (o *ComputeProjectVmCreateDisk) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ComputeProjectVmCreateDisk) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *ComputeProjectVmCreateDisk) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ComputeProjectVmCreateDisk) SetService(v string) {
 
 // GetSize returns the Size field value
 func (o *ComputeProjectVmCreateDisk) GetSize() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

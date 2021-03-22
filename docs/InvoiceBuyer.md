@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | **string** |  | 
-**Address** | Pointer to [**InvoiceBuyerAddress**](invoice_buyer_address.md) |  | [optional] 
+**Address** | Pointer to [**InvoiceBuyerAddress**](InvoiceBuyerAddress.md) |  | [optional] 
 **Nip** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 

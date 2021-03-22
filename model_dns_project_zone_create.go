@@ -27,7 +27,7 @@ type DnsProjectZoneCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnsProjectZoneCreate(name string, service string, dnsName string, ) *DnsProjectZoneCreate {
+func NewDnsProjectZoneCreate(name string, service string, dnsName string) *DnsProjectZoneCreate {
 	this := DnsProjectZoneCreate{}
 	this.Name = name
 	this.Service = service
@@ -45,7 +45,7 @@ func NewDnsProjectZoneCreateWithDefaults() *DnsProjectZoneCreate {
 
 // GetName returns the Name field value
 func (o *DnsProjectZoneCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *DnsProjectZoneCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *DnsProjectZoneCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *DnsProjectZoneCreate) SetService(v string) {
 
 // GetDnsName returns the DnsName field value
 func (o *DnsProjectZoneCreate) GetDnsName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

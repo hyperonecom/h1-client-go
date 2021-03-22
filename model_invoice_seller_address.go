@@ -26,7 +26,7 @@ type InvoiceSellerAddress struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceSellerAddress(street string, zipcode string, city string, country string, ) *InvoiceSellerAddress {
+func NewInvoiceSellerAddress(street string, zipcode string, city string, country string) *InvoiceSellerAddress {
 	this := InvoiceSellerAddress{}
 	this.Street = street
 	this.Zipcode = zipcode
@@ -45,7 +45,7 @@ func NewInvoiceSellerAddressWithDefaults() *InvoiceSellerAddress {
 
 // GetStreet returns the Street field value
 func (o *InvoiceSellerAddress) GetStreet() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *InvoiceSellerAddress) SetStreet(v string) {
 
 // GetZipcode returns the Zipcode field value
 func (o *InvoiceSellerAddress) GetZipcode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *InvoiceSellerAddress) SetZipcode(v string) {
 
 // GetCity returns the City field value
 func (o *InvoiceSellerAddress) GetCity() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *InvoiceSellerAddress) SetCity(v string) {
 
 // GetCountry returns the Country field value
 func (o *InvoiceSellerAddress) GetCountry() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

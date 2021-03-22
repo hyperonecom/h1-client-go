@@ -25,7 +25,7 @@ type Log struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLog(id string, name string, type_ string, ) *Log {
+func NewLog(id string, name string, type_ string) *Log {
 	this := Log{}
 	this.Id = id
 	this.Name = name
@@ -43,7 +43,7 @@ func NewLogWithDefaults() *Log {
 
 // GetId returns the Id field value
 func (o *Log) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *Log) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *Log) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Log) SetName(v string) {
 
 // GetType returns the Type field value
 func (o *Log) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

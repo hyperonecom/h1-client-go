@@ -27,7 +27,7 @@ type WebsiteSnapshot struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebsiteSnapshot(name string, ) *WebsiteSnapshot {
+func NewWebsiteSnapshot(name string) *WebsiteSnapshot {
 	this := WebsiteSnapshot{}
 	this.Name = name
 	return &this
@@ -75,7 +75,7 @@ func (o *WebsiteSnapshot) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *WebsiteSnapshot) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

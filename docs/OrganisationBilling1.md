@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | Pointer to **string** |  | [optional] 
 **Company** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to [**BillingAddress1**](Billing_address_1.md) |  | [optional] 
+**Address** | Pointer to [**BillingAddress1**](BillingAddress1.md) |  | [optional] 
 
 ## Methods
 

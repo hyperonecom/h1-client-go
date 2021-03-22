@@ -23,7 +23,7 @@ type ComputeProjectVmDiskCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmDiskCreate(disk string, ) *ComputeProjectVmDiskCreate {
+func NewComputeProjectVmDiskCreate(disk string) *ComputeProjectVmDiskCreate {
 	this := ComputeProjectVmDiskCreate{}
 	this.Disk = disk
 	return &this
@@ -39,7 +39,7 @@ func NewComputeProjectVmDiskCreateWithDefaults() *ComputeProjectVmDiskCreate {
 
 // GetDisk returns the Disk field value
 func (o *ComputeProjectVmDiskCreate) GetDisk() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

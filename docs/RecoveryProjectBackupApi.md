@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Backup**](backup.md)
+[**Backup**](Backup.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Backup**](backup.md)
+[**Backup**](Backup.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Backup**](backup.md)
+[**Backup**](Backup.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Backup**](backup.md)
+[**[]Backup**](Backup.md)
 
 ### Authorization
 
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Metric**](metric.md)
+[**Metric**](Metric.md)
 
 ### Authorization
 
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Metric**](metric.md)
+[**[]Metric**](Metric.md)
 
 ### Authorization
 
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Point**](point.md)
+[**[]Point**](Point.md)
 
 ### Authorization
 
@@ -877,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -953,7 +953,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1031,7 +1031,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1187,7 +1187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1337,11 +1337,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1419,7 +1419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Backup**](backup.md)
+[**Backup**](Backup.md)
 
 ### Authorization
 

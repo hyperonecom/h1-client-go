@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Metric** | Pointer to [**QuotaMetric**](Quota_metric.md) |  | [optional] 
+**Metric** | Pointer to [**QuotaMetric**](QuotaMetric.md) |  | [optional] 
 **Usage** | Pointer to **float32** |  | [optional] 
-**Limit** | Pointer to [**QuotaLimit**](Quota_limit.md) |  | [optional] 
+**Limit** | Pointer to [**QuotaLimit**](QuotaLimit.md) |  | [optional] 
 
 ## Methods
 

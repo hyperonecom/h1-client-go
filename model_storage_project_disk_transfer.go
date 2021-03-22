@@ -23,7 +23,7 @@ type StorageProjectDiskTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectDiskTransfer(project string, ) *StorageProjectDiskTransfer {
+func NewStorageProjectDiskTransfer(project string) *StorageProjectDiskTransfer {
 	this := StorageProjectDiskTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewStorageProjectDiskTransferWithDefaults() *StorageProjectDiskTransfer {
 
 // GetProject returns the Project field value
 func (o *StorageProjectDiskTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Network** | Pointer to **string** |  | [optional] 
 **PtrRecord** | Pointer to **string** |  | [optional] 
 **Persistent** | Pointer to **bool** |  | [optional] 
-**Associated** | Pointer to [**IpAssociated**](ip_associated.md) |  | [optional] 
+**Associated** | Pointer to [**IpAssociated**](IpAssociated.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

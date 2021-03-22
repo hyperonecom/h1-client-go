@@ -23,7 +23,7 @@ type IamProjectTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectTransfer(organisation string, ) *IamProjectTransfer {
+func NewIamProjectTransfer(organisation string) *IamProjectTransfer {
 	this := IamProjectTransfer{}
 	this.Organisation = organisation
 	return &this
@@ -39,7 +39,7 @@ func NewIamProjectTransferWithDefaults() *IamProjectTransfer {
 
 // GetOrganisation returns the Organisation field value
 func (o *IamProjectTransfer) GetOrganisation() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

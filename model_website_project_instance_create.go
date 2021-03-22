@@ -28,7 +28,7 @@ type WebsiteProjectInstanceCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebsiteProjectInstanceCreate(name string, service string, image string, ) *WebsiteProjectInstanceCreate {
+func NewWebsiteProjectInstanceCreate(name string, service string, image string) *WebsiteProjectInstanceCreate {
 	this := WebsiteProjectInstanceCreate{}
 	this.Name = name
 	this.Service = service
@@ -46,7 +46,7 @@ func NewWebsiteProjectInstanceCreateWithDefaults() *WebsiteProjectInstanceCreate
 
 // GetName returns the Name field value
 func (o *WebsiteProjectInstanceCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *WebsiteProjectInstanceCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *WebsiteProjectInstanceCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *WebsiteProjectInstanceCreate) SetService(v string) {
 
 // GetImage returns the Image field value
 func (o *WebsiteProjectInstanceCreate) GetImage() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

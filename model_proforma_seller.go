@@ -26,7 +26,7 @@ type ProformaSeller struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProformaSeller(company string, nip string, iban string, ) *ProformaSeller {
+func NewProformaSeller(company string, nip string, iban string) *ProformaSeller {
 	this := ProformaSeller{}
 	this.Company = company
 	this.Nip = nip
@@ -44,7 +44,7 @@ func NewProformaSellerWithDefaults() *ProformaSeller {
 
 // GetCompany returns the Company field value
 func (o *ProformaSeller) GetCompany() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *ProformaSeller) SetAddress(v InvoiceSellerAddress) {
 
 // GetNip returns the Nip field value
 func (o *ProformaSeller) GetNip() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *ProformaSeller) SetNip(v string) {
 
 // GetIban returns the Iban field value
 func (o *ProformaSeller) GetIban() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

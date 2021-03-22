@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **InvoiceNo** | Pointer to **string** |  | [optional] 
-**Seller** | Pointer to [**ProformaSeller**](proforma_seller.md) |  | [optional] 
-**Buyer** | Pointer to [**InvoiceBuyer**](invoice_buyer.md) |  | [optional] 
+**Seller** | Pointer to [**ProformaSeller**](ProformaSeller.md) |  | [optional] 
+**Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
 **IssueDate** | Pointer to **time.Time** |  | [optional] 
 **Items** | Pointer to [**[]InvoiceItems**](InvoiceItems.md) |  | [optional] 
 **Summary** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
-**Array** | Pointer to [**ProformaArray**](proforma___array__.md) |  | [optional] 
+**Array** | Pointer to [**ProformaArray**](ProformaArray.md) |  | [optional] 
 
 ## Methods
 

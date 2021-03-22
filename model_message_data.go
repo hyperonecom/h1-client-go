@@ -25,7 +25,7 @@ type MessageData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMessageData(mime string, ) *MessageData {
+func NewMessageData(mime string) *MessageData {
 	this := MessageData{}
 	this.Mime = mime
 	return &this
@@ -41,7 +41,7 @@ func NewMessageDataWithDefaults() *MessageData {
 
 // GetMime returns the Mime field value
 func (o *MessageData) GetMime() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

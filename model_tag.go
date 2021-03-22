@@ -25,7 +25,7 @@ type Tag struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTag(id string, key string, value string, ) *Tag {
+func NewTag(id string, key string, value string) *Tag {
 	this := Tag{}
 	this.Id = id
 	this.Key = key
@@ -43,7 +43,7 @@ func NewTagWithDefaults() *Tag {
 
 // GetId returns the Id field value
 func (o *Tag) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *Tag) SetId(v string) {
 
 // GetKey returns the Key field value
 func (o *Tag) GetKey() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Tag) SetKey(v string) {
 
 // GetValue returns the Value field value
 func (o *Tag) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

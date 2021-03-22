@@ -25,7 +25,7 @@ type ComputeProjectVmPasswordReset struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmPasswordReset(userName string, modulus string, exponent string, ) *ComputeProjectVmPasswordReset {
+func NewComputeProjectVmPasswordReset(userName string, modulus string, exponent string) *ComputeProjectVmPasswordReset {
 	this := ComputeProjectVmPasswordReset{}
 	this.UserName = userName
 	this.Modulus = modulus
@@ -43,7 +43,7 @@ func NewComputeProjectVmPasswordResetWithDefaults() *ComputeProjectVmPasswordRes
 
 // GetUserName returns the UserName field value
 func (o *ComputeProjectVmPasswordReset) GetUserName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ComputeProjectVmPasswordReset) SetUserName(v string) {
 
 // GetModulus returns the Modulus field value
 func (o *ComputeProjectVmPasswordReset) GetModulus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ComputeProjectVmPasswordReset) SetModulus(v string) {
 
 // GetExponent returns the Exponent field value
 func (o *ComputeProjectVmPasswordReset) GetExponent() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

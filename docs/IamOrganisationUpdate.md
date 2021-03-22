@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Billing** | Pointer to [**OrganisationBilling1**](Organisation_billing_1.md) |  | [optional] 
+**Billing** | Pointer to [**OrganisationBilling1**](OrganisationBilling1.md) |  | [optional] 
 
 ## Methods
 

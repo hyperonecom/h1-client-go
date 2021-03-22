@@ -25,7 +25,7 @@ type ComputeProjectVmCreateNetadp struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmCreateNetadp(network string, ) *ComputeProjectVmCreateNetadp {
+func NewComputeProjectVmCreateNetadp(network string) *ComputeProjectVmCreateNetadp {
 	this := ComputeProjectVmCreateNetadp{}
 	this.Network = network
 	return &this
@@ -41,7 +41,7 @@ func NewComputeProjectVmCreateNetadpWithDefaults() *ComputeProjectVmCreateNetadp
 
 // GetNetwork returns the Network field value
 func (o *ComputeProjectVmCreateNetadp) GetNetwork() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

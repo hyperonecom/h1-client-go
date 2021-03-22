@@ -25,7 +25,7 @@ type ComputeProjectVmCreateCredential struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmCreateCredential(type_ string, value string, ) *ComputeProjectVmCreateCredential {
+func NewComputeProjectVmCreateCredential(type_ string, value string) *ComputeProjectVmCreateCredential {
 	this := ComputeProjectVmCreateCredential{}
 	this.Type = type_
 	this.Value = value
@@ -42,7 +42,7 @@ func NewComputeProjectVmCreateCredentialWithDefaults() *ComputeProjectVmCreateCr
 
 // GetType returns the Type field value
 func (o *ComputeProjectVmCreateCredential) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ComputeProjectVmCreateCredential) SetType(v string) {
 
 // GetValue returns the Value field value
 func (o *ComputeProjectVmCreateCredential) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

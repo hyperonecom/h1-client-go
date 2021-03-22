@@ -23,7 +23,7 @@ type StorageProjectIsoDetach struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectIsoDetach(vm string, ) *StorageProjectIsoDetach {
+func NewStorageProjectIsoDetach(vm string) *StorageProjectIsoDetach {
 	this := StorageProjectIsoDetach{}
 	this.Vm = vm
 	return &this
@@ -39,7 +39,7 @@ func NewStorageProjectIsoDetachWithDefaults() *StorageProjectIsoDetach {
 
 // GetVm returns the Vm field value
 func (o *StorageProjectIsoDetach) GetVm() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

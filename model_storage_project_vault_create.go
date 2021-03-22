@@ -27,7 +27,7 @@ type StorageProjectVaultCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectVaultCreate(name string, size float32, ) *StorageProjectVaultCreate {
+func NewStorageProjectVaultCreate(name string, size float32) *StorageProjectVaultCreate {
 	this := StorageProjectVaultCreate{}
 	this.Name = name
 	var service string = "5a0332c4eb8f4ed95c206a12"
@@ -48,7 +48,7 @@ func NewStorageProjectVaultCreateWithDefaults() *StorageProjectVaultCreate {
 
 // GetName returns the Name field value
 func (o *StorageProjectVaultCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *StorageProjectVaultCreate) SetService(v string) {
 
 // GetSize returns the Size field value
 func (o *StorageProjectVaultCreate) GetSize() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

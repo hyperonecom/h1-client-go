@@ -28,7 +28,7 @@ type DnsRecordset struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnsRecordset(type_ string, ) *DnsRecordset {
+func NewDnsRecordset(type_ string) *DnsRecordset {
 	this := DnsRecordset{}
 	var name string = "@"
 	this.Name = &name
@@ -116,7 +116,7 @@ func (o *DnsRecordset) SetName(v string) {
 
 // GetType returns the Type field value
 func (o *DnsRecordset) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

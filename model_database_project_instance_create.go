@@ -26,7 +26,7 @@ type DatabaseProjectInstanceCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabaseProjectInstanceCreate(name string, service string, ) *DatabaseProjectInstanceCreate {
+func NewDatabaseProjectInstanceCreate(name string, service string) *DatabaseProjectInstanceCreate {
 	this := DatabaseProjectInstanceCreate{}
 	this.Name = name
 	this.Service = service
@@ -43,7 +43,7 @@ func NewDatabaseProjectInstanceCreateWithDefaults() *DatabaseProjectInstanceCrea
 
 // GetName returns the Name field value
 func (o *DatabaseProjectInstanceCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *DatabaseProjectInstanceCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *DatabaseProjectInstanceCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

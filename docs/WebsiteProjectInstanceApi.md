@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceConnect**](resource.connect.md)
+[**ResourceConnect**](ResourceConnect.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceConnect**](resource.connect.md)
+[**[]ResourceConnect**](ResourceConnect.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteCredential**](website.credential.md)
+[**WebsiteCredential**](WebsiteCredential.md)
 
 ### Authorization
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteCredential**](website.credential.md)
+[**WebsiteCredential**](WebsiteCredential.md)
 
 ### Authorization
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WebsiteCredential**](website.credential.md)
+[**[]WebsiteCredential**](WebsiteCredential.md)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteCredential**](website.credential.md)
+[**WebsiteCredential**](WebsiteCredential.md)
 
 ### Authorization
 
@@ -821,7 +821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Domain**](domain.md)
+[**Domain**](Domain.md)
 
 ### Authorization
 
@@ -977,7 +977,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Domain**](domain.md)
+[**Domain**](Domain.md)
 
 ### Authorization
 
@@ -1053,7 +1053,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Domain**](domain.md)
+[**[]Domain**](Domain.md)
 
 ### Authorization
 
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteEnv**](website.env.md)
+[**WebsiteEnv**](WebsiteEnv.md)
 
 ### Authorization
 
@@ -1287,7 +1287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteEnv**](website.env.md)
+[**WebsiteEnv**](WebsiteEnv.md)
 
 ### Authorization
 
@@ -1363,7 +1363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WebsiteEnv**](website.env.md)
+[**[]WebsiteEnv**](WebsiteEnv.md)
 
 ### Authorization
 
@@ -1442,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -1522,7 +1522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -1598,7 +1598,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -1676,7 +1676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteLink**](website.link.md)
+[**WebsiteLink**](WebsiteLink.md)
 
 ### Authorization
 
@@ -1832,7 +1832,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteLink**](website.link.md)
+[**WebsiteLink**](WebsiteLink.md)
 
 ### Authorization
 
@@ -1908,7 +1908,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WebsiteLink**](website.link.md)
+[**[]WebsiteLink**](WebsiteLink.md)
 
 ### Authorization
 
@@ -1987,7 +1987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Website**](website.md)
+[**[]Website**](Website.md)
 
 ### Authorization
 
@@ -2066,7 +2066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Log**](log.md)
+[**Log**](Log.md)
 
 ### Authorization
 
@@ -2142,7 +2142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Log**](log.md)
+[**[]Log**](Log.md)
 
 ### Authorization
 
@@ -2298,7 +2298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Metric**](metric.md)
+[**Metric**](Metric.md)
 
 ### Authorization
 
@@ -2374,7 +2374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Metric**](metric.md)
+[**[]Metric**](Metric.md)
 
 ### Authorization
 
@@ -2457,7 +2457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Point**](point.md)
+[**[]Point**](Point.md)
 
 ### Authorization
 
@@ -2537,7 +2537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -2616,7 +2616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2692,7 +2692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2771,7 +2771,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteSideapp**](website.sideapp.md)
+[**WebsiteSideapp**](WebsiteSideapp.md)
 
 ### Authorization
 
@@ -2847,7 +2847,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WebsiteSideapp**](website.sideapp.md)
+[**[]WebsiteSideapp**](WebsiteSideapp.md)
 
 ### Authorization
 
@@ -3002,7 +3002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteSnapshot**](website.snapshot.md)
+[**WebsiteSnapshot**](WebsiteSnapshot.md)
 
 ### Authorization
 
@@ -3081,7 +3081,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -3239,7 +3239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebsiteSnapshot**](website.snapshot.md)
+[**WebsiteSnapshot**](WebsiteSnapshot.md)
 
 ### Authorization
 
@@ -3315,7 +3315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WebsiteSnapshot**](website.snapshot.md)
+[**[]WebsiteSnapshot**](WebsiteSnapshot.md)
 
 ### Authorization
 
@@ -3395,7 +3395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -3475,7 +3475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -3553,7 +3553,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -3709,7 +3709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -3785,7 +3785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -3859,11 +3859,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -3945,7 +3945,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 
@@ -4023,7 +4023,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Website**](website.md)
+[**Website**](Website.md)
 
 ### Authorization
 

@@ -23,7 +23,7 @@ type WebsiteProjectInstanceTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebsiteProjectInstanceTransfer(project string, ) *WebsiteProjectInstanceTransfer {
+func NewWebsiteProjectInstanceTransfer(project string) *WebsiteProjectInstanceTransfer {
 	this := WebsiteProjectInstanceTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewWebsiteProjectInstanceTransferWithDefaults() *WebsiteProjectInstanceTran
 
 // GetProject returns the Project field value
 func (o *WebsiteProjectInstanceTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

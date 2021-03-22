@@ -23,7 +23,7 @@ type StorageProjectDiskResize struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectDiskResize(size float32, ) *StorageProjectDiskResize {
+func NewStorageProjectDiskResize(size float32) *StorageProjectDiskResize {
 	this := StorageProjectDiskResize{}
 	this.Size = size
 	return &this
@@ -39,7 +39,7 @@ func NewStorageProjectDiskResizeWithDefaults() *StorageProjectDiskResize {
 
 // GetSize returns the Size field value
 func (o *StorageProjectDiskResize) GetSize() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

@@ -29,7 +29,7 @@ type InvoiceItems struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceItems(name string, price string, netto string, brutto string, vatAmount string, vatRate string, quantity float32, ) *InvoiceItems {
+func NewInvoiceItems(name string, price string, netto string, brutto string, vatAmount string, vatRate string, quantity float32) *InvoiceItems {
 	this := InvoiceItems{}
 	this.Name = name
 	this.Price = price
@@ -51,7 +51,7 @@ func NewInvoiceItemsWithDefaults() *InvoiceItems {
 
 // GetName returns the Name field value
 func (o *InvoiceItems) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -75,7 +75,7 @@ func (o *InvoiceItems) SetName(v string) {
 
 // GetPrice returns the Price field value
 func (o *InvoiceItems) GetPrice() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *InvoiceItems) SetPrice(v string) {
 
 // GetNetto returns the Netto field value
 func (o *InvoiceItems) GetNetto() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *InvoiceItems) SetNetto(v string) {
 
 // GetBrutto returns the Brutto field value
 func (o *InvoiceItems) GetBrutto() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *InvoiceItems) SetBrutto(v string) {
 
 // GetVatAmount returns the VatAmount field value
 func (o *InvoiceItems) GetVatAmount() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *InvoiceItems) SetVatAmount(v string) {
 
 // GetVatRate returns the VatRate field value
 func (o *InvoiceItems) GetVatRate() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *InvoiceItems) SetVatRate(v string) {
 
 // GetQuantity returns the Quantity field value
 func (o *InvoiceItems) GetQuantity() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

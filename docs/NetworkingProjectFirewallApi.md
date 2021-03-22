@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Firewall**](firewall.md)
+[**Firewall**](Firewall.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkingRule**](networking.rule.md)
+[**NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkingRule**](networking.rule.md)
+[**NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]NetworkingRule**](networking.rule.md)
+[**[]NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -553,11 +553,11 @@ Name | Type | Description  | Notes
 
 
 
- **networkingRule** | [**[]NetworkingRule**](networking.rule.md) |  | 
+ **networkingRule** | [**[]NetworkingRule**](NetworkingRule.md) |  | 
 
 ### Return type
 
-[**[]NetworkingRule**](networking.rule.md)
+[**[]NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Firewall**](firewall.md)
+[**Firewall**](Firewall.md)
 
 ### Authorization
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkingRule**](networking.rule.md)
+[**NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkingRule**](networking.rule.md)
+[**NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]NetworkingRule**](networking.rule.md)
+[**[]NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -1176,11 +1176,11 @@ Name | Type | Description  | Notes
 
 
 
- **networkingRule** | [**[]NetworkingRule**](networking.rule.md) |  | 
+ **networkingRule** | [**[]NetworkingRule**](NetworkingRule.md) |  | 
 
 ### Return type
 
-[**[]NetworkingRule**](networking.rule.md)
+[**[]NetworkingRule**](NetworkingRule.md)
 
 ### Authorization
 
@@ -1259,7 +1259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Firewall**](firewall.md)
+[**[]Firewall**](Firewall.md)
 
 ### Authorization
 
@@ -1338,7 +1338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1414,7 +1414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1492,7 +1492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1648,7 +1648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1724,7 +1724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1798,11 +1798,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1884,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Firewall**](firewall.md)
+[**Firewall**](Firewall.md)
 
 ### Authorization
 
@@ -1962,7 +1962,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Firewall**](firewall.md)
+[**Firewall**](Firewall.md)
 
 ### Authorization
 

@@ -25,7 +25,7 @@ type IamProjectSaCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectSaCreate(name string, ) *IamProjectSaCreate {
+func NewIamProjectSaCreate(name string) *IamProjectSaCreate {
 	this := IamProjectSaCreate{}
 	this.Name = name
 	var service string = "5e5fc76ff1fb3efe1842336a"
@@ -45,7 +45,7 @@ func NewIamProjectSaCreateWithDefaults() *IamProjectSaCreate {
 
 // GetName returns the Name field value
 func (o *IamProjectSaCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

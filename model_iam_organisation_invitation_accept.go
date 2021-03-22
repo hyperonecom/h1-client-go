@@ -23,7 +23,7 @@ type IamOrganisationInvitationAccept struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamOrganisationInvitationAccept(token string, ) *IamOrganisationInvitationAccept {
+func NewIamOrganisationInvitationAccept(token string) *IamOrganisationInvitationAccept {
 	this := IamOrganisationInvitationAccept{}
 	this.Token = token
 	return &this
@@ -39,7 +39,7 @@ func NewIamOrganisationInvitationAcceptWithDefaults() *IamOrganisationInvitation
 
 // GetToken returns the Token field value
 func (o *IamOrganisationInvitationAccept) GetToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

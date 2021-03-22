@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Quantity** | Pointer to **float32** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **OneTime** | Pointer to **bool** |  | [optional] 
-**Service** | Pointer to [**BillingService**](billing_service.md) |  | [optional] 
-**Resource** | Pointer to [**BillingResource**](billing_resource.md) |  | [optional] 
+**Service** | Pointer to [**BillingService**](BillingService.md) |  | [optional] 
+**Resource** | Pointer to [**BillingResource**](BillingResource.md) |  | [optional] 
 **Charges** | Pointer to [**[]BillingCharges**](BillingCharges.md) |  | [optional] 
 
 ## Methods

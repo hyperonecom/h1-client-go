@@ -23,7 +23,7 @@ type UserLimitOrganisation struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserLimitOrganisation(count float32, ) *UserLimitOrganisation {
+func NewUserLimitOrganisation(count float32) *UserLimitOrganisation {
 	this := UserLimitOrganisation{}
 	this.Count = count
 	return &this
@@ -41,7 +41,7 @@ func NewUserLimitOrganisationWithDefaults() *UserLimitOrganisation {
 
 // GetCount returns the Count field value
 func (o *UserLimitOrganisation) GetCount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

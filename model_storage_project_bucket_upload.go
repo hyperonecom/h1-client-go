@@ -23,7 +23,7 @@ type StorageProjectBucketUpload struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectBucketUpload(name string, ) *StorageProjectBucketUpload {
+func NewStorageProjectBucketUpload(name string) *StorageProjectBucketUpload {
 	this := StorageProjectBucketUpload{}
 	this.Name = name
 	return &this
@@ -39,7 +39,7 @@ func NewStorageProjectBucketUploadWithDefaults() *StorageProjectBucketUpload {
 
 // GetName returns the Name field value
 func (o *StorageProjectBucketUpload) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

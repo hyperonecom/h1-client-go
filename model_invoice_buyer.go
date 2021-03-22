@@ -26,7 +26,7 @@ type InvoiceBuyer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceBuyer(company string, ) *InvoiceBuyer {
+func NewInvoiceBuyer(company string) *InvoiceBuyer {
 	this := InvoiceBuyer{}
 	this.Company = company
 	return &this
@@ -42,7 +42,7 @@ func NewInvoiceBuyerWithDefaults() *InvoiceBuyer {
 
 // GetCompany returns the Company field value
 func (o *InvoiceBuyer) GetCompany() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

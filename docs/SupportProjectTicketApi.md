@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ticket**](ticket.md)
+[**Ticket**](Ticket.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ticket**](ticket.md)
+[**Ticket**](Ticket.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ticket**](ticket.md)
+[**Ticket**](Ticket.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Ticket**](ticket.md)
+[**[]Ticket**](Ticket.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupportMessage**](support.message.md)
+[**SupportMessage**](SupportMessage.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupportMessage**](support.message.md)
+[**SupportMessage**](SupportMessage.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]SupportMessage**](support.message.md)
+[**[]SupportMessage**](SupportMessage.md)
 
 ### Authorization
 

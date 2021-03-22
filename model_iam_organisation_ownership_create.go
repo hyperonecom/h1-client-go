@@ -23,7 +23,7 @@ type IamOrganisationOwnershipCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamOrganisationOwnershipCreate(email string, ) *IamOrganisationOwnershipCreate {
+func NewIamOrganisationOwnershipCreate(email string) *IamOrganisationOwnershipCreate {
 	this := IamOrganisationOwnershipCreate{}
 	this.Email = email
 	return &this
@@ -39,7 +39,7 @@ func NewIamOrganisationOwnershipCreateWithDefaults() *IamOrganisationOwnershipCr
 
 // GetEmail returns the Email field value
 func (o *IamOrganisationOwnershipCreate) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

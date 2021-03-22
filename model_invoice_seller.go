@@ -25,7 +25,7 @@ type InvoiceSeller struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceSeller(company string, nip string, ) *InvoiceSeller {
+func NewInvoiceSeller(company string, nip string) *InvoiceSeller {
 	this := InvoiceSeller{}
 	this.Company = company
 	this.Nip = nip
@@ -42,7 +42,7 @@ func NewInvoiceSellerWithDefaults() *InvoiceSeller {
 
 // GetCompany returns the Company field value
 func (o *InvoiceSeller) GetCompany() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *InvoiceSeller) SetAddress(v InvoiceSellerAddress) {
 
 // GetNip returns the Nip field value
 func (o *InvoiceSeller) GetNip() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -31,7 +31,7 @@ type RegistryCredential struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRegistryCredential(name string, type_ string, value string, ) *RegistryCredential {
+func NewRegistryCredential(name string, type_ string, value string) *RegistryCredential {
 	this := RegistryCredential{}
 	this.Name = name
 	this.Type = type_
@@ -81,7 +81,7 @@ func (o *RegistryCredential) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *RegistryCredential) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *RegistryCredential) SetCreatedOn(v time.Time) {
 
 // GetType returns the Type field value
 func (o *RegistryCredential) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *RegistryCredential) SetType(v string) {
 
 // GetValue returns the Value field value
 func (o *RegistryCredential) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

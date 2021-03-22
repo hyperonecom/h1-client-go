@@ -25,7 +25,7 @@ type ContainerProjectRegistryCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContainerProjectRegistryCreate(name string, service string, ) *ContainerProjectRegistryCreate {
+func NewContainerProjectRegistryCreate(name string, service string) *ContainerProjectRegistryCreate {
 	this := ContainerProjectRegistryCreate{}
 	this.Name = name
 	this.Service = service
@@ -42,7 +42,7 @@ func NewContainerProjectRegistryCreateWithDefaults() *ContainerProjectRegistryCr
 
 // GetName returns the Name field value
 func (o *ContainerProjectRegistryCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ContainerProjectRegistryCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *ContainerProjectRegistryCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Billing**](billing.md)
+[**[]Billing**](Billing.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Organisation**](organisation.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Organisation**](organisation.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](invitation.md)
+[**Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](invitation.md)
+[**Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Invitation**](invitation.md)
+[**[]Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -891,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invoice**](invoice.md)
+[**Invoice**](Invoice.md)
 
 ### Authorization
 
@@ -961,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Invoice**](invoice.md)
+[**[]Invoice**](Invoice.md)
 
 ### Authorization
 
@@ -1033,7 +1033,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Organisation**](organisation.md)
+[**[]Organisation**](Organisation.md)
 
 ### Authorization
 
@@ -1105,7 +1105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Organisation**](organisation.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ownership**](ownership.md)
+[**Ownership**](Ownership.md)
 
 ### Authorization
 
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Ownership**](ownership.md)
+[**[]Ownership**](Ownership.md)
 
 ### Authorization
 
@@ -1394,7 +1394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Payment**](payment.md)
+[**Payment**](Payment.md)
 
 ### Authorization
 
@@ -1467,7 +1467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Payment**](payment.md)
+[**Payment**](Payment.md)
 
 ### Authorization
 
@@ -1537,7 +1537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Payment**](payment.md)
+[**[]Payment**](Payment.md)
 
 ### Authorization
 
@@ -1609,7 +1609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Proforma**](proforma.md)
+[**Proforma**](Proforma.md)
 
 ### Authorization
 
@@ -1755,7 +1755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Proforma**](proforma.md)
+[**Proforma**](Proforma.md)
 
 ### Authorization
 
@@ -1825,7 +1825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Proforma**](proforma.md)
+[**[]Proforma**](Proforma.md)
 
 ### Authorization
 
@@ -1898,7 +1898,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1968,7 +1968,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2043,7 +2043,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Transfer**](transfer.md)
+[**Transfer**](Transfer.md)
 
 ### Authorization
 
@@ -2116,7 +2116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Transfer**](transfer.md)
+[**Transfer**](Transfer.md)
 
 ### Authorization
 
@@ -2186,7 +2186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Transfer**](transfer.md)
+[**[]Transfer**](Transfer.md)
 
 ### Authorization
 
@@ -2258,7 +2258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Organisation**](organisation.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 

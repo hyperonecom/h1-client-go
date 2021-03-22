@@ -23,7 +23,7 @@ type IamProjectOwnershipCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectOwnershipCreate(email string, ) *IamProjectOwnershipCreate {
+func NewIamProjectOwnershipCreate(email string) *IamProjectOwnershipCreate {
 	this := IamProjectOwnershipCreate{}
 	this.Email = email
 	return &this
@@ -39,7 +39,7 @@ func NewIamProjectOwnershipCreateWithDefaults() *IamProjectOwnershipCreate {
 
 // GetEmail returns the Email field value
 func (o *IamProjectOwnershipCreate) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

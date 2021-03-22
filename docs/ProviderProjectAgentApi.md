@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgentCredential**](agent.credential.md)
+[**AgentCredential**](AgentCredential.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgentCredential**](agent.credential.md)
+[**AgentCredential**](AgentCredential.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AgentCredential**](agent.credential.md)
+[**[]AgentCredential**](AgentCredential.md)
 
 ### Authorization
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AgentCredential**](agent.credential.md)
+[**AgentCredential**](AgentCredential.md)
 
 ### Authorization
 
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledService**](enabledService.md)
+[**EnabledService**](EnabledService.md)
 
 ### Authorization
 
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledService**](enabledService.md)
+[**EnabledService**](EnabledService.md)
 
 ### Authorization
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]EnabledService**](enabledService.md)
+[**[]EnabledService**](EnabledService.md)
 
 ### Authorization
 
@@ -963,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -1043,7 +1043,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -1119,7 +1119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -1280,7 +1280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Agent**](agent.md)
+[**[]Agent**](Agent.md)
 
 ### Authorization
 
@@ -1359,7 +1359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Metric**](metric.md)
+[**Metric**](Metric.md)
 
 ### Authorization
 
@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Metric**](metric.md)
+[**[]Metric**](Metric.md)
 
 ### Authorization
 
@@ -1518,7 +1518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Point**](point.md)
+[**[]Point**](Point.md)
 
 ### Authorization
 
@@ -1601,7 +1601,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ProviderAgentResourceEvent**](provider.agent.resource.event.md)
+[**[]ProviderAgentResourceEvent**](ProviderAgentResourceEvent.md)
 
 ### Authorization
 
@@ -1680,7 +1680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProviderAgentResource**](provider.agent.resource.md)
+[**ProviderAgentResource**](ProviderAgentResource.md)
 
 ### Authorization
 
@@ -1835,7 +1835,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ProviderAgentResource**](provider.agent.resource.md)
+[**[]ProviderAgentResource**](ProviderAgentResource.md)
 
 ### Authorization
 
@@ -1914,7 +1914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProviderAgentResource**](provider.agent.resource.md)
+[**ProviderAgentResource**](ProviderAgentResource.md)
 
 ### Authorization
 
@@ -1993,7 +1993,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2069,7 +2069,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2149,7 +2149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -2229,7 +2229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -2307,7 +2307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2463,7 +2463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2539,7 +2539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2613,11 +2613,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2699,7 +2699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 
@@ -2777,7 +2777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Agent**](agent.md)
+[**Agent**](Agent.md)
 
 ### Authorization
 

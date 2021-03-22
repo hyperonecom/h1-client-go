@@ -24,7 +24,7 @@ type IamOrganisationProformaCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamOrganisationProformaCreate(amount float32, project string, ) *IamOrganisationProformaCreate {
+func NewIamOrganisationProformaCreate(amount float32, project string) *IamOrganisationProformaCreate {
 	this := IamOrganisationProformaCreate{}
 	this.Amount = amount
 	this.Project = project
@@ -41,7 +41,7 @@ func NewIamOrganisationProformaCreateWithDefaults() *IamOrganisationProformaCrea
 
 // GetAmount returns the Amount field value
 func (o *IamOrganisationProformaCreate) GetAmount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *IamOrganisationProformaCreate) SetAmount(v float32) {
 
 // GetProject returns the Project field value
 func (o *IamOrganisationProformaCreate) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

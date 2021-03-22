@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Type** | **string** |  | 
 **User** | Pointer to **string** |  | [optional] [readonly] 
-**Data** | Pointer to [**MessageData**](Message_data.md) |  | [optional] 
+**Data** | Pointer to [**MessageData**](MessageData.md) |  | [optional] 
 **Origin** | Pointer to **string** |  | [optional] [readonly] 
 **Date** | Pointer to **time.Time** |  | [optional] [readonly] 
 

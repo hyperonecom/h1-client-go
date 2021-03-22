@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Public** | Pointer to [**NetgwPublic**](Netgw_public.md) |  | [optional] 
+**Public** | Pointer to [**NetgwPublic**](NetgwPublic.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

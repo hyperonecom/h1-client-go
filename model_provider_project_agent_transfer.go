@@ -23,7 +23,7 @@ type ProviderProjectAgentTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProviderProjectAgentTransfer(project string, ) *ProviderProjectAgentTransfer {
+func NewProviderProjectAgentTransfer(project string) *ProviderProjectAgentTransfer {
 	this := ProviderProjectAgentTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewProviderProjectAgentTransferWithDefaults() *ProviderProjectAgentTransfer
 
 // GetProject returns the Project field value
 func (o *ProviderProjectAgentTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

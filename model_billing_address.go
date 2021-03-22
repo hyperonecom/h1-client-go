@@ -26,7 +26,7 @@ type BillingAddress struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingAddress(city string, street string, zipcode string, ) *BillingAddress {
+func NewBillingAddress(city string, street string, zipcode string) *BillingAddress {
 	this := BillingAddress{}
 	var country string = "PL"
 	this.Country = &country
@@ -80,7 +80,7 @@ func (o *BillingAddress) SetCountry(v string) {
 
 // GetCity returns the City field value
 func (o *BillingAddress) GetCity() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *BillingAddress) SetCity(v string) {
 
 // GetStreet returns the Street field value
 func (o *BillingAddress) GetStreet() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *BillingAddress) SetStreet(v string) {
 
 // GetZipcode returns the Zipcode field value
 func (o *BillingAddress) GetZipcode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

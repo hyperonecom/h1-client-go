@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthToken**](authToken.md)
+[**AuthToken**](AuthToken.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AuthToken**](authToken.md)
+[**[]AuthToken**](AuthToken.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserCredential**](user.credential.md)
+[**UserCredential**](UserCredential.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](user.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserCredential**](user.credential.md)
+[**UserCredential**](UserCredential.md)
 
 ### Authorization
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]UserCredential**](user.credential.md)
+[**[]UserCredential**](UserCredential.md)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserCredential**](user.credential.md)
+[**UserCredential**](UserCredential.md)
 
 ### Authorization
 
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](user.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -865,7 +865,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](user.md)
+[**User**](User.md)
 
 ### Authorization
 

@@ -25,7 +25,7 @@ type Invitation struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvitation(id string, email string, resource string, ) *Invitation {
+func NewInvitation(id string, email string, resource string) *Invitation {
 	this := Invitation{}
 	this.Id = id
 	this.Email = email
@@ -43,7 +43,7 @@ func NewInvitationWithDefaults() *Invitation {
 
 // GetId returns the Id field value
 func (o *Invitation) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *Invitation) SetId(v string) {
 
 // GetEmail returns the Email field value
 func (o *Invitation) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Invitation) SetEmail(v string) {
 
 // GetResource returns the Resource field value
 func (o *Invitation) GetResource() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

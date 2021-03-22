@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Private** | Pointer to [**NetgwPrivate**](Netgw_private.md) |  | [optional] 
+**Private** | Pointer to [**NetgwPrivate**](NetgwPrivate.md) |  | [optional] 
 
 ## Methods
 

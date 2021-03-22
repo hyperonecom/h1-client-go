@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Bucket**](bucket.md)
+[**Bucket**](Bucket.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Bucket**](bucket.md)
+[**[]Bucket**](Bucket.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StorageObject**](storage.object.md)
+[**StorageObject**](StorageObject.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]StorageObject**](storage.object.md)
+[**[]StorageObject**](StorageObject.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Bucket**](bucket.md)
+[**Bucket**](Bucket.md)
 
 ### Authorization
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** |  | [optional] 
 **Company** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to [**InvoiceSellerAddress**](invoice_seller_address.md) |  | [optional] 
+**Address** | Pointer to [**InvoiceSellerAddress**](InvoiceSellerAddress.md) |  | [optional] 
 **Nip** | Pointer to **string** |  | [optional] 
 
 ## Methods

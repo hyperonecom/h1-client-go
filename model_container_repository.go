@@ -24,7 +24,7 @@ type ContainerRepository struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContainerRepository(name string, ) *ContainerRepository {
+func NewContainerRepository(name string) *ContainerRepository {
 	this := ContainerRepository{}
 	this.Name = name
 	return &this
@@ -72,7 +72,7 @@ func (o *ContainerRepository) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *ContainerRepository) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

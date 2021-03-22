@@ -26,7 +26,7 @@ type Metric struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetric(id string, name string, unit string, ) *Metric {
+func NewMetric(id string, name string, unit string) *Metric {
 	this := Metric{}
 	this.Id = id
 	this.Name = name
@@ -44,7 +44,7 @@ func NewMetricWithDefaults() *Metric {
 
 // GetId returns the Id field value
 func (o *Metric) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *Metric) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *Metric) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *Metric) SetName(v string) {
 
 // GetUnit returns the Unit field value
 func (o *Metric) GetUnit() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -25,7 +25,7 @@ type Transfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransfer(name string, ) *Transfer {
+func NewTransfer(name string) *Transfer {
 	this := Transfer{}
 	this.Name = name
 	var state string = "Active"
@@ -77,7 +77,7 @@ func (o *Transfer) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *Transfer) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

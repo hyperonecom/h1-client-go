@@ -24,7 +24,7 @@ type IamOrganisationCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamOrganisationCreate(name string, ) *IamOrganisationCreate {
+func NewIamOrganisationCreate(name string) *IamOrganisationCreate {
 	this := IamOrganisationCreate{}
 	this.Name = name
 	return &this
@@ -40,7 +40,7 @@ func NewIamOrganisationCreateWithDefaults() *IamOrganisationCreate {
 
 // GetName returns the Name field value
 func (o *IamOrganisationCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -31,7 +31,7 @@ type ProjectCredential struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProjectCredential(name string, type_ string, value string, ) *ProjectCredential {
+func NewProjectCredential(name string, type_ string, value string) *ProjectCredential {
 	this := ProjectCredential{}
 	this.Name = name
 	this.Type = type_
@@ -81,7 +81,7 @@ func (o *ProjectCredential) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *ProjectCredential) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *ProjectCredential) SetCreatedOn(v time.Time) {
 
 // GetType returns the Type field value
 func (o *ProjectCredential) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ProjectCredential) SetType(v string) {
 
 // GetValue returns the Value field value
 func (o *ProjectCredential) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

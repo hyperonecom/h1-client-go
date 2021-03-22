@@ -31,7 +31,7 @@ type AgentCredential struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAgentCredential(name string, type_ string, value string, ) *AgentCredential {
+func NewAgentCredential(name string, type_ string, value string) *AgentCredential {
 	this := AgentCredential{}
 	this.Name = name
 	this.Type = type_
@@ -81,7 +81,7 @@ func (o *AgentCredential) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *AgentCredential) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *AgentCredential) SetCreatedOn(v time.Time) {
 
 // GetType returns the Type field value
 func (o *AgentCredential) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *AgentCredential) SetType(v string) {
 
 // GetValue returns the Value field value
 func (o *AgentCredential) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

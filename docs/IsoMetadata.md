@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Source** | Pointer to [**IsoMetadataSource**](iso_metadata_source.md) |  | [optional] 
+**Source** | Pointer to [**IsoMetadataSource**](IsoMetadataSource.md) |  | [optional] 
 
 ## Methods
 

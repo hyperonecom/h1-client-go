@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **Period** | Pointer to **string** |  | [optional] 
-**Price** | Pointer to [**ServiceBillingPrice**](service_billing_price.md) |  | [optional] 
-**ResourcePrice** | Pointer to [**ServiceBillingPrice**](service_billing_price.md) |  | [optional] 
+**Price** | Pointer to [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 
+**ResourcePrice** | Pointer to [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 
 
 ## Methods
 

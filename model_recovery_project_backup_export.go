@@ -23,7 +23,7 @@ type RecoveryProjectBackupExport struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecoveryProjectBackupExport(bucket string, ) *RecoveryProjectBackupExport {
+func NewRecoveryProjectBackupExport(bucket string) *RecoveryProjectBackupExport {
 	this := RecoveryProjectBackupExport{}
 	this.Bucket = bucket
 	return &this
@@ -39,7 +39,7 @@ func NewRecoveryProjectBackupExportWithDefaults() *RecoveryProjectBackupExport {
 
 // GetBucket returns the Bucket field value
 func (o *RecoveryProjectBackupExport) GetBucket() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

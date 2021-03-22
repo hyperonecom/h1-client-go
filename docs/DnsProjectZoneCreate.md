@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Service** | **string** |  | 
 **DnsName** | **string** |  | 
-**Source** | Pointer to [**ZoneSource**](Zone_source.md) |  | [optional] 
+**Source** | Pointer to [**ZoneSource**](ZoneSource.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

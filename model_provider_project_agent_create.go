@@ -25,7 +25,7 @@ type ProviderProjectAgentCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProviderProjectAgentCreate(name string, service string, ) *ProviderProjectAgentCreate {
+func NewProviderProjectAgentCreate(name string, service string) *ProviderProjectAgentCreate {
 	this := ProviderProjectAgentCreate{}
 	this.Name = name
 	this.Service = service
@@ -42,7 +42,7 @@ func NewProviderProjectAgentCreateWithDefaults() *ProviderProjectAgentCreate {
 
 // GetName returns the Name field value
 func (o *ProviderProjectAgentCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ProviderProjectAgentCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *ProviderProjectAgentCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

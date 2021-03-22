@@ -23,7 +23,7 @@ type NetworkingProjectIpTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingProjectIpTransfer(project string, ) *NetworkingProjectIpTransfer {
+func NewNetworkingProjectIpTransfer(project string) *NetworkingProjectIpTransfer {
 	this := NetworkingProjectIpTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewNetworkingProjectIpTransferWithDefaults() *NetworkingProjectIpTransfer {
 
 // GetProject returns the Project field value
 func (o *NetworkingProjectIpTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Zone**](zone.md)
+[**Zone**](Zone.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Zone**](zone.md)
+[**Zone**](Zone.md)
 
 ### Authorization
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Zone**](zone.md)
+[**[]Zone**](Zone.md)
 
 ### Authorization
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DnsRecordset**](dns.recordset.md)
+[**DnsRecordset**](DnsRecordset.md)
 
 ### Authorization
 
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Zone**](zone.md)
+[**Zone**](Zone.md)
 
 ### Authorization
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DnsRecordset**](dns.recordset.md)
+[**DnsRecordset**](DnsRecordset.md)
 
 ### Authorization
 
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DnsRecordset**](dns.recordset.md)
+[**[]DnsRecordset**](DnsRecordset.md)
 
 ### Authorization
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DnsRecordset**](dns.recordset.md)
+[**DnsRecordset**](DnsRecordset.md)
 
 ### Authorization
 
@@ -956,7 +956,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DnsRecord**](dns.record.md)
+[**DnsRecord**](DnsRecord.md)
 
 ### Authorization
 
@@ -1118,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DnsRecord**](dns.record.md)
+[**DnsRecord**](DnsRecord.md)
 
 ### Authorization
 
@@ -1197,7 +1197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DnsRecord**](dns.record.md)
+[**[]DnsRecord**](DnsRecord.md)
 
 ### Authorization
 
@@ -1274,11 +1274,11 @@ Name | Type | Description  | Notes
 
 
 
- **dnsRecord** | [**[]DnsRecord**](dns.record.md) |  | 
+ **dnsRecord** | [**[]DnsRecord**](DnsRecord.md) |  | 
 
 ### Return type
 
-[**[]DnsRecord**](dns.record.md)
+[**[]DnsRecord**](DnsRecord.md)
 
 ### Authorization
 
@@ -1357,7 +1357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1433,7 +1433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -1511,7 +1511,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -1743,7 +1743,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1817,11 +1817,11 @@ Name | Type | Description  | Notes
 
 
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -1899,7 +1899,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Zone**](zone.md)
+[**Zone**](Zone.md)
 
 ### Authorization
 

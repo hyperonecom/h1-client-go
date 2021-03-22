@@ -28,7 +28,7 @@ type StorageProjectImageCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageProjectImageCreate(name string, ) *StorageProjectImageCreate {
+func NewStorageProjectImageCreate(name string) *StorageProjectImageCreate {
 	this := StorageProjectImageCreate{}
 	this.Name = name
 	var service string = "564639bc052c084e2f2e3266"
@@ -48,7 +48,7 @@ func NewStorageProjectImageCreateWithDefaults() *StorageProjectImageCreate {
 
 // GetName returns the Name field value
 func (o *StorageProjectImageCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

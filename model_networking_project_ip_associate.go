@@ -23,7 +23,7 @@ type NetworkingProjectIpAssociate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingProjectIpAssociate(ip string, ) *NetworkingProjectIpAssociate {
+func NewNetworkingProjectIpAssociate(ip string) *NetworkingProjectIpAssociate {
 	this := NetworkingProjectIpAssociate{}
 	this.Ip = ip
 	return &this
@@ -39,7 +39,7 @@ func NewNetworkingProjectIpAssociateWithDefaults() *NetworkingProjectIpAssociate
 
 // GetIp returns the Ip field value
 func (o *NetworkingProjectIpAssociate) GetIp() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

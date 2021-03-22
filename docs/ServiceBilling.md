@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | Pointer to [**ServiceBillingPrice**](service_billing_price.md) |  | [optional] 
+**Price** | Pointer to [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 
 **Period** | Pointer to **string** |  | [optional] 
 **Quantity** | Pointer to **float32** |  | [optional] 
 **OneTime** | Pointer to **bool** |  | [optional] 
-**Reservations** | Pointer to [**ServiceBillingReservations**](service_billing_reservations.md) |  | [optional] 
+**Reservations** | Pointer to [**ServiceBillingReservations**](ServiceBillingReservations.md) |  | [optional] 
 
 ## Methods
 

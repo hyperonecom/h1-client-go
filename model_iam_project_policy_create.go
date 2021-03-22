@@ -27,7 +27,7 @@ type IamProjectPolicyCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectPolicyCreate(name string, role string, resource string, ) *IamProjectPolicyCreate {
+func NewIamProjectPolicyCreate(name string, role string, resource string) *IamProjectPolicyCreate {
 	this := IamProjectPolicyCreate{}
 	this.Name = name
 	this.Role = role
@@ -45,7 +45,7 @@ func NewIamProjectPolicyCreateWithDefaults() *IamProjectPolicyCreate {
 
 // GetName returns the Name field value
 func (o *IamProjectPolicyCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *IamProjectPolicyCreate) SetName(v string) {
 
 // GetRole returns the Role field value
 func (o *IamProjectPolicyCreate) GetRole() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *IamProjectPolicyCreate) SetRole(v string) {
 
 // GetResource returns the Resource field value
 func (o *IamProjectPolicyCreate) GetResource() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

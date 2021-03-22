@@ -23,7 +23,7 @@ type NetgwPrivate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetgwPrivate(network string, ) *NetgwPrivate {
+func NewNetgwPrivate(network string) *NetgwPrivate {
 	this := NetgwPrivate{}
 	this.Network = network
 	return &this
@@ -39,7 +39,7 @@ func NewNetgwPrivateWithDefaults() *NetgwPrivate {
 
 // GetNetwork returns the Network field value
 func (o *NetgwPrivate) GetNetwork() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

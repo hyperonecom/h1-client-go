@@ -23,7 +23,7 @@ type InsightProjectJournalTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInsightProjectJournalTransfer(project string, ) *InsightProjectJournalTransfer {
+func NewInsightProjectJournalTransfer(project string) *InsightProjectJournalTransfer {
 	this := InsightProjectJournalTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewInsightProjectJournalTransferWithDefaults() *InsightProjectJournalTransf
 
 // GetProject returns the Project field value
 func (o *InsightProjectJournalTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

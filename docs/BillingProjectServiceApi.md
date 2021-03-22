@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](service.md)
+[**Service**](Service.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Service**](service.md)
+[**[]Service**](Service.md)
 
 ### Authorization
 

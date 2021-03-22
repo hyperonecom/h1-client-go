@@ -24,7 +24,7 @@ type Domain struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDomain(value string, ) *Domain {
+func NewDomain(value string) *Domain {
 	this := Domain{}
 	this.Value = value
 	return &this
@@ -72,7 +72,7 @@ func (o *Domain) SetId(v string) {
 
 // GetValue returns the Value field value
 func (o *Domain) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

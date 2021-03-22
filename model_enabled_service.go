@@ -25,7 +25,7 @@ type EnabledService struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnabledService(id string, name string, ) *EnabledService {
+func NewEnabledService(id string, name string) *EnabledService {
 	this := EnabledService{}
 	this.Id = id
 	this.Name = name
@@ -42,7 +42,7 @@ func NewEnabledServiceWithDefaults() *EnabledService {
 
 // GetId returns the Id field value
 func (o *EnabledService) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *EnabledService) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *EnabledService) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

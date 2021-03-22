@@ -28,7 +28,7 @@ type ContainerImage struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContainerImage(name string, digest string, createdOn time.Time, modifiedOn time.Time, ) *ContainerImage {
+func NewContainerImage(name string, digest string, createdOn time.Time, modifiedOn time.Time) *ContainerImage {
 	this := ContainerImage{}
 	this.Name = name
 	this.Digest = digest
@@ -79,7 +79,7 @@ func (o *ContainerImage) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *ContainerImage) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *ContainerImage) SetName(v string) {
 
 // GetDigest returns the Digest field value
 func (o *ContainerImage) GetDigest() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ContainerImage) SetDigest(v string) {
 
 // GetCreatedOn returns the CreatedOn field value
 func (o *ContainerImage) GetCreatedOn() time.Time {
-	if o == nil  {
+	if o == nil {
 		var ret time.Time
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ContainerImage) SetCreatedOn(v time.Time) {
 
 // GetModifiedOn returns the ModifiedOn field value
 func (o *ContainerImage) GetModifiedOn() time.Time {
-	if o == nil  {
+	if o == nil {
 		var ret time.Time
 		return ret
 	}

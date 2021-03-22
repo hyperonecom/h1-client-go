@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Billing**](billing.md)
+[**[]Billing**](Billing.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectCredential**](project.credential.md)
+[**ProjectCredential**](ProjectCredential.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectCredential**](project.credential.md)
+[**ProjectCredential**](ProjectCredential.md)
 
 ### Authorization
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ProjectCredential**](project.credential.md)
+[**[]ProjectCredential**](ProjectCredential.md)
 
 ### Authorization
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectCredential**](project.credential.md)
+[**ProjectCredential**](ProjectCredential.md)
 
 ### Authorization
 
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](event.md)
+[**Event**](Event.md)
 
 ### Authorization
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Event**](event.md)
+[**[]Event**](Event.md)
 
 ### Authorization
 
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -900,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](invitation.md)
+[**Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](invitation.md)
+[**Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -1116,7 +1116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Invitation**](invitation.md)
+[**[]Invitation**](Invitation.md)
 
 ### Authorization
 
@@ -1186,7 +1186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Invoice**](invoice.md)
+[**[]Invoice**](Invoice.md)
 
 ### Authorization
 
@@ -1264,7 +1264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Project**](project.md)
+[**[]Project**](Project.md)
 
 ### Authorization
 
@@ -1336,7 +1336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -1480,7 +1480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ownership**](ownership.md)
+[**Ownership**](Ownership.md)
 
 ### Authorization
 
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Ownership**](ownership.md)
+[**[]Ownership**](Ownership.md)
 
 ### Authorization
 
@@ -1620,7 +1620,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Payment**](payment.md)
+[**[]Payment**](Payment.md)
 
 ### Authorization
 
@@ -1690,7 +1690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Proforma**](proforma.md)
+[**[]Proforma**](Proforma.md)
 
 ### Authorization
 
@@ -1763,7 +1763,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Quota**](quota.md)
+[**Quota**](Quota.md)
 
 ### Authorization
 
@@ -1838,7 +1838,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QuotaLimit**](quotaLimit.md)
+[**QuotaLimit**](QuotaLimit.md)
 
 ### Authorization
 
@@ -1908,7 +1908,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Quota**](quota.md)
+[**[]Quota**](Quota.md)
 
 ### Authorization
 
@@ -1981,7 +1981,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceService**](resourceService.md)
+[**ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2051,7 +2051,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResourceService**](resourceService.md)
+[**[]ResourceService**](ResourceService.md)
 
 ### Authorization
 
@@ -2123,7 +2123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2267,7 +2267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Tag**](tag.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -2337,7 +2337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2405,11 +2405,11 @@ Other parameters are passed through a pointer to a apiIamProjectTagPutRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **tag** | [**[]Tag**](tag.md) |  | 
+ **tag** | [**[]Tag**](Tag.md) |  | 
 
 ### Return type
 
-[**[]Tag**](tag.md)
+[**[]Tag**](Tag.md)
 
 ### Authorization
 
@@ -2481,7 +2481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectThreshold**](project.threshold.md)
+[**ProjectThreshold**](ProjectThreshold.md)
 
 ### Authorization
 
@@ -2625,7 +2625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectThreshold**](project.threshold.md)
+[**ProjectThreshold**](ProjectThreshold.md)
 
 ### Authorization
 
@@ -2695,7 +2695,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ProjectThreshold**](project.threshold.md)
+[**[]ProjectThreshold**](ProjectThreshold.md)
 
 ### Authorization
 
@@ -2771,7 +2771,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 
@@ -2843,7 +2843,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](project.md)
+[**Project**](Project.md)
 
 ### Authorization
 

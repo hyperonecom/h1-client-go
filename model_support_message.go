@@ -29,7 +29,7 @@ type SupportMessage struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSupportMessage(type_ string, ) *SupportMessage {
+func NewSupportMessage(type_ string) *SupportMessage {
 	this := SupportMessage{}
 	this.Type = type_
 	return &this
@@ -77,7 +77,7 @@ func (o *SupportMessage) SetId(v string) {
 
 // GetType returns the Type field value
 func (o *SupportMessage) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

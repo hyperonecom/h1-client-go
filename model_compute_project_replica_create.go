@@ -24,7 +24,7 @@ type ComputeProjectReplicaCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectReplicaCreate(hostname string, secret string, ) *ComputeProjectReplicaCreate {
+func NewComputeProjectReplicaCreate(hostname string, secret string) *ComputeProjectReplicaCreate {
 	this := ComputeProjectReplicaCreate{}
 	this.Hostname = hostname
 	this.Secret = secret
@@ -41,7 +41,7 @@ func NewComputeProjectReplicaCreateWithDefaults() *ComputeProjectReplicaCreate {
 
 // GetHostname returns the Hostname field value
 func (o *ComputeProjectReplicaCreate) GetHostname() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *ComputeProjectReplicaCreate) SetHostname(v string) {
 
 // GetSecret returns the Secret field value
 func (o *ComputeProjectReplicaCreate) GetSecret() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

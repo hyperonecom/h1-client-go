@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **float32** |  | [optional] 
-**Metadata** | Pointer to [**IsoMetadata**](iso_metadata.md) |  | [optional] 
+**Metadata** | Pointer to [**IsoMetadata**](IsoMetadata.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

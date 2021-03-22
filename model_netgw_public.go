@@ -23,7 +23,7 @@ type NetgwPublic struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetgwPublic(ip string, ) *NetgwPublic {
+func NewNetgwPublic(ip string) *NetgwPublic {
 	this := NetgwPublic{}
 	this.Ip = ip
 	return &this
@@ -39,7 +39,7 @@ func NewNetgwPublicWithDefaults() *NetgwPublic {
 
 // GetIp returns the Ip field value
 func (o *NetgwPublic) GetIp() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

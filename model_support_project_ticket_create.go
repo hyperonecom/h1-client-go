@@ -25,7 +25,7 @@ type SupportProjectTicketCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSupportProjectTicketCreate(type_ string, subject string, message string, ) *SupportProjectTicketCreate {
+func NewSupportProjectTicketCreate(type_ string, subject string, message string) *SupportProjectTicketCreate {
 	this := SupportProjectTicketCreate{}
 	this.Type = type_
 	this.Subject = subject
@@ -43,7 +43,7 @@ func NewSupportProjectTicketCreateWithDefaults() *SupportProjectTicketCreate {
 
 // GetType returns the Type field value
 func (o *SupportProjectTicketCreate) GetType() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *SupportProjectTicketCreate) SetType(v string) {
 
 // GetSubject returns the Subject field value
 func (o *SupportProjectTicketCreate) GetSubject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *SupportProjectTicketCreate) SetSubject(v string) {
 
 // GetMessage returns the Message field value
 func (o *SupportProjectTicketCreate) GetMessage() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

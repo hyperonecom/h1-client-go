@@ -25,7 +25,7 @@ type Point struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPoint(time time.Time, value float32, ) *Point {
+func NewPoint(time time.Time, value float32) *Point {
 	this := Point{}
 	this.Time = time
 	this.Value = value
@@ -42,7 +42,7 @@ func NewPointWithDefaults() *Point {
 
 // GetTime returns the Time field value
 func (o *Point) GetTime() time.Time {
-	if o == nil  {
+	if o == nil {
 		var ret time.Time
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *Point) SetTime(v time.Time) {
 
 // GetValue returns the Value field value
 func (o *Point) GetValue() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

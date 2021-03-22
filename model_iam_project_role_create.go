@@ -27,7 +27,7 @@ type IamProjectRoleCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectRoleCreate(name string, ) *IamProjectRoleCreate {
+func NewIamProjectRoleCreate(name string) *IamProjectRoleCreate {
 	this := IamProjectRoleCreate{}
 	this.Name = name
 	var service string = "5e679c282b39c4353cd86f34"
@@ -47,7 +47,7 @@ func NewIamProjectRoleCreateWithDefaults() *IamProjectRoleCreate {
 
 // GetName returns the Name field value
 func (o *IamProjectRoleCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

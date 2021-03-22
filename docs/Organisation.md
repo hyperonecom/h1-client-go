@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
-**Billing** | Pointer to [**OrganisationBilling**](organisation_billing.md) |  | [optional] 
+**Billing** | Pointer to [**OrganisationBilling**](OrganisationBilling.md) |  | [optional] 
 **BankAccount** | Pointer to **string** |  | [optional] 
 
 ## Methods

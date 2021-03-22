@@ -25,7 +25,7 @@ type RecoveryProjectBackupCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecoveryProjectBackupCreate(name string, source interface{}, ) *RecoveryProjectBackupCreate {
+func NewRecoveryProjectBackupCreate(name string, source interface{}) *RecoveryProjectBackupCreate {
 	this := RecoveryProjectBackupCreate{}
 	this.Name = name
 	this.Source = source
@@ -42,7 +42,7 @@ func NewRecoveryProjectBackupCreateWithDefaults() *RecoveryProjectBackupCreate {
 
 // GetName returns the Name field value
 func (o *RecoveryProjectBackupCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *RecoveryProjectBackupCreate) SetName(v string) {
 
 // GetSource returns the Source field value
 func (o *RecoveryProjectBackupCreate) GetSource() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}

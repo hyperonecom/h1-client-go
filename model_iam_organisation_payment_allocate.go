@@ -23,7 +23,7 @@ type IamOrganisationPaymentAllocate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamOrganisationPaymentAllocate(project string, ) *IamOrganisationPaymentAllocate {
+func NewIamOrganisationPaymentAllocate(project string) *IamOrganisationPaymentAllocate {
 	this := IamOrganisationPaymentAllocate{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewIamOrganisationPaymentAllocateWithDefaults() *IamOrganisationPaymentAllo
 
 // GetProject returns the Project field value
 func (o *IamOrganisationPaymentAllocate) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

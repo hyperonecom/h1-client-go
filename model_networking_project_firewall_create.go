@@ -27,7 +27,7 @@ type NetworkingProjectFirewallCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingProjectFirewallCreate(name string, ) *NetworkingProjectFirewallCreate {
+func NewNetworkingProjectFirewallCreate(name string) *NetworkingProjectFirewallCreate {
 	this := NetworkingProjectFirewallCreate{}
 	this.Name = name
 	var service string = "5bacaf7202deee0c100eda3b"
@@ -47,7 +47,7 @@ func NewNetworkingProjectFirewallCreateWithDefaults() *NetworkingProjectFirewall
 
 // GetName returns the Name field value
 func (o *NetworkingProjectFirewallCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

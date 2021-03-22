@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Lang** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
-**Limit** | Pointer to [**UserLimit**](user_limit.md) |  | [optional] 
+**Limit** | Pointer to [**UserLimit**](UserLimit.md) |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods

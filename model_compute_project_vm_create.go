@@ -33,7 +33,7 @@ type ComputeProjectVmCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmCreate(name string, service string, ) *ComputeProjectVmCreate {
+func NewComputeProjectVmCreate(name string, service string) *ComputeProjectVmCreate {
 	this := ComputeProjectVmCreate{}
 	this.Name = name
 	this.Service = service
@@ -54,7 +54,7 @@ func NewComputeProjectVmCreateWithDefaults() *ComputeProjectVmCreate {
 
 // GetName returns the Name field value
 func (o *ComputeProjectVmCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ComputeProjectVmCreate) SetName(v string) {
 
 // GetService returns the Service field value
 func (o *ComputeProjectVmCreate) GetService() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

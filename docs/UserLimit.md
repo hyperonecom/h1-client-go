@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Organisation** | Pointer to [**UserLimitOrganisation**](user_limit_organisation.md) |  | [optional] 
+**Organisation** | Pointer to [**UserLimitOrganisation**](UserLimitOrganisation.md) |  | [optional] 
 
 ## Methods
 

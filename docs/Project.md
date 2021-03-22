@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Organisation** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 **BankAccount** | Pointer to **string** |  | [optional] 
-**Billing** | Pointer to [**ProjectBilling**](project_billing.md) |  | [optional] 
+**Billing** | Pointer to [**ProjectBilling**](ProjectBilling.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

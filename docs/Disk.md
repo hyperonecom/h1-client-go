@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **float32** |  | [optional] 
 **Vm** | Pointer to **string** |  | [optional] 
 **Persistent** | Pointer to **bool** |  | [optional] 
-**Metadata** | Pointer to [**DiskMetadata**](disk_metadata.md) |  | [optional] 
+**Metadata** | Pointer to [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods

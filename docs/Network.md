@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Address** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Dns** | Pointer to [**NetworkDns**](network_dns.md) |  | [optional] 
+**Dns** | Pointer to [**NetworkDns**](NetworkDns.md) |  | [optional] 
 **Netgw** | Pointer to **string** |  | [optional] 
 **Firewall** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 

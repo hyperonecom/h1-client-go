@@ -24,7 +24,7 @@ type IamPermission struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamPermission(value string, ) *IamPermission {
+func NewIamPermission(value string) *IamPermission {
 	this := IamPermission{}
 	this.Value = value
 	return &this
@@ -72,7 +72,7 @@ func (o *IamPermission) SetId(v string) {
 
 // GetValue returns the Value field value
 func (o *IamPermission) GetValue() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

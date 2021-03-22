@@ -24,7 +24,7 @@ type WebsiteSideapp struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebsiteSideapp(name string, ) *WebsiteSideapp {
+func NewWebsiteSideapp(name string) *WebsiteSideapp {
 	this := WebsiteSideapp{}
 	this.Name = name
 	return &this
@@ -72,7 +72,7 @@ func (o *WebsiteSideapp) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *WebsiteSideapp) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

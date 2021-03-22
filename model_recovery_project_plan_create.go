@@ -26,7 +26,7 @@ type RecoveryProjectPlanCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecoveryProjectPlanCreate(name string, ) *RecoveryProjectPlanCreate {
+func NewRecoveryProjectPlanCreate(name string) *RecoveryProjectPlanCreate {
 	this := RecoveryProjectPlanCreate{}
 	this.Name = name
 	return &this
@@ -42,7 +42,7 @@ func NewRecoveryProjectPlanCreateWithDefaults() *RecoveryProjectPlanCreate {
 
 // GetName returns the Name field value
 func (o *RecoveryProjectPlanCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

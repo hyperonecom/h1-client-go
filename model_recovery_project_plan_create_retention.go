@@ -24,7 +24,7 @@ type RecoveryProjectPlanCreateRetention struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecoveryProjectPlanCreateRetention(interval string, count float32, ) *RecoveryProjectPlanCreateRetention {
+func NewRecoveryProjectPlanCreateRetention(interval string, count float32) *RecoveryProjectPlanCreateRetention {
 	this := RecoveryProjectPlanCreateRetention{}
 	this.Interval = interval
 	this.Count = count
@@ -41,7 +41,7 @@ func NewRecoveryProjectPlanCreateRetentionWithDefaults() *RecoveryProjectPlanCre
 
 // GetInterval returns the Interval field value
 func (o *RecoveryProjectPlanCreateRetention) GetInterval() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *RecoveryProjectPlanCreateRetention) SetInterval(v string) {
 
 // GetCount returns the Count field value
 func (o *RecoveryProjectPlanCreateRetention) GetCount() float32 {
-	if o == nil  {
+	if o == nil {
 		var ret float32
 		return ret
 	}

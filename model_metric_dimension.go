@@ -24,7 +24,7 @@ type MetricDimension struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetricDimension(name string, description string, ) *MetricDimension {
+func NewMetricDimension(name string, description string) *MetricDimension {
 	this := MetricDimension{}
 	this.Name = name
 	this.Description = description
@@ -41,7 +41,7 @@ func NewMetricDimensionWithDefaults() *MetricDimension {
 
 // GetName returns the Name field value
 func (o *MetricDimension) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *MetricDimension) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *MetricDimension) GetDescription() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

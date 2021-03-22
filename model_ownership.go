@@ -24,7 +24,7 @@ type Ownership struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOwnership(id string, user string, ) *Ownership {
+func NewOwnership(id string, user string) *Ownership {
 	this := Ownership{}
 	this.Id = id
 	this.User = user
@@ -41,7 +41,7 @@ func NewOwnershipWithDefaults() *Ownership {
 
 // GetId returns the Id field value
 func (o *Ownership) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *Ownership) SetId(v string) {
 
 // GetUser returns the User field value
 func (o *Ownership) GetUser() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

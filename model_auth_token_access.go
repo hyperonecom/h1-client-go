@@ -24,7 +24,7 @@ type AuthTokenAccess struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthTokenAccess(method string, path string, ) *AuthTokenAccess {
+func NewAuthTokenAccess(method string, path string) *AuthTokenAccess {
 	this := AuthTokenAccess{}
 	this.Method = method
 	this.Path = path
@@ -41,7 +41,7 @@ func NewAuthTokenAccessWithDefaults() *AuthTokenAccess {
 
 // GetMethod returns the Method field value
 func (o *AuthTokenAccess) GetMethod() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *AuthTokenAccess) SetMethod(v string) {
 
 // GetPath returns the Path field value
 func (o *AuthTokenAccess) GetPath() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

@@ -26,7 +26,7 @@ type InsightProjectJournalCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInsightProjectJournalCreate(name string, ) *InsightProjectJournalCreate {
+func NewInsightProjectJournalCreate(name string) *InsightProjectJournalCreate {
 	this := InsightProjectJournalCreate{}
 	this.Name = name
 	var service string = "5c9cc2d0255c16c3e899a4ea"
@@ -46,7 +46,7 @@ func NewInsightProjectJournalCreateWithDefaults() *InsightProjectJournalCreate {
 
 // GetName returns the Name field value
 func (o *InsightProjectJournalCreate) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

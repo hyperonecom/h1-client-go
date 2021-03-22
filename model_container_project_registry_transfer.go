@@ -23,7 +23,7 @@ type ContainerProjectRegistryTransfer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContainerProjectRegistryTransfer(project string, ) *ContainerProjectRegistryTransfer {
+func NewContainerProjectRegistryTransfer(project string) *ContainerProjectRegistryTransfer {
 	this := ContainerProjectRegistryTransfer{}
 	this.Project = project
 	return &this
@@ -39,7 +39,7 @@ func NewContainerProjectRegistryTransferWithDefaults() *ContainerProjectRegistry
 
 // GetProject returns the Project field value
 func (o *ContainerProjectRegistryTransfer) GetProject() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}

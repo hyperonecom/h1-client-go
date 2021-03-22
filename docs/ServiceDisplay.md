@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Unit** | Pointer to [**ServiceDisplayUnit**](service_display_unit.md) |  | [optional] 
+**Unit** | Pointer to [**ServiceDisplayUnit**](ServiceDisplayUnit.md) |  | [optional] 
 
 ## Methods
 

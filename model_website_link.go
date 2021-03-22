@@ -26,7 +26,7 @@ type WebsiteLink struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebsiteLink(actor string, purpose string, resource string, ) *WebsiteLink {
+func NewWebsiteLink(actor string, purpose string, resource string) *WebsiteLink {
 	this := WebsiteLink{}
 	this.Actor = actor
 	this.Purpose = purpose
@@ -76,7 +76,7 @@ func (o *WebsiteLink) SetId(v string) {
 
 // GetActor returns the Actor field value
 func (o *WebsiteLink) GetActor() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *WebsiteLink) SetActor(v string) {
 
 // GetPurpose returns the Purpose field value
 func (o *WebsiteLink) GetPurpose() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *WebsiteLink) SetPurpose(v string) {
 
 // GetResource returns the Resource field value
 func (o *WebsiteLink) GetResource() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
