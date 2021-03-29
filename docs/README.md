@@ -544,6 +544,57 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTagPut**](./ProviderProjectAgentApi.md#providerprojectagenttagput) | **Put** /provider/{locationId}/project/{projectId}/agent/{agentId}/tag | Replace provider/agent.tag
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTransfer**](./ProviderProjectAgentApi.md#providerprojectagenttransfer) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/transfer | Transfer provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentUpdate**](./ProviderProjectAgentApi.md#providerprojectagentupdate) | **Patch** /provider/{locationId}/project/{projectId}/agent/{agentId} | Update provider/agent
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentConnectGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentconnectget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/connect/{connectId} | Get provider/development.connect
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentConnectList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentconnectlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/connect | List provider/development.connect
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcreate) | **Post** /provider/{locationId}/project/{projectId}/development | Create provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential | Create provider/development.credential
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Delete provider/development.credential
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Get provider/development.credential
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentiallist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential | List provider/development.credential
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialPatch**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialpatch) | **Patch** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Update provider/development.credential
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId} | Delete provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomaincreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain | Create provider/development.domain
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomaindelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId} | Delete provider/development.domain
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomainget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId} | Get provider/development.domain
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomainlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain | List provider/development.domain
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/env | Create provider/development.env
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId} | Delete provider/development.env
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId} | Get provider/development.env
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/env | List provider/development.env
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEventGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenteventget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/event/{eventId} | Get provider/development.event
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEventList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenteventlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/event | List provider/development.event
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId} | Get provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/link | Create provider/development.link
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId} | Delete provider/development.link
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId} | Get provider/development.link
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinklist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/link | List provider/development.link
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlist) | **Get** /provider/{locationId}/project/{projectId}/development | List provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlogget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId} | Get provider/development.log
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentloglist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/log | List provider/development.log
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogRead**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlogread) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}/actions/read | Read provider/development.log
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetricget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId} | Get provider/development.metric
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetriclist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric | List provider/development.metric
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricPointList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetricpointlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}/point | List provider/development.point
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentRestart**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentrestart) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/restart | Restart provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentServiceGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentserviceget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/service/{serviceId} | Get provider/development.service
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentServiceList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentservicelist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/service | List provider/development.service
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideappget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId} | Get provider/development.sideapp
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideapplist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp | List provider/development.sideapp
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappOpen**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideappopen) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}/actions/open | Open provider/development.sideapp
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot | Create provider/development.snapshot
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId} | Delete provider/development.snapshot
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotDownload**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotdownload) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}/actions/download | Download provider/development.snapshot
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId} | Get provider/development.snapshot
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot | List provider/development.snapshot
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentStart**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentstart) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/start | Start provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentStop**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentstop) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/stop | Stop provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagCreate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | Create provider/development.tag
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagDelete**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId} | Delete provider/development.tag
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagGet**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId} | Get provider/development.tag
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagList**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttaglist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | List provider/development.tag
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagPut**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagput) | **Put** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | Replace provider/development.tag
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTransfer**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttransfer) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/transfer | Transfer provider/development
+*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentUpdate**](./ProviderProjectDevelopmentApi.md#providerprojectdevelopmentupdate) | **Patch** /provider/{locationId}/project/{projectId}/development/{developmentId} | Update provider/development
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupCreate**](./RecoveryProjectBackupApi.md#recoveryprojectbackupcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup | Create recovery/backup
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupDelete**](./RecoveryProjectBackupApi.md#recoveryprojectbackupdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Delete recovery/backup
 *RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventGet**](./RecoveryProjectBackupApi.md#recoveryprojectbackupeventget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId} | Get recovery/backup.event
@@ -778,6 +829,8 @@ Class | Method | HTTP request | Description
  - [DatabaseProjectInstanceCredentialPatch](./DatabaseProjectInstanceCredentialPatch.md)
  - [DatabaseProjectInstanceTransfer](./DatabaseProjectInstanceTransfer.md)
  - [DatabaseProjectInstanceUpdate](./DatabaseProjectInstanceUpdate.md)
+ - [Development](./Development.md)
+ - [DevelopmentCredential](./DevelopmentCredential.md)
  - [Disk](./Disk.md)
  - [DiskMetadata](./DiskMetadata.md)
  - [DnsProjectZoneCreate](./DnsProjectZoneCreate.md)
@@ -884,10 +937,20 @@ Class | Method | HTTP request | Description
  - [ProjectThreshold](./ProjectThreshold.md)
  - [ProviderAgentResource](./ProviderAgentResource.md)
  - [ProviderAgentResourceEvent](./ProviderAgentResourceEvent.md)
+ - [ProviderEnv](./ProviderEnv.md)
+ - [ProviderLink](./ProviderLink.md)
+ - [ProviderLog](./ProviderLog.md)
  - [ProviderProjectAgentCreate](./ProviderProjectAgentCreate.md)
  - [ProviderProjectAgentCredentialPatch](./ProviderProjectAgentCredentialPatch.md)
  - [ProviderProjectAgentTransfer](./ProviderProjectAgentTransfer.md)
  - [ProviderProjectAgentUpdate](./ProviderProjectAgentUpdate.md)
+ - [ProviderProjectDevelopmentCreate](./ProviderProjectDevelopmentCreate.md)
+ - [ProviderProjectDevelopmentCredentialPatch](./ProviderProjectDevelopmentCredentialPatch.md)
+ - [ProviderProjectDevelopmentSnapshotDownload](./ProviderProjectDevelopmentSnapshotDownload.md)
+ - [ProviderProjectDevelopmentTransfer](./ProviderProjectDevelopmentTransfer.md)
+ - [ProviderProjectDevelopmentUpdate](./ProviderProjectDevelopmentUpdate.md)
+ - [ProviderSideapp](./ProviderSideapp.md)
+ - [ProviderSnapshot](./ProviderSnapshot.md)
  - [Quota](./Quota.md)
  - [QuotaLimit](./QuotaLimit.md)
  - [QuotaMetric](./QuotaMetric.md)
@@ -1146,6 +1209,59 @@ r, err := client.Service.Operation(auth, args)
  - **database/instance.event/get**: 
  - **database/instance/read**: 
  - **database/instance/use**: 
+ - **iam/sa/use**: 
+ - **insight/journal/use**: 
+ - **provider/development/create**: 
+ - **provider/development/list**: 
+ - **provider/development/get**: 
+ - **provider/development.name/update**: 
+ - **provider/development/delete**: 
+ - **provider/development/start**: 
+ - **provider/development/stop**: 
+ - **provider/development/restart**: 
+ - **provider/development/transfer**: 
+ - **provider/development.snapshot/list**: 
+ - **provider/development.snapshot/create**: 
+ - **provider/development.snapshot/delete**: 
+ - **provider/development.snapshot/get**: 
+ - **provider/development.snapshot/read**: 
+ - **provider/development.env/list**: 
+ - **provider/development.env/create**: 
+ - **provider/development.env/get**: 
+ - **provider/development.env/delete**: 
+ - **provider/development.link/list**: 
+ - **provider/development.link/create**: 
+ - **provider/development.link/get**: 
+ - **provider/development.link/delete**: 
+ - **provider/development.sideapp/list**: 
+ - **provider/development.sideapp/get**: 
+ - **provider/development.sideapp/open**: 
+ - **provider/development.credential/list**: 
+ - **provider/development.credential/create**: 
+ - **provider/development.credential/get**: 
+ - **provider/development.credential.name/update**: 
+ - **provider/development.credential/delete**: 
+ - **provider/development.connect/list**: 
+ - **provider/development.connect/get**: 
+ - **provider/development.domain/list**: 
+ - **provider/development.domain/create**: 
+ - **provider/development.domain/get**: 
+ - **provider/development.domain/delete**: 
+ - **provider/development.metric/list**: 
+ - **provider/development.metric/get**: 
+ - **provider/development.point/list**: 
+ - **provider/development.log/list**: 
+ - **provider/development.log/get**: 
+ - **database/instance.log/read**: 
+ - **provider/development.service/list**: 
+ - **provider/development.service/get**: 
+ - **provider/development.tag/list**: 
+ - **provider/development.tag/create**: 
+ - **provider/development.tag/delete**: 
+ - **provider/development.tag/get**: 
+ - **provider/development.event/list**: 
+ - **provider/development.event/get**: 
+ - **provider/development/use**: 
  - **insight/journal/create**: 
  - **insight/journal/list**: 
  - **insight/journal/get**: 
@@ -1214,8 +1330,6 @@ r, err := client.Service.Operation(auth, args)
  - **container/registry.event/get**: 
  - **container/registry.repository/create**: push image
  - **container/registry.repository/read**: pull image
- - **iam/sa/use**: 
- - **insight/journal/use**: 
  - **website/instance/create**: 
  - **website/instance/list**: 
  - **website/instance/get**: 
@@ -1259,7 +1373,6 @@ r, err := client.Service.Operation(auth, args)
  - **website/instance.point/list**: 
  - **website/instance.log/list**: 
  - **website/instance.log/get**: 
- - **database/instance.log/read**: 
  - **website/instance.service/list**: 
  - **website/instance.service/get**: 
  - **website/instance.tag/list**: 

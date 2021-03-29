@@ -42,6 +42,12 @@ tags:
   x-parent:
   - project
 - description: Available as part of the Early Adopters program.
+  name: provider_project_development
+  x-kind: provider/development
+  x-location: true
+  x-parent:
+  - project
+- description: Available as part of the Early Adopters program.
   name: insight_project_journal
   x-kind: insight/journal
   x-location: true
@@ -8706,6 +8712,3065 @@ paths:
       - database/instance.event/get
       x-examples:
         $ref: ./docs/database_project_instance_event_get/index.json
+  /provider/{locationId}/project/{projectId}/development:
+    get:
+      description: List development
+      operationId: provider_project_development_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Filter by name
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by tag.value
+        explode: true
+        in: query
+        name: tag.value
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by tag.key
+        explode: true
+        in: query
+        name: tag.key
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/development'
+                title: Development collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/list
+    post:
+      description: Create development
+      operationId: provider_project_development_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider_project_development_create'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}:
+    delete:
+      description: Delete development
+      operationId: provider_project_development_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/delete
+      x-state:
+      - Running
+      - "Off"
+      - Restarting
+    get:
+      description: Returns a single development
+      operationId: provider_project_development_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+          links:
+            backup:
+              operationId: recovery_project_backup_list
+              parameters:
+                source: $uri
+            policy:
+              operationId: iam_project_policy_list
+              parameters:
+                resource: $uri
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/get
+    patch:
+      description: Returns modified development
+      operationId: provider_project_development_update
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider_project_development_update'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Update provider/development
+      tags:
+      - provider_project_development
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/start:
+    post:
+      description: action start
+      operationId: provider_project_development_start
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Start provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/start
+      x-state:
+      - "Off"
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/stop:
+    post:
+      description: action stop
+      operationId: provider_project_development_stop
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Stop provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/stop
+      x-state:
+      - Running
+      - Restarting
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/restart:
+    post:
+      description: action restart
+      operationId: provider_project_development_restart
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Restart provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/restart
+      x-state:
+      - Running
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/transfer:
+    post:
+      description: action transfer
+      operationId: provider_project_development_transfer
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Idempotency key
+        explode: false
+        in: header
+        name: x-idempotency-key
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: Dry run
+        explode: false
+        in: header
+        name: x-dry-run
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider_project_development_transfer'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Transfer provider/development
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development/transfer
+      x-state:
+      - Running
+      - "Off"
+      - Restarting
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot:
+    get:
+      description: List provider/development.snapshot
+      operationId: provider_project_development_snapshot_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/provider.snapshot'
+                title: Provider.snapshot collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.snapshot
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.snapshot/list
+    post:
+      description: Create provider/development.snapshot
+      operationId: provider_project_development_snapshot_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider.snapshot'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.snapshot'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.snapshot
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.snapshot/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}:
+    delete:
+      description: Delete provider/development.snapshot
+      operationId: provider_project_development_snapshot_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: snapshotId
+        explode: false
+        in: path
+        name: snapshotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.snapshot
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.snapshot/delete
+    get:
+      description: Get provider/development.snapshot
+      operationId: provider_project_development_snapshot_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: snapshotId
+        explode: false
+        in: path
+        name: snapshotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.snapshot'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.snapshot
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.snapshot/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}/actions/download:
+    post:
+      description: action download
+      operationId: provider_project_development_snapshot_download
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: snapshotId
+        explode: false
+        in: path
+        name: snapshotId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider_project_development_snapshot_download'
+        required: true
+      responses:
+        "201":
+          description: Download request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Download provider/development.snapshot
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.snapshot/read
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/env:
+    get:
+      description: List provider/development.env
+      operationId: provider_project_development_env_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/provider.env'
+                title: Provider.env collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.env
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.env/list
+    post:
+      description: Create provider/development.env
+      operationId: provider_project_development_env_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider.env'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.env'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.env
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.env/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId}:
+    delete:
+      description: Delete provider/development.env
+      operationId: provider_project_development_env_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: envId
+        explode: false
+        in: path
+        name: envId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.env
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.env/delete
+    get:
+      description: Get provider/development.env
+      operationId: provider_project_development_env_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: envId
+        explode: false
+        in: path
+        name: envId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.env'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.env
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.env/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/link:
+    get:
+      description: List provider/development.link
+      operationId: provider_project_development_link_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/provider.link'
+                title: Provider.link collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.link
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.link/list
+    post:
+      description: Create provider/development.link
+      operationId: provider_project_development_link_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider.link'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.link'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.link
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.link/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId}:
+    delete:
+      description: Delete provider/development.link
+      operationId: provider_project_development_link_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: linkId
+        explode: false
+        in: path
+        name: linkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.link
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.link/delete
+    get:
+      description: Get provider/development.link
+      operationId: provider_project_development_link_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: linkId
+        explode: false
+        in: path
+        name: linkId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.link'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.link
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.link/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp:
+    get:
+      description: List provider/development.sideapp
+      operationId: provider_project_development_sideapp_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/provider.sideapp'
+                title: Provider.sideapp collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.sideapp
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.sideapp/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}:
+    get:
+      description: Get provider/development.sideapp
+      operationId: provider_project_development_sideapp_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: sideappId
+        explode: false
+        in: path
+        name: sideappId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.sideapp'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.sideapp
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.sideapp/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}/actions/open:
+    post:
+      description: action open
+      operationId: provider_project_development_sideapp_open
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: sideappId
+        explode: false
+        in: path
+        name: sideappId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "201":
+          description: Request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Open provider/development.sideapp
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.sideapp/open
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/credential:
+    get:
+      description: List provider/development.credential
+      operationId: provider_project_development_credential_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/development.credential'
+                title: Development.credential collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.credential
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.credential/list
+    post:
+      description: Create provider/development.credential
+      operationId: provider_project_development_credential_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/development.credential'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development.credential'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.credential
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.credential/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId}:
+    delete:
+      description: Delete provider/development.credential
+      operationId: provider_project_development_credential_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: credentialId
+        explode: false
+        in: path
+        name: credentialId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: successful operation
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development'
+          description: operation queued
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.credential
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.credential/delete
+    get:
+      description: Get provider/development.credential
+      operationId: provider_project_development_credential_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: credentialId
+        explode: false
+        in: path
+        name: credentialId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development.credential'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.credential
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.credential/get
+    patch:
+      description: Update provider/development.credential
+      operationId: provider_project_development_credential_patch
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: credentialId
+        explode: false
+        in: path
+        name: credentialId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider_project_development_credential_patch'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/development.credential'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Update provider/development.credential
+      tags:
+      - provider_project_development
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/connect:
+    get:
+      description: List provider/development.connect
+      operationId: provider_project_development_connect_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/resource.connect'
+                title: Resource.connect collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.connect
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.connect/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/connect/{connectId}:
+    get:
+      description: Get provider/development.connect
+      operationId: provider_project_development_connect_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: connectId
+        explode: false
+        in: path
+        name: connectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/resource.connect'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.connect
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.connect/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/domain:
+    get:
+      description: List provider/development.domain
+      operationId: provider_project_development_domain_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/domain'
+                title: Domain collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.domain
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.domain/list
+    post:
+      description: Create provider/development.domain
+      operationId: provider_project_development_domain_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/domain'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/domain'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.domain
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.domain/create
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId}:
+    delete:
+      description: Delete provider/development.domain
+      operationId: provider_project_development_domain_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: domainId
+        explode: false
+        in: path
+        name: domainId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.domain
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.domain/delete
+    get:
+      description: Get provider/development.domain
+      operationId: provider_project_development_domain_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: domainId
+        explode: false
+        in: path
+        name: domainId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/domain'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.domain
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.domain/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/metric:
+    get:
+      description: List provider/development.metric
+      operationId: provider_project_development_metric_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/metric'
+                title: Metric collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.metric
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.metric/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}:
+    get:
+      description: Get provider/development.metric
+      operationId: provider_project_development_metric_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metric'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.metric
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.metric/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}/point:
+    get:
+      description: List provider/development.point
+      operationId: provider_project_development_metric_point_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: metricId
+        explode: false
+        in: path
+        name: metricId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: interval
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: timespan
+        explode: true
+        in: query
+        name: timespan
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/point'
+                title: Point collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.point
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.point/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/log:
+    get:
+      description: List provider/development.log
+      operationId: provider_project_development_log_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/provider.log'
+                title: Provider.log collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.log
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.log/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}:
+    get:
+      description: Get provider/development.log
+      operationId: provider_project_development_log_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: logId
+        explode: false
+        in: path
+        name: logId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/provider.log'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.log
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.log/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}/actions/read:
+    post:
+      description: action read
+      operationId: provider_project_development_log_read
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: logId
+        explode: false
+        in: path
+        name: logId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "201":
+          description: Log request accepted
+          headers:
+            location:
+              description: Absolute URL
+              explode: false
+              schema:
+                format: uri
+                type: string
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Read provider/development.log
+      tags:
+      - provider_project_development
+      x-permissions:
+      - database/instance.log/read
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/service:
+    get:
+      description: List provider/development.service
+      operationId: provider_project_development_service_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/resourceService'
+                title: ResourceService collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.service
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.service/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/service/{serviceId}:
+    get:
+      description: Get provider/development.service
+      operationId: provider_project_development_service_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: serviceId
+        explode: false
+        in: path
+        name: serviceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/resourceService'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.service
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.service/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/tag:
+    get:
+      description: List provider/development.tag
+      operationId: provider_project_development_tag_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/tag'
+                title: Tag collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.tag
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.tag/list
+    post:
+      description: Create provider/development.tag
+      operationId: provider_project_development_tag_create
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Create provider/development.tag
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.tag/create
+    put:
+      description: Replace provider/development.tag
+      operationId: provider_project_development_tag_put
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tag_array'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/tag'
+                title: Tag collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Replace provider/development.tag
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.tag/create
+      - provider/development.tag/delete
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId}:
+    delete:
+      description: Delete provider/development.tag
+      operationId: provider_project_development_tag_delete
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Delete provider/development.tag
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.tag/delete
+    get:
+      description: Get provider/development.tag
+      operationId: provider_project_development_tag_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: tagId
+        explode: false
+        in: path
+        name: tagId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tag'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.tag
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.tag/get
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/event:
+    get:
+      description: List provider/development.event
+      operationId: provider_project_development_event_list
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: $limit
+        explode: true
+        in: query
+        name: $limit
+        required: false
+        schema:
+          default: 100
+          maximum: 1000
+          minimum: 1
+          type: number
+        style: form
+      - description: $skip
+        explode: true
+        in: query
+        name: $skip
+        required: false
+        schema:
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/event'
+                title: Event collection
+                type: array
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: List provider/development.event
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.event/list
+  /provider/{locationId}/project/{projectId}/development/{developmentId}/event/{eventId}:
+    get:
+      description: Get provider/development.event
+      operationId: provider_project_development_event_get
+      parameters:
+      - description: Project Id
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: Location Id
+        explode: false
+        in: path
+        name: locationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Development Id
+        explode: false
+        in: path
+        name: developmentId
+        required: true
+        schema:
+          format: ObjectId
+          type: string
+        style: simple
+      - description: eventId
+        explode: false
+        in: path
+        name: eventId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/event'
+          description: successful operation
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_400'
+          description: Bad Request
+        "401":
+          description: Access token is missing or invalid
+      summary: Get provider/development.event
+      tags:
+      - provider_project_development
+      x-permissions:
+      - provider/development.event/get
   /insight/{locationId}/project/{projectId}/journal:
     get:
       description: List journal
@@ -38210,6 +41275,16 @@ components:
         format: ObjectId
         type: string
       style: simple
+    developmentId:
+      description: Development Id
+      explode: false
+      in: path
+      name: developmentId
+      required: true
+      schema:
+        format: ObjectId
+        type: string
+      style: simple
     journalId:
       description: Journal Id
       explode: false
@@ -40312,6 +43387,331 @@ components:
           x-permissions:
           - database/instance.tag/list
       type: object
+    development.credential:
+      example:
+        createdBy: createdBy
+        name: name
+        fingerprint: fingerprint
+        id: id
+        type: type
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        value: value
+        token: token
+      format: credential
+      properties:
+        id:
+          readOnly: true
+          title: Credential id
+          type: string
+        name:
+          title: Credential name
+          type: string
+        createdBy:
+          readOnly: true
+          title: Credential createdBy
+          type: string
+        createdOn:
+          format: date-time
+          readOnly: true
+          title: Credential createdOn
+          type: string
+        type:
+          title: Credential type
+          type: string
+        value:
+          title: Credential value
+          type: string
+          writeOnly: true
+        fingerprint:
+          readOnly: true
+          title: Credential fingerprint
+          type: string
+        token:
+          title: Credential token
+          type: string
+      required:
+      - name
+      - type
+      - value
+      type: object
+    provider.snapshot:
+      example:
+        name: name
+        id: id
+        used: 0.8008281904610115
+        creation: 2000-01-23T04:56:07.000+00:00
+      properties:
+        id:
+          readOnly: true
+          title: Snapshot id
+          type: string
+        name:
+          pattern: ^[\w-]+$
+          title: Snapshot name
+          type: string
+        creation:
+          format: date-time
+          readOnly: true
+          title: Snapshot creation
+          type: string
+        used:
+          readOnly: true
+          title: Snapshot used
+          type: number
+      required:
+      - name
+      type: object
+    provider.env:
+      example:
+        name: name
+        id: id
+        value: value
+      properties:
+        id:
+          readOnly: true
+          title: Env id
+          type: string
+        name:
+          title: Env name
+          type: string
+        value:
+          title: Env value
+          type: string
+      required:
+      - name
+      - value
+      type: object
+    provider.link:
+      example:
+        actor: https://openapi-generator.tech
+        purpose: logs
+        resource: https://openapi-generator.tech
+        id: id
+      properties:
+        id:
+          readOnly: true
+          title: Link id
+          type: string
+        actor:
+          format: uri
+          title: Link actor
+          type: string
+          x-resource:
+            kind: iam/sa
+            state:
+            - Online
+          x-permissions:
+          - iam/sa/use
+        purpose:
+          enum:
+          - logs
+          title: Link purpose
+          type: string
+        resource:
+          format: uri
+          title: Link resource
+          type: string
+          x-resource:
+            kind: insight/journal
+            state:
+            - Online
+          x-permissions:
+          - insight/journal/use
+      required:
+      - actor
+      - purpose
+      - resource
+      type: object
+    provider.sideapp:
+      example:
+        name: name
+        id: id
+      properties:
+        id:
+          readOnly: true
+          title: Sideapp id
+          type: string
+        name:
+          title: Sideapp name
+          type: string
+      required:
+      - name
+      type: object
+    domain:
+      example:
+        id: id
+        value: value
+      properties:
+        id:
+          readOnly: true
+          title: Domain id
+          type: string
+        value:
+          title: Domain value
+          type: string
+      required:
+      - value
+      type: object
+    provider.log:
+      example:
+        name: name
+        id: id
+        type: type
+      properties:
+        id:
+          title: Log id
+          type: string
+        name:
+          title: Log name
+          type: string
+        type:
+          title: Log type
+          type: string
+      required:
+      - id
+      - name
+      - type
+      type: object
+    provider_project_development_create:
+      format: create development
+      properties:
+        name:
+          title: Development name
+          type: string
+        service:
+          format: uri
+          title: Development service
+          type: string
+          x-resource:
+            kind: billing/service
+            filter:
+              kind: provider/development
+              type: flavour
+        env:
+          items:
+            $ref: '#/components/schemas/provider.env'
+          title: Env collection
+          type: array
+        tag:
+          items:
+            $ref: '#/components/schemas/tag'
+          title: Tag collection
+          type: array
+      required:
+      - name
+      - service
+      type: object
+    provider_project_development_update:
+      format: patch development
+      properties:
+        name:
+          title: Development name
+          type: string
+          x-permissions:
+          - provider/development.name/update
+      type: object
+    provider_project_development_transfer:
+      format: Action transfer
+      properties:
+        project:
+          format: uri
+          title: Development project
+          type: string
+          x-resource:
+            kind: iam/project
+            state:
+            - Active
+          x-permissions:
+          - provider/development/create
+      required:
+      - project
+      type: object
+    provider_project_development_snapshot_download:
+      properties:
+        incremental:
+          pattern: ^[\w-]+$
+          title: Snapshot incremental
+          type: string
+      type: object
+    provider_project_development_credential_patch:
+      properties:
+        name:
+          title: Credential name
+          type: string
+          x-permissions:
+          - provider/development.credential.name/update
+      required:
+      - name
+      type: object
+    development:
+      example:
+        modifiedOn: 2000-01-23T04:56:07.000+00:00
+        flavour: flavour
+        createdBy: https://openapi-generator.tech
+        fqdn: fqdn
+        name: name
+        project: https://openapi-generator.tech
+        modifiedBy: https://openapi-generator.tech
+        id: id
+        state: Online
+        tag:
+        - id: id
+          value: value
+          key: key
+        - id: id
+          value: value
+          key: key
+        createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: https://openapi-generator.tech
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        flavour:
+          type: string
+        modifiedOn:
+          format: date-time
+          type: string
+        modifiedBy:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/user
+        createdOn:
+          format: date-time
+          type: string
+        createdBy:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/user
+        state:
+          enum:
+          - Online
+          - Unknown
+          - Processing
+          - NotCreated
+          type: string
+        project:
+          format: uri
+          type: string
+          x-resource:
+            kind: iam/project
+        uri:
+          format: uri
+          type: string
+          x-resource:
+            kind: provider/development
+        fqdn:
+          type: string
+        tag:
+          items:
+            $ref: '#/components/schemas/tag'
+          type: array
+          x-permissions:
+          - provider/development.tag/list
+      type: object
     journal.credential:
       example:
         createdBy: createdBy
@@ -40721,21 +44121,6 @@ components:
       required:
       - name
       - type
-      - value
-      type: object
-    domain:
-      example:
-        id: id
-        value: value
-      properties:
-        id:
-          readOnly: true
-          title: Domain id
-          type: string
-        value:
-          title: Domain value
-          type: string
-      required:
       - value
       type: object
     container_project_registry_create:
@@ -45264,6 +48649,59 @@ components:
             database/instance.event/get: ""
             database/instance/read: ""
             database/instance/use: ""
+            iam/sa/use: ""
+            insight/journal/use: ""
+            provider/development/create: ""
+            provider/development/list: ""
+            provider/development/get: ""
+            provider/development.name/update: ""
+            provider/development/delete: ""
+            provider/development/start: ""
+            provider/development/stop: ""
+            provider/development/restart: ""
+            provider/development/transfer: ""
+            provider/development.snapshot/list: ""
+            provider/development.snapshot/create: ""
+            provider/development.snapshot/delete: ""
+            provider/development.snapshot/get: ""
+            provider/development.snapshot/read: ""
+            provider/development.env/list: ""
+            provider/development.env/create: ""
+            provider/development.env/get: ""
+            provider/development.env/delete: ""
+            provider/development.link/list: ""
+            provider/development.link/create: ""
+            provider/development.link/get: ""
+            provider/development.link/delete: ""
+            provider/development.sideapp/list: ""
+            provider/development.sideapp/get: ""
+            provider/development.sideapp/open: ""
+            provider/development.credential/list: ""
+            provider/development.credential/create: ""
+            provider/development.credential/get: ""
+            provider/development.credential.name/update: ""
+            provider/development.credential/delete: ""
+            provider/development.connect/list: ""
+            provider/development.connect/get: ""
+            provider/development.domain/list: ""
+            provider/development.domain/create: ""
+            provider/development.domain/get: ""
+            provider/development.domain/delete: ""
+            provider/development.metric/list: ""
+            provider/development.metric/get: ""
+            provider/development.point/list: ""
+            provider/development.log/list: ""
+            provider/development.log/get: ""
+            database/instance.log/read: ""
+            provider/development.service/list: ""
+            provider/development.service/get: ""
+            provider/development.tag/list: ""
+            provider/development.tag/create: ""
+            provider/development.tag/delete: ""
+            provider/development.tag/get: ""
+            provider/development.event/list: ""
+            provider/development.event/get: ""
+            provider/development/use: ""
             insight/journal/create: ""
             insight/journal/list: ""
             insight/journal/get: ""
@@ -45332,8 +48770,6 @@ components:
             container/registry.event/get: ""
             container/registry.repository/create: push image
             container/registry.repository/read: pull image
-            iam/sa/use: ""
-            insight/journal/use: ""
             website/instance/create: ""
             website/instance/list: ""
             website/instance/get: ""
@@ -45377,7 +48813,6 @@ components:
             website/instance.point/list: ""
             website/instance.log/list: ""
             website/instance.log/get: ""
-            database/instance.log/read: ""
             website/instance.service/list: ""
             website/instance.service/get: ""
             website/instance.tag/list: ""
@@ -45731,6 +49166,7 @@ x-tagGroups:
 - name: provider
   tags:
   - provider_project_agent
+  - provider_project_development
 - name: recovery
   tags:
   - recovery_project_backup
