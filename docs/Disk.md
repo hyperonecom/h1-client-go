@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **Uri** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **float32** |  | [optional] 
 **Vm** | Pointer to **string** |  | [optional] 
-**Persistent** | Pointer to **bool** |  | [optional] 
-**Metadata** | Pointer to [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
+**Replica** | Pointer to **string** |  | [optional] 
+**Image** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -339,55 +339,55 @@ SetVm sets Vm field to given value.
 
 HasVm returns a boolean if a field has been set.
 
-### GetPersistent
+### GetReplica
 
-`func (o *Disk) GetPersistent() bool`
+`func (o *Disk) GetReplica() string`
 
-GetPersistent returns the Persistent field if non-nil, zero value otherwise.
+GetReplica returns the Replica field if non-nil, zero value otherwise.
 
-### GetPersistentOk
+### GetReplicaOk
 
-`func (o *Disk) GetPersistentOk() (*bool, bool)`
+`func (o *Disk) GetReplicaOk() (*string, bool)`
 
-GetPersistentOk returns a tuple with the Persistent field if it's non-nil, zero value otherwise
+GetReplicaOk returns a tuple with the Replica field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPersistent
+### SetReplica
 
-`func (o *Disk) SetPersistent(v bool)`
+`func (o *Disk) SetReplica(v string)`
 
-SetPersistent sets Persistent field to given value.
+SetReplica sets Replica field to given value.
 
-### HasPersistent
+### HasReplica
 
-`func (o *Disk) HasPersistent() bool`
+`func (o *Disk) HasReplica() bool`
 
-HasPersistent returns a boolean if a field has been set.
+HasReplica returns a boolean if a field has been set.
 
-### GetMetadata
+### GetImage
 
-`func (o *Disk) GetMetadata() DiskMetadata`
+`func (o *Disk) GetImage() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetImage returns the Image field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetImageOk
 
-`func (o *Disk) GetMetadataOk() (*DiskMetadata, bool)`
+`func (o *Disk) GetImageOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetImage
 
-`func (o *Disk) SetMetadata(v DiskMetadata)`
+`func (o *Disk) SetImage(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetImage sets Image field to given value.
 
-### HasMetadata
+### HasImage
 
-`func (o *Disk) HasMetadata() bool`
+`func (o *Disk) HasImage() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasImage returns a boolean if a field has been set.
 
 ### GetTag
 

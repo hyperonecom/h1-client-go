@@ -28,8 +28,7 @@ type Image struct {
 	Project *string `json:"project,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 	Description *string `json:"description,omitempty"`
-	Disks *float32 `json:"disks,omitempty"`
-	FileSize *float32 `json:"fileSize,omitempty"`
+	Size *float32 `json:"size,omitempty"`
 	License []string `json:"license,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
@@ -403,68 +402,36 @@ func (o *Image) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDisks returns the Disks field value if set, zero value otherwise.
-func (o *Image) GetDisks() float32 {
-	if o == nil || o.Disks == nil {
+// GetSize returns the Size field value if set, zero value otherwise.
+func (o *Image) GetSize() float32 {
+	if o == nil || o.Size == nil {
 		var ret float32
 		return ret
 	}
-	return *o.Disks
+	return *o.Size
 }
 
-// GetDisksOk returns a tuple with the Disks field value if set, nil otherwise
+// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Image) GetDisksOk() (*float32, bool) {
-	if o == nil || o.Disks == nil {
+func (o *Image) GetSizeOk() (*float32, bool) {
+	if o == nil || o.Size == nil {
 		return nil, false
 	}
-	return o.Disks, true
+	return o.Size, true
 }
 
-// HasDisks returns a boolean if a field has been set.
-func (o *Image) HasDisks() bool {
-	if o != nil && o.Disks != nil {
+// HasSize returns a boolean if a field has been set.
+func (o *Image) HasSize() bool {
+	if o != nil && o.Size != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDisks gets a reference to the given float32 and assigns it to the Disks field.
-func (o *Image) SetDisks(v float32) {
-	o.Disks = &v
-}
-
-// GetFileSize returns the FileSize field value if set, zero value otherwise.
-func (o *Image) GetFileSize() float32 {
-	if o == nil || o.FileSize == nil {
-		var ret float32
-		return ret
-	}
-	return *o.FileSize
-}
-
-// GetFileSizeOk returns a tuple with the FileSize field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Image) GetFileSizeOk() (*float32, bool) {
-	if o == nil || o.FileSize == nil {
-		return nil, false
-	}
-	return o.FileSize, true
-}
-
-// HasFileSize returns a boolean if a field has been set.
-func (o *Image) HasFileSize() bool {
-	if o != nil && o.FileSize != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFileSize gets a reference to the given float32 and assigns it to the FileSize field.
-func (o *Image) SetFileSize(v float32) {
-	o.FileSize = &v
+// SetSize gets a reference to the given float32 and assigns it to the Size field.
+func (o *Image) SetSize(v float32) {
+	o.Size = &v
 }
 
 // GetLicense returns the License field value if set, zero value otherwise.
@@ -566,11 +533,8 @@ func (o Image) MarshalJSON() ([]byte, error) {
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	if o.Disks != nil {
-		toSerialize["disks"] = o.Disks
-	}
-	if o.FileSize != nil {
-		toSerialize["fileSize"] = o.FileSize
+	if o.Size != nil {
+		toSerialize["size"] = o.Size
 	}
 	if o.License != nil {
 		toSerialize["license"] = o.License

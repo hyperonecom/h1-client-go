@@ -1,0 +1,176 @@
+# InlineResponse20011
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Properties** | Pointer to [**WebsiteLocationIdProjectProjectIdInstanceInstanceIdCredentialProperties**](WebsiteLocationIdProjectProjectIdInstanceInstanceIdCredentialProperties.md) |  | [optional] 
+**Profile** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Name** | **string** |  | 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**Uri** | Pointer to **string** |  | [optional] [readonly] 
+
+## Methods
+
+### NewInlineResponse20011
+
+`func NewInlineResponse20011(profile string, name string, ) *InlineResponse20011`
+
+NewInlineResponse20011 instantiates a new InlineResponse20011 object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewInlineResponse20011WithDefaults
+
+`func NewInlineResponse20011WithDefaults() *InlineResponse20011`
+
+NewInlineResponse20011WithDefaults instantiates a new InlineResponse20011 object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetProperties
+
+`func (o *InlineResponse20011) GetProperties() WebsiteLocationIdProjectProjectIdInstanceInstanceIdCredentialProperties`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *InlineResponse20011) GetPropertiesOk() (*WebsiteLocationIdProjectProjectIdInstanceInstanceIdCredentialProperties, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *InlineResponse20011) SetProperties(v WebsiteLocationIdProjectProjectIdInstanceInstanceIdCredentialProperties)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *InlineResponse20011) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
+
+### GetProfile
+
+`func (o *InlineResponse20011) GetProfile() string`
+
+GetProfile returns the Profile field if non-nil, zero value otherwise.
+
+### GetProfileOk
+
+`func (o *InlineResponse20011) GetProfileOk() (*string, bool)`
+
+GetProfileOk returns a tuple with the Profile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfile
+
+`func (o *InlineResponse20011) SetProfile(v string)`
+
+SetProfile sets Profile field to given value.
+
+
+### GetId
+
+`func (o *InlineResponse20011) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *InlineResponse20011) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *InlineResponse20011) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *InlineResponse20011) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *InlineResponse20011) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *InlineResponse20011) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *InlineResponse20011) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetCreatedOn
+
+`func (o *InlineResponse20011) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *InlineResponse20011) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *InlineResponse20011) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *InlineResponse20011) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *InlineResponse20011) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *InlineResponse20011) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *InlineResponse20011) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *InlineResponse20011) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

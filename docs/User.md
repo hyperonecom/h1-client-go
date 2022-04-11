@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Lang** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
 **Limit** | Pointer to [**UserLimit**](UserLimit.md) |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetLimit sets Limit field to given value.
 `func (o *User) HasLimit() bool`
 
 HasLimit returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *User) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *User) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *User) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *User) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetUri
 

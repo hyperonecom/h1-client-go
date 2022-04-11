@@ -24,15 +24,17 @@ type Invoice struct {
 	InvoiceNo *string `json:"invoiceNo,omitempty"`
 	IssueDate *time.Time `json:"issueDate,omitempty"`
 	Payments []string `json:"payments,omitempty"`
+	Channel *string `json:"channel,omitempty"`
+	Nip *string `json:"nip,omitempty"`
+	Company *string `json:"company,omitempty"`
 	Seller *InvoiceSeller `json:"seller,omitempty"`
 	Items []InvoiceItems `json:"items,omitempty"`
 	Buyer *InvoiceBuyer `json:"buyer,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Summary *string `json:"summary,omitempty"`
 	Project *string `json:"project,omitempty"`
-	Duplicate *InvoiceDuplicate `json:"duplicate,omitempty"`
+	Organisation *string `json:"organisation,omitempty"`
 	Uri *string `json:"uri,omitempty"`
-	Array *string `json:"__array__,omitempty"`
 }
 
 // NewInvoice instantiates a new Invoice object
@@ -276,6 +278,102 @@ func (o *Invoice) SetPayments(v []string) {
 	o.Payments = v
 }
 
+// GetChannel returns the Channel field value if set, zero value otherwise.
+func (o *Invoice) GetChannel() string {
+	if o == nil || o.Channel == nil {
+		var ret string
+		return ret
+	}
+	return *o.Channel
+}
+
+// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetChannelOk() (*string, bool) {
+	if o == nil || o.Channel == nil {
+		return nil, false
+	}
+	return o.Channel, true
+}
+
+// HasChannel returns a boolean if a field has been set.
+func (o *Invoice) HasChannel() bool {
+	if o != nil && o.Channel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetChannel gets a reference to the given string and assigns it to the Channel field.
+func (o *Invoice) SetChannel(v string) {
+	o.Channel = &v
+}
+
+// GetNip returns the Nip field value if set, zero value otherwise.
+func (o *Invoice) GetNip() string {
+	if o == nil || o.Nip == nil {
+		var ret string
+		return ret
+	}
+	return *o.Nip
+}
+
+// GetNipOk returns a tuple with the Nip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetNipOk() (*string, bool) {
+	if o == nil || o.Nip == nil {
+		return nil, false
+	}
+	return o.Nip, true
+}
+
+// HasNip returns a boolean if a field has been set.
+func (o *Invoice) HasNip() bool {
+	if o != nil && o.Nip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNip gets a reference to the given string and assigns it to the Nip field.
+func (o *Invoice) SetNip(v string) {
+	o.Nip = &v
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *Invoice) GetCompany() string {
+	if o == nil || o.Company == nil {
+		var ret string
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetCompanyOk() (*string, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *Invoice) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given string and assigns it to the Company field.
+func (o *Invoice) SetCompany(v string) {
+	o.Company = &v
+}
+
 // GetSeller returns the Seller field value if set, zero value otherwise.
 func (o *Invoice) GetSeller() InvoiceSeller {
 	if o == nil || o.Seller == nil {
@@ -468,36 +566,36 @@ func (o *Invoice) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetDuplicate returns the Duplicate field value if set, zero value otherwise.
-func (o *Invoice) GetDuplicate() InvoiceDuplicate {
-	if o == nil || o.Duplicate == nil {
-		var ret InvoiceDuplicate
+// GetOrganisation returns the Organisation field value if set, zero value otherwise.
+func (o *Invoice) GetOrganisation() string {
+	if o == nil || o.Organisation == nil {
+		var ret string
 		return ret
 	}
-	return *o.Duplicate
+	return *o.Organisation
 }
 
-// GetDuplicateOk returns a tuple with the Duplicate field value if set, nil otherwise
+// GetOrganisationOk returns a tuple with the Organisation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetDuplicateOk() (*InvoiceDuplicate, bool) {
-	if o == nil || o.Duplicate == nil {
+func (o *Invoice) GetOrganisationOk() (*string, bool) {
+	if o == nil || o.Organisation == nil {
 		return nil, false
 	}
-	return o.Duplicate, true
+	return o.Organisation, true
 }
 
-// HasDuplicate returns a boolean if a field has been set.
-func (o *Invoice) HasDuplicate() bool {
-	if o != nil && o.Duplicate != nil {
+// HasOrganisation returns a boolean if a field has been set.
+func (o *Invoice) HasOrganisation() bool {
+	if o != nil && o.Organisation != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDuplicate gets a reference to the given InvoiceDuplicate and assigns it to the Duplicate field.
-func (o *Invoice) SetDuplicate(v InvoiceDuplicate) {
-	o.Duplicate = &v
+// SetOrganisation gets a reference to the given string and assigns it to the Organisation field.
+func (o *Invoice) SetOrganisation(v string) {
+	o.Organisation = &v
 }
 
 // GetUri returns the Uri field value if set, zero value otherwise.
@@ -532,38 +630,6 @@ func (o *Invoice) SetUri(v string) {
 	o.Uri = &v
 }
 
-// GetArray returns the Array field value if set, zero value otherwise.
-func (o *Invoice) GetArray() string {
-	if o == nil || o.Array == nil {
-		var ret string
-		return ret
-	}
-	return *o.Array
-}
-
-// GetArrayOk returns a tuple with the Array field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetArrayOk() (*string, bool) {
-	if o == nil || o.Array == nil {
-		return nil, false
-	}
-	return o.Array, true
-}
-
-// HasArray returns a boolean if a field has been set.
-func (o *Invoice) HasArray() bool {
-	if o != nil && o.Array != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetArray gets a reference to the given string and assigns it to the Array field.
-func (o *Invoice) SetArray(v string) {
-	o.Array = &v
-}
-
 func (o Invoice) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -587,6 +653,15 @@ func (o Invoice) MarshalJSON() ([]byte, error) {
 	if o.Payments != nil {
 		toSerialize["payments"] = o.Payments
 	}
+	if o.Channel != nil {
+		toSerialize["channel"] = o.Channel
+	}
+	if o.Nip != nil {
+		toSerialize["nip"] = o.Nip
+	}
+	if o.Company != nil {
+		toSerialize["company"] = o.Company
+	}
 	if o.Seller != nil {
 		toSerialize["seller"] = o.Seller
 	}
@@ -605,14 +680,11 @@ func (o Invoice) MarshalJSON() ([]byte, error) {
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
 	}
-	if o.Duplicate != nil {
-		toSerialize["duplicate"] = o.Duplicate
+	if o.Organisation != nil {
+		toSerialize["organisation"] = o.Organisation
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri
-	}
-	if o.Array != nil {
-		toSerialize["__array__"] = o.Array
 	}
 	return json.Marshal(toSerialize)
 }

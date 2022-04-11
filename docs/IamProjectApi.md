@@ -5,6 +5,8 @@ All URIs are relative to *https://api.hyperone.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**IamProjectBillingList**](IamProjectApi.md#IamProjectBillingList) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
+[**IamProjectCostGet**](IamProjectApi.md#IamProjectCostGet) | **Get** /iam/project/{projectId}/cost/{costId} | Get iam/project.cost
+[**IamProjectCostList**](IamProjectApi.md#IamProjectCostList) | **Get** /iam/project/{projectId}/cost | List iam/project.cost
 [**IamProjectCreate**](IamProjectApi.md#IamProjectCreate) | **Post** /iam/project | Create iam/project
 [**IamProjectCredentialStoreCreate**](IamProjectApi.md#IamProjectCredentialStoreCreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
 [**IamProjectCredentialStoreDelete**](IamProjectApi.md#IamProjectCredentialStoreDelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Delete iam/project.credentialStore
@@ -43,6 +45,8 @@ Method | HTTP request | Description
 [**IamProjectThresholdList**](IamProjectApi.md#IamProjectThresholdList) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
 [**IamProjectTransfer**](IamProjectApi.md#IamProjectTransfer) | **Post** /iam/project/{projectId}/actions/transfer | Transfer iam/project
 [**IamProjectUpdate**](IamProjectApi.md#IamProjectUpdate) | **Patch** /iam/project/{projectId} | Update iam/project
+[**IamProjectUsageGet**](IamProjectApi.md#IamProjectUsageGet) | **Get** /iam/project/{projectId}/usage/{usageId} | Get iam/project.usage
+[**IamProjectUsageList**](IamProjectApi.md#IamProjectUsageList) | **Get** /iam/project/{projectId}/usage | List iam/project.usage
 
 
 
@@ -108,6 +112,149 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Billing**](Billing.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectCostGet
+
+> Metric IamProjectCostGet(ctx, projectId, costId).Execute()
+
+Get iam/project.cost
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    costId := "costId_example" // string | costId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCostGet(context.Background(), projectId, costId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCostGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectCostGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectCostGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**costId** | **string** | costId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectCostGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectCostList
+
+> []Metric IamProjectCostList(ctx, projectId).Execute()
+
+List iam/project.cost
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCostList(context.Background(), projectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCostList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectCostList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectCostList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectCostListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]Metric**](Metric.md)
 
 ### Authorization
 
@@ -2852,6 +2999,149 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectUsageGet
+
+> Metric IamProjectUsageGet(ctx, projectId, usageId).Execute()
+
+Get iam/project.usage
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    usageId := "usageId_example" // string | usageId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectUsageGet(context.Background(), projectId, usageId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectUsageGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectUsageGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectUsageGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**usageId** | **string** | usageId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectUsageGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectUsageList
+
+> []Metric IamProjectUsageList(ctx, projectId).Execute()
+
+List iam/project.usage
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectUsageList(context.Background(), projectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectUsageList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectUsageList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectUsageList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectUsageListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

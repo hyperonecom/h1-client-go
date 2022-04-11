@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
-**Rrsets** | Pointer to [**[]ZoneRrsets**](ZoneRrsets.md) |  | [optional] 
 **DnsName** | Pointer to **string** |  | [optional] 
 **Nameserver** | Pointer to **[]string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
@@ -288,31 +287,6 @@ SetUri sets Uri field to given value.
 `func (o *Zone) HasUri() bool`
 
 HasUri returns a boolean if a field has been set.
-
-### GetRrsets
-
-`func (o *Zone) GetRrsets() []ZoneRrsets`
-
-GetRrsets returns the Rrsets field if non-nil, zero value otherwise.
-
-### GetRrsetsOk
-
-`func (o *Zone) GetRrsetsOk() (*[]ZoneRrsets, bool)`
-
-GetRrsetsOk returns a tuple with the Rrsets field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRrsets
-
-`func (o *Zone) SetRrsets(v []ZoneRrsets)`
-
-SetRrsets sets Rrsets field to given value.
-
-### HasRrsets
-
-`func (o *Zone) HasRrsets() bool`
-
-HasRrsets returns a boolean if a field has been set.
 
 ### GetDnsName
 

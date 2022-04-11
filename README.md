@@ -79,26 +79,11 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BillingProjectReservationApi* | [**BillingProjectReservationAssign**](docs/BillingProjectReservationApi.md#billingprojectreservationassign) | **Post** /billing/project/{projectId}/reservation/{reservationId}/actions/assign | Assign billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationCreate**](docs/BillingProjectReservationApi.md#billingprojectreservationcreate) | **Post** /billing/project/{projectId}/reservation | Create billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationDelete**](docs/BillingProjectReservationApi.md#billingprojectreservationdelete) | **Delete** /billing/project/{projectId}/reservation/{reservationId} | Delete billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationEventGet**](docs/BillingProjectReservationApi.md#billingprojectreservationeventget) | **Get** /billing/project/{projectId}/reservation/{reservationId}/event/{eventId} | Get billing/reservation.event
-*BillingProjectReservationApi* | [**BillingProjectReservationEventList**](docs/BillingProjectReservationApi.md#billingprojectreservationeventlist) | **Get** /billing/project/{projectId}/reservation/{reservationId}/event | List billing/reservation.event
-*BillingProjectReservationApi* | [**BillingProjectReservationExtend**](docs/BillingProjectReservationApi.md#billingprojectreservationextend) | **Post** /billing/project/{projectId}/reservation/{reservationId}/actions/extend | Extend billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationGet**](docs/BillingProjectReservationApi.md#billingprojectreservationget) | **Get** /billing/project/{projectId}/reservation/{reservationId} | Get billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationList**](docs/BillingProjectReservationApi.md#billingprojectreservationlist) | **Get** /billing/project/{projectId}/reservation | List billing/reservation
-*BillingProjectReservationApi* | [**BillingProjectReservationServiceGet**](docs/BillingProjectReservationApi.md#billingprojectreservationserviceget) | **Get** /billing/project/{projectId}/reservation/{reservationId}/service/{serviceId} | Get billing/reservation.service
-*BillingProjectReservationApi* | [**BillingProjectReservationServiceList**](docs/BillingProjectReservationApi.md#billingprojectreservationservicelist) | **Get** /billing/project/{projectId}/reservation/{reservationId}/service | List billing/reservation.service
-*BillingProjectReservationApi* | [**BillingProjectReservationTagCreate**](docs/BillingProjectReservationApi.md#billingprojectreservationtagcreate) | **Post** /billing/project/{projectId}/reservation/{reservationId}/tag | Create billing/reservation.tag
-*BillingProjectReservationApi* | [**BillingProjectReservationTagDelete**](docs/BillingProjectReservationApi.md#billingprojectreservationtagdelete) | **Delete** /billing/project/{projectId}/reservation/{reservationId}/tag/{tagId} | Delete billing/reservation.tag
-*BillingProjectReservationApi* | [**BillingProjectReservationTagGet**](docs/BillingProjectReservationApi.md#billingprojectreservationtagget) | **Get** /billing/project/{projectId}/reservation/{reservationId}/tag/{tagId} | Get billing/reservation.tag
-*BillingProjectReservationApi* | [**BillingProjectReservationTagList**](docs/BillingProjectReservationApi.md#billingprojectreservationtaglist) | **Get** /billing/project/{projectId}/reservation/{reservationId}/tag | List billing/reservation.tag
-*BillingProjectReservationApi* | [**BillingProjectReservationTagPut**](docs/BillingProjectReservationApi.md#billingprojectreservationtagput) | **Put** /billing/project/{projectId}/reservation/{reservationId}/tag | Replace billing/reservation.tag
-*BillingProjectReservationApi* | [**BillingProjectReservationUpdate**](docs/BillingProjectReservationApi.md#billingprojectreservationupdate) | **Patch** /billing/project/{projectId}/reservation/{reservationId} | Update billing/reservation
 *BillingProjectServiceApi* | [**BillingProjectServiceGet**](docs/BillingProjectServiceApi.md#billingprojectserviceget) | **Get** /billing/project/{projectId}/service/{serviceId} | Get billing/service
 *BillingProjectServiceApi* | [**BillingProjectServiceList**](docs/BillingProjectServiceApi.md#billingprojectservicelist) | **Get** /billing/project/{projectId}/service | List billing/service
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaCreate**](docs/ComputeProjectReplicaApi.md#computeprojectreplicacreate) | **Post** /compute/{locationId}/project/{projectId}/replica | Create compute/replica
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaDelete**](docs/ComputeProjectReplicaApi.md#computeprojectreplicadelete) | **Delete** /compute/{locationId}/project/{projectId}/replica/{replicaId} | Delete compute/replica
+*ComputeProjectReplicaApi* | [**ComputeProjectReplicaDiskList**](docs/ComputeProjectReplicaApi.md#computeprojectreplicadisklist) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/disk | List compute/replica.disk
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaEventGet**](docs/ComputeProjectReplicaApi.md#computeprojectreplicaeventget) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/event/{eventId} | Get compute/replica.event
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaEventList**](docs/ComputeProjectReplicaApi.md#computeprojectreplicaeventlist) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/event | List compute/replica.event
 *ComputeProjectReplicaApi* | [**ComputeProjectReplicaGet**](docs/ComputeProjectReplicaApi.md#computeprojectreplicaget) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId} | Get compute/replica
@@ -124,9 +109,6 @@ Class | Method | HTTP request | Description
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoCreate**](docs/ComputeProjectVmApi.md#computeprojectvmisocreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | Create compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmIsoList**](docs/ComputeProjectVmApi.md#computeprojectvmisolist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | List compute/vm.iso
 *ComputeProjectVmApi* | [**ComputeProjectVmList**](docs/ComputeProjectVmApi.md#computeprojectvmlist) | **Get** /compute/{locationId}/project/{projectId}/vm | List compute/vm
-*ComputeProjectVmApi* | [**ComputeProjectVmMetricGet**](docs/ComputeProjectVmApi.md#computeprojectvmmetricget) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId} | Get compute/vm.metric
-*ComputeProjectVmApi* | [**ComputeProjectVmMetricList**](docs/ComputeProjectVmApi.md#computeprojectvmmetriclist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric | List compute/vm.metric
-*ComputeProjectVmApi* | [**ComputeProjectVmMetricPointList**](docs/ComputeProjectVmApi.md#computeprojectvmmetricpointlist) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}/point | List compute/vm.point
 *ComputeProjectVmApi* | [**ComputeProjectVmPasswordReset**](docs/ComputeProjectVmApi.md#computeprojectvmpasswordreset) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/password_reset | Password reset compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmRestart**](docs/ComputeProjectVmApi.md#computeprojectvmrestart) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/restart | Restart compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmSerialport**](docs/ComputeProjectVmApi.md#computeprojectvmserialport) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport | Serialport compute/vm
@@ -141,64 +123,6 @@ Class | Method | HTTP request | Description
 *ComputeProjectVmApi* | [**ComputeProjectVmTagPut**](docs/ComputeProjectVmApi.md#computeprojectvmtagput) | **Put** /compute/{locationId}/project/{projectId}/vm/{vmId}/tag | Replace compute/vm.tag
 *ComputeProjectVmApi* | [**ComputeProjectVmTurnoff**](docs/ComputeProjectVmApi.md#computeprojectvmturnoff) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/turnoff | Turnoff compute/vm
 *ComputeProjectVmApi* | [**ComputeProjectVmUpdate**](docs/ComputeProjectVmApi.md#computeprojectvmupdate) | **Patch** /compute/{locationId}/project/{projectId}/vm/{vmId} | Update compute/vm
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCreate**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycreate) | **Post** /container/{locationId}/project/{projectId}/registry | Create container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCredentialCreate**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycredentialcreate) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/credential | Create container/registry.credential
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCredentialDelete**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycredentialdelete) | **Delete** /container/{locationId}/project/{projectId}/registry/{registryId}/credential/{credentialId} | Delete container/registry.credential
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCredentialGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycredentialget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/credential/{credentialId} | Get container/registry.credential
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCredentialList**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycredentiallist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/credential | List container/registry.credential
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryCredentialPatch**](docs/ContainerProjectRegistryApi.md#containerprojectregistrycredentialpatch) | **Patch** /container/{locationId}/project/{projectId}/registry/{registryId}/credential/{credentialId} | Update container/registry.credential
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryDelete**](docs/ContainerProjectRegistryApi.md#containerprojectregistrydelete) | **Delete** /container/{locationId}/project/{projectId}/registry/{registryId} | Delete container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryDomainCreate**](docs/ContainerProjectRegistryApi.md#containerprojectregistrydomaincreate) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/domain | Create container/registry.domain
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryDomainDelete**](docs/ContainerProjectRegistryApi.md#containerprojectregistrydomaindelete) | **Delete** /container/{locationId}/project/{projectId}/registry/{registryId}/domain/{domainId} | Delete container/registry.domain
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryDomainGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistrydomainget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/domain/{domainId} | Get container/registry.domain
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryDomainList**](docs/ContainerProjectRegistryApi.md#containerprojectregistrydomainlist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/domain | List container/registry.domain
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryEventGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistryeventget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/event/{eventId} | Get container/registry.event
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryEventList**](docs/ContainerProjectRegistryApi.md#containerprojectregistryeventlist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/event | List container/registry.event
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistryget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId} | Get container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryList**](docs/ContainerProjectRegistryApi.md#containerprojectregistrylist) | **Get** /container/{locationId}/project/{projectId}/registry | List container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryRepositoryGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistryrepositoryget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/repository/{repositoryId} | Get container/registry.repository
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryRepositoryImageDelete**](docs/ContainerProjectRegistryApi.md#containerprojectregistryrepositoryimagedelete) | **Delete** /container/{locationId}/project/{projectId}/registry/{registryId}/repository/{repositoryId}/image/{imageId} | Delete container/registry.image
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryRepositoryImageGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistryrepositoryimageget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/repository/{repositoryId}/image/{imageId} | Get container/registry.image
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryRepositoryImageList**](docs/ContainerProjectRegistryApi.md#containerprojectregistryrepositoryimagelist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/repository/{repositoryId}/image | List container/registry.image
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryRepositoryList**](docs/ContainerProjectRegistryApi.md#containerprojectregistryrepositorylist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/repository | List container/registry.repository
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryServiceGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistryserviceget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/service/{serviceId} | Get container/registry.service
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryServiceList**](docs/ContainerProjectRegistryApi.md#containerprojectregistryservicelist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/service | List container/registry.service
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryStart**](docs/ContainerProjectRegistryApi.md#containerprojectregistrystart) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/actions/start | Start container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryStop**](docs/ContainerProjectRegistryApi.md#containerprojectregistrystop) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/actions/stop | Stop container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagCreate**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytagcreate) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/tag | Create container/registry.tag
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagDelete**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytagdelete) | **Delete** /container/{locationId}/project/{projectId}/registry/{registryId}/tag/{tagId} | Delete container/registry.tag
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagGet**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytagget) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/tag/{tagId} | Get container/registry.tag
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagList**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytaglist) | **Get** /container/{locationId}/project/{projectId}/registry/{registryId}/tag | List container/registry.tag
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTagPut**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytagput) | **Put** /container/{locationId}/project/{projectId}/registry/{registryId}/tag | Replace container/registry.tag
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryTransfer**](docs/ContainerProjectRegistryApi.md#containerprojectregistrytransfer) | **Post** /container/{locationId}/project/{projectId}/registry/{registryId}/actions/transfer | Transfer container/registry
-*ContainerProjectRegistryApi* | [**ContainerProjectRegistryUpdate**](docs/ContainerProjectRegistryApi.md#containerprojectregistryupdate) | **Patch** /container/{locationId}/project/{projectId}/registry/{registryId} | Update container/registry
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceConnectGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceconnectget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get database/instance.connect
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceConnectList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceconnectlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/connect | List database/instance.connect
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCreate**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecreate) | **Post** /database/{locationId}/project/{projectId}/instance | Create database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialCreate**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialcreate) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create database/instance.credential
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialDelete**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialdelete) | **Delete** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete database/instance.credential
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Get database/instance.credential
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecredentiallist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential | List database/instance.credential
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceCredentialPatch**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancecredentialpatch) | **Patch** /database/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Update database/instance.credential
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceDelete**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancedelete) | **Delete** /database/{locationId}/project/{projectId}/instance/{instanceId} | Delete database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceEventGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceeventget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/event/{eventId} | Get database/instance.event
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceEventList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceeventlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/event | List database/instance.event
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId} | Get database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancelist) | **Get** /database/{locationId}/project/{projectId}/instance | List database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancemetricget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get database/instance.metric
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancemetriclist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric | List database/instance.metric
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceMetricPointList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancemetricpointlist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List database/instance.point
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceServiceGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceserviceget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get database/instance.service
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceServiceList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceservicelist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/service | List database/instance.service
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceStart**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancestart) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceStop**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancestop) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/stop | Stop database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTagCreate**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetagcreate) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/tag | Create database/instance.tag
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTagDelete**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetagdelete) | **Delete** /database/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Delete database/instance.tag
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTagGet**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetagget) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Get database/instance.tag
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTagList**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetaglist) | **Get** /database/{locationId}/project/{projectId}/instance/{instanceId}/tag | List database/instance.tag
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTagPut**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetagput) | **Put** /database/{locationId}/project/{projectId}/instance/{instanceId}/tag | Replace database/instance.tag
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceTransfer**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstancetransfer) | **Post** /database/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer | Transfer database/instance
-*DatabaseProjectInstanceApi* | [**DatabaseProjectInstanceUpdate**](docs/DatabaseProjectInstanceApi.md#databaseprojectinstanceupdate) | **Patch** /database/{locationId}/project/{projectId}/instance/{instanceId} | Update database/instance
 *DnsProjectZoneApi* | [**DnsProjectZoneCreate**](docs/DnsProjectZoneApi.md#dnsprojectzonecreate) | **Post** /dns/{locationId}/project/{projectId}/zone | Create dns/zone
 *DnsProjectZoneApi* | [**DnsProjectZoneDelete**](docs/DnsProjectZoneApi.md#dnsprojectzonedelete) | **Delete** /dns/{locationId}/project/{projectId}/zone/{zoneId} | Delete dns/zone
 *DnsProjectZoneApi* | [**DnsProjectZoneEventGet**](docs/DnsProjectZoneApi.md#dnsprojectzoneeventget) | **Get** /dns/{locationId}/project/{projectId}/zone/{zoneId}/event/{eventId} | Get dns/zone.event
@@ -292,6 +216,8 @@ Class | Method | HTTP request | Description
 *IamOrganisationRoleApi* | [**IamOrganisationRoleTagPut**](docs/IamOrganisationRoleApi.md#iamorganisationroletagput) | **Put** /iam/organisation/{organisationId}/role/{roleId}/tag | Replace iam/role.tag
 *IamOrganisationRoleApi* | [**IamOrganisationRoleUpdate**](docs/IamOrganisationRoleApi.md#iamorganisationroleupdate) | **Patch** /iam/organisation/{organisationId}/role/{roleId} | Update iam/role
 *IamProjectApi* | [**IamProjectBillingList**](docs/IamProjectApi.md#iamprojectbillinglist) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
+*IamProjectApi* | [**IamProjectCostGet**](docs/IamProjectApi.md#iamprojectcostget) | **Get** /iam/project/{projectId}/cost/{costId} | Get iam/project.cost
+*IamProjectApi* | [**IamProjectCostList**](docs/IamProjectApi.md#iamprojectcostlist) | **Get** /iam/project/{projectId}/cost | List iam/project.cost
 *IamProjectApi* | [**IamProjectCreate**](docs/IamProjectApi.md#iamprojectcreate) | **Post** /iam/project | Create iam/project
 *IamProjectApi* | [**IamProjectCredentialStoreCreate**](docs/IamProjectApi.md#iamprojectcredentialstorecreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
 *IamProjectApi* | [**IamProjectCredentialStoreDelete**](docs/IamProjectApi.md#iamprojectcredentialstoredelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Delete iam/project.credentialStore
@@ -330,6 +256,50 @@ Class | Method | HTTP request | Description
 *IamProjectApi* | [**IamProjectThresholdList**](docs/IamProjectApi.md#iamprojectthresholdlist) | **Get** /iam/project/{projectId}/threshold | List iam/project.threshold
 *IamProjectApi* | [**IamProjectTransfer**](docs/IamProjectApi.md#iamprojecttransfer) | **Post** /iam/project/{projectId}/actions/transfer | Transfer iam/project
 *IamProjectApi* | [**IamProjectUpdate**](docs/IamProjectApi.md#iamprojectupdate) | **Patch** /iam/project/{projectId} | Update iam/project
+*IamProjectApi* | [**IamProjectUsageGet**](docs/IamProjectApi.md#iamprojectusageget) | **Get** /iam/project/{projectId}/usage/{usageId} | Get iam/project.usage
+*IamProjectApi* | [**IamProjectUsageList**](docs/IamProjectApi.md#iamprojectusagelist) | **Get** /iam/project/{projectId}/usage | List iam/project.usage
+*IamProjectApplicationApi* | [**IamProjectApplicationCreate**](docs/IamProjectApplicationApi.md#iamprojectapplicationcreate) | **Post** /iam/project/{projectId}/application | Create iam/application
+*IamProjectApplicationApi* | [**IamProjectApplicationCredentialCreate**](docs/IamProjectApplicationApi.md#iamprojectapplicationcredentialcreate) | **Post** /iam/project/{projectId}/application/{applicationId}/credential | Create iam/application.credential
+*IamProjectApplicationApi* | [**IamProjectApplicationCredentialDelete**](docs/IamProjectApplicationApi.md#iamprojectapplicationcredentialdelete) | **Delete** /iam/project/{projectId}/application/{applicationId}/credential/{credentialId} | Delete iam/application.credential
+*IamProjectApplicationApi* | [**IamProjectApplicationCredentialGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationcredentialget) | **Get** /iam/project/{projectId}/application/{applicationId}/credential/{credentialId} | Get iam/application.credential
+*IamProjectApplicationApi* | [**IamProjectApplicationCredentialList**](docs/IamProjectApplicationApi.md#iamprojectapplicationcredentiallist) | **Get** /iam/project/{projectId}/application/{applicationId}/credential | List iam/application.credential
+*IamProjectApplicationApi* | [**IamProjectApplicationCredentialPatch**](docs/IamProjectApplicationApi.md#iamprojectapplicationcredentialpatch) | **Patch** /iam/project/{projectId}/application/{applicationId}/credential/{credentialId} | Update iam/application.credential
+*IamProjectApplicationApi* | [**IamProjectApplicationDelete**](docs/IamProjectApplicationApi.md#iamprojectapplicationdelete) | **Delete** /iam/project/{projectId}/application/{applicationId} | Delete iam/application
+*IamProjectApplicationApi* | [**IamProjectApplicationEventGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationeventget) | **Get** /iam/project/{projectId}/application/{applicationId}/event/{eventId} | Get iam/application.event
+*IamProjectApplicationApi* | [**IamProjectApplicationEventList**](docs/IamProjectApplicationApi.md#iamprojectapplicationeventlist) | **Get** /iam/project/{projectId}/application/{applicationId}/event | List iam/application.event
+*IamProjectApplicationApi* | [**IamProjectApplicationGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationget) | **Get** /iam/project/{projectId}/application/{applicationId} | Get iam/application
+*IamProjectApplicationApi* | [**IamProjectApplicationList**](docs/IamProjectApplicationApi.md#iamprojectapplicationlist) | **Get** /iam/project/{projectId}/application | List iam/application
+*IamProjectApplicationApi* | [**IamProjectApplicationRedirectCreate**](docs/IamProjectApplicationApi.md#iamprojectapplicationredirectcreate) | **Post** /iam/project/{projectId}/application/{applicationId}/redirect | Create iam/application.redirect
+*IamProjectApplicationApi* | [**IamProjectApplicationRedirectDelete**](docs/IamProjectApplicationApi.md#iamprojectapplicationredirectdelete) | **Delete** /iam/project/{projectId}/application/{applicationId}/redirect/{redirectId} | Delete iam/application.redirect
+*IamProjectApplicationApi* | [**IamProjectApplicationRedirectGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationredirectget) | **Get** /iam/project/{projectId}/application/{applicationId}/redirect/{redirectId} | Get iam/application.redirect
+*IamProjectApplicationApi* | [**IamProjectApplicationRedirectList**](docs/IamProjectApplicationApi.md#iamprojectapplicationredirectlist) | **Get** /iam/project/{projectId}/application/{applicationId}/redirect | List iam/application.redirect
+*IamProjectApplicationApi* | [**IamProjectApplicationRedirectPatch**](docs/IamProjectApplicationApi.md#iamprojectapplicationredirectpatch) | **Patch** /iam/project/{projectId}/application/{applicationId}/redirect/{redirectId} | Update iam/application.redirect
+*IamProjectApplicationApi* | [**IamProjectApplicationServiceGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationserviceget) | **Get** /iam/project/{projectId}/application/{applicationId}/service/{serviceId} | Get iam/application.service
+*IamProjectApplicationApi* | [**IamProjectApplicationServiceList**](docs/IamProjectApplicationApi.md#iamprojectapplicationservicelist) | **Get** /iam/project/{projectId}/application/{applicationId}/service | List iam/application.service
+*IamProjectApplicationApi* | [**IamProjectApplicationTagCreate**](docs/IamProjectApplicationApi.md#iamprojectapplicationtagcreate) | **Post** /iam/project/{projectId}/application/{applicationId}/tag | Create iam/application.tag
+*IamProjectApplicationApi* | [**IamProjectApplicationTagDelete**](docs/IamProjectApplicationApi.md#iamprojectapplicationtagdelete) | **Delete** /iam/project/{projectId}/application/{applicationId}/tag/{tagId} | Delete iam/application.tag
+*IamProjectApplicationApi* | [**IamProjectApplicationTagGet**](docs/IamProjectApplicationApi.md#iamprojectapplicationtagget) | **Get** /iam/project/{projectId}/application/{applicationId}/tag/{tagId} | Get iam/application.tag
+*IamProjectApplicationApi* | [**IamProjectApplicationTagList**](docs/IamProjectApplicationApi.md#iamprojectapplicationtaglist) | **Get** /iam/project/{projectId}/application/{applicationId}/tag | List iam/application.tag
+*IamProjectApplicationApi* | [**IamProjectApplicationTagPut**](docs/IamProjectApplicationApi.md#iamprojectapplicationtagput) | **Put** /iam/project/{projectId}/application/{applicationId}/tag | Replace iam/application.tag
+*IamProjectApplicationApi* | [**IamProjectApplicationUpdate**](docs/IamProjectApplicationApi.md#iamprojectapplicationupdate) | **Patch** /iam/project/{projectId}/application/{applicationId} | Update iam/application
+*IamProjectGroupApi* | [**IamProjectGroupActorCreate**](docs/IamProjectGroupApi.md#iamprojectgroupactorcreate) | **Post** /iam/project/{projectId}/group/{groupId}/actor | Create iam/group.actor
+*IamProjectGroupApi* | [**IamProjectGroupActorDelete**](docs/IamProjectGroupApi.md#iamprojectgroupactordelete) | **Delete** /iam/project/{projectId}/group/{groupId}/actor/{actorId} | Delete iam/group.actor
+*IamProjectGroupApi* | [**IamProjectGroupActorGet**](docs/IamProjectGroupApi.md#iamprojectgroupactorget) | **Get** /iam/project/{projectId}/group/{groupId}/actor/{actorId} | Get iam/group.actor
+*IamProjectGroupApi* | [**IamProjectGroupActorList**](docs/IamProjectGroupApi.md#iamprojectgroupactorlist) | **Get** /iam/project/{projectId}/group/{groupId}/actor | List iam/group.actor
+*IamProjectGroupApi* | [**IamProjectGroupCreate**](docs/IamProjectGroupApi.md#iamprojectgroupcreate) | **Post** /iam/project/{projectId}/group | Create iam/group
+*IamProjectGroupApi* | [**IamProjectGroupDelete**](docs/IamProjectGroupApi.md#iamprojectgroupdelete) | **Delete** /iam/project/{projectId}/group/{groupId} | Delete iam/group
+*IamProjectGroupApi* | [**IamProjectGroupEventGet**](docs/IamProjectGroupApi.md#iamprojectgroupeventget) | **Get** /iam/project/{projectId}/group/{groupId}/event/{eventId} | Get iam/group.event
+*IamProjectGroupApi* | [**IamProjectGroupEventList**](docs/IamProjectGroupApi.md#iamprojectgroupeventlist) | **Get** /iam/project/{projectId}/group/{groupId}/event | List iam/group.event
+*IamProjectGroupApi* | [**IamProjectGroupGet**](docs/IamProjectGroupApi.md#iamprojectgroupget) | **Get** /iam/project/{projectId}/group/{groupId} | Get iam/group
+*IamProjectGroupApi* | [**IamProjectGroupList**](docs/IamProjectGroupApi.md#iamprojectgrouplist) | **Get** /iam/project/{projectId}/group | List iam/group
+*IamProjectGroupApi* | [**IamProjectGroupServiceGet**](docs/IamProjectGroupApi.md#iamprojectgroupserviceget) | **Get** /iam/project/{projectId}/group/{groupId}/service/{serviceId} | Get iam/group.service
+*IamProjectGroupApi* | [**IamProjectGroupServiceList**](docs/IamProjectGroupApi.md#iamprojectgroupservicelist) | **Get** /iam/project/{projectId}/group/{groupId}/service | List iam/group.service
+*IamProjectGroupApi* | [**IamProjectGroupTagCreate**](docs/IamProjectGroupApi.md#iamprojectgrouptagcreate) | **Post** /iam/project/{projectId}/group/{groupId}/tag | Create iam/group.tag
+*IamProjectGroupApi* | [**IamProjectGroupTagDelete**](docs/IamProjectGroupApi.md#iamprojectgrouptagdelete) | **Delete** /iam/project/{projectId}/group/{groupId}/tag/{tagId} | Delete iam/group.tag
+*IamProjectGroupApi* | [**IamProjectGroupTagGet**](docs/IamProjectGroupApi.md#iamprojectgrouptagget) | **Get** /iam/project/{projectId}/group/{groupId}/tag/{tagId} | Get iam/group.tag
+*IamProjectGroupApi* | [**IamProjectGroupTagList**](docs/IamProjectGroupApi.md#iamprojectgrouptaglist) | **Get** /iam/project/{projectId}/group/{groupId}/tag | List iam/group.tag
+*IamProjectGroupApi* | [**IamProjectGroupTagPut**](docs/IamProjectGroupApi.md#iamprojectgrouptagput) | **Put** /iam/project/{projectId}/group/{groupId}/tag | Replace iam/group.tag
+*IamProjectGroupApi* | [**IamProjectGroupUpdate**](docs/IamProjectGroupApi.md#iamprojectgroupupdate) | **Patch** /iam/project/{projectId}/group/{groupId} | Update iam/group
 *IamProjectPolicyApi* | [**IamProjectPolicyActorCreate**](docs/IamProjectPolicyApi.md#iamprojectpolicyactorcreate) | **Post** /iam/project/{projectId}/policy/{policyId}/actor | Create iam/policy.actor
 *IamProjectPolicyApi* | [**IamProjectPolicyActorDelete**](docs/IamProjectPolicyApi.md#iamprojectpolicyactordelete) | **Delete** /iam/project/{projectId}/policy/{policyId}/actor/{actorId} | Delete iam/policy.actor
 *IamProjectPolicyApi* | [**IamProjectPolicyActorGet**](docs/IamProjectPolicyApi.md#iamprojectpolicyactorget) | **Get** /iam/project/{projectId}/policy/{policyId}/actor/{actorId} | Get iam/policy.actor
@@ -386,6 +356,11 @@ Class | Method | HTTP request | Description
 *IamProjectSaApi* | [**IamProjectSaTagList**](docs/IamProjectSaApi.md#iamprojectsataglist) | **Get** /iam/project/{projectId}/sa/{saId}/tag | List iam/sa.tag
 *IamProjectSaApi* | [**IamProjectSaTagPut**](docs/IamProjectSaApi.md#iamprojectsatagput) | **Put** /iam/project/{projectId}/sa/{saId}/tag | Replace iam/sa.tag
 *IamProjectSaApi* | [**IamProjectSaUpdate**](docs/IamProjectSaApi.md#iamprojectsaupdate) | **Patch** /iam/project/{projectId}/sa/{saId} | Update iam/sa
+*IamUserApi* | [**IamUserAuthorizationCode**](docs/IamUserApi.md#iamuserauthorizationcode) | **Post** /iam/user/{userId}/authorization/{authorizationId}/actions/code | Code iam/user.authorization
+*IamUserApi* | [**IamUserAuthorizationCreate**](docs/IamUserApi.md#iamuserauthorizationcreate) | **Post** /iam/user/{userId}/authorization | Create iam/user.authorization
+*IamUserApi* | [**IamUserAuthorizationDelete**](docs/IamUserApi.md#iamuserauthorizationdelete) | **Delete** /iam/user/{userId}/authorization/{authorizationId} | Delete iam/user.authorization
+*IamUserApi* | [**IamUserAuthorizationGet**](docs/IamUserApi.md#iamuserauthorizationget) | **Get** /iam/user/{userId}/authorization/{authorizationId} | Get iam/user.authorization
+*IamUserApi* | [**IamUserAuthorizationList**](docs/IamUserApi.md#iamuserauthorizationlist) | **Get** /iam/user/{userId}/authorization | List iam/user.authorization
 *IamUserApi* | [**IamUserCredentialAuthtokenDelete**](docs/IamUserApi.md#iamusercredentialauthtokendelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
 *IamUserApi* | [**IamUserCredentialAuthtokenGet**](docs/IamUserApi.md#iamusercredentialauthtokenget) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
 *IamUserApi* | [**IamUserCredentialAuthtokenList**](docs/IamUserApi.md#iamusercredentialauthtokenlist) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
@@ -394,6 +369,7 @@ Class | Method | HTTP request | Description
 *IamUserApi* | [**IamUserCredentialGet**](docs/IamUserApi.md#iamusercredentialget) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
 *IamUserApi* | [**IamUserCredentialList**](docs/IamUserApi.md#iamusercredentiallist) | **Get** /iam/user/{userId}/credential | List iam/user.credential
 *IamUserApi* | [**IamUserCredentialPatch**](docs/IamUserApi.md#iamusercredentialpatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
+*IamUserApi* | [**IamUserDelete**](docs/IamUserApi.md#iamuserdelete) | **Delete** /iam/user/{userId} | Delete iam/user
 *IamUserApi* | [**IamUserGet**](docs/IamUserApi.md#iamuserget) | **Get** /iam/user/{userId} | Get iam/user
 *IamUserApi* | [**IamUserServiceGet**](docs/IamUserApi.md#iamuserserviceget) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
 *IamUserApi* | [**IamUserServiceList**](docs/IamUserApi.md#iamuserservicelist) | **Get** /iam/user/{userId}/service | List iam/user.service
@@ -468,9 +444,6 @@ Class | Method | HTTP request | Description
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpEventList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpeventlist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/event | List networking/netadp.event
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId} | Get networking/netadp
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadplist) | **Get** /networking/{locationId}/project/{projectId}/netadp | List networking/netadp
-*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetricget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId} | Get networking/netadp.metric
-*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetriclist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric | List networking/netadp.metric
-*NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpMetricPointList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpmetricpointlist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}/point | List networking/netadp.point
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpServiceGet**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpserviceget) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service/{serviceId} | Get networking/netadp.service
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpServiceList**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadpservicelist) | **Get** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/service | List networking/netadp.service
 *NetworkingProjectNetadpApi* | [**NetworkingProjectNetadpTagCreate**](docs/NetworkingProjectNetadpApi.md#networkingprojectnetadptagcreate) | **Post** /networking/{locationId}/project/{projectId}/netadp/{netadpId}/tag | Create networking/netadp.tag
@@ -525,9 +498,6 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentGet**](docs/ProviderProjectAgentApi.md#providerprojectagentget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId} | Get provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentInspect**](docs/ProviderProjectAgentApi.md#providerprojectagentinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/inspect | Inspect provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentList**](docs/ProviderProjectAgentApi.md#providerprojectagentlist) | **Get** /provider/{locationId}/project/{projectId}/agent | List provider/agent
-*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricGet**](docs/ProviderProjectAgentApi.md#providerprojectagentmetricget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId} | Get provider/agent.metric
-*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricList**](docs/ProviderProjectAgentApi.md#providerprojectagentmetriclist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric | List provider/agent.metric
-*ProviderProjectAgentApi* | [**ProviderProjectAgentMetricPointList**](docs/ProviderProjectAgentApi.md#providerprojectagentmetricpointlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point | List provider/agent.point
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceEventList**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceeventlist) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/event | List provider/agent.event
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceGet**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceget) | **Get** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId} | Get provider/agent.resource
 *ProviderProjectAgentApi* | [**ProviderProjectAgentResourceInspect**](docs/ProviderProjectAgentApi.md#providerprojectagentresourceinspect) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/resource/{resourceId}/actions/inspect | Inspect provider/agent.resource
@@ -544,89 +514,6 @@ Class | Method | HTTP request | Description
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTagPut**](docs/ProviderProjectAgentApi.md#providerprojectagenttagput) | **Put** /provider/{locationId}/project/{projectId}/agent/{agentId}/tag | Replace provider/agent.tag
 *ProviderProjectAgentApi* | [**ProviderProjectAgentTransfer**](docs/ProviderProjectAgentApi.md#providerprojectagenttransfer) | **Post** /provider/{locationId}/project/{projectId}/agent/{agentId}/actions/transfer | Transfer provider/agent
 *ProviderProjectAgentApi* | [**ProviderProjectAgentUpdate**](docs/ProviderProjectAgentApi.md#providerprojectagentupdate) | **Patch** /provider/{locationId}/project/{projectId}/agent/{agentId} | Update provider/agent
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentConnectGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentconnectget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/connect/{connectId} | Get provider/development.connect
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentConnectList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentconnectlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/connect | List provider/development.connect
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcreate) | **Post** /provider/{locationId}/project/{projectId}/development | Create provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential | Create provider/development.credential
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Delete provider/development.credential
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Get provider/development.credential
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentiallist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential | List provider/development.credential
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentCredentialPatch**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentcredentialpatch) | **Patch** /provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId} | Update provider/development.credential
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId} | Delete provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomaincreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain | Create provider/development.domain
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomaindelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId} | Delete provider/development.domain
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomainget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId} | Get provider/development.domain
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentDomainList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentdomainlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/domain | List provider/development.domain
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/env | Create provider/development.env
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId} | Delete provider/development.env
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId} | Get provider/development.env
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEnvList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentenvlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/env | List provider/development.env
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEventGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenteventget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/event/{eventId} | Get provider/development.event
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentEventList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenteventlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/event | List provider/development.event
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId} | Get provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/link | Create provider/development.link
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId} | Delete provider/development.link
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinkget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId} | Get provider/development.link
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLinkList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlinklist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/link | List provider/development.link
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlist) | **Get** /provider/{locationId}/project/{projectId}/development | List provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlogget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId} | Get provider/development.log
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentloglist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/log | List provider/development.log
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentLogRead**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentlogread) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}/actions/read | Read provider/development.log
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetricget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId} | Get provider/development.metric
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetriclist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric | List provider/development.metric
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentMetricPointList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentmetricpointlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}/point | List provider/development.point
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentRestart**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentrestart) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/restart | Restart provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentServiceGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentserviceget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/service/{serviceId} | Get provider/development.service
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentServiceList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentservicelist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/service | List provider/development.service
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideappget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId} | Get provider/development.sideapp
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideapplist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp | List provider/development.sideapp
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSideappOpen**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsideappopen) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}/actions/open | Open provider/development.sideapp
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot | Create provider/development.snapshot
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId} | Delete provider/development.snapshot
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotDownload**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotdownload) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}/actions/download | Download provider/development.snapshot
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId} | Get provider/development.snapshot
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentSnapshotList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentsnapshotlist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot | List provider/development.snapshot
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentStart**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentstart) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/start | Start provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentStop**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentstop) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/stop | Stop provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagCreate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagcreate) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | Create provider/development.tag
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagDelete**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagdelete) | **Delete** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId} | Delete provider/development.tag
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagGet**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagget) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId} | Get provider/development.tag
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagList**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttaglist) | **Get** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | List provider/development.tag
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTagPut**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttagput) | **Put** /provider/{locationId}/project/{projectId}/development/{developmentId}/tag | Replace provider/development.tag
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentTransfer**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmenttransfer) | **Post** /provider/{locationId}/project/{projectId}/development/{developmentId}/actions/transfer | Transfer provider/development
-*ProviderProjectDevelopmentApi* | [**ProviderProjectDevelopmentUpdate**](docs/ProviderProjectDevelopmentApi.md#providerprojectdevelopmentupdate) | **Patch** /provider/{locationId}/project/{projectId}/development/{developmentId} | Update provider/development
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupCreate**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup | Create recovery/backup
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupDelete**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Delete recovery/backup
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventGet**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupeventget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId} | Get recovery/backup.event
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupEventList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupeventlist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/event | List recovery/backup.event
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupExport**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupexport) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/actions/export | Export recovery/backup
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupGet**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Get recovery/backup
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuplist) | **Get** /recovery/{locationId}/project/{projectId}/backup | List recovery/backup
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricGet**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupmetricget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId} | Get recovery/backup.metric
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupmetriclist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric | List recovery/backup.metric
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupMetricPointList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupmetricpointlist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/metric/{metricId}/point | List recovery/backup.point
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceGet**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupserviceget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service/{serviceId} | Get recovery/backup.service
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupServiceList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupservicelist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/service | List recovery/backup.service
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagCreate**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuptagcreate) | **Post** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Create recovery/backup.tag
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagDelete**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuptagdelete) | **Delete** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId} | Delete recovery/backup.tag
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagGet**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuptagget) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId} | Get recovery/backup.tag
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagList**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuptaglist) | **Get** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | List recovery/backup.tag
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupTagPut**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackuptagput) | **Put** /recovery/{locationId}/project/{projectId}/backup/{backupId}/tag | Replace recovery/backup.tag
-*RecoveryProjectBackupApi* | [**RecoveryProjectBackupUpdate**](docs/RecoveryProjectBackupApi.md#recoveryprojectbackupupdate) | **Patch** /recovery/{locationId}/project/{projectId}/backup/{backupId} | Update recovery/backup
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanCreate**](docs/RecoveryProjectPlanApi.md#recoveryprojectplancreate) | **Post** /recovery/{locationId}/project/{projectId}/plan | Create recovery/plan
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanDelete**](docs/RecoveryProjectPlanApi.md#recoveryprojectplandelete) | **Delete** /recovery/{locationId}/project/{projectId}/plan/{planId} | Delete recovery/plan
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanEventGet**](docs/RecoveryProjectPlanApi.md#recoveryprojectplaneventget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/event/{eventId} | Get recovery/plan.event
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanEventList**](docs/RecoveryProjectPlanApi.md#recoveryprojectplaneventlist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/event | List recovery/plan.event
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanGet**](docs/RecoveryProjectPlanApi.md#recoveryprojectplanget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId} | Get recovery/plan
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanList**](docs/RecoveryProjectPlanApi.md#recoveryprojectplanlist) | **Get** /recovery/{locationId}/project/{projectId}/plan | List recovery/plan
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanServiceGet**](docs/RecoveryProjectPlanApi.md#recoveryprojectplanserviceget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/service/{serviceId} | Get recovery/plan.service
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanServiceList**](docs/RecoveryProjectPlanApi.md#recoveryprojectplanservicelist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/service | List recovery/plan.service
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagCreate**](docs/RecoveryProjectPlanApi.md#recoveryprojectplantagcreate) | **Post** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | Create recovery/plan.tag
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagDelete**](docs/RecoveryProjectPlanApi.md#recoveryprojectplantagdelete) | **Delete** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag/{tagId} | Delete recovery/plan.tag
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagGet**](docs/RecoveryProjectPlanApi.md#recoveryprojectplantagget) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag/{tagId} | Get recovery/plan.tag
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagList**](docs/RecoveryProjectPlanApi.md#recoveryprojectplantaglist) | **Get** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | List recovery/plan.tag
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanTagPut**](docs/RecoveryProjectPlanApi.md#recoveryprojectplantagput) | **Put** /recovery/{locationId}/project/{projectId}/plan/{planId}/tag | Replace recovery/plan.tag
-*RecoveryProjectPlanApi* | [**RecoveryProjectPlanUpdate**](docs/RecoveryProjectPlanApi.md#recoveryprojectplanupdate) | **Patch** /recovery/{locationId}/project/{projectId}/plan/{planId} | Update recovery/plan
 *StorageProjectBucketApi* | [**StorageProjectBucketGet**](docs/StorageProjectBucketApi.md#storageprojectbucketget) | **Get** /storage/{locationId}/project/{projectId}/bucket/{bucketId} | Get storage/bucket
 *StorageProjectBucketApi* | [**StorageProjectBucketList**](docs/StorageProjectBucketApi.md#storageprojectbucketlist) | **Get** /storage/{locationId}/project/{projectId}/bucket | List storage/bucket
 *StorageProjectBucketApi* | [**StorageProjectBucketObjectDelete**](docs/StorageProjectBucketApi.md#storageprojectbucketobjectdelete) | **Delete** /storage/{locationId}/project/{projectId}/bucket/{bucketId}/object/{objectId} | Delete storage/bucket.object
@@ -642,9 +529,6 @@ Class | Method | HTTP request | Description
 *StorageProjectDiskApi* | [**StorageProjectDiskEventList**](docs/StorageProjectDiskApi.md#storageprojectdiskeventlist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/event | List storage/disk.event
 *StorageProjectDiskApi* | [**StorageProjectDiskGet**](docs/StorageProjectDiskApi.md#storageprojectdiskget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId} | Get storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskList**](docs/StorageProjectDiskApi.md#storageprojectdisklist) | **Get** /storage/{locationId}/project/{projectId}/disk | List storage/disk
-*StorageProjectDiskApi* | [**StorageProjectDiskMetricGet**](docs/StorageProjectDiskApi.md#storageprojectdiskmetricget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId} | Get storage/disk.metric
-*StorageProjectDiskApi* | [**StorageProjectDiskMetricList**](docs/StorageProjectDiskApi.md#storageprojectdiskmetriclist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric | List storage/disk.metric
-*StorageProjectDiskApi* | [**StorageProjectDiskMetricPointList**](docs/StorageProjectDiskApi.md#storageprojectdiskmetricpointlist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/point | List storage/disk.point
 *StorageProjectDiskApi* | [**StorageProjectDiskResize**](docs/StorageProjectDiskApi.md#storageprojectdiskresize) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/resize | Resize storage/disk
 *StorageProjectDiskApi* | [**StorageProjectDiskServiceGet**](docs/StorageProjectDiskApi.md#storageprojectdiskserviceget) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service/{serviceId} | Get storage/disk.service
 *StorageProjectDiskApi* | [**StorageProjectDiskServiceList**](docs/StorageProjectDiskApi.md#storageprojectdiskservicelist) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service | List storage/disk.service
@@ -657,7 +541,6 @@ Class | Method | HTTP request | Description
 *StorageProjectDiskApi* | [**StorageProjectDiskUpdate**](docs/StorageProjectDiskApi.md#storageprojectdiskupdate) | **Patch** /storage/{locationId}/project/{projectId}/disk/{diskId} | Update storage/disk
 *StorageProjectImageApi* | [**StorageProjectImageCreate**](docs/StorageProjectImageApi.md#storageprojectimagecreate) | **Post** /storage/{locationId}/project/{projectId}/image | Create storage/image
 *StorageProjectImageApi* | [**StorageProjectImageDelete**](docs/StorageProjectImageApi.md#storageprojectimagedelete) | **Delete** /storage/{locationId}/project/{projectId}/image/{imageId} | Delete storage/image
-*StorageProjectImageApi* | [**StorageProjectImageDiskList**](docs/StorageProjectImageApi.md#storageprojectimagedisklist) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/disk | List storage/image.disk
 *StorageProjectImageApi* | [**StorageProjectImageEventGet**](docs/StorageProjectImageApi.md#storageprojectimageeventget) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/event/{eventId} | Get storage/image.event
 *StorageProjectImageApi* | [**StorageProjectImageEventList**](docs/StorageProjectImageApi.md#storageprojectimageeventlist) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/event | List storage/image.event
 *StorageProjectImageApi* | [**StorageProjectImageGet**](docs/StorageProjectImageApi.md#storageprojectimageget) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId} | Get storage/image
@@ -733,74 +616,21 @@ Class | Method | HTTP request | Description
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagGet**](docs/VmhostProjectInstanceApi.md#vmhostprojectinstancetagget) | **Get** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Get vmhost/instance.tag
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagList**](docs/VmhostProjectInstanceApi.md#vmhostprojectinstancetaglist) | **Get** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag | List vmhost/instance.tag
 *VmhostProjectInstanceApi* | [**VmhostProjectInstanceTagPut**](docs/VmhostProjectInstanceApi.md#vmhostprojectinstancetagput) | **Put** /vmhost/{locationId}/project/{projectId}/instance/{instanceId}/tag | Replace vmhost/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceConnectGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceconnectget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect/{connectId} | Get website/instance.connect
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceConnectList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceconnectlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/connect | List website/instance.connect
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecreate) | **Post** /website/{locationId}/project/{projectId}/instance | Create website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential | Create website/instance.credential
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Delete website/instance.credential
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Get website/instance.credential
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecredentiallist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential | List website/instance.credential
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceCredentialPatch**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancecredentialpatch) | **Patch** /website/{locationId}/project/{projectId}/instance/{instanceId}/credential/{credentialId} | Update website/instance.credential
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancedelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId} | Delete website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceDomainCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancedomaincreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/domain | Create website/instance.domain
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceDomainDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancedomaindelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/domain/{domainId} | Delete website/instance.domain
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceDomainGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancedomainget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/domain/{domainId} | Get website/instance.domain
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceDomainList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancedomainlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/domain | List website/instance.domain
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEnvCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceenvcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/env | Create website/instance.env
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEnvDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceenvdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/env/{envId} | Delete website/instance.env
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEnvGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceenvget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/env/{envId} | Get website/instance.env
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEnvList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceenvlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/env | List website/instance.env
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEventGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceeventget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/event/{eventId} | Get website/instance.event
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceEventList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceeventlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/event | List website/instance.event
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId} | Get website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinkcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | Create website/instance.link
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinkdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Delete website/instance.link
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinkget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link/{linkId} | Get website/instance.link
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLinkList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelinklist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/link | List website/instance.link
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelist) | **Get** /website/{locationId}/project/{projectId}/instance | List website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelogget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId} | Get website/instance.log
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceloglist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/log | List website/instance.log
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceLogRead**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancelogread) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}/actions/read | Read website/instance.log
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId} | Get website/instance.metric
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetriclist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric | List website/instance.metric
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceMetricPointList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancemetricpointlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point | List website/instance.point
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceRestart**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancerestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/restart | Restart website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceserviceget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service/{serviceId} | Get website/instance.service
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceServiceList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceservicelist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/service | List website/instance.service
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesideappget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId} | Get website/instance.sideapp
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesideapplist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp | List website/instance.sideapp
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSideappOpen**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesideappopen) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/sideapp/{sideappId}/actions/open | Open website/instance.sideapp
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | Create website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Delete website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotDownload**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotdownload) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId}/actions/download | Download website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot/{snapshotId} | Get website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceSnapshotList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancesnapshotlist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/snapshot | List website/instance.snapshot
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceStart**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancestart) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/start | Start website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceStop**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancestop) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/stop | Stop website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTagCreate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetagcreate) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/tag | Create website/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTagDelete**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetagdelete) | **Delete** /website/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Delete website/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTagGet**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetagget) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/tag/{tagId} | Get website/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTagList**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetaglist) | **Get** /website/{locationId}/project/{projectId}/instance/{instanceId}/tag | List website/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTagPut**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetagput) | **Put** /website/{locationId}/project/{projectId}/instance/{instanceId}/tag | Replace website/instance.tag
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceTransfer**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstancetransfer) | **Post** /website/{locationId}/project/{projectId}/instance/{instanceId}/actions/transfer | Transfer website/instance
-*WebsiteProjectInstanceApi* | [**WebsiteProjectInstanceUpdate**](docs/WebsiteProjectInstanceApi.md#websiteprojectinstanceupdate) | **Patch** /website/{locationId}/project/{projectId}/instance/{instanceId} | Update website/instance
 
 
 ## Documentation For Models
 
  - [Agent](docs/Agent.md)
  - [AgentCredential](docs/AgentCredential.md)
+ - [Application](docs/Application.md)
+ - [ApplicationCredential](docs/ApplicationCredential.md)
  - [Attempt](docs/Attempt.md)
  - [AuthToken](docs/AuthToken.md)
  - [AuthTokenAccess](docs/AuthTokenAccess.md)
- - [Backup](docs/Backup.md)
  - [Billing](docs/Billing.md)
  - [BillingAddress](docs/BillingAddress.md)
  - [BillingAddress1](docs/BillingAddress1.md)
  - [BillingCharges](docs/BillingCharges.md)
- - [BillingProjectReservationAssign](docs/BillingProjectReservationAssign.md)
- - [BillingProjectReservationCreate](docs/BillingProjectReservationCreate.md)
- - [BillingProjectReservationUpdate](docs/BillingProjectReservationUpdate.md)
  - [BillingResource](docs/BillingResource.md)
  - [BillingService](docs/BillingService.md)
  - [Bucket](docs/Bucket.md)
@@ -823,16 +653,7 @@ Class | Method | HTTP request | Description
  - [ContainerProjectRegistryTransfer](docs/ContainerProjectRegistryTransfer.md)
  - [ContainerProjectRegistryUpdate](docs/ContainerProjectRegistryUpdate.md)
  - [ContainerRepository](docs/ContainerRepository.md)
- - [Database](docs/Database.md)
- - [DatabaseCredential](docs/DatabaseCredential.md)
- - [DatabaseProjectInstanceCreate](docs/DatabaseProjectInstanceCreate.md)
- - [DatabaseProjectInstanceCredentialPatch](docs/DatabaseProjectInstanceCredentialPatch.md)
- - [DatabaseProjectInstanceTransfer](docs/DatabaseProjectInstanceTransfer.md)
- - [DatabaseProjectInstanceUpdate](docs/DatabaseProjectInstanceUpdate.md)
- - [Development](docs/Development.md)
- - [DevelopmentCredential](docs/DevelopmentCredential.md)
  - [Disk](docs/Disk.md)
- - [DiskMetadata](docs/DiskMetadata.md)
  - [DnsProjectZoneCreate](docs/DnsProjectZoneCreate.md)
  - [DnsProjectZoneRecordsetPatch](docs/DnsProjectZoneRecordsetPatch.md)
  - [DnsProjectZoneUpdate](docs/DnsProjectZoneUpdate.md)
@@ -843,8 +664,10 @@ Class | Method | HTTP request | Description
  - [Event](docs/Event.md)
  - [EventBase](docs/EventBase.md)
  - [Firewall](docs/Firewall.md)
+ - [Group](docs/Group.md)
  - [Hdd](docs/Hdd.md)
  - [IamActor](docs/IamActor.md)
+ - [IamActorOrGroup](docs/IamActorOrGroup.md)
  - [IamOrganisationCreate](docs/IamOrganisationCreate.md)
  - [IamOrganisationInvitationAccept](docs/IamOrganisationInvitationAccept.md)
  - [IamOrganisationOwnershipCreate](docs/IamOrganisationOwnershipCreate.md)
@@ -853,8 +676,14 @@ Class | Method | HTTP request | Description
  - [IamOrganisationTransferAccept](docs/IamOrganisationTransferAccept.md)
  - [IamOrganisationUpdate](docs/IamOrganisationUpdate.md)
  - [IamPermission](docs/IamPermission.md)
+ - [IamProjectApplicationCreate](docs/IamProjectApplicationCreate.md)
+ - [IamProjectApplicationCredentialPatch](docs/IamProjectApplicationCredentialPatch.md)
+ - [IamProjectApplicationRedirectPatch](docs/IamProjectApplicationRedirectPatch.md)
+ - [IamProjectApplicationUpdate](docs/IamProjectApplicationUpdate.md)
  - [IamProjectCreate](docs/IamProjectCreate.md)
  - [IamProjectCredentialStorePatch](docs/IamProjectCredentialStorePatch.md)
+ - [IamProjectGroupCreate](docs/IamProjectGroupCreate.md)
+ - [IamProjectGroupUpdate](docs/IamProjectGroupUpdate.md)
  - [IamProjectInvitationAccept](docs/IamProjectInvitationAccept.md)
  - [IamProjectOwnershipCreate](docs/IamProjectOwnershipCreate.md)
  - [IamProjectPolicyCreate](docs/IamProjectPolicyCreate.md)
@@ -869,9 +698,13 @@ Class | Method | HTTP request | Description
  - [IamProjectThresholdCreate](docs/IamProjectThresholdCreate.md)
  - [IamProjectTransfer](docs/IamProjectTransfer.md)
  - [IamProjectUpdate](docs/IamProjectUpdate.md)
+ - [IamRedirect](docs/IamRedirect.md)
+ - [IamUserAuthorization](docs/IamUserAuthorization.md)
+ - [IamUserAuthorizationCode](docs/IamUserAuthorizationCode.md)
  - [IamUserCredentialPatch](docs/IamUserCredentialPatch.md)
  - [IamUserUpdate](docs/IamUserUpdate.md)
  - [Image](docs/Image.md)
+ - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse400](docs/InlineResponse400.md)
  - [InsightProjectJournalCreate](docs/InsightProjectJournalCreate.md)
  - [InsightProjectJournalCredentialPatch](docs/InsightProjectJournalCredentialPatch.md)
@@ -881,21 +714,21 @@ Class | Method | HTTP request | Description
  - [Invoice](docs/Invoice.md)
  - [InvoiceBuyer](docs/InvoiceBuyer.md)
  - [InvoiceBuyerAddress](docs/InvoiceBuyerAddress.md)
- - [InvoiceDuplicate](docs/InvoiceDuplicate.md)
  - [InvoiceItems](docs/InvoiceItems.md)
  - [InvoiceSeller](docs/InvoiceSeller.md)
  - [InvoiceSellerAddress](docs/InvoiceSellerAddress.md)
  - [Ip](docs/Ip.md)
  - [IpAssociated](docs/IpAssociated.md)
+ - [IpProperties](docs/IpProperties.md)
  - [Iso](docs/Iso.md)
  - [IsoMetadata](docs/IsoMetadata.md)
  - [IsoMetadataSource](docs/IsoMetadataSource.md)
  - [Journal](docs/Journal.md)
  - [JournalCredential](docs/JournalCredential.md)
- - [Log](docs/Log.md)
  - [MessageData](docs/MessageData.md)
  - [Metric](docs/Metric.md)
- - [MetricDimension](docs/MetricDimension.md)
+ - [MetricProperties](docs/MetricProperties.md)
+ - [MetricPropertiesDimension](docs/MetricPropertiesDimension.md)
  - [Netadp](docs/Netadp.md)
  - [Netgw](docs/Netgw.md)
  - [NetgwPrivate](docs/NetgwPrivate.md)
@@ -922,10 +755,8 @@ Class | Method | HTTP request | Description
  - [OrganisationBilling1](docs/OrganisationBilling1.md)
  - [Ownership](docs/Ownership.md)
  - [Payment](docs/Payment.md)
- - [Plan](docs/Plan.md)
- - [PlanRetention](docs/PlanRetention.md)
- - [PlanWindow](docs/PlanWindow.md)
  - [Point](docs/Point.md)
+ - [PointValue](docs/PointValue.md)
  - [Policy](docs/Policy.md)
  - [Proforma](docs/Proforma.md)
  - [ProformaArray](docs/ProformaArray.md)
@@ -937,34 +768,21 @@ Class | Method | HTTP request | Description
  - [ProjectThreshold](docs/ProjectThreshold.md)
  - [ProviderAgentResource](docs/ProviderAgentResource.md)
  - [ProviderAgentResourceEvent](docs/ProviderAgentResourceEvent.md)
- - [ProviderEnv](docs/ProviderEnv.md)
- - [ProviderLink](docs/ProviderLink.md)
- - [ProviderLog](docs/ProviderLog.md)
  - [ProviderProjectAgentCreate](docs/ProviderProjectAgentCreate.md)
  - [ProviderProjectAgentCredentialPatch](docs/ProviderProjectAgentCredentialPatch.md)
  - [ProviderProjectAgentTransfer](docs/ProviderProjectAgentTransfer.md)
  - [ProviderProjectAgentUpdate](docs/ProviderProjectAgentUpdate.md)
- - [ProviderProjectDevelopmentCreate](docs/ProviderProjectDevelopmentCreate.md)
- - [ProviderProjectDevelopmentCredentialPatch](docs/ProviderProjectDevelopmentCredentialPatch.md)
- - [ProviderProjectDevelopmentSnapshotDownload](docs/ProviderProjectDevelopmentSnapshotDownload.md)
- - [ProviderProjectDevelopmentTransfer](docs/ProviderProjectDevelopmentTransfer.md)
- - [ProviderProjectDevelopmentUpdate](docs/ProviderProjectDevelopmentUpdate.md)
- - [ProviderSideapp](docs/ProviderSideapp.md)
- - [ProviderSnapshot](docs/ProviderSnapshot.md)
  - [Quota](docs/Quota.md)
  - [QuotaLimit](docs/QuotaLimit.md)
  - [QuotaMetric](docs/QuotaMetric.md)
- - [RecoveryProjectBackupCreate](docs/RecoveryProjectBackupCreate.md)
- - [RecoveryProjectBackupExport](docs/RecoveryProjectBackupExport.md)
- - [RecoveryProjectBackupUpdate](docs/RecoveryProjectBackupUpdate.md)
- - [RecoveryProjectPlanCreate](docs/RecoveryProjectPlanCreate.md)
- - [RecoveryProjectPlanCreateRetention](docs/RecoveryProjectPlanCreateRetention.md)
- - [RecoveryProjectPlanCreateWindow](docs/RecoveryProjectPlanCreateWindow.md)
- - [RecoveryProjectPlanUpdate](docs/RecoveryProjectPlanUpdate.md)
+ - [Reconciliation](docs/Reconciliation.md)
+ - [ReconciliationTarget](docs/ReconciliationTarget.md)
+ - [ReconciliationTargetPlan](docs/ReconciliationTargetPlan.md)
+ - [ReconciliationTargetResource](docs/ReconciliationTargetResource.md)
  - [Registry](docs/Registry.md)
  - [RegistryCredential](docs/RegistryCredential.md)
  - [Replica](docs/Replica.md)
- - [Reservation](docs/Reservation.md)
+ - [Resource](docs/Resource.md)
  - [ResourceConnect](docs/ResourceConnect.md)
  - [ResourceService](docs/ResourceService.md)
  - [Role](docs/Role.md)
@@ -1010,19 +828,7 @@ Class | Method | HTTP request | Description
  - [VaultCredential](docs/VaultCredential.md)
  - [Vm](docs/Vm.md)
  - [Vmhost](docs/Vmhost.md)
- - [Website](docs/Website.md)
- - [WebsiteCredential](docs/WebsiteCredential.md)
- - [WebsiteEnv](docs/WebsiteEnv.md)
- - [WebsiteLink](docs/WebsiteLink.md)
- - [WebsiteProjectInstanceCreate](docs/WebsiteProjectInstanceCreate.md)
- - [WebsiteProjectInstanceCredentialPatch](docs/WebsiteProjectInstanceCredentialPatch.md)
- - [WebsiteProjectInstanceSnapshotDownload](docs/WebsiteProjectInstanceSnapshotDownload.md)
- - [WebsiteProjectInstanceTransfer](docs/WebsiteProjectInstanceTransfer.md)
- - [WebsiteProjectInstanceUpdate](docs/WebsiteProjectInstanceUpdate.md)
- - [WebsiteSideapp](docs/WebsiteSideapp.md)
- - [WebsiteSnapshot](docs/WebsiteSnapshot.md)
  - [Zone](docs/Zone.md)
- - [ZoneRrsets](docs/ZoneRrsets.md)
  - [ZoneSource](docs/ZoneSource.md)
 
 
@@ -1054,498 +860,21 @@ r, err := client.Service.Operation(auth, args)
  - **iam/user.firstName/update**: 
  - **iam/user.familyName/update**: 
  - **iam/user.lang/update**: 
+ - **iam/user/delete**: 
  - **iam/user.credential/list**: 
  - **iam/user.credential/get**: 
  - **iam/user.credential/delete**: 
+ - **iam/user.authorization/create**: 
+ - **iam/user.authorization/list**: 
+ - **iam/user.authorization/delete**: 
+ - **iam/user.authorization/get**: 
+ - **iam/user.actions/create**: 
  - **iam/user.credential/create**: 
  - **iam/user.credential.name/update**: 
  - **iam/user.service/list**: 
  - **iam/user.service/get**: 
- - **iam/project/create**: 
- - **iam/project/get**: 
- - **iam/project.name/update**: 
- - **iam/project/delete**: 
- - **iam/project/transfer**: 
- - **iam/project.billing/list**: 
- - **iam/project.payment/list**: 
- - **iam/project.invoice/list**: 
- - **iam/project.proforma/list**: 
- - **iam/project.threshold/list**: 
- - **iam/project.threshold/create**: 
- - **iam/project.threshold/get**: 
- - **iam/project.threshold/delete**: 
- - **iam/project.credentialStore/list**: 
- - **iam/project.credentialStore/create**: 
- - **iam/project.credentialStore/get**: 
- - **iam/project.credentialStore.name/update**: 
- - **iam/project.credentialStore/delete**: 
- - **iam/project.quota/list**: 
- - **iam/project.quota/get**: 
- - **iam/project.quota.user/update**: 
- - **iam/project.invitation/list**: 
- - **iam/project.invitation/get**: 
- - **iam/project.invitation/delete**: 
- - **iam/project.ownership/create**: 
- - **iam/project.ownership/list**: 
- - **iam/project.ownership/get**: 
- - **iam/project.ownership/delete**: 
- - **iam/project.service/list**: 
- - **iam/project.service/get**: 
- - **iam/project.tag/list**: 
- - **iam/project.tag/create**: 
- - **iam/project.tag/delete**: 
- - **iam/project.tag/get**: 
- - **iam/project.event/list**: 
- - **iam/project.event/get**: 
- - **iam/organisation/get**: 
- - **iam/organisation.name/update**: 
- - **iam/organisation.billing/update**: 
- - **iam/organisation/delete**: 
- - **iam/organisation.billing/list**: 
- - **iam/organisation.transfer/list**: 
- - **iam/organisation.transfer/get**: 
- - **iam/organisation.payment/allocate**: 
- - **iam/organisation.transfer/accept**: 
- - **iam/organisation.payment/list**: 
- - **iam/organisation.payment/get**: 
- - **iam/organisation.invoice/list**: 
- - **iam/organisation.invoice/get**: 
- - **iam/organisation.invoice/download**: 
- - **iam/organisation.proforma/create**: 
- - **iam/organisation.proforma/list**: 
- - **iam/organisation.proforma/get**: 
- - **iam/organisation.proforma/download**: 
- - **iam/organisation.invitation/list**: 
- - **iam/organisation.invitation/get**: 
- - **iam/organisation.invitation/delete**: 
- - **iam/organisation.ownership/create**: 
- - **iam/organisation.ownership/list**: 
- - **iam/organisation.ownership/get**: 
- - **iam/organisation.ownership/delete**: 
- - **iam/organisation.service/list**: 
- - **iam/organisation.service/get**: 
- - **iam/organisation.event/list**: 
- - **iam/organisation.event/get**: 
- - **provider/agent/create**: 
- - **provider/agent/list**: 
- - **provider/agent/get**: 
- - **provider/agent.name/update**: 
- - **provider/agent/delete**: 
- - **provider/agent/start**: 
- - **provider/agent/suspend**: 
- - **provider/agent/inspect**: 
- - **provider/agent/transfer**: 
- - **provider/agent.credential/list**: 
- - **provider/agent.credential/create**: 
- - **provider/agent.credential/get**: 
- - **provider/agent.credential.name/update**: 
- - **provider/agent.credential/delete**: 
- - **provider/agent.enabledService/list**: 
- - **provider/agent.enabledService/create**: 
- - **provider/agent.enabledService/get**: 
- - **provider/agent.enabledService/delete**: 
- - **provider/agent.resource/list**: 
- - **provider/agent.resource/get**: 
- - **provider/agent.resource/recreate**: 
- - **provider/agent.resource/inspect**: 
- - **provider/agent.resource.event/list**: 
- - **provider/agent.metric/list**: 
- - **provider/agent.metric/get**: 
- - **provider/agent.point/list**: 
- - **provider/agent.service/list**: 
- - **provider/agent.service/get**: 
- - **provider/agent.tag/list**: 
- - **provider/agent.tag/create**: 
- - **provider/agent.tag/delete**: 
- - **provider/agent.tag/get**: 
- - **provider/agent.event/list**: 
- - **provider/agent.event/get**: 
- - **recovery/backup/create**: 
- - **recovery/backup/list**: 
- - **recovery/backup/get**: 
- - **recovery/backup.name/update**: 
- - **recovery/backup/delete**: 
- - **storage/bucket/upload**: 
- - **recovery/backup/export**: 
- - **recovery/backup.metric/list**: 
- - **recovery/backup.metric/get**: 
- - **recovery/backup.point/list**: 
- - **recovery/backup.service/list**: 
- - **recovery/backup.service/get**: 
- - **recovery/backup.tag/list**: 
- - **recovery/backup.tag/create**: 
- - **recovery/backup.tag/delete**: 
- - **recovery/backup.tag/get**: 
- - **recovery/backup.event/list**: 
- - **recovery/backup.event/get**: 
- - **recovery/backup/use**: 
- - **database/instance/create**: 
- - **database/instance/list**: 
- - **database/instance/get**: 
- - **database/instance.name/update**: 
- - **recovery/plan/use**: 
- - **database/instance.plan/update**: 
- - **database/instance/delete**: 
- - **database/instance/start**: 
- - **database/instance/stop**: 
- - **database/instance/transfer**: 
- - **database/instance.credential/list**: 
- - **database/instance.credential/create**: 
- - **database/instance.credential/get**: 
- - **database/instance.credential.name/update**: 
- - **database/instance.credential/delete**: 
- - **database/instance.connect/list**: 
- - **database/instance.connect/get**: 
- - **database/instance.metric/list**: 
- - **database/instance.metric/get**: 
- - **database/instance.point/list**: 
- - **database/instance.service/list**: 
- - **database/instance.service/get**: 
- - **database/instance.tag/list**: 
- - **database/instance.tag/create**: 
- - **database/instance.tag/delete**: 
- - **database/instance.tag/get**: 
- - **database/instance.event/list**: 
- - **database/instance.event/get**: 
- - **database/instance/read**: 
- - **database/instance/use**: 
- - **iam/sa/use**: 
- - **insight/journal/use**: 
- - **provider/development/create**: 
- - **provider/development/list**: 
- - **provider/development/get**: 
- - **provider/development.name/update**: 
- - **provider/development/delete**: 
- - **provider/development/start**: 
- - **provider/development/stop**: 
- - **provider/development/restart**: 
- - **provider/development/transfer**: 
- - **provider/development.snapshot/list**: 
- - **provider/development.snapshot/create**: 
- - **provider/development.snapshot/delete**: 
- - **provider/development.snapshot/get**: 
- - **provider/development.snapshot/read**: 
- - **provider/development.env/list**: 
- - **provider/development.env/create**: 
- - **provider/development.env/get**: 
- - **provider/development.env/delete**: 
- - **provider/development.link/list**: 
- - **provider/development.link/create**: 
- - **provider/development.link/get**: 
- - **provider/development.link/delete**: 
- - **provider/development.sideapp/list**: 
- - **provider/development.sideapp/get**: 
- - **provider/development.sideapp/open**: 
- - **provider/development.credential/list**: 
- - **provider/development.credential/create**: 
- - **provider/development.credential/get**: 
- - **provider/development.credential.name/update**: 
- - **provider/development.credential/delete**: 
- - **provider/development.connect/list**: 
- - **provider/development.connect/get**: 
- - **provider/development.domain/list**: 
- - **provider/development.domain/create**: 
- - **provider/development.domain/get**: 
- - **provider/development.domain/delete**: 
- - **provider/development.metric/list**: 
- - **provider/development.metric/get**: 
- - **provider/development.point/list**: 
- - **provider/development.log/list**: 
- - **provider/development.log/get**: 
- - **database/instance.log/read**: 
- - **provider/development.service/list**: 
- - **provider/development.service/get**: 
- - **provider/development.tag/list**: 
- - **provider/development.tag/create**: 
- - **provider/development.tag/delete**: 
- - **provider/development.tag/get**: 
- - **provider/development.event/list**: 
- - **provider/development.event/get**: 
- - **provider/development/use**: 
- - **insight/journal/create**: 
- - **insight/journal/list**: 
- - **insight/journal/get**: 
- - **insight/journal.name/update**: 
- - **insight/journal.retention/update**: 
- - **insight/journal/delete**: 
- - **insight/journal/transfer**: 
- - **insight/journal.log/get**: 
- - **insight/journal.credential/list**: 
- - **insight/journal.credential/create**: 
- - **insight/journal.credential/get**: 
- - **insight/journal.credential.name/update**: 
- - **insight/journal.credential/delete**: 
- - **insight/journal.service/list**: 
- - **insight/journal.service/get**: 
- - **insight/journal.tag/list**: 
- - **insight/journal.tag/create**: 
- - **insight/journal.tag/delete**: 
- - **insight/journal.tag/get**: 
- - **insight/journal.event/list**: 
- - **insight/journal.event/get**: 
- - **insight/journal/read**: 
- - **insight/journal/write**: 
- - **recovery/plan/create**: 
- - **recovery/plan/list**: 
- - **recovery/plan/get**: 
- - **recovery/plan.name/update**: 
- - **recovery/plan/delete**: 
- - **recovery/plan.service/list**: 
- - **recovery/plan.service/get**: 
- - **recovery/plan.tag/list**: 
- - **recovery/plan.tag/create**: 
- - **recovery/plan.tag/delete**: 
- - **recovery/plan.tag/get**: 
- - **recovery/plan.event/list**: 
- - **recovery/plan.event/get**: 
- - **container/registry/create**: 
- - **container/registry/list**: 
- - **container/registry/get**: 
- - **container/registry.name/update**: 
- - **container/registry/delete**: 
- - **container/registry/start**: 
- - **container/registry/stop**: 
- - **container/registry/transfer**: 
- - **container/registry.repository/list**: 
- - **container/registry.repository/get**: 
- - **container/registry.image/list**: 
- - **container/registry.image/get**: 
- - **container/registry.image/delete**: 
- - **container/registry.credential/list**: 
- - **container/registry.credential/create**: 
- - **container/registry.credential/get**: 
- - **container/registry.credential.name/update**: 
- - **container/registry.credential/delete**: 
- - **container/registry.domain/list**: 
- - **container/registry.domain/create**: 
- - **container/registry.domain/get**: 
- - **container/registry.domain/delete**: 
- - **container/registry.service/list**: 
- - **container/registry.service/get**: 
- - **container/registry.tag/list**: 
- - **container/registry.tag/create**: 
- - **container/registry.tag/delete**: 
- - **container/registry.tag/get**: 
- - **container/registry.event/list**: 
- - **container/registry.event/get**: 
- - **container/registry.repository/create**: push image
- - **container/registry.repository/read**: pull image
- - **website/instance/create**: 
- - **website/instance/list**: 
- - **website/instance/get**: 
- - **website/instance.name/update**: 
- - **website/instance.image/update**: 
- - **website/instance.plan/update**: 
- - **website/instance/delete**: 
- - **website/instance/start**: 
- - **website/instance/stop**: 
- - **website/instance/restart**: 
- - **website/instance/transfer**: 
- - **website/instance.snapshot/list**: 
- - **website/instance.snapshot/create**: 
- - **website/instance.snapshot/delete**: 
- - **website/instance.snapshot/get**: 
- - **website/instance.snapshot/read**: 
- - **website/instance.env/list**: 
- - **website/instance.env/create**: 
- - **website/instance.env/get**: 
- - **website/instance.env/delete**: 
- - **website/instance.link/list**: 
- - **website/instance.link/create**: 
- - **website/instance.link/get**: 
- - **website/instance.link/delete**: 
- - **website/instance.sideapp/list**: 
- - **website/instance.sideapp/get**: 
- - **website/instance.sideapp/open**: 
- - **website/instance.credential/list**: 
- - **website/instance.credential/create**: 
- - **website/instance.credential/get**: 
- - **website/instance.credential.name/update**: 
- - **website/instance.credential/delete**: 
- - **website/instance.connect/list**: 
- - **website/instance.connect/get**: 
- - **website/instance.domain/list**: 
- - **website/instance.domain/create**: 
- - **website/instance.domain/get**: 
- - **website/instance.domain/delete**: 
- - **website/instance.metric/list**: 
- - **website/instance.metric/get**: 
- - **website/instance.point/list**: 
- - **website/instance.log/list**: 
- - **website/instance.log/get**: 
- - **website/instance.service/list**: 
- - **website/instance.service/get**: 
- - **website/instance.tag/list**: 
- - **website/instance.tag/create**: 
- - **website/instance.tag/delete**: 
- - **website/instance.tag/get**: 
- - **website/instance.event/list**: 
- - **website/instance.event/get**: 
- - **website/instance/use**: 
- - **dns/zone/create**: 
- - **dns/zone/list**: 
- - **dns/zone/get**: 
- - **dns/zone.name/update**: 
- - **dns/zone/delete**: 
- - **dns/zone.recordset/create**: 
- - **dns/zone.recordset/list**: 
- - **dns/zone.recordset/delete**: 
- - **dns/zone.recordset/get**: 
- - **dns/zone.recordset.ttl/update**: 
- - **dns/zone.record/create**: 
- - **dns/zone.record/delete**: 
- - **dns/zone.record/list**: 
- - **dns/zone.record/get**: 
- - **dns/zone.service/list**: 
- - **dns/zone.service/get**: 
- - **dns/zone.tag/list**: 
- - **dns/zone.tag/create**: 
- - **dns/zone.tag/delete**: 
- - **dns/zone.tag/get**: 
- - **dns/zone.event/list**: 
- - **dns/zone.event/get**: 
- - **compute/vm/use**: 
- - **storage/disk/create**: 
- - **storage/disk/list**: 
- - **storage/disk/get**: 
- - **storage/disk.name/update**: 
- - **storage/disk/delete**: 
- - **storage/disk.size/update**: 
- - **storage/disk/detach**: 
- - **storage/disk/read**: 
- - **storage/disk/transfer**: 
- - **storage/disk.metric/list**: 
- - **storage/disk.metric/get**: 
- - **storage/disk.point/list**: 
- - **storage/disk.service/list**: 
- - **storage/disk.service/get**: 
- - **storage/disk.tag/list**: 
- - **storage/disk.tag/create**: 
- - **storage/disk.tag/delete**: 
- - **storage/disk.tag/get**: 
- - **storage/disk.event/list**: 
- - **storage/disk.event/get**: 
- - **storage/disk/use**: 
- - **networking/firewall/create**: 
- - **networking/firewall/list**: 
- - **networking/firewall/get**: 
- - **networking/firewall.name/update**: 
- - **networking/firewall/delete**: 
- - **networking/firewall/transfer**: 
- - **networking/firewall.ingress/list**: 
- - **networking/firewall.ingress/create**: 
- - **networking/firewall.ingress/delete**: 
- - **networking/firewall.ingress/get**: 
- - **networking/firewall.egress/list**: 
- - **networking/firewall.egress/create**: 
- - **networking/firewall.egress/delete**: 
- - **networking/firewall.egress/get**: 
- - **networking/firewall.service/list**: 
- - **networking/firewall.service/get**: 
- - **networking/firewall.tag/list**: 
- - **networking/firewall.tag/create**: 
- - **networking/firewall.tag/delete**: 
- - **networking/firewall.tag/get**: 
- - **networking/firewall.event/list**: 
- - **networking/firewall.event/get**: 
- - **compute/replica/use**: 
- - **storage/image/create**: 
- - **storage/image/list**: 
- - **storage/image/get**: 
- - **storage/image.name/update**: 
- - **storage/image.description/update**: 
- - **storage/image/delete**: 
- - **storage/image/transfer**: 
- - **storage/image.disk/list**: 
- - **storage/image.service/list**: 
- - **storage/image.service/get**: 
- - **storage/image.tag/list**: 
- - **storage/image.tag/create**: 
- - **storage/image.tag/delete**: 
- - **storage/image.tag/get**: 
- - **storage/image.event/list**: 
- - **storage/image.event/get**: 
- - **networking/network/use**: 
- - **networking/ip/create**: 
- - **networking/ip/list**: 
- - **networking/ip/get**: 
- - **networking/ip.ptrRecord/update**: 
- - **networking/ip/delete**: 
- - **networking/ip/persist**: 
- - **networking/ip/use**: 
- - **networking/ip/associate**: 
- - **networking/ip/disassociate**: 
- - **networking/ip/transfer**: 
- - **networking/ip.service/list**: 
- - **networking/ip.service/get**: 
- - **networking/ip.tag/list**: 
- - **networking/ip.tag/create**: 
- - **networking/ip.tag/delete**: 
- - **networking/ip.tag/get**: 
- - **networking/ip.event/list**: 
- - **networking/ip.event/get**: 
- - **storage/iso/create**: 
- - **storage/iso/list**: 
- - **storage/iso/get**: 
- - **storage/iso.name/update**: 
- - **storage/iso/delete**: 
- - **storage/iso/detach**: 
- - **storage/iso/transfer**: 
- - **storage/iso.service/list**: 
- - **storage/iso.service/get**: 
- - **storage/iso.tag/list**: 
- - **storage/iso.tag/create**: 
- - **storage/iso.tag/delete**: 
- - **storage/iso.tag/get**: 
- - **storage/iso.event/list**: 
- - **storage/iso.event/get**: 
- - **networking/firewall/use**: 
- - **networking/netadp/create**: 
- - **networking/netadp/list**: 
- - **networking/netadp/get**: 
- - **networking/netadp.firewall/update**: 
- - **networking/netadp/delete**: 
- - **networking/netadp.metric/list**: 
- - **networking/netadp.metric/get**: 
- - **networking/netadp.point/list**: 
- - **networking/netadp.service/list**: 
- - **networking/netadp.service/get**: 
- - **networking/netadp.tag/list**: 
- - **networking/netadp.tag/create**: 
- - **networking/netadp.tag/delete**: 
- - **networking/netadp.tag/get**: 
- - **networking/netadp.event/list**: 
- - **networking/netadp.event/get**: 
- - **networking/netgw/create**: 
- - **networking/netgw/list**: 
- - **networking/netgw/get**: 
- - **networking/netgw.name/update**: 
- - **networking/netgw/delete**: 
- - **networking/netgw/attach**: 
- - **networking/netgw/detach**: 
- - **networking/netgw.service/list**: 
- - **networking/netgw.service/get**: 
- - **networking/netgw.tag/list**: 
- - **networking/netgw.tag/create**: 
- - **networking/netgw.tag/delete**: 
- - **networking/netgw.tag/get**: 
- - **networking/netgw.event/list**: 
- - **networking/netgw.event/get**: 
- - **networking/network/create**: 
- - **networking/network/list**: 
- - **networking/network/get**: 
- - **networking/network.name/update**: 
- - **networking/network.gateway/update**: 
- - **networking/network.firewall/update**: 
- - **networking/network/delete**: 
- - **networking/network.service/list**: 
- - **networking/network.service/get**: 
- - **networking/network.tag/list**: 
- - **networking/network.tag/create**: 
- - **networking/network.tag/delete**: 
- - **networking/network.tag/get**: 
- - **networking/network.event/list**: 
- - **networking/network.event/get**: 
+ - **billing/service/list**: 
+ - **billing/service/get**: 
  - **iam/role/use**: 
  - **iam/policy/create**: 
  - **iam/policy/list**: 
@@ -1564,18 +893,23 @@ r, err := client.Service.Operation(auth, args)
  - **iam/policy.tag/get**: 
  - **iam/policy.event/list**: 
  - **iam/policy.event/get**: 
- - **compute/replica/create**: 
- - **compute/replica/list**: 
- - **compute/replica/get**: 
- - **compute/replica/delete**: 
- - **compute/replica.service/list**: 
- - **compute/replica.service/get**: 
- - **compute/replica.tag/list**: 
- - **compute/replica.tag/create**: 
- - **compute/replica.tag/delete**: 
- - **compute/replica.tag/get**: 
- - **compute/replica.event/list**: 
- - **compute/replica.event/get**: 
+ - **iam/group/create**: 
+ - **iam/group/list**: 
+ - **iam/group/get**: 
+ - **iam/group.name/update**: 
+ - **iam/group/delete**: 
+ - **iam/group.actor/list**: 
+ - **iam/group.actor/create**: 
+ - **iam/group.actor/get**: 
+ - **iam/group.actor/delete**: 
+ - **iam/group.service/list**: 
+ - **iam/group.service/get**: 
+ - **iam/group.tag/list**: 
+ - **iam/group.tag/create**: 
+ - **iam/group.tag/delete**: 
+ - **iam/group.tag/get**: 
+ - **iam/group.event/list**: 
+ - **iam/group.event/get**: 
  - **iam/role/create**: 
  - **iam/role/list**: 
  - **iam/role/get**: 
@@ -1612,7 +946,137 @@ r, err := client.Service.Operation(auth, args)
  - **iam/sa.tag/get**: 
  - **iam/sa.event/list**: 
  - **iam/sa.event/get**: 
+ - **iam/sa/use**: 
  - **iam/sa/delegate**: 
+ - **iam/application/create**: 
+ - **iam/application/list**: 
+ - **iam/application/get**: 
+ - **iam/application.name/update**: 
+ - **iam/application/delete**: 
+ - **iam/application.redirect/create**: 
+ - **iam/application.redirect/list**: 
+ - **iam/application.redirect/delete**: 
+ - **iam/application.redirect/get**: 
+ - **iam/application.redirect.name/update**: 
+ - **iam/application.credential/list**: 
+ - **iam/application.credential/create**: 
+ - **iam/application.credential/get**: 
+ - **iam/application.credential.name/update**: 
+ - **iam/application.credential/delete**: 
+ - **iam/application.service/list**: 
+ - **iam/application.service/get**: 
+ - **iam/application.tag/list**: 
+ - **iam/application.tag/create**: 
+ - **iam/application.tag/delete**: 
+ - **iam/application.tag/get**: 
+ - **iam/application.event/list**: 
+ - **iam/application.event/get**: 
+ - **iam/application/use**: 
+ - **support/ticket/create**: 
+ - **support/ticket/list**: 
+ - **support/ticket/get**: 
+ - **support/ticket/close**: 
+ - **support/ticket.message/list**: 
+ - **support/ticket.message/create**: 
+ - **support/ticket.message/get**: 
+ - **storage/image/use**: 
+ - **storage/iso/use**: 
+ - **networking/network/use**: 
+ - **networking/firewall/use**: 
+ - **networking/ip/use**: 
+ - **compute/vm/create**: 
+ - **compute/vm/list**: 
+ - **compute/vm/get**: 
+ - **compute/vm.userMetadata/update**: 
+ - **compute/vm.name/update**: 
+ - **compute/vm/delete**: 
+ - **compute/vm/start**: 
+ - **compute/vm/restart**: 
+ - **compute/vm/stop**: 
+ - **compute/vm/turnoff**: 
+ - **compute/vm/passwordReset**: 
+ - **compute/vm/flavour**: 
+ - **compute/vm.serialport/read**: 
+ - **storage/disk/list**: 
+ - **storage/disk/attach**: 
+ - **compute/vm/use**: 
+ - **storage/iso/list**: 
+ - **storage/iso/attach**: 
+ - **compute/vm.metric/list**: 
+ - **compute/vm.metric/get**: 
+ - **compute/vm.series/list**: 
+ - **compute/vm.connect/list**: 
+ - **compute/vm.connect/get**: 
+ - **compute/vm.service/list**: 
+ - **compute/vm.service/get**: 
+ - **compute/vm.tag/list**: 
+ - **compute/vm.tag/create**: 
+ - **compute/vm.tag/delete**: 
+ - **compute/vm.tag/get**: 
+ - **compute/vm.event/list**: 
+ - **compute/vm.event/get**: 
+ - **compute/replica/create**: 
+ - **compute/replica/list**: 
+ - **compute/replica/get**: 
+ - **compute/replica/delete**: 
+ - **compute/replica.service/list**: 
+ - **compute/replica.service/get**: 
+ - **compute/replica.tag/list**: 
+ - **compute/replica.tag/create**: 
+ - **compute/replica.tag/delete**: 
+ - **compute/replica.tag/get**: 
+ - **compute/replica.event/list**: 
+ - **compute/replica.event/get**: 
+ - **storage/disk/create**: 
+ - **storage/disk/get**: 
+ - **storage/disk.name/update**: 
+ - **storage/disk/delete**: 
+ - **storage/disk.size/update**: 
+ - **storage/disk/detach**: 
+ - **storage/disk/read**: 
+ - **storage/disk/transfer**: 
+ - **storage/disk.metric/list**: 
+ - **storage/disk.metric/get**: 
+ - **storage/disk.series/list**: 
+ - **storage/disk.service/list**: 
+ - **storage/disk.service/get**: 
+ - **storage/disk.tag/list**: 
+ - **storage/disk.tag/create**: 
+ - **storage/disk.tag/delete**: 
+ - **storage/disk.tag/get**: 
+ - **storage/disk.event/list**: 
+ - **storage/disk.event/get**: 
+ - **storage/disk/use**: 
+ - **compute/replica/use**: 
+ - **storage/image/create**: 
+ - **storage/image/list**: 
+ - **storage/image/get**: 
+ - **storage/image.name/update**: 
+ - **storage/image.description/update**: 
+ - **storage/image/delete**: 
+ - **storage/image/transfer**: 
+ - **storage/image.service/list**: 
+ - **storage/image.service/get**: 
+ - **storage/image.tag/list**: 
+ - **storage/image.tag/create**: 
+ - **storage/image.tag/delete**: 
+ - **storage/image.tag/get**: 
+ - **storage/image.event/list**: 
+ - **storage/image.event/get**: 
+ - **storage/iso/create**: 
+ - **storage/iso/get**: 
+ - **storage/iso.name/update**: 
+ - **storage/iso/delete**: 
+ - **storage/iso/detach**: 
+ - **storage/iso/transfer**: 
+ - **storage/iso.service/list**: 
+ - **storage/iso.service/get**: 
+ - **storage/iso.tag/list**: 
+ - **storage/iso.tag/create**: 
+ - **storage/iso.tag/delete**: 
+ - **storage/iso.tag/get**: 
+ - **storage/iso.event/list**: 
+ - **storage/iso.event/get**: 
  - **storage/vault.snapshot/use**: 
  - **storage/vault/create**: 
  - **storage/vault/list**: 
@@ -1641,51 +1105,176 @@ r, err := client.Service.Operation(auth, args)
  - **storage/vault.tag/get**: 
  - **storage/vault.event/list**: 
  - **storage/vault.event/get**: 
- - **storage/image/use**: 
- - **storage/iso/use**: 
- - **compute/vm/create**: 
- - **compute/vm/list**: 
- - **compute/vm/get**: 
- - **compute/vm.userMetadata/update**: 
- - **compute/vm.name/update**: 
- - **compute/vm/delete**: 
- - **compute/vm/start**: 
- - **compute/vm/restart**: 
- - **compute/vm/stop**: 
- - **compute/vm/turnoff**: 
- - **compute/vm/passwordReset**: 
- - **compute/vm/flavour**: 
- - **compute/vm.serialport/read**: 
- - **storage/disk/attach**: 
- - **storage/iso/attach**: 
- - **compute/vm.metric/list**: 
- - **compute/vm.metric/get**: 
- - **compute/vm.point/list**: 
- - **compute/vm.connect/list**: 
- - **compute/vm.connect/get**: 
- - **compute/vm.service/list**: 
- - **compute/vm.service/get**: 
- - **compute/vm.tag/list**: 
- - **compute/vm.tag/create**: 
- - **compute/vm.tag/delete**: 
- - **compute/vm.tag/get**: 
- - **compute/vm.event/list**: 
- - **compute/vm.event/get**: 
- - **billing/reservation/create**: 
- - **billing/reservation/list**: 
- - **billing/reservation/get**: 
- - **billing/reservation.name/update**: 
- - **billing/reservation/delete**: 
- - **billing/reservation/assign**: 
- - **billing/reservation/extend**: 
- - **billing/reservation.service/list**: 
- - **billing/reservation.service/get**: 
- - **billing/reservation.tag/list**: 
- - **billing/reservation.tag/create**: 
- - **billing/reservation.tag/delete**: 
- - **billing/reservation.tag/get**: 
- - **billing/reservation.event/list**: 
- - **billing/reservation.event/get**: 
+ - **storage/bucket/list**: 
+ - **storage/bucket/get**: 
+ - **storage/bucket/upload**: 
+ - **storage/bucket.object/list**: 
+ - **storage/bucket.object/get**: 
+ - **storage/bucket.object/delete**: 
+ - **storage/bucket.actions/create**: 
+ - **storage/bucket/use**: 
+ - **networking/firewall/create**: 
+ - **networking/firewall/list**: 
+ - **networking/firewall/get**: 
+ - **networking/firewall.name/update**: 
+ - **networking/firewall/delete**: 
+ - **networking/firewall/transfer**: 
+ - **networking/firewall.ingress/list**: 
+ - **networking/firewall.ingress/create**: 
+ - **networking/firewall.ingress/delete**: 
+ - **networking/firewall.ingress/get**: 
+ - **networking/firewall.egress/list**: 
+ - **networking/firewall.egress/create**: 
+ - **networking/firewall.egress/delete**: 
+ - **networking/firewall.egress/get**: 
+ - **networking/firewall.service/list**: 
+ - **networking/firewall.service/get**: 
+ - **networking/firewall.tag/list**: 
+ - **networking/firewall.tag/create**: 
+ - **networking/firewall.tag/delete**: 
+ - **networking/firewall.tag/get**: 
+ - **networking/firewall.event/list**: 
+ - **networking/firewall.event/get**: 
+ - **networking/network/create**: 
+ - **networking/network/list**: 
+ - **networking/network/get**: 
+ - **networking/network.name/update**: 
+ - **networking/network.gateway/update**: 
+ - **networking/network.firewall/update**: 
+ - **networking/network/delete**: 
+ - **networking/network.service/list**: 
+ - **networking/network.service/get**: 
+ - **networking/network.tag/list**: 
+ - **networking/network.tag/create**: 
+ - **networking/network.tag/delete**: 
+ - **networking/network.tag/get**: 
+ - **networking/network.event/list**: 
+ - **networking/network.event/get**: 
+ - **networking/netadp/create**: 
+ - **networking/netadp/list**: 
+ - **networking/netadp/get**: 
+ - **networking/netadp.firewall/update**: 
+ - **networking/netadp/delete**: 
+ - **networking/netadp.metric/list**: 
+ - **networking/netadp.metric/get**: 
+ - **networking/netadp.series/list**: 
+ - **networking/netadp.service/list**: 
+ - **networking/netadp.service/get**: 
+ - **networking/netadp.tag/list**: 
+ - **networking/netadp.tag/create**: 
+ - **networking/netadp.tag/delete**: 
+ - **networking/netadp.tag/get**: 
+ - **networking/netadp.event/list**: 
+ - **networking/netadp.event/get**: 
+ - **networking/netgw/create**: 
+ - **networking/netgw/list**: 
+ - **networking/netgw/get**: 
+ - **networking/netgw.name/update**: 
+ - **networking/netgw/delete**: 
+ - **networking/netgw/attach**: 
+ - **networking/netgw/detach**: 
+ - **networking/netgw.service/list**: 
+ - **networking/netgw.service/get**: 
+ - **networking/netgw.tag/list**: 
+ - **networking/netgw.tag/create**: 
+ - **networking/netgw.tag/delete**: 
+ - **networking/netgw.tag/get**: 
+ - **networking/netgw.event/list**: 
+ - **networking/netgw.event/get**: 
+ - **networking/ip/create**: 
+ - **networking/ip/list**: 
+ - **networking/ip/get**: 
+ - **networking/ip.ptrRecord/update**: 
+ - **networking/ip/delete**: 
+ - **networking/ip/persist**: 
+ - **networking/ip/associate**: 
+ - **networking/ip/disassociate**: 
+ - **networking/ip/transfer**: 
+ - **networking/ip.service/list**: 
+ - **networking/ip.service/get**: 
+ - **networking/ip.tag/list**: 
+ - **networking/ip.tag/create**: 
+ - **networking/ip.tag/delete**: 
+ - **networking/ip.tag/get**: 
+ - **networking/ip.event/list**: 
+ - **networking/ip.event/get**: 
+ - **dns/zone/create**: 
+ - **dns/zone/list**: 
+ - **dns/zone/get**: 
+ - **dns/zone.name/update**: 
+ - **dns/zone/delete**: 
+ - **dns/zone.recordset/create**: 
+ - **dns/zone.recordset/list**: 
+ - **dns/zone.recordset/delete**: 
+ - **dns/zone.recordset/get**: 
+ - **dns/zone.recordset.ttl/update**: 
+ - **dns/zone.record/create**: 
+ - **dns/zone.record/delete**: 
+ - **dns/zone.record/list**: 
+ - **dns/zone.record/get**: 
+ - **dns/zone.service/list**: 
+ - **dns/zone.service/get**: 
+ - **dns/zone.tag/list**: 
+ - **dns/zone.tag/create**: 
+ - **dns/zone.tag/delete**: 
+ - **dns/zone.tag/get**: 
+ - **dns/zone.event/list**: 
+ - **dns/zone.event/get**: 
+ - **container/registry/create**: 
+ - **container/registry/list**: 
+ - **container/registry/get**: 
+ - **container/registry.name/update**: 
+ - **container/registry/delete**: 
+ - **container/registry/start**: 
+ - **container/registry/stop**: 
+ - **container/registry/transfer**: 
+ - **container/registry.repository/list**: 
+ - **container/registry.repository/get**: 
+ - **container/registry.image/list**: 
+ - **container/registry.image/get**: 
+ - **container/registry.image/delete**: 
+ - **container/registry.credential/list**: 
+ - **container/registry.credential/create**: 
+ - **container/registry.credential/get**: 
+ - **container/registry.credential.name/update**: 
+ - **container/registry.credential/delete**: 
+ - **container/registry.domain/list**: 
+ - **container/registry.domain/create**: 
+ - **container/registry.domain/get**: 
+ - **container/registry.domain/delete**: 
+ - **container/registry.service/list**: 
+ - **container/registry.service/get**: 
+ - **container/registry.tag/list**: 
+ - **container/registry.tag/create**: 
+ - **container/registry.tag/delete**: 
+ - **container/registry.tag/get**: 
+ - **container/registry.event/list**: 
+ - **container/registry.event/get**: 
+ - **container/registry.repository/create**: push image
+ - **container/registry.repository/read**: pull image
+ - **insight/journal/create**: 
+ - **insight/journal/list**: 
+ - **insight/journal/get**: 
+ - **insight/journal.name/update**: 
+ - **insight/journal.retention/update**: 
+ - **insight/journal/delete**: 
+ - **insight/journal/transfer**: 
+ - **insight/journal.log/get**: 
+ - **insight/journal.credential/list**: 
+ - **insight/journal.credential/create**: 
+ - **insight/journal.credential/get**: 
+ - **insight/journal.credential.name/update**: 
+ - **insight/journal.credential/delete**: 
+ - **insight/journal.service/list**: 
+ - **insight/journal.service/get**: 
+ - **insight/journal.tag/list**: 
+ - **insight/journal.tag/create**: 
+ - **insight/journal.tag/delete**: 
+ - **insight/journal.tag/get**: 
+ - **insight/journal.event/list**: 
+ - **insight/journal.event/get**: 
+ - **insight/journal/read**: 
+ - **insight/journal/write**: 
  - **vmhost/instance/list**: 
  - **vmhost/instance/get**: 
  - **vmhost/instance.service/list**: 
@@ -1696,21 +1285,325 @@ r, err := client.Service.Operation(auth, args)
  - **vmhost/instance.tag/get**: 
  - **vmhost/instance.event/list**: 
  - **vmhost/instance.event/get**: 
- - **storage/bucket/list**: 
- - **storage/bucket/get**: 
- - **storage/bucket.object/list**: 
- - **storage/bucket.object/get**: 
- - **storage/bucket.object/delete**: 
- - **storage/bucket.actions/create**: 
- - **support/ticket/create**: 
- - **support/ticket/list**: 
- - **support/ticket/get**: 
- - **support/ticket/close**: 
- - **support/ticket.message/list**: 
- - **support/ticket.message/create**: 
- - **support/ticket.message/get**: 
- - **billing/service/list**: 
- - **billing/service/get**: 
+ - **provider/agent/create**: 
+ - **provider/agent/list**: 
+ - **provider/agent/get**: 
+ - **provider/agent.name/update**: 
+ - **provider/agent/delete**: 
+ - **provider/agent/start**: 
+ - **provider/agent/suspend**: 
+ - **provider/agent/inspect**: 
+ - **provider/agent/transfer**: 
+ - **provider/agent.credential/list**: 
+ - **provider/agent.credential/create**: 
+ - **provider/agent.credential/get**: 
+ - **provider/agent.credential.name/update**: 
+ - **provider/agent.credential/delete**: 
+ - **provider/agent.enabledService/list**: 
+ - **provider/agent.enabledService/create**: 
+ - **provider/agent.enabledService/get**: 
+ - **provider/agent.enabledService/delete**: 
+ - **provider/agent.resource/list**: 
+ - **provider/agent.resource/get**: 
+ - **provider/agent.resource/recreate**: 
+ - **provider/agent.resource/inspect**: 
+ - **provider/agent.resource.event/list**: 
+ - **provider/agent.service/list**: 
+ - **provider/agent.service/get**: 
+ - **provider/agent.tag/list**: 
+ - **provider/agent.tag/create**: 
+ - **provider/agent.tag/delete**: 
+ - **provider/agent.tag/get**: 
+ - **provider/agent.event/list**: 
+ - **provider/agent.event/get**: 
+ - **provider/agent/connect**: 
+ - **iam/organisation/get**: 
+ - **iam/organisation.name/update**: 
+ - **iam/organisation.billing/update**: 
+ - **iam/organisation/delete**: 
+ - **iam/organisation.billing/list**: 
+ - **iam/organisation.transfer/list**: 
+ - **iam/organisation.transfer/get**: 
+ - **iam/organisation.payment/allocate**: 
+ - **iam/organisation.transfer/accept**: 
+ - **iam/organisation.payment/list**: 
+ - **iam/organisation.payment/get**: 
+ - **iam/project/get**: 
+ - **iam/organisation.invoice/list**: 
+ - **iam/organisation.invoice/get**: 
+ - **iam/organisation.invoice/download**: 
+ - **iam/organisation.proforma/create**: 
+ - **iam/organisation.proforma/list**: 
+ - **iam/organisation.proforma/get**: 
+ - **iam/organisation.proforma/download**: 
+ - **iam/organisation.invitation/list**: 
+ - **iam/organisation.invitation/get**: 
+ - **iam/organisation.invitation/delete**: 
+ - **iam/organisation.ownership/create**: 
+ - **iam/organisation.ownership/list**: 
+ - **iam/organisation.ownership/get**: 
+ - **iam/organisation.ownership/delete**: 
+ - **iam/organisation.service/list**: 
+ - **iam/organisation.service/get**: 
+ - **iam/organisation.event/list**: 
+ - **iam/organisation.event/get**: 
+ - **iam/project/create**: 
+ - **iam/project.name/update**: 
+ - **iam/project/delete**: 
+ - **iam/project/transfer**: 
+ - **iam/project.billing/list**: 
+ - **iam/project.payment/list**: 
+ - **iam/project.invoice/list**: 
+ - **iam/project.proforma/list**: 
+ - **iam/project.threshold/list**: 
+ - **iam/project.threshold/create**: 
+ - **iam/project.threshold/get**: 
+ - **iam/project.threshold/delete**: 
+ - **iam/project.usage/list**: 
+ - **iam/project.usage/get**: 
+ - **iam/project.series/list**: 
+ - **iam/project.cost/list**: 
+ - **iam/project.cost/get**: 
+ - **iam/project.credentialStore/list**: 
+ - **iam/project.credentialStore/create**: 
+ - **iam/project.credentialStore/get**: 
+ - **iam/project.credentialStore.name/update**: 
+ - **iam/project.credentialStore/delete**: 
+ - **iam/project.quota/list**: 
+ - **iam/project.quota/get**: 
+ - **iam/project.quota.user/update**: 
+ - **iam/project.invitation/list**: 
+ - **iam/project.invitation/get**: 
+ - **iam/project.invitation/delete**: 
+ - **iam/project.ownership/create**: 
+ - **iam/project.ownership/list**: 
+ - **iam/project.ownership/get**: 
+ - **iam/project.ownership/delete**: 
+ - **iam/project.service/list**: 
+ - **iam/project.service/get**: 
+ - **iam/project.tag/list**: 
+ - **iam/project.tag/create**: 
+ - **iam/project.tag/delete**: 
+ - **iam/project.tag/get**: 
+ - **iam/project.event/list**: 
+ - **iam/project.event/get**: 
+ - **search/resource/list**: 
+ - **billing/plan/use**: 
+ - **billing/plan/create**: 
+ - **billing/plan/list**: 
+ - **billing/plan/get**: 
+ - **billing/plan/delete**: 
+ - **billing/plan.name/update**: 
+ - **billing/plan.link/use**: 
+ - **billing/plan.tag/use**: 
+ - **billing/plan.tag/create**: 
+ - **billing/plan.tag/delete**: 
+ - **billing/plan.tag/list**: 
+ - **billing/plan.tag/get**: 
+ - **billing/support/use**: 
+ - **billing/support.tag/use**: 
+ - **billing/support.tag/create**: 
+ - **billing/support.tag/delete**: 
+ - **billing/support.tag/list**: 
+ - **billing/support.tag/get**: 
+ - **compute/replica.tag/use**: 
+ - **compute/vm.link/use**: 
+ - **compute/vm.tag/use**: 
+ - **database/instance/use**: 
+ - **database/instance/create**: 
+ - **database/instance.name/update**: 
+ - **database/instance/delete**: 
+ - **database/instance/list**: 
+ - **database/instance/get**: 
+ - **database/instance/stop**: 
+ - **database/instance/start**: 
+ - **database/instance.credential/use**: 
+ - **database/instance.credential/create**: 
+ - **database/instance.credential/delete**: 
+ - **database/instance.credential/list**: 
+ - **database/instance.credential/get**: 
+ - **database/instance.link/use**: 
+ - **database/instance.connect/use**: 
+ - **database/instance.connect/list**: 
+ - **database/instance.connect/get**: 
+ - **database/instance.tag/use**: 
+ - **database/instance.tag/create**: 
+ - **database/instance.tag/delete**: 
+ - **database/instance.tag/list**: 
+ - **database/instance.tag/get**: 
+ - **insight/influx/use**: 
+ - **insight/influx/create**: 
+ - **insight/influx/delete**: 
+ - **insight/influx/list**: 
+ - **insight/influx/get**: 
+ - **insight/influx.name/update**: 
+ - **insight/influx/start**: 
+ - **insight/influx/stop**: 
+ - **insight/influx.credential/use**: 
+ - **insight/influx.credential/create**: 
+ - **insight/influx.credential/delete**: 
+ - **insight/influx.credential/list**: 
+ - **insight/influx.credential/get**: 
+ - **insight/influx.snapshot/use**: 
+ - **insight/influx.snapshot/create**: 
+ - **insight/influx.snapshot/delete**: 
+ - **insight/influx.snapshot/list**: 
+ - **insight/influx.snapshot/get**: 
+ - **insight/influx.snapshot.url/get**: 
+ - **insight/influx.tag/use**: 
+ - **insight/influx.tag/create**: 
+ - **insight/influx.tag/delete**: 
+ - **insight/influx.tag/list**: 
+ - **insight/influx.tag/get**: 
+ - **networking/ip.tag/use**: 
+ - **networking/netadp/use**: 
+ - **networking/netadp.tag/use**: 
+ - **networking/network.tag/use**: 
+ - **platform/activity/use**: 
+ - **platform/activity/list**: 
+ - **platform/activity/get**: 
+ - **platform/activity.tag/use**: 
+ - **platform/activity.tag/create**: 
+ - **platform/activity.tag/delete**: 
+ - **platform/activity.tag/list**: 
+ - **platform/activity.tag/get**: 
+ - **platform/link/use**: 
+ - **platform/link/create**: 
+ - **platform/link/delete**: 
+ - **platform/link/list**: 
+ - **platform/link/get**: 
+ - **platform/link.name/update**: 
+ - **platform/link.tag/use**: 
+ - **platform/link.tag/create**: 
+ - **platform/link.tag/delete**: 
+ - **platform/link.tag/list**: 
+ - **platform/link.tag/get**: 
+ - **platform/metric.tag/use**: 
+ - **platform/metric.tag/create**: 
+ - **platform/metric.tag/delete**: 
+ - **platform/metric.tag/list**: 
+ - **platform/metric.tag/get**: 
+ - **provider/agent/use**: 
+ - **provider/agent.tag/use**: 
+ - **recovery/backup/use**: 
+ - **recovery/backup/create**: 
+ - **recovery/backup.name/update**: 
+ - **recovery/backup/delete**: 
+ - **recovery/backup/list**: 
+ - **recovery/backup/get**: 
+ - **recovery/backup/export**: 
+ - **recovery/backup.tag/use**: 
+ - **recovery/backup.tag/create**: 
+ - **recovery/backup.tag/delete**: 
+ - **recovery/backup.tag/list**: 
+ - **recovery/backup.tag/get**: 
+ - **recovery/plan/use**: 
+ - **recovery/plan/create**: 
+ - **recovery/plan/delete**: 
+ - **recovery/plan/list**: 
+ - **recovery/plan/get**: 
+ - **recovery/plan.name/update**: 
+ - **recovery/plan.link/use**: 
+ - **recovery/plan.tag/use**: 
+ - **recovery/plan.tag/create**: 
+ - **recovery/plan.tag/delete**: 
+ - **recovery/plan.tag/list**: 
+ - **recovery/plan.tag/get**: 
+ - **storage/disk.tag/use**: 
+ - **storage/image.tag/use**: 
+ - **storage/iso.tag/use**: 
+ - **website/instance/use**: 
+ - **website/instance/create**: 
+ - **website/instance/delete**: 
+ - **website/instance/list**: 
+ - **website/instance/get**: 
+ - **website/instance/start**: 
+ - **website/instance/stop**: 
+ - **website/instance/restart**: 
+ - **website/instance.name/update**: 
+ - **website/instance.snapshot/use**: 
+ - **website/instance.snapshot/create**: 
+ - **website/instance.snapshot/delete**: 
+ - **website/instance.snapshot/list**: 
+ - **website/instance.snapshot/get**: 
+ - **website/instance.credential/use**: 
+ - **website/instance.credential/create**: 
+ - **website/instance.credential/delete**: 
+ - **website/instance.credential/list**: 
+ - **website/instance.credential/get**: 
+ - **website/instance.env/use**: 
+ - **website/instance.env/create**: 
+ - **website/instance.env/delete**: 
+ - **website/instance.env/list**: 
+ - **website/instance.env/get**: 
+ - **website/instance.domain/use**: 
+ - **website/instance.domain/create**: 
+ - **website/instance.domain/delete**: 
+ - **website/instance.domain/list**: 
+ - **website/instance.domain/get**: 
+ - **website/instance.connect/use**: 
+ - **website/instance.connect/list**: 
+ - **website/instance.connect/get**: 
+ - **website/instance.sideapp/use**: 
+ - **website/instance.sideapp/list**: 
+ - **website/instance.sideapp/get**: 
+ - **website/instance.log/use**: 
+ - **website/instance.log/list**: 
+ - **website/instance.log/get**: 
+ - **website/instance.link/use**: 
+ - **website/instance.tag/use**: 
+ - **website/instance.tag/create**: 
+ - **website/instance.tag/delete**: 
+ - **website/instance.tag/list**: 
+ - **website/instance.tag/get**: 
+ - **billing/plan.metric/list**: 
+ - **billing/support.metric/list**: 
+ - **compute/replica.metric/list**: 
+ - **database/instance.metric/list**: 
+ - **insight/influx.metric/list**: 
+ - **networking/ip.metric/list**: 
+ - **networking/network.metric/list**: 
+ - **platform/activity.metric/list**: 
+ - **platform/link.metric/list**: 
+ - **provider/agent.metric/list**: 
+ - **recovery/backup.metric/list**: 
+ - **recovery/plan.metric/list**: 
+ - **storage/image.metric/list**: 
+ - **storage/iso.metric/list**: 
+ - **website/instance.metric/list**: 
+ - **billing/plan.metric/get**: 
+ - **billing/support.metric/get**: 
+ - **compute/replica.metric/get**: 
+ - **database/instance.metric/get**: 
+ - **insight/influx.metric/get**: 
+ - **networking/ip.metric/get**: 
+ - **networking/network.metric/get**: 
+ - **platform/activity.metric/get**: 
+ - **platform/link.metric/get**: 
+ - **provider/agent.metric/get**: 
+ - **recovery/backup.metric/get**: 
+ - **recovery/plan.metric/get**: 
+ - **storage/image.metric/get**: 
+ - **storage/iso.metric/get**: 
+ - **website/instance.metric/get**: 
+ - **billing/plan.metric.series/list**: 
+ - **billing/support.metric.series/list**: 
+ - **compute/replica.metric.series/list**: 
+ - **compute/vm.metric.series/list**: 
+ - **database/instance.metric.series/list**: 
+ - **insight/influx.metric.series/list**: 
+ - **networking/ip.metric.series/list**: 
+ - **networking/netadp.metric.series/list**: 
+ - **networking/network.metric.series/list**: 
+ - **platform/activity.metric.series/list**: 
+ - **platform/link.metric.series/list**: 
+ - **provider/agent.metric.series/list**: 
+ - **recovery/backup.metric.series/list**: 
+ - **recovery/plan.metric.series/list**: 
+ - **storage/disk.metric.series/list**: 
+ - **storage/image.metric.series/list**: 
+ - **storage/iso.metric.series/list**: 
+ - **website/instance.metric.series/list**: 
 
 Example
 

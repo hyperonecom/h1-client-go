@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ComputeProjectReplicaCreate**](ComputeProjectReplicaApi.md#ComputeProjectReplicaCreate) | **Post** /compute/{locationId}/project/{projectId}/replica | Create compute/replica
 [**ComputeProjectReplicaDelete**](ComputeProjectReplicaApi.md#ComputeProjectReplicaDelete) | **Delete** /compute/{locationId}/project/{projectId}/replica/{replicaId} | Delete compute/replica
+[**ComputeProjectReplicaDiskList**](ComputeProjectReplicaApi.md#ComputeProjectReplicaDiskList) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/disk | List compute/replica.disk
 [**ComputeProjectReplicaEventGet**](ComputeProjectReplicaApi.md#ComputeProjectReplicaEventGet) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/event/{eventId} | Get compute/replica.event
 [**ComputeProjectReplicaEventList**](ComputeProjectReplicaApi.md#ComputeProjectReplicaEventList) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId}/event | List compute/replica.event
 [**ComputeProjectReplicaGet**](ComputeProjectReplicaApi.md#ComputeProjectReplicaGet) | **Get** /compute/{locationId}/project/{projectId}/replica/{replicaId} | Get compute/replica
@@ -158,6 +159,82 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ComputeProjectReplicaDiskList
+
+> []Disk ComputeProjectReplicaDiskList(ctx, projectId, locationId, replicaId).Execute()
+
+List compute/replica.disk
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    replicaId := "replicaId_example" // string | Replica Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaDiskList(context.Background(), projectId, locationId, replicaId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaDiskList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectReplicaDiskList`: []Disk
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaDiskList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**replicaId** | **string** | Replica Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectReplicaDiskListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**[]Disk**](Disk.md)
 
 ### Authorization
 

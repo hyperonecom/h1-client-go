@@ -33,6 +33,7 @@ type Ip struct {
 	PtrRecord *string `json:"ptrRecord,omitempty"`
 	Persistent *bool `json:"persistent,omitempty"`
 	Associated *IpAssociated `json:"associated,omitempty"`
+	Properties *IpProperties `json:"properties,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -565,6 +566,38 @@ func (o *Ip) SetAssociated(v IpAssociated) {
 	o.Associated = &v
 }
 
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *Ip) GetProperties() IpProperties {
+	if o == nil || o.Properties == nil {
+		var ret IpProperties
+		return ret
+	}
+	return *o.Properties
+}
+
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ip) GetPropertiesOk() (*IpProperties, bool) {
+	if o == nil || o.Properties == nil {
+		return nil, false
+	}
+	return o.Properties, true
+}
+
+// HasProperties returns a boolean if a field has been set.
+func (o *Ip) HasProperties() bool {
+	if o != nil && o.Properties != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProperties gets a reference to the given IpProperties and assigns it to the Properties field.
+func (o *Ip) SetProperties(v IpProperties) {
+	o.Properties = &v
+}
+
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *Ip) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -646,6 +679,9 @@ func (o Ip) MarshalJSON() ([]byte, error) {
 	}
 	if o.Associated != nil {
 		toSerialize["associated"] = o.Associated
+	}
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

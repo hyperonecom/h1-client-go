@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
+**Fqdn** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -310,6 +311,31 @@ SetType sets Type field to given value.
 `func (o *Vmhost) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetFqdn
+
+`func (o *Vmhost) GetFqdn() string`
+
+GetFqdn returns the Fqdn field if non-nil, zero value otherwise.
+
+### GetFqdnOk
+
+`func (o *Vmhost) GetFqdnOk() (*string, bool)`
+
+GetFqdnOk returns a tuple with the Fqdn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFqdn
+
+`func (o *Vmhost) SetFqdn(v string)`
+
+SetFqdn sets Fqdn field to given value.
+
+### HasFqdn
+
+`func (o *Vmhost) HasFqdn() bool`
+
+HasFqdn returns a boolean if a field has been set.
 
 ### GetTag
 

@@ -32,15 +32,15 @@ type ApiIamProjectPolicyActorCreateRequest struct {
 	ApiService *IamProjectPolicyApiService
 	projectId string
 	policyId string
-	iamActor *IamActor
+	iamActorOrGroup *IamActorOrGroup
 }
 
-func (r ApiIamProjectPolicyActorCreateRequest) IamActor(iamActor IamActor) ApiIamProjectPolicyActorCreateRequest {
-	r.iamActor = &iamActor
+func (r ApiIamProjectPolicyActorCreateRequest) IamActorOrGroup(iamActorOrGroup IamActorOrGroup) ApiIamProjectPolicyActorCreateRequest {
+	r.iamActorOrGroup = &iamActorOrGroup
 	return r
 }
 
-func (r ApiIamProjectPolicyActorCreateRequest) Execute() (*IamActor, *http.Response, error) {
+func (r ApiIamProjectPolicyActorCreateRequest) Execute() (*IamActorOrGroup, *http.Response, error) {
 	return r.ApiService.IamProjectPolicyActorCreateExecute(r)
 }
 
@@ -64,13 +64,13 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorCreate(ctx context.Con
 }
 
 // Execute executes the request
-//  @return IamActor
-func (a *IamProjectPolicyApiService) IamProjectPolicyActorCreateExecute(r ApiIamProjectPolicyActorCreateRequest) (*IamActor, *http.Response, error) {
+//  @return IamActorOrGroup
+func (a *IamProjectPolicyApiService) IamProjectPolicyActorCreateExecute(r ApiIamProjectPolicyActorCreateRequest) (*IamActorOrGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *IamActor
+		localVarReturnValue  *IamActorOrGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectPolicyApiService.IamProjectPolicyActorCreate")
@@ -85,8 +85,8 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorCreateExecute(r ApiIam
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.iamActor == nil {
-		return localVarReturnValue, nil, reportError("iamActor is required and must be specified")
+	if r.iamActorOrGroup == nil {
+		return localVarReturnValue, nil, reportError("iamActorOrGroup is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -107,7 +107,7 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorCreateExecute(r ApiIam
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.iamActor
+	localVarPostBody = r.iamActorOrGroup
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -164,7 +164,7 @@ type ApiIamProjectPolicyActorDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectPolicyActorDeleteRequest) Execute() (*IamActor, *http.Response, error) {
+func (r ApiIamProjectPolicyActorDeleteRequest) Execute() (*IamActorOrGroup, *http.Response, error) {
 	return r.ApiService.IamProjectPolicyActorDeleteExecute(r)
 }
 
@@ -190,13 +190,13 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorDelete(ctx context.Con
 }
 
 // Execute executes the request
-//  @return IamActor
-func (a *IamProjectPolicyApiService) IamProjectPolicyActorDeleteExecute(r ApiIamProjectPolicyActorDeleteRequest) (*IamActor, *http.Response, error) {
+//  @return IamActorOrGroup
+func (a *IamProjectPolicyApiService) IamProjectPolicyActorDeleteExecute(r ApiIamProjectPolicyActorDeleteRequest) (*IamActorOrGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *IamActor
+		localVarReturnValue  *IamActorOrGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectPolicyApiService.IamProjectPolicyActorDelete")
@@ -286,7 +286,7 @@ type ApiIamProjectPolicyActorGetRequest struct {
 }
 
 
-func (r ApiIamProjectPolicyActorGetRequest) Execute() (*IamActor, *http.Response, error) {
+func (r ApiIamProjectPolicyActorGetRequest) Execute() (*IamActorOrGroup, *http.Response, error) {
 	return r.ApiService.IamProjectPolicyActorGetExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorGet(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return IamActor
-func (a *IamProjectPolicyApiService) IamProjectPolicyActorGetExecute(r ApiIamProjectPolicyActorGetRequest) (*IamActor, *http.Response, error) {
+//  @return IamActorOrGroup
+func (a *IamProjectPolicyApiService) IamProjectPolicyActorGetExecute(r ApiIamProjectPolicyActorGetRequest) (*IamActorOrGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *IamActor
+		localVarReturnValue  *IamActorOrGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectPolicyApiService.IamProjectPolicyActorGet")
@@ -407,7 +407,7 @@ type ApiIamProjectPolicyActorListRequest struct {
 }
 
 
-func (r ApiIamProjectPolicyActorListRequest) Execute() ([]IamActor, *http.Response, error) {
+func (r ApiIamProjectPolicyActorListRequest) Execute() ([]IamActorOrGroup, *http.Response, error) {
 	return r.ApiService.IamProjectPolicyActorListExecute(r)
 }
 
@@ -431,13 +431,13 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyActorList(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return []IamActor
-func (a *IamProjectPolicyApiService) IamProjectPolicyActorListExecute(r ApiIamProjectPolicyActorListRequest) ([]IamActor, *http.Response, error) {
+//  @return []IamActorOrGroup
+func (a *IamProjectPolicyApiService) IamProjectPolicyActorListExecute(r ApiIamProjectPolicyActorListRequest) ([]IamActorOrGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IamActor
+		localVarReturnValue  []IamActorOrGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectPolicyApiService.IamProjectPolicyActorList")

@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**StorageProjectImageCreate**](StorageProjectImageApi.md#StorageProjectImageCreate) | **Post** /storage/{locationId}/project/{projectId}/image | Create storage/image
 [**StorageProjectImageDelete**](StorageProjectImageApi.md#StorageProjectImageDelete) | **Delete** /storage/{locationId}/project/{projectId}/image/{imageId} | Delete storage/image
-[**StorageProjectImageDiskList**](StorageProjectImageApi.md#StorageProjectImageDiskList) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/disk | List storage/image.disk
 [**StorageProjectImageEventGet**](StorageProjectImageApi.md#StorageProjectImageEventGet) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/event/{eventId} | Get storage/image.event
 [**StorageProjectImageEventList**](StorageProjectImageApi.md#StorageProjectImageEventList) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId}/event | List storage/image.event
 [**StorageProjectImageGet**](StorageProjectImageApi.md#StorageProjectImageGet) | **Get** /storage/{locationId}/project/{projectId}/image/{imageId} | Get storage/image
@@ -161,82 +160,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## StorageProjectImageDiskList
-
-> []Disk StorageProjectImageDiskList(ctx, projectId, locationId, imageId).Execute()
-
-List storage/image.disk
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    projectId := "projectId_example" // string | Project Id
-    locationId := "locationId_example" // string | Location Id
-    imageId := "imageId_example" // string | Image Id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageDiskList(context.Background(), projectId, locationId, imageId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDiskList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `StorageProjectImageDiskList`: []Disk
-    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageDiskList`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**projectId** | **string** | Project Id | 
-**locationId** | **string** | Location Id | 
-**imageId** | **string** | Image Id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiStorageProjectImageDiskListRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**[]Disk**](Disk.md)
 
 ### Authorization
 

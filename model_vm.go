@@ -26,7 +26,6 @@ type Vm struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	State *string `json:"state,omitempty"`
 	Project *string `json:"project,omitempty"`
-	Uri *string `json:"uri,omitempty"`
 	UserMetadata *string `json:"userMetadata,omitempty"`
 	Cpu *float32 `json:"cpu,omitempty"`
 	Memory *float32 `json:"memory,omitempty"`
@@ -339,38 +338,6 @@ func (o *Vm) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetUri returns the Uri field value if set, zero value otherwise.
-func (o *Vm) GetUri() string {
-	if o == nil || o.Uri == nil {
-		var ret string
-		return ret
-	}
-	return *o.Uri
-}
-
-// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Vm) GetUriOk() (*string, bool) {
-	if o == nil || o.Uri == nil {
-		return nil, false
-	}
-	return o.Uri, true
-}
-
-// HasUri returns a boolean if a field has been set.
-func (o *Vm) HasUri() bool {
-	if o != nil && o.Uri != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUri gets a reference to the given string and assigns it to the Uri field.
-func (o *Vm) SetUri(v string) {
-	o.Uri = &v
-}
-
 // GetUserMetadata returns the UserMetadata field value if set, zero value otherwise.
 func (o *Vm) GetUserMetadata() string {
 	if o == nil || o.UserMetadata == nil {
@@ -559,9 +526,6 @@ func (o Vm) MarshalJSON() ([]byte, error) {
 	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
-	}
-	if o.Uri != nil {
-		toSerialize["uri"] = o.Uri
 	}
 	if o.UserMetadata != nil {
 		toSerialize["userMetadata"] = o.UserMetadata

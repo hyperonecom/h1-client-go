@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**Uri** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
@@ -260,31 +259,6 @@ SetProject sets Project field to given value.
 `func (o *Agent) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
-
-### GetUri
-
-`func (o *Agent) GetUri() string`
-
-GetUri returns the Uri field if non-nil, zero value otherwise.
-
-### GetUriOk
-
-`func (o *Agent) GetUriOk() (*string, bool)`
-
-GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUri
-
-`func (o *Agent) SetUri(v string)`
-
-SetUri sets Uri field to given value.
-
-### HasUri
-
-`func (o *Agent) HasUri() bool`
-
-HasUri returns a boolean if a field has been set.
 
 ### GetType
 

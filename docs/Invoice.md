@@ -11,15 +11,17 @@ Name | Type | Description | Notes
 **InvoiceNo** | Pointer to **string** |  | [optional] 
 **IssueDate** | Pointer to **time.Time** |  | [optional] 
 **Payments** | Pointer to **[]string** |  | [optional] 
+**Channel** | Pointer to **string** |  | [optional] 
+**Nip** | Pointer to **string** |  | [optional] 
+**Company** | Pointer to **string** |  | [optional] 
 **Seller** | Pointer to [**InvoiceSeller**](InvoiceSeller.md) |  | [optional] 
 **Items** | Pointer to [**[]InvoiceItems**](InvoiceItems.md) |  | [optional] 
 **Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Summary** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**Duplicate** | Pointer to [**InvoiceDuplicate**](InvoiceDuplicate.md) |  | [optional] 
+**Organisation** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
-**Array** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -215,6 +217,81 @@ SetPayments sets Payments field to given value.
 
 HasPayments returns a boolean if a field has been set.
 
+### GetChannel
+
+`func (o *Invoice) GetChannel() string`
+
+GetChannel returns the Channel field if non-nil, zero value otherwise.
+
+### GetChannelOk
+
+`func (o *Invoice) GetChannelOk() (*string, bool)`
+
+GetChannelOk returns a tuple with the Channel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannel
+
+`func (o *Invoice) SetChannel(v string)`
+
+SetChannel sets Channel field to given value.
+
+### HasChannel
+
+`func (o *Invoice) HasChannel() bool`
+
+HasChannel returns a boolean if a field has been set.
+
+### GetNip
+
+`func (o *Invoice) GetNip() string`
+
+GetNip returns the Nip field if non-nil, zero value otherwise.
+
+### GetNipOk
+
+`func (o *Invoice) GetNipOk() (*string, bool)`
+
+GetNipOk returns a tuple with the Nip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNip
+
+`func (o *Invoice) SetNip(v string)`
+
+SetNip sets Nip field to given value.
+
+### HasNip
+
+`func (o *Invoice) HasNip() bool`
+
+HasNip returns a boolean if a field has been set.
+
+### GetCompany
+
+`func (o *Invoice) GetCompany() string`
+
+GetCompany returns the Company field if non-nil, zero value otherwise.
+
+### GetCompanyOk
+
+`func (o *Invoice) GetCompanyOk() (*string, bool)`
+
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompany
+
+`func (o *Invoice) SetCompany(v string)`
+
+SetCompany sets Company field to given value.
+
+### HasCompany
+
+`func (o *Invoice) HasCompany() bool`
+
+HasCompany returns a boolean if a field has been set.
+
 ### GetSeller
 
 `func (o *Invoice) GetSeller() InvoiceSeller`
@@ -365,30 +442,30 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
-### GetDuplicate
+### GetOrganisation
 
-`func (o *Invoice) GetDuplicate() InvoiceDuplicate`
+`func (o *Invoice) GetOrganisation() string`
 
-GetDuplicate returns the Duplicate field if non-nil, zero value otherwise.
+GetOrganisation returns the Organisation field if non-nil, zero value otherwise.
 
-### GetDuplicateOk
+### GetOrganisationOk
 
-`func (o *Invoice) GetDuplicateOk() (*InvoiceDuplicate, bool)`
+`func (o *Invoice) GetOrganisationOk() (*string, bool)`
 
-GetDuplicateOk returns a tuple with the Duplicate field if it's non-nil, zero value otherwise
+GetOrganisationOk returns a tuple with the Organisation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDuplicate
+### SetOrganisation
 
-`func (o *Invoice) SetDuplicate(v InvoiceDuplicate)`
+`func (o *Invoice) SetOrganisation(v string)`
 
-SetDuplicate sets Duplicate field to given value.
+SetOrganisation sets Organisation field to given value.
 
-### HasDuplicate
+### HasOrganisation
 
-`func (o *Invoice) HasDuplicate() bool`
+`func (o *Invoice) HasOrganisation() bool`
 
-HasDuplicate returns a boolean if a field has been set.
+HasOrganisation returns a boolean if a field has been set.
 
 ### GetUri
 
@@ -414,31 +491,6 @@ SetUri sets Uri field to given value.
 `func (o *Invoice) HasUri() bool`
 
 HasUri returns a boolean if a field has been set.
-
-### GetArray
-
-`func (o *Invoice) GetArray() string`
-
-GetArray returns the Array field if non-nil, zero value otherwise.
-
-### GetArrayOk
-
-`func (o *Invoice) GetArrayOk() (*string, bool)`
-
-GetArrayOk returns a tuple with the Array field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArray
-
-`func (o *Invoice) SetArray(v string)`
-
-SetArray sets Array field to given value.
-
-### HasArray
-
-`func (o *Invoice) HasArray() bool`
-
-HasArray returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

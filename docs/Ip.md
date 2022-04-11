@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **PtrRecord** | Pointer to **string** |  | [optional] 
 **Persistent** | Pointer to **bool** |  | [optional] 
 **Associated** | Pointer to [**IpAssociated**](IpAssociated.md) |  | [optional] 
+**Properties** | Pointer to [**IpProperties**](IpProperties.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -440,6 +441,31 @@ SetAssociated sets Associated field to given value.
 `func (o *Ip) HasAssociated() bool`
 
 HasAssociated returns a boolean if a field has been set.
+
+### GetProperties
+
+`func (o *Ip) GetProperties() IpProperties`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *Ip) GetPropertiesOk() (*IpProperties, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *Ip) SetProperties(v IpProperties)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *Ip) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
 
 ### GetTag
 

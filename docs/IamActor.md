@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
-**Value** | **string** | one of: * E-mail * User URI * Service Account URI * &#39;me&#39; -§ requestor | 
+**Value** | **string** |  | 
 
 ## Methods
 

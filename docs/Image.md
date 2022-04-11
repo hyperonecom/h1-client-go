@@ -15,8 +15,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Disks** | Pointer to **float32** |  | [optional] 
-**FileSize** | Pointer to **float32** |  | [optional] 
+**Size** | Pointer to **float32** |  | [optional] 
 **License** | Pointer to **[]string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
@@ -314,55 +313,30 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetDisks
+### GetSize
 
-`func (o *Image) GetDisks() float32`
+`func (o *Image) GetSize() float32`
 
-GetDisks returns the Disks field if non-nil, zero value otherwise.
+GetSize returns the Size field if non-nil, zero value otherwise.
 
-### GetDisksOk
+### GetSizeOk
 
-`func (o *Image) GetDisksOk() (*float32, bool)`
+`func (o *Image) GetSizeOk() (*float32, bool)`
 
-GetDisksOk returns a tuple with the Disks field if it's non-nil, zero value otherwise
+GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDisks
+### SetSize
 
-`func (o *Image) SetDisks(v float32)`
+`func (o *Image) SetSize(v float32)`
 
-SetDisks sets Disks field to given value.
+SetSize sets Size field to given value.
 
-### HasDisks
+### HasSize
 
-`func (o *Image) HasDisks() bool`
+`func (o *Image) HasSize() bool`
 
-HasDisks returns a boolean if a field has been set.
-
-### GetFileSize
-
-`func (o *Image) GetFileSize() float32`
-
-GetFileSize returns the FileSize field if non-nil, zero value otherwise.
-
-### GetFileSizeOk
-
-`func (o *Image) GetFileSizeOk() (*float32, bool)`
-
-GetFileSizeOk returns a tuple with the FileSize field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFileSize
-
-`func (o *Image) SetFileSize(v float32)`
-
-SetFileSize sets FileSize field to given value.
-
-### HasFileSize
-
-`func (o *Image) HasFileSize() bool`
-
-HasFileSize returns a boolean if a field has been set.
+HasSize returns a boolean if a field has been set.
 
 ### GetLicense
 

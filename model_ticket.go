@@ -12,6 +12,7 @@ package openapi
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // Ticket struct for Ticket
@@ -21,10 +22,11 @@ type Ticket struct {
 	State *string `json:"state,omitempty"`
 	Subject *string `json:"subject,omitempty"`
 	Project *string `json:"project,omitempty"`
-	CreatedOn *string `json:"createdOn,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
-	ModifiedOn *string `json:"modifiedOn,omitempty"`
+	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
+	Uri *string `json:"uri,omitempty"`
 }
 
 // NewTicket instantiates a new Ticket object
@@ -205,9 +207,9 @@ func (o *Ticket) SetProject(v string) {
 }
 
 // GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Ticket) GetCreatedOn() string {
+func (o *Ticket) GetCreatedOn() time.Time {
 	if o == nil || o.CreatedOn == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.CreatedOn
@@ -215,7 +217,7 @@ func (o *Ticket) GetCreatedOn() string {
 
 // GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Ticket) GetCreatedOnOk() (*string, bool) {
+func (o *Ticket) GetCreatedOnOk() (*time.Time, bool) {
 	if o == nil || o.CreatedOn == nil {
 		return nil, false
 	}
@@ -231,8 +233,8 @@ func (o *Ticket) HasCreatedOn() bool {
 	return false
 }
 
-// SetCreatedOn gets a reference to the given string and assigns it to the CreatedOn field.
-func (o *Ticket) SetCreatedOn(v string) {
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Ticket) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
@@ -269,9 +271,9 @@ func (o *Ticket) SetCreatedBy(v string) {
 }
 
 // GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
-func (o *Ticket) GetModifiedOn() string {
+func (o *Ticket) GetModifiedOn() time.Time {
 	if o == nil || o.ModifiedOn == nil {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.ModifiedOn
@@ -279,7 +281,7 @@ func (o *Ticket) GetModifiedOn() string {
 
 // GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Ticket) GetModifiedOnOk() (*string, bool) {
+func (o *Ticket) GetModifiedOnOk() (*time.Time, bool) {
 	if o == nil || o.ModifiedOn == nil {
 		return nil, false
 	}
@@ -295,8 +297,8 @@ func (o *Ticket) HasModifiedOn() bool {
 	return false
 }
 
-// SetModifiedOn gets a reference to the given string and assigns it to the ModifiedOn field.
-func (o *Ticket) SetModifiedOn(v string) {
+// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
+func (o *Ticket) SetModifiedOn(v time.Time) {
 	o.ModifiedOn = &v
 }
 
@@ -332,6 +334,38 @@ func (o *Ticket) SetModifiedBy(v string) {
 	o.ModifiedBy = &v
 }
 
+// GetUri returns the Uri field value if set, zero value otherwise.
+func (o *Ticket) GetUri() string {
+	if o == nil || o.Uri == nil {
+		var ret string
+		return ret
+	}
+	return *o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetUriOk() (*string, bool) {
+	if o == nil || o.Uri == nil {
+		return nil, false
+	}
+	return o.Uri, true
+}
+
+// HasUri returns a boolean if a field has been set.
+func (o *Ticket) HasUri() bool {
+	if o != nil && o.Uri != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given string and assigns it to the Uri field.
+func (o *Ticket) SetUri(v string) {
+	o.Uri = &v
+}
+
 func (o Ticket) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -360,6 +394,9 @@ func (o Ticket) MarshalJSON() ([]byte, error) {
 	}
 	if o.ModifiedBy != nil {
 		toSerialize["modifiedBy"] = o.ModifiedBy
+	}
+	if o.Uri != nil {
+		toSerialize["uri"] = o.Uri
 	}
 	return json.Marshal(toSerialize)
 }

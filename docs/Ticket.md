@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
-**ModifiedOn** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -160,20 +161,20 @@ HasProject returns a boolean if a field has been set.
 
 ### GetCreatedOn
 
-`func (o *Ticket) GetCreatedOn() string`
+`func (o *Ticket) GetCreatedOn() time.Time`
 
 GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
 
 ### GetCreatedOnOk
 
-`func (o *Ticket) GetCreatedOnOk() (*string, bool)`
+`func (o *Ticket) GetCreatedOnOk() (*time.Time, bool)`
 
 GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedOn
 
-`func (o *Ticket) SetCreatedOn(v string)`
+`func (o *Ticket) SetCreatedOn(v time.Time)`
 
 SetCreatedOn sets CreatedOn field to given value.
 
@@ -210,20 +211,20 @@ HasCreatedBy returns a boolean if a field has been set.
 
 ### GetModifiedOn
 
-`func (o *Ticket) GetModifiedOn() string`
+`func (o *Ticket) GetModifiedOn() time.Time`
 
 GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
 
 ### GetModifiedOnOk
 
-`func (o *Ticket) GetModifiedOnOk() (*string, bool)`
+`func (o *Ticket) GetModifiedOnOk() (*time.Time, bool)`
 
 GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModifiedOn
 
-`func (o *Ticket) SetModifiedOn(v string)`
+`func (o *Ticket) SetModifiedOn(v time.Time)`
 
 SetModifiedOn sets ModifiedOn field to given value.
 
@@ -257,6 +258,31 @@ SetModifiedBy sets ModifiedBy field to given value.
 `func (o *Ticket) HasModifiedBy() bool`
 
 HasModifiedBy returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Ticket) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Ticket) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Ticket) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Ticket) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

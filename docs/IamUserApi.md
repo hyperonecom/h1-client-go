@@ -4,6 +4,11 @@ All URIs are relative to *https://api.hyperone.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**IamUserAuthorizationCode**](IamUserApi.md#IamUserAuthorizationCode) | **Post** /iam/user/{userId}/authorization/{authorizationId}/actions/code | Code iam/user.authorization
+[**IamUserAuthorizationCreate**](IamUserApi.md#IamUserAuthorizationCreate) | **Post** /iam/user/{userId}/authorization | Create iam/user.authorization
+[**IamUserAuthorizationDelete**](IamUserApi.md#IamUserAuthorizationDelete) | **Delete** /iam/user/{userId}/authorization/{authorizationId} | Delete iam/user.authorization
+[**IamUserAuthorizationGet**](IamUserApi.md#IamUserAuthorizationGet) | **Get** /iam/user/{userId}/authorization/{authorizationId} | Get iam/user.authorization
+[**IamUserAuthorizationList**](IamUserApi.md#IamUserAuthorizationList) | **Get** /iam/user/{userId}/authorization | List iam/user.authorization
 [**IamUserCredentialAuthtokenDelete**](IamUserApi.md#IamUserCredentialAuthtokenDelete) | **Delete** /iam/user/{userId}/credential/authtoken/{authtokenId} | Delete iam/user.credential
 [**IamUserCredentialAuthtokenGet**](IamUserApi.md#IamUserCredentialAuthtokenGet) | **Get** /iam/user/{userId}/credential/authtoken/{authtokenId} | Get iam/user.credential
 [**IamUserCredentialAuthtokenList**](IamUserApi.md#IamUserCredentialAuthtokenList) | **Get** /iam/user/{userId}/credential/authtoken | List iam/user.credential
@@ -12,11 +17,375 @@ Method | HTTP request | Description
 [**IamUserCredentialGet**](IamUserApi.md#IamUserCredentialGet) | **Get** /iam/user/{userId}/credential/{credentialId} | Get iam/user.credential
 [**IamUserCredentialList**](IamUserApi.md#IamUserCredentialList) | **Get** /iam/user/{userId}/credential | List iam/user.credential
 [**IamUserCredentialPatch**](IamUserApi.md#IamUserCredentialPatch) | **Patch** /iam/user/{userId}/credential/{credentialId} | Update iam/user.credential
+[**IamUserDelete**](IamUserApi.md#IamUserDelete) | **Delete** /iam/user/{userId} | Delete iam/user
 [**IamUserGet**](IamUserApi.md#IamUserGet) | **Get** /iam/user/{userId} | Get iam/user
 [**IamUserServiceGet**](IamUserApi.md#IamUserServiceGet) | **Get** /iam/user/{userId}/service/{serviceId} | Get iam/user.service
 [**IamUserServiceList**](IamUserApi.md#IamUserServiceList) | **Get** /iam/user/{userId}/service | List iam/user.service
 [**IamUserUpdate**](IamUserApi.md#IamUserUpdate) | **Patch** /iam/user/{userId} | Update iam/user
 
+
+
+## IamUserAuthorizationCode
+
+> InlineResponse200 IamUserAuthorizationCode(ctx, userId, authorizationId).IamUserAuthorizationCode(iamUserAuthorizationCode).Execute()
+
+Code iam/user.authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+    authorizationId := "authorizationId_example" // string | authorizationId
+    iamUserAuthorizationCode := *openapiclient.NewIamUserAuthorizationCode("Redirect_example") // IamUserAuthorizationCode | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserAuthorizationCode(context.Background(), userId, authorizationId).IamUserAuthorizationCode(iamUserAuthorizationCode).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserAuthorizationCode``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamUserAuthorizationCode`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserAuthorizationCode`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+**authorizationId** | **string** | authorizationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserAuthorizationCodeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **iamUserAuthorizationCode** | [**IamUserAuthorizationCode**](IamUserAuthorizationCode.md) |  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamUserAuthorizationCreate
+
+> IamUserAuthorization IamUserAuthorizationCreate(ctx, userId).IamUserAuthorization(iamUserAuthorization).Execute()
+
+Create iam/user.authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+    iamUserAuthorization := *openapiclient.NewIamUserAuthorization("Name_example", "Application_example") // IamUserAuthorization | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserAuthorizationCreate(context.Background(), userId).IamUserAuthorization(iamUserAuthorization).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserAuthorizationCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamUserAuthorizationCreate`: IamUserAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserAuthorizationCreate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserAuthorizationCreateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **iamUserAuthorization** | [**IamUserAuthorization**](IamUserAuthorization.md) |  | 
+
+### Return type
+
+[**IamUserAuthorization**](IamUserAuthorization.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamUserAuthorizationDelete
+
+> User IamUserAuthorizationDelete(ctx, userId, authorizationId).Execute()
+
+Delete iam/user.authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+    authorizationId := "authorizationId_example" // string | authorizationId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserAuthorizationDelete(context.Background(), userId, authorizationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserAuthorizationDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamUserAuthorizationDelete`: User
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserAuthorizationDelete`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+**authorizationId** | **string** | authorizationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserAuthorizationDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamUserAuthorizationGet
+
+> IamUserAuthorization IamUserAuthorizationGet(ctx, userId, authorizationId).Execute()
+
+Get iam/user.authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+    authorizationId := "authorizationId_example" // string | authorizationId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserAuthorizationGet(context.Background(), userId, authorizationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserAuthorizationGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamUserAuthorizationGet`: IamUserAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserAuthorizationGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+**authorizationId** | **string** | authorizationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserAuthorizationGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**IamUserAuthorization**](IamUserAuthorization.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamUserAuthorizationList
+
+> []IamUserAuthorization IamUserAuthorizationList(ctx, userId).Execute()
+
+List iam/user.authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserAuthorizationList(context.Background(), userId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserAuthorizationList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamUserAuthorizationList`: []IamUserAuthorization
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserAuthorizationList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserAuthorizationListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]IamUserAuthorization**](IamUserAuthorization.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## IamUserCredentialAuthtokenDelete
@@ -589,6 +958,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamUserDelete
+
+> IamUserDelete(ctx, userId).Execute()
+
+Delete iam/user
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    userId := "userId_example" // string | User Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserDelete(context.Background(), userId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | User Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamUserDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

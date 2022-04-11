@@ -27,7 +27,6 @@ type Zone struct {
 	State *string `json:"state,omitempty"`
 	Project *string `json:"project,omitempty"`
 	Uri *string `json:"uri,omitempty"`
-	Rrsets []ZoneRrsets `json:"rrsets,omitempty"`
 	DnsName *string `json:"dnsName,omitempty"`
 	Nameserver []string `json:"nameserver,omitempty"`
 	Fqdn *string `json:"fqdn,omitempty"`
@@ -371,38 +370,6 @@ func (o *Zone) SetUri(v string) {
 	o.Uri = &v
 }
 
-// GetRrsets returns the Rrsets field value if set, zero value otherwise.
-func (o *Zone) GetRrsets() []ZoneRrsets {
-	if o == nil || o.Rrsets == nil {
-		var ret []ZoneRrsets
-		return ret
-	}
-	return o.Rrsets
-}
-
-// GetRrsetsOk returns a tuple with the Rrsets field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Zone) GetRrsetsOk() ([]ZoneRrsets, bool) {
-	if o == nil || o.Rrsets == nil {
-		return nil, false
-	}
-	return o.Rrsets, true
-}
-
-// HasRrsets returns a boolean if a field has been set.
-func (o *Zone) HasRrsets() bool {
-	if o != nil && o.Rrsets != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRrsets gets a reference to the given []ZoneRrsets and assigns it to the Rrsets field.
-func (o *Zone) SetRrsets(v []ZoneRrsets) {
-	o.Rrsets = v
-}
-
 // GetDnsName returns the DnsName field value if set, zero value otherwise.
 func (o *Zone) GetDnsName() string {
 	if o == nil || o.DnsName == nil {
@@ -562,9 +529,6 @@ func (o Zone) MarshalJSON() ([]byte, error) {
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri
-	}
-	if o.Rrsets != nil {
-		toSerialize["rrsets"] = o.Rrsets
 	}
 	if o.DnsName != nil {
 		toSerialize["dnsName"] = o.DnsName

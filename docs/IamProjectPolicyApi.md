@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 ## IamProjectPolicyActorCreate
 
-> IamActor IamProjectPolicyActorCreate(ctx, projectId, policyId).IamActor(iamActor).Execute()
+> IamActorOrGroup IamProjectPolicyActorCreate(ctx, projectId, policyId).IamActorOrGroup(iamActorOrGroup).Execute()
 
 Create iam/policy.actor
 
@@ -48,16 +48,16 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     policyId := "policyId_example" // string | Policy Id
-    iamActor := *openapiclient.NewIamActor("Value_example") // IamActor | 
+    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("Value_example") // IamActorOrGroup | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorCreate(context.Background(), projectId, policyId).IamActor(iamActor).Execute()
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorCreate(context.Background(), projectId, policyId).IamActorOrGroup(iamActorOrGroup).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectPolicyActorCreate`: IamActor
+    // response from `IamProjectPolicyActorCreate`: IamActorOrGroup
     fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorCreate`: %v\n", resp)
 }
 ```
@@ -80,11 +80,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **iamActor** | [**IamActor**](IamActor.md) |  | 
+ **iamActorOrGroup** | [**IamActorOrGroup**](IamActorOrGroup.md) |  | 
 
 ### Return type
 
-[**IamActor**](IamActor.md)
+[**IamActorOrGroup**](IamActorOrGroup.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorDelete
 
-> IamActor IamProjectPolicyActorDelete(ctx, projectId, policyId, actorId).Execute()
+> IamActorOrGroup IamProjectPolicyActorDelete(ctx, projectId, policyId, actorId).Execute()
 
 Delete iam/policy.actor
 
@@ -132,7 +132,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectPolicyActorDelete`: IamActor
+    // response from `IamProjectPolicyActorDelete`: IamActorOrGroup
     fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorDelete`: %v\n", resp)
 }
 ```
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IamActor**](IamActor.md)
+[**IamActorOrGroup**](IamActorOrGroup.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorGet
 
-> IamActor IamProjectPolicyActorGet(ctx, projectId, policyId, actorId).Execute()
+> IamActorOrGroup IamProjectPolicyActorGet(ctx, projectId, policyId, actorId).Execute()
 
 Get iam/policy.actor
 
@@ -208,7 +208,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectPolicyActorGet`: IamActor
+    // response from `IamProjectPolicyActorGet`: IamActorOrGroup
     fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorGet`: %v\n", resp)
 }
 ```
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IamActor**](IamActor.md)
+[**IamActorOrGroup**](IamActorOrGroup.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyActorList
 
-> []IamActor IamProjectPolicyActorList(ctx, projectId, policyId).Execute()
+> []IamActorOrGroup IamProjectPolicyActorList(ctx, projectId, policyId).Execute()
 
 List iam/policy.actor
 
@@ -283,7 +283,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectPolicyActorList`: []IamActor
+    // response from `IamProjectPolicyActorList`: []IamActorOrGroup
     fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyActorList`: %v\n", resp)
 }
 ```
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IamActor**](IamActor.md)
+[**[]IamActorOrGroup**](IamActorOrGroup.md)
 
 ### Authorization
 

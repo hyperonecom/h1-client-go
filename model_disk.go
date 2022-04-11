@@ -29,8 +29,8 @@ type Disk struct {
 	Uri *string `json:"uri,omitempty"`
 	Size *float32 `json:"size,omitempty"`
 	Vm *string `json:"vm,omitempty"`
-	Persistent *bool `json:"persistent,omitempty"`
-	Metadata *DiskMetadata `json:"metadata,omitempty"`
+	Replica *string `json:"replica,omitempty"`
+	Image *string `json:"image,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -435,68 +435,68 @@ func (o *Disk) SetVm(v string) {
 	o.Vm = &v
 }
 
-// GetPersistent returns the Persistent field value if set, zero value otherwise.
-func (o *Disk) GetPersistent() bool {
-	if o == nil || o.Persistent == nil {
-		var ret bool
+// GetReplica returns the Replica field value if set, zero value otherwise.
+func (o *Disk) GetReplica() string {
+	if o == nil || o.Replica == nil {
+		var ret string
 		return ret
 	}
-	return *o.Persistent
+	return *o.Replica
 }
 
-// GetPersistentOk returns a tuple with the Persistent field value if set, nil otherwise
+// GetReplicaOk returns a tuple with the Replica field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Disk) GetPersistentOk() (*bool, bool) {
-	if o == nil || o.Persistent == nil {
+func (o *Disk) GetReplicaOk() (*string, bool) {
+	if o == nil || o.Replica == nil {
 		return nil, false
 	}
-	return o.Persistent, true
+	return o.Replica, true
 }
 
-// HasPersistent returns a boolean if a field has been set.
-func (o *Disk) HasPersistent() bool {
-	if o != nil && o.Persistent != nil {
+// HasReplica returns a boolean if a field has been set.
+func (o *Disk) HasReplica() bool {
+	if o != nil && o.Replica != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPersistent gets a reference to the given bool and assigns it to the Persistent field.
-func (o *Disk) SetPersistent(v bool) {
-	o.Persistent = &v
+// SetReplica gets a reference to the given string and assigns it to the Replica field.
+func (o *Disk) SetReplica(v string) {
+	o.Replica = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *Disk) GetMetadata() DiskMetadata {
-	if o == nil || o.Metadata == nil {
-		var ret DiskMetadata
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *Disk) GetImage() string {
+	if o == nil || o.Image == nil {
+		var ret string
 		return ret
 	}
-	return *o.Metadata
+	return *o.Image
 }
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Disk) GetMetadataOk() (*DiskMetadata, bool) {
-	if o == nil || o.Metadata == nil {
+func (o *Disk) GetImageOk() (*string, bool) {
+	if o == nil || o.Image == nil {
 		return nil, false
 	}
-	return o.Metadata, true
+	return o.Image, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *Disk) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+// HasImage returns a boolean if a field has been set.
+func (o *Disk) HasImage() bool {
+	if o != nil && o.Image != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given DiskMetadata and assigns it to the Metadata field.
-func (o *Disk) SetMetadata(v DiskMetadata) {
-	o.Metadata = &v
+// SetImage gets a reference to the given string and assigns it to the Image field.
+func (o *Disk) SetImage(v string) {
+	o.Image = &v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -569,11 +569,11 @@ func (o Disk) MarshalJSON() ([]byte, error) {
 	if o.Vm != nil {
 		toSerialize["vm"] = o.Vm
 	}
-	if o.Persistent != nil {
-		toSerialize["persistent"] = o.Persistent
+	if o.Replica != nil {
+		toSerialize["replica"] = o.Replica
 	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
+	if o.Image != nil {
+		toSerialize["image"] = o.Image
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

@@ -18,19 +18,19 @@ import (
 type Metric struct {
 	Id string `json:"id"`
 	Name string `json:"name"`
-	Unit string `json:"unit"`
-	Dimension []MetricDimension `json:"dimension,omitempty"`
+	Uri string `json:"uri"`
+	Properties *MetricProperties `json:"properties,omitempty"`
 }
 
 // NewMetric instantiates a new Metric object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetric(id string, name string, unit string) *Metric {
+func NewMetric(id string, name string, uri string) *Metric {
 	this := Metric{}
 	this.Id = id
 	this.Name = name
-	this.Unit = unit
+	this.Uri = uri
 	return &this
 }
 
@@ -90,60 +90,60 @@ func (o *Metric) SetName(v string) {
 	o.Name = v
 }
 
-// GetUnit returns the Unit field value
-func (o *Metric) GetUnit() string {
+// GetUri returns the Uri field value
+func (o *Metric) GetUri() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Unit
+	return o.Uri
 }
 
-// GetUnitOk returns a tuple with the Unit field value
+// GetUriOk returns a tuple with the Uri field value
 // and a boolean to check if the value has been set.
-func (o *Metric) GetUnitOk() (*string, bool) {
+func (o *Metric) GetUriOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Unit, true
+	return &o.Uri, true
 }
 
-// SetUnit sets field value
-func (o *Metric) SetUnit(v string) {
-	o.Unit = v
+// SetUri sets field value
+func (o *Metric) SetUri(v string) {
+	o.Uri = v
 }
 
-// GetDimension returns the Dimension field value if set, zero value otherwise.
-func (o *Metric) GetDimension() []MetricDimension {
-	if o == nil || o.Dimension == nil {
-		var ret []MetricDimension
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *Metric) GetProperties() MetricProperties {
+	if o == nil || o.Properties == nil {
+		var ret MetricProperties
 		return ret
 	}
-	return o.Dimension
+	return *o.Properties
 }
 
-// GetDimensionOk returns a tuple with the Dimension field value if set, nil otherwise
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Metric) GetDimensionOk() ([]MetricDimension, bool) {
-	if o == nil || o.Dimension == nil {
+func (o *Metric) GetPropertiesOk() (*MetricProperties, bool) {
+	if o == nil || o.Properties == nil {
 		return nil, false
 	}
-	return o.Dimension, true
+	return o.Properties, true
 }
 
-// HasDimension returns a boolean if a field has been set.
-func (o *Metric) HasDimension() bool {
-	if o != nil && o.Dimension != nil {
+// HasProperties returns a boolean if a field has been set.
+func (o *Metric) HasProperties() bool {
+	if o != nil && o.Properties != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDimension gets a reference to the given []MetricDimension and assigns it to the Dimension field.
-func (o *Metric) SetDimension(v []MetricDimension) {
-	o.Dimension = v
+// SetProperties gets a reference to the given MetricProperties and assigns it to the Properties field.
+func (o *Metric) SetProperties(v MetricProperties) {
+	o.Properties = &v
 }
 
 func (o Metric) MarshalJSON() ([]byte, error) {
@@ -155,10 +155,10 @@ func (o Metric) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["unit"] = o.Unit
+		toSerialize["uri"] = o.Uri
 	}
-	if o.Dimension != nil {
-		toSerialize["dimension"] = o.Dimension
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
 	}
 	return json.Marshal(toSerialize)
 }

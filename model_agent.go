@@ -26,7 +26,6 @@ type Agent struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	State *string `json:"state,omitempty"`
 	Project *string `json:"project,omitempty"`
-	Uri *string `json:"uri,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
@@ -336,38 +335,6 @@ func (o *Agent) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetUri returns the Uri field value if set, zero value otherwise.
-func (o *Agent) GetUri() string {
-	if o == nil || o.Uri == nil {
-		var ret string
-		return ret
-	}
-	return *o.Uri
-}
-
-// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Agent) GetUriOk() (*string, bool) {
-	if o == nil || o.Uri == nil {
-		return nil, false
-	}
-	return o.Uri, true
-}
-
-// HasUri returns a boolean if a field has been set.
-func (o *Agent) HasUri() bool {
-	if o != nil && o.Uri != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUri gets a reference to the given string and assigns it to the Uri field.
-func (o *Agent) SetUri(v string) {
-	o.Uri = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *Agent) GetType() string {
 	if o == nil || o.Type == nil {
@@ -460,9 +427,6 @@ func (o Agent) MarshalJSON() ([]byte, error) {
 	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
-	}
-	if o.Uri != nil {
-		toSerialize["uri"] = o.Uri
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

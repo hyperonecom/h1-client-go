@@ -12,23 +12,20 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // Point struct for Point
 type Point struct {
-	Time time.Time `json:"time"`
-	Value float32 `json:"value"`
+	Dimension *map[string]string `json:"dimension,omitempty"`
+	Value []PointValue `json:"value,omitempty"`
 }
 
 // NewPoint instantiates a new Point object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPoint(time time.Time, value float32) *Point {
+func NewPoint() *Point {
 	this := Point{}
-	this.Time = time
-	this.Value = value
 	return &this
 }
 
@@ -40,60 +37,76 @@ func NewPointWithDefaults() *Point {
 	return &this
 }
 
-// GetTime returns the Time field value
-func (o *Point) GetTime() time.Time {
-	if o == nil {
-		var ret time.Time
+// GetDimension returns the Dimension field value if set, zero value otherwise.
+func (o *Point) GetDimension() map[string]string {
+	if o == nil || o.Dimension == nil {
+		var ret map[string]string
 		return ret
 	}
-
-	return o.Time
+	return *o.Dimension
 }
 
-// GetTimeOk returns a tuple with the Time field value
+// GetDimensionOk returns a tuple with the Dimension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Point) GetTimeOk() (*time.Time, bool) {
-	if o == nil  {
+func (o *Point) GetDimensionOk() (*map[string]string, bool) {
+	if o == nil || o.Dimension == nil {
 		return nil, false
 	}
-	return &o.Time, true
+	return o.Dimension, true
 }
 
-// SetTime sets field value
-func (o *Point) SetTime(v time.Time) {
-	o.Time = v
-}
-
-// GetValue returns the Value field value
-func (o *Point) GetValue() float32 {
-	if o == nil {
-		var ret float32
-		return ret
+// HasDimension returns a boolean if a field has been set.
+func (o *Point) HasDimension() bool {
+	if o != nil && o.Dimension != nil {
+		return true
 	}
 
+	return false
+}
+
+// SetDimension gets a reference to the given map[string]string and assigns it to the Dimension field.
+func (o *Point) SetDimension(v map[string]string) {
+	o.Dimension = &v
+}
+
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *Point) GetValue() []PointValue {
+	if o == nil || o.Value == nil {
+		var ret []PointValue
+		return ret
+	}
 	return o.Value
 }
 
-// GetValueOk returns a tuple with the Value field value
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Point) GetValueOk() (*float32, bool) {
-	if o == nil  {
+func (o *Point) GetValueOk() ([]PointValue, bool) {
+	if o == nil || o.Value == nil {
 		return nil, false
 	}
-	return &o.Value, true
+	return o.Value, true
 }
 
-// SetValue sets field value
-func (o *Point) SetValue(v float32) {
+// HasValue returns a boolean if a field has been set.
+func (o *Point) HasValue() bool {
+	if o != nil && o.Value != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given []PointValue and assigns it to the Value field.
+func (o *Point) SetValue(v []PointValue) {
 	o.Value = v
 }
 
 func (o Point) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["time"] = o.Time
+	if o.Dimension != nil {
+		toSerialize["dimension"] = o.Dimension
 	}
-	if true {
+	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)

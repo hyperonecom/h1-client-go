@@ -17,7 +17,6 @@ import (
 // IamActor struct for IamActor
 type IamActor struct {
 	Id *string `json:"id,omitempty"`
-	// one of: * E-mail * User URI * Service Account URI * 'me' -§ requestor
 	Value string `json:"value"`
 }
 

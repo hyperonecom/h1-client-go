@@ -26,6 +26,7 @@ type User struct {
 	Lang *string `json:"lang,omitempty"`
 	Phone *string `json:"phone,omitempty"`
 	Limit *UserLimit `json:"limit,omitempty"`
+	State *string `json:"state,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -334,6 +335,38 @@ func (o *User) SetLimit(v UserLimit) {
 	o.Limit = &v
 }
 
+// GetState returns the State field value if set, zero value otherwise.
+func (o *User) GetState() string {
+	if o == nil || o.State == nil {
+		var ret string
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetStateOk() (*string, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *User) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
+func (o *User) SetState(v string) {
+	o.State = &v
+}
+
 // GetUri returns the Uri field value if set, zero value otherwise.
 func (o *User) GetUri() string {
 	if o == nil || o.Uri == nil {
@@ -394,6 +427,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	}
 	if o.Limit != nil {
 		toSerialize["limit"] = o.Limit
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

@@ -28,6 +28,7 @@ type Vmhost struct {
 	Project *string `json:"project,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 	Type *string `json:"type,omitempty"`
+	Fqdn *string `json:"fqdn,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -400,6 +401,38 @@ func (o *Vmhost) SetType(v string) {
 	o.Type = &v
 }
 
+// GetFqdn returns the Fqdn field value if set, zero value otherwise.
+func (o *Vmhost) GetFqdn() string {
+	if o == nil || o.Fqdn == nil {
+		var ret string
+		return ret
+	}
+	return *o.Fqdn
+}
+
+// GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Vmhost) GetFqdnOk() (*string, bool) {
+	if o == nil || o.Fqdn == nil {
+		return nil, false
+	}
+	return o.Fqdn, true
+}
+
+// HasFqdn returns a boolean if a field has been set.
+func (o *Vmhost) HasFqdn() bool {
+	if o != nil && o.Fqdn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFqdn gets a reference to the given string and assigns it to the Fqdn field.
+func (o *Vmhost) SetFqdn(v string) {
+	o.Fqdn = &v
+}
+
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *Vmhost) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -466,6 +499,9 @@ func (o Vmhost) MarshalJSON() ([]byte, error) {
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
+	}
+	if o.Fqdn != nil {
+		toSerialize["fqdn"] = o.Fqdn
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
