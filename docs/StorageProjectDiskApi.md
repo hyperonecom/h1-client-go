@@ -56,8 +56,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskCreate(context.Background(), projectId, locationId).StorageProjectDiskCreate(storageProjectDiskCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskCreate(context.Background(), projectId, locationId).StorageProjectDiskCreate(storageProjectDiskCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,8 +133,8 @@ func main() {
     diskId := "diskId_example" // string | Disk Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDelete(context.Background(), projectId, locationId, diskId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskDelete(context.Background(), projectId, locationId, diskId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -209,8 +209,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDetach(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskDetach(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDetach``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -289,8 +289,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskDownload(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskDownload(context.Background(), projectId, locationId, diskId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -366,8 +366,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskEventGet(context.Background(), projectId, locationId, diskId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskEventGet(context.Background(), projectId, locationId, diskId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -446,8 +446,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskEventList(context.Background(), projectId, locationId, diskId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskEventList(context.Background(), projectId, locationId, diskId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -524,8 +524,8 @@ func main() {
     diskId := "diskId_example" // string | Disk Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskGet(context.Background(), projectId, locationId, diskId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskGet(context.Background(), projectId, locationId, diskId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -603,8 +603,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskList(context.Background(), projectId, locationId).Name(name).Vm(vm).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskList(context.Background(), projectId, locationId).Name(name).Vm(vm).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -682,8 +682,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricGet(context.Background(), projectId, locationId, diskId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricGet(context.Background(), projectId, locationId, diskId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -760,8 +760,8 @@ func main() {
     diskId := "diskId_example" // string | Disk Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricList(context.Background(), projectId, locationId, diskId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricList(context.Background(), projectId, locationId, diskId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -839,8 +839,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskMetricPointList(context.Background(), projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricPointList(context.Background(), projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -922,8 +922,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskResize(context.Background(), projectId, locationId, diskId).StorageProjectDiskResize(storageProjectDiskResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskResize(context.Background(), projectId, locationId, diskId).StorageProjectDiskResize(storageProjectDiskResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskResize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1002,8 +1002,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskServiceGet(context.Background(), projectId, locationId, diskId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskServiceGet(context.Background(), projectId, locationId, diskId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1080,8 +1080,8 @@ func main() {
     diskId := "diskId_example" // string | Disk Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskServiceList(context.Background(), projectId, locationId, diskId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskServiceList(context.Background(), projectId, locationId, diskId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1157,8 +1157,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagCreate(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTagCreate(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1235,8 +1235,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagDelete(context.Background(), projectId, locationId, diskId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTagDelete(context.Background(), projectId, locationId, diskId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1312,8 +1312,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagGet(context.Background(), projectId, locationId, diskId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTagGet(context.Background(), projectId, locationId, diskId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1390,8 +1390,8 @@ func main() {
     diskId := "diskId_example" // string | Disk Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagList(context.Background(), projectId, locationId, diskId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTagList(context.Background(), projectId, locationId, diskId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1467,8 +1467,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTagPut(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTagPut(context.Background(), projectId, locationId, diskId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1547,8 +1547,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskTransfer(context.Background(), projectId, locationId, diskId).StorageProjectDiskTransfer(storageProjectDiskTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskTransfer(context.Background(), projectId, locationId, diskId).StorageProjectDiskTransfer(storageProjectDiskTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1627,8 +1627,8 @@ func main() {
     storageProjectDiskUpdate := *openapiclient.NewStorageProjectDiskUpdate() // StorageProjectDiskUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectDiskApi.StorageProjectDiskUpdate(context.Background(), projectId, locationId, diskId).StorageProjectDiskUpdate(storageProjectDiskUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskUpdate(context.Background(), projectId, locationId, diskId).StorageProjectDiskUpdate(storageProjectDiskUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

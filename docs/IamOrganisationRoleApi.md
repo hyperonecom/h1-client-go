@@ -53,8 +53,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleCreate(context.Background(), organisationId).IamProjectRoleCreate(iamProjectRoleCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleCreate(context.Background(), organisationId).IamProjectRoleCreate(iamProjectRoleCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,8 +127,8 @@ func main() {
     roleId := "roleId_example" // string | Role Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleDelete(context.Background(), organisationId, roleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleDelete(context.Background(), organisationId, roleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -199,8 +199,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleEventGet(context.Background(), organisationId, roleId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleEventGet(context.Background(), organisationId, roleId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,8 +276,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleEventList(context.Background(), organisationId, roleId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleEventList(context.Background(), organisationId, roleId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,8 +351,8 @@ func main() {
     roleId := "roleId_example" // string | Role Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleGet(context.Background(), organisationId, roleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleGet(context.Background(), organisationId, roleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -426,8 +426,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleList(context.Background(), organisationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleList(context.Background(), organisationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -501,8 +501,8 @@ func main() {
     iamPermission := *openapiclient.NewIamPermission("Value_example") // IamPermission | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRolePermissionCreate(context.Background(), organisationId, roleId).IamPermission(iamPermission).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRolePermissionCreate(context.Background(), organisationId, roleId).IamPermission(iamPermission).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRolePermissionCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -576,8 +576,8 @@ func main() {
     permissionId := "permissionId_example" // string | permissionId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRolePermissionDelete(context.Background(), organisationId, roleId, permissionId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRolePermissionDelete(context.Background(), organisationId, roleId, permissionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRolePermissionDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -652,8 +652,8 @@ func main() {
     permissionId := "permissionId_example" // string | permissionId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRolePermissionGet(context.Background(), organisationId, roleId, permissionId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRolePermissionGet(context.Background(), organisationId, roleId, permissionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRolePermissionGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -727,8 +727,8 @@ func main() {
     roleId := "roleId_example" // string | Role Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRolePermissionList(context.Background(), organisationId, roleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRolePermissionList(context.Background(), organisationId, roleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRolePermissionList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -801,8 +801,8 @@ func main() {
     iamPermission := []openapiclient.IamPermission{*openapiclient.NewIamPermission("Value_example")} // []IamPermission | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRolePermissionPut(context.Background(), organisationId, roleId).IamPermission(iamPermission).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRolePermissionPut(context.Background(), organisationId, roleId).IamPermission(iamPermission).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRolePermissionPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -876,8 +876,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleServiceGet(context.Background(), organisationId, roleId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleServiceGet(context.Background(), organisationId, roleId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -951,8 +951,8 @@ func main() {
     roleId := "roleId_example" // string | Role Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleServiceList(context.Background(), organisationId, roleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleServiceList(context.Background(), organisationId, roleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1025,8 +1025,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleTagCreate(context.Background(), organisationId, roleId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleTagCreate(context.Background(), organisationId, roleId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1100,8 +1100,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleTagDelete(context.Background(), organisationId, roleId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleTagDelete(context.Background(), organisationId, roleId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1174,8 +1174,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleTagGet(context.Background(), organisationId, roleId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleTagGet(context.Background(), organisationId, roleId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1249,8 +1249,8 @@ func main() {
     roleId := "roleId_example" // string | Role Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleTagList(context.Background(), organisationId, roleId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleTagList(context.Background(), organisationId, roleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1323,8 +1323,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleTagPut(context.Background(), organisationId, roleId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleTagPut(context.Background(), organisationId, roleId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1398,8 +1398,8 @@ func main() {
     iamProjectRoleUpdate := *openapiclient.NewIamProjectRoleUpdate() // IamProjectRoleUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationRoleApi.IamOrganisationRoleUpdate(context.Background(), organisationId, roleId).IamProjectRoleUpdate(iamProjectRoleUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationRoleApi.IamOrganisationRoleUpdate(context.Background(), organisationId, roleId).IamProjectRoleUpdate(iamProjectRoleUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationRoleApi.IamOrganisationRoleUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -62,8 +62,8 @@ func main() {
     connectId := "connectId_example" // string | connectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultConnectGet(context.Background(), projectId, locationId, vaultId, connectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultConnectGet(context.Background(), projectId, locationId, vaultId, connectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultConnectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -140,8 +140,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultConnectList(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultConnectList(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultConnectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,8 +218,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCreate(context.Background(), projectId, locationId).StorageProjectVaultCreate(storageProjectVaultCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCreate(context.Background(), projectId, locationId).StorageProjectVaultCreate(storageProjectVaultCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -296,8 +296,8 @@ func main() {
     vaultCredential := *openapiclient.NewVaultCredential("Name_example", "Type_example", "Value_example") // VaultCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialCreate(context.Background(), projectId, locationId, vaultId).VaultCredential(vaultCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCredentialCreate(context.Background(), projectId, locationId, vaultId).VaultCredential(vaultCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,8 +374,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialDelete(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCredentialDelete(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -453,8 +453,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialGet(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCredentialGet(context.Background(), projectId, locationId, vaultId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -531,8 +531,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialList(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCredentialList(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -609,8 +609,8 @@ func main() {
     storageProjectVaultCredentialPatch := *openapiclient.NewStorageProjectVaultCredentialPatch("Name_example") // StorageProjectVaultCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultCredentialPatch(context.Background(), projectId, locationId, vaultId, credentialId).StorageProjectVaultCredentialPatch(storageProjectVaultCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultCredentialPatch(context.Background(), projectId, locationId, vaultId, credentialId).StorageProjectVaultCredentialPatch(storageProjectVaultCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -689,8 +689,8 @@ func main() {
     storageProjectVaultDelete := *openapiclient.NewStorageProjectVaultDelete() // StorageProjectVaultDelete | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultDelete(context.Background(), projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultDelete(context.Background(), projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -765,8 +765,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultEventGet(context.Background(), projectId, locationId, vaultId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultEventGet(context.Background(), projectId, locationId, vaultId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -845,8 +845,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultEventList(context.Background(), projectId, locationId, vaultId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultEventList(context.Background(), projectId, locationId, vaultId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -923,8 +923,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultGet(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultGet(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1001,8 +1001,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1081,8 +1081,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultResize(context.Background(), projectId, locationId, vaultId).StorageProjectVaultResize(storageProjectVaultResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultResize(context.Background(), projectId, locationId, vaultId).StorageProjectVaultResize(storageProjectVaultResize).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultResize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1161,8 +1161,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultServiceGet(context.Background(), projectId, locationId, vaultId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultServiceGet(context.Background(), projectId, locationId, vaultId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1239,8 +1239,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultServiceList(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultServiceList(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1316,8 +1316,8 @@ func main() {
     storageProjectVaultSnapshotCreate := *openapiclient.NewStorageProjectVaultSnapshotCreate("Name_example") // StorageProjectVaultSnapshotCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotCreate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultSnapshotCreate(storageProjectVaultSnapshotCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultSnapshotCreate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultSnapshotCreate(storageProjectVaultSnapshotCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1394,8 +1394,8 @@ func main() {
     snapshotId := "snapshotId_example" // string | snapshotId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotDelete(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultSnapshotDelete(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1473,8 +1473,8 @@ func main() {
     snapshotId := "snapshotId_example" // string | snapshotId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotGet(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultSnapshotGet(context.Background(), projectId, locationId, vaultId, snapshotId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1551,8 +1551,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultSnapshotList(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultSnapshotList(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultSnapshotList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1629,8 +1629,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultStart(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultStart(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1709,8 +1709,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultStop(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultStop(context.Background(), projectId, locationId, vaultId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1788,8 +1788,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagCreate(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultTagCreate(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1866,8 +1866,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagDelete(context.Background(), projectId, locationId, vaultId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultTagDelete(context.Background(), projectId, locationId, vaultId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1943,8 +1943,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagGet(context.Background(), projectId, locationId, vaultId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultTagGet(context.Background(), projectId, locationId, vaultId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2021,8 +2021,8 @@ func main() {
     vaultId := "vaultId_example" // string | Vault Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagList(context.Background(), projectId, locationId, vaultId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultTagList(context.Background(), projectId, locationId, vaultId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2098,8 +2098,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultTagPut(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultTagPut(context.Background(), projectId, locationId, vaultId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2176,8 +2176,8 @@ func main() {
     storageProjectVaultUpdate := *openapiclient.NewStorageProjectVaultUpdate() // StorageProjectVaultUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectVaultApi.StorageProjectVaultUpdate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultUpdate(storageProjectVaultUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectVaultApi.StorageProjectVaultUpdate(context.Background(), projectId, locationId, vaultId).StorageProjectVaultUpdate(storageProjectVaultUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

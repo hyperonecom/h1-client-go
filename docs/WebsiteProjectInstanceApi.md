@@ -85,8 +85,8 @@ func main() {
     connectId := "connectId_example" // string | connectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectGet(context.Background(), projectId, locationId, instanceId, connectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectGet(context.Background(), projectId, locationId, instanceId, connectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,8 +163,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceConnectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,8 +241,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCreate(context.Background(), projectId, locationId).WebsiteProjectInstanceCreate(websiteProjectInstanceCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCreate(context.Background(), projectId, locationId).WebsiteProjectInstanceCreate(websiteProjectInstanceCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,8 +319,8 @@ func main() {
     websiteCredential := *openapiclient.NewWebsiteCredential("Name_example", "Type_example", "Value_example") // WebsiteCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialCreate(context.Background(), projectId, locationId, instanceId).WebsiteCredential(websiteCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialCreate(context.Background(), projectId, locationId, instanceId).WebsiteCredential(websiteCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -397,8 +397,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialDelete(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialDelete(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -476,8 +476,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialGet(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialGet(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -554,8 +554,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -632,8 +632,8 @@ func main() {
     websiteProjectInstanceCredentialPatch := *openapiclient.NewWebsiteProjectInstanceCredentialPatch("Name_example") // WebsiteProjectInstanceCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialPatch(context.Background(), projectId, locationId, instanceId, credentialId).WebsiteProjectInstanceCredentialPatch(websiteProjectInstanceCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialPatch(context.Background(), projectId, locationId, instanceId, credentialId).WebsiteProjectInstanceCredentialPatch(websiteProjectInstanceCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -711,8 +711,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceDelete(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceDelete(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -786,8 +786,8 @@ func main() {
     domain := *openapiclient.NewDomain("Value_example") // Domain | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainCreate(context.Background(), projectId, locationId, instanceId).Domain(domain).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainCreate(context.Background(), projectId, locationId, instanceId).Domain(domain).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -864,8 +864,8 @@ func main() {
     domainId := "domainId_example" // string | domainId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainDelete(context.Background(), projectId, locationId, instanceId, domainId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainDelete(context.Background(), projectId, locationId, instanceId, domainId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -941,8 +941,8 @@ func main() {
     domainId := "domainId_example" // string | domainId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainGet(context.Background(), projectId, locationId, instanceId, domainId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainGet(context.Background(), projectId, locationId, instanceId, domainId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1019,8 +1019,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceDomainList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1096,8 +1096,8 @@ func main() {
     websiteEnv := *openapiclient.NewWebsiteEnv("Name_example", "Value_example") // WebsiteEnv | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvCreate(context.Background(), projectId, locationId, instanceId).WebsiteEnv(websiteEnv).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvCreate(context.Background(), projectId, locationId, instanceId).WebsiteEnv(websiteEnv).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1174,8 +1174,8 @@ func main() {
     envId := "envId_example" // string | envId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvDelete(context.Background(), projectId, locationId, instanceId, envId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvDelete(context.Background(), projectId, locationId, instanceId, envId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1251,8 +1251,8 @@ func main() {
     envId := "envId_example" // string | envId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvGet(context.Background(), projectId, locationId, instanceId, envId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvGet(context.Background(), projectId, locationId, instanceId, envId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1329,8 +1329,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEnvList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1406,8 +1406,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1486,8 +1486,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1564,8 +1564,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1641,8 +1641,8 @@ func main() {
     websiteLink := *openapiclient.NewWebsiteLink("Actor_example", "Purpose_example", "Resource_example") // WebsiteLink | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkCreate(context.Background(), projectId, locationId, instanceId).WebsiteLink(websiteLink).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkCreate(context.Background(), projectId, locationId, instanceId).WebsiteLink(websiteLink).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1719,8 +1719,8 @@ func main() {
     linkId := "linkId_example" // string | linkId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkDelete(context.Background(), projectId, locationId, instanceId, linkId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkDelete(context.Background(), projectId, locationId, instanceId, linkId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1796,8 +1796,8 @@ func main() {
     linkId := "linkId_example" // string | linkId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkGet(context.Background(), projectId, locationId, instanceId, linkId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkGet(context.Background(), projectId, locationId, instanceId, linkId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1874,8 +1874,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLinkList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1952,8 +1952,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2030,8 +2030,8 @@ func main() {
     logId := "logId_example" // string | logId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogGet(context.Background(), projectId, locationId, instanceId, logId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogGet(context.Background(), projectId, locationId, instanceId, logId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLogGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2108,8 +2108,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLogList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2185,8 +2185,8 @@ func main() {
     logId := "logId_example" // string | logId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogRead(context.Background(), projectId, locationId, instanceId, logId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceLogRead(context.Background(), projectId, locationId, instanceId, logId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceLogRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2262,8 +2262,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricGet(context.Background(), projectId, locationId, instanceId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricGet(context.Background(), projectId, locationId, instanceId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2340,8 +2340,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2419,8 +2419,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricPointList(context.Background(), projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricPointList(context.Background(), projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2501,8 +2501,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceRestart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceRestart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceRestart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2580,8 +2580,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2658,8 +2658,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2735,8 +2735,8 @@ func main() {
     sideappId := "sideappId_example" // string | sideappId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappGet(context.Background(), projectId, locationId, instanceId, sideappId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappGet(context.Background(), projectId, locationId, instanceId, sideappId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2813,8 +2813,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2890,8 +2890,8 @@ func main() {
     sideappId := "sideappId_example" // string | sideappId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappOpen(context.Background(), projectId, locationId, instanceId, sideappId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappOpen(context.Background(), projectId, locationId, instanceId, sideappId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSideappOpen``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2967,8 +2967,8 @@ func main() {
     websiteSnapshot := *openapiclient.NewWebsiteSnapshot("Name_example") // WebsiteSnapshot | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotCreate(context.Background(), projectId, locationId, instanceId).WebsiteSnapshot(websiteSnapshot).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotCreate(context.Background(), projectId, locationId, instanceId).WebsiteSnapshot(websiteSnapshot).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3045,8 +3045,8 @@ func main() {
     snapshotId := "snapshotId_example" // string | snapshotId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDelete(context.Background(), projectId, locationId, instanceId, snapshotId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDelete(context.Background(), projectId, locationId, instanceId, snapshotId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3125,8 +3125,8 @@ func main() {
     websiteProjectInstanceSnapshotDownload := *openapiclient.NewWebsiteProjectInstanceSnapshotDownload() // WebsiteProjectInstanceSnapshotDownload | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDownload(context.Background(), projectId, locationId, instanceId, snapshotId).WebsiteProjectInstanceSnapshotDownload(websiteProjectInstanceSnapshotDownload).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDownload(context.Background(), projectId, locationId, instanceId, snapshotId).WebsiteProjectInstanceSnapshotDownload(websiteProjectInstanceSnapshotDownload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3203,8 +3203,8 @@ func main() {
     snapshotId := "snapshotId_example" // string | snapshotId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotGet(context.Background(), projectId, locationId, instanceId, snapshotId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotGet(context.Background(), projectId, locationId, instanceId, snapshotId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3281,8 +3281,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceSnapshotList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3359,8 +3359,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceStart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceStart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3439,8 +3439,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceStop(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceStop(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3518,8 +3518,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3596,8 +3596,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3673,8 +3673,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3751,8 +3751,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3828,8 +3828,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3908,8 +3908,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceTransfer(context.Background(), projectId, locationId, instanceId).WebsiteProjectInstanceTransfer(websiteProjectInstanceTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceTransfer(context.Background(), projectId, locationId, instanceId).WebsiteProjectInstanceTransfer(websiteProjectInstanceTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3988,8 +3988,8 @@ func main() {
     websiteProjectInstanceUpdate := *openapiclient.NewWebsiteProjectInstanceUpdate() // WebsiteProjectInstanceUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WebsiteProjectInstanceApi.WebsiteProjectInstanceUpdate(context.Background(), projectId, locationId, instanceId).WebsiteProjectInstanceUpdate(websiteProjectInstanceUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebsiteProjectInstanceApi.WebsiteProjectInstanceUpdate(context.Background(), projectId, locationId, instanceId).WebsiteProjectInstanceUpdate(websiteProjectInstanceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebsiteProjectInstanceApi.WebsiteProjectInstanceUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

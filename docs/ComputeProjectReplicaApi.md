@@ -48,8 +48,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaCreate(context.Background(), projectId, locationId).ComputeProjectReplicaCreate(computeProjectReplicaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaCreate(context.Background(), projectId, locationId).ComputeProjectReplicaCreate(computeProjectReplicaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,8 +125,8 @@ func main() {
     replicaId := "replicaId_example" // string | Replica Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaDelete(context.Background(), projectId, locationId, replicaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaDelete(context.Background(), projectId, locationId, replicaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,8 +200,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaEventGet(context.Background(), projectId, locationId, replicaId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaEventGet(context.Background(), projectId, locationId, replicaId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -280,8 +280,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaEventList(context.Background(), projectId, locationId, replicaId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaEventList(context.Background(), projectId, locationId, replicaId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -358,8 +358,8 @@ func main() {
     replicaId := "replicaId_example" // string | Replica Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaGet(context.Background(), projectId, locationId, replicaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaGet(context.Background(), projectId, locationId, replicaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -434,8 +434,8 @@ func main() {
     name := "name_example" // string | Filter by name (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaList(context.Background(), projectId, locationId).Name(name).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaList(context.Background(), projectId, locationId).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -510,8 +510,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet(context.Background(), projectId, locationId, replicaId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet(context.Background(), projectId, locationId, replicaId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -588,8 +588,8 @@ func main() {
     replicaId := "replicaId_example" // string | Replica Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaServiceList(context.Background(), projectId, locationId, replicaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaServiceList(context.Background(), projectId, locationId, replicaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -665,8 +665,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -743,8 +743,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagDelete(context.Background(), projectId, locationId, replicaId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaTagDelete(context.Background(), projectId, locationId, replicaId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -820,8 +820,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagGet(context.Background(), projectId, locationId, replicaId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaTagGet(context.Background(), projectId, locationId, replicaId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -898,8 +898,8 @@ func main() {
     replicaId := "replicaId_example" // string | Replica Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagList(context.Background(), projectId, locationId, replicaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaTagList(context.Background(), projectId, locationId, replicaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -975,8 +975,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectReplicaApi.ComputeProjectReplicaTagPut(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectReplicaApi.ComputeProjectReplicaTagPut(context.Background(), projectId, locationId, replicaId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

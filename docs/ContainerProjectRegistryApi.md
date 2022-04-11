@@ -66,8 +66,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCreate(context.Background(), projectId, locationId).ContainerProjectRegistryCreate(containerProjectRegistryCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCreate(context.Background(), projectId, locationId).ContainerProjectRegistryCreate(containerProjectRegistryCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -144,8 +144,8 @@ func main() {
     registryCredential := *openapiclient.NewRegistryCredential("Name_example", "Type_example", "Value_example") // RegistryCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate(context.Background(), projectId, locationId, registryId).RegistryCredential(registryCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate(context.Background(), projectId, locationId, registryId).RegistryCredential(registryCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -222,8 +222,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete(context.Background(), projectId, locationId, registryId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete(context.Background(), projectId, locationId, registryId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -301,8 +301,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet(context.Background(), projectId, locationId, registryId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet(context.Background(), projectId, locationId, registryId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -379,8 +379,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -457,8 +457,8 @@ func main() {
     containerProjectRegistryCredentialPatch := *openapiclient.NewContainerProjectRegistryCredentialPatch("Name_example") // ContainerProjectRegistryCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch(context.Background(), projectId, locationId, registryId, credentialId).ContainerProjectRegistryCredentialPatch(containerProjectRegistryCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch(context.Background(), projectId, locationId, registryId, credentialId).ContainerProjectRegistryCredentialPatch(containerProjectRegistryCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,8 +536,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDelete(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryDelete(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -611,8 +611,8 @@ func main() {
     domain := *openapiclient.NewDomain("Value_example") // Domain | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate(context.Background(), projectId, locationId, registryId).Domain(domain).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate(context.Background(), projectId, locationId, registryId).Domain(domain).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -689,8 +689,8 @@ func main() {
     domainId := "domainId_example" // string | domainId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainDelete(context.Background(), projectId, locationId, registryId, domainId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryDomainDelete(context.Background(), projectId, locationId, registryId, domainId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -766,8 +766,8 @@ func main() {
     domainId := "domainId_example" // string | domainId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet(context.Background(), projectId, locationId, registryId, domainId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet(context.Background(), projectId, locationId, registryId, domainId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -844,8 +844,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryDomainList(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryDomainList(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDomainList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -921,8 +921,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryEventGet(context.Background(), projectId, locationId, registryId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryEventGet(context.Background(), projectId, locationId, registryId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1001,8 +1001,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryEventList(context.Background(), projectId, locationId, registryId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryEventList(context.Background(), projectId, locationId, registryId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1079,8 +1079,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryGet(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryGet(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1157,8 +1157,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1235,8 +1235,8 @@ func main() {
     repositoryId := "repositoryId_example" // string | repositoryId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1315,8 +1315,8 @@ func main() {
     imageId := "imageId_example" // string | imageId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageDelete(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageDelete(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1395,8 +1395,8 @@ func main() {
     imageId := "imageId_example" // string | imageId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet(context.Background(), projectId, locationId, registryId, repositoryId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1476,8 +1476,8 @@ func main() {
     repositoryId := "repositoryId_example" // string | repositoryId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList(context.Background(), projectId, locationId, registryId, repositoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryImageList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1554,8 +1554,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryRepositoryList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1631,8 +1631,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet(context.Background(), projectId, locationId, registryId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet(context.Background(), projectId, locationId, registryId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1709,8 +1709,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryServiceList(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryServiceList(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1787,8 +1787,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryStart(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryStart(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1867,8 +1867,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryStop(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryStop(context.Background(), projectId, locationId, registryId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1946,8 +1946,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2024,8 +2024,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagDelete(context.Background(), projectId, locationId, registryId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTagDelete(context.Background(), projectId, locationId, registryId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2101,8 +2101,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagGet(context.Background(), projectId, locationId, registryId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTagGet(context.Background(), projectId, locationId, registryId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2179,8 +2179,8 @@ func main() {
     registryId := "registryId_example" // string | Registry Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagList(context.Background(), projectId, locationId, registryId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTagList(context.Background(), projectId, locationId, registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2256,8 +2256,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTagPut(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTagPut(context.Background(), projectId, locationId, registryId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2336,8 +2336,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryTransfer(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryTransfer(containerProjectRegistryTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryTransfer(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryTransfer(containerProjectRegistryTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2416,8 +2416,8 @@ func main() {
     containerProjectRegistryUpdate := *openapiclient.NewContainerProjectRegistryUpdate() // ContainerProjectRegistryUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContainerProjectRegistryApi.ContainerProjectRegistryUpdate(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryUpdate(containerProjectRegistryUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContainerProjectRegistryApi.ContainerProjectRegistryUpdate(context.Background(), projectId, locationId, registryId).ContainerProjectRegistryUpdate(containerProjectRegistryUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

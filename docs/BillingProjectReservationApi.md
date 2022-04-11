@@ -51,8 +51,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationAssign(context.Background(), projectId, reservationId).BillingProjectReservationAssign(billingProjectReservationAssign).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationAssign(context.Background(), projectId, reservationId).BillingProjectReservationAssign(billingProjectReservationAssign).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationAssign``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,8 +129,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationCreate(context.Background(), projectId).BillingProjectReservationCreate(billingProjectReservationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationCreate(context.Background(), projectId).BillingProjectReservationCreate(billingProjectReservationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,8 +203,8 @@ func main() {
     reservationId := "reservationId_example" // string | Reservation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationDelete(context.Background(), projectId, reservationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationDelete(context.Background(), projectId, reservationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -275,8 +275,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationEventGet(context.Background(), projectId, reservationId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationEventGet(context.Background(), projectId, reservationId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -352,8 +352,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationEventList(context.Background(), projectId, reservationId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationEventList(context.Background(), projectId, reservationId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -429,8 +429,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationExtend(context.Background(), projectId, reservationId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationExtend(context.Background(), projectId, reservationId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationExtend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -504,8 +504,8 @@ func main() {
     reservationId := "reservationId_example" // string | Reservation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationGet(context.Background(), projectId, reservationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationGet(context.Background(), projectId, reservationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -579,8 +579,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -654,8 +654,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationServiceGet(context.Background(), projectId, reservationId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationServiceGet(context.Background(), projectId, reservationId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -729,8 +729,8 @@ func main() {
     reservationId := "reservationId_example" // string | Reservation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationServiceList(context.Background(), projectId, reservationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationServiceList(context.Background(), projectId, reservationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -803,8 +803,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagCreate(context.Background(), projectId, reservationId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationTagCreate(context.Background(), projectId, reservationId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -878,8 +878,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagDelete(context.Background(), projectId, reservationId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationTagDelete(context.Background(), projectId, reservationId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -952,8 +952,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagGet(context.Background(), projectId, reservationId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationTagGet(context.Background(), projectId, reservationId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1027,8 +1027,8 @@ func main() {
     reservationId := "reservationId_example" // string | Reservation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagList(context.Background(), projectId, reservationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationTagList(context.Background(), projectId, reservationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1101,8 +1101,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationTagPut(context.Background(), projectId, reservationId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationTagPut(context.Background(), projectId, reservationId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1176,8 +1176,8 @@ func main() {
     billingProjectReservationUpdate := *openapiclient.NewBillingProjectReservationUpdate() // BillingProjectReservationUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectReservationApi.BillingProjectReservationUpdate(context.Background(), projectId, reservationId).BillingProjectReservationUpdate(billingProjectReservationUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectReservationApi.BillingProjectReservationUpdate(context.Background(), projectId, reservationId).BillingProjectReservationUpdate(billingProjectReservationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectReservationApi.BillingProjectReservationUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

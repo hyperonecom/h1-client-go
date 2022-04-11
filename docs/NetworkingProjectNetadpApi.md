@@ -52,8 +52,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate(context.Background(), projectId, locationId).NetworkingProjectNetadpCreate(networkingProjectNetadpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate(context.Background(), projectId, locationId).NetworkingProjectNetadpCreate(networkingProjectNetadpCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,8 +129,8 @@ func main() {
     netadpId := "netadpId_example" // string | Netadp Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete(context.Background(), projectId, locationId, netadpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete(context.Background(), projectId, locationId, netadpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -204,8 +204,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet(context.Background(), projectId, locationId, netadpId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet(context.Background(), projectId, locationId, netadpId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -284,8 +284,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList(context.Background(), projectId, locationId, netadpId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList(context.Background(), projectId, locationId, netadpId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,8 +362,8 @@ func main() {
     netadpId := "netadpId_example" // string | Netadp Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpGet(context.Background(), projectId, locationId, netadpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpGet(context.Background(), projectId, locationId, netadpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -442,8 +442,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpList(context.Background(), projectId, locationId).AssignedResource(assignedResource).AssignedId(assignedId).Network(network).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpList(context.Background(), projectId, locationId).AssignedResource(assignedResource).AssignedId(assignedId).Network(network).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,8 +522,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet(context.Background(), projectId, locationId, netadpId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet(context.Background(), projectId, locationId, netadpId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -600,8 +600,8 @@ func main() {
     netadpId := "netadpId_example" // string | Netadp Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList(context.Background(), projectId, locationId, netadpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList(context.Background(), projectId, locationId, netadpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -679,8 +679,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList(context.Background(), projectId, locationId, netadpId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList(context.Background(), projectId, locationId, netadpId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -760,8 +760,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet(context.Background(), projectId, locationId, netadpId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet(context.Background(), projectId, locationId, netadpId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -838,8 +838,8 @@ func main() {
     netadpId := "netadpId_example" // string | Netadp Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList(context.Background(), projectId, locationId, netadpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList(context.Background(), projectId, locationId, netadpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -915,8 +915,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -993,8 +993,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagDelete(context.Background(), projectId, locationId, netadpId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagDelete(context.Background(), projectId, locationId, netadpId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1070,8 +1070,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet(context.Background(), projectId, locationId, netadpId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet(context.Background(), projectId, locationId, netadpId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1148,8 +1148,8 @@ func main() {
     netadpId := "netadpId_example" // string | Netadp Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList(context.Background(), projectId, locationId, netadpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList(context.Background(), projectId, locationId, netadpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1225,8 +1225,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut(context.Background(), projectId, locationId, netadpId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1303,8 +1303,8 @@ func main() {
     networkingProjectNetadpUpdate := *openapiclient.NewNetworkingProjectNetadpUpdate() // NetworkingProjectNetadpUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate(context.Background(), projectId, locationId, netadpId).NetworkingProjectNetadpUpdate(networkingProjectNetadpUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate(context.Background(), projectId, locationId, netadpId).NetworkingProjectNetadpUpdate(networkingProjectNetadpUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

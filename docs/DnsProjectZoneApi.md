@@ -59,8 +59,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneCreate(context.Background(), projectId, locationId).DnsProjectZoneCreate(dnsProjectZoneCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneCreate(context.Background(), projectId, locationId).DnsProjectZoneCreate(dnsProjectZoneCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,8 +136,8 @@ func main() {
     zoneId := "zoneId_example" // string | Zone Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneDelete(context.Background(), projectId, locationId, zoneId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneDelete(context.Background(), projectId, locationId, zoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -211,8 +211,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneEventGet(context.Background(), projectId, locationId, zoneId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneEventGet(context.Background(), projectId, locationId, zoneId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -291,8 +291,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneEventList(context.Background(), projectId, locationId, zoneId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneEventList(context.Background(), projectId, locationId, zoneId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -369,8 +369,8 @@ func main() {
     zoneId := "zoneId_example" // string | Zone Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneGet(context.Background(), projectId, locationId, zoneId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneGet(context.Background(), projectId, locationId, zoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,8 +447,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -525,8 +525,8 @@ func main() {
     dnsRecordset := *openapiclient.NewDnsRecordset("Type_example") // DnsRecordset | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetCreate(context.Background(), projectId, locationId, zoneId).DnsRecordset(dnsRecordset).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetCreate(context.Background(), projectId, locationId, zoneId).DnsRecordset(dnsRecordset).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -603,8 +603,8 @@ func main() {
     recordsetId := "recordsetId_example" // string | recordsetId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetDelete(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetDelete(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -682,8 +682,8 @@ func main() {
     recordsetId := "recordsetId_example" // string | recordsetId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetGet(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetGet(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -760,8 +760,8 @@ func main() {
     zoneId := "zoneId_example" // string | Zone Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetList(context.Background(), projectId, locationId, zoneId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetList(context.Background(), projectId, locationId, zoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -838,8 +838,8 @@ func main() {
     dnsProjectZoneRecordsetPatch := *openapiclient.NewDnsProjectZoneRecordsetPatch() // DnsProjectZoneRecordsetPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetPatch(context.Background(), projectId, locationId, zoneId, recordsetId).DnsProjectZoneRecordsetPatch(dnsProjectZoneRecordsetPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetPatch(context.Background(), projectId, locationId, zoneId, recordsetId).DnsProjectZoneRecordsetPatch(dnsProjectZoneRecordsetPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -919,8 +919,8 @@ func main() {
     dnsRecord := *openapiclient.NewDnsRecord("Content_example") // DnsRecord | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1000,8 +1000,8 @@ func main() {
     recordId := "recordId_example" // string | recordId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordDelete(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordDelete(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1080,8 +1080,8 @@ func main() {
     recordId := "recordId_example" // string | recordId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet(context.Background(), projectId, locationId, zoneId, recordsetId, recordId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1161,8 +1161,8 @@ func main() {
     recordsetId := "recordsetId_example" // string | recordsetId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList(context.Background(), projectId, locationId, zoneId, recordsetId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1241,8 +1241,8 @@ func main() {
     dnsRecord := []openapiclient.DnsRecord{*openapiclient.NewDnsRecord("Content_example")} // []DnsRecord | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut(context.Background(), projectId, locationId, zoneId, recordsetId).DnsRecord(dnsRecord).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneRecordsetRecordPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1321,8 +1321,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneServiceGet(context.Background(), projectId, locationId, zoneId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneServiceGet(context.Background(), projectId, locationId, zoneId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1399,8 +1399,8 @@ func main() {
     zoneId := "zoneId_example" // string | Zone Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneServiceList(context.Background(), projectId, locationId, zoneId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneServiceList(context.Background(), projectId, locationId, zoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1476,8 +1476,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagCreate(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneTagCreate(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1554,8 +1554,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagDelete(context.Background(), projectId, locationId, zoneId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneTagDelete(context.Background(), projectId, locationId, zoneId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1631,8 +1631,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagGet(context.Background(), projectId, locationId, zoneId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneTagGet(context.Background(), projectId, locationId, zoneId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1709,8 +1709,8 @@ func main() {
     zoneId := "zoneId_example" // string | Zone Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagList(context.Background(), projectId, locationId, zoneId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneTagList(context.Background(), projectId, locationId, zoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1786,8 +1786,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneTagPut(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneTagPut(context.Background(), projectId, locationId, zoneId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1864,8 +1864,8 @@ func main() {
     dnsProjectZoneUpdate := *openapiclient.NewDnsProjectZoneUpdate() // DnsProjectZoneUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DnsProjectZoneApi.DnsProjectZoneUpdate(context.Background(), projectId, locationId, zoneId).DnsProjectZoneUpdate(dnsProjectZoneUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnsProjectZoneApi.DnsProjectZoneUpdate(context.Background(), projectId, locationId, zoneId).DnsProjectZoneUpdate(dnsProjectZoneUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

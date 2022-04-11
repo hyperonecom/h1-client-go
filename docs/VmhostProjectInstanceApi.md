@@ -45,8 +45,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,8 +125,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,8 +203,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -279,8 +279,8 @@ func main() {
     enabledServices := "enabledServices_example" // string | Filter by enabledServices (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceList(context.Background(), projectId, locationId).EnabledServices(enabledServices).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceList(context.Background(), projectId, locationId).EnabledServices(enabledServices).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -355,8 +355,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -433,8 +433,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -510,8 +510,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -588,8 +588,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -665,8 +665,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -743,8 +743,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -820,8 +820,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.VmhostProjectInstanceApi.VmhostProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VmhostProjectInstanceApi.VmhostProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VmhostProjectInstanceApi.VmhostProjectInstanceTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

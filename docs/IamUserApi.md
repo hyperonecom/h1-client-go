@@ -44,8 +44,8 @@ func main() {
     authtokenId := "authtokenId_example" // string | authtokenId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialAuthtokenDelete(context.Background(), userId, authtokenId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialAuthtokenDelete(context.Background(), userId, authtokenId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialAuthtokenDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -115,8 +115,8 @@ func main() {
     authtokenId := "authtokenId_example" // string | authtokenId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialAuthtokenGet(context.Background(), userId, authtokenId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialAuthtokenGet(context.Background(), userId, authtokenId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialAuthtokenGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -187,8 +187,8 @@ func main() {
     userId := "userId_example" // string | User Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialAuthtokenList(context.Background(), userId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialAuthtokenList(context.Background(), userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialAuthtokenList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,8 +258,8 @@ func main() {
     userCredential := *openapiclient.NewUserCredential("Name_example", "Type_example", "Value_example") // UserCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialCreate(context.Background(), userId).UserCredential(userCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialCreate(context.Background(), userId).UserCredential(userCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,8 +330,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialDelete(context.Background(), userId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialDelete(context.Background(), userId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -403,8 +403,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialGet(context.Background(), userId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialGet(context.Background(), userId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -475,8 +475,8 @@ func main() {
     userId := "userId_example" // string | User Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialList(context.Background(), userId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialList(context.Background(), userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -547,8 +547,8 @@ func main() {
     iamUserCredentialPatch := *openapiclient.NewIamUserCredentialPatch("Name_example") // IamUserCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserCredentialPatch(context.Background(), userId, credentialId).IamUserCredentialPatch(iamUserCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserCredentialPatch(context.Background(), userId, credentialId).IamUserCredentialPatch(iamUserCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -620,8 +620,8 @@ func main() {
     userId := "userId_example" // string | User Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserGet(context.Background(), userId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserGet(context.Background(), userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -691,8 +691,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserServiceGet(context.Background(), userId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserServiceGet(context.Background(), userId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -763,8 +763,8 @@ func main() {
     userId := "userId_example" // string | User Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserServiceList(context.Background(), userId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserServiceList(context.Background(), userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -834,8 +834,8 @@ func main() {
     iamUserUpdate := *openapiclient.NewIamUserUpdate() // IamUserUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamUserApi.IamUserUpdate(context.Background(), userId).IamUserUpdate(iamUserUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamUserApi.IamUserUpdate(context.Background(), userId).IamUserUpdate(iamUserUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

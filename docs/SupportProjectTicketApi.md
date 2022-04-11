@@ -41,8 +41,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketClose(context.Background(), projectId, ticketId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketClose(context.Background(), projectId, ticketId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketClose``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,8 +118,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketCreate(context.Background(), projectId).SupportProjectTicketCreate(supportProjectTicketCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketCreate(context.Background(), projectId).SupportProjectTicketCreate(supportProjectTicketCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -192,8 +192,8 @@ func main() {
     ticketId := "ticketId_example" // string | Ticket Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketGet(context.Background(), projectId, ticketId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketGet(context.Background(), projectId, ticketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -265,8 +265,8 @@ func main() {
     state := "state_example" // string | Filter by state (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -338,8 +338,8 @@ func main() {
     supportMessage := *openapiclient.NewSupportMessage("Type_example") // SupportMessage | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageCreate(context.Background(), projectId, ticketId).SupportMessage(supportMessage).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketMessageCreate(context.Background(), projectId, ticketId).SupportMessage(supportMessage).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -413,8 +413,8 @@ func main() {
     messageId := "messageId_example" // string | messageId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageGet(context.Background(), projectId, ticketId, messageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketMessageGet(context.Background(), projectId, ticketId, messageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -488,8 +488,8 @@ func main() {
     ticketId := "ticketId_example" // string | Ticket Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.SupportProjectTicketApi.SupportProjectTicketMessageList(context.Background(), projectId, ticketId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketMessageList(context.Background(), projectId, ticketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketMessageList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

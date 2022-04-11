@@ -66,8 +66,8 @@ func main() {
     resourceType := "resourceType_example" // string | resource.type (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationBillingList(context.Background(), organisationId).Start(start).End(end).ResourceType(resourceType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationBillingList(context.Background(), organisationId).Start(start).End(end).ResourceType(resourceType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationBillingList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -141,8 +141,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationCreate(context.Background()).IamOrganisationCreate(iamOrganisationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationCreate(context.Background()).IamOrganisationCreate(iamOrganisationCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -209,8 +209,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationDelete(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationDelete(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -278,8 +278,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationEventGet(context.Background(), organisationId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationEventGet(context.Background(), organisationId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -352,8 +352,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationEventList(context.Background(), organisationId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationEventList(context.Background(), organisationId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -424,8 +424,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationGet(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationGet(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -496,8 +496,8 @@ func main() {
     iamOrganisationInvitationAccept := *openapiclient.NewIamOrganisationInvitationAccept("Token_example") // IamOrganisationInvitationAccept | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvitationAccept(context.Background(), organisationId, invitationId).IamOrganisationInvitationAccept(iamOrganisationInvitationAccept).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvitationAccept(context.Background(), organisationId, invitationId).IamOrganisationInvitationAccept(iamOrganisationInvitationAccept).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvitationAccept``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,8 +570,8 @@ func main() {
     invitationId := "invitationId_example" // string | invitationId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvitationDelete(context.Background(), organisationId, invitationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvitationDelete(context.Background(), organisationId, invitationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvitationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -641,8 +641,8 @@ func main() {
     invitationId := "invitationId_example" // string | invitationId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvitationGet(context.Background(), organisationId, invitationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvitationGet(context.Background(), organisationId, invitationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvitationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -714,8 +714,8 @@ func main() {
     resource := "resource_example" // string | resource (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvitationList(context.Background(), organisationId).Resource(resource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvitationList(context.Background(), organisationId).Resource(resource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvitationList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -786,8 +786,8 @@ func main() {
     invoiceId := "invoiceId_example" // string | invoiceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvoiceDownload(context.Background(), organisationId, invoiceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvoiceDownload(context.Background(), organisationId, invoiceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvoiceDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -859,8 +859,8 @@ func main() {
     invoiceId := "invoiceId_example" // string | invoiceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvoiceGet(context.Background(), organisationId, invoiceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvoiceGet(context.Background(), organisationId, invoiceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvoiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -931,8 +931,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationInvoiceList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationInvoiceList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationInvoiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1004,8 +1004,8 @@ func main() {
     active := true // bool | Filter by active (optional) (default to false)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationList(context.Background()).Name(name).BillingCompany(billingCompany).Limit(limit).Active(active).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationList(context.Background()).Name(name).BillingCompany(billingCompany).Limit(limit).Active(active).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1074,8 +1074,8 @@ func main() {
     iamOrganisationOwnershipCreate := *openapiclient.NewIamOrganisationOwnershipCreate("Email_example") // IamOrganisationOwnershipCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationOwnershipCreate(context.Background(), organisationId).IamOrganisationOwnershipCreate(iamOrganisationOwnershipCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationOwnershipCreate(context.Background(), organisationId).IamOrganisationOwnershipCreate(iamOrganisationOwnershipCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationOwnershipCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1146,8 +1146,8 @@ func main() {
     ownershipId := "ownershipId_example" // string | ownershipId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationOwnershipDelete(context.Background(), organisationId, ownershipId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationOwnershipDelete(context.Background(), organisationId, ownershipId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationOwnershipDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1217,8 +1217,8 @@ func main() {
     ownershipId := "ownershipId_example" // string | ownershipId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationOwnershipGet(context.Background(), organisationId, ownershipId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationOwnershipGet(context.Background(), organisationId, ownershipId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationOwnershipGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1289,8 +1289,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationOwnershipList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationOwnershipList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationOwnershipList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1361,8 +1361,8 @@ func main() {
     iamOrganisationPaymentAllocate := *openapiclient.NewIamOrganisationPaymentAllocate("Project_example") // IamOrganisationPaymentAllocate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationPaymentAllocate(context.Background(), organisationId, paymentId).IamOrganisationPaymentAllocate(iamOrganisationPaymentAllocate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationPaymentAllocate(context.Background(), organisationId, paymentId).IamOrganisationPaymentAllocate(iamOrganisationPaymentAllocate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationPaymentAllocate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1435,8 +1435,8 @@ func main() {
     paymentId := "paymentId_example" // string | paymentId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationPaymentGet(context.Background(), organisationId, paymentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationPaymentGet(context.Background(), organisationId, paymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationPaymentGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1507,8 +1507,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationPaymentList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationPaymentList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationPaymentList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1578,8 +1578,8 @@ func main() {
     iamOrganisationProformaCreate := *openapiclient.NewIamOrganisationProformaCreate(float32(123), "Project_example") // IamOrganisationProformaCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationProformaCreate(context.Background(), organisationId).IamOrganisationProformaCreate(iamOrganisationProformaCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationProformaCreate(context.Background(), organisationId).IamOrganisationProformaCreate(iamOrganisationProformaCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationProformaCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1650,8 +1650,8 @@ func main() {
     proformaId := "proformaId_example" // string | proformaId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationProformaDownload(context.Background(), organisationId, proformaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationProformaDownload(context.Background(), organisationId, proformaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationProformaDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1723,8 +1723,8 @@ func main() {
     proformaId := "proformaId_example" // string | proformaId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationProformaGet(context.Background(), organisationId, proformaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationProformaGet(context.Background(), organisationId, proformaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationProformaGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1795,8 +1795,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationProformaList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationProformaList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationProformaList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1866,8 +1866,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationServiceGet(context.Background(), organisationId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationServiceGet(context.Background(), organisationId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1938,8 +1938,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationServiceList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationServiceList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2010,8 +2010,8 @@ func main() {
     iamOrganisationTransferAccept := *openapiclient.NewIamOrganisationTransferAccept("Payment_example") // IamOrganisationTransferAccept | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationTransferAccept(context.Background(), organisationId, transferId).IamOrganisationTransferAccept(iamOrganisationTransferAccept).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationTransferAccept(context.Background(), organisationId, transferId).IamOrganisationTransferAccept(iamOrganisationTransferAccept).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationTransferAccept``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2084,8 +2084,8 @@ func main() {
     transferId := "transferId_example" // string | transferId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationTransferGet(context.Background(), organisationId, transferId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationTransferGet(context.Background(), organisationId, transferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationTransferGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2156,8 +2156,8 @@ func main() {
     organisationId := "organisationId_example" // string | Organisation Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationTransferList(context.Background(), organisationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationTransferList(context.Background(), organisationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationTransferList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2227,8 +2227,8 @@ func main() {
     iamOrganisationUpdate := *openapiclient.NewIamOrganisationUpdate() // IamOrganisationUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamOrganisationApi.IamOrganisationUpdate(context.Background(), organisationId).IamOrganisationUpdate(iamOrganisationUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamOrganisationApi.IamOrganisationUpdate(context.Background(), organisationId).IamOrganisationUpdate(iamOrganisationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

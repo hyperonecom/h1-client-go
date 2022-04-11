@@ -56,8 +56,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCreate(context.Background(), projectId, locationId).InsightProjectJournalCreate(insightProjectJournalCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCreate(context.Background(), projectId, locationId).InsightProjectJournalCreate(insightProjectJournalCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,8 +134,8 @@ func main() {
     journalCredential := *openapiclient.NewJournalCredential("Name_example", "Type_example", "Value_example") // JournalCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCredentialCreate(context.Background(), projectId, locationId, journalId).JournalCredential(journalCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCredentialCreate(context.Background(), projectId, locationId, journalId).JournalCredential(journalCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -212,8 +212,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCredentialDelete(context.Background(), projectId, locationId, journalId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCredentialDelete(context.Background(), projectId, locationId, journalId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -291,8 +291,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCredentialGet(context.Background(), projectId, locationId, journalId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCredentialGet(context.Background(), projectId, locationId, journalId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -369,8 +369,8 @@ func main() {
     journalId := "journalId_example" // string | Journal Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCredentialList(context.Background(), projectId, locationId, journalId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCredentialList(context.Background(), projectId, locationId, journalId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,8 +447,8 @@ func main() {
     insightProjectJournalCredentialPatch := *openapiclient.NewInsightProjectJournalCredentialPatch("Name_example") // InsightProjectJournalCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalCredentialPatch(context.Background(), projectId, locationId, journalId, credentialId).InsightProjectJournalCredentialPatch(insightProjectJournalCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalCredentialPatch(context.Background(), projectId, locationId, journalId, credentialId).InsightProjectJournalCredentialPatch(insightProjectJournalCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -526,8 +526,8 @@ func main() {
     journalId := "journalId_example" // string | Journal Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalDelete(context.Background(), projectId, locationId, journalId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalDelete(context.Background(), projectId, locationId, journalId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -601,8 +601,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalEventGet(context.Background(), projectId, locationId, journalId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalEventGet(context.Background(), projectId, locationId, journalId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -681,8 +681,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalEventList(context.Background(), projectId, locationId, journalId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalEventList(context.Background(), projectId, locationId, journalId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -759,8 +759,8 @@ func main() {
     journalId := "journalId_example" // string | Journal Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalGet(context.Background(), projectId, locationId, journalId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalGet(context.Background(), projectId, locationId, journalId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -837,8 +837,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -920,8 +920,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | tag (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalLogGet(context.Background(), projectId, locationId, journalId).Since(since).Until(until).Follow(follow).Tail(tail).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalLogGet(context.Background(), projectId, locationId, journalId).Since(since).Until(until).Follow(follow).Tail(tail).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalLogGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1000,8 +1000,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalServiceGet(context.Background(), projectId, locationId, journalId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalServiceGet(context.Background(), projectId, locationId, journalId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1078,8 +1078,8 @@ func main() {
     journalId := "journalId_example" // string | Journal Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalServiceList(context.Background(), projectId, locationId, journalId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalServiceList(context.Background(), projectId, locationId, journalId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1155,8 +1155,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTagCreate(context.Background(), projectId, locationId, journalId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTagCreate(context.Background(), projectId, locationId, journalId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1233,8 +1233,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTagDelete(context.Background(), projectId, locationId, journalId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTagDelete(context.Background(), projectId, locationId, journalId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1310,8 +1310,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTagGet(context.Background(), projectId, locationId, journalId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTagGet(context.Background(), projectId, locationId, journalId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1388,8 +1388,8 @@ func main() {
     journalId := "journalId_example" // string | Journal Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTagList(context.Background(), projectId, locationId, journalId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTagList(context.Background(), projectId, locationId, journalId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1465,8 +1465,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTagPut(context.Background(), projectId, locationId, journalId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTagPut(context.Background(), projectId, locationId, journalId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1545,8 +1545,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalTransfer(context.Background(), projectId, locationId, journalId).InsightProjectJournalTransfer(insightProjectJournalTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalTransfer(context.Background(), projectId, locationId, journalId).InsightProjectJournalTransfer(insightProjectJournalTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1625,8 +1625,8 @@ func main() {
     insightProjectJournalUpdate := *openapiclient.NewInsightProjectJournalUpdate() // InsightProjectJournalUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InsightProjectJournalApi.InsightProjectJournalUpdate(context.Background(), projectId, locationId, journalId).InsightProjectJournalUpdate(insightProjectJournalUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InsightProjectJournalApi.InsightProjectJournalUpdate(context.Background(), projectId, locationId, journalId).InsightProjectJournalUpdate(insightProjectJournalUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

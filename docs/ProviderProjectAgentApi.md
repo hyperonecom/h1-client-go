@@ -70,8 +70,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCreate(context.Background(), projectId, locationId).ProviderProjectAgentCreate(providerProjectAgentCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCreate(context.Background(), projectId, locationId).ProviderProjectAgentCreate(providerProjectAgentCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,8 +148,8 @@ func main() {
     agentCredential := *openapiclient.NewAgentCredential("Name_example", "Type_example", "Value_example") // AgentCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCredentialCreate(context.Background(), projectId, locationId, agentId).AgentCredential(agentCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCredentialCreate(context.Background(), projectId, locationId, agentId).AgentCredential(agentCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -226,8 +226,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCredentialDelete(context.Background(), projectId, locationId, agentId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCredentialDelete(context.Background(), projectId, locationId, agentId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -305,8 +305,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCredentialGet(context.Background(), projectId, locationId, agentId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCredentialGet(context.Background(), projectId, locationId, agentId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -383,8 +383,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCredentialList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCredentialList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -461,8 +461,8 @@ func main() {
     providerProjectAgentCredentialPatch := *openapiclient.NewProviderProjectAgentCredentialPatch("Name_example") // ProviderProjectAgentCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentCredentialPatch(context.Background(), projectId, locationId, agentId, credentialId).ProviderProjectAgentCredentialPatch(providerProjectAgentCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentCredentialPatch(context.Background(), projectId, locationId, agentId, credentialId).ProviderProjectAgentCredentialPatch(providerProjectAgentCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -540,8 +540,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentDelete(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentDelete(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -615,8 +615,8 @@ func main() {
     enabledService := *openapiclient.NewEnabledService("Id_example", "Name_example") // EnabledService | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceCreate(context.Background(), projectId, locationId, agentId).EnabledService(enabledService).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceCreate(context.Background(), projectId, locationId, agentId).EnabledService(enabledService).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -693,8 +693,8 @@ func main() {
     enabledServiceId := "enabledServiceId_example" // string | enabledServiceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceDelete(context.Background(), projectId, locationId, agentId, enabledServiceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceDelete(context.Background(), projectId, locationId, agentId, enabledServiceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -772,8 +772,8 @@ func main() {
     enabledServiceId := "enabledServiceId_example" // string | enabledServiceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceGet(context.Background(), projectId, locationId, agentId, enabledServiceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceGet(context.Background(), projectId, locationId, agentId, enabledServiceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -850,8 +850,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEnabledServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -927,8 +927,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEventGet(context.Background(), projectId, locationId, agentId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEventGet(context.Background(), projectId, locationId, agentId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1007,8 +1007,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentEventList(context.Background(), projectId, locationId, agentId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentEventList(context.Background(), projectId, locationId, agentId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1085,8 +1085,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentGet(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentGet(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1163,8 +1163,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentInspect(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentInspect(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentInspect``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1244,8 +1244,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentList(context.Background(), projectId, locationId).Name(name).EnabledServices(enabledServices).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentList(context.Background(), projectId, locationId).Name(name).EnabledServices(enabledServices).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1323,8 +1323,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentMetricGet(context.Background(), projectId, locationId, agentId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentMetricGet(context.Background(), projectId, locationId, agentId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1401,8 +1401,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentMetricList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentMetricList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1480,8 +1480,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentMetricPointList(context.Background(), projectId, locationId, agentId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentMetricPointList(context.Background(), projectId, locationId, agentId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1563,8 +1563,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentResourceEventList(context.Background(), projectId, locationId, agentId, resourceId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentResourceEventList(context.Background(), projectId, locationId, agentId, resourceId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentResourceEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1644,8 +1644,8 @@ func main() {
     resourceId := "resourceId_example" // string | resourceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentResourceGet(context.Background(), projectId, locationId, agentId, resourceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentResourceGet(context.Background(), projectId, locationId, agentId, resourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentResourceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1723,8 +1723,8 @@ func main() {
     resourceId := "resourceId_example" // string | resourceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentResourceInspect(context.Background(), projectId, locationId, agentId, resourceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentResourceInspect(context.Background(), projectId, locationId, agentId, resourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentResourceInspect``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1801,8 +1801,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentResourceList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentResourceList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentResourceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1878,8 +1878,8 @@ func main() {
     resourceId := "resourceId_example" // string | resourceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentResourceRecreate(context.Background(), projectId, locationId, agentId, resourceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentResourceRecreate(context.Background(), projectId, locationId, agentId, resourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentResourceRecreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1957,8 +1957,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentServiceGet(context.Background(), projectId, locationId, agentId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentServiceGet(context.Background(), projectId, locationId, agentId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2035,8 +2035,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentServiceList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentServiceList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2113,8 +2113,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentStart(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentStart(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2193,8 +2193,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentSuspend(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentSuspend(context.Background(), projectId, locationId, agentId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentSuspend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2272,8 +2272,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTagCreate(context.Background(), projectId, locationId, agentId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTagCreate(context.Background(), projectId, locationId, agentId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2350,8 +2350,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTagDelete(context.Background(), projectId, locationId, agentId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTagDelete(context.Background(), projectId, locationId, agentId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2427,8 +2427,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTagGet(context.Background(), projectId, locationId, agentId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTagGet(context.Background(), projectId, locationId, agentId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2505,8 +2505,8 @@ func main() {
     agentId := "agentId_example" // string | Agent Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTagList(context.Background(), projectId, locationId, agentId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTagList(context.Background(), projectId, locationId, agentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2582,8 +2582,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTagPut(context.Background(), projectId, locationId, agentId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTagPut(context.Background(), projectId, locationId, agentId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2662,8 +2662,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentTransfer(context.Background(), projectId, locationId, agentId).ProviderProjectAgentTransfer(providerProjectAgentTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentTransfer(context.Background(), projectId, locationId, agentId).ProviderProjectAgentTransfer(providerProjectAgentTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2742,8 +2742,8 @@ func main() {
     providerProjectAgentUpdate := *openapiclient.NewProviderProjectAgentUpdate() // ProviderProjectAgentUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ProviderProjectAgentApi.ProviderProjectAgentUpdate(context.Background(), projectId, locationId, agentId).ProviderProjectAgentUpdate(providerProjectAgentUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProviderProjectAgentApi.ProviderProjectAgentUpdate(context.Background(), projectId, locationId, agentId).ProviderProjectAgentUpdate(providerProjectAgentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

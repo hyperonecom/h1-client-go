@@ -65,8 +65,8 @@ func main() {
     connectId := "connectId_example" // string | connectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectGet(context.Background(), projectId, locationId, vmId, connectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmConnectGet(context.Background(), projectId, locationId, vmId, connectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -143,8 +143,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmConnectList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -221,8 +221,8 @@ func main() {
     computeProjectVmConnectOpen := *openapiclient.NewComputeProjectVmConnectOpen() // ComputeProjectVmConnectOpen | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmConnectOpen(context.Background(), projectId, locationId, vmId, connectId).ComputeProjectVmConnectOpen(computeProjectVmConnectOpen).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmConnectOpen(context.Background(), projectId, locationId, vmId, connectId).ComputeProjectVmConnectOpen(computeProjectVmConnectOpen).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmConnectOpen``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,8 +300,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmCreate(context.Background(), projectId, locationId).ComputeProjectVmCreate(computeProjectVmCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmCreate(context.Background(), projectId, locationId).ComputeProjectVmCreate(computeProjectVmCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,8 +377,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDelete(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmDelete(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -452,8 +452,8 @@ func main() {
     computeProjectVmDiskCreate := *openapiclient.NewComputeProjectVmDiskCreate("Disk_example") // ComputeProjectVmDiskCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDiskCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmDiskCreate(computeProjectVmDiskCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmDiskCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmDiskCreate(computeProjectVmDiskCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDiskCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -529,8 +529,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmDiskList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmDiskList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDiskList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -606,8 +606,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmEventGet(context.Background(), projectId, locationId, vmId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmEventGet(context.Background(), projectId, locationId, vmId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -686,8 +686,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmEventList(context.Background(), projectId, locationId, vmId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmEventList(context.Background(), projectId, locationId, vmId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -767,8 +767,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmFlavour(context.Background(), projectId, locationId, vmId).ComputeProjectVmFlavour(computeProjectVmFlavour).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmFlavour(context.Background(), projectId, locationId, vmId).ComputeProjectVmFlavour(computeProjectVmFlavour).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmFlavour``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -846,8 +846,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmGet(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmGet(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -923,8 +923,8 @@ func main() {
     computeProjectVmIsoCreate := *openapiclient.NewComputeProjectVmIsoCreate() // ComputeProjectVmIsoCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmIsoCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmIsoCreate(computeProjectVmIsoCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmIsoCreate(context.Background(), projectId, locationId, vmId).ComputeProjectVmIsoCreate(computeProjectVmIsoCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmIsoCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1000,8 +1000,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmIsoList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmIsoList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmIsoList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1078,8 +1078,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1156,8 +1156,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricGet(context.Background(), projectId, locationId, vmId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricGet(context.Background(), projectId, locationId, vmId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1234,8 +1234,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1313,8 +1313,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmMetricPointList(context.Background(), projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricPointList(context.Background(), projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1396,8 +1396,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmPasswordReset(context.Background(), projectId, locationId, vmId).ComputeProjectVmPasswordReset(computeProjectVmPasswordReset).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmPasswordReset(context.Background(), projectId, locationId, vmId).ComputeProjectVmPasswordReset(computeProjectVmPasswordReset).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmPasswordReset``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1477,8 +1477,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmRestart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmRestart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmRestart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1558,8 +1558,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmSerialport(context.Background(), projectId, locationId, vmId).ComputeProjectVmSerialport(computeProjectVmSerialport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmSerialport(context.Background(), projectId, locationId, vmId).ComputeProjectVmSerialport(computeProjectVmSerialport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmSerialport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1638,8 +1638,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmServiceGet(context.Background(), projectId, locationId, vmId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmServiceGet(context.Background(), projectId, locationId, vmId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1716,8 +1716,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmServiceList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmServiceList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1794,8 +1794,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmStart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmStart(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1874,8 +1874,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmStop(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmStop(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1953,8 +1953,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagCreate(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTagCreate(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2031,8 +2031,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagDelete(context.Background(), projectId, locationId, vmId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTagDelete(context.Background(), projectId, locationId, vmId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2108,8 +2108,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagGet(context.Background(), projectId, locationId, vmId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTagGet(context.Background(), projectId, locationId, vmId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2186,8 +2186,8 @@ func main() {
     vmId := "vmId_example" // string | Vm Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagList(context.Background(), projectId, locationId, vmId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTagList(context.Background(), projectId, locationId, vmId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2263,8 +2263,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTagPut(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTagPut(context.Background(), projectId, locationId, vmId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2342,8 +2342,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmTurnoff(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmTurnoff(context.Background(), projectId, locationId, vmId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmTurnoff``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2421,8 +2421,8 @@ func main() {
     computeProjectVmUpdate := *openapiclient.NewComputeProjectVmUpdate() // ComputeProjectVmUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ComputeProjectVmApi.ComputeProjectVmUpdate(context.Background(), projectId, locationId, vmId).ComputeProjectVmUpdate(computeProjectVmUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmUpdate(context.Background(), projectId, locationId, vmId).ComputeProjectVmUpdate(computeProjectVmUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

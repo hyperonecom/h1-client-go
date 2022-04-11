@@ -34,8 +34,8 @@ func main() {
     serviceId := "serviceId_example" // string | Service Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectServiceApi.BillingProjectServiceGet(context.Background(), projectId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectServiceApi.BillingProjectServiceGet(context.Background(), projectId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectServiceApi.BillingProjectServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -109,8 +109,8 @@ func main() {
     type_ := "type__example" // string | Filter by type (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.BillingProjectServiceApi.BillingProjectServiceList(context.Background(), projectId).Kind(kind).Name(name).Type_(type_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BillingProjectServiceApi.BillingProjectServiceList(context.Background(), projectId).Kind(kind).Name(name).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingProjectServiceApi.BillingProjectServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

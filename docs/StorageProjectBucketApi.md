@@ -40,8 +40,8 @@ func main() {
     bucketId := "bucketId_example" // string | Bucket Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketGet(context.Background(), projectId, locationId, bucketId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketGet(context.Background(), projectId, locationId, bucketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -115,8 +115,8 @@ func main() {
     locationId := "locationId_example" // string | Location Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketList(context.Background(), projectId, locationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketList(context.Background(), projectId, locationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,8 +190,8 @@ func main() {
     objectId := "objectId_example" // string | objectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectDelete(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketObjectDelete(context.Background(), projectId, locationId, bucketId, objectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,8 +267,8 @@ func main() {
     objectId := "objectId_example" // string | objectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectDownload(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketObjectDownload(context.Background(), projectId, locationId, bucketId, objectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -344,8 +344,8 @@ func main() {
     objectId := "objectId_example" // string | objectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectGet(context.Background(), projectId, locationId, bucketId, objectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketObjectGet(context.Background(), projectId, locationId, bucketId, objectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -422,8 +422,8 @@ func main() {
     bucketId := "bucketId_example" // string | Bucket Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketObjectList(context.Background(), projectId, locationId, bucketId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketObjectList(context.Background(), projectId, locationId, bucketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketObjectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -501,8 +501,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectBucketApi.StorageProjectBucketUpload(context.Background(), projectId, locationId, bucketId).StorageProjectBucketUpload(storageProjectBucketUpload).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectBucketApi.StorageProjectBucketUpload(context.Background(), projectId, locationId, bucketId).StorageProjectBucketUpload(storageProjectBucketUpload).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectBucketApi.StorageProjectBucketUpload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -60,8 +60,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate(context.Background(), projectId, locationId).NetworkingProjectFirewallCreate(networkingProjectFirewallCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate(context.Background(), projectId, locationId).NetworkingProjectFirewallCreate(networkingProjectFirewallCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -137,8 +137,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -212,8 +212,8 @@ func main() {
     networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,8 +290,8 @@ func main() {
     egressId := "egressId_example" // string | egressId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressDelete(context.Background(), projectId, locationId, firewallId, egressId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressDelete(context.Background(), projectId, locationId, firewallId, egressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,8 +367,8 @@ func main() {
     egressId := "egressId_example" // string | egressId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet(context.Background(), projectId, locationId, firewallId, egressId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet(context.Background(), projectId, locationId, firewallId, egressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -445,8 +445,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,8 +522,8 @@ func main() {
     networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEgressPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -600,8 +600,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet(context.Background(), projectId, locationId, firewallId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet(context.Background(), projectId, locationId, firewallId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -680,8 +680,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList(context.Background(), projectId, locationId, firewallId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList(context.Background(), projectId, locationId, firewallId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -758,8 +758,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallGet(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallGet(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -835,8 +835,8 @@ func main() {
     networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -913,8 +913,8 @@ func main() {
     ingressId := "ingressId_example" // string | ingressId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressDelete(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressDelete(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -990,8 +990,8 @@ func main() {
     ingressId := "ingressId_example" // string | ingressId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet(context.Background(), projectId, locationId, firewallId, ingressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1068,8 +1068,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1145,8 +1145,8 @@ func main() {
     networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut(context.Background(), projectId, locationId, firewallId).NetworkingRule(networkingRule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallIngressPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1224,8 +1224,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1302,8 +1302,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet(context.Background(), projectId, locationId, firewallId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet(context.Background(), projectId, locationId, firewallId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1380,8 +1380,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1457,8 +1457,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1535,8 +1535,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagDelete(context.Background(), projectId, locationId, firewallId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagDelete(context.Background(), projectId, locationId, firewallId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1612,8 +1612,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet(context.Background(), projectId, locationId, firewallId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet(context.Background(), projectId, locationId, firewallId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1690,8 +1690,8 @@ func main() {
     firewallId := "firewallId_example" // string | Firewall Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList(context.Background(), projectId, locationId, firewallId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList(context.Background(), projectId, locationId, firewallId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1767,8 +1767,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut(context.Background(), projectId, locationId, firewallId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1847,8 +1847,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallTransfer(networkingProjectFirewallTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallTransfer(networkingProjectFirewallTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1927,8 +1927,8 @@ func main() {
     networkingProjectFirewallUpdate := *openapiclient.NewNetworkingProjectFirewallUpdate() // NetworkingProjectFirewallUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallUpdate(networkingProjectFirewallUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate(context.Background(), projectId, locationId, firewallId).NetworkingProjectFirewallUpdate(networkingProjectFirewallUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -51,8 +51,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoCreate(context.Background(), projectId, locationId).StorageProjectIsoCreate(storageProjectIsoCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoCreate(context.Background(), projectId, locationId).StorageProjectIsoCreate(storageProjectIsoCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ func main() {
     isoId := "isoId_example" // string | Iso Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoDelete(context.Background(), projectId, locationId, isoId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoDelete(context.Background(), projectId, locationId, isoId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,8 +205,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoDetach(context.Background(), projectId, locationId, isoId).StorageProjectIsoDetach(storageProjectIsoDetach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoDetach(context.Background(), projectId, locationId, isoId).StorageProjectIsoDetach(storageProjectIsoDetach).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoDetach``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -285,8 +285,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoEventGet(context.Background(), projectId, locationId, isoId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoEventGet(context.Background(), projectId, locationId, isoId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,8 +365,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoEventList(context.Background(), projectId, locationId, isoId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoEventList(context.Background(), projectId, locationId, isoId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -443,8 +443,8 @@ func main() {
     isoId := "isoId_example" // string | Iso Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoGet(context.Background(), projectId, locationId, isoId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoGet(context.Background(), projectId, locationId, isoId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -521,8 +521,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -599,8 +599,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoServiceGet(context.Background(), projectId, locationId, isoId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoServiceGet(context.Background(), projectId, locationId, isoId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -677,8 +677,8 @@ func main() {
     isoId := "isoId_example" // string | Iso Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoServiceList(context.Background(), projectId, locationId, isoId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoServiceList(context.Background(), projectId, locationId, isoId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -754,8 +754,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagCreate(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTagCreate(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -832,8 +832,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagDelete(context.Background(), projectId, locationId, isoId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTagDelete(context.Background(), projectId, locationId, isoId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -909,8 +909,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagGet(context.Background(), projectId, locationId, isoId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTagGet(context.Background(), projectId, locationId, isoId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -987,8 +987,8 @@ func main() {
     isoId := "isoId_example" // string | Iso Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagList(context.Background(), projectId, locationId, isoId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTagList(context.Background(), projectId, locationId, isoId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1064,8 +1064,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTagPut(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTagPut(context.Background(), projectId, locationId, isoId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1144,8 +1144,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoTransfer(context.Background(), projectId, locationId, isoId).StorageProjectIsoTransfer(storageProjectIsoTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoTransfer(context.Background(), projectId, locationId, isoId).StorageProjectIsoTransfer(storageProjectIsoTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1224,8 +1224,8 @@ func main() {
     storageProjectIsoUpdate := *openapiclient.NewStorageProjectIsoUpdate() // StorageProjectIsoUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectIsoApi.StorageProjectIsoUpdate(context.Background(), projectId, locationId, isoId).StorageProjectIsoUpdate(storageProjectIsoUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectIsoApi.StorageProjectIsoUpdate(context.Background(), projectId, locationId, isoId).StorageProjectIsoUpdate(storageProjectIsoUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

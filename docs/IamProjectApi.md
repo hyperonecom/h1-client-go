@@ -74,8 +74,8 @@ func main() {
     resourceType := "resourceType_example" // string | resource.type (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectBillingList(context.Background(), projectId).Start(start).End(end).ResourceType(resourceType).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectBillingList(context.Background(), projectId).Start(start).End(end).ResourceType(resourceType).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectBillingList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -149,8 +149,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCreate(context.Background()).IamProjectCreate(iamProjectCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCreate(context.Background()).IamProjectCreate(iamProjectCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,8 +218,8 @@ func main() {
     projectCredential := *openapiclient.NewProjectCredential("Name_example", "Type_example", "Value_example") // ProjectCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCredentialStoreCreate(context.Background(), projectId).ProjectCredential(projectCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCredentialStoreCreate(context.Background(), projectId).ProjectCredential(projectCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCredentialStoreCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,8 +290,8 @@ func main() {
     credentialStoreId := "credentialStoreId_example" // string | credentialStoreId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCredentialStoreDelete(context.Background(), projectId, credentialStoreId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCredentialStoreDelete(context.Background(), projectId, credentialStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCredentialStoreDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -363,8 +363,8 @@ func main() {
     credentialStoreId := "credentialStoreId_example" // string | credentialStoreId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCredentialStoreGet(context.Background(), projectId, credentialStoreId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCredentialStoreGet(context.Background(), projectId, credentialStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCredentialStoreGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -435,8 +435,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCredentialStoreList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCredentialStoreList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCredentialStoreList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -507,8 +507,8 @@ func main() {
     iamProjectCredentialStorePatch := *openapiclient.NewIamProjectCredentialStorePatch("Name_example") // IamProjectCredentialStorePatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectCredentialStorePatch(context.Background(), projectId, credentialStoreId).IamProjectCredentialStorePatch(iamProjectCredentialStorePatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCredentialStorePatch(context.Background(), projectId, credentialStoreId).IamProjectCredentialStorePatch(iamProjectCredentialStorePatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCredentialStorePatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,8 +580,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectDelete(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectDelete(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -649,8 +649,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectEventGet(context.Background(), projectId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectEventGet(context.Background(), projectId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -723,8 +723,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectEventList(context.Background(), projectId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectEventList(context.Background(), projectId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -795,8 +795,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectGet(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectGet(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -867,8 +867,8 @@ func main() {
     iamProjectInvitationAccept := *openapiclient.NewIamProjectInvitationAccept("Token_example") // IamProjectInvitationAccept | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectInvitationAccept(context.Background(), projectId, invitationId).IamProjectInvitationAccept(iamProjectInvitationAccept).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectInvitationAccept(context.Background(), projectId, invitationId).IamProjectInvitationAccept(iamProjectInvitationAccept).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectInvitationAccept``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -941,8 +941,8 @@ func main() {
     invitationId := "invitationId_example" // string | invitationId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectInvitationDelete(context.Background(), projectId, invitationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectInvitationDelete(context.Background(), projectId, invitationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectInvitationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1012,8 +1012,8 @@ func main() {
     invitationId := "invitationId_example" // string | invitationId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectInvitationGet(context.Background(), projectId, invitationId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectInvitationGet(context.Background(), projectId, invitationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectInvitationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1085,8 +1085,8 @@ func main() {
     resource := "resource_example" // string | resource (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectInvitationList(context.Background(), projectId).Resource(resource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectInvitationList(context.Background(), projectId).Resource(resource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectInvitationList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1156,8 +1156,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectInvoiceList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectInvoiceList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectInvoiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1232,8 +1232,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectList(context.Background()).Name(name).Limit(limit).Active(active).Organisation(organisation).Lean(lean).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectList(context.Background()).Name(name).Limit(limit).Active(active).Organisation(organisation).Lean(lean).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1305,8 +1305,8 @@ func main() {
     iamProjectOwnershipCreate := *openapiclient.NewIamProjectOwnershipCreate("Email_example") // IamProjectOwnershipCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectOwnershipCreate(context.Background(), projectId).IamProjectOwnershipCreate(iamProjectOwnershipCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectOwnershipCreate(context.Background(), projectId).IamProjectOwnershipCreate(iamProjectOwnershipCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectOwnershipCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1377,8 +1377,8 @@ func main() {
     ownershipId := "ownershipId_example" // string | ownershipId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectOwnershipDelete(context.Background(), projectId, ownershipId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectOwnershipDelete(context.Background(), projectId, ownershipId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectOwnershipDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1448,8 +1448,8 @@ func main() {
     ownershipId := "ownershipId_example" // string | ownershipId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectOwnershipGet(context.Background(), projectId, ownershipId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectOwnershipGet(context.Background(), projectId, ownershipId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectOwnershipGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1520,8 +1520,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectOwnershipList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectOwnershipList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectOwnershipList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1590,8 +1590,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectPaymentList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectPaymentList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectPaymentList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1660,8 +1660,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectProformaList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectProformaList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectProformaList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1731,8 +1731,8 @@ func main() {
     quotaId := "quotaId_example" // string | quotaId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectQuotaGet(context.Background(), projectId, quotaId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectQuotaGet(context.Background(), projectId, quotaId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectQuotaGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1805,8 +1805,8 @@ func main() {
     iamProjectQuotaLimitPatch := *openapiclient.NewIamProjectQuotaLimitPatch() // IamProjectQuotaLimitPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectQuotaLimitPatch(context.Background(), projectId, quotaId).IamProjectQuotaLimitPatch(iamProjectQuotaLimitPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectQuotaLimitPatch(context.Background(), projectId, quotaId).IamProjectQuotaLimitPatch(iamProjectQuotaLimitPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectQuotaLimitPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1878,8 +1878,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectQuotaList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectQuotaList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectQuotaList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1949,8 +1949,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectServiceGet(context.Background(), projectId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectServiceGet(context.Background(), projectId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2021,8 +2021,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectServiceList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectServiceList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2092,8 +2092,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTagCreate(context.Background(), projectId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTagCreate(context.Background(), projectId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2164,8 +2164,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTagDelete(context.Background(), projectId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTagDelete(context.Background(), projectId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2235,8 +2235,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTagGet(context.Background(), projectId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTagGet(context.Background(), projectId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2307,8 +2307,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTagList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTagList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2378,8 +2378,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTagPut(context.Background(), projectId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTagPut(context.Background(), projectId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2450,8 +2450,8 @@ func main() {
     iamProjectThresholdCreate := *openapiclient.NewIamProjectThresholdCreate() // IamProjectThresholdCreate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectThresholdCreate(context.Background(), projectId).IamProjectThresholdCreate(iamProjectThresholdCreate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectThresholdCreate(context.Background(), projectId).IamProjectThresholdCreate(iamProjectThresholdCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectThresholdCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2522,8 +2522,8 @@ func main() {
     thresholdId := "thresholdId_example" // string | thresholdId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectThresholdDelete(context.Background(), projectId, thresholdId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectThresholdDelete(context.Background(), projectId, thresholdId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectThresholdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2593,8 +2593,8 @@ func main() {
     thresholdId := "thresholdId_example" // string | thresholdId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectThresholdGet(context.Background(), projectId, thresholdId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectThresholdGet(context.Background(), projectId, thresholdId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectThresholdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2665,8 +2665,8 @@ func main() {
     projectId := "projectId_example" // string | Project Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectThresholdList(context.Background(), projectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectThresholdList(context.Background(), projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectThresholdList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2738,8 +2738,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectTransfer(context.Background(), projectId).IamProjectTransfer(iamProjectTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectTransfer(context.Background(), projectId).IamProjectTransfer(iamProjectTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2812,8 +2812,8 @@ func main() {
     iamProjectUpdate := *openapiclient.NewIamProjectUpdate() // IamProjectUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectApi.IamProjectUpdate(context.Background(), projectId).IamProjectUpdate(iamProjectUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectUpdate(context.Background(), projectId).IamProjectUpdate(iamProjectUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -53,8 +53,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupCreate(context.Background(), projectId, locationId).RecoveryProjectBackupCreate(recoveryProjectBackupCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupCreate(context.Background(), projectId, locationId).RecoveryProjectBackupCreate(recoveryProjectBackupCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,8 +130,8 @@ func main() {
     backupId := "backupId_example" // string | Backup Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupDelete(context.Background(), projectId, locationId, backupId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupDelete(context.Background(), projectId, locationId, backupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,8 +205,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupEventGet(context.Background(), projectId, locationId, backupId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupEventGet(context.Background(), projectId, locationId, backupId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -285,8 +285,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupEventList(context.Background(), projectId, locationId, backupId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupEventList(context.Background(), projectId, locationId, backupId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -366,8 +366,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupExport(context.Background(), projectId, locationId, backupId).RecoveryProjectBackupExport(recoveryProjectBackupExport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupExport(context.Background(), projectId, locationId, backupId).RecoveryProjectBackupExport(recoveryProjectBackupExport).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupExport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -445,8 +445,8 @@ func main() {
     backupId := "backupId_example" // string | Backup Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupGet(context.Background(), projectId, locationId, backupId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupGet(context.Background(), projectId, locationId, backupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -524,8 +524,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupList(context.Background(), projectId, locationId).Name(name).Source(source).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupList(context.Background(), projectId, locationId).Name(name).Source(source).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -603,8 +603,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupMetricGet(context.Background(), projectId, locationId, backupId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupMetricGet(context.Background(), projectId, locationId, backupId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -681,8 +681,8 @@ func main() {
     backupId := "backupId_example" // string | Backup Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupMetricList(context.Background(), projectId, locationId, backupId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupMetricList(context.Background(), projectId, locationId, backupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -760,8 +760,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupMetricPointList(context.Background(), projectId, locationId, backupId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupMetricPointList(context.Background(), projectId, locationId, backupId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -841,8 +841,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupServiceGet(context.Background(), projectId, locationId, backupId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupServiceGet(context.Background(), projectId, locationId, backupId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -919,8 +919,8 @@ func main() {
     backupId := "backupId_example" // string | Backup Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupServiceList(context.Background(), projectId, locationId, backupId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupServiceList(context.Background(), projectId, locationId, backupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -996,8 +996,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupTagCreate(context.Background(), projectId, locationId, backupId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupTagCreate(context.Background(), projectId, locationId, backupId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1074,8 +1074,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupTagDelete(context.Background(), projectId, locationId, backupId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupTagDelete(context.Background(), projectId, locationId, backupId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1151,8 +1151,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupTagGet(context.Background(), projectId, locationId, backupId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupTagGet(context.Background(), projectId, locationId, backupId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1229,8 +1229,8 @@ func main() {
     backupId := "backupId_example" // string | Backup Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupTagList(context.Background(), projectId, locationId, backupId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupTagList(context.Background(), projectId, locationId, backupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1306,8 +1306,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupTagPut(context.Background(), projectId, locationId, backupId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupTagPut(context.Background(), projectId, locationId, backupId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1384,8 +1384,8 @@ func main() {
     recoveryProjectBackupUpdate := *openapiclient.NewRecoveryProjectBackupUpdate() // RecoveryProjectBackupUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RecoveryProjectBackupApi.RecoveryProjectBackupUpdate(context.Background(), projectId, locationId, backupId).RecoveryProjectBackupUpdate(recoveryProjectBackupUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecoveryProjectBackupApi.RecoveryProjectBackupUpdate(context.Background(), projectId, locationId, backupId).RecoveryProjectBackupUpdate(recoveryProjectBackupUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecoveryProjectBackupApi.RecoveryProjectBackupUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

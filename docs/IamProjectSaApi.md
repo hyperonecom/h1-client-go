@@ -53,8 +53,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCreate(context.Background(), projectId).IamProjectSaCreate(iamProjectSaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCreate(context.Background(), projectId).IamProjectSaCreate(iamProjectSaCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ func main() {
     saCredential := *openapiclient.NewSaCredential("Name_example", "Type_example", "Value_example") // SaCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialCreate(context.Background(), projectId, saId).SaCredential(saCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCredentialCreate(context.Background(), projectId, saId).SaCredential(saCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,8 +203,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialDelete(context.Background(), projectId, saId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCredentialDelete(context.Background(), projectId, saId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -279,8 +279,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialGet(context.Background(), projectId, saId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCredentialGet(context.Background(), projectId, saId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -354,8 +354,8 @@ func main() {
     saId := "saId_example" // string | Sa Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialList(context.Background(), projectId, saId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCredentialList(context.Background(), projectId, saId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -429,8 +429,8 @@ func main() {
     iamProjectSaCredentialPatch := *openapiclient.NewIamProjectSaCredentialPatch("Name_example") // IamProjectSaCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaCredentialPatch(context.Background(), projectId, saId, credentialId).IamProjectSaCredentialPatch(iamProjectSaCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaCredentialPatch(context.Background(), projectId, saId, credentialId).IamProjectSaCredentialPatch(iamProjectSaCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -505,8 +505,8 @@ func main() {
     saId := "saId_example" // string | Sa Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaDelete(context.Background(), projectId, saId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaDelete(context.Background(), projectId, saId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -577,8 +577,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaEventGet(context.Background(), projectId, saId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaEventGet(context.Background(), projectId, saId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -654,8 +654,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaEventList(context.Background(), projectId, saId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaEventList(context.Background(), projectId, saId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -729,8 +729,8 @@ func main() {
     saId := "saId_example" // string | Sa Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaGet(context.Background(), projectId, saId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaGet(context.Background(), projectId, saId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -804,8 +804,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaList(context.Background(), projectId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -879,8 +879,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaServiceGet(context.Background(), projectId, saId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaServiceGet(context.Background(), projectId, saId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -954,8 +954,8 @@ func main() {
     saId := "saId_example" // string | Sa Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaServiceList(context.Background(), projectId, saId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaServiceList(context.Background(), projectId, saId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1028,8 +1028,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagCreate(context.Background(), projectId, saId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaTagCreate(context.Background(), projectId, saId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1103,8 +1103,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagDelete(context.Background(), projectId, saId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaTagDelete(context.Background(), projectId, saId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1177,8 +1177,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagGet(context.Background(), projectId, saId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaTagGet(context.Background(), projectId, saId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1252,8 +1252,8 @@ func main() {
     saId := "saId_example" // string | Sa Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagList(context.Background(), projectId, saId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaTagList(context.Background(), projectId, saId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1326,8 +1326,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaTagPut(context.Background(), projectId, saId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaTagPut(context.Background(), projectId, saId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1401,8 +1401,8 @@ func main() {
     iamProjectSaUpdate := *openapiclient.NewIamProjectSaUpdate() // IamProjectSaUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectSaApi.IamProjectSaUpdate(context.Background(), projectId, saId).IamProjectSaUpdate(iamProjectSaUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectSaApi.IamProjectSaUpdate(context.Background(), projectId, saId).IamProjectSaUpdate(iamProjectSaUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

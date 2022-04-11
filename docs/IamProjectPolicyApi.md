@@ -51,8 +51,8 @@ func main() {
     iamActor := *openapiclient.NewIamActor("Value_example") // IamActor | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorCreate(context.Background(), projectId, policyId).IamActor(iamActor).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorCreate(context.Background(), projectId, policyId).IamActor(iamActor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,8 +126,8 @@ func main() {
     actorId := "actorId_example" // string | actorId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorDelete(context.Background(), projectId, policyId, actorId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorDelete(context.Background(), projectId, policyId, actorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,8 +202,8 @@ func main() {
     actorId := "actorId_example" // string | actorId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorGet(context.Background(), projectId, policyId, actorId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorGet(context.Background(), projectId, policyId, actorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -277,8 +277,8 @@ func main() {
     policyId := "policyId_example" // string | Policy Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyActorList(context.Background(), projectId, policyId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyActorList(context.Background(), projectId, policyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyActorList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -352,8 +352,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyCreate(context.Background(), projectId).IamProjectPolicyCreate(iamProjectPolicyCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyCreate(context.Background(), projectId).IamProjectPolicyCreate(iamProjectPolicyCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -426,8 +426,8 @@ func main() {
     policyId := "policyId_example" // string | Policy Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyDelete(context.Background(), projectId, policyId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyDelete(context.Background(), projectId, policyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -498,8 +498,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyEventGet(context.Background(), projectId, policyId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyEventGet(context.Background(), projectId, policyId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -575,8 +575,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyEventList(context.Background(), projectId, policyId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyEventList(context.Background(), projectId, policyId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -650,8 +650,8 @@ func main() {
     policyId := "policyId_example" // string | Policy Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyGet(context.Background(), projectId, policyId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyGet(context.Background(), projectId, policyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -726,8 +726,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyList(context.Background(), projectId).Name(name).Resource(resource).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyList(context.Background(), projectId).Name(name).Resource(resource).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -802,8 +802,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyServiceGet(context.Background(), projectId, policyId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyServiceGet(context.Background(), projectId, policyId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -877,8 +877,8 @@ func main() {
     policyId := "policyId_example" // string | Policy Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyServiceList(context.Background(), projectId, policyId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyServiceList(context.Background(), projectId, policyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -951,8 +951,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagCreate(context.Background(), projectId, policyId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyTagCreate(context.Background(), projectId, policyId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1026,8 +1026,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagDelete(context.Background(), projectId, policyId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyTagDelete(context.Background(), projectId, policyId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1100,8 +1100,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagGet(context.Background(), projectId, policyId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyTagGet(context.Background(), projectId, policyId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1175,8 +1175,8 @@ func main() {
     policyId := "policyId_example" // string | Policy Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagList(context.Background(), projectId, policyId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyTagList(context.Background(), projectId, policyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1249,8 +1249,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyTagPut(context.Background(), projectId, policyId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyTagPut(context.Background(), projectId, policyId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1324,8 +1324,8 @@ func main() {
     iamProjectPolicyUpdate := *openapiclient.NewIamProjectPolicyUpdate() // IamProjectPolicyUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.IamProjectPolicyApi.IamProjectPolicyUpdate(context.Background(), projectId, policyId).IamProjectPolicyUpdate(iamProjectPolicyUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectPolicyApi.IamProjectPolicyUpdate(context.Background(), projectId, policyId).IamProjectPolicyUpdate(iamProjectPolicyUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

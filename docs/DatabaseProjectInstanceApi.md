@@ -61,8 +61,8 @@ func main() {
     connectId := "connectId_example" // string | connectId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectGet(context.Background(), projectId, locationId, instanceId, connectId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectGet(context.Background(), projectId, locationId, instanceId, connectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -139,8 +139,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceConnectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -217,8 +217,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCreate(context.Background(), projectId, locationId).DatabaseProjectInstanceCreate(databaseProjectInstanceCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCreate(context.Background(), projectId, locationId).DatabaseProjectInstanceCreate(databaseProjectInstanceCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -295,8 +295,8 @@ func main() {
     databaseCredential := *openapiclient.NewDatabaseCredential("Name_example", "Type_example", "Value_example") // DatabaseCredential | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialCreate(context.Background(), projectId, locationId, instanceId).DatabaseCredential(databaseCredential).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialCreate(context.Background(), projectId, locationId, instanceId).DatabaseCredential(databaseCredential).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -373,8 +373,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialDelete(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialDelete(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -452,8 +452,8 @@ func main() {
     credentialId := "credentialId_example" // string | credentialId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialGet(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialGet(context.Background(), projectId, locationId, instanceId, credentialId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -530,8 +530,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -608,8 +608,8 @@ func main() {
     databaseProjectInstanceCredentialPatch := *openapiclient.NewDatabaseProjectInstanceCredentialPatch("Name_example") // DatabaseProjectInstanceCredentialPatch | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialPatch(context.Background(), projectId, locationId, instanceId, credentialId).DatabaseProjectInstanceCredentialPatch(databaseProjectInstanceCredentialPatch).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialPatch(context.Background(), projectId, locationId, instanceId, credentialId).DatabaseProjectInstanceCredentialPatch(databaseProjectInstanceCredentialPatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceCredentialPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -687,8 +687,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceDelete(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceDelete(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -762,8 +762,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceEventGet(context.Background(), projectId, locationId, instanceId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -842,8 +842,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceEventList(context.Background(), projectId, locationId, instanceId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -920,8 +920,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceGet(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -998,8 +998,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1076,8 +1076,8 @@ func main() {
     metricId := "metricId_example" // string | metricId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet(context.Background(), projectId, locationId, instanceId, metricId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet(context.Background(), projectId, locationId, instanceId, metricId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1154,8 +1154,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1233,8 +1233,8 @@ func main() {
     timespan := "timespan_example" // string | timespan (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList(context.Background(), projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList(context.Background(), projectId, locationId, instanceId, metricId).Interval(interval).Timespan(timespan).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceMetricPointList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1314,8 +1314,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceGet(context.Background(), projectId, locationId, instanceId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1392,8 +1392,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1470,8 +1470,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceStart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceStart(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceStart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1550,8 +1550,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceStop(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceStop(context.Background(), projectId, locationId, instanceId).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1629,8 +1629,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagCreate(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1707,8 +1707,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagDelete(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1784,8 +1784,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagGet(context.Background(), projectId, locationId, instanceId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1862,8 +1862,8 @@ func main() {
     instanceId := "instanceId_example" // string | Instance Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagList(context.Background(), projectId, locationId, instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1939,8 +1939,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTagPut(context.Background(), projectId, locationId, instanceId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2019,8 +2019,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceTransfer(context.Background(), projectId, locationId, instanceId).DatabaseProjectInstanceTransfer(databaseProjectInstanceTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceTransfer(context.Background(), projectId, locationId, instanceId).DatabaseProjectInstanceTransfer(databaseProjectInstanceTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2099,8 +2099,8 @@ func main() {
     databaseProjectInstanceUpdate := *openapiclient.NewDatabaseProjectInstanceUpdate() // DatabaseProjectInstanceUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DatabaseProjectInstanceApi.DatabaseProjectInstanceUpdate(context.Background(), projectId, locationId, instanceId).DatabaseProjectInstanceUpdate(databaseProjectInstanceUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DatabaseProjectInstanceApi.DatabaseProjectInstanceUpdate(context.Background(), projectId, locationId, instanceId).DatabaseProjectInstanceUpdate(databaseProjectInstanceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DatabaseProjectInstanceApi.DatabaseProjectInstanceUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -51,8 +51,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageCreate(context.Background(), projectId, locationId).StorageProjectImageCreate(storageProjectImageCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageCreate(context.Background(), projectId, locationId).StorageProjectImageCreate(storageProjectImageCreate).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ func main() {
     imageId := "imageId_example" // string | Image Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageDelete(context.Background(), projectId, locationId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageDelete(context.Background(), projectId, locationId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,8 +202,8 @@ func main() {
     imageId := "imageId_example" // string | Image Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageDiskList(context.Background(), projectId, locationId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageDiskList(context.Background(), projectId, locationId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDiskList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -279,8 +279,8 @@ func main() {
     eventId := "eventId_example" // string | eventId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageEventGet(context.Background(), projectId, locationId, imageId, eventId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageEventGet(context.Background(), projectId, locationId, imageId, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageEventGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -359,8 +359,8 @@ func main() {
     skip := float32(8.14) // float32 | $skip (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageEventList(context.Background(), projectId, locationId, imageId).Limit(limit).Skip(skip).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageEventList(context.Background(), projectId, locationId, imageId).Limit(limit).Skip(skip).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageEventList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -437,8 +437,8 @@ func main() {
     imageId := "imageId_example" // string | Image Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageGet(context.Background(), projectId, locationId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageGet(context.Background(), projectId, locationId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -515,8 +515,8 @@ func main() {
     tagKey := "tagKey_example" // string | Filter by tag.key (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageList(context.Background(), projectId, locationId).Name(name).TagValue(tagValue).TagKey(tagKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -593,8 +593,8 @@ func main() {
     serviceId := "serviceId_example" // string | serviceId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageServiceGet(context.Background(), projectId, locationId, imageId, serviceId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageServiceGet(context.Background(), projectId, locationId, imageId, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageServiceGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -671,8 +671,8 @@ func main() {
     imageId := "imageId_example" // string | Image Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageServiceList(context.Background(), projectId, locationId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageServiceList(context.Background(), projectId, locationId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageServiceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -748,8 +748,8 @@ func main() {
     tag := *openapiclient.NewTag("Id_example", "Key_example", "Value_example") // Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagCreate(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTagCreate(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -826,8 +826,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagDelete(context.Background(), projectId, locationId, imageId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTagDelete(context.Background(), projectId, locationId, imageId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -903,8 +903,8 @@ func main() {
     tagId := "tagId_example" // string | tagId
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagGet(context.Background(), projectId, locationId, imageId, tagId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTagGet(context.Background(), projectId, locationId, imageId, tagId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -981,8 +981,8 @@ func main() {
     imageId := "imageId_example" // string | Image Id
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagList(context.Background(), projectId, locationId, imageId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTagList(context.Background(), projectId, locationId, imageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1058,8 +1058,8 @@ func main() {
     tag := []openapiclient.Tag{*openapiclient.NewTag("Id_example", "Key_example", "Value_example")} // []Tag | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTagPut(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTagPut(context.Background(), projectId, locationId, imageId).Tag(tag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTagPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1138,8 +1138,8 @@ func main() {
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageTransfer(context.Background(), projectId, locationId, imageId).StorageProjectImageTransfer(storageProjectImageTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageTransfer(context.Background(), projectId, locationId, imageId).StorageProjectImageTransfer(storageProjectImageTransfer).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageTransfer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1218,8 +1218,8 @@ func main() {
     storageProjectImageUpdate := *openapiclient.NewStorageProjectImageUpdate() // StorageProjectImageUpdate | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.StorageProjectImageApi.StorageProjectImageUpdate(context.Background(), projectId, locationId, imageId).StorageProjectImageUpdate(storageProjectImageUpdate).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectImageApi.StorageProjectImageUpdate(context.Background(), projectId, locationId, imageId).StorageProjectImageUpdate(storageProjectImageUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
