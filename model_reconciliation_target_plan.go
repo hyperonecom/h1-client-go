@@ -16,9 +16,9 @@ import (
 
 // ReconciliationTargetPlan struct for ReconciliationTargetPlan
 type ReconciliationTargetPlan struct {
+	Cost *float32 `json:"cost,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Usage *float32 `json:"usage,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
 }
 
 // NewReconciliationTargetPlan instantiates a new ReconciliationTargetPlan object
@@ -36,6 +36,38 @@ func NewReconciliationTargetPlan() *ReconciliationTargetPlan {
 func NewReconciliationTargetPlanWithDefaults() *ReconciliationTargetPlan {
 	this := ReconciliationTargetPlan{}
 	return &this
+}
+
+// GetCost returns the Cost field value if set, zero value otherwise.
+func (o *ReconciliationTargetPlan) GetCost() float32 {
+	if o == nil || o.Cost == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Cost
+}
+
+// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReconciliationTargetPlan) GetCostOk() (*float32, bool) {
+	if o == nil || o.Cost == nil {
+		return nil, false
+	}
+	return o.Cost, true
+}
+
+// HasCost returns a boolean if a field has been set.
+func (o *ReconciliationTargetPlan) HasCost() bool {
+	if o != nil && o.Cost != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCost gets a reference to the given float32 and assigns it to the Cost field.
+func (o *ReconciliationTargetPlan) SetCost(v float32) {
+	o.Cost = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -102,48 +134,16 @@ func (o *ReconciliationTargetPlan) SetUsage(v float32) {
 	o.Usage = &v
 }
 
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *ReconciliationTargetPlan) GetCost() float32 {
-	if o == nil || o.Cost == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReconciliationTargetPlan) GetCostOk() (*float32, bool) {
-	if o == nil || o.Cost == nil {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// HasCost returns a boolean if a field has been set.
-func (o *ReconciliationTargetPlan) HasCost() bool {
-	if o != nil && o.Cost != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *ReconciliationTargetPlan) SetCost(v float32) {
-	o.Cost = &v
-}
-
 func (o ReconciliationTargetPlan) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Cost != nil {
+		toSerialize["cost"] = o.Cost
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Usage != nil {
 		toSerialize["usage"] = o.Usage
-	}
-	if o.Cost != nil {
-		toSerialize["cost"] = o.Cost
 	}
 	return json.Marshal(toSerialize)
 }

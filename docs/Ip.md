@@ -4,30 +4,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Flavour** | Pointer to **string** |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**ModifiedBy** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
-**Project** | Pointer to **string** |  | [optional] 
-**Uri** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to **string** |  | [optional] 
-**Fqdn** | Pointer to **string** |  | [optional] 
-**Network** | Pointer to **string** |  | [optional] 
-**PtrRecord** | Pointer to **string** |  | [optional] 
-**Persistent** | Pointer to **bool** |  | [optional] 
 **Associated** | Pointer to [**IpAssociated**](IpAssociated.md) |  | [optional] 
+**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
+**Flavour** | Pointer to **string** |  | [optional] 
+**Fqdn** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
+**ModifiedBy** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Network** | Pointer to **string** |  | [optional] 
+**Persistent** | Pointer to **bool** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**IpProperties**](IpProperties.md) |  | [optional] 
+**PtrRecord** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewIp
 
-`func NewIp() *Ip`
+`func NewIp(id string, ) *Ip`
 
 NewIp instantiates a new Ip object
 This constructor will assign default values to properties that have it defined,
@@ -41,256 +41,6 @@ will change when the set of required properties is changed
 NewIpWithDefaults instantiates a new Ip object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Ip) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Ip) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Ip) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Ip) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *Ip) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Ip) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Ip) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Ip) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetFlavour
-
-`func (o *Ip) GetFlavour() string`
-
-GetFlavour returns the Flavour field if non-nil, zero value otherwise.
-
-### GetFlavourOk
-
-`func (o *Ip) GetFlavourOk() (*string, bool)`
-
-GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlavour
-
-`func (o *Ip) SetFlavour(v string)`
-
-SetFlavour sets Flavour field to given value.
-
-### HasFlavour
-
-`func (o *Ip) HasFlavour() bool`
-
-HasFlavour returns a boolean if a field has been set.
-
-### GetModifiedOn
-
-`func (o *Ip) GetModifiedOn() time.Time`
-
-GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
-
-### GetModifiedOnOk
-
-`func (o *Ip) GetModifiedOnOk() (*time.Time, bool)`
-
-GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedOn
-
-`func (o *Ip) SetModifiedOn(v time.Time)`
-
-SetModifiedOn sets ModifiedOn field to given value.
-
-### HasModifiedOn
-
-`func (o *Ip) HasModifiedOn() bool`
-
-HasModifiedOn returns a boolean if a field has been set.
-
-### GetModifiedBy
-
-`func (o *Ip) GetModifiedBy() string`
-
-GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
-
-### GetModifiedByOk
-
-`func (o *Ip) GetModifiedByOk() (*string, bool)`
-
-GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedBy
-
-`func (o *Ip) SetModifiedBy(v string)`
-
-SetModifiedBy sets ModifiedBy field to given value.
-
-### HasModifiedBy
-
-`func (o *Ip) HasModifiedBy() bool`
-
-HasModifiedBy returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *Ip) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *Ip) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *Ip) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *Ip) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *Ip) GetCreatedBy() string`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *Ip) GetCreatedByOk() (*string, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *Ip) SetCreatedBy(v string)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *Ip) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetState
-
-`func (o *Ip) GetState() string`
-
-GetState returns the State field if non-nil, zero value otherwise.
-
-### GetStateOk
-
-`func (o *Ip) GetStateOk() (*string, bool)`
-
-GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetState
-
-`func (o *Ip) SetState(v string)`
-
-SetState sets State field to given value.
-
-### HasState
-
-`func (o *Ip) HasState() bool`
-
-HasState returns a boolean if a field has been set.
-
-### GetProject
-
-`func (o *Ip) GetProject() string`
-
-GetProject returns the Project field if non-nil, zero value otherwise.
-
-### GetProjectOk
-
-`func (o *Ip) GetProjectOk() (*string, bool)`
-
-GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProject
-
-`func (o *Ip) SetProject(v string)`
-
-SetProject sets Project field to given value.
-
-### HasProject
-
-`func (o *Ip) HasProject() bool`
-
-HasProject returns a boolean if a field has been set.
-
-### GetUri
-
-`func (o *Ip) GetUri() string`
-
-GetUri returns the Uri field if non-nil, zero value otherwise.
-
-### GetUriOk
-
-`func (o *Ip) GetUriOk() (*string, bool)`
-
-GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUri
-
-`func (o *Ip) SetUri(v string)`
-
-SetUri sets Uri field to given value.
-
-### HasUri
-
-`func (o *Ip) HasUri() bool`
-
-HasUri returns a boolean if a field has been set.
 
 ### GetAddress
 
@@ -317,6 +67,106 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
+### GetAssociated
+
+`func (o *Ip) GetAssociated() IpAssociated`
+
+GetAssociated returns the Associated field if non-nil, zero value otherwise.
+
+### GetAssociatedOk
+
+`func (o *Ip) GetAssociatedOk() (*IpAssociated, bool)`
+
+GetAssociatedOk returns a tuple with the Associated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssociated
+
+`func (o *Ip) SetAssociated(v IpAssociated)`
+
+SetAssociated sets Associated field to given value.
+
+### HasAssociated
+
+`func (o *Ip) HasAssociated() bool`
+
+HasAssociated returns a boolean if a field has been set.
+
+### GetCreatedBy
+
+`func (o *Ip) GetCreatedBy() string`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Ip) GetCreatedByOk() (*string, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Ip) SetCreatedBy(v string)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *Ip) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *Ip) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *Ip) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *Ip) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *Ip) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetFlavour
+
+`func (o *Ip) GetFlavour() string`
+
+GetFlavour returns the Flavour field if non-nil, zero value otherwise.
+
+### GetFlavourOk
+
+`func (o *Ip) GetFlavourOk() (*string, bool)`
+
+GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlavour
+
+`func (o *Ip) SetFlavour(v string)`
+
+SetFlavour sets Flavour field to given value.
+
+### HasFlavour
+
+`func (o *Ip) HasFlavour() bool`
+
+HasFlavour returns a boolean if a field has been set.
+
 ### GetFqdn
 
 `func (o *Ip) GetFqdn() string`
@@ -341,6 +191,101 @@ SetFqdn sets Fqdn field to given value.
 `func (o *Ip) HasFqdn() bool`
 
 HasFqdn returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *Ip) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Ip) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Ip) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetModifiedBy
+
+`func (o *Ip) GetModifiedBy() string`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *Ip) GetModifiedByOk() (*string, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *Ip) SetModifiedBy(v string)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *Ip) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Ip) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Ip) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Ip) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Ip) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Ip) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Ip) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Ip) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Ip) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNetwork
 
@@ -367,31 +312,6 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
-### GetPtrRecord
-
-`func (o *Ip) GetPtrRecord() string`
-
-GetPtrRecord returns the PtrRecord field if non-nil, zero value otherwise.
-
-### GetPtrRecordOk
-
-`func (o *Ip) GetPtrRecordOk() (*string, bool)`
-
-GetPtrRecordOk returns a tuple with the PtrRecord field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPtrRecord
-
-`func (o *Ip) SetPtrRecord(v string)`
-
-SetPtrRecord sets PtrRecord field to given value.
-
-### HasPtrRecord
-
-`func (o *Ip) HasPtrRecord() bool`
-
-HasPtrRecord returns a boolean if a field has been set.
-
 ### GetPersistent
 
 `func (o *Ip) GetPersistent() bool`
@@ -417,30 +337,30 @@ SetPersistent sets Persistent field to given value.
 
 HasPersistent returns a boolean if a field has been set.
 
-### GetAssociated
+### GetProject
 
-`func (o *Ip) GetAssociated() IpAssociated`
+`func (o *Ip) GetProject() string`
 
-GetAssociated returns the Associated field if non-nil, zero value otherwise.
+GetProject returns the Project field if non-nil, zero value otherwise.
 
-### GetAssociatedOk
+### GetProjectOk
 
-`func (o *Ip) GetAssociatedOk() (*IpAssociated, bool)`
+`func (o *Ip) GetProjectOk() (*string, bool)`
 
-GetAssociatedOk returns a tuple with the Associated field if it's non-nil, zero value otherwise
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAssociated
+### SetProject
 
-`func (o *Ip) SetAssociated(v IpAssociated)`
+`func (o *Ip) SetProject(v string)`
 
-SetAssociated sets Associated field to given value.
+SetProject sets Project field to given value.
 
-### HasAssociated
+### HasProject
 
-`func (o *Ip) HasAssociated() bool`
+`func (o *Ip) HasProject() bool`
 
-HasAssociated returns a boolean if a field has been set.
+HasProject returns a boolean if a field has been set.
 
 ### GetProperties
 
@@ -467,6 +387,56 @@ SetProperties sets Properties field to given value.
 
 HasProperties returns a boolean if a field has been set.
 
+### GetPtrRecord
+
+`func (o *Ip) GetPtrRecord() string`
+
+GetPtrRecord returns the PtrRecord field if non-nil, zero value otherwise.
+
+### GetPtrRecordOk
+
+`func (o *Ip) GetPtrRecordOk() (*string, bool)`
+
+GetPtrRecordOk returns a tuple with the PtrRecord field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPtrRecord
+
+`func (o *Ip) SetPtrRecord(v string)`
+
+SetPtrRecord sets PtrRecord field to given value.
+
+### HasPtrRecord
+
+`func (o *Ip) HasPtrRecord() bool`
+
+HasPtrRecord returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *Ip) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *Ip) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *Ip) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *Ip) HasState() bool`
+
+HasState returns a boolean if a field has been set.
+
 ### GetTag
 
 `func (o *Ip) GetTag() []Tag`
@@ -491,6 +461,31 @@ SetTag sets Tag field to given value.
 `func (o *Ip) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Ip) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Ip) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Ip) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Ip) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

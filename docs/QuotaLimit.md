@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Effective** | Pointer to **float32** |  | [optional] [readonly] 
 **Platform** | Pointer to **float32** |  | [optional] 
 **User** | Pointer to **float32** |  | [optional] 
-**Effective** | Pointer to **float32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -26,6 +26,31 @@ will change when the set of required properties is changed
 NewQuotaLimitWithDefaults instantiates a new QuotaLimit object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEffective
+
+`func (o *QuotaLimit) GetEffective() float32`
+
+GetEffective returns the Effective field if non-nil, zero value otherwise.
+
+### GetEffectiveOk
+
+`func (o *QuotaLimit) GetEffectiveOk() (*float32, bool)`
+
+GetEffectiveOk returns a tuple with the Effective field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEffective
+
+`func (o *QuotaLimit) SetEffective(v float32)`
+
+SetEffective sets Effective field to given value.
+
+### HasEffective
+
+`func (o *QuotaLimit) HasEffective() bool`
+
+HasEffective returns a boolean if a field has been set.
 
 ### GetPlatform
 
@@ -76,31 +101,6 @@ SetUser sets User field to given value.
 `func (o *QuotaLimit) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
-
-### GetEffective
-
-`func (o *QuotaLimit) GetEffective() float32`
-
-GetEffective returns the Effective field if non-nil, zero value otherwise.
-
-### GetEffectiveOk
-
-`func (o *QuotaLimit) GetEffectiveOk() (*float32, bool)`
-
-GetEffectiveOk returns a tuple with the Effective field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEffective
-
-`func (o *QuotaLimit) SetEffective(v float32)`
-
-SetEffective sets Effective field to given value.
-
-### HasEffective
-
-`func (o *QuotaLimit) HasEffective() bool`
-
-HasEffective returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

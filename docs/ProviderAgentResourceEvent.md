@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewProviderAgentResourceEventWithDefaults instantiates a new ProviderAgentResourceEvent object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreatedOn
+
+`func (o *ProviderAgentResourceEvent) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *ProviderAgentResourceEvent) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *ProviderAgentResourceEvent) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *ProviderAgentResourceEvent) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
 
 ### GetId
 
@@ -102,31 +127,6 @@ SetState sets State field to given value.
 `func (o *ProviderAgentResourceEvent) HasState() bool`
 
 HasState returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *ProviderAgentResourceEvent) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *ProviderAgentResourceEvent) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *ProviderAgentResourceEvent) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *ProviderAgentResourceEvent) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

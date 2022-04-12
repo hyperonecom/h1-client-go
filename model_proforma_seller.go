@@ -16,21 +16,21 @@ import (
 
 // ProformaSeller struct for ProformaSeller
 type ProformaSeller struct {
-	Company string `json:"company"`
 	Address *InvoiceSellerAddress `json:"address,omitempty"`
-	Nip string `json:"nip"`
+	Company string `json:"company"`
 	Iban string `json:"iban"`
+	Nip string `json:"nip"`
 }
 
 // NewProformaSeller instantiates a new ProformaSeller object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProformaSeller(company string, nip string, iban string) *ProformaSeller {
+func NewProformaSeller(company string, iban string, nip string) *ProformaSeller {
 	this := ProformaSeller{}
 	this.Company = company
-	this.Nip = nip
 	this.Iban = iban
+	this.Nip = nip
 	return &this
 }
 
@@ -40,30 +40,6 @@ func NewProformaSeller(company string, nip string, iban string) *ProformaSeller 
 func NewProformaSellerWithDefaults() *ProformaSeller {
 	this := ProformaSeller{}
 	return &this
-}
-
-// GetCompany returns the Company field value
-func (o *ProformaSeller) GetCompany() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Company
-}
-
-// GetCompanyOk returns a tuple with the Company field value
-// and a boolean to check if the value has been set.
-func (o *ProformaSeller) GetCompanyOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Company, true
-}
-
-// SetCompany sets field value
-func (o *ProformaSeller) SetCompany(v string) {
-	o.Company = v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -98,28 +74,28 @@ func (o *ProformaSeller) SetAddress(v InvoiceSellerAddress) {
 	o.Address = &v
 }
 
-// GetNip returns the Nip field value
-func (o *ProformaSeller) GetNip() string {
+// GetCompany returns the Company field value
+func (o *ProformaSeller) GetCompany() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Nip
+	return o.Company
 }
 
-// GetNipOk returns a tuple with the Nip field value
+// GetCompanyOk returns a tuple with the Company field value
 // and a boolean to check if the value has been set.
-func (o *ProformaSeller) GetNipOk() (*string, bool) {
+func (o *ProformaSeller) GetCompanyOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Nip, true
+	return &o.Company, true
 }
 
-// SetNip sets field value
-func (o *ProformaSeller) SetNip(v string) {
-	o.Nip = v
+// SetCompany sets field value
+func (o *ProformaSeller) SetCompany(v string) {
+	o.Company = v
 }
 
 // GetIban returns the Iban field value
@@ -146,19 +122,43 @@ func (o *ProformaSeller) SetIban(v string) {
 	o.Iban = v
 }
 
+// GetNip returns the Nip field value
+func (o *ProformaSeller) GetNip() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Nip
+}
+
+// GetNipOk returns a tuple with the Nip field value
+// and a boolean to check if the value has been set.
+func (o *ProformaSeller) GetNipOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Nip, true
+}
+
+// SetNip sets field value
+func (o *ProformaSeller) SetNip(v string) {
+	o.Nip = v
+}
+
 func (o ProformaSeller) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["company"] = o.Company
-	}
 	if o.Address != nil {
 		toSerialize["address"] = o.Address
 	}
 	if true {
-		toSerialize["nip"] = o.Nip
+		toSerialize["company"] = o.Company
 	}
 	if true {
 		toSerialize["iban"] = o.Iban
+	}
+	if true {
+		toSerialize["nip"] = o.Nip
 	}
 	return json.Marshal(toSerialize)
 }

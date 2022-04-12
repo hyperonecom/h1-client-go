@@ -209,7 +209,7 @@ func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
     firewallId := "firewallId_example" // string | Firewall Id
-    networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
+    networkingRule := *openapiclient.NewNetworkingRule("Action_example", []string{"Filter_example"}, "Name_example", float32(123)) // NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -519,7 +519,7 @@ func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
     firewallId := "firewallId_example" // string | Firewall Id
-    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
+    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Action_example", []string{"Filter_example"}, "Name_example", float32(123))} // []NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -832,7 +832,7 @@ func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
     firewallId := "firewallId_example" // string | Firewall Id
-    networkingRule := *openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"}) // NetworkingRule | 
+    networkingRule := *openapiclient.NewNetworkingRule("Action_example", []string{"Filter_example"}, "Name_example", float32(123)) // NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1142,7 +1142,7 @@ func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
     firewallId := "firewallId_example" // string | Firewall Id
-    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Name_example", "Action_example", float32(123), []string{"Filter_example"})} // []NetworkingRule | 
+    networkingRule := []openapiclient.NetworkingRule{*openapiclient.NewNetworkingRule("Action_example", []string{"Filter_example"}, "Name_example", float32(123))} // []NetworkingRule | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

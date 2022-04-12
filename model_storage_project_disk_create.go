@@ -20,8 +20,8 @@ type StorageProjectDiskCreate struct {
 	Service string `json:"service"`
 	Size float32 `json:"size"`
 	Source *OneOfAnyTypeAnyType `json:"source,omitempty"`
-	Vm *string `json:"vm,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
+	Vm *string `json:"vm,omitempty"`
 }
 
 // NewStorageProjectDiskCreate instantiates a new StorageProjectDiskCreate object
@@ -148,38 +148,6 @@ func (o *StorageProjectDiskCreate) SetSource(v OneOfAnyTypeAnyType) {
 	o.Source = &v
 }
 
-// GetVm returns the Vm field value if set, zero value otherwise.
-func (o *StorageProjectDiskCreate) GetVm() string {
-	if o == nil || o.Vm == nil {
-		var ret string
-		return ret
-	}
-	return *o.Vm
-}
-
-// GetVmOk returns a tuple with the Vm field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StorageProjectDiskCreate) GetVmOk() (*string, bool) {
-	if o == nil || o.Vm == nil {
-		return nil, false
-	}
-	return o.Vm, true
-}
-
-// HasVm returns a boolean if a field has been set.
-func (o *StorageProjectDiskCreate) HasVm() bool {
-	if o != nil && o.Vm != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetVm gets a reference to the given string and assigns it to the Vm field.
-func (o *StorageProjectDiskCreate) SetVm(v string) {
-	o.Vm = &v
-}
-
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *StorageProjectDiskCreate) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -212,6 +180,38 @@ func (o *StorageProjectDiskCreate) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetVm returns the Vm field value if set, zero value otherwise.
+func (o *StorageProjectDiskCreate) GetVm() string {
+	if o == nil || o.Vm == nil {
+		var ret string
+		return ret
+	}
+	return *o.Vm
+}
+
+// GetVmOk returns a tuple with the Vm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageProjectDiskCreate) GetVmOk() (*string, bool) {
+	if o == nil || o.Vm == nil {
+		return nil, false
+	}
+	return o.Vm, true
+}
+
+// HasVm returns a boolean if a field has been set.
+func (o *StorageProjectDiskCreate) HasVm() bool {
+	if o != nil && o.Vm != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVm gets a reference to the given string and assigns it to the Vm field.
+func (o *StorageProjectDiskCreate) SetVm(v string) {
+	o.Vm = &v
+}
+
 func (o StorageProjectDiskCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -226,11 +226,11 @@ func (o StorageProjectDiskCreate) MarshalJSON() ([]byte, error) {
 	if o.Source != nil {
 		toSerialize["source"] = o.Source
 	}
-	if o.Vm != nil {
-		toSerialize["vm"] = o.Vm
-	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if o.Vm != nil {
+		toSerialize["vm"] = o.Vm
 	}
 	return json.Marshal(toSerialize)
 }

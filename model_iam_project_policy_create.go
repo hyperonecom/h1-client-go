@@ -16,10 +16,10 @@ import (
 
 // IamProjectPolicyCreate struct for IamProjectPolicyCreate
 type IamProjectPolicyCreate struct {
-	Name string `json:"name"`
-	Role string `json:"role"`
-	Resource string `json:"resource"`
 	Actor []IamProjectPolicyCreateActor `json:"actor,omitempty"`
+	Name string `json:"name"`
+	Resource string `json:"resource"`
+	Role string `json:"role"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -27,11 +27,11 @@ type IamProjectPolicyCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamProjectPolicyCreate(name string, role string, resource string) *IamProjectPolicyCreate {
+func NewIamProjectPolicyCreate(name string, resource string, role string) *IamProjectPolicyCreate {
 	this := IamProjectPolicyCreate{}
 	this.Name = name
-	this.Role = role
 	this.Resource = resource
+	this.Role = role
 	return &this
 }
 
@@ -41,78 +41,6 @@ func NewIamProjectPolicyCreate(name string, role string, resource string) *IamPr
 func NewIamProjectPolicyCreateWithDefaults() *IamProjectPolicyCreate {
 	this := IamProjectPolicyCreate{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *IamProjectPolicyCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectPolicyCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *IamProjectPolicyCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetRole returns the Role field value
-func (o *IamProjectPolicyCreate) GetRole() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectPolicyCreate) GetRoleOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Role, true
-}
-
-// SetRole sets field value
-func (o *IamProjectPolicyCreate) SetRole(v string) {
-	o.Role = v
-}
-
-// GetResource returns the Resource field value
-func (o *IamProjectPolicyCreate) GetResource() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectPolicyCreate) GetResourceOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Resource, true
-}
-
-// SetResource sets field value
-func (o *IamProjectPolicyCreate) SetResource(v string) {
-	o.Resource = v
 }
 
 // GetActor returns the Actor field value if set, zero value otherwise.
@@ -145,6 +73,78 @@ func (o *IamProjectPolicyCreate) HasActor() bool {
 // SetActor gets a reference to the given []IamProjectPolicyCreateActor and assigns it to the Actor field.
 func (o *IamProjectPolicyCreate) SetActor(v []IamProjectPolicyCreateActor) {
 	o.Actor = v
+}
+
+// GetName returns the Name field value
+func (o *IamProjectPolicyCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectPolicyCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *IamProjectPolicyCreate) SetName(v string) {
+	o.Name = v
+}
+
+// GetResource returns the Resource field value
+func (o *IamProjectPolicyCreate) GetResource() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Resource
+}
+
+// GetResourceOk returns a tuple with the Resource field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectPolicyCreate) GetResourceOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Resource, true
+}
+
+// SetResource sets field value
+func (o *IamProjectPolicyCreate) SetResource(v string) {
+	o.Resource = v
+}
+
+// GetRole returns the Role field value
+func (o *IamProjectPolicyCreate) GetRole() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Role
+}
+
+// GetRoleOk returns a tuple with the Role field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectPolicyCreate) GetRoleOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Role, true
+}
+
+// SetRole sets field value
+func (o *IamProjectPolicyCreate) SetRole(v string) {
+	o.Role = v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -181,17 +181,17 @@ func (o *IamProjectPolicyCreate) SetTag(v []Tag) {
 
 func (o IamProjectPolicyCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Actor != nil {
+		toSerialize["actor"] = o.Actor
+	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["role"] = o.Role
-	}
-	if true {
 		toSerialize["resource"] = o.Resource
 	}
-	if o.Actor != nil {
-		toSerialize["actor"] = o.Actor
+	if true {
+		toSerialize["role"] = o.Role
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

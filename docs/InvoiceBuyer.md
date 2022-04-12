@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Company** | **string** |  | 
 **Address** | Pointer to [**InvoiceBuyerAddress**](InvoiceBuyerAddress.md) |  | [optional] 
-**Nip** | Pointer to **string** |  | [optional] 
+**Company** | **string** |  | 
 **Email** | Pointer to **string** |  | [optional] 
+**Nip** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewInvoiceBuyerWithDefaults instantiates a new InvoiceBuyer object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCompany
-
-`func (o *InvoiceBuyer) GetCompany() string`
-
-GetCompany returns the Company field if non-nil, zero value otherwise.
-
-### GetCompanyOk
-
-`func (o *InvoiceBuyer) GetCompanyOk() (*string, bool)`
-
-GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompany
-
-`func (o *InvoiceBuyer) SetCompany(v string)`
-
-SetCompany sets Company field to given value.
-
 
 ### GetAddress
 
@@ -73,30 +53,25 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
-### GetNip
+### GetCompany
 
-`func (o *InvoiceBuyer) GetNip() string`
+`func (o *InvoiceBuyer) GetCompany() string`
 
-GetNip returns the Nip field if non-nil, zero value otherwise.
+GetCompany returns the Company field if non-nil, zero value otherwise.
 
-### GetNipOk
+### GetCompanyOk
 
-`func (o *InvoiceBuyer) GetNipOk() (*string, bool)`
+`func (o *InvoiceBuyer) GetCompanyOk() (*string, bool)`
 
-GetNipOk returns a tuple with the Nip field if it's non-nil, zero value otherwise
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNip
+### SetCompany
 
-`func (o *InvoiceBuyer) SetNip(v string)`
+`func (o *InvoiceBuyer) SetCompany(v string)`
 
-SetNip sets Nip field to given value.
+SetCompany sets Company field to given value.
 
-### HasNip
-
-`func (o *InvoiceBuyer) HasNip() bool`
-
-HasNip returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -122,6 +97,31 @@ SetEmail sets Email field to given value.
 `func (o *InvoiceBuyer) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
+
+### GetNip
+
+`func (o *InvoiceBuyer) GetNip() string`
+
+GetNip returns the Nip field if non-nil, zero value otherwise.
+
+### GetNipOk
+
+`func (o *InvoiceBuyer) GetNipOk() (*string, bool)`
+
+GetNipOk returns a tuple with the Nip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNip
+
+`func (o *InvoiceBuyer) SetNip(v string)`
+
+SetNip sets Nip field to given value.
+
+### HasNip
+
+`func (o *InvoiceBuyer) HasNip() bool`
+
+HasNip returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

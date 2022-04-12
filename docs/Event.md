@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,6 +29,56 @@ will change when the set of required properties is changed
 NewEventWithDefaults instantiates a new Event object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreatedBy
+
+`func (o *Event) GetCreatedBy() string`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Event) GetCreatedByOk() (*string, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Event) SetCreatedBy(v string)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *Event) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *Event) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *Event) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *Event) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *Event) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
 
 ### GetId
 
@@ -80,30 +130,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetCreatedOn
+### GetResource
 
-`func (o *Event) GetCreatedOn() time.Time`
+`func (o *Event) GetResource() string`
 
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+GetResource returns the Resource field if non-nil, zero value otherwise.
 
-### GetCreatedOnOk
+### GetResourceOk
 
-`func (o *Event) GetCreatedOnOk() (*time.Time, bool)`
+`func (o *Event) GetResourceOk() (*string, bool)`
 
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedOn
+### SetResource
 
-`func (o *Event) SetCreatedOn(v time.Time)`
+`func (o *Event) SetResource(v string)`
 
-SetCreatedOn sets CreatedOn field to given value.
+SetResource sets Resource field to given value.
 
-### HasCreatedOn
+### HasResource
 
-`func (o *Event) HasCreatedOn() bool`
+`func (o *Event) HasResource() bool`
 
-HasCreatedOn returns a boolean if a field has been set.
+HasResource returns a boolean if a field has been set.
 
 ### GetState
 
@@ -129,56 +179,6 @@ SetState sets State field to given value.
 `func (o *Event) HasState() bool`
 
 HasState returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *Event) GetCreatedBy() string`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *Event) GetCreatedByOk() (*string, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *Event) SetCreatedBy(v string)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *Event) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetResource
-
-`func (o *Event) GetResource() string`
-
-GetResource returns the Resource field if non-nil, zero value otherwise.
-
-### GetResourceOk
-
-`func (o *Event) GetResourceOk() (*string, bool)`
-
-GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResource
-
-`func (o *Event) SetResource(v string)`
-
-SetResource sets Resource field to given value.
-
-### HasResource
-
-`func (o *Event) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

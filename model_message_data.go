@@ -16,9 +16,9 @@ import (
 
 // MessageData struct for MessageData
 type MessageData struct {
+	Body *string `json:"body,omitempty"`
 	Mime string `json:"mime"`
 	Url *string `json:"url,omitempty"`
-	Body *string `json:"body,omitempty"`
 }
 
 // NewMessageData instantiates a new MessageData object
@@ -37,6 +37,38 @@ func NewMessageData(mime string) *MessageData {
 func NewMessageDataWithDefaults() *MessageData {
 	this := MessageData{}
 	return &this
+}
+
+// GetBody returns the Body field value if set, zero value otherwise.
+func (o *MessageData) GetBody() string {
+	if o == nil || o.Body == nil {
+		var ret string
+		return ret
+	}
+	return *o.Body
+}
+
+// GetBodyOk returns a tuple with the Body field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MessageData) GetBodyOk() (*string, bool) {
+	if o == nil || o.Body == nil {
+		return nil, false
+	}
+	return o.Body, true
+}
+
+// HasBody returns a boolean if a field has been set.
+func (o *MessageData) HasBody() bool {
+	if o != nil && o.Body != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBody gets a reference to the given string and assigns it to the Body field.
+func (o *MessageData) SetBody(v string) {
+	o.Body = &v
 }
 
 // GetMime returns the Mime field value
@@ -95,48 +127,16 @@ func (o *MessageData) SetUrl(v string) {
 	o.Url = &v
 }
 
-// GetBody returns the Body field value if set, zero value otherwise.
-func (o *MessageData) GetBody() string {
-	if o == nil || o.Body == nil {
-		var ret string
-		return ret
-	}
-	return *o.Body
-}
-
-// GetBodyOk returns a tuple with the Body field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MessageData) GetBodyOk() (*string, bool) {
-	if o == nil || o.Body == nil {
-		return nil, false
-	}
-	return o.Body, true
-}
-
-// HasBody returns a boolean if a field has been set.
-func (o *MessageData) HasBody() bool {
-	if o != nil && o.Body != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBody gets a reference to the given string and assigns it to the Body field.
-func (o *MessageData) SetBody(v string) {
-	o.Body = &v
-}
-
 func (o MessageData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Body != nil {
+		toSerialize["body"] = o.Body
+	}
 	if true {
 		toSerialize["mime"] = o.Mime
 	}
 	if o.Url != nil {
 		toSerialize["url"] = o.Url
-	}
-	if o.Body != nil {
-		toSerialize["body"] = o.Body
 	}
 	return json.Marshal(toSerialize)
 }

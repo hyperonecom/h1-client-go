@@ -17,12 +17,12 @@ import (
 
 // Event struct for Event
 type Event struct {
+	CreatedBy *string `json:"createdBy,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	State *string `json:"state,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
 	Resource *string `json:"resource,omitempty"`
+	State *string `json:"state,omitempty"`
 }
 
 // NewEvent instantiates a new Event object
@@ -40,6 +40,70 @@ func NewEvent() *Event {
 func NewEventWithDefaults() *Event {
 	this := Event{}
 	return &this
+}
+
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+func (o *Event) GetCreatedBy() string {
+	if o == nil || o.CreatedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.CreatedBy
+}
+
+// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Event) GetCreatedByOk() (*string, bool) {
+	if o == nil || o.CreatedBy == nil {
+		return nil, false
+	}
+	return o.CreatedBy, true
+}
+
+// HasCreatedBy returns a boolean if a field has been set.
+func (o *Event) HasCreatedBy() bool {
+	if o != nil && o.CreatedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+func (o *Event) SetCreatedBy(v string) {
+	o.CreatedBy = &v
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *Event) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Event) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *Event) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Event) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -106,36 +170,36 @@ func (o *Event) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Event) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
+// GetResource returns the Resource field value if set, zero value otherwise.
+func (o *Event) GetResource() string {
+	if o == nil || o.Resource == nil {
+		var ret string
 		return ret
 	}
-	return *o.CreatedOn
+	return *o.Resource
 }
 
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Event) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
+func (o *Event) GetResourceOk() (*string, bool) {
+	if o == nil || o.Resource == nil {
 		return nil, false
 	}
-	return o.CreatedOn, true
+	return o.Resource, true
 }
 
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *Event) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
+// HasResource returns a boolean if a field has been set.
+func (o *Event) HasResource() bool {
+	if o != nil && o.Resource != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Event) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
+// SetResource gets a reference to the given string and assigns it to the Resource field.
+func (o *Event) SetResource(v string) {
+	o.Resource = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -170,89 +234,25 @@ func (o *Event) SetState(v string) {
 	o.State = &v
 }
 
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Event) GetCreatedBy() string {
-	if o == nil || o.CreatedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.CreatedBy
-}
-
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Event) GetCreatedByOk() (*string, bool) {
-	if o == nil || o.CreatedBy == nil {
-		return nil, false
-	}
-	return o.CreatedBy, true
-}
-
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *Event) HasCreatedBy() bool {
-	if o != nil && o.CreatedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *Event) SetCreatedBy(v string) {
-	o.CreatedBy = &v
-}
-
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *Event) GetResource() string {
-	if o == nil || o.Resource == nil {
-		var ret string
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Event) GetResourceOk() (*string, bool) {
-	if o == nil || o.Resource == nil {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// HasResource returns a boolean if a field has been set.
-func (o *Event) HasResource() bool {
-	if o != nil && o.Resource != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *Event) SetResource(v string) {
-	o.Resource = &v
-}
-
 func (o Event) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreatedBy != nil {
+		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
+	if o.Resource != nil {
+		toSerialize["resource"] = o.Resource
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State
-	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
-	}
-	if o.Resource != nil {
-		toSerialize["resource"] = o.Resource
 	}
 	return json.Marshal(toSerialize)
 }

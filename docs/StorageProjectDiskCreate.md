@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Service** | **string** |  | 
 **Size** | **float32** |  | 
 **Source** | Pointer to [**OneOfAnyTypeAnyType**](oneOf&lt;AnyType,AnyType&gt;.md) |  | [optional] 
-**Vm** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Vm** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -115,31 +115,6 @@ SetSource sets Source field to given value.
 
 HasSource returns a boolean if a field has been set.
 
-### GetVm
-
-`func (o *StorageProjectDiskCreate) GetVm() string`
-
-GetVm returns the Vm field if non-nil, zero value otherwise.
-
-### GetVmOk
-
-`func (o *StorageProjectDiskCreate) GetVmOk() (*string, bool)`
-
-GetVmOk returns a tuple with the Vm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVm
-
-`func (o *StorageProjectDiskCreate) SetVm(v string)`
-
-SetVm sets Vm field to given value.
-
-### HasVm
-
-`func (o *StorageProjectDiskCreate) HasVm() bool`
-
-HasVm returns a boolean if a field has been set.
-
 ### GetTag
 
 `func (o *StorageProjectDiskCreate) GetTag() []Tag`
@@ -164,6 +139,31 @@ SetTag sets Tag field to given value.
 `func (o *StorageProjectDiskCreate) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetVm
+
+`func (o *StorageProjectDiskCreate) GetVm() string`
+
+GetVm returns the Vm field if non-nil, zero value otherwise.
+
+### GetVmOk
+
+`func (o *StorageProjectDiskCreate) GetVmOk() (*string, bool)`
+
+GetVmOk returns a tuple with the Vm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVm
+
+`func (o *StorageProjectDiskCreate) SetVm(v string)`
+
+SetVm sets Vm field to given value.
+
+### HasVm
+
+`func (o *StorageProjectDiskCreate) HasVm() bool`
+
+HasVm returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

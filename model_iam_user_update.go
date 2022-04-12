@@ -16,10 +16,10 @@ import (
 
 // IamUserUpdate struct for IamUserUpdate
 type IamUserUpdate struct {
-	Phone *string `json:"phone,omitempty"`
-	FirstName *string `json:"firstName,omitempty"`
 	FamilyName *string `json:"familyName,omitempty"`
+	FirstName *string `json:"firstName,omitempty"`
 	Lang *string `json:"lang,omitempty"`
+	Phone *string `json:"phone,omitempty"`
 }
 
 // NewIamUserUpdate instantiates a new IamUserUpdate object
@@ -37,70 +37,6 @@ func NewIamUserUpdate() *IamUserUpdate {
 func NewIamUserUpdateWithDefaults() *IamUserUpdate {
 	this := IamUserUpdate{}
 	return &this
-}
-
-// GetPhone returns the Phone field value if set, zero value otherwise.
-func (o *IamUserUpdate) GetPhone() string {
-	if o == nil || o.Phone == nil {
-		var ret string
-		return ret
-	}
-	return *o.Phone
-}
-
-// GetPhoneOk returns a tuple with the Phone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IamUserUpdate) GetPhoneOk() (*string, bool) {
-	if o == nil || o.Phone == nil {
-		return nil, false
-	}
-	return o.Phone, true
-}
-
-// HasPhone returns a boolean if a field has been set.
-func (o *IamUserUpdate) HasPhone() bool {
-	if o != nil && o.Phone != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPhone gets a reference to the given string and assigns it to the Phone field.
-func (o *IamUserUpdate) SetPhone(v string) {
-	o.Phone = &v
-}
-
-// GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *IamUserUpdate) GetFirstName() string {
-	if o == nil || o.FirstName == nil {
-		var ret string
-		return ret
-	}
-	return *o.FirstName
-}
-
-// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IamUserUpdate) GetFirstNameOk() (*string, bool) {
-	if o == nil || o.FirstName == nil {
-		return nil, false
-	}
-	return o.FirstName, true
-}
-
-// HasFirstName returns a boolean if a field has been set.
-func (o *IamUserUpdate) HasFirstName() bool {
-	if o != nil && o.FirstName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *IamUserUpdate) SetFirstName(v string) {
-	o.FirstName = &v
 }
 
 // GetFamilyName returns the FamilyName field value if set, zero value otherwise.
@@ -135,6 +71,38 @@ func (o *IamUserUpdate) SetFamilyName(v string) {
 	o.FamilyName = &v
 }
 
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *IamUserUpdate) GetFirstName() string {
+	if o == nil || o.FirstName == nil {
+		var ret string
+		return ret
+	}
+	return *o.FirstName
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IamUserUpdate) GetFirstNameOk() (*string, bool) {
+	if o == nil || o.FirstName == nil {
+		return nil, false
+	}
+	return o.FirstName, true
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *IamUserUpdate) HasFirstName() bool {
+	if o != nil && o.FirstName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *IamUserUpdate) SetFirstName(v string) {
+	o.FirstName = &v
+}
+
 // GetLang returns the Lang field value if set, zero value otherwise.
 func (o *IamUserUpdate) GetLang() string {
 	if o == nil || o.Lang == nil {
@@ -167,19 +135,51 @@ func (o *IamUserUpdate) SetLang(v string) {
 	o.Lang = &v
 }
 
+// GetPhone returns the Phone field value if set, zero value otherwise.
+func (o *IamUserUpdate) GetPhone() string {
+	if o == nil || o.Phone == nil {
+		var ret string
+		return ret
+	}
+	return *o.Phone
+}
+
+// GetPhoneOk returns a tuple with the Phone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IamUserUpdate) GetPhoneOk() (*string, bool) {
+	if o == nil || o.Phone == nil {
+		return nil, false
+	}
+	return o.Phone, true
+}
+
+// HasPhone returns a boolean if a field has been set.
+func (o *IamUserUpdate) HasPhone() bool {
+	if o != nil && o.Phone != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPhone gets a reference to the given string and assigns it to the Phone field.
+func (o *IamUserUpdate) SetPhone(v string) {
+	o.Phone = &v
+}
+
 func (o IamUserUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Phone != nil {
-		toSerialize["phone"] = o.Phone
+	if o.FamilyName != nil {
+		toSerialize["familyName"] = o.FamilyName
 	}
 	if o.FirstName != nil {
 		toSerialize["firstName"] = o.FirstName
 	}
-	if o.FamilyName != nil {
-		toSerialize["familyName"] = o.FamilyName
-	}
 	if o.Lang != nil {
 		toSerialize["lang"] = o.Lang
+	}
+	if o.Phone != nil {
+		toSerialize["phone"] = o.Phone
 	}
 	return json.Marshal(toSerialize)
 }

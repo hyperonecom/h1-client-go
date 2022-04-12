@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **City** | Pointer to **string** |  | [optional] 
-**Zipcode** | Pointer to **string** |  | [optional] 
 **Street** | Pointer to **string** |  | [optional] 
+**Zipcode** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -52,31 +52,6 @@ SetCity sets City field to given value.
 
 HasCity returns a boolean if a field has been set.
 
-### GetZipcode
-
-`func (o *BillingAddress1) GetZipcode() string`
-
-GetZipcode returns the Zipcode field if non-nil, zero value otherwise.
-
-### GetZipcodeOk
-
-`func (o *BillingAddress1) GetZipcodeOk() (*string, bool)`
-
-GetZipcodeOk returns a tuple with the Zipcode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZipcode
-
-`func (o *BillingAddress1) SetZipcode(v string)`
-
-SetZipcode sets Zipcode field to given value.
-
-### HasZipcode
-
-`func (o *BillingAddress1) HasZipcode() bool`
-
-HasZipcode returns a boolean if a field has been set.
-
 ### GetStreet
 
 `func (o *BillingAddress1) GetStreet() string`
@@ -101,6 +76,31 @@ SetStreet sets Street field to given value.
 `func (o *BillingAddress1) HasStreet() bool`
 
 HasStreet returns a boolean if a field has been set.
+
+### GetZipcode
+
+`func (o *BillingAddress1) GetZipcode() string`
+
+GetZipcode returns the Zipcode field if non-nil, zero value otherwise.
+
+### GetZipcodeOk
+
+`func (o *BillingAddress1) GetZipcodeOk() (*string, bool)`
+
+GetZipcodeOk returns a tuple with the Zipcode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZipcode
+
+`func (o *BillingAddress1) SetZipcode(v string)`
+
+SetZipcode sets Zipcode field to given value.
+
+### HasZipcode
+
+`func (o *BillingAddress1) HasZipcode() bool`
+
+HasZipcode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

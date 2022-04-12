@@ -16,9 +16,9 @@ import (
 
 // DnsProjectZoneCreate struct for DnsProjectZoneCreate
 type DnsProjectZoneCreate struct {
+	DnsName string `json:"dnsName"`
 	Name string `json:"name"`
 	Service string `json:"service"`
-	DnsName string `json:"dnsName"`
 	Source *ZoneSource `json:"source,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
@@ -27,11 +27,11 @@ type DnsProjectZoneCreate struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnsProjectZoneCreate(name string, service string, dnsName string) *DnsProjectZoneCreate {
+func NewDnsProjectZoneCreate(dnsName string, name string, service string) *DnsProjectZoneCreate {
 	this := DnsProjectZoneCreate{}
+	this.DnsName = dnsName
 	this.Name = name
 	this.Service = service
-	this.DnsName = dnsName
 	return &this
 }
 
@@ -41,6 +41,30 @@ func NewDnsProjectZoneCreate(name string, service string, dnsName string) *DnsPr
 func NewDnsProjectZoneCreateWithDefaults() *DnsProjectZoneCreate {
 	this := DnsProjectZoneCreate{}
 	return &this
+}
+
+// GetDnsName returns the DnsName field value
+func (o *DnsProjectZoneCreate) GetDnsName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.DnsName
+}
+
+// GetDnsNameOk returns a tuple with the DnsName field value
+// and a boolean to check if the value has been set.
+func (o *DnsProjectZoneCreate) GetDnsNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.DnsName, true
+}
+
+// SetDnsName sets field value
+func (o *DnsProjectZoneCreate) SetDnsName(v string) {
+	o.DnsName = v
 }
 
 // GetName returns the Name field value
@@ -89,30 +113,6 @@ func (o *DnsProjectZoneCreate) GetServiceOk() (*string, bool) {
 // SetService sets field value
 func (o *DnsProjectZoneCreate) SetService(v string) {
 	o.Service = v
-}
-
-// GetDnsName returns the DnsName field value
-func (o *DnsProjectZoneCreate) GetDnsName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.DnsName
-}
-
-// GetDnsNameOk returns a tuple with the DnsName field value
-// and a boolean to check if the value has been set.
-func (o *DnsProjectZoneCreate) GetDnsNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.DnsName, true
-}
-
-// SetDnsName sets field value
-func (o *DnsProjectZoneCreate) SetDnsName(v string) {
-	o.DnsName = v
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
@@ -182,13 +182,13 @@ func (o *DnsProjectZoneCreate) SetTag(v []Tag) {
 func (o DnsProjectZoneCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
+		toSerialize["dnsName"] = o.DnsName
+	}
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if true {
 		toSerialize["service"] = o.Service
-	}
-	if true {
-		toSerialize["dnsName"] = o.DnsName
 	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source

@@ -16,9 +16,9 @@ import (
 
 // ProjectBilling struct for ProjectBilling
 type ProjectBilling struct {
+	CreditLimit *float32 `json:"creditLimit,omitempty"`
 	Credits *float32 `json:"credits,omitempty"`
 	CreditsBonus *float32 `json:"creditsBonus,omitempty"`
-	CreditLimit *float32 `json:"creditLimit,omitempty"`
 }
 
 // NewProjectBilling instantiates a new ProjectBilling object
@@ -36,6 +36,38 @@ func NewProjectBilling() *ProjectBilling {
 func NewProjectBillingWithDefaults() *ProjectBilling {
 	this := ProjectBilling{}
 	return &this
+}
+
+// GetCreditLimit returns the CreditLimit field value if set, zero value otherwise.
+func (o *ProjectBilling) GetCreditLimit() float32 {
+	if o == nil || o.CreditLimit == nil {
+		var ret float32
+		return ret
+	}
+	return *o.CreditLimit
+}
+
+// GetCreditLimitOk returns a tuple with the CreditLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProjectBilling) GetCreditLimitOk() (*float32, bool) {
+	if o == nil || o.CreditLimit == nil {
+		return nil, false
+	}
+	return o.CreditLimit, true
+}
+
+// HasCreditLimit returns a boolean if a field has been set.
+func (o *ProjectBilling) HasCreditLimit() bool {
+	if o != nil && o.CreditLimit != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreditLimit gets a reference to the given float32 and assigns it to the CreditLimit field.
+func (o *ProjectBilling) SetCreditLimit(v float32) {
+	o.CreditLimit = &v
 }
 
 // GetCredits returns the Credits field value if set, zero value otherwise.
@@ -102,48 +134,16 @@ func (o *ProjectBilling) SetCreditsBonus(v float32) {
 	o.CreditsBonus = &v
 }
 
-// GetCreditLimit returns the CreditLimit field value if set, zero value otherwise.
-func (o *ProjectBilling) GetCreditLimit() float32 {
-	if o == nil || o.CreditLimit == nil {
-		var ret float32
-		return ret
-	}
-	return *o.CreditLimit
-}
-
-// GetCreditLimitOk returns a tuple with the CreditLimit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProjectBilling) GetCreditLimitOk() (*float32, bool) {
-	if o == nil || o.CreditLimit == nil {
-		return nil, false
-	}
-	return o.CreditLimit, true
-}
-
-// HasCreditLimit returns a boolean if a field has been set.
-func (o *ProjectBilling) HasCreditLimit() bool {
-	if o != nil && o.CreditLimit != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreditLimit gets a reference to the given float32 and assigns it to the CreditLimit field.
-func (o *ProjectBilling) SetCreditLimit(v float32) {
-	o.CreditLimit = &v
-}
-
 func (o ProjectBilling) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreditLimit != nil {
+		toSerialize["creditLimit"] = o.CreditLimit
+	}
 	if o.Credits != nil {
 		toSerialize["credits"] = o.Credits
 	}
 	if o.CreditsBonus != nil {
 		toSerialize["creditsBonus"] = o.CreditsBonus
-	}
-	if o.CreditLimit != nil {
-		toSerialize["creditLimit"] = o.CreditLimit
 	}
 	return json.Marshal(toSerialize)
 }

@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Flavour** | Pointer to **string** |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**ModifiedBy** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
+**Flavour** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
+**ModifiedBy** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**Uri** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewFirewall
 
-`func NewFirewall() *Firewall`
+`func NewFirewall(id string, ) *Firewall`
 
 NewFirewall instantiates a new Firewall object
 This constructor will assign default values to properties that have it defined,
@@ -34,156 +34,6 @@ will change when the set of required properties is changed
 NewFirewallWithDefaults instantiates a new Firewall object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Firewall) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Firewall) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Firewall) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Firewall) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *Firewall) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Firewall) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Firewall) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Firewall) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetFlavour
-
-`func (o *Firewall) GetFlavour() string`
-
-GetFlavour returns the Flavour field if non-nil, zero value otherwise.
-
-### GetFlavourOk
-
-`func (o *Firewall) GetFlavourOk() (*string, bool)`
-
-GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlavour
-
-`func (o *Firewall) SetFlavour(v string)`
-
-SetFlavour sets Flavour field to given value.
-
-### HasFlavour
-
-`func (o *Firewall) HasFlavour() bool`
-
-HasFlavour returns a boolean if a field has been set.
-
-### GetModifiedOn
-
-`func (o *Firewall) GetModifiedOn() time.Time`
-
-GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
-
-### GetModifiedOnOk
-
-`func (o *Firewall) GetModifiedOnOk() (*time.Time, bool)`
-
-GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedOn
-
-`func (o *Firewall) SetModifiedOn(v time.Time)`
-
-SetModifiedOn sets ModifiedOn field to given value.
-
-### HasModifiedOn
-
-`func (o *Firewall) HasModifiedOn() bool`
-
-HasModifiedOn returns a boolean if a field has been set.
-
-### GetModifiedBy
-
-`func (o *Firewall) GetModifiedBy() string`
-
-GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
-
-### GetModifiedByOk
-
-`func (o *Firewall) GetModifiedByOk() (*string, bool)`
-
-GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedBy
-
-`func (o *Firewall) SetModifiedBy(v string)`
-
-SetModifiedBy sets ModifiedBy field to given value.
-
-### HasModifiedBy
-
-`func (o *Firewall) HasModifiedBy() bool`
-
-HasModifiedBy returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *Firewall) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *Firewall) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *Firewall) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *Firewall) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
@@ -210,30 +60,150 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
-### GetState
+### GetCreatedOn
 
-`func (o *Firewall) GetState() string`
+`func (o *Firewall) GetCreatedOn() time.Time`
 
-GetState returns the State field if non-nil, zero value otherwise.
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
 
-### GetStateOk
+### GetCreatedOnOk
 
-`func (o *Firewall) GetStateOk() (*string, bool)`
+`func (o *Firewall) GetCreatedOnOk() (*time.Time, bool)`
 
-GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetState
+### SetCreatedOn
 
-`func (o *Firewall) SetState(v string)`
+`func (o *Firewall) SetCreatedOn(v time.Time)`
 
-SetState sets State field to given value.
+SetCreatedOn sets CreatedOn field to given value.
 
-### HasState
+### HasCreatedOn
 
-`func (o *Firewall) HasState() bool`
+`func (o *Firewall) HasCreatedOn() bool`
 
-HasState returns a boolean if a field has been set.
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetFlavour
+
+`func (o *Firewall) GetFlavour() string`
+
+GetFlavour returns the Flavour field if non-nil, zero value otherwise.
+
+### GetFlavourOk
+
+`func (o *Firewall) GetFlavourOk() (*string, bool)`
+
+GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlavour
+
+`func (o *Firewall) SetFlavour(v string)`
+
+SetFlavour sets Flavour field to given value.
+
+### HasFlavour
+
+`func (o *Firewall) HasFlavour() bool`
+
+HasFlavour returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *Firewall) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Firewall) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Firewall) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetModifiedBy
+
+`func (o *Firewall) GetModifiedBy() string`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *Firewall) GetModifiedByOk() (*string, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *Firewall) SetModifiedBy(v string)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *Firewall) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Firewall) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Firewall) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Firewall) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Firewall) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Firewall) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Firewall) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Firewall) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Firewall) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetProject
 
@@ -260,30 +230,30 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
-### GetUri
+### GetState
 
-`func (o *Firewall) GetUri() string`
+`func (o *Firewall) GetState() string`
 
-GetUri returns the Uri field if non-nil, zero value otherwise.
+GetState returns the State field if non-nil, zero value otherwise.
 
-### GetUriOk
+### GetStateOk
 
-`func (o *Firewall) GetUriOk() (*string, bool)`
+`func (o *Firewall) GetStateOk() (*string, bool)`
 
-GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUri
+### SetState
 
-`func (o *Firewall) SetUri(v string)`
+`func (o *Firewall) SetState(v string)`
 
-SetUri sets Uri field to given value.
+SetState sets State field to given value.
 
-### HasUri
+### HasState
 
-`func (o *Firewall) HasUri() bool`
+`func (o *Firewall) HasState() bool`
 
-HasUri returns a boolean if a field has been set.
+HasState returns a boolean if a field has been set.
 
 ### GetTag
 
@@ -309,6 +279,31 @@ SetTag sets Tag field to given value.
 `func (o *Firewall) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Firewall) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Firewall) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Firewall) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Firewall) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

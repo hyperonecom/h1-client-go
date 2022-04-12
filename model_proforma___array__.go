@@ -20,8 +20,8 @@ type ProformaArray struct {
 	Id *string `json:"id,omitempty"`
 	InvoiceNo *string `json:"invoiceNo,omitempty"`
 	IssueDate *time.Time `json:"issueDate,omitempty"`
-	Summary *string `json:"summary,omitempty"`
 	Project *string `json:"project,omitempty"`
+	Summary *string `json:"summary,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -138,38 +138,6 @@ func (o *ProformaArray) SetIssueDate(v time.Time) {
 	o.IssueDate = &v
 }
 
-// GetSummary returns the Summary field value if set, zero value otherwise.
-func (o *ProformaArray) GetSummary() string {
-	if o == nil || o.Summary == nil {
-		var ret string
-		return ret
-	}
-	return *o.Summary
-}
-
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProformaArray) GetSummaryOk() (*string, bool) {
-	if o == nil || o.Summary == nil {
-		return nil, false
-	}
-	return o.Summary, true
-}
-
-// HasSummary returns a boolean if a field has been set.
-func (o *ProformaArray) HasSummary() bool {
-	if o != nil && o.Summary != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSummary gets a reference to the given string and assigns it to the Summary field.
-func (o *ProformaArray) SetSummary(v string) {
-	o.Summary = &v
-}
-
 // GetProject returns the Project field value if set, zero value otherwise.
 func (o *ProformaArray) GetProject() string {
 	if o == nil || o.Project == nil {
@@ -200,6 +168,38 @@ func (o *ProformaArray) HasProject() bool {
 // SetProject gets a reference to the given string and assigns it to the Project field.
 func (o *ProformaArray) SetProject(v string) {
 	o.Project = &v
+}
+
+// GetSummary returns the Summary field value if set, zero value otherwise.
+func (o *ProformaArray) GetSummary() string {
+	if o == nil || o.Summary == nil {
+		var ret string
+		return ret
+	}
+	return *o.Summary
+}
+
+// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProformaArray) GetSummaryOk() (*string, bool) {
+	if o == nil || o.Summary == nil {
+		return nil, false
+	}
+	return o.Summary, true
+}
+
+// HasSummary returns a boolean if a field has been set.
+func (o *ProformaArray) HasSummary() bool {
+	if o != nil && o.Summary != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSummary gets a reference to the given string and assigns it to the Summary field.
+func (o *ProformaArray) SetSummary(v string) {
+	o.Summary = &v
 }
 
 // GetUri returns the Uri field value if set, zero value otherwise.
@@ -245,11 +245,11 @@ func (o ProformaArray) MarshalJSON() ([]byte, error) {
 	if o.IssueDate != nil {
 		toSerialize["issueDate"] = o.IssueDate
 	}
-	if o.Summary != nil {
-		toSerialize["summary"] = o.Summary
-	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
+	}
+	if o.Summary != nil {
+		toSerialize["summary"] = o.Summary
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

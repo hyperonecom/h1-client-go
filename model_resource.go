@@ -17,10 +17,10 @@ import (
 // Resource struct for Resource
 type Resource struct {
 	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Kind *string `json:"kind,omitempty"`
-	Project *string `json:"project,omitempty"`
+	Name *string `json:"name,omitempty"`
 	Organisation *string `json:"organisation,omitempty"`
+	Project *string `json:"project,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -73,38 +73,6 @@ func (o *Resource) SetId(v string) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Resource) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Resource) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *Resource) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Resource) SetName(v string) {
-	o.Name = &v
-}
-
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *Resource) GetKind() string {
 	if o == nil || o.Kind == nil {
@@ -137,36 +105,36 @@ func (o *Resource) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetProject returns the Project field value if set, zero value otherwise.
-func (o *Resource) GetProject() string {
-	if o == nil || o.Project == nil {
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Resource) GetName() string {
+	if o == nil || o.Name == nil {
 		var ret string
 		return ret
 	}
-	return *o.Project
+	return *o.Name
 }
 
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetProjectOk() (*string, bool) {
-	if o == nil || o.Project == nil {
+func (o *Resource) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
-	return o.Project, true
+	return o.Name, true
 }
 
-// HasProject returns a boolean if a field has been set.
-func (o *Resource) HasProject() bool {
-	if o != nil && o.Project != nil {
+// HasName returns a boolean if a field has been set.
+func (o *Resource) HasName() bool {
+	if o != nil && o.Name != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProject gets a reference to the given string and assigns it to the Project field.
-func (o *Resource) SetProject(v string) {
-	o.Project = &v
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Resource) SetName(v string) {
+	o.Name = &v
 }
 
 // GetOrganisation returns the Organisation field value if set, zero value otherwise.
@@ -199,6 +167,38 @@ func (o *Resource) HasOrganisation() bool {
 // SetOrganisation gets a reference to the given string and assigns it to the Organisation field.
 func (o *Resource) SetOrganisation(v string) {
 	o.Organisation = &v
+}
+
+// GetProject returns the Project field value if set, zero value otherwise.
+func (o *Resource) GetProject() string {
+	if o == nil || o.Project == nil {
+		var ret string
+		return ret
+	}
+	return *o.Project
+}
+
+// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Resource) GetProjectOk() (*string, bool) {
+	if o == nil || o.Project == nil {
+		return nil, false
+	}
+	return o.Project, true
+}
+
+// HasProject returns a boolean if a field has been set.
+func (o *Resource) HasProject() bool {
+	if o != nil && o.Project != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProject gets a reference to the given string and assigns it to the Project field.
+func (o *Resource) SetProject(v string) {
+	o.Project = &v
 }
 
 // GetUri returns the Uri field value if set, zero value otherwise.
@@ -238,17 +238,17 @@ func (o Resource) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
 	if o.Kind != nil {
 		toSerialize["kind"] = o.Kind
 	}
-	if o.Project != nil {
-		toSerialize["project"] = o.Project
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Organisation != nil {
 		toSerialize["organisation"] = o.Organisation
+	}
+	if o.Project != nil {
+		toSerialize["project"] = o.Project
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

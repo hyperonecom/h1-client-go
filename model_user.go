@@ -17,15 +17,15 @@ import (
 
 // User struct for User
 type User struct {
-	Id *string `json:"id,omitempty"`
-	FirstName *string `json:"firstName,omitempty"`
-	FamilyName *string `json:"familyName,omitempty"`
-	Name *string `json:"name,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
+	FamilyName *string `json:"familyName,omitempty"`
+	FirstName *string `json:"firstName,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Lang *string `json:"lang,omitempty"`
-	Phone *string `json:"phone,omitempty"`
 	Limit *UserLimit `json:"limit,omitempty"`
+	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Phone *string `json:"phone,omitempty"`
 	State *string `json:"state,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
@@ -45,134 +45,6 @@ func NewUser() *User {
 func NewUserWithDefaults() *User {
 	this := User{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *User) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *User) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *User) SetId(v string) {
-	o.Id = &v
-}
-
-// GetFirstName returns the FirstName field value if set, zero value otherwise.
-func (o *User) GetFirstName() string {
-	if o == nil || o.FirstName == nil {
-		var ret string
-		return ret
-	}
-	return *o.FirstName
-}
-
-// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetFirstNameOk() (*string, bool) {
-	if o == nil || o.FirstName == nil {
-		return nil, false
-	}
-	return o.FirstName, true
-}
-
-// HasFirstName returns a boolean if a field has been set.
-func (o *User) HasFirstName() bool {
-	if o != nil && o.FirstName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
-func (o *User) SetFirstName(v string) {
-	o.FirstName = &v
-}
-
-// GetFamilyName returns the FamilyName field value if set, zero value otherwise.
-func (o *User) GetFamilyName() string {
-	if o == nil || o.FamilyName == nil {
-		var ret string
-		return ret
-	}
-	return *o.FamilyName
-}
-
-// GetFamilyNameOk returns a tuple with the FamilyName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetFamilyNameOk() (*string, bool) {
-	if o == nil || o.FamilyName == nil {
-		return nil, false
-	}
-	return o.FamilyName, true
-}
-
-// HasFamilyName returns a boolean if a field has been set.
-func (o *User) HasFamilyName() bool {
-	if o != nil && o.FamilyName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFamilyName gets a reference to the given string and assigns it to the FamilyName field.
-func (o *User) SetFamilyName(v string) {
-	o.FamilyName = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *User) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *User) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *User) SetName(v string) {
-	o.Name = &v
 }
 
 // GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
@@ -207,36 +79,100 @@ func (o *User) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
-// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
-func (o *User) GetModifiedOn() time.Time {
-	if o == nil || o.ModifiedOn == nil {
-		var ret time.Time
+// GetFamilyName returns the FamilyName field value if set, zero value otherwise.
+func (o *User) GetFamilyName() string {
+	if o == nil || o.FamilyName == nil {
+		var ret string
 		return ret
 	}
-	return *o.ModifiedOn
+	return *o.FamilyName
 }
 
-// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
+// GetFamilyNameOk returns a tuple with the FamilyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetModifiedOnOk() (*time.Time, bool) {
-	if o == nil || o.ModifiedOn == nil {
+func (o *User) GetFamilyNameOk() (*string, bool) {
+	if o == nil || o.FamilyName == nil {
 		return nil, false
 	}
-	return o.ModifiedOn, true
+	return o.FamilyName, true
 }
 
-// HasModifiedOn returns a boolean if a field has been set.
-func (o *User) HasModifiedOn() bool {
-	if o != nil && o.ModifiedOn != nil {
+// HasFamilyName returns a boolean if a field has been set.
+func (o *User) HasFamilyName() bool {
+	if o != nil && o.FamilyName != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
-func (o *User) SetModifiedOn(v time.Time) {
-	o.ModifiedOn = &v
+// SetFamilyName gets a reference to the given string and assigns it to the FamilyName field.
+func (o *User) SetFamilyName(v string) {
+	o.FamilyName = &v
+}
+
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *User) GetFirstName() string {
+	if o == nil || o.FirstName == nil {
+		var ret string
+		return ret
+	}
+	return *o.FirstName
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetFirstNameOk() (*string, bool) {
+	if o == nil || o.FirstName == nil {
+		return nil, false
+	}
+	return o.FirstName, true
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *User) HasFirstName() bool {
+	if o != nil && o.FirstName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstName gets a reference to the given string and assigns it to the FirstName field.
+func (o *User) SetFirstName(v string) {
+	o.FirstName = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *User) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *User) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *User) SetId(v string) {
+	o.Id = &v
 }
 
 // GetLang returns the Lang field value if set, zero value otherwise.
@@ -271,38 +207,6 @@ func (o *User) SetLang(v string) {
 	o.Lang = &v
 }
 
-// GetPhone returns the Phone field value if set, zero value otherwise.
-func (o *User) GetPhone() string {
-	if o == nil || o.Phone == nil {
-		var ret string
-		return ret
-	}
-	return *o.Phone
-}
-
-// GetPhoneOk returns a tuple with the Phone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetPhoneOk() (*string, bool) {
-	if o == nil || o.Phone == nil {
-		return nil, false
-	}
-	return o.Phone, true
-}
-
-// HasPhone returns a boolean if a field has been set.
-func (o *User) HasPhone() bool {
-	if o != nil && o.Phone != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPhone gets a reference to the given string and assigns it to the Phone field.
-func (o *User) SetPhone(v string) {
-	o.Phone = &v
-}
-
 // GetLimit returns the Limit field value if set, zero value otherwise.
 func (o *User) GetLimit() UserLimit {
 	if o == nil || o.Limit == nil {
@@ -333,6 +237,102 @@ func (o *User) HasLimit() bool {
 // SetLimit gets a reference to the given UserLimit and assigns it to the Limit field.
 func (o *User) SetLimit(v UserLimit) {
 	o.Limit = &v
+}
+
+// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
+func (o *User) GetModifiedOn() time.Time {
+	if o == nil || o.ModifiedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.ModifiedOn
+}
+
+// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetModifiedOnOk() (*time.Time, bool) {
+	if o == nil || o.ModifiedOn == nil {
+		return nil, false
+	}
+	return o.ModifiedOn, true
+}
+
+// HasModifiedOn returns a boolean if a field has been set.
+func (o *User) HasModifiedOn() bool {
+	if o != nil && o.ModifiedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
+func (o *User) SetModifiedOn(v time.Time) {
+	o.ModifiedOn = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *User) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *User) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *User) SetName(v string) {
+	o.Name = &v
+}
+
+// GetPhone returns the Phone field value if set, zero value otherwise.
+func (o *User) GetPhone() string {
+	if o == nil || o.Phone == nil {
+		var ret string
+		return ret
+	}
+	return *o.Phone
+}
+
+// GetPhoneOk returns a tuple with the Phone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetPhoneOk() (*string, bool) {
+	if o == nil || o.Phone == nil {
+		return nil, false
+	}
+	return o.Phone, true
+}
+
+// HasPhone returns a boolean if a field has been set.
+func (o *User) HasPhone() bool {
+	if o != nil && o.Phone != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPhone gets a reference to the given string and assigns it to the Phone field.
+func (o *User) SetPhone(v string) {
+	o.Phone = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -401,32 +401,32 @@ func (o *User) SetUri(v string) {
 
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.FirstName != nil {
-		toSerialize["firstName"] = o.FirstName
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
 	}
 	if o.FamilyName != nil {
 		toSerialize["familyName"] = o.FamilyName
 	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
+	if o.FirstName != nil {
+		toSerialize["firstName"] = o.FirstName
 	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
-	}
-	if o.ModifiedOn != nil {
-		toSerialize["modifiedOn"] = o.ModifiedOn
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Lang != nil {
 		toSerialize["lang"] = o.Lang
 	}
-	if o.Phone != nil {
-		toSerialize["phone"] = o.Phone
-	}
 	if o.Limit != nil {
 		toSerialize["limit"] = o.Limit
+	}
+	if o.ModifiedOn != nil {
+		toSerialize["modifiedOn"] = o.ModifiedOn
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.Phone != nil {
+		toSerialize["phone"] = o.Phone
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

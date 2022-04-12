@@ -16,8 +16,8 @@ import (
 
 // StorageProjectImageUpdate struct for StorageProjectImageUpdate
 type StorageProjectImageUpdate struct {
-	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewStorageProjectImageUpdate instantiates a new StorageProjectImageUpdate object
@@ -35,38 +35,6 @@ func NewStorageProjectImageUpdate() *StorageProjectImageUpdate {
 func NewStorageProjectImageUpdateWithDefaults() *StorageProjectImageUpdate {
 	this := StorageProjectImageUpdate{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *StorageProjectImageUpdate) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StorageProjectImageUpdate) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *StorageProjectImageUpdate) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *StorageProjectImageUpdate) SetName(v string) {
-	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -101,13 +69,45 @@ func (o *StorageProjectImageUpdate) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *StorageProjectImageUpdate) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageProjectImageUpdate) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *StorageProjectImageUpdate) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *StorageProjectImageUpdate) SetName(v string) {
+	o.Name = &v
+}
+
 func (o StorageProjectImageUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,12 +16,12 @@ import (
 
 // ResourceConnect struct for ResourceConnect
 type ResourceConnect struct {
+	Example *string `json:"example,omitempty"`
+	Host *string `json:"host,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
 	Username *string `json:"username,omitempty"`
-	Host *string `json:"host,omitempty"`
-	Example *string `json:"example,omitempty"`
 }
 
 // NewResourceConnect instantiates a new ResourceConnect object
@@ -39,6 +39,70 @@ func NewResourceConnect() *ResourceConnect {
 func NewResourceConnectWithDefaults() *ResourceConnect {
 	this := ResourceConnect{}
 	return &this
+}
+
+// GetExample returns the Example field value if set, zero value otherwise.
+func (o *ResourceConnect) GetExample() string {
+	if o == nil || o.Example == nil {
+		var ret string
+		return ret
+	}
+	return *o.Example
+}
+
+// GetExampleOk returns a tuple with the Example field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceConnect) GetExampleOk() (*string, bool) {
+	if o == nil || o.Example == nil {
+		return nil, false
+	}
+	return o.Example, true
+}
+
+// HasExample returns a boolean if a field has been set.
+func (o *ResourceConnect) HasExample() bool {
+	if o != nil && o.Example != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExample gets a reference to the given string and assigns it to the Example field.
+func (o *ResourceConnect) SetExample(v string) {
+	o.Example = &v
+}
+
+// GetHost returns the Host field value if set, zero value otherwise.
+func (o *ResourceConnect) GetHost() string {
+	if o == nil || o.Host == nil {
+		var ret string
+		return ret
+	}
+	return *o.Host
+}
+
+// GetHostOk returns a tuple with the Host field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceConnect) GetHostOk() (*string, bool) {
+	if o == nil || o.Host == nil {
+		return nil, false
+	}
+	return o.Host, true
+}
+
+// HasHost returns a boolean if a field has been set.
+func (o *ResourceConnect) HasHost() bool {
+	if o != nil && o.Host != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHost gets a reference to the given string and assigns it to the Host field.
+func (o *ResourceConnect) SetHost(v string) {
+	o.Host = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -169,72 +233,14 @@ func (o *ResourceConnect) SetUsername(v string) {
 	o.Username = &v
 }
 
-// GetHost returns the Host field value if set, zero value otherwise.
-func (o *ResourceConnect) GetHost() string {
-	if o == nil || o.Host == nil {
-		var ret string
-		return ret
-	}
-	return *o.Host
-}
-
-// GetHostOk returns a tuple with the Host field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceConnect) GetHostOk() (*string, bool) {
-	if o == nil || o.Host == nil {
-		return nil, false
-	}
-	return o.Host, true
-}
-
-// HasHost returns a boolean if a field has been set.
-func (o *ResourceConnect) HasHost() bool {
-	if o != nil && o.Host != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetHost gets a reference to the given string and assigns it to the Host field.
-func (o *ResourceConnect) SetHost(v string) {
-	o.Host = &v
-}
-
-// GetExample returns the Example field value if set, zero value otherwise.
-func (o *ResourceConnect) GetExample() string {
-	if o == nil || o.Example == nil {
-		var ret string
-		return ret
-	}
-	return *o.Example
-}
-
-// GetExampleOk returns a tuple with the Example field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceConnect) GetExampleOk() (*string, bool) {
-	if o == nil || o.Example == nil {
-		return nil, false
-	}
-	return o.Example, true
-}
-
-// HasExample returns a boolean if a field has been set.
-func (o *ResourceConnect) HasExample() bool {
-	if o != nil && o.Example != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExample gets a reference to the given string and assigns it to the Example field.
-func (o *ResourceConnect) SetExample(v string) {
-	o.Example = &v
-}
-
 func (o ResourceConnect) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Example != nil {
+		toSerialize["example"] = o.Example
+	}
+	if o.Host != nil {
+		toSerialize["host"] = o.Host
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
@@ -246,12 +252,6 @@ func (o ResourceConnect) MarshalJSON() ([]byte, error) {
 	}
 	if o.Username != nil {
 		toSerialize["username"] = o.Username
-	}
-	if o.Host != nil {
-		toSerialize["host"] = o.Host
-	}
-	if o.Example != nil {
-		toSerialize["example"] = o.Example
 	}
 	return json.Marshal(toSerialize)
 }

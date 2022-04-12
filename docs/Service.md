@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**AvailableServices** | Pointer to **[]string** |  | [optional] 
+**Billing** | Pointer to [**ServiceBilling**](ServiceBilling.md) |  | [optional] 
+**Data** | Pointer to **map[string]string** |  | [optional] 
+**Display** | Pointer to [**ServiceDisplay**](ServiceDisplay.md) |  | [optional] 
+**Id** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**Billing** | Pointer to [**ServiceBilling**](ServiceBilling.md) |  | [optional] 
-**Display** | Pointer to [**ServiceDisplay**](ServiceDisplay.md) |  | [optional] 
-**Data** | Pointer to **map[string]string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**AvailableServices** | Pointer to **[]string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewService
 
-`func NewService() *Service`
+`func NewService(id string, ) *Service`
 
 NewService instantiates a new Service object
 This constructor will assign default values to properties that have it defined,
@@ -32,6 +32,106 @@ will change when the set of required properties is changed
 NewServiceWithDefaults instantiates a new Service object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAvailableServices
+
+`func (o *Service) GetAvailableServices() []string`
+
+GetAvailableServices returns the AvailableServices field if non-nil, zero value otherwise.
+
+### GetAvailableServicesOk
+
+`func (o *Service) GetAvailableServicesOk() (*[]string, bool)`
+
+GetAvailableServicesOk returns a tuple with the AvailableServices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAvailableServices
+
+`func (o *Service) SetAvailableServices(v []string)`
+
+SetAvailableServices sets AvailableServices field to given value.
+
+### HasAvailableServices
+
+`func (o *Service) HasAvailableServices() bool`
+
+HasAvailableServices returns a boolean if a field has been set.
+
+### GetBilling
+
+`func (o *Service) GetBilling() ServiceBilling`
+
+GetBilling returns the Billing field if non-nil, zero value otherwise.
+
+### GetBillingOk
+
+`func (o *Service) GetBillingOk() (*ServiceBilling, bool)`
+
+GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBilling
+
+`func (o *Service) SetBilling(v ServiceBilling)`
+
+SetBilling sets Billing field to given value.
+
+### HasBilling
+
+`func (o *Service) HasBilling() bool`
+
+HasBilling returns a boolean if a field has been set.
+
+### GetData
+
+`func (o *Service) GetData() map[string]string`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *Service) GetDataOk() (*map[string]string, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *Service) SetData(v map[string]string)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *Service) HasData() bool`
+
+HasData returns a boolean if a field has been set.
+
+### GetDisplay
+
+`func (o *Service) GetDisplay() ServiceDisplay`
+
+GetDisplay returns the Display field if non-nil, zero value otherwise.
+
+### GetDisplayOk
+
+`func (o *Service) GetDisplayOk() (*ServiceDisplay, bool)`
+
+GetDisplayOk returns a tuple with the Display field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplay
+
+`func (o *Service) SetDisplay(v ServiceDisplay)`
+
+SetDisplay sets Display field to given value.
+
+### HasDisplay
+
+`func (o *Service) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetId
 
@@ -52,11 +152,31 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
 
-`func (o *Service) HasId() bool`
+### GetName
 
-HasId returns a boolean if a field has been set.
+`func (o *Service) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Service) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Service) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Service) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -107,131 +227,6 @@ SetType sets Type field to given value.
 `func (o *Service) HasType() bool`
 
 HasType returns a boolean if a field has been set.
-
-### GetBilling
-
-`func (o *Service) GetBilling() ServiceBilling`
-
-GetBilling returns the Billing field if non-nil, zero value otherwise.
-
-### GetBillingOk
-
-`func (o *Service) GetBillingOk() (*ServiceBilling, bool)`
-
-GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBilling
-
-`func (o *Service) SetBilling(v ServiceBilling)`
-
-SetBilling sets Billing field to given value.
-
-### HasBilling
-
-`func (o *Service) HasBilling() bool`
-
-HasBilling returns a boolean if a field has been set.
-
-### GetDisplay
-
-`func (o *Service) GetDisplay() ServiceDisplay`
-
-GetDisplay returns the Display field if non-nil, zero value otherwise.
-
-### GetDisplayOk
-
-`func (o *Service) GetDisplayOk() (*ServiceDisplay, bool)`
-
-GetDisplayOk returns a tuple with the Display field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplay
-
-`func (o *Service) SetDisplay(v ServiceDisplay)`
-
-SetDisplay sets Display field to given value.
-
-### HasDisplay
-
-`func (o *Service) HasDisplay() bool`
-
-HasDisplay returns a boolean if a field has been set.
-
-### GetData
-
-`func (o *Service) GetData() map[string]string`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *Service) GetDataOk() (*map[string]string, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *Service) SetData(v map[string]string)`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *Service) HasData() bool`
-
-HasData returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *Service) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Service) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Service) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Service) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetAvailableServices
-
-`func (o *Service) GetAvailableServices() []string`
-
-GetAvailableServices returns the AvailableServices field if non-nil, zero value otherwise.
-
-### GetAvailableServicesOk
-
-`func (o *Service) GetAvailableServicesOk() (*[]string, bool)`
-
-GetAvailableServicesOk returns a tuple with the AvailableServices field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAvailableServices
-
-`func (o *Service) SetAvailableServices(v []string)`
-
-SetAvailableServices sets AvailableServices field to given value.
-
-### HasAvailableServices
-
-`func (o *Service) HasAvailableServices() bool`
-
-HasAvailableServices returns a boolean if a field has been set.
 
 ### GetUri
 

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Street** | **string** |  | 
-**Zipcode** | Pointer to **string** |  | [optional] 
 **City** | **string** |  | 
 **Country** | **string** |  | 
+**Street** | **string** |  | 
+**Zipcode** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewInvoiceBuyerAddress
 
-`func NewInvoiceBuyerAddress(street string, city string, country string, ) *InvoiceBuyerAddress`
+`func NewInvoiceBuyerAddress(city string, country string, street string, ) *InvoiceBuyerAddress`
 
 NewInvoiceBuyerAddress instantiates a new InvoiceBuyerAddress object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +27,46 @@ will change when the set of required properties is changed
 NewInvoiceBuyerAddressWithDefaults instantiates a new InvoiceBuyerAddress object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCity
+
+`func (o *InvoiceBuyerAddress) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *InvoiceBuyerAddress) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *InvoiceBuyerAddress) SetCity(v string)`
+
+SetCity sets City field to given value.
+
+
+### GetCountry
+
+`func (o *InvoiceBuyerAddress) GetCountry() string`
+
+GetCountry returns the Country field if non-nil, zero value otherwise.
+
+### GetCountryOk
+
+`func (o *InvoiceBuyerAddress) GetCountryOk() (*string, bool)`
+
+GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountry
+
+`func (o *InvoiceBuyerAddress) SetCountry(v string)`
+
+SetCountry sets Country field to given value.
+
 
 ### GetStreet
 
@@ -72,46 +112,6 @@ SetZipcode sets Zipcode field to given value.
 `func (o *InvoiceBuyerAddress) HasZipcode() bool`
 
 HasZipcode returns a boolean if a field has been set.
-
-### GetCity
-
-`func (o *InvoiceBuyerAddress) GetCity() string`
-
-GetCity returns the City field if non-nil, zero value otherwise.
-
-### GetCityOk
-
-`func (o *InvoiceBuyerAddress) GetCityOk() (*string, bool)`
-
-GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCity
-
-`func (o *InvoiceBuyerAddress) SetCity(v string)`
-
-SetCity sets City field to given value.
-
-
-### GetCountry
-
-`func (o *InvoiceBuyerAddress) GetCountry() string`
-
-GetCountry returns the Country field if non-nil, zero value otherwise.
-
-### GetCountryOk
-
-`func (o *InvoiceBuyerAddress) GetCountryOk() (*string, bool)`
-
-GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCountry
-
-`func (o *InvoiceBuyerAddress) SetCountry(v string)`
-
-SetCountry sets Country field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -16,8 +16,8 @@ import (
 
 // InvoiceSeller struct for InvoiceSeller
 type InvoiceSeller struct {
-	Company string `json:"company"`
 	Address *InvoiceSellerAddress `json:"address,omitempty"`
+	Company string `json:"company"`
 	Nip string `json:"nip"`
 }
 
@@ -38,30 +38,6 @@ func NewInvoiceSeller(company string, nip string) *InvoiceSeller {
 func NewInvoiceSellerWithDefaults() *InvoiceSeller {
 	this := InvoiceSeller{}
 	return &this
-}
-
-// GetCompany returns the Company field value
-func (o *InvoiceSeller) GetCompany() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Company
-}
-
-// GetCompanyOk returns a tuple with the Company field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceSeller) GetCompanyOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Company, true
-}
-
-// SetCompany sets field value
-func (o *InvoiceSeller) SetCompany(v string) {
-	o.Company = v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -96,6 +72,30 @@ func (o *InvoiceSeller) SetAddress(v InvoiceSellerAddress) {
 	o.Address = &v
 }
 
+// GetCompany returns the Company field value
+func (o *InvoiceSeller) GetCompany() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value
+// and a boolean to check if the value has been set.
+func (o *InvoiceSeller) GetCompanyOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Company, true
+}
+
+// SetCompany sets field value
+func (o *InvoiceSeller) SetCompany(v string) {
+	o.Company = v
+}
+
 // GetNip returns the Nip field value
 func (o *InvoiceSeller) GetNip() string {
 	if o == nil {
@@ -122,11 +122,11 @@ func (o *InvoiceSeller) SetNip(v string) {
 
 func (o InvoiceSeller) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["company"] = o.Company
-	}
 	if o.Address != nil {
 		toSerialize["address"] = o.Address
+	}
+	if true {
+		toSerialize["company"] = o.Company
 	}
 	if true {
 		toSerialize["nip"] = o.Nip

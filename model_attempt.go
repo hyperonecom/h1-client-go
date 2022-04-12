@@ -17,13 +17,13 @@ import (
 
 // Attempt struct for Attempt
 type Attempt struct {
+	Agent *string `json:"agent,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
+	Error *bool `json:"error,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Status *float32 `json:"status,omitempty"`
-	Error *bool `json:"error,omitempty"`
-	Stdout *map[string]string `json:"stdout,omitempty"`
 	Stderr *map[string]string `json:"stderr,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	Agent *string `json:"agent,omitempty"`
+	Stdout *map[string]string `json:"stdout,omitempty"`
 }
 
 // NewAttempt instantiates a new Attempt object
@@ -45,6 +45,102 @@ func NewAttemptWithDefaults() *Attempt {
 	var error_ bool = false
 	this.Error = &error_
 	return &this
+}
+
+// GetAgent returns the Agent field value if set, zero value otherwise.
+func (o *Attempt) GetAgent() string {
+	if o == nil || o.Agent == nil {
+		var ret string
+		return ret
+	}
+	return *o.Agent
+}
+
+// GetAgentOk returns a tuple with the Agent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Attempt) GetAgentOk() (*string, bool) {
+	if o == nil || o.Agent == nil {
+		return nil, false
+	}
+	return o.Agent, true
+}
+
+// HasAgent returns a boolean if a field has been set.
+func (o *Attempt) HasAgent() bool {
+	if o != nil && o.Agent != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAgent gets a reference to the given string and assigns it to the Agent field.
+func (o *Attempt) SetAgent(v string) {
+	o.Agent = &v
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *Attempt) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Attempt) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *Attempt) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Attempt) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
+}
+
+// GetError returns the Error field value if set, zero value otherwise.
+func (o *Attempt) GetError() bool {
+	if o == nil || o.Error == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Error
+}
+
+// GetErrorOk returns a tuple with the Error field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Attempt) GetErrorOk() (*bool, bool) {
+	if o == nil || o.Error == nil {
+		return nil, false
+	}
+	return o.Error, true
+}
+
+// HasError returns a boolean if a field has been set.
+func (o *Attempt) HasError() bool {
+	if o != nil && o.Error != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetError gets a reference to the given bool and assigns it to the Error field.
+func (o *Attempt) SetError(v bool) {
+	o.Error = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -111,36 +207,36 @@ func (o *Attempt) SetStatus(v float32) {
 	o.Status = &v
 }
 
-// GetError returns the Error field value if set, zero value otherwise.
-func (o *Attempt) GetError() bool {
-	if o == nil || o.Error == nil {
-		var ret bool
+// GetStderr returns the Stderr field value if set, zero value otherwise.
+func (o *Attempt) GetStderr() map[string]string {
+	if o == nil || o.Stderr == nil {
+		var ret map[string]string
 		return ret
 	}
-	return *o.Error
+	return *o.Stderr
 }
 
-// GetErrorOk returns a tuple with the Error field value if set, nil otherwise
+// GetStderrOk returns a tuple with the Stderr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Attempt) GetErrorOk() (*bool, bool) {
-	if o == nil || o.Error == nil {
+func (o *Attempt) GetStderrOk() (*map[string]string, bool) {
+	if o == nil || o.Stderr == nil {
 		return nil, false
 	}
-	return o.Error, true
+	return o.Stderr, true
 }
 
-// HasError returns a boolean if a field has been set.
-func (o *Attempt) HasError() bool {
-	if o != nil && o.Error != nil {
+// HasStderr returns a boolean if a field has been set.
+func (o *Attempt) HasStderr() bool {
+	if o != nil && o.Stderr != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetError gets a reference to the given bool and assigns it to the Error field.
-func (o *Attempt) SetError(v bool) {
-	o.Error = &v
+// SetStderr gets a reference to the given map[string]string and assigns it to the Stderr field.
+func (o *Attempt) SetStderr(v map[string]string) {
+	o.Stderr = &v
 }
 
 // GetStdout returns the Stdout field value if set, zero value otherwise.
@@ -175,124 +271,28 @@ func (o *Attempt) SetStdout(v map[string]string) {
 	o.Stdout = &v
 }
 
-// GetStderr returns the Stderr field value if set, zero value otherwise.
-func (o *Attempt) GetStderr() map[string]string {
-	if o == nil || o.Stderr == nil {
-		var ret map[string]string
-		return ret
-	}
-	return *o.Stderr
-}
-
-// GetStderrOk returns a tuple with the Stderr field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Attempt) GetStderrOk() (*map[string]string, bool) {
-	if o == nil || o.Stderr == nil {
-		return nil, false
-	}
-	return o.Stderr, true
-}
-
-// HasStderr returns a boolean if a field has been set.
-func (o *Attempt) HasStderr() bool {
-	if o != nil && o.Stderr != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStderr gets a reference to the given map[string]string and assigns it to the Stderr field.
-func (o *Attempt) SetStderr(v map[string]string) {
-	o.Stderr = &v
-}
-
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Attempt) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Attempt) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *Attempt) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Attempt) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
-// GetAgent returns the Agent field value if set, zero value otherwise.
-func (o *Attempt) GetAgent() string {
-	if o == nil || o.Agent == nil {
-		var ret string
-		return ret
-	}
-	return *o.Agent
-}
-
-// GetAgentOk returns a tuple with the Agent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Attempt) GetAgentOk() (*string, bool) {
-	if o == nil || o.Agent == nil {
-		return nil, false
-	}
-	return o.Agent, true
-}
-
-// HasAgent returns a boolean if a field has been set.
-func (o *Attempt) HasAgent() bool {
-	if o != nil && o.Agent != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAgent gets a reference to the given string and assigns it to the Agent field.
-func (o *Attempt) SetAgent(v string) {
-	o.Agent = &v
-}
-
 func (o Attempt) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Agent != nil {
+		toSerialize["agent"] = o.Agent
+	}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
+	if o.Error != nil {
+		toSerialize["error"] = o.Error
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	if o.Error != nil {
-		toSerialize["error"] = o.Error
-	}
-	if o.Stdout != nil {
-		toSerialize["stdout"] = o.Stdout
-	}
 	if o.Stderr != nil {
 		toSerialize["stderr"] = o.Stderr
 	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
-	}
-	if o.Agent != nil {
-		toSerialize["agent"] = o.Agent
+	if o.Stdout != nil {
+		toSerialize["stdout"] = o.Stdout
 	}
 	return json.Marshal(toSerialize)
 }

@@ -1104,6 +1104,407 @@ func (a *StorageProjectDiskApiService) StorageProjectDiskListExecute(r ApiStorag
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiStorageProjectDiskMetricGetRequest struct {
+	ctx context.Context
+	ApiService *StorageProjectDiskApiService
+	projectId string
+	locationId string
+	diskId string
+	metricId string
+}
+
+
+func (r ApiStorageProjectDiskMetricGetRequest) Execute() (*Metric, *http.Response, error) {
+	return r.ApiService.StorageProjectDiskMetricGetExecute(r)
+}
+
+/*
+StorageProjectDiskMetricGet Get storage/disk.metric
+
+Get storage/disk.metric
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param projectId Project Id
+ @param locationId Location Id
+ @param diskId Disk Id
+ @param metricId metricId
+ @return ApiStorageProjectDiskMetricGetRequest
+*/
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricGet(ctx context.Context, projectId string, locationId string, diskId string, metricId string) ApiStorageProjectDiskMetricGetRequest {
+	return ApiStorageProjectDiskMetricGetRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		diskId: diskId,
+		metricId: metricId,
+	}
+}
+
+// Execute executes the request
+//  @return Metric
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricGetExecute(r ApiStorageProjectDiskMetricGetRequest) (*Metric, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Metric
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectDiskApiService.StorageProjectDiskMetricGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", url.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", url.PathEscape(parameterToString(r.diskId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"metricId"+"}", url.PathEscape(parameterToString(r.metricId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiStorageProjectDiskMetricListRequest struct {
+	ctx context.Context
+	ApiService *StorageProjectDiskApiService
+	projectId string
+	locationId string
+	diskId string
+}
+
+
+func (r ApiStorageProjectDiskMetricListRequest) Execute() ([]Metric, *http.Response, error) {
+	return r.ApiService.StorageProjectDiskMetricListExecute(r)
+}
+
+/*
+StorageProjectDiskMetricList List storage/disk.metric
+
+List storage/disk.metric
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param projectId Project Id
+ @param locationId Location Id
+ @param diskId Disk Id
+ @return ApiStorageProjectDiskMetricListRequest
+*/
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricList(ctx context.Context, projectId string, locationId string, diskId string) ApiStorageProjectDiskMetricListRequest {
+	return ApiStorageProjectDiskMetricListRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		diskId: diskId,
+	}
+}
+
+// Execute executes the request
+//  @return []Metric
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricListExecute(r ApiStorageProjectDiskMetricListRequest) ([]Metric, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []Metric
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectDiskApiService.StorageProjectDiskMetricList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/storage/{locationId}/project/{projectId}/disk/{diskId}/metric"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", url.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", url.PathEscape(parameterToString(r.diskId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiStorageProjectDiskMetricSeriesListRequest struct {
+	ctx context.Context
+	ApiService *StorageProjectDiskApiService
+	projectId string
+	locationId string
+	diskId string
+	metricId string
+	interval *string
+	timespan *string
+	aligner *string
+}
+
+// interval
+func (r ApiStorageProjectDiskMetricSeriesListRequest) Interval(interval string) ApiStorageProjectDiskMetricSeriesListRequest {
+	r.interval = &interval
+	return r
+}
+// timespan
+func (r ApiStorageProjectDiskMetricSeriesListRequest) Timespan(timespan string) ApiStorageProjectDiskMetricSeriesListRequest {
+	r.timespan = &timespan
+	return r
+}
+// aligner
+func (r ApiStorageProjectDiskMetricSeriesListRequest) Aligner(aligner string) ApiStorageProjectDiskMetricSeriesListRequest {
+	r.aligner = &aligner
+	return r
+}
+
+func (r ApiStorageProjectDiskMetricSeriesListRequest) Execute() ([]Point, *http.Response, error) {
+	return r.ApiService.StorageProjectDiskMetricSeriesListExecute(r)
+}
+
+/*
+StorageProjectDiskMetricSeriesList List storage/disk.series
+
+List storage/disk.series
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param projectId Project Id
+ @param locationId Location Id
+ @param diskId Disk Id
+ @param metricId metricId
+ @return ApiStorageProjectDiskMetricSeriesListRequest
+*/
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricSeriesList(ctx context.Context, projectId string, locationId string, diskId string, metricId string) ApiStorageProjectDiskMetricSeriesListRequest {
+	return ApiStorageProjectDiskMetricSeriesListRequest{
+		ApiService: a,
+		ctx: ctx,
+		projectId: projectId,
+		locationId: locationId,
+		diskId: diskId,
+		metricId: metricId,
+	}
+}
+
+// Execute executes the request
+//  @return []Point
+func (a *StorageProjectDiskApiService) StorageProjectDiskMetricSeriesListExecute(r ApiStorageProjectDiskMetricSeriesListRequest) ([]Point, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []Point
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectDiskApiService.StorageProjectDiskMetricSeriesList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/series"
+	localVarPath = strings.Replace(localVarPath, "{"+"projectId"+"}", url.PathEscape(parameterToString(r.projectId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"locationId"+"}", url.PathEscape(parameterToString(r.locationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"diskId"+"}", url.PathEscape(parameterToString(r.diskId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"metricId"+"}", url.PathEscape(parameterToString(r.metricId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.interval != nil {
+		localVarQueryParams.Add("interval", parameterToString(*r.interval, ""))
+	}
+	if r.timespan != nil {
+		localVarQueryParams.Add("timespan", parameterToString(*r.timespan, ""))
+	}
+	if r.aligner != nil {
+		localVarQueryParams.Add("aligner", parameterToString(*r.aligner, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiStorageProjectDiskResizeRequest struct {
 	ctx context.Context
 	ApiService *StorageProjectDiskApiService

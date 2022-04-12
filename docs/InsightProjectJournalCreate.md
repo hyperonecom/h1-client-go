@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Service** | Pointer to **string** |  | [optional] [default to "5c9cc2d0255c16c3e899a4ea"]
 **Retention** | Pointer to **float32** |  | [optional] 
+**Service** | Pointer to **string** |  | [optional] [default to "5c9cc2d0255c16c3e899a4ea"]
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -48,31 +48,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetService
-
-`func (o *InsightProjectJournalCreate) GetService() string`
-
-GetService returns the Service field if non-nil, zero value otherwise.
-
-### GetServiceOk
-
-`func (o *InsightProjectJournalCreate) GetServiceOk() (*string, bool)`
-
-GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetService
-
-`func (o *InsightProjectJournalCreate) SetService(v string)`
-
-SetService sets Service field to given value.
-
-### HasService
-
-`func (o *InsightProjectJournalCreate) HasService() bool`
-
-HasService returns a boolean if a field has been set.
-
 ### GetRetention
 
 `func (o *InsightProjectJournalCreate) GetRetention() float32`
@@ -97,6 +72,31 @@ SetRetention sets Retention field to given value.
 `func (o *InsightProjectJournalCreate) HasRetention() bool`
 
 HasRetention returns a boolean if a field has been set.
+
+### GetService
+
+`func (o *InsightProjectJournalCreate) GetService() string`
+
+GetService returns the Service field if non-nil, zero value otherwise.
+
+### GetServiceOk
+
+`func (o *InsightProjectJournalCreate) GetServiceOk() (*string, bool)`
+
+GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetService
+
+`func (o *InsightProjectJournalCreate) SetService(v string)`
+
+SetService sets Service field to given value.
+
+### HasService
+
+`func (o *InsightProjectJournalCreate) HasService() bool`
+
+HasService returns a boolean if a field has been set.
 
 ### GetTag
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | Pointer to **string** |  | [optional] 
-**Company** | Pointer to **string** |  | [optional] 
-**Email** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to [**InvoiceSellerAddress**](InvoiceSellerAddress.md) |  | [optional] 
+**Company** | Pointer to **string** |  | [optional] 
+**Currency** | Pointer to **string** |  | [optional] 
+**Email** | Pointer to **string** |  | [optional] 
 **Nip** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -29,30 +29,30 @@ NewOrganisationBillingWithDefaults instantiates a new OrganisationBilling object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCurrency
+### GetAddress
 
-`func (o *OrganisationBilling) GetCurrency() string`
+`func (o *OrganisationBilling) GetAddress() InvoiceSellerAddress`
 
-GetCurrency returns the Currency field if non-nil, zero value otherwise.
+GetAddress returns the Address field if non-nil, zero value otherwise.
 
-### GetCurrencyOk
+### GetAddressOk
 
-`func (o *OrganisationBilling) GetCurrencyOk() (*string, bool)`
+`func (o *OrganisationBilling) GetAddressOk() (*InvoiceSellerAddress, bool)`
 
-GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCurrency
+### SetAddress
 
-`func (o *OrganisationBilling) SetCurrency(v string)`
+`func (o *OrganisationBilling) SetAddress(v InvoiceSellerAddress)`
 
-SetCurrency sets Currency field to given value.
+SetAddress sets Address field to given value.
 
-### HasCurrency
+### HasAddress
 
-`func (o *OrganisationBilling) HasCurrency() bool`
+`func (o *OrganisationBilling) HasAddress() bool`
 
-HasCurrency returns a boolean if a field has been set.
+HasAddress returns a boolean if a field has been set.
 
 ### GetCompany
 
@@ -79,6 +79,31 @@ SetCompany sets Company field to given value.
 
 HasCompany returns a boolean if a field has been set.
 
+### GetCurrency
+
+`func (o *OrganisationBilling) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *OrganisationBilling) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *OrganisationBilling) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *OrganisationBilling) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
+
 ### GetEmail
 
 `func (o *OrganisationBilling) GetEmail() string`
@@ -103,31 +128,6 @@ SetEmail sets Email field to given value.
 `func (o *OrganisationBilling) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
-
-### GetAddress
-
-`func (o *OrganisationBilling) GetAddress() InvoiceSellerAddress`
-
-GetAddress returns the Address field if non-nil, zero value otherwise.
-
-### GetAddressOk
-
-`func (o *OrganisationBilling) GetAddressOk() (*InvoiceSellerAddress, bool)`
-
-GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAddress
-
-`func (o *OrganisationBilling) SetAddress(v InvoiceSellerAddress)`
-
-SetAddress sets Address field to given value.
-
-### HasAddress
-
-`func (o *OrganisationBilling) HasAddress() bool`
-
-HasAddress returns a boolean if a field has been set.
 
 ### GetNip
 

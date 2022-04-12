@@ -17,13 +17,13 @@ import (
 
 // AuthToken struct for AuthToken
 type AuthToken struct {
-	Id *string `json:"id,omitempty"`
-	Expiry *time.Time `json:"expiry,omitempty"`
+	Access []AuthTokenAccess `json:"access,omitempty"`
+	ClientIp *string `json:"clientIp,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	Access []AuthTokenAccess `json:"access,omitempty"`
+	Expiry *time.Time `json:"expiry,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	ClientIp *string `json:"clientIp,omitempty"`
 	UserAgent *string `json:"userAgent,omitempty"`
 }
 
@@ -44,68 +44,68 @@ func NewAuthTokenWithDefaults() *AuthToken {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AuthToken) GetId() string {
-	if o == nil || o.Id == nil {
+// GetAccess returns the Access field value if set, zero value otherwise.
+func (o *AuthToken) GetAccess() []AuthTokenAccess {
+	if o == nil || o.Access == nil {
+		var ret []AuthTokenAccess
+		return ret
+	}
+	return o.Access
+}
+
+// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthToken) GetAccessOk() ([]AuthTokenAccess, bool) {
+	if o == nil || o.Access == nil {
+		return nil, false
+	}
+	return o.Access, true
+}
+
+// HasAccess returns a boolean if a field has been set.
+func (o *AuthToken) HasAccess() bool {
+	if o != nil && o.Access != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAccess gets a reference to the given []AuthTokenAccess and assigns it to the Access field.
+func (o *AuthToken) SetAccess(v []AuthTokenAccess) {
+	o.Access = v
+}
+
+// GetClientIp returns the ClientIp field value if set, zero value otherwise.
+func (o *AuthToken) GetClientIp() string {
+	if o == nil || o.ClientIp == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.ClientIp
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetClientIpOk returns a tuple with the ClientIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthToken) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *AuthToken) GetClientIpOk() (*string, bool) {
+	if o == nil || o.ClientIp == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.ClientIp, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AuthToken) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasClientIp returns a boolean if a field has been set.
+func (o *AuthToken) HasClientIp() bool {
+	if o != nil && o.ClientIp != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AuthToken) SetId(v string) {
-	o.Id = &v
-}
-
-// GetExpiry returns the Expiry field value if set, zero value otherwise.
-func (o *AuthToken) GetExpiry() time.Time {
-	if o == nil || o.Expiry == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.Expiry
-}
-
-// GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthToken) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || o.Expiry == nil {
-		return nil, false
-	}
-	return o.Expiry, true
-}
-
-// HasExpiry returns a boolean if a field has been set.
-func (o *AuthToken) HasExpiry() bool {
-	if o != nil && o.Expiry != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetExpiry gets a reference to the given time.Time and assigns it to the Expiry field.
-func (o *AuthToken) SetExpiry(v time.Time) {
-	o.Expiry = &v
+// SetClientIp gets a reference to the given string and assigns it to the ClientIp field.
+func (o *AuthToken) SetClientIp(v string) {
+	o.ClientIp = &v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -172,36 +172,68 @@ func (o *AuthToken) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
-// GetAccess returns the Access field value if set, zero value otherwise.
-func (o *AuthToken) GetAccess() []AuthTokenAccess {
-	if o == nil || o.Access == nil {
-		var ret []AuthTokenAccess
+// GetExpiry returns the Expiry field value if set, zero value otherwise.
+func (o *AuthToken) GetExpiry() time.Time {
+	if o == nil || o.Expiry == nil {
+		var ret time.Time
 		return ret
 	}
-	return o.Access
+	return *o.Expiry
 }
 
-// GetAccessOk returns a tuple with the Access field value if set, nil otherwise
+// GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthToken) GetAccessOk() ([]AuthTokenAccess, bool) {
-	if o == nil || o.Access == nil {
+func (o *AuthToken) GetExpiryOk() (*time.Time, bool) {
+	if o == nil || o.Expiry == nil {
 		return nil, false
 	}
-	return o.Access, true
+	return o.Expiry, true
 }
 
-// HasAccess returns a boolean if a field has been set.
-func (o *AuthToken) HasAccess() bool {
-	if o != nil && o.Access != nil {
+// HasExpiry returns a boolean if a field has been set.
+func (o *AuthToken) HasExpiry() bool {
+	if o != nil && o.Expiry != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAccess gets a reference to the given []AuthTokenAccess and assigns it to the Access field.
-func (o *AuthToken) SetAccess(v []AuthTokenAccess) {
-	o.Access = v
+// SetExpiry gets a reference to the given time.Time and assigns it to the Expiry field.
+func (o *AuthToken) SetExpiry(v time.Time) {
+	o.Expiry = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AuthToken) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthToken) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *AuthToken) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AuthToken) SetId(v string) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -234,38 +266,6 @@ func (o *AuthToken) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AuthToken) SetName(v string) {
 	o.Name = &v
-}
-
-// GetClientIp returns the ClientIp field value if set, zero value otherwise.
-func (o *AuthToken) GetClientIp() string {
-	if o == nil || o.ClientIp == nil {
-		var ret string
-		return ret
-	}
-	return *o.ClientIp
-}
-
-// GetClientIpOk returns a tuple with the ClientIp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthToken) GetClientIpOk() (*string, bool) {
-	if o == nil || o.ClientIp == nil {
-		return nil, false
-	}
-	return o.ClientIp, true
-}
-
-// HasClientIp returns a boolean if a field has been set.
-func (o *AuthToken) HasClientIp() bool {
-	if o != nil && o.ClientIp != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetClientIp gets a reference to the given string and assigns it to the ClientIp field.
-func (o *AuthToken) SetClientIp(v string) {
-	o.ClientIp = &v
 }
 
 // GetUserAgent returns the UserAgent field value if set, zero value otherwise.
@@ -302,11 +302,11 @@ func (o *AuthToken) SetUserAgent(v string) {
 
 func (o AuthToken) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
+	if o.Access != nil {
+		toSerialize["access"] = o.Access
 	}
-	if o.Expiry != nil {
-		toSerialize["expiry"] = o.Expiry
+	if o.ClientIp != nil {
+		toSerialize["clientIp"] = o.ClientIp
 	}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
@@ -314,14 +314,14 @@ func (o AuthToken) MarshalJSON() ([]byte, error) {
 	if o.CreatedOn != nil {
 		toSerialize["createdOn"] = o.CreatedOn
 	}
-	if o.Access != nil {
-		toSerialize["access"] = o.Access
+	if o.Expiry != nil {
+		toSerialize["expiry"] = o.Expiry
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.ClientIp != nil {
-		toSerialize["clientIp"] = o.ClientIp
 	}
 	if o.UserAgent != nil {
 		toSerialize["userAgent"] = o.UserAgent

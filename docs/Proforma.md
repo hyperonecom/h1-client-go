@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Array** | Pointer to [**ProformaArray**](ProformaArray.md) |  | [optional] 
+**Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **InvoiceNo** | Pointer to **string** |  | [optional] 
-**Seller** | Pointer to [**ProformaSeller**](ProformaSeller.md) |  | [optional] 
-**Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
 **IssueDate** | Pointer to **time.Time** |  | [optional] 
 **Items** | Pointer to [**[]InvoiceItems**](InvoiceItems.md) |  | [optional] 
-**Summary** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
+**Seller** | Pointer to [**ProformaSeller**](ProformaSeller.md) |  | [optional] 
+**Summary** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
-**Array** | Pointer to [**ProformaArray**](ProformaArray.md) |  | [optional] 
 
 ## Methods
 
@@ -33,6 +33,56 @@ will change when the set of required properties is changed
 NewProformaWithDefaults instantiates a new Proforma object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetArray
+
+`func (o *Proforma) GetArray() ProformaArray`
+
+GetArray returns the Array field if non-nil, zero value otherwise.
+
+### GetArrayOk
+
+`func (o *Proforma) GetArrayOk() (*ProformaArray, bool)`
+
+GetArrayOk returns a tuple with the Array field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArray
+
+`func (o *Proforma) SetArray(v ProformaArray)`
+
+SetArray sets Array field to given value.
+
+### HasArray
+
+`func (o *Proforma) HasArray() bool`
+
+HasArray returns a boolean if a field has been set.
+
+### GetBuyer
+
+`func (o *Proforma) GetBuyer() InvoiceBuyer`
+
+GetBuyer returns the Buyer field if non-nil, zero value otherwise.
+
+### GetBuyerOk
+
+`func (o *Proforma) GetBuyerOk() (*InvoiceBuyer, bool)`
+
+GetBuyerOk returns a tuple with the Buyer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuyer
+
+`func (o *Proforma) SetBuyer(v InvoiceBuyer)`
+
+SetBuyer sets Buyer field to given value.
+
+### HasBuyer
+
+`func (o *Proforma) HasBuyer() bool`
+
+HasBuyer returns a boolean if a field has been set.
 
 ### GetId
 
@@ -84,56 +134,6 @@ SetInvoiceNo sets InvoiceNo field to given value.
 
 HasInvoiceNo returns a boolean if a field has been set.
 
-### GetSeller
-
-`func (o *Proforma) GetSeller() ProformaSeller`
-
-GetSeller returns the Seller field if non-nil, zero value otherwise.
-
-### GetSellerOk
-
-`func (o *Proforma) GetSellerOk() (*ProformaSeller, bool)`
-
-GetSellerOk returns a tuple with the Seller field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeller
-
-`func (o *Proforma) SetSeller(v ProformaSeller)`
-
-SetSeller sets Seller field to given value.
-
-### HasSeller
-
-`func (o *Proforma) HasSeller() bool`
-
-HasSeller returns a boolean if a field has been set.
-
-### GetBuyer
-
-`func (o *Proforma) GetBuyer() InvoiceBuyer`
-
-GetBuyer returns the Buyer field if non-nil, zero value otherwise.
-
-### GetBuyerOk
-
-`func (o *Proforma) GetBuyerOk() (*InvoiceBuyer, bool)`
-
-GetBuyerOk returns a tuple with the Buyer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBuyer
-
-`func (o *Proforma) SetBuyer(v InvoiceBuyer)`
-
-SetBuyer sets Buyer field to given value.
-
-### HasBuyer
-
-`func (o *Proforma) HasBuyer() bool`
-
-HasBuyer returns a boolean if a field has been set.
-
 ### GetIssueDate
 
 `func (o *Proforma) GetIssueDate() time.Time`
@@ -184,31 +184,6 @@ SetItems sets Items field to given value.
 
 HasItems returns a boolean if a field has been set.
 
-### GetSummary
-
-`func (o *Proforma) GetSummary() string`
-
-GetSummary returns the Summary field if non-nil, zero value otherwise.
-
-### GetSummaryOk
-
-`func (o *Proforma) GetSummaryOk() (*string, bool)`
-
-GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSummary
-
-`func (o *Proforma) SetSummary(v string)`
-
-SetSummary sets Summary field to given value.
-
-### HasSummary
-
-`func (o *Proforma) HasSummary() bool`
-
-HasSummary returns a boolean if a field has been set.
-
 ### GetProject
 
 `func (o *Proforma) GetProject() string`
@@ -234,6 +209,56 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
+### GetSeller
+
+`func (o *Proforma) GetSeller() ProformaSeller`
+
+GetSeller returns the Seller field if non-nil, zero value otherwise.
+
+### GetSellerOk
+
+`func (o *Proforma) GetSellerOk() (*ProformaSeller, bool)`
+
+GetSellerOk returns a tuple with the Seller field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeller
+
+`func (o *Proforma) SetSeller(v ProformaSeller)`
+
+SetSeller sets Seller field to given value.
+
+### HasSeller
+
+`func (o *Proforma) HasSeller() bool`
+
+HasSeller returns a boolean if a field has been set.
+
+### GetSummary
+
+`func (o *Proforma) GetSummary() string`
+
+GetSummary returns the Summary field if non-nil, zero value otherwise.
+
+### GetSummaryOk
+
+`func (o *Proforma) GetSummaryOk() (*string, bool)`
+
+GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSummary
+
+`func (o *Proforma) SetSummary(v string)`
+
+SetSummary sets Summary field to given value.
+
+### HasSummary
+
+`func (o *Proforma) HasSummary() bool`
+
+HasSummary returns a boolean if a field has been set.
+
 ### GetUri
 
 `func (o *Proforma) GetUri() string`
@@ -258,31 +283,6 @@ SetUri sets Uri field to given value.
 `func (o *Proforma) HasUri() bool`
 
 HasUri returns a boolean if a field has been set.
-
-### GetArray
-
-`func (o *Proforma) GetArray() ProformaArray`
-
-GetArray returns the Array field if non-nil, zero value otherwise.
-
-### GetArrayOk
-
-`func (o *Proforma) GetArrayOk() (*ProformaArray, bool)`
-
-GetArrayOk returns a tuple with the Array field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArray
-
-`func (o *Proforma) SetArray(v ProformaArray)`
-
-SetArray sets Array field to given value.
-
-### HasArray
-
-`func (o *Proforma) HasArray() bool`
-
-HasArray returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -16,10 +16,10 @@ import (
 
 // IamProjectRoleCreate struct for IamProjectRoleCreate
 type IamProjectRoleCreate struct {
-	Name string `json:"name"`
-	Service *string `json:"service,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Name string `json:"name"`
 	Permission []IamPermission `json:"permission,omitempty"`
+	Service *string `json:"service,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -43,62 +43,6 @@ func NewIamProjectRoleCreateWithDefaults() *IamProjectRoleCreate {
 	var service string = "5e679c282b39c4353cd86f34"
 	this.Service = &service
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *IamProjectRoleCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectRoleCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *IamProjectRoleCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetService returns the Service field value if set, zero value otherwise.
-func (o *IamProjectRoleCreate) GetService() string {
-	if o == nil || o.Service == nil {
-		var ret string
-		return ret
-	}
-	return *o.Service
-}
-
-// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IamProjectRoleCreate) GetServiceOk() (*string, bool) {
-	if o == nil || o.Service == nil {
-		return nil, false
-	}
-	return o.Service, true
-}
-
-// HasService returns a boolean if a field has been set.
-func (o *IamProjectRoleCreate) HasService() bool {
-	if o != nil && o.Service != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetService gets a reference to the given string and assigns it to the Service field.
-func (o *IamProjectRoleCreate) SetService(v string) {
-	o.Service = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -133,6 +77,30 @@ func (o *IamProjectRoleCreate) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetName returns the Name field value
+func (o *IamProjectRoleCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectRoleCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *IamProjectRoleCreate) SetName(v string) {
+	o.Name = v
+}
+
 // GetPermission returns the Permission field value if set, zero value otherwise.
 func (o *IamProjectRoleCreate) GetPermission() []IamPermission {
 	if o == nil || o.Permission == nil {
@@ -163,6 +131,38 @@ func (o *IamProjectRoleCreate) HasPermission() bool {
 // SetPermission gets a reference to the given []IamPermission and assigns it to the Permission field.
 func (o *IamProjectRoleCreate) SetPermission(v []IamPermission) {
 	o.Permission = v
+}
+
+// GetService returns the Service field value if set, zero value otherwise.
+func (o *IamProjectRoleCreate) GetService() string {
+	if o == nil || o.Service == nil {
+		var ret string
+		return ret
+	}
+	return *o.Service
+}
+
+// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IamProjectRoleCreate) GetServiceOk() (*string, bool) {
+	if o == nil || o.Service == nil {
+		return nil, false
+	}
+	return o.Service, true
+}
+
+// HasService returns a boolean if a field has been set.
+func (o *IamProjectRoleCreate) HasService() bool {
+	if o != nil && o.Service != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetService gets a reference to the given string and assigns it to the Service field.
+func (o *IamProjectRoleCreate) SetService(v string) {
+	o.Service = &v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -199,17 +199,17 @@ func (o *IamProjectRoleCreate) SetTag(v []Tag) {
 
 func (o IamProjectRoleCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if o.Service != nil {
-		toSerialize["service"] = o.Service
-	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
+	if true {
+		toSerialize["name"] = o.Name
+	}
 	if o.Permission != nil {
 		toSerialize["permission"] = o.Permission
+	}
+	if o.Service != nil {
+		toSerialize["service"] = o.Service
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

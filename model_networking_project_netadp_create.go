@@ -16,21 +16,21 @@ import (
 
 // NetworkingProjectNetadpCreate struct for NetworkingProjectNetadpCreate
 type NetworkingProjectNetadpCreate struct {
-	Vm string `json:"vm"`
-	Network string `json:"network"`
 	Firewall *string `json:"firewall,omitempty"`
 	Ip []string `json:"ip,omitempty"`
+	Network string `json:"network"`
 	Tag []Tag `json:"tag,omitempty"`
+	Vm string `json:"vm"`
 }
 
 // NewNetworkingProjectNetadpCreate instantiates a new NetworkingProjectNetadpCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingProjectNetadpCreate(vm string, network string) *NetworkingProjectNetadpCreate {
+func NewNetworkingProjectNetadpCreate(network string, vm string) *NetworkingProjectNetadpCreate {
 	this := NetworkingProjectNetadpCreate{}
-	this.Vm = vm
 	this.Network = network
+	this.Vm = vm
 	return &this
 }
 
@@ -40,54 +40,6 @@ func NewNetworkingProjectNetadpCreate(vm string, network string) *NetworkingProj
 func NewNetworkingProjectNetadpCreateWithDefaults() *NetworkingProjectNetadpCreate {
 	this := NetworkingProjectNetadpCreate{}
 	return &this
-}
-
-// GetVm returns the Vm field value
-func (o *NetworkingProjectNetadpCreate) GetVm() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Vm
-}
-
-// GetVmOk returns a tuple with the Vm field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectNetadpCreate) GetVmOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Vm, true
-}
-
-// SetVm sets field value
-func (o *NetworkingProjectNetadpCreate) SetVm(v string) {
-	o.Vm = v
-}
-
-// GetNetwork returns the Network field value
-func (o *NetworkingProjectNetadpCreate) GetNetwork() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectNetadpCreate) GetNetworkOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Network, true
-}
-
-// SetNetwork sets field value
-func (o *NetworkingProjectNetadpCreate) SetNetwork(v string) {
-	o.Network = v
 }
 
 // GetFirewall returns the Firewall field value if set, zero value otherwise.
@@ -154,6 +106,30 @@ func (o *NetworkingProjectNetadpCreate) SetIp(v []string) {
 	o.Ip = v
 }
 
+// GetNetwork returns the Network field value
+func (o *NetworkingProjectNetadpCreate) GetNetwork() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Network
+}
+
+// GetNetworkOk returns a tuple with the Network field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectNetadpCreate) GetNetworkOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Network, true
+}
+
+// SetNetwork sets field value
+func (o *NetworkingProjectNetadpCreate) SetNetwork(v string) {
+	o.Network = v
+}
+
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *NetworkingProjectNetadpCreate) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -186,22 +162,46 @@ func (o *NetworkingProjectNetadpCreate) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetVm returns the Vm field value
+func (o *NetworkingProjectNetadpCreate) GetVm() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Vm
+}
+
+// GetVmOk returns a tuple with the Vm field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectNetadpCreate) GetVmOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Vm, true
+}
+
+// SetVm sets field value
+func (o *NetworkingProjectNetadpCreate) SetVm(v string) {
+	o.Vm = v
+}
+
 func (o NetworkingProjectNetadpCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["vm"] = o.Vm
-	}
-	if true {
-		toSerialize["network"] = o.Network
-	}
 	if o.Firewall != nil {
 		toSerialize["firewall"] = o.Firewall
 	}
 	if o.Ip != nil {
 		toSerialize["ip"] = o.Ip
 	}
+	if true {
+		toSerialize["network"] = o.Network
+	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if true {
+		toSerialize["vm"] = o.Vm
 	}
 	return json.Marshal(toSerialize)
 }

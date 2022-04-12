@@ -16,12 +16,12 @@ import (
 
 // Hdd struct for Hdd
 type Hdd struct {
-	MaximumIOPS *float32 `json:"maximumIOPS,omitempty"`
-	ControllerType *string `json:"controllerType,omitempty"`
-	ControllerNumber *string `json:"controllerNumber,omitempty"`
 	ControllerLocation *float32 `json:"controllerLocation,omitempty"`
+	ControllerNumber *string `json:"controllerNumber,omitempty"`
+	ControllerType *string `json:"controllerType,omitempty"`
 	Disk *string `json:"disk,omitempty"`
 	Id *string `json:"id,omitempty"`
+	MaximumIOPS *float32 `json:"maximumIOPS,omitempty"`
 }
 
 // NewHdd instantiates a new Hdd object
@@ -41,68 +41,36 @@ func NewHddWithDefaults() *Hdd {
 	return &this
 }
 
-// GetMaximumIOPS returns the MaximumIOPS field value if set, zero value otherwise.
-func (o *Hdd) GetMaximumIOPS() float32 {
-	if o == nil || o.MaximumIOPS == nil {
+// GetControllerLocation returns the ControllerLocation field value if set, zero value otherwise.
+func (o *Hdd) GetControllerLocation() float32 {
+	if o == nil || o.ControllerLocation == nil {
 		var ret float32
 		return ret
 	}
-	return *o.MaximumIOPS
+	return *o.ControllerLocation
 }
 
-// GetMaximumIOPSOk returns a tuple with the MaximumIOPS field value if set, nil otherwise
+// GetControllerLocationOk returns a tuple with the ControllerLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Hdd) GetMaximumIOPSOk() (*float32, bool) {
-	if o == nil || o.MaximumIOPS == nil {
+func (o *Hdd) GetControllerLocationOk() (*float32, bool) {
+	if o == nil || o.ControllerLocation == nil {
 		return nil, false
 	}
-	return o.MaximumIOPS, true
+	return o.ControllerLocation, true
 }
 
-// HasMaximumIOPS returns a boolean if a field has been set.
-func (o *Hdd) HasMaximumIOPS() bool {
-	if o != nil && o.MaximumIOPS != nil {
+// HasControllerLocation returns a boolean if a field has been set.
+func (o *Hdd) HasControllerLocation() bool {
+	if o != nil && o.ControllerLocation != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMaximumIOPS gets a reference to the given float32 and assigns it to the MaximumIOPS field.
-func (o *Hdd) SetMaximumIOPS(v float32) {
-	o.MaximumIOPS = &v
-}
-
-// GetControllerType returns the ControllerType field value if set, zero value otherwise.
-func (o *Hdd) GetControllerType() string {
-	if o == nil || o.ControllerType == nil {
-		var ret string
-		return ret
-	}
-	return *o.ControllerType
-}
-
-// GetControllerTypeOk returns a tuple with the ControllerType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Hdd) GetControllerTypeOk() (*string, bool) {
-	if o == nil || o.ControllerType == nil {
-		return nil, false
-	}
-	return o.ControllerType, true
-}
-
-// HasControllerType returns a boolean if a field has been set.
-func (o *Hdd) HasControllerType() bool {
-	if o != nil && o.ControllerType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetControllerType gets a reference to the given string and assigns it to the ControllerType field.
-func (o *Hdd) SetControllerType(v string) {
-	o.ControllerType = &v
+// SetControllerLocation gets a reference to the given float32 and assigns it to the ControllerLocation field.
+func (o *Hdd) SetControllerLocation(v float32) {
+	o.ControllerLocation = &v
 }
 
 // GetControllerNumber returns the ControllerNumber field value if set, zero value otherwise.
@@ -137,36 +105,36 @@ func (o *Hdd) SetControllerNumber(v string) {
 	o.ControllerNumber = &v
 }
 
-// GetControllerLocation returns the ControllerLocation field value if set, zero value otherwise.
-func (o *Hdd) GetControllerLocation() float32 {
-	if o == nil || o.ControllerLocation == nil {
-		var ret float32
+// GetControllerType returns the ControllerType field value if set, zero value otherwise.
+func (o *Hdd) GetControllerType() string {
+	if o == nil || o.ControllerType == nil {
+		var ret string
 		return ret
 	}
-	return *o.ControllerLocation
+	return *o.ControllerType
 }
 
-// GetControllerLocationOk returns a tuple with the ControllerLocation field value if set, nil otherwise
+// GetControllerTypeOk returns a tuple with the ControllerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Hdd) GetControllerLocationOk() (*float32, bool) {
-	if o == nil || o.ControllerLocation == nil {
+func (o *Hdd) GetControllerTypeOk() (*string, bool) {
+	if o == nil || o.ControllerType == nil {
 		return nil, false
 	}
-	return o.ControllerLocation, true
+	return o.ControllerType, true
 }
 
-// HasControllerLocation returns a boolean if a field has been set.
-func (o *Hdd) HasControllerLocation() bool {
-	if o != nil && o.ControllerLocation != nil {
+// HasControllerType returns a boolean if a field has been set.
+func (o *Hdd) HasControllerType() bool {
+	if o != nil && o.ControllerType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetControllerLocation gets a reference to the given float32 and assigns it to the ControllerLocation field.
-func (o *Hdd) SetControllerLocation(v float32) {
-	o.ControllerLocation = &v
+// SetControllerType gets a reference to the given string and assigns it to the ControllerType field.
+func (o *Hdd) SetControllerType(v string) {
+	o.ControllerType = &v
 }
 
 // GetDisk returns the Disk field value if set, zero value otherwise.
@@ -233,25 +201,57 @@ func (o *Hdd) SetId(v string) {
 	o.Id = &v
 }
 
+// GetMaximumIOPS returns the MaximumIOPS field value if set, zero value otherwise.
+func (o *Hdd) GetMaximumIOPS() float32 {
+	if o == nil || o.MaximumIOPS == nil {
+		var ret float32
+		return ret
+	}
+	return *o.MaximumIOPS
+}
+
+// GetMaximumIOPSOk returns a tuple with the MaximumIOPS field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Hdd) GetMaximumIOPSOk() (*float32, bool) {
+	if o == nil || o.MaximumIOPS == nil {
+		return nil, false
+	}
+	return o.MaximumIOPS, true
+}
+
+// HasMaximumIOPS returns a boolean if a field has been set.
+func (o *Hdd) HasMaximumIOPS() bool {
+	if o != nil && o.MaximumIOPS != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaximumIOPS gets a reference to the given float32 and assigns it to the MaximumIOPS field.
+func (o *Hdd) SetMaximumIOPS(v float32) {
+	o.MaximumIOPS = &v
+}
+
 func (o Hdd) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MaximumIOPS != nil {
-		toSerialize["maximumIOPS"] = o.MaximumIOPS
-	}
-	if o.ControllerType != nil {
-		toSerialize["controllerType"] = o.ControllerType
+	if o.ControllerLocation != nil {
+		toSerialize["controllerLocation"] = o.ControllerLocation
 	}
 	if o.ControllerNumber != nil {
 		toSerialize["controllerNumber"] = o.ControllerNumber
 	}
-	if o.ControllerLocation != nil {
-		toSerialize["controllerLocation"] = o.ControllerLocation
+	if o.ControllerType != nil {
+		toSerialize["controllerType"] = o.ControllerType
 	}
 	if o.Disk != nil {
 		toSerialize["disk"] = o.Disk
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.MaximumIOPS != nil {
+		toSerialize["maximumIOPS"] = o.MaximumIOPS
 	}
 	return json.Marshal(toSerialize)
 }

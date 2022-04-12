@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** | use &#39;@&#39; to reference the zone origin | [optional] [default to "@"]
-**Type** | **string** |  | 
-**Ttl** | Pointer to **float32** |  | [optional] [default to 3600]
 **Record** | Pointer to [**[]DnsRecord**](DnsRecord.md) |  | [optional] 
+**Ttl** | Pointer to **float32** |  | [optional] [default to 3600]
+**Type** | **string** |  | 
 
 ## Methods
 
@@ -79,25 +79,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetType
+### GetRecord
 
-`func (o *DnsRecordset) GetType() string`
+`func (o *DnsRecordset) GetRecord() []DnsRecord`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetRecord returns the Record field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetRecordOk
 
-`func (o *DnsRecordset) GetTypeOk() (*string, bool)`
+`func (o *DnsRecordset) GetRecordOk() (*[]DnsRecord, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetRecordOk returns a tuple with the Record field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetRecord
 
-`func (o *DnsRecordset) SetType(v string)`
+`func (o *DnsRecordset) SetRecord(v []DnsRecord)`
 
-SetType sets Type field to given value.
+SetRecord sets Record field to given value.
 
+### HasRecord
+
+`func (o *DnsRecordset) HasRecord() bool`
+
+HasRecord returns a boolean if a field has been set.
 
 ### GetTtl
 
@@ -124,30 +129,25 @@ SetTtl sets Ttl field to given value.
 
 HasTtl returns a boolean if a field has been set.
 
-### GetRecord
+### GetType
 
-`func (o *DnsRecordset) GetRecord() []DnsRecord`
+`func (o *DnsRecordset) GetType() string`
 
-GetRecord returns the Record field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetRecordOk
+### GetTypeOk
 
-`func (o *DnsRecordset) GetRecordOk() (*[]DnsRecord, bool)`
+`func (o *DnsRecordset) GetTypeOk() (*string, bool)`
 
-GetRecordOk returns a tuple with the Record field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRecord
+### SetType
 
-`func (o *DnsRecordset) SetRecord(v []DnsRecord)`
+`func (o *DnsRecordset) SetType(v string)`
 
-SetRecord sets Record field to given value.
+SetType sets Type field to given value.
 
-### HasRecord
-
-`func (o *DnsRecordset) HasRecord() bool`
-
-HasRecord returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

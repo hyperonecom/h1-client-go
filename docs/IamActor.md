@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] [readonly] 
-**Value** | **string** |  | 
+**Value** | [**OneOfAnyTypeAnyTypeAnyType**](oneOf&lt;AnyType,AnyType,AnyType&gt;.md) |  | 
 
 ## Methods
 
 ### NewIamActor
 
-`func NewIamActor(value string, ) *IamActor`
+`func NewIamActor(value OneOfAnyTypeAnyTypeAnyType, ) *IamActor`
 
 NewIamActor instantiates a new IamActor object
 This constructor will assign default values to properties that have it defined,
@@ -53,20 +53,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *IamActor) GetValue() string`
+`func (o *IamActor) GetValue() OneOfAnyTypeAnyTypeAnyType`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IamActor) GetValueOk() (*string, bool)`
+`func (o *IamActor) GetValueOk() (*OneOfAnyTypeAnyTypeAnyType, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IamActor) SetValue(v string)`
+`func (o *IamActor) SetValue(v OneOfAnyTypeAnyTypeAnyType)`
 
 SetValue sets Value field to given value.
 

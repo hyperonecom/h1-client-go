@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ip** | Pointer to **string** |  | [optional] 
 **Fip** | Pointer to **string** |  | [optional] 
+**Ip** | Pointer to **string** |  | [optional] 
 **Netadp** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewIpAssociatedWithDefaults instantiates a new IpAssociated object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIp
-
-`func (o *IpAssociated) GetIp() string`
-
-GetIp returns the Ip field if non-nil, zero value otherwise.
-
-### GetIpOk
-
-`func (o *IpAssociated) GetIpOk() (*string, bool)`
-
-GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIp
-
-`func (o *IpAssociated) SetIp(v string)`
-
-SetIp sets Ip field to given value.
-
-### HasIp
-
-`func (o *IpAssociated) HasIp() bool`
-
-HasIp returns a boolean if a field has been set.
 
 ### GetFip
 
@@ -76,6 +51,31 @@ SetFip sets Fip field to given value.
 `func (o *IpAssociated) HasFip() bool`
 
 HasFip returns a boolean if a field has been set.
+
+### GetIp
+
+`func (o *IpAssociated) GetIp() string`
+
+GetIp returns the Ip field if non-nil, zero value otherwise.
+
+### GetIpOk
+
+`func (o *IpAssociated) GetIpOk() (*string, bool)`
+
+GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIp
+
+`func (o *IpAssociated) SetIp(v string)`
+
+SetIp sets Ip field to given value.
+
+### HasIp
+
+`func (o *IpAssociated) HasIp() bool`
+
+HasIp returns a boolean if a field has been set.
 
 ### GetNetadp
 

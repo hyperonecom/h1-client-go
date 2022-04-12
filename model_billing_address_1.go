@@ -17,8 +17,8 @@ import (
 // BillingAddress1 struct for BillingAddress1
 type BillingAddress1 struct {
 	City *string `json:"city,omitempty"`
-	Zipcode *string `json:"zipcode,omitempty"`
 	Street *string `json:"street,omitempty"`
+	Zipcode *string `json:"zipcode,omitempty"`
 }
 
 // NewBillingAddress1 instantiates a new BillingAddress1 object
@@ -70,38 +70,6 @@ func (o *BillingAddress1) SetCity(v string) {
 	o.City = &v
 }
 
-// GetZipcode returns the Zipcode field value if set, zero value otherwise.
-func (o *BillingAddress1) GetZipcode() string {
-	if o == nil || o.Zipcode == nil {
-		var ret string
-		return ret
-	}
-	return *o.Zipcode
-}
-
-// GetZipcodeOk returns a tuple with the Zipcode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingAddress1) GetZipcodeOk() (*string, bool) {
-	if o == nil || o.Zipcode == nil {
-		return nil, false
-	}
-	return o.Zipcode, true
-}
-
-// HasZipcode returns a boolean if a field has been set.
-func (o *BillingAddress1) HasZipcode() bool {
-	if o != nil && o.Zipcode != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetZipcode gets a reference to the given string and assigns it to the Zipcode field.
-func (o *BillingAddress1) SetZipcode(v string) {
-	o.Zipcode = &v
-}
-
 // GetStreet returns the Street field value if set, zero value otherwise.
 func (o *BillingAddress1) GetStreet() string {
 	if o == nil || o.Street == nil {
@@ -134,16 +102,48 @@ func (o *BillingAddress1) SetStreet(v string) {
 	o.Street = &v
 }
 
+// GetZipcode returns the Zipcode field value if set, zero value otherwise.
+func (o *BillingAddress1) GetZipcode() string {
+	if o == nil || o.Zipcode == nil {
+		var ret string
+		return ret
+	}
+	return *o.Zipcode
+}
+
+// GetZipcodeOk returns a tuple with the Zipcode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BillingAddress1) GetZipcodeOk() (*string, bool) {
+	if o == nil || o.Zipcode == nil {
+		return nil, false
+	}
+	return o.Zipcode, true
+}
+
+// HasZipcode returns a boolean if a field has been set.
+func (o *BillingAddress1) HasZipcode() bool {
+	if o != nil && o.Zipcode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetZipcode gets a reference to the given string and assigns it to the Zipcode field.
+func (o *BillingAddress1) SetZipcode(v string) {
+	o.Zipcode = &v
+}
+
 func (o BillingAddress1) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.City != nil {
 		toSerialize["city"] = o.City
 	}
-	if o.Zipcode != nil {
-		toSerialize["zipcode"] = o.Zipcode
-	}
 	if o.Street != nil {
 		toSerialize["street"] = o.Street
+	}
+	if o.Zipcode != nil {
+		toSerialize["zipcode"] = o.Zipcode
 	}
 	return json.Marshal(toSerialize)
 }

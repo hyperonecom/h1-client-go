@@ -16,8 +16,8 @@ import (
 
 // IamProjectGroupCreate struct for IamProjectGroupCreate
 type IamProjectGroupCreate struct {
-	Name string `json:"name"`
 	Actor []IamActor `json:"actor,omitempty"`
+	Name string `json:"name"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -37,30 +37,6 @@ func NewIamProjectGroupCreate(name string) *IamProjectGroupCreate {
 func NewIamProjectGroupCreateWithDefaults() *IamProjectGroupCreate {
 	this := IamProjectGroupCreate{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *IamProjectGroupCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectGroupCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *IamProjectGroupCreate) SetName(v string) {
-	o.Name = v
 }
 
 // GetActor returns the Actor field value if set, zero value otherwise.
@@ -93,6 +69,30 @@ func (o *IamProjectGroupCreate) HasActor() bool {
 // SetActor gets a reference to the given []IamActor and assigns it to the Actor field.
 func (o *IamProjectGroupCreate) SetActor(v []IamActor) {
 	o.Actor = v
+}
+
+// GetName returns the Name field value
+func (o *IamProjectGroupCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectGroupCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *IamProjectGroupCreate) SetName(v string) {
+	o.Name = v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -129,11 +129,11 @@ func (o *IamProjectGroupCreate) SetTag(v []Tag) {
 
 func (o IamProjectGroupCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
 	if o.Actor != nil {
 		toSerialize["actor"] = o.Actor
+	}
+	if true {
+		toSerialize["name"] = o.Name
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

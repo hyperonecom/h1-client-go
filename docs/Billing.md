@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Charges** | Pointer to [**[]BillingCharges**](BillingCharges.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**OneTime** | Pointer to **bool** |  | [optional] 
 **Period** | Pointer to **string** |  | [optional] 
 **Price** | Pointer to **float32** |  | [optional] 
-**Quantity** | Pointer to **float32** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**OneTime** | Pointer to **bool** |  | [optional] 
-**Service** | Pointer to [**BillingService**](BillingService.md) |  | [optional] 
+**Quantity** | Pointer to **float32** |  | [optional] 
 **Resource** | Pointer to [**BillingResource**](BillingResource.md) |  | [optional] 
-**Charges** | Pointer to [**[]BillingCharges**](BillingCharges.md) |  | [optional] 
+**Service** | Pointer to [**BillingService**](BillingService.md) |  | [optional] 
 
 ## Methods
 
@@ -32,6 +32,31 @@ will change when the set of required properties is changed
 NewBillingWithDefaults instantiates a new Billing object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCharges
+
+`func (o *Billing) GetCharges() []BillingCharges`
+
+GetCharges returns the Charges field if non-nil, zero value otherwise.
+
+### GetChargesOk
+
+`func (o *Billing) GetChargesOk() (*[]BillingCharges, bool)`
+
+GetChargesOk returns a tuple with the Charges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCharges
+
+`func (o *Billing) SetCharges(v []BillingCharges)`
+
+SetCharges sets Charges field to given value.
+
+### HasCharges
+
+`func (o *Billing) HasCharges() bool`
+
+HasCharges returns a boolean if a field has been set.
 
 ### GetId
 
@@ -57,6 +82,31 @@ SetId sets Id field to given value.
 `func (o *Billing) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetOneTime
+
+`func (o *Billing) GetOneTime() bool`
+
+GetOneTime returns the OneTime field if non-nil, zero value otherwise.
+
+### GetOneTimeOk
+
+`func (o *Billing) GetOneTimeOk() (*bool, bool)`
+
+GetOneTimeOk returns a tuple with the OneTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOneTime
+
+`func (o *Billing) SetOneTime(v bool)`
+
+SetOneTime sets OneTime field to given value.
+
+### HasOneTime
+
+`func (o *Billing) HasOneTime() bool`
+
+HasOneTime returns a boolean if a field has been set.
 
 ### GetPeriod
 
@@ -108,31 +158,6 @@ SetPrice sets Price field to given value.
 
 HasPrice returns a boolean if a field has been set.
 
-### GetQuantity
-
-`func (o *Billing) GetQuantity() float32`
-
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
-
-### GetQuantityOk
-
-`func (o *Billing) GetQuantityOk() (*float32, bool)`
-
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantity
-
-`func (o *Billing) SetQuantity(v float32)`
-
-SetQuantity sets Quantity field to given value.
-
-### HasQuantity
-
-`func (o *Billing) HasQuantity() bool`
-
-HasQuantity returns a boolean if a field has been set.
-
 ### GetProject
 
 `func (o *Billing) GetProject() string`
@@ -158,55 +183,30 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
-### GetOneTime
+### GetQuantity
 
-`func (o *Billing) GetOneTime() bool`
+`func (o *Billing) GetQuantity() float32`
 
-GetOneTime returns the OneTime field if non-nil, zero value otherwise.
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
-### GetOneTimeOk
+### GetQuantityOk
 
-`func (o *Billing) GetOneTimeOk() (*bool, bool)`
+`func (o *Billing) GetQuantityOk() (*float32, bool)`
 
-GetOneTimeOk returns a tuple with the OneTime field if it's non-nil, zero value otherwise
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOneTime
+### SetQuantity
 
-`func (o *Billing) SetOneTime(v bool)`
+`func (o *Billing) SetQuantity(v float32)`
 
-SetOneTime sets OneTime field to given value.
+SetQuantity sets Quantity field to given value.
 
-### HasOneTime
+### HasQuantity
 
-`func (o *Billing) HasOneTime() bool`
+`func (o *Billing) HasQuantity() bool`
 
-HasOneTime returns a boolean if a field has been set.
-
-### GetService
-
-`func (o *Billing) GetService() BillingService`
-
-GetService returns the Service field if non-nil, zero value otherwise.
-
-### GetServiceOk
-
-`func (o *Billing) GetServiceOk() (*BillingService, bool)`
-
-GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetService
-
-`func (o *Billing) SetService(v BillingService)`
-
-SetService sets Service field to given value.
-
-### HasService
-
-`func (o *Billing) HasService() bool`
-
-HasService returns a boolean if a field has been set.
+HasQuantity returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -233,30 +233,30 @@ SetResource sets Resource field to given value.
 
 HasResource returns a boolean if a field has been set.
 
-### GetCharges
+### GetService
 
-`func (o *Billing) GetCharges() []BillingCharges`
+`func (o *Billing) GetService() BillingService`
 
-GetCharges returns the Charges field if non-nil, zero value otherwise.
+GetService returns the Service field if non-nil, zero value otherwise.
 
-### GetChargesOk
+### GetServiceOk
 
-`func (o *Billing) GetChargesOk() (*[]BillingCharges, bool)`
+`func (o *Billing) GetServiceOk() (*BillingService, bool)`
 
-GetChargesOk returns a tuple with the Charges field if it's non-nil, zero value otherwise
+GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCharges
+### SetService
 
-`func (o *Billing) SetCharges(v []BillingCharges)`
+`func (o *Billing) SetService(v BillingService)`
 
-SetCharges sets Charges field to given value.
+SetService sets Service field to given value.
 
-### HasCharges
+### HasService
 
-`func (o *Billing) HasCharges() bool`
+`func (o *Billing) HasService() bool`
 
-HasCharges returns a boolean if a field has been set.
+HasService returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

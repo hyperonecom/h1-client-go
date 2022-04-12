@@ -17,8 +17,8 @@ import (
 // ReconciliationTargetResource struct for ReconciliationTargetResource
 type ReconciliationTargetResource struct {
 	Id *string `json:"id,omitempty"`
-	Usage *float32 `json:"usage,omitempty"`
 	Plan []ReconciliationTargetPlan `json:"plan,omitempty"`
+	Usage *float32 `json:"usage,omitempty"`
 }
 
 // NewReconciliationTargetResource instantiates a new ReconciliationTargetResource object
@@ -70,38 +70,6 @@ func (o *ReconciliationTargetResource) SetId(v string) {
 	o.Id = &v
 }
 
-// GetUsage returns the Usage field value if set, zero value otherwise.
-func (o *ReconciliationTargetResource) GetUsage() float32 {
-	if o == nil || o.Usage == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Usage
-}
-
-// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReconciliationTargetResource) GetUsageOk() (*float32, bool) {
-	if o == nil || o.Usage == nil {
-		return nil, false
-	}
-	return o.Usage, true
-}
-
-// HasUsage returns a boolean if a field has been set.
-func (o *ReconciliationTargetResource) HasUsage() bool {
-	if o != nil && o.Usage != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUsage gets a reference to the given float32 and assigns it to the Usage field.
-func (o *ReconciliationTargetResource) SetUsage(v float32) {
-	o.Usage = &v
-}
-
 // GetPlan returns the Plan field value if set, zero value otherwise.
 func (o *ReconciliationTargetResource) GetPlan() []ReconciliationTargetPlan {
 	if o == nil || o.Plan == nil {
@@ -134,16 +102,48 @@ func (o *ReconciliationTargetResource) SetPlan(v []ReconciliationTargetPlan) {
 	o.Plan = v
 }
 
+// GetUsage returns the Usage field value if set, zero value otherwise.
+func (o *ReconciliationTargetResource) GetUsage() float32 {
+	if o == nil || o.Usage == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Usage
+}
+
+// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReconciliationTargetResource) GetUsageOk() (*float32, bool) {
+	if o == nil || o.Usage == nil {
+		return nil, false
+	}
+	return o.Usage, true
+}
+
+// HasUsage returns a boolean if a field has been set.
+func (o *ReconciliationTargetResource) HasUsage() bool {
+	if o != nil && o.Usage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsage gets a reference to the given float32 and assigns it to the Usage field.
+func (o *ReconciliationTargetResource) SetUsage(v float32) {
+	o.Usage = &v
+}
+
 func (o ReconciliationTargetResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if o.Usage != nil {
-		toSerialize["usage"] = o.Usage
-	}
 	if o.Plan != nil {
 		toSerialize["plan"] = o.Plan
+	}
+	if o.Usage != nil {
+		toSerialize["usage"] = o.Usage
 	}
 	return json.Marshal(toSerialize)
 }

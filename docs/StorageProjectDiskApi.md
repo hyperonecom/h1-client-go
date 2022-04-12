@@ -12,6 +12,9 @@ Method | HTTP request | Description
 [**StorageProjectDiskEventList**](StorageProjectDiskApi.md#StorageProjectDiskEventList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/event | List storage/disk.event
 [**StorageProjectDiskGet**](StorageProjectDiskApi.md#StorageProjectDiskGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId} | Get storage/disk
 [**StorageProjectDiskList**](StorageProjectDiskApi.md#StorageProjectDiskList) | **Get** /storage/{locationId}/project/{projectId}/disk | List storage/disk
+[**StorageProjectDiskMetricGet**](StorageProjectDiskApi.md#StorageProjectDiskMetricGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId} | Get storage/disk.metric
+[**StorageProjectDiskMetricList**](StorageProjectDiskApi.md#StorageProjectDiskMetricList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric | List storage/disk.metric
+[**StorageProjectDiskMetricSeriesList**](StorageProjectDiskApi.md#StorageProjectDiskMetricSeriesList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/series | List storage/disk.series
 [**StorageProjectDiskResize**](StorageProjectDiskApi.md#StorageProjectDiskResize) | **Post** /storage/{locationId}/project/{projectId}/disk/{diskId}/actions/resize | Resize storage/disk
 [**StorageProjectDiskServiceGet**](StorageProjectDiskApi.md#StorageProjectDiskServiceGet) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service/{serviceId} | Get storage/disk.service
 [**StorageProjectDiskServiceList**](StorageProjectDiskApi.md#StorageProjectDiskServiceList) | **Get** /storage/{locationId}/project/{projectId}/disk/{diskId}/service | List storage/disk.service
@@ -639,6 +642,246 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Disk**](Disk.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricGet
+
+> Metric StorageProjectDiskMetricGet(ctx, projectId, locationId, diskId, metricId).Execute()
+
+Get storage/disk.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricGet(context.Background(), projectId, locationId, diskId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricList
+
+> []Metric StorageProjectDiskMetricList(ctx, projectId, locationId, diskId).Execute()
+
+List storage/disk.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricList(context.Background(), projectId, locationId, diskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**[]Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StorageProjectDiskMetricSeriesList
+
+> []Point StorageProjectDiskMetricSeriesList(ctx, projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Aligner(aligner).Execute()
+
+List storage/disk.series
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    diskId := "diskId_example" // string | Disk Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+    aligner := "aligner_example" // string | aligner (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.StorageProjectDiskApi.StorageProjectDiskMetricSeriesList(context.Background(), projectId, locationId, diskId, metricId).Interval(interval).Timespan(timespan).Aligner(aligner).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskMetricSeriesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `StorageProjectDiskMetricSeriesList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskMetricSeriesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**diskId** | **string** | Disk Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStorageProjectDiskMetricSeriesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
+ **aligner** | **string** | aligner | 
+
+### Return type
+
+[**[]Point**](Point.md)
 
 ### Authorization
 

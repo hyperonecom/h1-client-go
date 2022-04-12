@@ -16,20 +16,20 @@ import (
 
 // ComputeProjectVmPasswordReset struct for ComputeProjectVmPasswordReset
 type ComputeProjectVmPasswordReset struct {
-	UserName string `json:"userName"`
-	Modulus string `json:"modulus"`
 	Exponent string `json:"exponent"`
+	Modulus string `json:"modulus"`
+	UserName string `json:"userName"`
 }
 
 // NewComputeProjectVmPasswordReset instantiates a new ComputeProjectVmPasswordReset object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeProjectVmPasswordReset(userName string, modulus string, exponent string) *ComputeProjectVmPasswordReset {
+func NewComputeProjectVmPasswordReset(exponent string, modulus string, userName string) *ComputeProjectVmPasswordReset {
 	this := ComputeProjectVmPasswordReset{}
-	this.UserName = userName
-	this.Modulus = modulus
 	this.Exponent = exponent
+	this.Modulus = modulus
+	this.UserName = userName
 	return &this
 }
 
@@ -39,54 +39,6 @@ func NewComputeProjectVmPasswordReset(userName string, modulus string, exponent 
 func NewComputeProjectVmPasswordResetWithDefaults() *ComputeProjectVmPasswordReset {
 	this := ComputeProjectVmPasswordReset{}
 	return &this
-}
-
-// GetUserName returns the UserName field value
-func (o *ComputeProjectVmPasswordReset) GetUserName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserName
-}
-
-// GetUserNameOk returns a tuple with the UserName field value
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmPasswordReset) GetUserNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.UserName, true
-}
-
-// SetUserName sets field value
-func (o *ComputeProjectVmPasswordReset) SetUserName(v string) {
-	o.UserName = v
-}
-
-// GetModulus returns the Modulus field value
-func (o *ComputeProjectVmPasswordReset) GetModulus() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Modulus
-}
-
-// GetModulusOk returns a tuple with the Modulus field value
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmPasswordReset) GetModulusOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Modulus, true
-}
-
-// SetModulus sets field value
-func (o *ComputeProjectVmPasswordReset) SetModulus(v string) {
-	o.Modulus = v
 }
 
 // GetExponent returns the Exponent field value
@@ -113,16 +65,64 @@ func (o *ComputeProjectVmPasswordReset) SetExponent(v string) {
 	o.Exponent = v
 }
 
+// GetModulus returns the Modulus field value
+func (o *ComputeProjectVmPasswordReset) GetModulus() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Modulus
+}
+
+// GetModulusOk returns a tuple with the Modulus field value
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmPasswordReset) GetModulusOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Modulus, true
+}
+
+// SetModulus sets field value
+func (o *ComputeProjectVmPasswordReset) SetModulus(v string) {
+	o.Modulus = v
+}
+
+// GetUserName returns the UserName field value
+func (o *ComputeProjectVmPasswordReset) GetUserName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.UserName
+}
+
+// GetUserNameOk returns a tuple with the UserName field value
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmPasswordReset) GetUserNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.UserName, true
+}
+
+// SetUserName sets field value
+func (o *ComputeProjectVmPasswordReset) SetUserName(v string) {
+	o.UserName = v
+}
+
 func (o ComputeProjectVmPasswordReset) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["userName"] = o.UserName
+		toSerialize["exponent"] = o.Exponent
 	}
 	if true {
 		toSerialize["modulus"] = o.Modulus
 	}
 	if true {
-		toSerialize["exponent"] = o.Exponent
+		toSerialize["userName"] = o.UserName
 	}
 	return json.Marshal(toSerialize)
 }

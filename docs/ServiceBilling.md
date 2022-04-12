@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | Pointer to [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 
-**Period** | Pointer to **string** |  | [optional] 
-**Quantity** | Pointer to **float32** |  | [optional] 
 **OneTime** | Pointer to **bool** |  | [optional] 
+**Period** | Pointer to **string** |  | [optional] 
+**Price** | Pointer to [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 
+**Quantity** | Pointer to **float32** |  | [optional] 
 **Reservations** | Pointer to [**ServiceBillingReservations**](ServiceBillingReservations.md) |  | [optional] 
 
 ## Methods
@@ -29,30 +29,30 @@ NewServiceBillingWithDefaults instantiates a new ServiceBilling object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPrice
+### GetOneTime
 
-`func (o *ServiceBilling) GetPrice() ServiceBillingPrice`
+`func (o *ServiceBilling) GetOneTime() bool`
 
-GetPrice returns the Price field if non-nil, zero value otherwise.
+GetOneTime returns the OneTime field if non-nil, zero value otherwise.
 
-### GetPriceOk
+### GetOneTimeOk
 
-`func (o *ServiceBilling) GetPriceOk() (*ServiceBillingPrice, bool)`
+`func (o *ServiceBilling) GetOneTimeOk() (*bool, bool)`
 
-GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
+GetOneTimeOk returns a tuple with the OneTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPrice
+### SetOneTime
 
-`func (o *ServiceBilling) SetPrice(v ServiceBillingPrice)`
+`func (o *ServiceBilling) SetOneTime(v bool)`
 
-SetPrice sets Price field to given value.
+SetOneTime sets OneTime field to given value.
 
-### HasPrice
+### HasOneTime
 
-`func (o *ServiceBilling) HasPrice() bool`
+`func (o *ServiceBilling) HasOneTime() bool`
 
-HasPrice returns a boolean if a field has been set.
+HasOneTime returns a boolean if a field has been set.
 
 ### GetPeriod
 
@@ -79,6 +79,31 @@ SetPeriod sets Period field to given value.
 
 HasPeriod returns a boolean if a field has been set.
 
+### GetPrice
+
+`func (o *ServiceBilling) GetPrice() ServiceBillingPrice`
+
+GetPrice returns the Price field if non-nil, zero value otherwise.
+
+### GetPriceOk
+
+`func (o *ServiceBilling) GetPriceOk() (*ServiceBillingPrice, bool)`
+
+GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrice
+
+`func (o *ServiceBilling) SetPrice(v ServiceBillingPrice)`
+
+SetPrice sets Price field to given value.
+
+### HasPrice
+
+`func (o *ServiceBilling) HasPrice() bool`
+
+HasPrice returns a boolean if a field has been set.
+
 ### GetQuantity
 
 `func (o *ServiceBilling) GetQuantity() float32`
@@ -103,31 +128,6 @@ SetQuantity sets Quantity field to given value.
 `func (o *ServiceBilling) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
-
-### GetOneTime
-
-`func (o *ServiceBilling) GetOneTime() bool`
-
-GetOneTime returns the OneTime field if non-nil, zero value otherwise.
-
-### GetOneTimeOk
-
-`func (o *ServiceBilling) GetOneTimeOk() (*bool, bool)`
-
-GetOneTimeOk returns a tuple with the OneTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOneTime
-
-`func (o *ServiceBilling) SetOneTime(v bool)`
-
-SetOneTime sets OneTime field to given value.
-
-### HasOneTime
-
-`func (o *ServiceBilling) HasOneTime() bool`
-
-HasOneTime returns a boolean if a field has been set.
 
 ### GetReservations
 

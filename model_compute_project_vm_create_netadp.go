@@ -16,9 +16,9 @@ import (
 
 // ComputeProjectVmCreateNetadp struct for ComputeProjectVmCreateNetadp
 type ComputeProjectVmCreateNetadp struct {
-	Network string `json:"network"`
 	Firewall *string `json:"firewall,omitempty"`
 	Ip []string `json:"ip,omitempty"`
+	Network string `json:"network"`
 }
 
 // NewComputeProjectVmCreateNetadp instantiates a new ComputeProjectVmCreateNetadp object
@@ -37,30 +37,6 @@ func NewComputeProjectVmCreateNetadp(network string) *ComputeProjectVmCreateNeta
 func NewComputeProjectVmCreateNetadpWithDefaults() *ComputeProjectVmCreateNetadp {
 	this := ComputeProjectVmCreateNetadp{}
 	return &this
-}
-
-// GetNetwork returns the Network field value
-func (o *ComputeProjectVmCreateNetadp) GetNetwork() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Network
-}
-
-// GetNetworkOk returns a tuple with the Network field value
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreateNetadp) GetNetworkOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Network, true
-}
-
-// SetNetwork sets field value
-func (o *ComputeProjectVmCreateNetadp) SetNetwork(v string) {
-	o.Network = v
 }
 
 // GetFirewall returns the Firewall field value if set, zero value otherwise.
@@ -127,16 +103,40 @@ func (o *ComputeProjectVmCreateNetadp) SetIp(v []string) {
 	o.Ip = v
 }
 
+// GetNetwork returns the Network field value
+func (o *ComputeProjectVmCreateNetadp) GetNetwork() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Network
+}
+
+// GetNetworkOk returns a tuple with the Network field value
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreateNetadp) GetNetworkOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Network, true
+}
+
+// SetNetwork sets field value
+func (o *ComputeProjectVmCreateNetadp) SetNetwork(v string) {
+	o.Network = v
+}
+
 func (o ComputeProjectVmCreateNetadp) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["network"] = o.Network
-	}
 	if o.Firewall != nil {
 		toSerialize["firewall"] = o.Firewall
 	}
 	if o.Ip != nil {
 		toSerialize["ip"] = o.Ip
+	}
+	if true {
+		toSerialize["network"] = o.Network
 	}
 	return json.Marshal(toSerialize)
 }

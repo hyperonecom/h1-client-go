@@ -17,10 +17,10 @@ import (
 
 // ProviderAgentResourceEvent struct for ProviderAgentResourceEvent
 type ProviderAgentResourceEvent struct {
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	State *string `json:"state,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
 }
 
 // NewProviderAgentResourceEvent instantiates a new ProviderAgentResourceEvent object
@@ -38,6 +38,38 @@ func NewProviderAgentResourceEvent() *ProviderAgentResourceEvent {
 func NewProviderAgentResourceEventWithDefaults() *ProviderAgentResourceEvent {
 	this := ProviderAgentResourceEvent{}
 	return &this
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *ProviderAgentResourceEvent) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProviderAgentResourceEvent) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *ProviderAgentResourceEvent) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *ProviderAgentResourceEvent) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -136,40 +168,11 @@ func (o *ProviderAgentResourceEvent) SetState(v string) {
 	o.State = &v
 }
 
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *ProviderAgentResourceEvent) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProviderAgentResourceEvent) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *ProviderAgentResourceEvent) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *ProviderAgentResourceEvent) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
 func (o ProviderAgentResourceEvent) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
@@ -178,9 +181,6 @@ func (o ProviderAgentResourceEvent) MarshalJSON() ([]byte, error) {
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
 	}
 	return json.Marshal(toSerialize)
 }

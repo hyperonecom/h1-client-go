@@ -17,23 +17,23 @@ import (
 
 // ContainerImage struct for ContainerImage
 type ContainerImage struct {
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
-	Digest string `json:"digest"`
 	CreatedOn time.Time `json:"createdOn"`
+	Digest string `json:"digest"`
+	Id *string `json:"id,omitempty"`
 	ModifiedOn time.Time `json:"modifiedOn"`
+	Name string `json:"name"`
 }
 
 // NewContainerImage instantiates a new ContainerImage object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContainerImage(name string, digest string, createdOn time.Time, modifiedOn time.Time) *ContainerImage {
+func NewContainerImage(createdOn time.Time, digest string, modifiedOn time.Time, name string) *ContainerImage {
 	this := ContainerImage{}
-	this.Name = name
-	this.Digest = digest
 	this.CreatedOn = createdOn
+	this.Digest = digest
 	this.ModifiedOn = modifiedOn
+	this.Name = name
 	return &this
 }
 
@@ -43,6 +43,54 @@ func NewContainerImage(name string, digest string, createdOn time.Time, modified
 func NewContainerImageWithDefaults() *ContainerImage {
 	this := ContainerImage{}
 	return &this
+}
+
+// GetCreatedOn returns the CreatedOn field value
+func (o *ContainerImage) GetCreatedOn() time.Time {
+	if o == nil {
+		var ret time.Time
+		return ret
+	}
+
+	return o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value
+// and a boolean to check if the value has been set.
+func (o *ContainerImage) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.CreatedOn, true
+}
+
+// SetCreatedOn sets field value
+func (o *ContainerImage) SetCreatedOn(v time.Time) {
+	o.CreatedOn = v
+}
+
+// GetDigest returns the Digest field value
+func (o *ContainerImage) GetDigest() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Digest
+}
+
+// GetDigestOk returns a tuple with the Digest field value
+// and a boolean to check if the value has been set.
+func (o *ContainerImage) GetDigestOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Digest, true
+}
+
+// SetDigest sets field value
+func (o *ContainerImage) SetDigest(v string) {
+	o.Digest = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -77,78 +125,6 @@ func (o *ContainerImage) SetId(v string) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value
-func (o *ContainerImage) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *ContainerImage) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *ContainerImage) SetName(v string) {
-	o.Name = v
-}
-
-// GetDigest returns the Digest field value
-func (o *ContainerImage) GetDigest() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Digest
-}
-
-// GetDigestOk returns a tuple with the Digest field value
-// and a boolean to check if the value has been set.
-func (o *ContainerImage) GetDigestOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Digest, true
-}
-
-// SetDigest sets field value
-func (o *ContainerImage) SetDigest(v string) {
-	o.Digest = v
-}
-
-// GetCreatedOn returns the CreatedOn field value
-func (o *ContainerImage) GetCreatedOn() time.Time {
-	if o == nil {
-		var ret time.Time
-		return ret
-	}
-
-	return o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value
-// and a boolean to check if the value has been set.
-func (o *ContainerImage) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.CreatedOn, true
-}
-
-// SetCreatedOn sets field value
-func (o *ContainerImage) SetCreatedOn(v time.Time) {
-	o.CreatedOn = v
-}
-
 // GetModifiedOn returns the ModifiedOn field value
 func (o *ContainerImage) GetModifiedOn() time.Time {
 	if o == nil {
@@ -173,22 +149,46 @@ func (o *ContainerImage) SetModifiedOn(v time.Time) {
 	o.ModifiedOn = v
 }
 
+// GetName returns the Name field value
+func (o *ContainerImage) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *ContainerImage) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *ContainerImage) SetName(v string) {
+	o.Name = v
+}
+
 func (o ContainerImage) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["digest"] = o.Digest
-	}
 	if true {
 		toSerialize["createdOn"] = o.CreatedOn
 	}
 	if true {
+		toSerialize["digest"] = o.Digest
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	if true {
 		toSerialize["modifiedOn"] = o.ModifiedOn
+	}
+	if true {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

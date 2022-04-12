@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Egress** | Pointer to [**[]NetworkingRule**](NetworkingRule.md) |  | [optional] 
+**Ingress** | Pointer to [**[]NetworkingRule**](NetworkingRule.md) |  | [optional] 
 **Name** | **string** |  | 
 **Service** | Pointer to **string** |  | [optional] [default to "5bacaf7202deee0c100eda3b"]
-**Ingress** | Pointer to [**[]NetworkingRule**](NetworkingRule.md) |  | [optional] 
-**Egress** | Pointer to [**[]NetworkingRule**](NetworkingRule.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -28,6 +28,56 @@ will change when the set of required properties is changed
 NewNetworkingProjectFirewallCreateWithDefaults instantiates a new NetworkingProjectFirewallCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEgress
+
+`func (o *NetworkingProjectFirewallCreate) GetEgress() []NetworkingRule`
+
+GetEgress returns the Egress field if non-nil, zero value otherwise.
+
+### GetEgressOk
+
+`func (o *NetworkingProjectFirewallCreate) GetEgressOk() (*[]NetworkingRule, bool)`
+
+GetEgressOk returns a tuple with the Egress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEgress
+
+`func (o *NetworkingProjectFirewallCreate) SetEgress(v []NetworkingRule)`
+
+SetEgress sets Egress field to given value.
+
+### HasEgress
+
+`func (o *NetworkingProjectFirewallCreate) HasEgress() bool`
+
+HasEgress returns a boolean if a field has been set.
+
+### GetIngress
+
+`func (o *NetworkingProjectFirewallCreate) GetIngress() []NetworkingRule`
+
+GetIngress returns the Ingress field if non-nil, zero value otherwise.
+
+### GetIngressOk
+
+`func (o *NetworkingProjectFirewallCreate) GetIngressOk() (*[]NetworkingRule, bool)`
+
+GetIngressOk returns a tuple with the Ingress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngress
+
+`func (o *NetworkingProjectFirewallCreate) SetIngress(v []NetworkingRule)`
+
+SetIngress sets Ingress field to given value.
+
+### HasIngress
+
+`func (o *NetworkingProjectFirewallCreate) HasIngress() bool`
+
+HasIngress returns a boolean if a field has been set.
 
 ### GetName
 
@@ -73,56 +123,6 @@ SetService sets Service field to given value.
 `func (o *NetworkingProjectFirewallCreate) HasService() bool`
 
 HasService returns a boolean if a field has been set.
-
-### GetIngress
-
-`func (o *NetworkingProjectFirewallCreate) GetIngress() []NetworkingRule`
-
-GetIngress returns the Ingress field if non-nil, zero value otherwise.
-
-### GetIngressOk
-
-`func (o *NetworkingProjectFirewallCreate) GetIngressOk() (*[]NetworkingRule, bool)`
-
-GetIngressOk returns a tuple with the Ingress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIngress
-
-`func (o *NetworkingProjectFirewallCreate) SetIngress(v []NetworkingRule)`
-
-SetIngress sets Ingress field to given value.
-
-### HasIngress
-
-`func (o *NetworkingProjectFirewallCreate) HasIngress() bool`
-
-HasIngress returns a boolean if a field has been set.
-
-### GetEgress
-
-`func (o *NetworkingProjectFirewallCreate) GetEgress() []NetworkingRule`
-
-GetEgress returns the Egress field if non-nil, zero value otherwise.
-
-### GetEgressOk
-
-`func (o *NetworkingProjectFirewallCreate) GetEgressOk() (*[]NetworkingRule, bool)`
-
-GetEgressOk returns a tuple with the Egress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEgress
-
-`func (o *NetworkingProjectFirewallCreate) SetEgress(v []NetworkingRule)`
-
-SetEgress sets Egress field to given value.
-
-### HasEgress
-
-`func (o *NetworkingProjectFirewallCreate) HasEgress() bool`
-
-HasEgress returns a boolean if a field has been set.
 
 ### GetTag
 

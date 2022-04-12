@@ -16,10 +16,10 @@ import (
 
 // InvoiceBuyer struct for InvoiceBuyer
 type InvoiceBuyer struct {
-	Company string `json:"company"`
 	Address *InvoiceBuyerAddress `json:"address,omitempty"`
-	Nip *string `json:"nip,omitempty"`
+	Company string `json:"company"`
 	Email *string `json:"email,omitempty"`
+	Nip *string `json:"nip,omitempty"`
 }
 
 // NewInvoiceBuyer instantiates a new InvoiceBuyer object
@@ -38,30 +38,6 @@ func NewInvoiceBuyer(company string) *InvoiceBuyer {
 func NewInvoiceBuyerWithDefaults() *InvoiceBuyer {
 	this := InvoiceBuyer{}
 	return &this
-}
-
-// GetCompany returns the Company field value
-func (o *InvoiceBuyer) GetCompany() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Company
-}
-
-// GetCompanyOk returns a tuple with the Company field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceBuyer) GetCompanyOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Company, true
-}
-
-// SetCompany sets field value
-func (o *InvoiceBuyer) SetCompany(v string) {
-	o.Company = v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -96,36 +72,28 @@ func (o *InvoiceBuyer) SetAddress(v InvoiceBuyerAddress) {
 	o.Address = &v
 }
 
-// GetNip returns the Nip field value if set, zero value otherwise.
-func (o *InvoiceBuyer) GetNip() string {
-	if o == nil || o.Nip == nil {
+// GetCompany returns the Company field value
+func (o *InvoiceBuyer) GetCompany() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Nip
+
+	return o.Company
 }
 
-// GetNipOk returns a tuple with the Nip field value if set, nil otherwise
+// GetCompanyOk returns a tuple with the Company field value
 // and a boolean to check if the value has been set.
-func (o *InvoiceBuyer) GetNipOk() (*string, bool) {
-	if o == nil || o.Nip == nil {
+func (o *InvoiceBuyer) GetCompanyOk() (*string, bool) {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Nip, true
+	return &o.Company, true
 }
 
-// HasNip returns a boolean if a field has been set.
-func (o *InvoiceBuyer) HasNip() bool {
-	if o != nil && o.Nip != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNip gets a reference to the given string and assigns it to the Nip field.
-func (o *InvoiceBuyer) SetNip(v string) {
-	o.Nip = &v
+// SetCompany sets field value
+func (o *InvoiceBuyer) SetCompany(v string) {
+	o.Company = v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -160,19 +128,51 @@ func (o *InvoiceBuyer) SetEmail(v string) {
 	o.Email = &v
 }
 
+// GetNip returns the Nip field value if set, zero value otherwise.
+func (o *InvoiceBuyer) GetNip() string {
+	if o == nil || o.Nip == nil {
+		var ret string
+		return ret
+	}
+	return *o.Nip
+}
+
+// GetNipOk returns a tuple with the Nip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceBuyer) GetNipOk() (*string, bool) {
+	if o == nil || o.Nip == nil {
+		return nil, false
+	}
+	return o.Nip, true
+}
+
+// HasNip returns a boolean if a field has been set.
+func (o *InvoiceBuyer) HasNip() bool {
+	if o != nil && o.Nip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNip gets a reference to the given string and assigns it to the Nip field.
+func (o *InvoiceBuyer) SetNip(v string) {
+	o.Nip = &v
+}
+
 func (o InvoiceBuyer) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["company"] = o.Company
-	}
 	if o.Address != nil {
 		toSerialize["address"] = o.Address
 	}
-	if o.Nip != nil {
-		toSerialize["nip"] = o.Nip
+	if true {
+		toSerialize["company"] = o.Company
 	}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
+	}
+	if o.Nip != nil {
+		toSerialize["nip"] = o.Nip
 	}
 	return json.Marshal(toSerialize)
 }

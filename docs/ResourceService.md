@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**SourceService** | Pointer to **string** |  | [optional] 
 **Billing** | Pointer to **string** |  | [optional] 
 **Data** | Pointer to **map[string]string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**SourceService** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -29,6 +29,56 @@ will change when the set of required properties is changed
 NewResourceServiceWithDefaults instantiates a new ResourceService object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBilling
+
+`func (o *ResourceService) GetBilling() string`
+
+GetBilling returns the Billing field if non-nil, zero value otherwise.
+
+### GetBillingOk
+
+`func (o *ResourceService) GetBillingOk() (*string, bool)`
+
+GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBilling
+
+`func (o *ResourceService) SetBilling(v string)`
+
+SetBilling sets Billing field to given value.
+
+### HasBilling
+
+`func (o *ResourceService) HasBilling() bool`
+
+HasBilling returns a boolean if a field has been set.
+
+### GetData
+
+`func (o *ResourceService) GetData() map[string]string`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *ResourceService) GetDataOk() (*map[string]string, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *ResourceService) SetData(v map[string]string)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *ResourceService) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 ### GetId
 
@@ -80,31 +130,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetType
-
-`func (o *ResourceService) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *ResourceService) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *ResourceService) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *ResourceService) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
 ### GetSourceService
 
 `func (o *ResourceService) GetSourceService() string`
@@ -130,55 +155,30 @@ SetSourceService sets SourceService field to given value.
 
 HasSourceService returns a boolean if a field has been set.
 
-### GetBilling
+### GetType
 
-`func (o *ResourceService) GetBilling() string`
+`func (o *ResourceService) GetType() string`
 
-GetBilling returns the Billing field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetBillingOk
+### GetTypeOk
 
-`func (o *ResourceService) GetBillingOk() (*string, bool)`
+`func (o *ResourceService) GetTypeOk() (*string, bool)`
 
-GetBillingOk returns a tuple with the Billing field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBilling
+### SetType
 
-`func (o *ResourceService) SetBilling(v string)`
+`func (o *ResourceService) SetType(v string)`
 
-SetBilling sets Billing field to given value.
+SetType sets Type field to given value.
 
-### HasBilling
+### HasType
 
-`func (o *ResourceService) HasBilling() bool`
+`func (o *ResourceService) HasType() bool`
 
-HasBilling returns a boolean if a field has been set.
-
-### GetData
-
-`func (o *ResourceService) GetData() map[string]string`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *ResourceService) GetDataOk() (*map[string]string, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *ResourceService) SetData(v map[string]string)`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *ResourceService) HasData() bool`
-
-HasData returns a boolean if a field has been set.
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

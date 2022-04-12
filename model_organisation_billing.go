@@ -16,10 +16,10 @@ import (
 
 // OrganisationBilling struct for OrganisationBilling
 type OrganisationBilling struct {
-	Currency *string `json:"currency,omitempty"`
-	Company *string `json:"company,omitempty"`
-	Email *string `json:"email,omitempty"`
 	Address *InvoiceSellerAddress `json:"address,omitempty"`
+	Company *string `json:"company,omitempty"`
+	Currency *string `json:"currency,omitempty"`
+	Email *string `json:"email,omitempty"`
 	Nip *string `json:"nip,omitempty"`
 }
 
@@ -40,36 +40,36 @@ func NewOrganisationBillingWithDefaults() *OrganisationBilling {
 	return &this
 }
 
-// GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *OrganisationBilling) GetCurrency() string {
-	if o == nil || o.Currency == nil {
-		var ret string
+// GetAddress returns the Address field value if set, zero value otherwise.
+func (o *OrganisationBilling) GetAddress() InvoiceSellerAddress {
+	if o == nil || o.Address == nil {
+		var ret InvoiceSellerAddress
 		return ret
 	}
-	return *o.Currency
+	return *o.Address
 }
 
-// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
+// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrganisationBilling) GetCurrencyOk() (*string, bool) {
-	if o == nil || o.Currency == nil {
+func (o *OrganisationBilling) GetAddressOk() (*InvoiceSellerAddress, bool) {
+	if o == nil || o.Address == nil {
 		return nil, false
 	}
-	return o.Currency, true
+	return o.Address, true
 }
 
-// HasCurrency returns a boolean if a field has been set.
-func (o *OrganisationBilling) HasCurrency() bool {
-	if o != nil && o.Currency != nil {
+// HasAddress returns a boolean if a field has been set.
+func (o *OrganisationBilling) HasAddress() bool {
+	if o != nil && o.Address != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *OrganisationBilling) SetCurrency(v string) {
-	o.Currency = &v
+// SetAddress gets a reference to the given InvoiceSellerAddress and assigns it to the Address field.
+func (o *OrganisationBilling) SetAddress(v InvoiceSellerAddress) {
+	o.Address = &v
 }
 
 // GetCompany returns the Company field value if set, zero value otherwise.
@@ -104,6 +104,38 @@ func (o *OrganisationBilling) SetCompany(v string) {
 	o.Company = &v
 }
 
+// GetCurrency returns the Currency field value if set, zero value otherwise.
+func (o *OrganisationBilling) GetCurrency() string {
+	if o == nil || o.Currency == nil {
+		var ret string
+		return ret
+	}
+	return *o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrganisationBilling) GetCurrencyOk() (*string, bool) {
+	if o == nil || o.Currency == nil {
+		return nil, false
+	}
+	return o.Currency, true
+}
+
+// HasCurrency returns a boolean if a field has been set.
+func (o *OrganisationBilling) HasCurrency() bool {
+	if o != nil && o.Currency != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrency gets a reference to the given string and assigns it to the Currency field.
+func (o *OrganisationBilling) SetCurrency(v string) {
+	o.Currency = &v
+}
+
 // GetEmail returns the Email field value if set, zero value otherwise.
 func (o *OrganisationBilling) GetEmail() string {
 	if o == nil || o.Email == nil {
@@ -134,38 +166,6 @@ func (o *OrganisationBilling) HasEmail() bool {
 // SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *OrganisationBilling) SetEmail(v string) {
 	o.Email = &v
-}
-
-// GetAddress returns the Address field value if set, zero value otherwise.
-func (o *OrganisationBilling) GetAddress() InvoiceSellerAddress {
-	if o == nil || o.Address == nil {
-		var ret InvoiceSellerAddress
-		return ret
-	}
-	return *o.Address
-}
-
-// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OrganisationBilling) GetAddressOk() (*InvoiceSellerAddress, bool) {
-	if o == nil || o.Address == nil {
-		return nil, false
-	}
-	return o.Address, true
-}
-
-// HasAddress returns a boolean if a field has been set.
-func (o *OrganisationBilling) HasAddress() bool {
-	if o != nil && o.Address != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAddress gets a reference to the given InvoiceSellerAddress and assigns it to the Address field.
-func (o *OrganisationBilling) SetAddress(v InvoiceSellerAddress) {
-	o.Address = &v
 }
 
 // GetNip returns the Nip field value if set, zero value otherwise.
@@ -202,17 +202,17 @@ func (o *OrganisationBilling) SetNip(v string) {
 
 func (o OrganisationBilling) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Currency != nil {
-		toSerialize["currency"] = o.Currency
+	if o.Address != nil {
+		toSerialize["address"] = o.Address
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
 	}
+	if o.Currency != nil {
+		toSerialize["currency"] = o.Currency
+	}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
-	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
 	}
 	if o.Nip != nil {
 		toSerialize["nip"] = o.Nip

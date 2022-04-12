@@ -16,9 +16,9 @@ import (
 
 // DnsRecord struct for DnsRecord
 type DnsRecord struct {
-	Id *string `json:"id,omitempty"`
 	// Template string: - {{REQUEST_IP}} is replaced by the requester ip address.
 	Content string `json:"content"`
+	Id *string `json:"id,omitempty"`
 }
 
 // NewDnsRecord instantiates a new DnsRecord object
@@ -37,6 +37,30 @@ func NewDnsRecord(content string) *DnsRecord {
 func NewDnsRecordWithDefaults() *DnsRecord {
 	this := DnsRecord{}
 	return &this
+}
+
+// GetContent returns the Content field value
+func (o *DnsRecord) GetContent() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Content
+}
+
+// GetContentOk returns a tuple with the Content field value
+// and a boolean to check if the value has been set.
+func (o *DnsRecord) GetContentOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Content, true
+}
+
+// SetContent sets field value
+func (o *DnsRecord) SetContent(v string) {
+	o.Content = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -71,37 +95,13 @@ func (o *DnsRecord) SetId(v string) {
 	o.Id = &v
 }
 
-// GetContent returns the Content field value
-func (o *DnsRecord) GetContent() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Content
-}
-
-// GetContentOk returns a tuple with the Content field value
-// and a boolean to check if the value has been set.
-func (o *DnsRecord) GetContentOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Content, true
-}
-
-// SetContent sets field value
-func (o *DnsRecord) SetContent(v string) {
-	o.Content = v
-}
-
 func (o DnsRecord) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
 	if true {
 		toSerialize["content"] = o.Content
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	return json.Marshal(toSerialize)
 }

@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
-**Project** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Organisation** | Pointer to **string** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -55,31 +55,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *Resource) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Resource) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Resource) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Resource) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
 ### GetKind
 
 `func (o *Resource) GetKind() string`
@@ -105,30 +80,30 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetProject
+### GetName
 
-`func (o *Resource) GetProject() string`
+`func (o *Resource) GetName() string`
 
-GetProject returns the Project field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetProjectOk
+### GetNameOk
 
-`func (o *Resource) GetProjectOk() (*string, bool)`
+`func (o *Resource) GetNameOk() (*string, bool)`
 
-GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProject
+### SetName
 
-`func (o *Resource) SetProject(v string)`
+`func (o *Resource) SetName(v string)`
 
-SetProject sets Project field to given value.
+SetName sets Name field to given value.
 
-### HasProject
+### HasName
 
-`func (o *Resource) HasProject() bool`
+`func (o *Resource) HasName() bool`
 
-HasProject returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
 ### GetOrganisation
 
@@ -154,6 +129,31 @@ SetOrganisation sets Organisation field to given value.
 `func (o *Resource) HasOrganisation() bool`
 
 HasOrganisation returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *Resource) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *Resource) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *Resource) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *Resource) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
 
 ### GetUri
 

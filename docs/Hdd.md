@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaximumIOPS** | Pointer to **float32** |  | [optional] 
-**ControllerType** | Pointer to **string** |  | [optional] 
-**ControllerNumber** | Pointer to **string** |  | [optional] 
 **ControllerLocation** | Pointer to **float32** |  | [optional] 
+**ControllerNumber** | Pointer to **string** |  | [optional] 
+**ControllerType** | Pointer to **string** |  | [optional] 
 **Disk** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**MaximumIOPS** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -30,55 +30,30 @@ NewHddWithDefaults instantiates a new Hdd object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMaximumIOPS
+### GetControllerLocation
 
-`func (o *Hdd) GetMaximumIOPS() float32`
+`func (o *Hdd) GetControllerLocation() float32`
 
-GetMaximumIOPS returns the MaximumIOPS field if non-nil, zero value otherwise.
+GetControllerLocation returns the ControllerLocation field if non-nil, zero value otherwise.
 
-### GetMaximumIOPSOk
+### GetControllerLocationOk
 
-`func (o *Hdd) GetMaximumIOPSOk() (*float32, bool)`
+`func (o *Hdd) GetControllerLocationOk() (*float32, bool)`
 
-GetMaximumIOPSOk returns a tuple with the MaximumIOPS field if it's non-nil, zero value otherwise
+GetControllerLocationOk returns a tuple with the ControllerLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaximumIOPS
+### SetControllerLocation
 
-`func (o *Hdd) SetMaximumIOPS(v float32)`
+`func (o *Hdd) SetControllerLocation(v float32)`
 
-SetMaximumIOPS sets MaximumIOPS field to given value.
+SetControllerLocation sets ControllerLocation field to given value.
 
-### HasMaximumIOPS
+### HasControllerLocation
 
-`func (o *Hdd) HasMaximumIOPS() bool`
+`func (o *Hdd) HasControllerLocation() bool`
 
-HasMaximumIOPS returns a boolean if a field has been set.
-
-### GetControllerType
-
-`func (o *Hdd) GetControllerType() string`
-
-GetControllerType returns the ControllerType field if non-nil, zero value otherwise.
-
-### GetControllerTypeOk
-
-`func (o *Hdd) GetControllerTypeOk() (*string, bool)`
-
-GetControllerTypeOk returns a tuple with the ControllerType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetControllerType
-
-`func (o *Hdd) SetControllerType(v string)`
-
-SetControllerType sets ControllerType field to given value.
-
-### HasControllerType
-
-`func (o *Hdd) HasControllerType() bool`
-
-HasControllerType returns a boolean if a field has been set.
+HasControllerLocation returns a boolean if a field has been set.
 
 ### GetControllerNumber
 
@@ -105,30 +80,30 @@ SetControllerNumber sets ControllerNumber field to given value.
 
 HasControllerNumber returns a boolean if a field has been set.
 
-### GetControllerLocation
+### GetControllerType
 
-`func (o *Hdd) GetControllerLocation() float32`
+`func (o *Hdd) GetControllerType() string`
 
-GetControllerLocation returns the ControllerLocation field if non-nil, zero value otherwise.
+GetControllerType returns the ControllerType field if non-nil, zero value otherwise.
 
-### GetControllerLocationOk
+### GetControllerTypeOk
 
-`func (o *Hdd) GetControllerLocationOk() (*float32, bool)`
+`func (o *Hdd) GetControllerTypeOk() (*string, bool)`
 
-GetControllerLocationOk returns a tuple with the ControllerLocation field if it's non-nil, zero value otherwise
+GetControllerTypeOk returns a tuple with the ControllerType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetControllerLocation
+### SetControllerType
 
-`func (o *Hdd) SetControllerLocation(v float32)`
+`func (o *Hdd) SetControllerType(v string)`
 
-SetControllerLocation sets ControllerLocation field to given value.
+SetControllerType sets ControllerType field to given value.
 
-### HasControllerLocation
+### HasControllerType
 
-`func (o *Hdd) HasControllerLocation() bool`
+`func (o *Hdd) HasControllerType() bool`
 
-HasControllerLocation returns a boolean if a field has been set.
+HasControllerType returns a boolean if a field has been set.
 
 ### GetDisk
 
@@ -179,6 +154,31 @@ SetId sets Id field to given value.
 `func (o *Hdd) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetMaximumIOPS
+
+`func (o *Hdd) GetMaximumIOPS() float32`
+
+GetMaximumIOPS returns the MaximumIOPS field if non-nil, zero value otherwise.
+
+### GetMaximumIOPSOk
+
+`func (o *Hdd) GetMaximumIOPSOk() (*float32, bool)`
+
+GetMaximumIOPSOk returns a tuple with the MaximumIOPS field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumIOPS
+
+`func (o *Hdd) SetMaximumIOPS(v float32)`
+
+SetMaximumIOPS sets MaximumIOPS field to given value.
+
+### HasMaximumIOPS
+
+`func (o *Hdd) HasMaximumIOPS() bool`
+
+HasMaximumIOPS returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

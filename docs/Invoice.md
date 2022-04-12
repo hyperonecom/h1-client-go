@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
 **AdditionalInfo** | Pointer to **string** |  | [optional] 
+**Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
+**Channel** | Pointer to **string** |  | [optional] 
+**Company** | Pointer to **string** |  | [optional] 
 **Corrections** | Pointer to **[]string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **InvoiceInfo** | Pointer to **string** |  | [optional] 
 **InvoiceNo** | Pointer to **string** |  | [optional] 
 **IssueDate** | Pointer to **time.Time** |  | [optional] 
-**Payments** | Pointer to **[]string** |  | [optional] 
-**Channel** | Pointer to **string** |  | [optional] 
-**Nip** | Pointer to **string** |  | [optional] 
-**Company** | Pointer to **string** |  | [optional] 
-**Seller** | Pointer to [**InvoiceSeller**](InvoiceSeller.md) |  | [optional] 
 **Items** | Pointer to [**[]InvoiceItems**](InvoiceItems.md) |  | [optional] 
-**Buyer** | Pointer to [**InvoiceBuyer**](InvoiceBuyer.md) |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**Summary** | Pointer to **string** |  | [optional] 
-**Project** | Pointer to **string** |  | [optional] 
+**Nip** | Pointer to **string** |  | [optional] 
 **Organisation** | Pointer to **string** |  | [optional] 
+**Payments** | Pointer to **[]string** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
+**Seller** | Pointer to [**InvoiceSeller**](InvoiceSeller.md) |  | [optional] 
+**Summary** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -41,31 +41,6 @@ will change when the set of required properties is changed
 NewInvoiceWithDefaults instantiates a new Invoice object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Invoice) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Invoice) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Invoice) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Invoice) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetAdditionalInfo
 
@@ -92,6 +67,81 @@ SetAdditionalInfo sets AdditionalInfo field to given value.
 
 HasAdditionalInfo returns a boolean if a field has been set.
 
+### GetBuyer
+
+`func (o *Invoice) GetBuyer() InvoiceBuyer`
+
+GetBuyer returns the Buyer field if non-nil, zero value otherwise.
+
+### GetBuyerOk
+
+`func (o *Invoice) GetBuyerOk() (*InvoiceBuyer, bool)`
+
+GetBuyerOk returns a tuple with the Buyer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuyer
+
+`func (o *Invoice) SetBuyer(v InvoiceBuyer)`
+
+SetBuyer sets Buyer field to given value.
+
+### HasBuyer
+
+`func (o *Invoice) HasBuyer() bool`
+
+HasBuyer returns a boolean if a field has been set.
+
+### GetChannel
+
+`func (o *Invoice) GetChannel() string`
+
+GetChannel returns the Channel field if non-nil, zero value otherwise.
+
+### GetChannelOk
+
+`func (o *Invoice) GetChannelOk() (*string, bool)`
+
+GetChannelOk returns a tuple with the Channel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChannel
+
+`func (o *Invoice) SetChannel(v string)`
+
+SetChannel sets Channel field to given value.
+
+### HasChannel
+
+`func (o *Invoice) HasChannel() bool`
+
+HasChannel returns a boolean if a field has been set.
+
+### GetCompany
+
+`func (o *Invoice) GetCompany() string`
+
+GetCompany returns the Company field if non-nil, zero value otherwise.
+
+### GetCompanyOk
+
+`func (o *Invoice) GetCompanyOk() (*string, bool)`
+
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompany
+
+`func (o *Invoice) SetCompany(v string)`
+
+SetCompany sets Company field to given value.
+
+### HasCompany
+
+`func (o *Invoice) HasCompany() bool`
+
+HasCompany returns a boolean if a field has been set.
+
 ### GetCorrections
 
 `func (o *Invoice) GetCorrections() []string`
@@ -116,6 +166,31 @@ SetCorrections sets Corrections field to given value.
 `func (o *Invoice) HasCorrections() bool`
 
 HasCorrections returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *Invoice) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Invoice) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Invoice) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *Invoice) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetInvoiceInfo
 
@@ -192,55 +267,30 @@ SetIssueDate sets IssueDate field to given value.
 
 HasIssueDate returns a boolean if a field has been set.
 
-### GetPayments
+### GetItems
 
-`func (o *Invoice) GetPayments() []string`
+`func (o *Invoice) GetItems() []InvoiceItems`
 
-GetPayments returns the Payments field if non-nil, zero value otherwise.
+GetItems returns the Items field if non-nil, zero value otherwise.
 
-### GetPaymentsOk
+### GetItemsOk
 
-`func (o *Invoice) GetPaymentsOk() (*[]string, bool)`
+`func (o *Invoice) GetItemsOk() (*[]InvoiceItems, bool)`
 
-GetPaymentsOk returns a tuple with the Payments field if it's non-nil, zero value otherwise
+GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPayments
+### SetItems
 
-`func (o *Invoice) SetPayments(v []string)`
+`func (o *Invoice) SetItems(v []InvoiceItems)`
 
-SetPayments sets Payments field to given value.
+SetItems sets Items field to given value.
 
-### HasPayments
+### HasItems
 
-`func (o *Invoice) HasPayments() bool`
+`func (o *Invoice) HasItems() bool`
 
-HasPayments returns a boolean if a field has been set.
-
-### GetChannel
-
-`func (o *Invoice) GetChannel() string`
-
-GetChannel returns the Channel field if non-nil, zero value otherwise.
-
-### GetChannelOk
-
-`func (o *Invoice) GetChannelOk() (*string, bool)`
-
-GetChannelOk returns a tuple with the Channel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChannel
-
-`func (o *Invoice) SetChannel(v string)`
-
-SetChannel sets Channel field to given value.
-
-### HasChannel
-
-`func (o *Invoice) HasChannel() bool`
-
-HasChannel returns a boolean if a field has been set.
+HasItems returns a boolean if a field has been set.
 
 ### GetNip
 
@@ -267,155 +317,55 @@ SetNip sets Nip field to given value.
 
 HasNip returns a boolean if a field has been set.
 
-### GetCompany
+### GetOrganisation
 
-`func (o *Invoice) GetCompany() string`
+`func (o *Invoice) GetOrganisation() string`
 
-GetCompany returns the Company field if non-nil, zero value otherwise.
+GetOrganisation returns the Organisation field if non-nil, zero value otherwise.
 
-### GetCompanyOk
+### GetOrganisationOk
 
-`func (o *Invoice) GetCompanyOk() (*string, bool)`
+`func (o *Invoice) GetOrganisationOk() (*string, bool)`
 
-GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
+GetOrganisationOk returns a tuple with the Organisation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCompany
+### SetOrganisation
 
-`func (o *Invoice) SetCompany(v string)`
+`func (o *Invoice) SetOrganisation(v string)`
 
-SetCompany sets Company field to given value.
+SetOrganisation sets Organisation field to given value.
 
-### HasCompany
+### HasOrganisation
 
-`func (o *Invoice) HasCompany() bool`
+`func (o *Invoice) HasOrganisation() bool`
 
-HasCompany returns a boolean if a field has been set.
+HasOrganisation returns a boolean if a field has been set.
 
-### GetSeller
+### GetPayments
 
-`func (o *Invoice) GetSeller() InvoiceSeller`
+`func (o *Invoice) GetPayments() []string`
 
-GetSeller returns the Seller field if non-nil, zero value otherwise.
+GetPayments returns the Payments field if non-nil, zero value otherwise.
 
-### GetSellerOk
+### GetPaymentsOk
 
-`func (o *Invoice) GetSellerOk() (*InvoiceSeller, bool)`
+`func (o *Invoice) GetPaymentsOk() (*[]string, bool)`
 
-GetSellerOk returns a tuple with the Seller field if it's non-nil, zero value otherwise
+GetPaymentsOk returns a tuple with the Payments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSeller
+### SetPayments
 
-`func (o *Invoice) SetSeller(v InvoiceSeller)`
+`func (o *Invoice) SetPayments(v []string)`
 
-SetSeller sets Seller field to given value.
+SetPayments sets Payments field to given value.
 
-### HasSeller
+### HasPayments
 
-`func (o *Invoice) HasSeller() bool`
+`func (o *Invoice) HasPayments() bool`
 
-HasSeller returns a boolean if a field has been set.
-
-### GetItems
-
-`func (o *Invoice) GetItems() []InvoiceItems`
-
-GetItems returns the Items field if non-nil, zero value otherwise.
-
-### GetItemsOk
-
-`func (o *Invoice) GetItemsOk() (*[]InvoiceItems, bool)`
-
-GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetItems
-
-`func (o *Invoice) SetItems(v []InvoiceItems)`
-
-SetItems sets Items field to given value.
-
-### HasItems
-
-`func (o *Invoice) HasItems() bool`
-
-HasItems returns a boolean if a field has been set.
-
-### GetBuyer
-
-`func (o *Invoice) GetBuyer() InvoiceBuyer`
-
-GetBuyer returns the Buyer field if non-nil, zero value otherwise.
-
-### GetBuyerOk
-
-`func (o *Invoice) GetBuyerOk() (*InvoiceBuyer, bool)`
-
-GetBuyerOk returns a tuple with the Buyer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBuyer
-
-`func (o *Invoice) SetBuyer(v InvoiceBuyer)`
-
-SetBuyer sets Buyer field to given value.
-
-### HasBuyer
-
-`func (o *Invoice) HasBuyer() bool`
-
-HasBuyer returns a boolean if a field has been set.
-
-### GetType
-
-`func (o *Invoice) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *Invoice) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *Invoice) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *Invoice) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### GetSummary
-
-`func (o *Invoice) GetSummary() string`
-
-GetSummary returns the Summary field if non-nil, zero value otherwise.
-
-### GetSummaryOk
-
-`func (o *Invoice) GetSummaryOk() (*string, bool)`
-
-GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSummary
-
-`func (o *Invoice) SetSummary(v string)`
-
-SetSummary sets Summary field to given value.
-
-### HasSummary
-
-`func (o *Invoice) HasSummary() bool`
-
-HasSummary returns a boolean if a field has been set.
+HasPayments returns a boolean if a field has been set.
 
 ### GetProject
 
@@ -442,30 +392,80 @@ SetProject sets Project field to given value.
 
 HasProject returns a boolean if a field has been set.
 
-### GetOrganisation
+### GetSeller
 
-`func (o *Invoice) GetOrganisation() string`
+`func (o *Invoice) GetSeller() InvoiceSeller`
 
-GetOrganisation returns the Organisation field if non-nil, zero value otherwise.
+GetSeller returns the Seller field if non-nil, zero value otherwise.
 
-### GetOrganisationOk
+### GetSellerOk
 
-`func (o *Invoice) GetOrganisationOk() (*string, bool)`
+`func (o *Invoice) GetSellerOk() (*InvoiceSeller, bool)`
 
-GetOrganisationOk returns a tuple with the Organisation field if it's non-nil, zero value otherwise
+GetSellerOk returns a tuple with the Seller field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOrganisation
+### SetSeller
 
-`func (o *Invoice) SetOrganisation(v string)`
+`func (o *Invoice) SetSeller(v InvoiceSeller)`
 
-SetOrganisation sets Organisation field to given value.
+SetSeller sets Seller field to given value.
 
-### HasOrganisation
+### HasSeller
 
-`func (o *Invoice) HasOrganisation() bool`
+`func (o *Invoice) HasSeller() bool`
 
-HasOrganisation returns a boolean if a field has been set.
+HasSeller returns a boolean if a field has been set.
+
+### GetSummary
+
+`func (o *Invoice) GetSummary() string`
+
+GetSummary returns the Summary field if non-nil, zero value otherwise.
+
+### GetSummaryOk
+
+`func (o *Invoice) GetSummaryOk() (*string, bool)`
+
+GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSummary
+
+`func (o *Invoice) SetSummary(v string)`
+
+SetSummary sets Summary field to given value.
+
+### HasSummary
+
+`func (o *Invoice) HasSummary() bool`
+
+HasSummary returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *Invoice) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *Invoice) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *Invoice) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *Invoice) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUri
 

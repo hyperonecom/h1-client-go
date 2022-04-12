@@ -17,20 +17,21 @@ import (
 
 // ProviderAgentResource struct for ProviderAgentResource
 type ProviderAgentResource struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	State *string `json:"state,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
+	Id string `json:"id"`
+	Name *string `json:"name,omitempty"`
 	Project *string `json:"project,omitempty"`
 	Resource *string `json:"resource,omitempty"`
+	State *string `json:"state,omitempty"`
 }
 
 // NewProviderAgentResource instantiates a new ProviderAgentResource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProviderAgentResource() *ProviderAgentResource {
+func NewProviderAgentResource(id string) *ProviderAgentResource {
 	this := ProviderAgentResource{}
+	this.Id = id
 	return &this
 }
 
@@ -40,102 +41,6 @@ func NewProviderAgentResource() *ProviderAgentResource {
 func NewProviderAgentResourceWithDefaults() *ProviderAgentResource {
 	this := ProviderAgentResource{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ProviderAgentResource) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProviderAgentResource) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *ProviderAgentResource) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ProviderAgentResource) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ProviderAgentResource) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProviderAgentResource) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ProviderAgentResource) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ProviderAgentResource) SetName(v string) {
-	o.Name = &v
-}
-
-// GetState returns the State field value if set, zero value otherwise.
-func (o *ProviderAgentResource) GetState() string {
-	if o == nil || o.State == nil {
-		var ret string
-		return ret
-	}
-	return *o.State
-}
-
-// GetStateOk returns a tuple with the State field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProviderAgentResource) GetStateOk() (*string, bool) {
-	if o == nil || o.State == nil {
-		return nil, false
-	}
-	return o.State, true
-}
-
-// HasState returns a boolean if a field has been set.
-func (o *ProviderAgentResource) HasState() bool {
-	if o != nil && o.State != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetState gets a reference to the given string and assigns it to the State field.
-func (o *ProviderAgentResource) SetState(v string) {
-	o.State = &v
 }
 
 // GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
@@ -168,6 +73,62 @@ func (o *ProviderAgentResource) HasCreatedOn() bool {
 // SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
 func (o *ProviderAgentResource) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
+}
+
+// GetId returns the Id field value
+func (o *ProviderAgentResource) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ProviderAgentResource) GetIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ProviderAgentResource) SetId(v string) {
+	o.Id = v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ProviderAgentResource) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProviderAgentResource) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ProviderAgentResource) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ProviderAgentResource) SetName(v string) {
+	o.Name = &v
 }
 
 // GetProject returns the Project field value if set, zero value otherwise.
@@ -234,25 +195,57 @@ func (o *ProviderAgentResource) SetResource(v string) {
 	o.Resource = &v
 }
 
+// GetState returns the State field value if set, zero value otherwise.
+func (o *ProviderAgentResource) GetState() string {
+	if o == nil || o.State == nil {
+		var ret string
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProviderAgentResource) GetStateOk() (*string, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *ProviderAgentResource) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
+func (o *ProviderAgentResource) SetState(v string) {
+	o.State = &v
+}
+
 func (o ProviderAgentResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
 	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
 	}
 	if o.Resource != nil {
 		toSerialize["resource"] = o.Resource
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
 	}
 	return json.Marshal(toSerialize)
 }

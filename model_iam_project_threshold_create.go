@@ -19,8 +19,8 @@ type IamProjectThresholdCreate struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Value *float32 `json:"value,omitempty"`
 	Uri *string `json:"uri,omitempty"`
+	Value *float32 `json:"value,omitempty"`
 }
 
 // NewIamProjectThresholdCreate instantiates a new IamProjectThresholdCreate object
@@ -136,38 +136,6 @@ func (o *IamProjectThresholdCreate) SetType(v string) {
 	o.Type = &v
 }
 
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *IamProjectThresholdCreate) GetValue() float32 {
-	if o == nil || o.Value == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IamProjectThresholdCreate) GetValueOk() (*float32, bool) {
-	if o == nil || o.Value == nil {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// HasValue returns a boolean if a field has been set.
-func (o *IamProjectThresholdCreate) HasValue() bool {
-	if o != nil && o.Value != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *IamProjectThresholdCreate) SetValue(v float32) {
-	o.Value = &v
-}
-
 // GetUri returns the Uri field value if set, zero value otherwise.
 func (o *IamProjectThresholdCreate) GetUri() string {
 	if o == nil || o.Uri == nil {
@@ -200,6 +168,38 @@ func (o *IamProjectThresholdCreate) SetUri(v string) {
 	o.Uri = &v
 }
 
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *IamProjectThresholdCreate) GetValue() float32 {
+	if o == nil || o.Value == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IamProjectThresholdCreate) GetValueOk() (*float32, bool) {
+	if o == nil || o.Value == nil {
+		return nil, false
+	}
+	return o.Value, true
+}
+
+// HasValue returns a boolean if a field has been set.
+func (o *IamProjectThresholdCreate) HasValue() bool {
+	if o != nil && o.Value != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given float32 and assigns it to the Value field.
+func (o *IamProjectThresholdCreate) SetValue(v float32) {
+	o.Value = &v
+}
+
 func (o IamProjectThresholdCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
@@ -211,11 +211,11 @@ func (o IamProjectThresholdCreate) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri
+	}
+	if o.Value != nil {
+		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)
 }

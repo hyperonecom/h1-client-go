@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewEventBaseWithDefaults instantiates a new EventBase object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreatedOn
+
+`func (o *EventBase) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *EventBase) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *EventBase) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *EventBase) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
 
 ### GetId
 
@@ -77,31 +102,6 @@ SetName sets Name field to given value.
 `func (o *EventBase) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *EventBase) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *EventBase) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *EventBase) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *EventBase) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
 
 ### GetState
 

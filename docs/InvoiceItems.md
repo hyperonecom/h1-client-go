@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Price** | **string** |  | 
-**Netto** | **string** |  | 
 **Brutto** | **string** |  | 
+**Name** | **string** |  | 
+**Netto** | **string** |  | 
+**Price** | **string** |  | 
+**Quantity** | **float32** |  | 
 **VatAmount** | **string** |  | 
 **VatRate** | **string** |  | 
-**Quantity** | **float32** |  | 
 
 ## Methods
 
 ### NewInvoiceItems
 
-`func NewInvoiceItems(name string, price string, netto string, brutto string, vatAmount string, vatRate string, quantity float32, ) *InvoiceItems`
+`func NewInvoiceItems(brutto string, name string, netto string, price string, quantity float32, vatAmount string, vatRate string, ) *InvoiceItems`
 
 NewInvoiceItems instantiates a new InvoiceItems object
 This constructor will assign default values to properties that have it defined,
@@ -30,6 +30,26 @@ will change when the set of required properties is changed
 NewInvoiceItemsWithDefaults instantiates a new InvoiceItems object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBrutto
+
+`func (o *InvoiceItems) GetBrutto() string`
+
+GetBrutto returns the Brutto field if non-nil, zero value otherwise.
+
+### GetBruttoOk
+
+`func (o *InvoiceItems) GetBruttoOk() (*string, bool)`
+
+GetBruttoOk returns a tuple with the Brutto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBrutto
+
+`func (o *InvoiceItems) SetBrutto(v string)`
+
+SetBrutto sets Brutto field to given value.
+
 
 ### GetName
 
@@ -49,26 +69,6 @@ and a boolean to check if the value has been set.
 `func (o *InvoiceItems) SetName(v string)`
 
 SetName sets Name field to given value.
-
-
-### GetPrice
-
-`func (o *InvoiceItems) GetPrice() string`
-
-GetPrice returns the Price field if non-nil, zero value otherwise.
-
-### GetPriceOk
-
-`func (o *InvoiceItems) GetPriceOk() (*string, bool)`
-
-GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrice
-
-`func (o *InvoiceItems) SetPrice(v string)`
-
-SetPrice sets Price field to given value.
 
 
 ### GetNetto
@@ -91,24 +91,44 @@ and a boolean to check if the value has been set.
 SetNetto sets Netto field to given value.
 
 
-### GetBrutto
+### GetPrice
 
-`func (o *InvoiceItems) GetBrutto() string`
+`func (o *InvoiceItems) GetPrice() string`
 
-GetBrutto returns the Brutto field if non-nil, zero value otherwise.
+GetPrice returns the Price field if non-nil, zero value otherwise.
 
-### GetBruttoOk
+### GetPriceOk
 
-`func (o *InvoiceItems) GetBruttoOk() (*string, bool)`
+`func (o *InvoiceItems) GetPriceOk() (*string, bool)`
 
-GetBruttoOk returns a tuple with the Brutto field if it's non-nil, zero value otherwise
+GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBrutto
+### SetPrice
 
-`func (o *InvoiceItems) SetBrutto(v string)`
+`func (o *InvoiceItems) SetPrice(v string)`
 
-SetBrutto sets Brutto field to given value.
+SetPrice sets Price field to given value.
+
+
+### GetQuantity
+
+`func (o *InvoiceItems) GetQuantity() float32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *InvoiceItems) GetQuantityOk() (*float32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *InvoiceItems) SetQuantity(v float32)`
+
+SetQuantity sets Quantity field to given value.
 
 
 ### GetVatAmount
@@ -149,26 +169,6 @@ and a boolean to check if the value has been set.
 `func (o *InvoiceItems) SetVatRate(v string)`
 
 SetVatRate sets VatRate field to given value.
-
-
-### GetQuantity
-
-`func (o *InvoiceItems) GetQuantity() float32`
-
-GetQuantity returns the Quantity field if non-nil, zero value otherwise.
-
-### GetQuantityOk
-
-`func (o *InvoiceItems) GetQuantityOk() (*float32, bool)`
-
-GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuantity
-
-`func (o *InvoiceItems) SetQuantity(v float32)`
-
-SetQuantity sets Quantity field to given value.
 
 
 

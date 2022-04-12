@@ -16,20 +16,21 @@ import (
 
 // SupportProjectTicketCreate struct for SupportProjectTicketCreate
 type SupportProjectTicketCreate struct {
-	Type string `json:"type"`
-	Subject string `json:"subject"`
 	Message string `json:"message"`
+	Resource *string `json:"resource,omitempty"`
+	Subject string `json:"subject"`
+	Type string `json:"type"`
 }
 
 // NewSupportProjectTicketCreate instantiates a new SupportProjectTicketCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSupportProjectTicketCreate(type_ string, subject string, message string) *SupportProjectTicketCreate {
+func NewSupportProjectTicketCreate(message string, subject string, type_ string) *SupportProjectTicketCreate {
 	this := SupportProjectTicketCreate{}
-	this.Type = type_
-	this.Subject = subject
 	this.Message = message
+	this.Subject = subject
+	this.Type = type_
 	return &this
 }
 
@@ -39,54 +40,6 @@ func NewSupportProjectTicketCreate(type_ string, subject string, message string)
 func NewSupportProjectTicketCreateWithDefaults() *SupportProjectTicketCreate {
 	this := SupportProjectTicketCreate{}
 	return &this
-}
-
-// GetType returns the Type field value
-func (o *SupportProjectTicketCreate) GetType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value
-// and a boolean to check if the value has been set.
-func (o *SupportProjectTicketCreate) GetTypeOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Type, true
-}
-
-// SetType sets field value
-func (o *SupportProjectTicketCreate) SetType(v string) {
-	o.Type = v
-}
-
-// GetSubject returns the Subject field value
-func (o *SupportProjectTicketCreate) GetSubject() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Subject
-}
-
-// GetSubjectOk returns a tuple with the Subject field value
-// and a boolean to check if the value has been set.
-func (o *SupportProjectTicketCreate) GetSubjectOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Subject, true
-}
-
-// SetSubject sets field value
-func (o *SupportProjectTicketCreate) SetSubject(v string) {
-	o.Subject = v
 }
 
 // GetMessage returns the Message field value
@@ -113,16 +66,99 @@ func (o *SupportProjectTicketCreate) SetMessage(v string) {
 	o.Message = v
 }
 
+// GetResource returns the Resource field value if set, zero value otherwise.
+func (o *SupportProjectTicketCreate) GetResource() string {
+	if o == nil || o.Resource == nil {
+		var ret string
+		return ret
+	}
+	return *o.Resource
+}
+
+// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SupportProjectTicketCreate) GetResourceOk() (*string, bool) {
+	if o == nil || o.Resource == nil {
+		return nil, false
+	}
+	return o.Resource, true
+}
+
+// HasResource returns a boolean if a field has been set.
+func (o *SupportProjectTicketCreate) HasResource() bool {
+	if o != nil && o.Resource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResource gets a reference to the given string and assigns it to the Resource field.
+func (o *SupportProjectTicketCreate) SetResource(v string) {
+	o.Resource = &v
+}
+
+// GetSubject returns the Subject field value
+func (o *SupportProjectTicketCreate) GetSubject() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Subject
+}
+
+// GetSubjectOk returns a tuple with the Subject field value
+// and a boolean to check if the value has been set.
+func (o *SupportProjectTicketCreate) GetSubjectOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Subject, true
+}
+
+// SetSubject sets field value
+func (o *SupportProjectTicketCreate) SetSubject(v string) {
+	o.Subject = v
+}
+
+// GetType returns the Type field value
+func (o *SupportProjectTicketCreate) GetType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value
+// and a boolean to check if the value has been set.
+func (o *SupportProjectTicketCreate) GetTypeOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// SetType sets field value
+func (o *SupportProjectTicketCreate) SetType(v string) {
+	o.Type = v
+}
+
 func (o SupportProjectTicketCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
+		toSerialize["message"] = o.Message
+	}
+	if o.Resource != nil {
+		toSerialize["resource"] = o.Resource
 	}
 	if true {
 		toSerialize["subject"] = o.Subject
 	}
 	if true {
-		toSerialize["message"] = o.Message
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

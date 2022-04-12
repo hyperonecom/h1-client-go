@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | Pointer to **string** |  | [optional] 
-**Company** | Pointer to **string** |  | [optional] 
 **Address** | Pointer to [**BillingAddress1**](BillingAddress1.md) |  | [optional] 
+**Company** | Pointer to **string** |  | [optional] 
+**Email** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewOrganisationBilling1WithDefaults instantiates a new OrganisationBilling1 obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetEmail
+### GetAddress
 
-`func (o *OrganisationBilling1) GetEmail() string`
+`func (o *OrganisationBilling1) GetAddress() BillingAddress1`
 
-GetEmail returns the Email field if non-nil, zero value otherwise.
+GetAddress returns the Address field if non-nil, zero value otherwise.
 
-### GetEmailOk
+### GetAddressOk
 
-`func (o *OrganisationBilling1) GetEmailOk() (*string, bool)`
+`func (o *OrganisationBilling1) GetAddressOk() (*BillingAddress1, bool)`
 
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEmail
+### SetAddress
 
-`func (o *OrganisationBilling1) SetEmail(v string)`
+`func (o *OrganisationBilling1) SetAddress(v BillingAddress1)`
 
-SetEmail sets Email field to given value.
+SetAddress sets Address field to given value.
 
-### HasEmail
+### HasAddress
 
-`func (o *OrganisationBilling1) HasEmail() bool`
+`func (o *OrganisationBilling1) HasAddress() bool`
 
-HasEmail returns a boolean if a field has been set.
+HasAddress returns a boolean if a field has been set.
 
 ### GetCompany
 
@@ -77,30 +77,30 @@ SetCompany sets Company field to given value.
 
 HasCompany returns a boolean if a field has been set.
 
-### GetAddress
+### GetEmail
 
-`func (o *OrganisationBilling1) GetAddress() BillingAddress1`
+`func (o *OrganisationBilling1) GetEmail() string`
 
-GetAddress returns the Address field if non-nil, zero value otherwise.
+GetEmail returns the Email field if non-nil, zero value otherwise.
 
-### GetAddressOk
+### GetEmailOk
 
-`func (o *OrganisationBilling1) GetAddressOk() (*BillingAddress1, bool)`
+`func (o *OrganisationBilling1) GetEmailOk() (*string, bool)`
 
-GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAddress
+### SetEmail
 
-`func (o *OrganisationBilling1) SetAddress(v BillingAddress1)`
+`func (o *OrganisationBilling1) SetEmail(v string)`
 
-SetAddress sets Address field to given value.
+SetEmail sets Email field to given value.
 
-### HasAddress
+### HasEmail
 
-`func (o *OrganisationBilling1) HasAddress() bool`
+`func (o *OrganisationBilling1) HasEmail() bool`
 
-HasAddress returns a boolean if a field has been set.
+HasEmail returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

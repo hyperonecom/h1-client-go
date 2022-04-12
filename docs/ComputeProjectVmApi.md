@@ -18,6 +18,9 @@ Method | HTTP request | Description
 [**ComputeProjectVmIsoCreate**](ComputeProjectVmApi.md#ComputeProjectVmIsoCreate) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | Create compute/vm.iso
 [**ComputeProjectVmIsoList**](ComputeProjectVmApi.md#ComputeProjectVmIsoList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/iso | List compute/vm.iso
 [**ComputeProjectVmList**](ComputeProjectVmApi.md#ComputeProjectVmList) | **Get** /compute/{locationId}/project/{projectId}/vm | List compute/vm
+[**ComputeProjectVmMetricGet**](ComputeProjectVmApi.md#ComputeProjectVmMetricGet) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId} | Get compute/vm.metric
+[**ComputeProjectVmMetricList**](ComputeProjectVmApi.md#ComputeProjectVmMetricList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric | List compute/vm.metric
+[**ComputeProjectVmMetricSeriesList**](ComputeProjectVmApi.md#ComputeProjectVmMetricSeriesList) | **Get** /compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}/series | List compute/vm.series
 [**ComputeProjectVmPasswordReset**](ComputeProjectVmApi.md#ComputeProjectVmPasswordReset) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/password_reset | Password reset compute/vm
 [**ComputeProjectVmRestart**](ComputeProjectVmApi.md#ComputeProjectVmRestart) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/restart | Restart compute/vm
 [**ComputeProjectVmSerialport**](ComputeProjectVmApi.md#ComputeProjectVmSerialport) | **Post** /compute/{locationId}/project/{projectId}/vm/{vmId}/actions/serialport | Serialport compute/vm
@@ -1126,6 +1129,246 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ComputeProjectVmMetricGet
+
+> Metric ComputeProjectVmMetricGet(ctx, projectId, locationId, vmId, metricId).Execute()
+
+Get compute/vm.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    metricId := "metricId_example" // string | metricId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricGet(context.Background(), projectId, locationId, vmId, metricId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricGet`: Metric
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+### Return type
+
+[**Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ComputeProjectVmMetricList
+
+> []Metric ComputeProjectVmMetricList(ctx, projectId, locationId, vmId).Execute()
+
+List compute/vm.metric
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricList(context.Background(), projectId, locationId, vmId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricList`: []Metric
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**[]Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ComputeProjectVmMetricSeriesList
+
+> []Point ComputeProjectVmMetricSeriesList(ctx, projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Aligner(aligner).Execute()
+
+List compute/vm.series
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    locationId := "locationId_example" // string | Location Id
+    vmId := "vmId_example" // string | Vm Id
+    metricId := "metricId_example" // string | metricId
+    interval := "interval_example" // string | interval (optional)
+    timespan := "timespan_example" // string | timespan (optional)
+    aligner := "aligner_example" // string | aligner (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ComputeProjectVmApi.ComputeProjectVmMetricSeriesList(context.Background(), projectId, locationId, vmId, metricId).Interval(interval).Timespan(timespan).Aligner(aligner).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmMetricSeriesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ComputeProjectVmMetricSeriesList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmMetricSeriesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**locationId** | **string** | Location Id | 
+**vmId** | **string** | Vm Id | 
+**metricId** | **string** | metricId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiComputeProjectVmMetricSeriesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **interval** | **string** | interval | 
+ **timespan** | **string** | timespan | 
+ **aligner** | **string** | aligner | 
+
+### Return type
+
+[**[]Point**](Point.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ComputeProjectVmPasswordReset
 
 > Vm ComputeProjectVmPasswordReset(ctx, projectId, locationId, vmId).ComputeProjectVmPasswordReset(computeProjectVmPasswordReset).XIdempotencyKey(xIdempotencyKey).XDryRun(xDryRun).Execute()
@@ -1150,7 +1393,7 @@ func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
     vmId := "vmId_example" // string | Vm Id
-    computeProjectVmPasswordReset := *openapiclient.NewComputeProjectVmPasswordReset("UserName_example", "Modulus_example", "Exponent_example") // ComputeProjectVmPasswordReset | 
+    computeProjectVmPasswordReset := *openapiclient.NewComputeProjectVmPasswordReset("Exponent_example", "Modulus_example", "UserName_example") // ComputeProjectVmPasswordReset | 
     xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 

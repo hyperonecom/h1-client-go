@@ -17,15 +17,16 @@ import (
 
 // Ticket struct for Ticket
 type Ticket struct {
+	CreatedBy *string `json:"createdBy,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Id *string `json:"id,omitempty"`
-	Type *string `json:"type,omitempty"`
+	ModifiedBy *string `json:"modifiedBy,omitempty"`
+	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
+	Project *string `json:"project,omitempty"`
+	Resource *string `json:"resource,omitempty"`
 	State *string `json:"state,omitempty"`
 	Subject *string `json:"subject,omitempty"`
-	Project *string `json:"project,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy *string `json:"modifiedBy,omitempty"`
+	Type *string `json:"type,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -44,6 +45,70 @@ func NewTicket() *Ticket {
 func NewTicketWithDefaults() *Ticket {
 	this := Ticket{}
 	return &this
+}
+
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+func (o *Ticket) GetCreatedBy() string {
+	if o == nil || o.CreatedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.CreatedBy
+}
+
+// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetCreatedByOk() (*string, bool) {
+	if o == nil || o.CreatedBy == nil {
+		return nil, false
+	}
+	return o.CreatedBy, true
+}
+
+// HasCreatedBy returns a boolean if a field has been set.
+func (o *Ticket) HasCreatedBy() bool {
+	if o != nil && o.CreatedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+func (o *Ticket) SetCreatedBy(v string) {
+	o.CreatedBy = &v
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *Ticket) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *Ticket) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Ticket) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -78,36 +143,132 @@ func (o *Ticket) SetId(v string) {
 	o.Id = &v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *Ticket) GetType() string {
-	if o == nil || o.Type == nil {
+// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
+func (o *Ticket) GetModifiedBy() string {
+	if o == nil || o.ModifiedBy == nil {
 		var ret string
 		return ret
 	}
-	return *o.Type
+	return *o.ModifiedBy
 }
 
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Ticket) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+func (o *Ticket) GetModifiedByOk() (*string, bool) {
+	if o == nil || o.ModifiedBy == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return o.ModifiedBy, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *Ticket) HasType() bool {
-	if o != nil && o.Type != nil {
+// HasModifiedBy returns a boolean if a field has been set.
+func (o *Ticket) HasModifiedBy() bool {
+	if o != nil && o.ModifiedBy != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Ticket) SetType(v string) {
-	o.Type = &v
+// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
+func (o *Ticket) SetModifiedBy(v string) {
+	o.ModifiedBy = &v
+}
+
+// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
+func (o *Ticket) GetModifiedOn() time.Time {
+	if o == nil || o.ModifiedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.ModifiedOn
+}
+
+// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetModifiedOnOk() (*time.Time, bool) {
+	if o == nil || o.ModifiedOn == nil {
+		return nil, false
+	}
+	return o.ModifiedOn, true
+}
+
+// HasModifiedOn returns a boolean if a field has been set.
+func (o *Ticket) HasModifiedOn() bool {
+	if o != nil && o.ModifiedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
+func (o *Ticket) SetModifiedOn(v time.Time) {
+	o.ModifiedOn = &v
+}
+
+// GetProject returns the Project field value if set, zero value otherwise.
+func (o *Ticket) GetProject() string {
+	if o == nil || o.Project == nil {
+		var ret string
+		return ret
+	}
+	return *o.Project
+}
+
+// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetProjectOk() (*string, bool) {
+	if o == nil || o.Project == nil {
+		return nil, false
+	}
+	return o.Project, true
+}
+
+// HasProject returns a boolean if a field has been set.
+func (o *Ticket) HasProject() bool {
+	if o != nil && o.Project != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProject gets a reference to the given string and assigns it to the Project field.
+func (o *Ticket) SetProject(v string) {
+	o.Project = &v
+}
+
+// GetResource returns the Resource field value if set, zero value otherwise.
+func (o *Ticket) GetResource() string {
+	if o == nil || o.Resource == nil {
+		var ret string
+		return ret
+	}
+	return *o.Resource
+}
+
+// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Ticket) GetResourceOk() (*string, bool) {
+	if o == nil || o.Resource == nil {
+		return nil, false
+	}
+	return o.Resource, true
+}
+
+// HasResource returns a boolean if a field has been set.
+func (o *Ticket) HasResource() bool {
+	if o != nil && o.Resource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResource gets a reference to the given string and assigns it to the Resource field.
+func (o *Ticket) SetResource(v string) {
+	o.Resource = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -174,164 +335,36 @@ func (o *Ticket) SetSubject(v string) {
 	o.Subject = &v
 }
 
-// GetProject returns the Project field value if set, zero value otherwise.
-func (o *Ticket) GetProject() string {
-	if o == nil || o.Project == nil {
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *Ticket) GetType() string {
+	if o == nil || o.Type == nil {
 		var ret string
 		return ret
 	}
-	return *o.Project
+	return *o.Type
 }
 
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Ticket) GetProjectOk() (*string, bool) {
-	if o == nil || o.Project == nil {
+func (o *Ticket) GetTypeOk() (*string, bool) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
-	return o.Project, true
+	return o.Type, true
 }
 
-// HasProject returns a boolean if a field has been set.
-func (o *Ticket) HasProject() bool {
-	if o != nil && o.Project != nil {
+// HasType returns a boolean if a field has been set.
+func (o *Ticket) HasType() bool {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProject gets a reference to the given string and assigns it to the Project field.
-func (o *Ticket) SetProject(v string) {
-	o.Project = &v
-}
-
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Ticket) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ticket) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *Ticket) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Ticket) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Ticket) GetCreatedBy() string {
-	if o == nil || o.CreatedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.CreatedBy
-}
-
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ticket) GetCreatedByOk() (*string, bool) {
-	if o == nil || o.CreatedBy == nil {
-		return nil, false
-	}
-	return o.CreatedBy, true
-}
-
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *Ticket) HasCreatedBy() bool {
-	if o != nil && o.CreatedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *Ticket) SetCreatedBy(v string) {
-	o.CreatedBy = &v
-}
-
-// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
-func (o *Ticket) GetModifiedOn() time.Time {
-	if o == nil || o.ModifiedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.ModifiedOn
-}
-
-// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ticket) GetModifiedOnOk() (*time.Time, bool) {
-	if o == nil || o.ModifiedOn == nil {
-		return nil, false
-	}
-	return o.ModifiedOn, true
-}
-
-// HasModifiedOn returns a boolean if a field has been set.
-func (o *Ticket) HasModifiedOn() bool {
-	if o != nil && o.ModifiedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
-func (o *Ticket) SetModifiedOn(v time.Time) {
-	o.ModifiedOn = &v
-}
-
-// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
-func (o *Ticket) GetModifiedBy() string {
-	if o == nil || o.ModifiedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.ModifiedBy
-}
-
-// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ticket) GetModifiedByOk() (*string, bool) {
-	if o == nil || o.ModifiedBy == nil {
-		return nil, false
-	}
-	return o.ModifiedBy, true
-}
-
-// HasModifiedBy returns a boolean if a field has been set.
-func (o *Ticket) HasModifiedBy() bool {
-	if o != nil && o.ModifiedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
-func (o *Ticket) SetModifiedBy(v string) {
-	o.ModifiedBy = &v
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *Ticket) SetType(v string) {
+	o.Type = &v
 }
 
 // GetUri returns the Uri field value if set, zero value otherwise.
@@ -368,11 +401,26 @@ func (o *Ticket) SetUri(v string) {
 
 func (o Ticket) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreatedBy != nil {
+		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
+	if o.ModifiedBy != nil {
+		toSerialize["modifiedBy"] = o.ModifiedBy
+	}
+	if o.ModifiedOn != nil {
+		toSerialize["modifiedOn"] = o.ModifiedOn
+	}
+	if o.Project != nil {
+		toSerialize["project"] = o.Project
+	}
+	if o.Resource != nil {
+		toSerialize["resource"] = o.Resource
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State
@@ -380,20 +428,8 @@ func (o Ticket) MarshalJSON() ([]byte, error) {
 	if o.Subject != nil {
 		toSerialize["subject"] = o.Subject
 	}
-	if o.Project != nil {
-		toSerialize["project"] = o.Project
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
-	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
-	}
-	if o.ModifiedOn != nil {
-		toSerialize["modifiedOn"] = o.ModifiedOn
-	}
-	if o.ModifiedBy != nil {
-		toSerialize["modifiedBy"] = o.ModifiedBy
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** |  | 
-**Subject** | **string** |  | 
 **Message** | **string** |  | 
+**Resource** | Pointer to **string** |  | [optional] 
+**Subject** | **string** |  | 
+**Type** | **string** |  | 
 
 ## Methods
 
 ### NewSupportProjectTicketCreate
 
-`func NewSupportProjectTicketCreate(type_ string, subject string, message string, ) *SupportProjectTicketCreate`
+`func NewSupportProjectTicketCreate(message string, subject string, type_ string, ) *SupportProjectTicketCreate`
 
 NewSupportProjectTicketCreate instantiates a new SupportProjectTicketCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,25 +28,50 @@ NewSupportProjectTicketCreateWithDefaults instantiates a new SupportProjectTicke
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetMessage
 
-`func (o *SupportProjectTicketCreate) GetType() string`
+`func (o *SupportProjectTicketCreate) GetMessage() string`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetMessage returns the Message field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetMessageOk
 
-`func (o *SupportProjectTicketCreate) GetTypeOk() (*string, bool)`
+`func (o *SupportProjectTicketCreate) GetMessageOk() (*string, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetMessage
 
-`func (o *SupportProjectTicketCreate) SetType(v string)`
+`func (o *SupportProjectTicketCreate) SetMessage(v string)`
 
-SetType sets Type field to given value.
+SetMessage sets Message field to given value.
 
+
+### GetResource
+
+`func (o *SupportProjectTicketCreate) GetResource() string`
+
+GetResource returns the Resource field if non-nil, zero value otherwise.
+
+### GetResourceOk
+
+`func (o *SupportProjectTicketCreate) GetResourceOk() (*string, bool)`
+
+GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResource
+
+`func (o *SupportProjectTicketCreate) SetResource(v string)`
+
+SetResource sets Resource field to given value.
+
+### HasResource
+
+`func (o *SupportProjectTicketCreate) HasResource() bool`
+
+HasResource returns a boolean if a field has been set.
 
 ### GetSubject
 
@@ -67,24 +93,24 @@ and a boolean to check if the value has been set.
 SetSubject sets Subject field to given value.
 
 
-### GetMessage
+### GetType
 
-`func (o *SupportProjectTicketCreate) GetMessage() string`
+`func (o *SupportProjectTicketCreate) GetType() string`
 
-GetMessage returns the Message field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetMessageOk
+### GetTypeOk
 
-`func (o *SupportProjectTicketCreate) GetMessageOk() (*string, bool)`
+`func (o *SupportProjectTicketCreate) GetTypeOk() (*string, bool)`
 
-GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMessage
+### SetType
 
-`func (o *SupportProjectTicketCreate) SetMessage(v string)`
+`func (o *SupportProjectTicketCreate) SetType(v string)`
 
-SetMessage sets Message field to given value.
+SetType sets Type field to given value.
 
 
 

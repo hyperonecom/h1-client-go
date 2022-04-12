@@ -113,7 +113,7 @@ import (
 
 func main() {
     projectId := "projectId_example" // string | Project Id
-    supportProjectTicketCreate := *openapiclient.NewSupportProjectTicketCreate("Type_example", "Subject_example", "Message_example") // SupportProjectTicketCreate | 
+    supportProjectTicketCreate := *openapiclient.NewSupportProjectTicketCreate("Message_example", "Subject_example", "Type_example") // SupportProjectTicketCreate | 
     xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketList
 
-> []Ticket SupportProjectTicketList(ctx, projectId).State(state).Execute()
+> []Ticket SupportProjectTicketList(ctx, projectId).State(state).Resource(resource).Execute()
 
 List support/ticket
 
@@ -263,10 +263,11 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     state := "state_example" // string | Filter by state (optional)
+    resource := "resource_example" // string | Filter by resource (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Execute()
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Resource(resource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -293,6 +294,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **state** | **string** | Filter by state | 
+ **resource** | **string** | Filter by resource | 
 
 ### Return type
 

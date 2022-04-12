@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Service** | **string** |  | 
 **Redirect** | Pointer to [**[]IamRedirect**](IamRedirect.md) |  | [optional] 
+**Service** | **string** |  | 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -48,26 +48,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetService
-
-`func (o *IamProjectApplicationCreate) GetService() string`
-
-GetService returns the Service field if non-nil, zero value otherwise.
-
-### GetServiceOk
-
-`func (o *IamProjectApplicationCreate) GetServiceOk() (*string, bool)`
-
-GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetService
-
-`func (o *IamProjectApplicationCreate) SetService(v string)`
-
-SetService sets Service field to given value.
-
-
 ### GetRedirect
 
 `func (o *IamProjectApplicationCreate) GetRedirect() []IamRedirect`
@@ -92,6 +72,26 @@ SetRedirect sets Redirect field to given value.
 `func (o *IamProjectApplicationCreate) HasRedirect() bool`
 
 HasRedirect returns a boolean if a field has been set.
+
+### GetService
+
+`func (o *IamProjectApplicationCreate) GetService() string`
+
+GetService returns the Service field if non-nil, zero value otherwise.
+
+### GetServiceOk
+
+`func (o *IamProjectApplicationCreate) GetServiceOk() (*string, bool)`
+
+GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetService
+
+`func (o *IamProjectApplicationCreate) SetService(v string)`
+
+SetService sets Service field to given value.
+
 
 ### GetTag
 

@@ -5,6 +5,7 @@ api/openapi.yaml
 api_billing_project_service.go
 api_compute_project_replica.go
 api_compute_project_vm.go
+api_container_project_registry.go
 api_dns_project_zone.go
 api_iam_organisation.go
 api_iam_organisation_policy.go
@@ -23,6 +24,7 @@ api_networking_project_netadp.go
 api_networking_project_netgw.go
 api_networking_project_network.go
 api_provider_project_agent.go
+api_search_resource.go
 api_storage_project_bucket.go
 api_storage_project_disk.go
 api_storage_project_image.go
@@ -63,6 +65,7 @@ docs/ComputeProjectVmSerialport.md
 docs/ComputeProjectVmUpdate.md
 docs/Connect.md
 docs/ContainerImage.md
+docs/ContainerProjectRegistryApi.md
 docs/ContainerProjectRegistryCreate.md
 docs/ContainerProjectRegistryCredentialPatch.md
 docs/ContainerProjectRegistryTransfer.md
@@ -182,6 +185,7 @@ docs/NetworkingProjectNetworkApi.md
 docs/NetworkingProjectNetworkCreate.md
 docs/NetworkingProjectNetworkUpdate.md
 docs/NetworkingRule.md
+docs/Notification.md
 docs/Organisation.md
 docs/OrganisationBilling.md
 docs/OrganisationBilling1.md
@@ -221,6 +225,7 @@ docs/ResourceService.md
 docs/Role.md
 docs/Sa.md
 docs/SaCredential.md
+docs/SearchResourceApi.md
 docs/Service.md
 docs/ServiceBilling.md
 docs/ServiceBillingPrice.md
@@ -403,6 +408,7 @@ model_networking_project_netgw_update.go
 model_networking_project_network_create.go
 model_networking_project_network_update.go
 model_networking_rule.go
+model_notification.go
 model_organisation.go
 model_organisation_billing.go
 model_organisation_billing_1.go

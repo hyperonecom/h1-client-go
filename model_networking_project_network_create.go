@@ -16,9 +16,9 @@ import (
 
 // NetworkingProjectNetworkCreate struct for NetworkingProjectNetworkCreate
 type NetworkingProjectNetworkCreate struct {
-	Name string `json:"name"`
 	Address *string `json:"address,omitempty"`
 	Gateway *string `json:"gateway,omitempty"`
+	Name string `json:"name"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -38,30 +38,6 @@ func NewNetworkingProjectNetworkCreate(name string) *NetworkingProjectNetworkCre
 func NewNetworkingProjectNetworkCreateWithDefaults() *NetworkingProjectNetworkCreate {
 	this := NetworkingProjectNetworkCreate{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *NetworkingProjectNetworkCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectNetworkCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *NetworkingProjectNetworkCreate) SetName(v string) {
-	o.Name = v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -128,6 +104,30 @@ func (o *NetworkingProjectNetworkCreate) SetGateway(v string) {
 	o.Gateway = &v
 }
 
+// GetName returns the Name field value
+func (o *NetworkingProjectNetworkCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectNetworkCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *NetworkingProjectNetworkCreate) SetName(v string) {
+	o.Name = v
+}
+
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *NetworkingProjectNetworkCreate) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -162,14 +162,14 @@ func (o *NetworkingProjectNetworkCreate) SetTag(v []Tag) {
 
 func (o NetworkingProjectNetworkCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
 	if o.Address != nil {
 		toSerialize["address"] = o.Address
 	}
 	if o.Gateway != nil {
 		toSerialize["gateway"] = o.Gateway
+	}
+	if true {
+		toSerialize["name"] = o.Name
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

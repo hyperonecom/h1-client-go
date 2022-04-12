@@ -17,23 +17,23 @@ import (
 
 // Invoice struct for Invoice
 type Invoice struct {
-	Id *string `json:"id,omitempty"`
 	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+	Buyer *InvoiceBuyer `json:"buyer,omitempty"`
+	Channel *string `json:"channel,omitempty"`
+	Company *string `json:"company,omitempty"`
 	Corrections []string `json:"corrections,omitempty"`
+	Id *string `json:"id,omitempty"`
 	InvoiceInfo *string `json:"invoiceInfo,omitempty"`
 	InvoiceNo *string `json:"invoiceNo,omitempty"`
 	IssueDate *time.Time `json:"issueDate,omitempty"`
-	Payments []string `json:"payments,omitempty"`
-	Channel *string `json:"channel,omitempty"`
-	Nip *string `json:"nip,omitempty"`
-	Company *string `json:"company,omitempty"`
-	Seller *InvoiceSeller `json:"seller,omitempty"`
 	Items []InvoiceItems `json:"items,omitempty"`
-	Buyer *InvoiceBuyer `json:"buyer,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Summary *string `json:"summary,omitempty"`
-	Project *string `json:"project,omitempty"`
+	Nip *string `json:"nip,omitempty"`
 	Organisation *string `json:"organisation,omitempty"`
+	Payments []string `json:"payments,omitempty"`
+	Project *string `json:"project,omitempty"`
+	Seller *InvoiceSeller `json:"seller,omitempty"`
+	Summary *string `json:"summary,omitempty"`
+	Type *string `json:"type,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -52,38 +52,6 @@ func NewInvoice() *Invoice {
 func NewInvoiceWithDefaults() *Invoice {
 	this := Invoice{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Invoice) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *Invoice) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Invoice) SetId(v string) {
-	o.Id = &v
 }
 
 // GetAdditionalInfo returns the AdditionalInfo field value if set, zero value otherwise.
@@ -118,6 +86,102 @@ func (o *Invoice) SetAdditionalInfo(v string) {
 	o.AdditionalInfo = &v
 }
 
+// GetBuyer returns the Buyer field value if set, zero value otherwise.
+func (o *Invoice) GetBuyer() InvoiceBuyer {
+	if o == nil || o.Buyer == nil {
+		var ret InvoiceBuyer
+		return ret
+	}
+	return *o.Buyer
+}
+
+// GetBuyerOk returns a tuple with the Buyer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetBuyerOk() (*InvoiceBuyer, bool) {
+	if o == nil || o.Buyer == nil {
+		return nil, false
+	}
+	return o.Buyer, true
+}
+
+// HasBuyer returns a boolean if a field has been set.
+func (o *Invoice) HasBuyer() bool {
+	if o != nil && o.Buyer != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBuyer gets a reference to the given InvoiceBuyer and assigns it to the Buyer field.
+func (o *Invoice) SetBuyer(v InvoiceBuyer) {
+	o.Buyer = &v
+}
+
+// GetChannel returns the Channel field value if set, zero value otherwise.
+func (o *Invoice) GetChannel() string {
+	if o == nil || o.Channel == nil {
+		var ret string
+		return ret
+	}
+	return *o.Channel
+}
+
+// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetChannelOk() (*string, bool) {
+	if o == nil || o.Channel == nil {
+		return nil, false
+	}
+	return o.Channel, true
+}
+
+// HasChannel returns a boolean if a field has been set.
+func (o *Invoice) HasChannel() bool {
+	if o != nil && o.Channel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetChannel gets a reference to the given string and assigns it to the Channel field.
+func (o *Invoice) SetChannel(v string) {
+	o.Channel = &v
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *Invoice) GetCompany() string {
+	if o == nil || o.Company == nil {
+		var ret string
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetCompanyOk() (*string, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *Invoice) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given string and assigns it to the Company field.
+func (o *Invoice) SetCompany(v string) {
+	o.Company = &v
+}
+
 // GetCorrections returns the Corrections field value if set, zero value otherwise.
 func (o *Invoice) GetCorrections() []string {
 	if o == nil || o.Corrections == nil {
@@ -148,6 +212,38 @@ func (o *Invoice) HasCorrections() bool {
 // SetCorrections gets a reference to the given []string and assigns it to the Corrections field.
 func (o *Invoice) SetCorrections(v []string) {
 	o.Corrections = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *Invoice) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *Invoice) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *Invoice) SetId(v string) {
+	o.Id = &v
 }
 
 // GetInvoiceInfo returns the InvoiceInfo field value if set, zero value otherwise.
@@ -246,68 +342,36 @@ func (o *Invoice) SetIssueDate(v time.Time) {
 	o.IssueDate = &v
 }
 
-// GetPayments returns the Payments field value if set, zero value otherwise.
-func (o *Invoice) GetPayments() []string {
-	if o == nil || o.Payments == nil {
-		var ret []string
+// GetItems returns the Items field value if set, zero value otherwise.
+func (o *Invoice) GetItems() []InvoiceItems {
+	if o == nil || o.Items == nil {
+		var ret []InvoiceItems
 		return ret
 	}
-	return o.Payments
+	return o.Items
 }
 
-// GetPaymentsOk returns a tuple with the Payments field value if set, nil otherwise
+// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetPaymentsOk() ([]string, bool) {
-	if o == nil || o.Payments == nil {
+func (o *Invoice) GetItemsOk() ([]InvoiceItems, bool) {
+	if o == nil || o.Items == nil {
 		return nil, false
 	}
-	return o.Payments, true
+	return o.Items, true
 }
 
-// HasPayments returns a boolean if a field has been set.
-func (o *Invoice) HasPayments() bool {
-	if o != nil && o.Payments != nil {
+// HasItems returns a boolean if a field has been set.
+func (o *Invoice) HasItems() bool {
+	if o != nil && o.Items != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPayments gets a reference to the given []string and assigns it to the Payments field.
-func (o *Invoice) SetPayments(v []string) {
-	o.Payments = v
-}
-
-// GetChannel returns the Channel field value if set, zero value otherwise.
-func (o *Invoice) GetChannel() string {
-	if o == nil || o.Channel == nil {
-		var ret string
-		return ret
-	}
-	return *o.Channel
-}
-
-// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetChannelOk() (*string, bool) {
-	if o == nil || o.Channel == nil {
-		return nil, false
-	}
-	return o.Channel, true
-}
-
-// HasChannel returns a boolean if a field has been set.
-func (o *Invoice) HasChannel() bool {
-	if o != nil && o.Channel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChannel gets a reference to the given string and assigns it to the Channel field.
-func (o *Invoice) SetChannel(v string) {
-	o.Channel = &v
+// SetItems gets a reference to the given []InvoiceItems and assigns it to the Items field.
+func (o *Invoice) SetItems(v []InvoiceItems) {
+	o.Items = v
 }
 
 // GetNip returns the Nip field value if set, zero value otherwise.
@@ -342,196 +406,68 @@ func (o *Invoice) SetNip(v string) {
 	o.Nip = &v
 }
 
-// GetCompany returns the Company field value if set, zero value otherwise.
-func (o *Invoice) GetCompany() string {
-	if o == nil || o.Company == nil {
+// GetOrganisation returns the Organisation field value if set, zero value otherwise.
+func (o *Invoice) GetOrganisation() string {
+	if o == nil || o.Organisation == nil {
 		var ret string
 		return ret
 	}
-	return *o.Company
+	return *o.Organisation
 }
 
-// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// GetOrganisationOk returns a tuple with the Organisation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetCompanyOk() (*string, bool) {
-	if o == nil || o.Company == nil {
+func (o *Invoice) GetOrganisationOk() (*string, bool) {
+	if o == nil || o.Organisation == nil {
 		return nil, false
 	}
-	return o.Company, true
+	return o.Organisation, true
 }
 
-// HasCompany returns a boolean if a field has been set.
-func (o *Invoice) HasCompany() bool {
-	if o != nil && o.Company != nil {
+// HasOrganisation returns a boolean if a field has been set.
+func (o *Invoice) HasOrganisation() bool {
+	if o != nil && o.Organisation != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCompany gets a reference to the given string and assigns it to the Company field.
-func (o *Invoice) SetCompany(v string) {
-	o.Company = &v
+// SetOrganisation gets a reference to the given string and assigns it to the Organisation field.
+func (o *Invoice) SetOrganisation(v string) {
+	o.Organisation = &v
 }
 
-// GetSeller returns the Seller field value if set, zero value otherwise.
-func (o *Invoice) GetSeller() InvoiceSeller {
-	if o == nil || o.Seller == nil {
-		var ret InvoiceSeller
+// GetPayments returns the Payments field value if set, zero value otherwise.
+func (o *Invoice) GetPayments() []string {
+	if o == nil || o.Payments == nil {
+		var ret []string
 		return ret
 	}
-	return *o.Seller
+	return o.Payments
 }
 
-// GetSellerOk returns a tuple with the Seller field value if set, nil otherwise
+// GetPaymentsOk returns a tuple with the Payments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetSellerOk() (*InvoiceSeller, bool) {
-	if o == nil || o.Seller == nil {
+func (o *Invoice) GetPaymentsOk() ([]string, bool) {
+	if o == nil || o.Payments == nil {
 		return nil, false
 	}
-	return o.Seller, true
+	return o.Payments, true
 }
 
-// HasSeller returns a boolean if a field has been set.
-func (o *Invoice) HasSeller() bool {
-	if o != nil && o.Seller != nil {
+// HasPayments returns a boolean if a field has been set.
+func (o *Invoice) HasPayments() bool {
+	if o != nil && o.Payments != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSeller gets a reference to the given InvoiceSeller and assigns it to the Seller field.
-func (o *Invoice) SetSeller(v InvoiceSeller) {
-	o.Seller = &v
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *Invoice) GetItems() []InvoiceItems {
-	if o == nil || o.Items == nil {
-		var ret []InvoiceItems
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetItemsOk() ([]InvoiceItems, bool) {
-	if o == nil || o.Items == nil {
-		return nil, false
-	}
-	return o.Items, true
-}
-
-// HasItems returns a boolean if a field has been set.
-func (o *Invoice) HasItems() bool {
-	if o != nil && o.Items != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetItems gets a reference to the given []InvoiceItems and assigns it to the Items field.
-func (o *Invoice) SetItems(v []InvoiceItems) {
-	o.Items = v
-}
-
-// GetBuyer returns the Buyer field value if set, zero value otherwise.
-func (o *Invoice) GetBuyer() InvoiceBuyer {
-	if o == nil || o.Buyer == nil {
-		var ret InvoiceBuyer
-		return ret
-	}
-	return *o.Buyer
-}
-
-// GetBuyerOk returns a tuple with the Buyer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetBuyerOk() (*InvoiceBuyer, bool) {
-	if o == nil || o.Buyer == nil {
-		return nil, false
-	}
-	return o.Buyer, true
-}
-
-// HasBuyer returns a boolean if a field has been set.
-func (o *Invoice) HasBuyer() bool {
-	if o != nil && o.Buyer != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBuyer gets a reference to the given InvoiceBuyer and assigns it to the Buyer field.
-func (o *Invoice) SetBuyer(v InvoiceBuyer) {
-	o.Buyer = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *Invoice) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *Invoice) HasType() bool {
-	if o != nil && o.Type != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Invoice) SetType(v string) {
-	o.Type = &v
-}
-
-// GetSummary returns the Summary field value if set, zero value otherwise.
-func (o *Invoice) GetSummary() string {
-	if o == nil || o.Summary == nil {
-		var ret string
-		return ret
-	}
-	return *o.Summary
-}
-
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Invoice) GetSummaryOk() (*string, bool) {
-	if o == nil || o.Summary == nil {
-		return nil, false
-	}
-	return o.Summary, true
-}
-
-// HasSummary returns a boolean if a field has been set.
-func (o *Invoice) HasSummary() bool {
-	if o != nil && o.Summary != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSummary gets a reference to the given string and assigns it to the Summary field.
-func (o *Invoice) SetSummary(v string) {
-	o.Summary = &v
+// SetPayments gets a reference to the given []string and assigns it to the Payments field.
+func (o *Invoice) SetPayments(v []string) {
+	o.Payments = v
 }
 
 // GetProject returns the Project field value if set, zero value otherwise.
@@ -566,36 +502,100 @@ func (o *Invoice) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetOrganisation returns the Organisation field value if set, zero value otherwise.
-func (o *Invoice) GetOrganisation() string {
-	if o == nil || o.Organisation == nil {
-		var ret string
+// GetSeller returns the Seller field value if set, zero value otherwise.
+func (o *Invoice) GetSeller() InvoiceSeller {
+	if o == nil || o.Seller == nil {
+		var ret InvoiceSeller
 		return ret
 	}
-	return *o.Organisation
+	return *o.Seller
 }
 
-// GetOrganisationOk returns a tuple with the Organisation field value if set, nil otherwise
+// GetSellerOk returns a tuple with the Seller field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invoice) GetOrganisationOk() (*string, bool) {
-	if o == nil || o.Organisation == nil {
+func (o *Invoice) GetSellerOk() (*InvoiceSeller, bool) {
+	if o == nil || o.Seller == nil {
 		return nil, false
 	}
-	return o.Organisation, true
+	return o.Seller, true
 }
 
-// HasOrganisation returns a boolean if a field has been set.
-func (o *Invoice) HasOrganisation() bool {
-	if o != nil && o.Organisation != nil {
+// HasSeller returns a boolean if a field has been set.
+func (o *Invoice) HasSeller() bool {
+	if o != nil && o.Seller != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOrganisation gets a reference to the given string and assigns it to the Organisation field.
-func (o *Invoice) SetOrganisation(v string) {
-	o.Organisation = &v
+// SetSeller gets a reference to the given InvoiceSeller and assigns it to the Seller field.
+func (o *Invoice) SetSeller(v InvoiceSeller) {
+	o.Seller = &v
+}
+
+// GetSummary returns the Summary field value if set, zero value otherwise.
+func (o *Invoice) GetSummary() string {
+	if o == nil || o.Summary == nil {
+		var ret string
+		return ret
+	}
+	return *o.Summary
+}
+
+// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetSummaryOk() (*string, bool) {
+	if o == nil || o.Summary == nil {
+		return nil, false
+	}
+	return o.Summary, true
+}
+
+// HasSummary returns a boolean if a field has been set.
+func (o *Invoice) HasSummary() bool {
+	if o != nil && o.Summary != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSummary gets a reference to the given string and assigns it to the Summary field.
+func (o *Invoice) SetSummary(v string) {
+	o.Summary = &v
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *Invoice) GetType() string {
+	if o == nil || o.Type == nil {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoice) GetTypeOk() (*string, bool) {
+	if o == nil || o.Type == nil {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *Invoice) HasType() bool {
+	if o != nil && o.Type != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *Invoice) SetType(v string) {
+	o.Type = &v
 }
 
 // GetUri returns the Uri field value if set, zero value otherwise.
@@ -632,14 +632,23 @@ func (o *Invoice) SetUri(v string) {
 
 func (o Invoice) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
 	if o.AdditionalInfo != nil {
 		toSerialize["additionalInfo"] = o.AdditionalInfo
 	}
+	if o.Buyer != nil {
+		toSerialize["buyer"] = o.Buyer
+	}
+	if o.Channel != nil {
+		toSerialize["channel"] = o.Channel
+	}
+	if o.Company != nil {
+		toSerialize["company"] = o.Company
+	}
 	if o.Corrections != nil {
 		toSerialize["corrections"] = o.Corrections
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.InvoiceInfo != nil {
 		toSerialize["invoiceInfo"] = o.InvoiceInfo
@@ -650,38 +659,29 @@ func (o Invoice) MarshalJSON() ([]byte, error) {
 	if o.IssueDate != nil {
 		toSerialize["issueDate"] = o.IssueDate
 	}
-	if o.Payments != nil {
-		toSerialize["payments"] = o.Payments
-	}
-	if o.Channel != nil {
-		toSerialize["channel"] = o.Channel
+	if o.Items != nil {
+		toSerialize["items"] = o.Items
 	}
 	if o.Nip != nil {
 		toSerialize["nip"] = o.Nip
 	}
-	if o.Company != nil {
-		toSerialize["company"] = o.Company
+	if o.Organisation != nil {
+		toSerialize["organisation"] = o.Organisation
 	}
-	if o.Seller != nil {
-		toSerialize["seller"] = o.Seller
-	}
-	if o.Items != nil {
-		toSerialize["items"] = o.Items
-	}
-	if o.Buyer != nil {
-		toSerialize["buyer"] = o.Buyer
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
-	if o.Summary != nil {
-		toSerialize["summary"] = o.Summary
+	if o.Payments != nil {
+		toSerialize["payments"] = o.Payments
 	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
 	}
-	if o.Organisation != nil {
-		toSerialize["organisation"] = o.Organisation
+	if o.Seller != nil {
+		toSerialize["seller"] = o.Seller
+	}
+	if o.Summary != nil {
+		toSerialize["summary"] = o.Summary
+	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

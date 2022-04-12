@@ -16,18 +16,18 @@ import (
 
 // MetricPropertiesDimension struct for MetricPropertiesDimension
 type MetricPropertiesDimension struct {
-	Name string `json:"name"`
 	Description string `json:"description"`
+	Name string `json:"name"`
 }
 
 // NewMetricPropertiesDimension instantiates a new MetricPropertiesDimension object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetricPropertiesDimension(name string, description string) *MetricPropertiesDimension {
+func NewMetricPropertiesDimension(description string, name string) *MetricPropertiesDimension {
 	this := MetricPropertiesDimension{}
-	this.Name = name
 	this.Description = description
+	this.Name = name
 	return &this
 }
 
@@ -37,30 +37,6 @@ func NewMetricPropertiesDimension(name string, description string) *MetricProper
 func NewMetricPropertiesDimensionWithDefaults() *MetricPropertiesDimension {
 	this := MetricPropertiesDimension{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *MetricPropertiesDimension) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *MetricPropertiesDimension) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *MetricPropertiesDimension) SetName(v string) {
-	o.Name = v
 }
 
 // GetDescription returns the Description field value
@@ -87,13 +63,37 @@ func (o *MetricPropertiesDimension) SetDescription(v string) {
 	o.Description = v
 }
 
+// GetName returns the Name field value
+func (o *MetricPropertiesDimension) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *MetricPropertiesDimension) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *MetricPropertiesDimension) SetName(v string) {
+	o.Name = v
+}
+
 func (o MetricPropertiesDimension) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["name"] = o.Name
+		toSerialize["description"] = o.Description
 	}
 	if true {
-		toSerialize["description"] = o.Description
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

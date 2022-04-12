@@ -16,14 +16,14 @@ import (
 
 // Service struct for Service
 type Service struct {
-	Id *string `json:"id,omitempty"`
+	AvailableServices []string `json:"availableServices,omitempty"`
+	Billing *ServiceBilling `json:"billing,omitempty"`
+	Data *map[string]string `json:"data,omitempty"`
+	Display *ServiceDisplay `json:"display,omitempty"`
+	Id string `json:"id"`
+	Name *string `json:"name,omitempty"`
 	Resource *string `json:"resource,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Billing *ServiceBilling `json:"billing,omitempty"`
-	Display *ServiceDisplay `json:"display,omitempty"`
-	Data *map[string]string `json:"data,omitempty"`
-	Name *string `json:"name,omitempty"`
-	AvailableServices []string `json:"availableServices,omitempty"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -31,8 +31,9 @@ type Service struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewService() *Service {
+func NewService(id string) *Service {
 	this := Service{}
+	this.Id = id
 	return &this
 }
 
@@ -44,36 +45,188 @@ func NewServiceWithDefaults() *Service {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Service) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetAvailableServices returns the AvailableServices field value if set, zero value otherwise.
+func (o *Service) GetAvailableServices() []string {
+	if o == nil || o.AvailableServices == nil {
+		var ret []string
 		return ret
 	}
-	return *o.Id
+	return o.AvailableServices
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetAvailableServicesOk returns a tuple with the AvailableServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Service) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+func (o *Service) GetAvailableServicesOk() ([]string, bool) {
+	if o == nil || o.AvailableServices == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return o.AvailableServices, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Service) HasId() bool {
-	if o != nil && o.Id != nil {
+// HasAvailableServices returns a boolean if a field has been set.
+func (o *Service) HasAvailableServices() bool {
+	if o != nil && o.AvailableServices != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetAvailableServices gets a reference to the given []string and assigns it to the AvailableServices field.
+func (o *Service) SetAvailableServices(v []string) {
+	o.AvailableServices = v
+}
+
+// GetBilling returns the Billing field value if set, zero value otherwise.
+func (o *Service) GetBilling() ServiceBilling {
+	if o == nil || o.Billing == nil {
+		var ret ServiceBilling
+		return ret
+	}
+	return *o.Billing
+}
+
+// GetBillingOk returns a tuple with the Billing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Service) GetBillingOk() (*ServiceBilling, bool) {
+	if o == nil || o.Billing == nil {
+		return nil, false
+	}
+	return o.Billing, true
+}
+
+// HasBilling returns a boolean if a field has been set.
+func (o *Service) HasBilling() bool {
+	if o != nil && o.Billing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBilling gets a reference to the given ServiceBilling and assigns it to the Billing field.
+func (o *Service) SetBilling(v ServiceBilling) {
+	o.Billing = &v
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *Service) GetData() map[string]string {
+	if o == nil || o.Data == nil {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Service) GetDataOk() (*map[string]string, bool) {
+	if o == nil || o.Data == nil {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *Service) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given map[string]string and assigns it to the Data field.
+func (o *Service) SetData(v map[string]string) {
+	o.Data = &v
+}
+
+// GetDisplay returns the Display field value if set, zero value otherwise.
+func (o *Service) GetDisplay() ServiceDisplay {
+	if o == nil || o.Display == nil {
+		var ret ServiceDisplay
+		return ret
+	}
+	return *o.Display
+}
+
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Service) GetDisplayOk() (*ServiceDisplay, bool) {
+	if o == nil || o.Display == nil {
+		return nil, false
+	}
+	return o.Display, true
+}
+
+// HasDisplay returns a boolean if a field has been set.
+func (o *Service) HasDisplay() bool {
+	if o != nil && o.Display != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given ServiceDisplay and assigns it to the Display field.
+func (o *Service) SetDisplay(v ServiceDisplay) {
+	o.Display = &v
+}
+
+// GetId returns the Id field value
+func (o *Service) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Service) GetIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
 func (o *Service) SetId(v string) {
-	o.Id = &v
+	o.Id = v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Service) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Service) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Service) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Service) SetName(v string) {
+	o.Name = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -140,166 +293,6 @@ func (o *Service) SetType(v string) {
 	o.Type = &v
 }
 
-// GetBilling returns the Billing field value if set, zero value otherwise.
-func (o *Service) GetBilling() ServiceBilling {
-	if o == nil || o.Billing == nil {
-		var ret ServiceBilling
-		return ret
-	}
-	return *o.Billing
-}
-
-// GetBillingOk returns a tuple with the Billing field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Service) GetBillingOk() (*ServiceBilling, bool) {
-	if o == nil || o.Billing == nil {
-		return nil, false
-	}
-	return o.Billing, true
-}
-
-// HasBilling returns a boolean if a field has been set.
-func (o *Service) HasBilling() bool {
-	if o != nil && o.Billing != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBilling gets a reference to the given ServiceBilling and assigns it to the Billing field.
-func (o *Service) SetBilling(v ServiceBilling) {
-	o.Billing = &v
-}
-
-// GetDisplay returns the Display field value if set, zero value otherwise.
-func (o *Service) GetDisplay() ServiceDisplay {
-	if o == nil || o.Display == nil {
-		var ret ServiceDisplay
-		return ret
-	}
-	return *o.Display
-}
-
-// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Service) GetDisplayOk() (*ServiceDisplay, bool) {
-	if o == nil || o.Display == nil {
-		return nil, false
-	}
-	return o.Display, true
-}
-
-// HasDisplay returns a boolean if a field has been set.
-func (o *Service) HasDisplay() bool {
-	if o != nil && o.Display != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDisplay gets a reference to the given ServiceDisplay and assigns it to the Display field.
-func (o *Service) SetDisplay(v ServiceDisplay) {
-	o.Display = &v
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *Service) GetData() map[string]string {
-	if o == nil || o.Data == nil {
-		var ret map[string]string
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Service) GetDataOk() (*map[string]string, bool) {
-	if o == nil || o.Data == nil {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// HasData returns a boolean if a field has been set.
-func (o *Service) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given map[string]string and assigns it to the Data field.
-func (o *Service) SetData(v map[string]string) {
-	o.Data = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Service) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Service) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *Service) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Service) SetName(v string) {
-	o.Name = &v
-}
-
-// GetAvailableServices returns the AvailableServices field value if set, zero value otherwise.
-func (o *Service) GetAvailableServices() []string {
-	if o == nil || o.AvailableServices == nil {
-		var ret []string
-		return ret
-	}
-	return o.AvailableServices
-}
-
-// GetAvailableServicesOk returns a tuple with the AvailableServices field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Service) GetAvailableServicesOk() ([]string, bool) {
-	if o == nil || o.AvailableServices == nil {
-		return nil, false
-	}
-	return o.AvailableServices, true
-}
-
-// HasAvailableServices returns a boolean if a field has been set.
-func (o *Service) HasAvailableServices() bool {
-	if o != nil && o.AvailableServices != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAvailableServices gets a reference to the given []string and assigns it to the AvailableServices field.
-func (o *Service) SetAvailableServices(v []string) {
-	o.AvailableServices = v
-}
-
 // GetUri returns the Uri field value if set, zero value otherwise.
 func (o *Service) GetUri() string {
 	if o == nil || o.Uri == nil {
@@ -334,29 +327,29 @@ func (o *Service) SetUri(v string) {
 
 func (o Service) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
+	if o.AvailableServices != nil {
+		toSerialize["availableServices"] = o.AvailableServices
+	}
+	if o.Billing != nil {
+		toSerialize["billing"] = o.Billing
+	}
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
+	}
+	if o.Display != nil {
+		toSerialize["display"] = o.Display
+	}
+	if true {
 		toSerialize["id"] = o.Id
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Resource != nil {
 		toSerialize["resource"] = o.Resource
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
-	}
-	if o.Billing != nil {
-		toSerialize["billing"] = o.Billing
-	}
-	if o.Display != nil {
-		toSerialize["display"] = o.Display
-	}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.AvailableServices != nil {
-		toSerialize["availableServices"] = o.AvailableServices
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

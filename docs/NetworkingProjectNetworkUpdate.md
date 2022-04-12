@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
-**Gateway** | Pointer to **string** |  | [optional] 
 **Firewall** | Pointer to **string** |  | [optional] 
+**Gateway** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewNetworkingProjectNetworkUpdateWithDefaults instantiates a new NetworkingProje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetFirewall
 
-`func (o *NetworkingProjectNetworkUpdate) GetName() string`
+`func (o *NetworkingProjectNetworkUpdate) GetFirewall() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetFirewallOk
 
-`func (o *NetworkingProjectNetworkUpdate) GetNameOk() (*string, bool)`
+`func (o *NetworkingProjectNetworkUpdate) GetFirewallOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetFirewall
 
-`func (o *NetworkingProjectNetworkUpdate) SetName(v string)`
+`func (o *NetworkingProjectNetworkUpdate) SetFirewall(v string)`
 
-SetName sets Name field to given value.
+SetFirewall sets Firewall field to given value.
 
-### HasName
+### HasFirewall
 
-`func (o *NetworkingProjectNetworkUpdate) HasName() bool`
+`func (o *NetworkingProjectNetworkUpdate) HasFirewall() bool`
 
-HasName returns a boolean if a field has been set.
+HasFirewall returns a boolean if a field has been set.
 
 ### GetGateway
 
@@ -77,30 +77,30 @@ SetGateway sets Gateway field to given value.
 
 HasGateway returns a boolean if a field has been set.
 
-### GetFirewall
+### GetName
 
-`func (o *NetworkingProjectNetworkUpdate) GetFirewall() string`
+`func (o *NetworkingProjectNetworkUpdate) GetName() string`
 
-GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetFirewallOk
+### GetNameOk
 
-`func (o *NetworkingProjectNetworkUpdate) GetFirewallOk() (*string, bool)`
+`func (o *NetworkingProjectNetworkUpdate) GetNameOk() (*string, bool)`
 
-GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFirewall
+### SetName
 
-`func (o *NetworkingProjectNetworkUpdate) SetFirewall(v string)`
+`func (o *NetworkingProjectNetworkUpdate) SetName(v string)`
 
-SetFirewall sets Firewall field to given value.
+SetName sets Name field to given value.
 
-### HasFirewall
+### HasName
 
-`func (o *NetworkingProjectNetworkUpdate) HasFirewall() bool`
+`func (o *NetworkingProjectNetworkUpdate) HasName() bool`
 
-HasFirewall returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

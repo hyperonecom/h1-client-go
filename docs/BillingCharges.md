@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **float32** |  | [optional] 
-**Start** | Pointer to **string** |  | [optional] 
 **End** | Pointer to **string** |  | [optional] 
-**Price** | Pointer to **float32** |  | [optional] 
-**Quantity** | Pointer to **float32** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **PaidFrom** | Pointer to **string** |  | [optional] 
 **PaidOn** | Pointer to **string** |  | [optional] 
+**Price** | Pointer to **float32** |  | [optional] 
+**Quantity** | Pointer to **float32** |  | [optional] 
+**Start** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -31,6 +31,31 @@ will change when the set of required properties is changed
 NewBillingChargesWithDefaults instantiates a new BillingCharges object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEnd
+
+`func (o *BillingCharges) GetEnd() string`
+
+GetEnd returns the End field if non-nil, zero value otherwise.
+
+### GetEndOk
+
+`func (o *BillingCharges) GetEndOk() (*string, bool)`
+
+GetEndOk returns a tuple with the End field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnd
+
+`func (o *BillingCharges) SetEnd(v string)`
+
+SetEnd sets End field to given value.
+
+### HasEnd
+
+`func (o *BillingCharges) HasEnd() bool`
+
+HasEnd returns a boolean if a field has been set.
 
 ### GetId
 
@@ -57,80 +82,55 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetValue
+### GetPaidFrom
 
-`func (o *BillingCharges) GetValue() float32`
+`func (o *BillingCharges) GetPaidFrom() string`
 
-GetValue returns the Value field if non-nil, zero value otherwise.
+GetPaidFrom returns the PaidFrom field if non-nil, zero value otherwise.
 
-### GetValueOk
+### GetPaidFromOk
 
-`func (o *BillingCharges) GetValueOk() (*float32, bool)`
+`func (o *BillingCharges) GetPaidFromOk() (*string, bool)`
 
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
+GetPaidFromOk returns a tuple with the PaidFrom field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetValue
+### SetPaidFrom
 
-`func (o *BillingCharges) SetValue(v float32)`
+`func (o *BillingCharges) SetPaidFrom(v string)`
 
-SetValue sets Value field to given value.
+SetPaidFrom sets PaidFrom field to given value.
 
-### HasValue
+### HasPaidFrom
 
-`func (o *BillingCharges) HasValue() bool`
+`func (o *BillingCharges) HasPaidFrom() bool`
 
-HasValue returns a boolean if a field has been set.
+HasPaidFrom returns a boolean if a field has been set.
 
-### GetStart
+### GetPaidOn
 
-`func (o *BillingCharges) GetStart() string`
+`func (o *BillingCharges) GetPaidOn() string`
 
-GetStart returns the Start field if non-nil, zero value otherwise.
+GetPaidOn returns the PaidOn field if non-nil, zero value otherwise.
 
-### GetStartOk
+### GetPaidOnOk
 
-`func (o *BillingCharges) GetStartOk() (*string, bool)`
+`func (o *BillingCharges) GetPaidOnOk() (*string, bool)`
 
-GetStartOk returns a tuple with the Start field if it's non-nil, zero value otherwise
+GetPaidOnOk returns a tuple with the PaidOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStart
+### SetPaidOn
 
-`func (o *BillingCharges) SetStart(v string)`
+`func (o *BillingCharges) SetPaidOn(v string)`
 
-SetStart sets Start field to given value.
+SetPaidOn sets PaidOn field to given value.
 
-### HasStart
+### HasPaidOn
 
-`func (o *BillingCharges) HasStart() bool`
+`func (o *BillingCharges) HasPaidOn() bool`
 
-HasStart returns a boolean if a field has been set.
-
-### GetEnd
-
-`func (o *BillingCharges) GetEnd() string`
-
-GetEnd returns the End field if non-nil, zero value otherwise.
-
-### GetEndOk
-
-`func (o *BillingCharges) GetEndOk() (*string, bool)`
-
-GetEndOk returns a tuple with the End field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnd
-
-`func (o *BillingCharges) SetEnd(v string)`
-
-SetEnd sets End field to given value.
-
-### HasEnd
-
-`func (o *BillingCharges) HasEnd() bool`
-
-HasEnd returns a boolean if a field has been set.
+HasPaidOn returns a boolean if a field has been set.
 
 ### GetPrice
 
@@ -182,55 +182,55 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
-### GetPaidFrom
+### GetStart
 
-`func (o *BillingCharges) GetPaidFrom() string`
+`func (o *BillingCharges) GetStart() string`
 
-GetPaidFrom returns the PaidFrom field if non-nil, zero value otherwise.
+GetStart returns the Start field if non-nil, zero value otherwise.
 
-### GetPaidFromOk
+### GetStartOk
 
-`func (o *BillingCharges) GetPaidFromOk() (*string, bool)`
+`func (o *BillingCharges) GetStartOk() (*string, bool)`
 
-GetPaidFromOk returns a tuple with the PaidFrom field if it's non-nil, zero value otherwise
+GetStartOk returns a tuple with the Start field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPaidFrom
+### SetStart
 
-`func (o *BillingCharges) SetPaidFrom(v string)`
+`func (o *BillingCharges) SetStart(v string)`
 
-SetPaidFrom sets PaidFrom field to given value.
+SetStart sets Start field to given value.
 
-### HasPaidFrom
+### HasStart
 
-`func (o *BillingCharges) HasPaidFrom() bool`
+`func (o *BillingCharges) HasStart() bool`
 
-HasPaidFrom returns a boolean if a field has been set.
+HasStart returns a boolean if a field has been set.
 
-### GetPaidOn
+### GetValue
 
-`func (o *BillingCharges) GetPaidOn() string`
+`func (o *BillingCharges) GetValue() float32`
 
-GetPaidOn returns the PaidOn field if non-nil, zero value otherwise.
+GetValue returns the Value field if non-nil, zero value otherwise.
 
-### GetPaidOnOk
+### GetValueOk
 
-`func (o *BillingCharges) GetPaidOnOk() (*string, bool)`
+`func (o *BillingCharges) GetValueOk() (*float32, bool)`
 
-GetPaidOnOk returns a tuple with the PaidOn field if it's non-nil, zero value otherwise
+GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPaidOn
+### SetValue
 
-`func (o *BillingCharges) SetPaidOn(v string)`
+`func (o *BillingCharges) SetValue(v float32)`
 
-SetPaidOn sets PaidOn field to given value.
+SetValue sets Value field to given value.
 
-### HasPaidOn
+### HasValue
 
-`func (o *BillingCharges) HasPaidOn() bool`
+`func (o *BillingCharges) HasValue() bool`
 
-HasPaidOn returns a boolean if a field has been set.
+HasValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

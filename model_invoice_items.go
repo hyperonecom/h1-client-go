@@ -16,28 +16,28 @@ import (
 
 // InvoiceItems struct for InvoiceItems
 type InvoiceItems struct {
-	Name string `json:"name"`
-	Price string `json:"price"`
-	Netto string `json:"netto"`
 	Brutto string `json:"brutto"`
+	Name string `json:"name"`
+	Netto string `json:"netto"`
+	Price string `json:"price"`
+	Quantity float32 `json:"quantity"`
 	VatAmount string `json:"vatAmount"`
 	VatRate string `json:"vatRate"`
-	Quantity float32 `json:"quantity"`
 }
 
 // NewInvoiceItems instantiates a new InvoiceItems object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceItems(name string, price string, netto string, brutto string, vatAmount string, vatRate string, quantity float32) *InvoiceItems {
+func NewInvoiceItems(brutto string, name string, netto string, price string, quantity float32, vatAmount string, vatRate string) *InvoiceItems {
 	this := InvoiceItems{}
-	this.Name = name
-	this.Price = price
-	this.Netto = netto
 	this.Brutto = brutto
+	this.Name = name
+	this.Netto = netto
+	this.Price = price
+	this.Quantity = quantity
 	this.VatAmount = vatAmount
 	this.VatRate = vatRate
-	this.Quantity = quantity
 	return &this
 }
 
@@ -47,6 +47,30 @@ func NewInvoiceItems(name string, price string, netto string, brutto string, vat
 func NewInvoiceItemsWithDefaults() *InvoiceItems {
 	this := InvoiceItems{}
 	return &this
+}
+
+// GetBrutto returns the Brutto field value
+func (o *InvoiceItems) GetBrutto() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Brutto
+}
+
+// GetBruttoOk returns a tuple with the Brutto field value
+// and a boolean to check if the value has been set.
+func (o *InvoiceItems) GetBruttoOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Brutto, true
+}
+
+// SetBrutto sets field value
+func (o *InvoiceItems) SetBrutto(v string) {
+	o.Brutto = v
 }
 
 // GetName returns the Name field value
@@ -73,30 +97,6 @@ func (o *InvoiceItems) SetName(v string) {
 	o.Name = v
 }
 
-// GetPrice returns the Price field value
-func (o *InvoiceItems) GetPrice() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceItems) GetPriceOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Price, true
-}
-
-// SetPrice sets field value
-func (o *InvoiceItems) SetPrice(v string) {
-	o.Price = v
-}
-
 // GetNetto returns the Netto field value
 func (o *InvoiceItems) GetNetto() string {
 	if o == nil {
@@ -121,28 +121,52 @@ func (o *InvoiceItems) SetNetto(v string) {
 	o.Netto = v
 }
 
-// GetBrutto returns the Brutto field value
-func (o *InvoiceItems) GetBrutto() string {
+// GetPrice returns the Price field value
+func (o *InvoiceItems) GetPrice() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.Brutto
+	return o.Price
 }
 
-// GetBruttoOk returns a tuple with the Brutto field value
+// GetPriceOk returns a tuple with the Price field value
 // and a boolean to check if the value has been set.
-func (o *InvoiceItems) GetBruttoOk() (*string, bool) {
+func (o *InvoiceItems) GetPriceOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
-	return &o.Brutto, true
+	return &o.Price, true
 }
 
-// SetBrutto sets field value
-func (o *InvoiceItems) SetBrutto(v string) {
-	o.Brutto = v
+// SetPrice sets field value
+func (o *InvoiceItems) SetPrice(v string) {
+	o.Price = v
+}
+
+// GetQuantity returns the Quantity field value
+func (o *InvoiceItems) GetQuantity() float32 {
+	if o == nil {
+		var ret float32
+		return ret
+	}
+
+	return o.Quantity
+}
+
+// GetQuantityOk returns a tuple with the Quantity field value
+// and a boolean to check if the value has been set.
+func (o *InvoiceItems) GetQuantityOk() (*float32, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Quantity, true
+}
+
+// SetQuantity sets field value
+func (o *InvoiceItems) SetQuantity(v float32) {
+	o.Quantity = v
 }
 
 // GetVatAmount returns the VatAmount field value
@@ -193,52 +217,28 @@ func (o *InvoiceItems) SetVatRate(v string) {
 	o.VatRate = v
 }
 
-// GetQuantity returns the Quantity field value
-func (o *InvoiceItems) GetQuantity() float32 {
-	if o == nil {
-		var ret float32
-		return ret
-	}
-
-	return o.Quantity
-}
-
-// GetQuantityOk returns a tuple with the Quantity field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceItems) GetQuantityOk() (*float32, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Quantity, true
-}
-
-// SetQuantity sets field value
-func (o *InvoiceItems) SetQuantity(v float32) {
-	o.Quantity = v
-}
-
 func (o InvoiceItems) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["name"] = o.Name
+		toSerialize["brutto"] = o.Brutto
 	}
 	if true {
-		toSerialize["price"] = o.Price
+		toSerialize["name"] = o.Name
 	}
 	if true {
 		toSerialize["netto"] = o.Netto
 	}
 	if true {
-		toSerialize["brutto"] = o.Brutto
+		toSerialize["price"] = o.Price
+	}
+	if true {
+		toSerialize["quantity"] = o.Quantity
 	}
 	if true {
 		toSerialize["vatAmount"] = o.VatAmount
 	}
 	if true {
 		toSerialize["vatRate"] = o.VatRate
-	}
-	if true {
-		toSerialize["quantity"] = o.Quantity
 	}
 	return json.Marshal(toSerialize)
 }

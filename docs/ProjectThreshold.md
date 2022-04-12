@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] [readonly] 
 **Type** | Pointer to **string** |  | [optional] [readonly] 
-**Value** | Pointer to **float32** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] [readonly] 
+**Value** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -104,31 +104,6 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetValue
-
-`func (o *ProjectThreshold) GetValue() float32`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *ProjectThreshold) GetValueOk() (*float32, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *ProjectThreshold) SetValue(v float32)`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *ProjectThreshold) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
-
 ### GetUri
 
 `func (o *ProjectThreshold) GetUri() string`
@@ -153,6 +128,31 @@ SetUri sets Uri field to given value.
 `func (o *ProjectThreshold) HasUri() bool`
 
 HasUri returns a boolean if a field has been set.
+
+### GetValue
+
+`func (o *ProjectThreshold) GetValue() float32`
+
+GetValue returns the Value field if non-nil, zero value otherwise.
+
+### GetValueOk
+
+`func (o *ProjectThreshold) GetValueOk() (*float32, bool)`
+
+GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValue
+
+`func (o *ProjectThreshold) SetValue(v float32)`
+
+SetValue sets Value field to given value.
+
+### HasValue
+
+`func (o *ProjectThreshold) HasValue() bool`
+
+HasValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

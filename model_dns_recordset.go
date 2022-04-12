@@ -19,9 +19,9 @@ type DnsRecordset struct {
 	Id *string `json:"id,omitempty"`
 	// use '@' to reference the zone origin
 	Name *string `json:"name,omitempty"`
-	Type string `json:"type"`
-	Ttl *float32 `json:"ttl,omitempty"`
 	Record []DnsRecord `json:"record,omitempty"`
+	Ttl *float32 `json:"ttl,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewDnsRecordset instantiates a new DnsRecordset object
@@ -32,9 +32,9 @@ func NewDnsRecordset(type_ string) *DnsRecordset {
 	this := DnsRecordset{}
 	var name string = "@"
 	this.Name = &name
-	this.Type = type_
 	var ttl float32 = 3600
 	this.Ttl = &ttl
+	this.Type = type_
 	return &this
 }
 
@@ -114,28 +114,36 @@ func (o *DnsRecordset) SetName(v string) {
 	o.Name = &v
 }
 
-// GetType returns the Type field value
-func (o *DnsRecordset) GetType() string {
-	if o == nil {
-		var ret string
+// GetRecord returns the Record field value if set, zero value otherwise.
+func (o *DnsRecordset) GetRecord() []DnsRecord {
+	if o == nil || o.Record == nil {
+		var ret []DnsRecord
 		return ret
 	}
-
-	return o.Type
+	return o.Record
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetRecordOk returns a tuple with the Record field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DnsRecordset) GetTypeOk() (*string, bool) {
-	if o == nil  {
+func (o *DnsRecordset) GetRecordOk() ([]DnsRecord, bool) {
+	if o == nil || o.Record == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return o.Record, true
 }
 
-// SetType sets field value
-func (o *DnsRecordset) SetType(v string) {
-	o.Type = v
+// HasRecord returns a boolean if a field has been set.
+func (o *DnsRecordset) HasRecord() bool {
+	if o != nil && o.Record != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRecord gets a reference to the given []DnsRecord and assigns it to the Record field.
+func (o *DnsRecordset) SetRecord(v []DnsRecord) {
+	o.Record = v
 }
 
 // GetTtl returns the Ttl field value if set, zero value otherwise.
@@ -170,36 +178,28 @@ func (o *DnsRecordset) SetTtl(v float32) {
 	o.Ttl = &v
 }
 
-// GetRecord returns the Record field value if set, zero value otherwise.
-func (o *DnsRecordset) GetRecord() []DnsRecord {
-	if o == nil || o.Record == nil {
-		var ret []DnsRecord
+// GetType returns the Type field value
+func (o *DnsRecordset) GetType() string {
+	if o == nil {
+		var ret string
 		return ret
 	}
-	return o.Record
+
+	return o.Type
 }
 
-// GetRecordOk returns a tuple with the Record field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *DnsRecordset) GetRecordOk() ([]DnsRecord, bool) {
-	if o == nil || o.Record == nil {
+func (o *DnsRecordset) GetTypeOk() (*string, bool) {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Record, true
+	return &o.Type, true
 }
 
-// HasRecord returns a boolean if a field has been set.
-func (o *DnsRecordset) HasRecord() bool {
-	if o != nil && o.Record != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRecord gets a reference to the given []DnsRecord and assigns it to the Record field.
-func (o *DnsRecordset) SetRecord(v []DnsRecord) {
-	o.Record = v
+// SetType sets field value
+func (o *DnsRecordset) SetType(v string) {
+	o.Type = v
 }
 
 func (o DnsRecordset) MarshalJSON() ([]byte, error) {
@@ -210,14 +210,14 @@ func (o DnsRecordset) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if true {
-		toSerialize["type"] = o.Type
+	if o.Record != nil {
+		toSerialize["record"] = o.Record
 	}
 	if o.Ttl != nil {
 		toSerialize["ttl"] = o.Ttl
 	}
-	if o.Record != nil {
-		toSerialize["record"] = o.Record
+	if true {
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Vm** | **string** |  | 
-**Network** | **string** |  | 
 **Firewall** | Pointer to **string** |  | [optional] 
 **Ip** | Pointer to **[]string** |  | [optional] 
+**Network** | **string** |  | 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Vm** | **string** |  | 
 
 ## Methods
 
 ### NewNetworkingProjectNetadpCreate
 
-`func NewNetworkingProjectNetadpCreate(vm string, network string, ) *NetworkingProjectNetadpCreate`
+`func NewNetworkingProjectNetadpCreate(network string, vm string, ) *NetworkingProjectNetadpCreate`
 
 NewNetworkingProjectNetadpCreate instantiates a new NetworkingProjectNetadpCreate object
 This constructor will assign default values to properties that have it defined,
@@ -28,46 +28,6 @@ will change when the set of required properties is changed
 NewNetworkingProjectNetadpCreateWithDefaults instantiates a new NetworkingProjectNetadpCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetVm
-
-`func (o *NetworkingProjectNetadpCreate) GetVm() string`
-
-GetVm returns the Vm field if non-nil, zero value otherwise.
-
-### GetVmOk
-
-`func (o *NetworkingProjectNetadpCreate) GetVmOk() (*string, bool)`
-
-GetVmOk returns a tuple with the Vm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVm
-
-`func (o *NetworkingProjectNetadpCreate) SetVm(v string)`
-
-SetVm sets Vm field to given value.
-
-
-### GetNetwork
-
-`func (o *NetworkingProjectNetadpCreate) GetNetwork() string`
-
-GetNetwork returns the Network field if non-nil, zero value otherwise.
-
-### GetNetworkOk
-
-`func (o *NetworkingProjectNetadpCreate) GetNetworkOk() (*string, bool)`
-
-GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetwork
-
-`func (o *NetworkingProjectNetadpCreate) SetNetwork(v string)`
-
-SetNetwork sets Network field to given value.
-
 
 ### GetFirewall
 
@@ -119,6 +79,26 @@ SetIp sets Ip field to given value.
 
 HasIp returns a boolean if a field has been set.
 
+### GetNetwork
+
+`func (o *NetworkingProjectNetadpCreate) GetNetwork() string`
+
+GetNetwork returns the Network field if non-nil, zero value otherwise.
+
+### GetNetworkOk
+
+`func (o *NetworkingProjectNetadpCreate) GetNetworkOk() (*string, bool)`
+
+GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetwork
+
+`func (o *NetworkingProjectNetadpCreate) SetNetwork(v string)`
+
+SetNetwork sets Network field to given value.
+
+
 ### GetTag
 
 `func (o *NetworkingProjectNetadpCreate) GetTag() []Tag`
@@ -143,6 +123,26 @@ SetTag sets Tag field to given value.
 `func (o *NetworkingProjectNetadpCreate) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetVm
+
+`func (o *NetworkingProjectNetadpCreate) GetVm() string`
+
+GetVm returns the Vm field if non-nil, zero value otherwise.
+
+### GetVmOk
+
+`func (o *NetworkingProjectNetadpCreate) GetVmOk() (*string, bool)`
+
+GetVmOk returns a tuple with the Vm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVm
+
+`func (o *NetworkingProjectNetadpCreate) SetVm(v string)`
+
+SetVm sets Vm field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Expiry** | Pointer to **time.Time** |  | [optional] 
+**Access** | Pointer to [**[]AuthTokenAccess**](AuthTokenAccess.md) |  | [optional] 
+**ClientIp** | Pointer to **string** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**Access** | Pointer to [**[]AuthTokenAccess**](AuthTokenAccess.md) |  | [optional] 
+**Expiry** | Pointer to **time.Time** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ClientIp** | Pointer to **string** |  | [optional] 
 **UserAgent** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -32,55 +32,55 @@ NewAuthTokenWithDefaults instantiates a new AuthToken object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAccess
 
-`func (o *AuthToken) GetId() string`
+`func (o *AuthToken) GetAccess() []AuthTokenAccess`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAccess returns the Access field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAccessOk
 
-`func (o *AuthToken) GetIdOk() (*string, bool)`
+`func (o *AuthToken) GetAccessOk() (*[]AuthTokenAccess, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAccess
 
-`func (o *AuthToken) SetId(v string)`
+`func (o *AuthToken) SetAccess(v []AuthTokenAccess)`
 
-SetId sets Id field to given value.
+SetAccess sets Access field to given value.
 
-### HasId
+### HasAccess
 
-`func (o *AuthToken) HasId() bool`
+`func (o *AuthToken) HasAccess() bool`
 
-HasId returns a boolean if a field has been set.
+HasAccess returns a boolean if a field has been set.
 
-### GetExpiry
+### GetClientIp
 
-`func (o *AuthToken) GetExpiry() time.Time`
+`func (o *AuthToken) GetClientIp() string`
 
-GetExpiry returns the Expiry field if non-nil, zero value otherwise.
+GetClientIp returns the ClientIp field if non-nil, zero value otherwise.
 
-### GetExpiryOk
+### GetClientIpOk
 
-`func (o *AuthToken) GetExpiryOk() (*time.Time, bool)`
+`func (o *AuthToken) GetClientIpOk() (*string, bool)`
 
-GetExpiryOk returns a tuple with the Expiry field if it's non-nil, zero value otherwise
+GetClientIpOk returns a tuple with the ClientIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExpiry
+### SetClientIp
 
-`func (o *AuthToken) SetExpiry(v time.Time)`
+`func (o *AuthToken) SetClientIp(v string)`
 
-SetExpiry sets Expiry field to given value.
+SetClientIp sets ClientIp field to given value.
 
-### HasExpiry
+### HasClientIp
 
-`func (o *AuthToken) HasExpiry() bool`
+`func (o *AuthToken) HasClientIp() bool`
 
-HasExpiry returns a boolean if a field has been set.
+HasClientIp returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
@@ -132,30 +132,55 @@ SetCreatedOn sets CreatedOn field to given value.
 
 HasCreatedOn returns a boolean if a field has been set.
 
-### GetAccess
+### GetExpiry
 
-`func (o *AuthToken) GetAccess() []AuthTokenAccess`
+`func (o *AuthToken) GetExpiry() time.Time`
 
-GetAccess returns the Access field if non-nil, zero value otherwise.
+GetExpiry returns the Expiry field if non-nil, zero value otherwise.
 
-### GetAccessOk
+### GetExpiryOk
 
-`func (o *AuthToken) GetAccessOk() (*[]AuthTokenAccess, bool)`
+`func (o *AuthToken) GetExpiryOk() (*time.Time, bool)`
 
-GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
+GetExpiryOk returns a tuple with the Expiry field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccess
+### SetExpiry
 
-`func (o *AuthToken) SetAccess(v []AuthTokenAccess)`
+`func (o *AuthToken) SetExpiry(v time.Time)`
 
-SetAccess sets Access field to given value.
+SetExpiry sets Expiry field to given value.
 
-### HasAccess
+### HasExpiry
 
-`func (o *AuthToken) HasAccess() bool`
+`func (o *AuthToken) HasExpiry() bool`
 
-HasAccess returns a boolean if a field has been set.
+HasExpiry returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AuthToken) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AuthToken) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AuthToken) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *AuthToken) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -181,31 +206,6 @@ SetName sets Name field to given value.
 `func (o *AuthToken) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetClientIp
-
-`func (o *AuthToken) GetClientIp() string`
-
-GetClientIp returns the ClientIp field if non-nil, zero value otherwise.
-
-### GetClientIpOk
-
-`func (o *AuthToken) GetClientIpOk() (*string, bool)`
-
-GetClientIpOk returns a tuple with the ClientIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientIp
-
-`func (o *AuthToken) SetClientIp(v string)`
-
-SetClientIp sets ClientIp field to given value.
-
-### HasClientIp
-
-`func (o *AuthToken) HasClientIp() bool`
-
-HasClientIp returns a boolean if a field has been set.
 
 ### GetUserAgent
 

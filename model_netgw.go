@@ -17,27 +17,28 @@ import (
 
 // Netgw struct for Netgw
 type Netgw struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Flavour *string `json:"flavour,omitempty"`
-	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy *string `json:"modifiedBy,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	CreatedBy *string `json:"createdBy,omitempty"`
-	State *string `json:"state,omitempty"`
-	Project *string `json:"project,omitempty"`
-	Uri *string `json:"uri,omitempty"`
-	PrimaryIP *string `json:"primaryIP,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
+	Flavour *string `json:"flavour,omitempty"`
+	Id string `json:"id"`
+	ModifiedBy *string `json:"modifiedBy,omitempty"`
+	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
+	Name *string `json:"name,omitempty"`
 	Network *string `json:"network,omitempty"`
+	PrimaryIP *string `json:"primaryIP,omitempty"`
+	Project *string `json:"project,omitempty"`
+	State *string `json:"state,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
+	Uri *string `json:"uri,omitempty"`
 }
 
 // NewNetgw instantiates a new Netgw object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetgw() *Netgw {
+func NewNetgw(id string) *Netgw {
 	this := Netgw{}
+	this.Id = id
 	return &this
 }
 
@@ -47,198 +48,6 @@ func NewNetgw() *Netgw {
 func NewNetgwWithDefaults() *Netgw {
 	this := Netgw{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Netgw) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *Netgw) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Netgw) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Netgw) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *Netgw) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Netgw) SetName(v string) {
-	o.Name = &v
-}
-
-// GetFlavour returns the Flavour field value if set, zero value otherwise.
-func (o *Netgw) GetFlavour() string {
-	if o == nil || o.Flavour == nil {
-		var ret string
-		return ret
-	}
-	return *o.Flavour
-}
-
-// GetFlavourOk returns a tuple with the Flavour field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetFlavourOk() (*string, bool) {
-	if o == nil || o.Flavour == nil {
-		return nil, false
-	}
-	return o.Flavour, true
-}
-
-// HasFlavour returns a boolean if a field has been set.
-func (o *Netgw) HasFlavour() bool {
-	if o != nil && o.Flavour != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFlavour gets a reference to the given string and assigns it to the Flavour field.
-func (o *Netgw) SetFlavour(v string) {
-	o.Flavour = &v
-}
-
-// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
-func (o *Netgw) GetModifiedOn() time.Time {
-	if o == nil || o.ModifiedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.ModifiedOn
-}
-
-// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetModifiedOnOk() (*time.Time, bool) {
-	if o == nil || o.ModifiedOn == nil {
-		return nil, false
-	}
-	return o.ModifiedOn, true
-}
-
-// HasModifiedOn returns a boolean if a field has been set.
-func (o *Netgw) HasModifiedOn() bool {
-	if o != nil && o.ModifiedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
-func (o *Netgw) SetModifiedOn(v time.Time) {
-	o.ModifiedOn = &v
-}
-
-// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
-func (o *Netgw) GetModifiedBy() string {
-	if o == nil || o.ModifiedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.ModifiedBy
-}
-
-// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetModifiedByOk() (*string, bool) {
-	if o == nil || o.ModifiedBy == nil {
-		return nil, false
-	}
-	return o.ModifiedBy, true
-}
-
-// HasModifiedBy returns a boolean if a field has been set.
-func (o *Netgw) HasModifiedBy() bool {
-	if o != nil && o.ModifiedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
-func (o *Netgw) SetModifiedBy(v string) {
-	o.ModifiedBy = &v
-}
-
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Netgw) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Netgw) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *Netgw) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Netgw) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -273,132 +82,188 @@ func (o *Netgw) SetCreatedBy(v string) {
 	o.CreatedBy = &v
 }
 
-// GetState returns the State field value if set, zero value otherwise.
-func (o *Netgw) GetState() string {
-	if o == nil || o.State == nil {
-		var ret string
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *Netgw) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
 		return ret
 	}
-	return *o.State
+	return *o.CreatedOn
 }
 
-// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Netgw) GetStateOk() (*string, bool) {
-	if o == nil || o.State == nil {
+func (o *Netgw) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
 		return nil, false
 	}
-	return o.State, true
+	return o.CreatedOn, true
 }
 
-// HasState returns a boolean if a field has been set.
-func (o *Netgw) HasState() bool {
-	if o != nil && o.State != nil {
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *Netgw) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given string and assigns it to the State field.
-func (o *Netgw) SetState(v string) {
-	o.State = &v
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Netgw) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
-// GetProject returns the Project field value if set, zero value otherwise.
-func (o *Netgw) GetProject() string {
-	if o == nil || o.Project == nil {
+// GetFlavour returns the Flavour field value if set, zero value otherwise.
+func (o *Netgw) GetFlavour() string {
+	if o == nil || o.Flavour == nil {
 		var ret string
 		return ret
 	}
-	return *o.Project
+	return *o.Flavour
 }
 
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// GetFlavourOk returns a tuple with the Flavour field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Netgw) GetProjectOk() (*string, bool) {
-	if o == nil || o.Project == nil {
+func (o *Netgw) GetFlavourOk() (*string, bool) {
+	if o == nil || o.Flavour == nil {
 		return nil, false
 	}
-	return o.Project, true
+	return o.Flavour, true
 }
 
-// HasProject returns a boolean if a field has been set.
-func (o *Netgw) HasProject() bool {
-	if o != nil && o.Project != nil {
+// HasFlavour returns a boolean if a field has been set.
+func (o *Netgw) HasFlavour() bool {
+	if o != nil && o.Flavour != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProject gets a reference to the given string and assigns it to the Project field.
-func (o *Netgw) SetProject(v string) {
-	o.Project = &v
+// SetFlavour gets a reference to the given string and assigns it to the Flavour field.
+func (o *Netgw) SetFlavour(v string) {
+	o.Flavour = &v
 }
 
-// GetUri returns the Uri field value if set, zero value otherwise.
-func (o *Netgw) GetUri() string {
-	if o == nil || o.Uri == nil {
+// GetId returns the Id field value
+func (o *Netgw) GetId() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Uri
+
+	return o.Id
 }
 
-// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *Netgw) GetUriOk() (*string, bool) {
-	if o == nil || o.Uri == nil {
+func (o *Netgw) GetIdOk() (*string, bool) {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Uri, true
+	return &o.Id, true
 }
 
-// HasUri returns a boolean if a field has been set.
-func (o *Netgw) HasUri() bool {
-	if o != nil && o.Uri != nil {
+// SetId sets field value
+func (o *Netgw) SetId(v string) {
+	o.Id = v
+}
+
+// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
+func (o *Netgw) GetModifiedBy() string {
+	if o == nil || o.ModifiedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.ModifiedBy
+}
+
+// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetModifiedByOk() (*string, bool) {
+	if o == nil || o.ModifiedBy == nil {
+		return nil, false
+	}
+	return o.ModifiedBy, true
+}
+
+// HasModifiedBy returns a boolean if a field has been set.
+func (o *Netgw) HasModifiedBy() bool {
+	if o != nil && o.ModifiedBy != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUri gets a reference to the given string and assigns it to the Uri field.
-func (o *Netgw) SetUri(v string) {
-	o.Uri = &v
+// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
+func (o *Netgw) SetModifiedBy(v string) {
+	o.ModifiedBy = &v
 }
 
-// GetPrimaryIP returns the PrimaryIP field value if set, zero value otherwise.
-func (o *Netgw) GetPrimaryIP() string {
-	if o == nil || o.PrimaryIP == nil {
-		var ret string
+// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
+func (o *Netgw) GetModifiedOn() time.Time {
+	if o == nil || o.ModifiedOn == nil {
+		var ret time.Time
 		return ret
 	}
-	return *o.PrimaryIP
+	return *o.ModifiedOn
 }
 
-// GetPrimaryIPOk returns a tuple with the PrimaryIP field value if set, nil otherwise
+// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Netgw) GetPrimaryIPOk() (*string, bool) {
-	if o == nil || o.PrimaryIP == nil {
+func (o *Netgw) GetModifiedOnOk() (*time.Time, bool) {
+	if o == nil || o.ModifiedOn == nil {
 		return nil, false
 	}
-	return o.PrimaryIP, true
+	return o.ModifiedOn, true
 }
 
-// HasPrimaryIP returns a boolean if a field has been set.
-func (o *Netgw) HasPrimaryIP() bool {
-	if o != nil && o.PrimaryIP != nil {
+// HasModifiedOn returns a boolean if a field has been set.
+func (o *Netgw) HasModifiedOn() bool {
+	if o != nil && o.ModifiedOn != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPrimaryIP gets a reference to the given string and assigns it to the PrimaryIP field.
-func (o *Netgw) SetPrimaryIP(v string) {
-	o.PrimaryIP = &v
+// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
+func (o *Netgw) SetModifiedOn(v time.Time) {
+	o.ModifiedOn = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Netgw) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Netgw) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Netgw) SetName(v string) {
+	o.Name = &v
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
@@ -433,6 +298,102 @@ func (o *Netgw) SetNetwork(v string) {
 	o.Network = &v
 }
 
+// GetPrimaryIP returns the PrimaryIP field value if set, zero value otherwise.
+func (o *Netgw) GetPrimaryIP() string {
+	if o == nil || o.PrimaryIP == nil {
+		var ret string
+		return ret
+	}
+	return *o.PrimaryIP
+}
+
+// GetPrimaryIPOk returns a tuple with the PrimaryIP field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetPrimaryIPOk() (*string, bool) {
+	if o == nil || o.PrimaryIP == nil {
+		return nil, false
+	}
+	return o.PrimaryIP, true
+}
+
+// HasPrimaryIP returns a boolean if a field has been set.
+func (o *Netgw) HasPrimaryIP() bool {
+	if o != nil && o.PrimaryIP != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimaryIP gets a reference to the given string and assigns it to the PrimaryIP field.
+func (o *Netgw) SetPrimaryIP(v string) {
+	o.PrimaryIP = &v
+}
+
+// GetProject returns the Project field value if set, zero value otherwise.
+func (o *Netgw) GetProject() string {
+	if o == nil || o.Project == nil {
+		var ret string
+		return ret
+	}
+	return *o.Project
+}
+
+// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetProjectOk() (*string, bool) {
+	if o == nil || o.Project == nil {
+		return nil, false
+	}
+	return o.Project, true
+}
+
+// HasProject returns a boolean if a field has been set.
+func (o *Netgw) HasProject() bool {
+	if o != nil && o.Project != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProject gets a reference to the given string and assigns it to the Project field.
+func (o *Netgw) SetProject(v string) {
+	o.Project = &v
+}
+
+// GetState returns the State field value if set, zero value otherwise.
+func (o *Netgw) GetState() string {
+	if o == nil || o.State == nil {
+		var ret string
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetStateOk() (*string, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *Netgw) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
+func (o *Netgw) SetState(v string) {
+	o.State = &v
+}
+
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *Netgw) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -465,46 +426,78 @@ func (o *Netgw) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetUri returns the Uri field value if set, zero value otherwise.
+func (o *Netgw) GetUri() string {
+	if o == nil || o.Uri == nil {
+		var ret string
+		return ret
+	}
+	return *o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Netgw) GetUriOk() (*string, bool) {
+	if o == nil || o.Uri == nil {
+		return nil, false
+	}
+	return o.Uri, true
+}
+
+// HasUri returns a boolean if a field has been set.
+func (o *Netgw) HasUri() bool {
+	if o != nil && o.Uri != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given string and assigns it to the Uri field.
+func (o *Netgw) SetUri(v string) {
+	o.Uri = &v
+}
+
 func (o Netgw) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Flavour != nil {
-		toSerialize["flavour"] = o.Flavour
-	}
-	if o.ModifiedOn != nil {
-		toSerialize["modifiedOn"] = o.ModifiedOn
-	}
-	if o.ModifiedBy != nil {
-		toSerialize["modifiedBy"] = o.ModifiedBy
+	if o.CreatedBy != nil {
+		toSerialize["createdBy"] = o.CreatedBy
 	}
 	if o.CreatedOn != nil {
 		toSerialize["createdOn"] = o.CreatedOn
 	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
+	if o.Flavour != nil {
+		toSerialize["flavour"] = o.Flavour
 	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
+	if true {
+		toSerialize["id"] = o.Id
 	}
-	if o.Project != nil {
-		toSerialize["project"] = o.Project
+	if o.ModifiedBy != nil {
+		toSerialize["modifiedBy"] = o.ModifiedBy
 	}
-	if o.Uri != nil {
-		toSerialize["uri"] = o.Uri
+	if o.ModifiedOn != nil {
+		toSerialize["modifiedOn"] = o.ModifiedOn
 	}
-	if o.PrimaryIP != nil {
-		toSerialize["primaryIP"] = o.PrimaryIP
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Network != nil {
 		toSerialize["network"] = o.Network
 	}
+	if o.PrimaryIP != nil {
+		toSerialize["primaryIP"] = o.PrimaryIP
+	}
+	if o.Project != nil {
+		toSerialize["project"] = o.Project
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
+	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if o.Uri != nil {
+		toSerialize["uri"] = o.Uri
 	}
 	return json.Marshal(toSerialize)
 }

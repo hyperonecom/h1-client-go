@@ -16,8 +16,8 @@ import (
 
 // BillingAddress struct for BillingAddress
 type BillingAddress struct {
-	Country *string `json:"country,omitempty"`
 	City string `json:"city"`
+	Country *string `json:"country,omitempty"`
 	Street string `json:"street"`
 	Zipcode string `json:"zipcode"`
 }
@@ -28,9 +28,9 @@ type BillingAddress struct {
 // will change when the set of required properties is changed
 func NewBillingAddress(city string, street string, zipcode string) *BillingAddress {
 	this := BillingAddress{}
+	this.City = city
 	var country string = "PL"
 	this.Country = &country
-	this.City = city
 	this.Street = street
 	this.Zipcode = zipcode
 	return &this
@@ -44,6 +44,30 @@ func NewBillingAddressWithDefaults() *BillingAddress {
 	var country string = "PL"
 	this.Country = &country
 	return &this
+}
+
+// GetCity returns the City field value
+func (o *BillingAddress) GetCity() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.City
+}
+
+// GetCityOk returns a tuple with the City field value
+// and a boolean to check if the value has been set.
+func (o *BillingAddress) GetCityOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.City, true
+}
+
+// SetCity sets field value
+func (o *BillingAddress) SetCity(v string) {
+	o.City = v
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
@@ -76,30 +100,6 @@ func (o *BillingAddress) HasCountry() bool {
 // SetCountry gets a reference to the given string and assigns it to the Country field.
 func (o *BillingAddress) SetCountry(v string) {
 	o.Country = &v
-}
-
-// GetCity returns the City field value
-func (o *BillingAddress) GetCity() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.City
-}
-
-// GetCityOk returns a tuple with the City field value
-// and a boolean to check if the value has been set.
-func (o *BillingAddress) GetCityOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.City, true
-}
-
-// SetCity sets field value
-func (o *BillingAddress) SetCity(v string) {
-	o.City = v
 }
 
 // GetStreet returns the Street field value
@@ -152,11 +152,11 @@ func (o *BillingAddress) SetZipcode(v string) {
 
 func (o BillingAddress) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
 	if true {
 		toSerialize["city"] = o.City
+	}
+	if o.Country != nil {
+		toSerialize["country"] = o.Country
 	}
 	if true {
 		toSerialize["street"] = o.Street

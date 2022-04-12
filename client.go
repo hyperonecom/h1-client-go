@@ -55,6 +55,8 @@ type APIClient struct {
 
 	ComputeProjectVmApi *ComputeProjectVmApiService
 
+	ContainerProjectRegistryApi *ContainerProjectRegistryApiService
+
 	DnsProjectZoneApi *DnsProjectZoneApiService
 
 	IamOrganisationApi *IamOrganisationApiService
@@ -91,6 +93,8 @@ type APIClient struct {
 
 	ProviderProjectAgentApi *ProviderProjectAgentApiService
 
+	SearchResourceApi *SearchResourceApiService
+
 	StorageProjectBucketApi *StorageProjectBucketApiService
 
 	StorageProjectDiskApi *StorageProjectDiskApiService
@@ -125,6 +129,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingProjectServiceApi = (*BillingProjectServiceApiService)(&c.common)
 	c.ComputeProjectReplicaApi = (*ComputeProjectReplicaApiService)(&c.common)
 	c.ComputeProjectVmApi = (*ComputeProjectVmApiService)(&c.common)
+	c.ContainerProjectRegistryApi = (*ContainerProjectRegistryApiService)(&c.common)
 	c.DnsProjectZoneApi = (*DnsProjectZoneApiService)(&c.common)
 	c.IamOrganisationApi = (*IamOrganisationApiService)(&c.common)
 	c.IamOrganisationPolicyApi = (*IamOrganisationPolicyApiService)(&c.common)
@@ -143,6 +148,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.NetworkingProjectNetgwApi = (*NetworkingProjectNetgwApiService)(&c.common)
 	c.NetworkingProjectNetworkApi = (*NetworkingProjectNetworkApiService)(&c.common)
 	c.ProviderProjectAgentApi = (*ProviderProjectAgentApiService)(&c.common)
+	c.SearchResourceApi = (*SearchResourceApiService)(&c.common)
 	c.StorageProjectBucketApi = (*StorageProjectBucketApiService)(&c.common)
 	c.StorageProjectDiskApi = (*StorageProjectDiskApiService)(&c.common)
 	c.StorageProjectImageApi = (*StorageProjectImageApiService)(&c.common)

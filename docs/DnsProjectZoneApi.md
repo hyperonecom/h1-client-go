@@ -54,7 +54,7 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     locationId := "locationId_example" // string | Location Id
-    dnsProjectZoneCreate := *openapiclient.NewDnsProjectZoneCreate("Name_example", "Service_example", "DnsName_example") // DnsProjectZoneCreate | 
+    dnsProjectZoneCreate := *openapiclient.NewDnsProjectZoneCreate("DnsName_example", "Name_example", "Service_example") // DnsProjectZoneCreate | 
     xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 

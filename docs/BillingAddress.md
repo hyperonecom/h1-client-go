@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Country** | Pointer to **string** |  | [optional] [default to "PL"]
 **City** | **string** |  | 
+**Country** | Pointer to **string** |  | [optional] [default to "PL"]
 **Street** | **string** |  | 
 **Zipcode** | **string** |  | 
 
@@ -27,6 +27,26 @@ will change when the set of required properties is changed
 NewBillingAddressWithDefaults instantiates a new BillingAddress object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCity
+
+`func (o *BillingAddress) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *BillingAddress) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *BillingAddress) SetCity(v string)`
+
+SetCity sets City field to given value.
+
 
 ### GetCountry
 
@@ -52,26 +72,6 @@ SetCountry sets Country field to given value.
 `func (o *BillingAddress) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
-
-### GetCity
-
-`func (o *BillingAddress) GetCity() string`
-
-GetCity returns the City field if non-nil, zero value otherwise.
-
-### GetCityOk
-
-`func (o *BillingAddress) GetCityOk() (*string, bool)`
-
-GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCity
-
-`func (o *BillingAddress) SetCity(v string)`
-
-SetCity sets City field to given value.
-
 
 ### GetStreet
 

@@ -16,10 +16,10 @@ import (
 
 // ServiceBillingPrice struct for ServiceBillingPrice
 type ServiceBillingPrice struct {
-	PLN *float32 `json:"PLN,omitempty"`
 	EUR *float32 `json:"EUR,omitempty"`
-	USD *float32 `json:"USD,omitempty"`
 	GBP *float32 `json:"GBP,omitempty"`
+	PLN *float32 `json:"PLN,omitempty"`
+	USD *float32 `json:"USD,omitempty"`
 }
 
 // NewServiceBillingPrice instantiates a new ServiceBillingPrice object
@@ -37,38 +37,6 @@ func NewServiceBillingPrice() *ServiceBillingPrice {
 func NewServiceBillingPriceWithDefaults() *ServiceBillingPrice {
 	this := ServiceBillingPrice{}
 	return &this
-}
-
-// GetPLN returns the PLN field value if set, zero value otherwise.
-func (o *ServiceBillingPrice) GetPLN() float32 {
-	if o == nil || o.PLN == nil {
-		var ret float32
-		return ret
-	}
-	return *o.PLN
-}
-
-// GetPLNOk returns a tuple with the PLN field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceBillingPrice) GetPLNOk() (*float32, bool) {
-	if o == nil || o.PLN == nil {
-		return nil, false
-	}
-	return o.PLN, true
-}
-
-// HasPLN returns a boolean if a field has been set.
-func (o *ServiceBillingPrice) HasPLN() bool {
-	if o != nil && o.PLN != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPLN gets a reference to the given float32 and assigns it to the PLN field.
-func (o *ServiceBillingPrice) SetPLN(v float32) {
-	o.PLN = &v
 }
 
 // GetEUR returns the EUR field value if set, zero value otherwise.
@@ -103,38 +71,6 @@ func (o *ServiceBillingPrice) SetEUR(v float32) {
 	o.EUR = &v
 }
 
-// GetUSD returns the USD field value if set, zero value otherwise.
-func (o *ServiceBillingPrice) GetUSD() float32 {
-	if o == nil || o.USD == nil {
-		var ret float32
-		return ret
-	}
-	return *o.USD
-}
-
-// GetUSDOk returns a tuple with the USD field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceBillingPrice) GetUSDOk() (*float32, bool) {
-	if o == nil || o.USD == nil {
-		return nil, false
-	}
-	return o.USD, true
-}
-
-// HasUSD returns a boolean if a field has been set.
-func (o *ServiceBillingPrice) HasUSD() bool {
-	if o != nil && o.USD != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUSD gets a reference to the given float32 and assigns it to the USD field.
-func (o *ServiceBillingPrice) SetUSD(v float32) {
-	o.USD = &v
-}
-
 // GetGBP returns the GBP field value if set, zero value otherwise.
 func (o *ServiceBillingPrice) GetGBP() float32 {
 	if o == nil || o.GBP == nil {
@@ -167,19 +103,83 @@ func (o *ServiceBillingPrice) SetGBP(v float32) {
 	o.GBP = &v
 }
 
+// GetPLN returns the PLN field value if set, zero value otherwise.
+func (o *ServiceBillingPrice) GetPLN() float32 {
+	if o == nil || o.PLN == nil {
+		var ret float32
+		return ret
+	}
+	return *o.PLN
+}
+
+// GetPLNOk returns a tuple with the PLN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceBillingPrice) GetPLNOk() (*float32, bool) {
+	if o == nil || o.PLN == nil {
+		return nil, false
+	}
+	return o.PLN, true
+}
+
+// HasPLN returns a boolean if a field has been set.
+func (o *ServiceBillingPrice) HasPLN() bool {
+	if o != nil && o.PLN != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPLN gets a reference to the given float32 and assigns it to the PLN field.
+func (o *ServiceBillingPrice) SetPLN(v float32) {
+	o.PLN = &v
+}
+
+// GetUSD returns the USD field value if set, zero value otherwise.
+func (o *ServiceBillingPrice) GetUSD() float32 {
+	if o == nil || o.USD == nil {
+		var ret float32
+		return ret
+	}
+	return *o.USD
+}
+
+// GetUSDOk returns a tuple with the USD field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceBillingPrice) GetUSDOk() (*float32, bool) {
+	if o == nil || o.USD == nil {
+		return nil, false
+	}
+	return o.USD, true
+}
+
+// HasUSD returns a boolean if a field has been set.
+func (o *ServiceBillingPrice) HasUSD() bool {
+	if o != nil && o.USD != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUSD gets a reference to the given float32 and assigns it to the USD field.
+func (o *ServiceBillingPrice) SetUSD(v float32) {
+	o.USD = &v
+}
+
 func (o ServiceBillingPrice) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PLN != nil {
-		toSerialize["PLN"] = o.PLN
-	}
 	if o.EUR != nil {
 		toSerialize["EUR"] = o.EUR
 	}
-	if o.USD != nil {
-		toSerialize["USD"] = o.USD
-	}
 	if o.GBP != nil {
 		toSerialize["GBP"] = o.GBP
+	}
+	if o.PLN != nil {
+		toSerialize["PLN"] = o.PLN
+	}
+	if o.USD != nil {
+		toSerialize["USD"] = o.USD
 	}
 	return json.Marshal(toSerialize)
 }

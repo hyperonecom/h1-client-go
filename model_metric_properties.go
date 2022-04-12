@@ -16,8 +16,8 @@ import (
 
 // MetricProperties struct for MetricProperties
 type MetricProperties struct {
-	Unit string `json:"unit"`
 	Dimension []MetricPropertiesDimension `json:"dimension,omitempty"`
+	Unit string `json:"unit"`
 }
 
 // NewMetricProperties instantiates a new MetricProperties object
@@ -36,30 +36,6 @@ func NewMetricProperties(unit string) *MetricProperties {
 func NewMetricPropertiesWithDefaults() *MetricProperties {
 	this := MetricProperties{}
 	return &this
-}
-
-// GetUnit returns the Unit field value
-func (o *MetricProperties) GetUnit() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Unit
-}
-
-// GetUnitOk returns a tuple with the Unit field value
-// and a boolean to check if the value has been set.
-func (o *MetricProperties) GetUnitOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Unit, true
-}
-
-// SetUnit sets field value
-func (o *MetricProperties) SetUnit(v string) {
-	o.Unit = v
 }
 
 // GetDimension returns the Dimension field value if set, zero value otherwise.
@@ -94,13 +70,37 @@ func (o *MetricProperties) SetDimension(v []MetricPropertiesDimension) {
 	o.Dimension = v
 }
 
+// GetUnit returns the Unit field value
+func (o *MetricProperties) GetUnit() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Unit
+}
+
+// GetUnitOk returns a tuple with the Unit field value
+// and a boolean to check if the value has been set.
+func (o *MetricProperties) GetUnitOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Unit, true
+}
+
+// SetUnit sets field value
+func (o *MetricProperties) SetUnit(v string) {
+	o.Unit = v
+}
+
 func (o MetricProperties) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["unit"] = o.Unit
-	}
 	if o.Dimension != nil {
 		toSerialize["dimension"] = o.Dimension
+	}
+	if true {
+		toSerialize["unit"] = o.Unit
 	}
 	return json.Marshal(toSerialize)
 }

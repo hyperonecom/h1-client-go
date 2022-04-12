@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**Name** | **string** |  | 
 **CreatedBy** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] [readonly] 
+**Fingerprint** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Name** | **string** |  | 
+**Token** | Pointer to **string** |  | [optional] 
 **Type** | **string** |  | 
 **Value** | **string** |  | 
-**Fingerprint** | Pointer to **string** |  | [optional] [readonly] 
-**Token** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -31,51 +31,6 @@ will change when the set of required properties is changed
 NewVaultCredentialWithDefaults instantiates a new VaultCredential object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *VaultCredential) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *VaultCredential) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *VaultCredential) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *VaultCredential) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *VaultCredential) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *VaultCredential) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *VaultCredential) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetCreatedBy
 
@@ -127,6 +82,101 @@ SetCreatedOn sets CreatedOn field to given value.
 
 HasCreatedOn returns a boolean if a field has been set.
 
+### GetFingerprint
+
+`func (o *VaultCredential) GetFingerprint() string`
+
+GetFingerprint returns the Fingerprint field if non-nil, zero value otherwise.
+
+### GetFingerprintOk
+
+`func (o *VaultCredential) GetFingerprintOk() (*string, bool)`
+
+GetFingerprintOk returns a tuple with the Fingerprint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFingerprint
+
+`func (o *VaultCredential) SetFingerprint(v string)`
+
+SetFingerprint sets Fingerprint field to given value.
+
+### HasFingerprint
+
+`func (o *VaultCredential) HasFingerprint() bool`
+
+HasFingerprint returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *VaultCredential) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *VaultCredential) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *VaultCredential) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *VaultCredential) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *VaultCredential) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *VaultCredential) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *VaultCredential) SetName(v string)`
+
+SetName sets Name field to given value.
+
+
+### GetToken
+
+`func (o *VaultCredential) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *VaultCredential) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *VaultCredential) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *VaultCredential) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
 ### GetType
 
 `func (o *VaultCredential) GetType() string`
@@ -166,56 +216,6 @@ and a boolean to check if the value has been set.
 
 SetValue sets Value field to given value.
 
-
-### GetFingerprint
-
-`func (o *VaultCredential) GetFingerprint() string`
-
-GetFingerprint returns the Fingerprint field if non-nil, zero value otherwise.
-
-### GetFingerprintOk
-
-`func (o *VaultCredential) GetFingerprintOk() (*string, bool)`
-
-GetFingerprintOk returns a tuple with the Fingerprint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFingerprint
-
-`func (o *VaultCredential) SetFingerprint(v string)`
-
-SetFingerprint sets Fingerprint field to given value.
-
-### HasFingerprint
-
-`func (o *VaultCredential) HasFingerprint() bool`
-
-HasFingerprint returns a boolean if a field has been set.
-
-### GetToken
-
-`func (o *VaultCredential) GetToken() string`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *VaultCredential) GetTokenOk() (*string, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *VaultCredential) SetToken(v string)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *VaultCredential) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

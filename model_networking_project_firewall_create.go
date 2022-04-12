@@ -16,10 +16,10 @@ import (
 
 // NetworkingProjectFirewallCreate struct for NetworkingProjectFirewallCreate
 type NetworkingProjectFirewallCreate struct {
+	Egress []NetworkingRule `json:"egress,omitempty"`
+	Ingress []NetworkingRule `json:"ingress,omitempty"`
 	Name string `json:"name"`
 	Service *string `json:"service,omitempty"`
-	Ingress []NetworkingRule `json:"ingress,omitempty"`
-	Egress []NetworkingRule `json:"egress,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -43,6 +43,70 @@ func NewNetworkingProjectFirewallCreateWithDefaults() *NetworkingProjectFirewall
 	var service string = "5bacaf7202deee0c100eda3b"
 	this.Service = &service
 	return &this
+}
+
+// GetEgress returns the Egress field value if set, zero value otherwise.
+func (o *NetworkingProjectFirewallCreate) GetEgress() []NetworkingRule {
+	if o == nil || o.Egress == nil {
+		var ret []NetworkingRule
+		return ret
+	}
+	return o.Egress
+}
+
+// GetEgressOk returns a tuple with the Egress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectFirewallCreate) GetEgressOk() ([]NetworkingRule, bool) {
+	if o == nil || o.Egress == nil {
+		return nil, false
+	}
+	return o.Egress, true
+}
+
+// HasEgress returns a boolean if a field has been set.
+func (o *NetworkingProjectFirewallCreate) HasEgress() bool {
+	if o != nil && o.Egress != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEgress gets a reference to the given []NetworkingRule and assigns it to the Egress field.
+func (o *NetworkingProjectFirewallCreate) SetEgress(v []NetworkingRule) {
+	o.Egress = v
+}
+
+// GetIngress returns the Ingress field value if set, zero value otherwise.
+func (o *NetworkingProjectFirewallCreate) GetIngress() []NetworkingRule {
+	if o == nil || o.Ingress == nil {
+		var ret []NetworkingRule
+		return ret
+	}
+	return o.Ingress
+}
+
+// GetIngressOk returns a tuple with the Ingress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectFirewallCreate) GetIngressOk() ([]NetworkingRule, bool) {
+	if o == nil || o.Ingress == nil {
+		return nil, false
+	}
+	return o.Ingress, true
+}
+
+// HasIngress returns a boolean if a field has been set.
+func (o *NetworkingProjectFirewallCreate) HasIngress() bool {
+	if o != nil && o.Ingress != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIngress gets a reference to the given []NetworkingRule and assigns it to the Ingress field.
+func (o *NetworkingProjectFirewallCreate) SetIngress(v []NetworkingRule) {
+	o.Ingress = v
 }
 
 // GetName returns the Name field value
@@ -101,70 +165,6 @@ func (o *NetworkingProjectFirewallCreate) SetService(v string) {
 	o.Service = &v
 }
 
-// GetIngress returns the Ingress field value if set, zero value otherwise.
-func (o *NetworkingProjectFirewallCreate) GetIngress() []NetworkingRule {
-	if o == nil || o.Ingress == nil {
-		var ret []NetworkingRule
-		return ret
-	}
-	return o.Ingress
-}
-
-// GetIngressOk returns a tuple with the Ingress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectFirewallCreate) GetIngressOk() ([]NetworkingRule, bool) {
-	if o == nil || o.Ingress == nil {
-		return nil, false
-	}
-	return o.Ingress, true
-}
-
-// HasIngress returns a boolean if a field has been set.
-func (o *NetworkingProjectFirewallCreate) HasIngress() bool {
-	if o != nil && o.Ingress != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIngress gets a reference to the given []NetworkingRule and assigns it to the Ingress field.
-func (o *NetworkingProjectFirewallCreate) SetIngress(v []NetworkingRule) {
-	o.Ingress = v
-}
-
-// GetEgress returns the Egress field value if set, zero value otherwise.
-func (o *NetworkingProjectFirewallCreate) GetEgress() []NetworkingRule {
-	if o == nil || o.Egress == nil {
-		var ret []NetworkingRule
-		return ret
-	}
-	return o.Egress
-}
-
-// GetEgressOk returns a tuple with the Egress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectFirewallCreate) GetEgressOk() ([]NetworkingRule, bool) {
-	if o == nil || o.Egress == nil {
-		return nil, false
-	}
-	return o.Egress, true
-}
-
-// HasEgress returns a boolean if a field has been set.
-func (o *NetworkingProjectFirewallCreate) HasEgress() bool {
-	if o != nil && o.Egress != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetEgress gets a reference to the given []NetworkingRule and assigns it to the Egress field.
-func (o *NetworkingProjectFirewallCreate) SetEgress(v []NetworkingRule) {
-	o.Egress = v
-}
-
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *NetworkingProjectFirewallCreate) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -199,17 +199,17 @@ func (o *NetworkingProjectFirewallCreate) SetTag(v []Tag) {
 
 func (o NetworkingProjectFirewallCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Egress != nil {
+		toSerialize["egress"] = o.Egress
+	}
+	if o.Ingress != nil {
+		toSerialize["ingress"] = o.Ingress
+	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if o.Service != nil {
 		toSerialize["service"] = o.Service
-	}
-	if o.Ingress != nil {
-		toSerialize["ingress"] = o.Ingress
-	}
-	if o.Egress != nil {
-		toSerialize["egress"] = o.Egress
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

@@ -122,7 +122,7 @@ import (
 
 func main() {
     userId := "userId_example" // string | User Id
-    iamUserAuthorization := *openapiclient.NewIamUserAuthorization("Name_example", "Application_example") // IamUserAuthorization | 
+    iamUserAuthorization := *openapiclient.NewIamUserAuthorization("Application_example", "Name_example") // IamUserAuthorization | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

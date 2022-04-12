@@ -16,8 +16,8 @@ import (
 
 // Invitation struct for Invitation
 type Invitation struct {
-	Id string `json:"id"`
 	Email string `json:"email"`
+	Id string `json:"id"`
 	Resource string `json:"resource"`
 }
 
@@ -25,10 +25,10 @@ type Invitation struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvitation(id string, email string, resource string) *Invitation {
+func NewInvitation(email string, id string, resource string) *Invitation {
 	this := Invitation{}
-	this.Id = id
 	this.Email = email
+	this.Id = id
 	this.Resource = resource
 	return &this
 }
@@ -39,30 +39,6 @@ func NewInvitation(id string, email string, resource string) *Invitation {
 func NewInvitationWithDefaults() *Invitation {
 	this := Invitation{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Invitation) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Invitation) GetIdOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Invitation) SetId(v string) {
-	o.Id = v
 }
 
 // GetEmail returns the Email field value
@@ -87,6 +63,30 @@ func (o *Invitation) GetEmailOk() (*string, bool) {
 // SetEmail sets field value
 func (o *Invitation) SetEmail(v string) {
 	o.Email = v
+}
+
+// GetId returns the Id field value
+func (o *Invitation) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Invitation) GetIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Invitation) SetId(v string) {
+	o.Id = v
 }
 
 // GetResource returns the Resource field value
@@ -116,10 +116,10 @@ func (o *Invitation) SetResource(v string) {
 func (o Invitation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["email"] = o.Email
 	}
 	if true {
-		toSerialize["email"] = o.Email
+		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["resource"] = o.Resource

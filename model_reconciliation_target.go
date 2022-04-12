@@ -16,13 +16,13 @@ import (
 
 // ReconciliationTarget struct for ReconciliationTarget
 type ReconciliationTarget struct {
+	Cost *float32 `json:"cost,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Kind *string `json:"kind,omitempty"`
-	Profile *string `json:"profile,omitempty"`
 	Measurement *string `json:"measurement,omitempty"`
-	Usage *float32 `json:"usage,omitempty"`
-	Cost *float32 `json:"cost,omitempty"`
+	Profile *string `json:"profile,omitempty"`
 	Resource []ReconciliationTargetResource `json:"resource,omitempty"`
+	Usage *float32 `json:"usage,omitempty"`
 }
 
 // NewReconciliationTarget instantiates a new ReconciliationTarget object
@@ -40,6 +40,38 @@ func NewReconciliationTarget() *ReconciliationTarget {
 func NewReconciliationTargetWithDefaults() *ReconciliationTarget {
 	this := ReconciliationTarget{}
 	return &this
+}
+
+// GetCost returns the Cost field value if set, zero value otherwise.
+func (o *ReconciliationTarget) GetCost() float32 {
+	if o == nil || o.Cost == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Cost
+}
+
+// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReconciliationTarget) GetCostOk() (*float32, bool) {
+	if o == nil || o.Cost == nil {
+		return nil, false
+	}
+	return o.Cost, true
+}
+
+// HasCost returns a boolean if a field has been set.
+func (o *ReconciliationTarget) HasCost() bool {
+	if o != nil && o.Cost != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCost gets a reference to the given float32 and assigns it to the Cost field.
+func (o *ReconciliationTarget) SetCost(v float32) {
+	o.Cost = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -106,38 +138,6 @@ func (o *ReconciliationTarget) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetProfile returns the Profile field value if set, zero value otherwise.
-func (o *ReconciliationTarget) GetProfile() string {
-	if o == nil || o.Profile == nil {
-		var ret string
-		return ret
-	}
-	return *o.Profile
-}
-
-// GetProfileOk returns a tuple with the Profile field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReconciliationTarget) GetProfileOk() (*string, bool) {
-	if o == nil || o.Profile == nil {
-		return nil, false
-	}
-	return o.Profile, true
-}
-
-// HasProfile returns a boolean if a field has been set.
-func (o *ReconciliationTarget) HasProfile() bool {
-	if o != nil && o.Profile != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetProfile gets a reference to the given string and assigns it to the Profile field.
-func (o *ReconciliationTarget) SetProfile(v string) {
-	o.Profile = &v
-}
-
 // GetMeasurement returns the Measurement field value if set, zero value otherwise.
 func (o *ReconciliationTarget) GetMeasurement() string {
 	if o == nil || o.Measurement == nil {
@@ -170,68 +170,36 @@ func (o *ReconciliationTarget) SetMeasurement(v string) {
 	o.Measurement = &v
 }
 
-// GetUsage returns the Usage field value if set, zero value otherwise.
-func (o *ReconciliationTarget) GetUsage() float32 {
-	if o == nil || o.Usage == nil {
-		var ret float32
+// GetProfile returns the Profile field value if set, zero value otherwise.
+func (o *ReconciliationTarget) GetProfile() string {
+	if o == nil || o.Profile == nil {
+		var ret string
 		return ret
 	}
-	return *o.Usage
+	return *o.Profile
 }
 
-// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
+// GetProfileOk returns a tuple with the Profile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReconciliationTarget) GetUsageOk() (*float32, bool) {
-	if o == nil || o.Usage == nil {
+func (o *ReconciliationTarget) GetProfileOk() (*string, bool) {
+	if o == nil || o.Profile == nil {
 		return nil, false
 	}
-	return o.Usage, true
+	return o.Profile, true
 }
 
-// HasUsage returns a boolean if a field has been set.
-func (o *ReconciliationTarget) HasUsage() bool {
-	if o != nil && o.Usage != nil {
+// HasProfile returns a boolean if a field has been set.
+func (o *ReconciliationTarget) HasProfile() bool {
+	if o != nil && o.Profile != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUsage gets a reference to the given float32 and assigns it to the Usage field.
-func (o *ReconciliationTarget) SetUsage(v float32) {
-	o.Usage = &v
-}
-
-// GetCost returns the Cost field value if set, zero value otherwise.
-func (o *ReconciliationTarget) GetCost() float32 {
-	if o == nil || o.Cost == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Cost
-}
-
-// GetCostOk returns a tuple with the Cost field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReconciliationTarget) GetCostOk() (*float32, bool) {
-	if o == nil || o.Cost == nil {
-		return nil, false
-	}
-	return o.Cost, true
-}
-
-// HasCost returns a boolean if a field has been set.
-func (o *ReconciliationTarget) HasCost() bool {
-	if o != nil && o.Cost != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCost gets a reference to the given float32 and assigns it to the Cost field.
-func (o *ReconciliationTarget) SetCost(v float32) {
-	o.Cost = &v
+// SetProfile gets a reference to the given string and assigns it to the Profile field.
+func (o *ReconciliationTarget) SetProfile(v string) {
+	o.Profile = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -266,28 +234,60 @@ func (o *ReconciliationTarget) SetResource(v []ReconciliationTargetResource) {
 	o.Resource = v
 }
 
+// GetUsage returns the Usage field value if set, zero value otherwise.
+func (o *ReconciliationTarget) GetUsage() float32 {
+	if o == nil || o.Usage == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Usage
+}
+
+// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReconciliationTarget) GetUsageOk() (*float32, bool) {
+	if o == nil || o.Usage == nil {
+		return nil, false
+	}
+	return o.Usage, true
+}
+
+// HasUsage returns a boolean if a field has been set.
+func (o *ReconciliationTarget) HasUsage() bool {
+	if o != nil && o.Usage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsage gets a reference to the given float32 and assigns it to the Usage field.
+func (o *ReconciliationTarget) SetUsage(v float32) {
+	o.Usage = &v
+}
+
 func (o ReconciliationTarget) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Cost != nil {
+		toSerialize["cost"] = o.Cost
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Kind != nil {
 		toSerialize["kind"] = o.Kind
 	}
-	if o.Profile != nil {
-		toSerialize["profile"] = o.Profile
-	}
 	if o.Measurement != nil {
 		toSerialize["measurement"] = o.Measurement
 	}
-	if o.Usage != nil {
-		toSerialize["usage"] = o.Usage
-	}
-	if o.Cost != nil {
-		toSerialize["cost"] = o.Cost
+	if o.Profile != nil {
+		toSerialize["profile"] = o.Profile
 	}
 	if o.Resource != nil {
 		toSerialize["resource"] = o.Resource
+	}
+	if o.Usage != nil {
+		toSerialize["usage"] = o.Usage
 	}
 	return json.Marshal(toSerialize)
 }

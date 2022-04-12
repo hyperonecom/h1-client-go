@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Metric** | Pointer to [**QuotaMetric**](QuotaMetric.md) |  | [optional] 
-**Usage** | Pointer to **float32** |  | [optional] 
 **Limit** | Pointer to [**QuotaLimit**](QuotaLimit.md) |  | [optional] 
+**Metric** | Pointer to [**QuotaMetric**](QuotaMetric.md) |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Usage** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -54,30 +54,30 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetName
+### GetLimit
 
-`func (o *Quota) GetName() string`
+`func (o *Quota) GetLimit() QuotaLimit`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetLimit returns the Limit field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetLimitOk
 
-`func (o *Quota) GetNameOk() (*string, bool)`
+`func (o *Quota) GetLimitOk() (*QuotaLimit, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetLimit
 
-`func (o *Quota) SetName(v string)`
+`func (o *Quota) SetLimit(v QuotaLimit)`
 
-SetName sets Name field to given value.
+SetLimit sets Limit field to given value.
 
-### HasName
+### HasLimit
 
-`func (o *Quota) HasName() bool`
+`func (o *Quota) HasLimit() bool`
 
-HasName returns a boolean if a field has been set.
+HasLimit returns a boolean if a field has been set.
 
 ### GetMetric
 
@@ -104,6 +104,31 @@ SetMetric sets Metric field to given value.
 
 HasMetric returns a boolean if a field has been set.
 
+### GetName
+
+`func (o *Quota) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Quota) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Quota) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Quota) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
 ### GetUsage
 
 `func (o *Quota) GetUsage() float32`
@@ -128,31 +153,6 @@ SetUsage sets Usage field to given value.
 `func (o *Quota) HasUsage() bool`
 
 HasUsage returns a boolean if a field has been set.
-
-### GetLimit
-
-`func (o *Quota) GetLimit() QuotaLimit`
-
-GetLimit returns the Limit field if non-nil, zero value otherwise.
-
-### GetLimitOk
-
-`func (o *Quota) GetLimitOk() (*QuotaLimit, bool)`
-
-GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLimit
-
-`func (o *Quota) SetLimit(v QuotaLimit)`
-
-SetLimit sets Limit field to given value.
-
-### HasLimit
-
-`func (o *Quota) HasLimit() bool`
-
-HasLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

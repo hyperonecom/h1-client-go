@@ -16,9 +16,9 @@ import (
 
 // OrganisationBilling1 struct for OrganisationBilling1
 type OrganisationBilling1 struct {
-	Email *string `json:"email,omitempty"`
-	Company *string `json:"company,omitempty"`
 	Address *BillingAddress1 `json:"address,omitempty"`
+	Company *string `json:"company,omitempty"`
+	Email *string `json:"email,omitempty"`
 }
 
 // NewOrganisationBilling1 instantiates a new OrganisationBilling1 object
@@ -36,70 +36,6 @@ func NewOrganisationBilling1() *OrganisationBilling1 {
 func NewOrganisationBilling1WithDefaults() *OrganisationBilling1 {
 	this := OrganisationBilling1{}
 	return &this
-}
-
-// GetEmail returns the Email field value if set, zero value otherwise.
-func (o *OrganisationBilling1) GetEmail() string {
-	if o == nil || o.Email == nil {
-		var ret string
-		return ret
-	}
-	return *o.Email
-}
-
-// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OrganisationBilling1) GetEmailOk() (*string, bool) {
-	if o == nil || o.Email == nil {
-		return nil, false
-	}
-	return o.Email, true
-}
-
-// HasEmail returns a boolean if a field has been set.
-func (o *OrganisationBilling1) HasEmail() bool {
-	if o != nil && o.Email != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *OrganisationBilling1) SetEmail(v string) {
-	o.Email = &v
-}
-
-// GetCompany returns the Company field value if set, zero value otherwise.
-func (o *OrganisationBilling1) GetCompany() string {
-	if o == nil || o.Company == nil {
-		var ret string
-		return ret
-	}
-	return *o.Company
-}
-
-// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OrganisationBilling1) GetCompanyOk() (*string, bool) {
-	if o == nil || o.Company == nil {
-		return nil, false
-	}
-	return o.Company, true
-}
-
-// HasCompany returns a boolean if a field has been set.
-func (o *OrganisationBilling1) HasCompany() bool {
-	if o != nil && o.Company != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCompany gets a reference to the given string and assigns it to the Company field.
-func (o *OrganisationBilling1) SetCompany(v string) {
-	o.Company = &v
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
@@ -134,16 +70,80 @@ func (o *OrganisationBilling1) SetAddress(v BillingAddress1) {
 	o.Address = &v
 }
 
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *OrganisationBilling1) GetCompany() string {
+	if o == nil || o.Company == nil {
+		var ret string
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrganisationBilling1) GetCompanyOk() (*string, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *OrganisationBilling1) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given string and assigns it to the Company field.
+func (o *OrganisationBilling1) SetCompany(v string) {
+	o.Company = &v
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *OrganisationBilling1) GetEmail() string {
+	if o == nil || o.Email == nil {
+		var ret string
+		return ret
+	}
+	return *o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrganisationBilling1) GetEmailOk() (*string, bool) {
+	if o == nil || o.Email == nil {
+		return nil, false
+	}
+	return o.Email, true
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *OrganisationBilling1) HasEmail() bool {
+	if o != nil && o.Email != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *OrganisationBilling1) SetEmail(v string) {
+	o.Email = &v
+}
+
 func (o OrganisationBilling1) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Email != nil {
-		toSerialize["email"] = o.Email
+	if o.Address != nil {
+		toSerialize["address"] = o.Address
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
 	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	if o.Email != nil {
+		toSerialize["email"] = o.Email
 	}
 	return json.Marshal(toSerialize)
 }

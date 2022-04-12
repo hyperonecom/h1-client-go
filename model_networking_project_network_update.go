@@ -16,9 +16,9 @@ import (
 
 // NetworkingProjectNetworkUpdate struct for NetworkingProjectNetworkUpdate
 type NetworkingProjectNetworkUpdate struct {
-	Name *string `json:"name,omitempty"`
-	Gateway *string `json:"gateway,omitempty"`
 	Firewall *string `json:"firewall,omitempty"`
+	Gateway *string `json:"gateway,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewNetworkingProjectNetworkUpdate instantiates a new NetworkingProjectNetworkUpdate object
@@ -36,70 +36,6 @@ func NewNetworkingProjectNetworkUpdate() *NetworkingProjectNetworkUpdate {
 func NewNetworkingProjectNetworkUpdateWithDefaults() *NetworkingProjectNetworkUpdate {
 	this := NetworkingProjectNetworkUpdate{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *NetworkingProjectNetworkUpdate) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectNetworkUpdate) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *NetworkingProjectNetworkUpdate) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *NetworkingProjectNetworkUpdate) SetName(v string) {
-	o.Name = &v
-}
-
-// GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *NetworkingProjectNetworkUpdate) GetGateway() string {
-	if o == nil || o.Gateway == nil {
-		var ret string
-		return ret
-	}
-	return *o.Gateway
-}
-
-// GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectNetworkUpdate) GetGatewayOk() (*string, bool) {
-	if o == nil || o.Gateway == nil {
-		return nil, false
-	}
-	return o.Gateway, true
-}
-
-// HasGateway returns a boolean if a field has been set.
-func (o *NetworkingProjectNetworkUpdate) HasGateway() bool {
-	if o != nil && o.Gateway != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGateway gets a reference to the given string and assigns it to the Gateway field.
-func (o *NetworkingProjectNetworkUpdate) SetGateway(v string) {
-	o.Gateway = &v
 }
 
 // GetFirewall returns the Firewall field value if set, zero value otherwise.
@@ -134,16 +70,80 @@ func (o *NetworkingProjectNetworkUpdate) SetFirewall(v string) {
 	o.Firewall = &v
 }
 
+// GetGateway returns the Gateway field value if set, zero value otherwise.
+func (o *NetworkingProjectNetworkUpdate) GetGateway() string {
+	if o == nil || o.Gateway == nil {
+		var ret string
+		return ret
+	}
+	return *o.Gateway
+}
+
+// GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectNetworkUpdate) GetGatewayOk() (*string, bool) {
+	if o == nil || o.Gateway == nil {
+		return nil, false
+	}
+	return o.Gateway, true
+}
+
+// HasGateway returns a boolean if a field has been set.
+func (o *NetworkingProjectNetworkUpdate) HasGateway() bool {
+	if o != nil && o.Gateway != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGateway gets a reference to the given string and assigns it to the Gateway field.
+func (o *NetworkingProjectNetworkUpdate) SetGateway(v string) {
+	o.Gateway = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *NetworkingProjectNetworkUpdate) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectNetworkUpdate) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *NetworkingProjectNetworkUpdate) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *NetworkingProjectNetworkUpdate) SetName(v string) {
+	o.Name = &v
+}
+
 func (o NetworkingProjectNetworkUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
+	if o.Firewall != nil {
+		toSerialize["firewall"] = o.Firewall
 	}
 	if o.Gateway != nil {
 		toSerialize["gateway"] = o.Gateway
 	}
-	if o.Firewall != nil {
-		toSerialize["firewall"] = o.Firewall
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

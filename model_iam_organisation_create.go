@@ -16,8 +16,8 @@ import (
 
 // IamOrganisationCreate struct for IamOrganisationCreate
 type IamOrganisationCreate struct {
-	Name string `json:"name"`
 	Billing *OrganisationBilling `json:"billing,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIamOrganisationCreate instantiates a new IamOrganisationCreate object
@@ -36,30 +36,6 @@ func NewIamOrganisationCreate(name string) *IamOrganisationCreate {
 func NewIamOrganisationCreateWithDefaults() *IamOrganisationCreate {
 	this := IamOrganisationCreate{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *IamOrganisationCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *IamOrganisationCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *IamOrganisationCreate) SetName(v string) {
-	o.Name = v
 }
 
 // GetBilling returns the Billing field value if set, zero value otherwise.
@@ -94,13 +70,37 @@ func (o *IamOrganisationCreate) SetBilling(v OrganisationBilling) {
 	o.Billing = &v
 }
 
+// GetName returns the Name field value
+func (o *IamOrganisationCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *IamOrganisationCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *IamOrganisationCreate) SetName(v string) {
+	o.Name = v
+}
+
 func (o IamOrganisationCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
 	if o.Billing != nil {
 		toSerialize["billing"] = o.Billing
+	}
+	if true {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

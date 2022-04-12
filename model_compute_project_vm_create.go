@@ -16,17 +16,17 @@ import (
 
 // ComputeProjectVmCreate struct for ComputeProjectVmCreate
 type ComputeProjectVmCreate struct {
-	Name string `json:"name"`
-	Service string `json:"service"`
-	Image *string `json:"image,omitempty"`
-	Iso *string `json:"iso,omitempty"`
-	Username *string `json:"username,omitempty"`
-	UserMetadata *string `json:"userMetadata,omitempty"`
-	Start *bool `json:"start,omitempty"`
 	Credential []ComputeProjectVmCreateCredential `json:"credential,omitempty"`
 	Disk []ComputeProjectVmCreateDisk `json:"disk,omitempty"`
+	Image *string `json:"image,omitempty"`
+	Iso *string `json:"iso,omitempty"`
+	Name string `json:"name"`
 	Netadp []ComputeProjectVmCreateNetadp `json:"netadp,omitempty"`
+	Service string `json:"service"`
+	Start *bool `json:"start,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
+	UserMetadata *string `json:"userMetadata,omitempty"`
+	Username *string `json:"username,omitempty"`
 }
 
 // NewComputeProjectVmCreate instantiates a new ComputeProjectVmCreate object
@@ -50,214 +50,6 @@ func NewComputeProjectVmCreateWithDefaults() *ComputeProjectVmCreate {
 	var start bool = true
 	this.Start = &start
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *ComputeProjectVmCreate) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *ComputeProjectVmCreate) SetName(v string) {
-	o.Name = v
-}
-
-// GetService returns the Service field value
-func (o *ComputeProjectVmCreate) GetService() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Service
-}
-
-// GetServiceOk returns a tuple with the Service field value
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetServiceOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Service, true
-}
-
-// SetService sets field value
-func (o *ComputeProjectVmCreate) SetService(v string) {
-	o.Service = v
-}
-
-// GetImage returns the Image field value if set, zero value otherwise.
-func (o *ComputeProjectVmCreate) GetImage() string {
-	if o == nil || o.Image == nil {
-		var ret string
-		return ret
-	}
-	return *o.Image
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetImageOk() (*string, bool) {
-	if o == nil || o.Image == nil {
-		return nil, false
-	}
-	return o.Image, true
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *ComputeProjectVmCreate) HasImage() bool {
-	if o != nil && o.Image != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given string and assigns it to the Image field.
-func (o *ComputeProjectVmCreate) SetImage(v string) {
-	o.Image = &v
-}
-
-// GetIso returns the Iso field value if set, zero value otherwise.
-func (o *ComputeProjectVmCreate) GetIso() string {
-	if o == nil || o.Iso == nil {
-		var ret string
-		return ret
-	}
-	return *o.Iso
-}
-
-// GetIsoOk returns a tuple with the Iso field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetIsoOk() (*string, bool) {
-	if o == nil || o.Iso == nil {
-		return nil, false
-	}
-	return o.Iso, true
-}
-
-// HasIso returns a boolean if a field has been set.
-func (o *ComputeProjectVmCreate) HasIso() bool {
-	if o != nil && o.Iso != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIso gets a reference to the given string and assigns it to the Iso field.
-func (o *ComputeProjectVmCreate) SetIso(v string) {
-	o.Iso = &v
-}
-
-// GetUsername returns the Username field value if set, zero value otherwise.
-func (o *ComputeProjectVmCreate) GetUsername() string {
-	if o == nil || o.Username == nil {
-		var ret string
-		return ret
-	}
-	return *o.Username
-}
-
-// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetUsernameOk() (*string, bool) {
-	if o == nil || o.Username == nil {
-		return nil, false
-	}
-	return o.Username, true
-}
-
-// HasUsername returns a boolean if a field has been set.
-func (o *ComputeProjectVmCreate) HasUsername() bool {
-	if o != nil && o.Username != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUsername gets a reference to the given string and assigns it to the Username field.
-func (o *ComputeProjectVmCreate) SetUsername(v string) {
-	o.Username = &v
-}
-
-// GetUserMetadata returns the UserMetadata field value if set, zero value otherwise.
-func (o *ComputeProjectVmCreate) GetUserMetadata() string {
-	if o == nil || o.UserMetadata == nil {
-		var ret string
-		return ret
-	}
-	return *o.UserMetadata
-}
-
-// GetUserMetadataOk returns a tuple with the UserMetadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetUserMetadataOk() (*string, bool) {
-	if o == nil || o.UserMetadata == nil {
-		return nil, false
-	}
-	return o.UserMetadata, true
-}
-
-// HasUserMetadata returns a boolean if a field has been set.
-func (o *ComputeProjectVmCreate) HasUserMetadata() bool {
-	if o != nil && o.UserMetadata != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUserMetadata gets a reference to the given string and assigns it to the UserMetadata field.
-func (o *ComputeProjectVmCreate) SetUserMetadata(v string) {
-	o.UserMetadata = &v
-}
-
-// GetStart returns the Start field value if set, zero value otherwise.
-func (o *ComputeProjectVmCreate) GetStart() bool {
-	if o == nil || o.Start == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Start
-}
-
-// GetStartOk returns a tuple with the Start field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeProjectVmCreate) GetStartOk() (*bool, bool) {
-	if o == nil || o.Start == nil {
-		return nil, false
-	}
-	return o.Start, true
-}
-
-// HasStart returns a boolean if a field has been set.
-func (o *ComputeProjectVmCreate) HasStart() bool {
-	if o != nil && o.Start != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStart gets a reference to the given bool and assigns it to the Start field.
-func (o *ComputeProjectVmCreate) SetStart(v bool) {
-	o.Start = &v
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
@@ -324,6 +116,94 @@ func (o *ComputeProjectVmCreate) SetDisk(v []ComputeProjectVmCreateDisk) {
 	o.Disk = v
 }
 
+// GetImage returns the Image field value if set, zero value otherwise.
+func (o *ComputeProjectVmCreate) GetImage() string {
+	if o == nil || o.Image == nil {
+		var ret string
+		return ret
+	}
+	return *o.Image
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetImageOk() (*string, bool) {
+	if o == nil || o.Image == nil {
+		return nil, false
+	}
+	return o.Image, true
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *ComputeProjectVmCreate) HasImage() bool {
+	if o != nil && o.Image != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given string and assigns it to the Image field.
+func (o *ComputeProjectVmCreate) SetImage(v string) {
+	o.Image = &v
+}
+
+// GetIso returns the Iso field value if set, zero value otherwise.
+func (o *ComputeProjectVmCreate) GetIso() string {
+	if o == nil || o.Iso == nil {
+		var ret string
+		return ret
+	}
+	return *o.Iso
+}
+
+// GetIsoOk returns a tuple with the Iso field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetIsoOk() (*string, bool) {
+	if o == nil || o.Iso == nil {
+		return nil, false
+	}
+	return o.Iso, true
+}
+
+// HasIso returns a boolean if a field has been set.
+func (o *ComputeProjectVmCreate) HasIso() bool {
+	if o != nil && o.Iso != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIso gets a reference to the given string and assigns it to the Iso field.
+func (o *ComputeProjectVmCreate) SetIso(v string) {
+	o.Iso = &v
+}
+
+// GetName returns the Name field value
+func (o *ComputeProjectVmCreate) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *ComputeProjectVmCreate) SetName(v string) {
+	o.Name = v
+}
+
 // GetNetadp returns the Netadp field value if set, zero value otherwise.
 func (o *ComputeProjectVmCreate) GetNetadp() []ComputeProjectVmCreateNetadp {
 	if o == nil || o.Netadp == nil {
@@ -354,6 +234,62 @@ func (o *ComputeProjectVmCreate) HasNetadp() bool {
 // SetNetadp gets a reference to the given []ComputeProjectVmCreateNetadp and assigns it to the Netadp field.
 func (o *ComputeProjectVmCreate) SetNetadp(v []ComputeProjectVmCreateNetadp) {
 	o.Netadp = v
+}
+
+// GetService returns the Service field value
+func (o *ComputeProjectVmCreate) GetService() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Service
+}
+
+// GetServiceOk returns a tuple with the Service field value
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetServiceOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Service, true
+}
+
+// SetService sets field value
+func (o *ComputeProjectVmCreate) SetService(v string) {
+	o.Service = v
+}
+
+// GetStart returns the Start field value if set, zero value otherwise.
+func (o *ComputeProjectVmCreate) GetStart() bool {
+	if o == nil || o.Start == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Start
+}
+
+// GetStartOk returns a tuple with the Start field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetStartOk() (*bool, bool) {
+	if o == nil || o.Start == nil {
+		return nil, false
+	}
+	return o.Start, true
+}
+
+// HasStart returns a boolean if a field has been set.
+func (o *ComputeProjectVmCreate) HasStart() bool {
+	if o != nil && o.Start != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStart gets a reference to the given bool and assigns it to the Start field.
+func (o *ComputeProjectVmCreate) SetStart(v bool) {
+	o.Start = &v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -388,13 +324,77 @@ func (o *ComputeProjectVmCreate) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetUserMetadata returns the UserMetadata field value if set, zero value otherwise.
+func (o *ComputeProjectVmCreate) GetUserMetadata() string {
+	if o == nil || o.UserMetadata == nil {
+		var ret string
+		return ret
+	}
+	return *o.UserMetadata
+}
+
+// GetUserMetadataOk returns a tuple with the UserMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetUserMetadataOk() (*string, bool) {
+	if o == nil || o.UserMetadata == nil {
+		return nil, false
+	}
+	return o.UserMetadata, true
+}
+
+// HasUserMetadata returns a boolean if a field has been set.
+func (o *ComputeProjectVmCreate) HasUserMetadata() bool {
+	if o != nil && o.UserMetadata != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUserMetadata gets a reference to the given string and assigns it to the UserMetadata field.
+func (o *ComputeProjectVmCreate) SetUserMetadata(v string) {
+	o.UserMetadata = &v
+}
+
+// GetUsername returns the Username field value if set, zero value otherwise.
+func (o *ComputeProjectVmCreate) GetUsername() string {
+	if o == nil || o.Username == nil {
+		var ret string
+		return ret
+	}
+	return *o.Username
+}
+
+// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeProjectVmCreate) GetUsernameOk() (*string, bool) {
+	if o == nil || o.Username == nil {
+		return nil, false
+	}
+	return o.Username, true
+}
+
+// HasUsername returns a boolean if a field has been set.
+func (o *ComputeProjectVmCreate) HasUsername() bool {
+	if o != nil && o.Username != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsername gets a reference to the given string and assigns it to the Username field.
+func (o *ComputeProjectVmCreate) SetUsername(v string) {
+	o.Username = &v
+}
+
 func (o ComputeProjectVmCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
+	if o.Credential != nil {
+		toSerialize["credential"] = o.Credential
 	}
-	if true {
-		toSerialize["service"] = o.Service
+	if o.Disk != nil {
+		toSerialize["disk"] = o.Disk
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image
@@ -402,26 +402,26 @@ func (o ComputeProjectVmCreate) MarshalJSON() ([]byte, error) {
 	if o.Iso != nil {
 		toSerialize["iso"] = o.Iso
 	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
-	if o.UserMetadata != nil {
-		toSerialize["userMetadata"] = o.UserMetadata
-	}
-	if o.Start != nil {
-		toSerialize["start"] = o.Start
-	}
-	if o.Credential != nil {
-		toSerialize["credential"] = o.Credential
-	}
-	if o.Disk != nil {
-		toSerialize["disk"] = o.Disk
+	if true {
+		toSerialize["name"] = o.Name
 	}
 	if o.Netadp != nil {
 		toSerialize["netadp"] = o.Netadp
 	}
+	if true {
+		toSerialize["service"] = o.Service
+	}
+	if o.Start != nil {
+		toSerialize["start"] = o.Start
+	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if o.UserMetadata != nil {
+		toSerialize["userMetadata"] = o.UserMetadata
+	}
+	if o.Username != nil {
+		toSerialize["username"] = o.Username
 	}
 	return json.Marshal(toSerialize)
 }

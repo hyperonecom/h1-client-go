@@ -17,8 +17,8 @@ import (
 // InsightProjectJournalCreate struct for InsightProjectJournalCreate
 type InsightProjectJournalCreate struct {
 	Name string `json:"name"`
-	Service *string `json:"service,omitempty"`
 	Retention *float32 `json:"retention,omitempty"`
+	Service *string `json:"service,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -68,38 +68,6 @@ func (o *InsightProjectJournalCreate) SetName(v string) {
 	o.Name = v
 }
 
-// GetService returns the Service field value if set, zero value otherwise.
-func (o *InsightProjectJournalCreate) GetService() string {
-	if o == nil || o.Service == nil {
-		var ret string
-		return ret
-	}
-	return *o.Service
-}
-
-// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InsightProjectJournalCreate) GetServiceOk() (*string, bool) {
-	if o == nil || o.Service == nil {
-		return nil, false
-	}
-	return o.Service, true
-}
-
-// HasService returns a boolean if a field has been set.
-func (o *InsightProjectJournalCreate) HasService() bool {
-	if o != nil && o.Service != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetService gets a reference to the given string and assigns it to the Service field.
-func (o *InsightProjectJournalCreate) SetService(v string) {
-	o.Service = &v
-}
-
 // GetRetention returns the Retention field value if set, zero value otherwise.
 func (o *InsightProjectJournalCreate) GetRetention() float32 {
 	if o == nil || o.Retention == nil {
@@ -130,6 +98,38 @@ func (o *InsightProjectJournalCreate) HasRetention() bool {
 // SetRetention gets a reference to the given float32 and assigns it to the Retention field.
 func (o *InsightProjectJournalCreate) SetRetention(v float32) {
 	o.Retention = &v
+}
+
+// GetService returns the Service field value if set, zero value otherwise.
+func (o *InsightProjectJournalCreate) GetService() string {
+	if o == nil || o.Service == nil {
+		var ret string
+		return ret
+	}
+	return *o.Service
+}
+
+// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InsightProjectJournalCreate) GetServiceOk() (*string, bool) {
+	if o == nil || o.Service == nil {
+		return nil, false
+	}
+	return o.Service, true
+}
+
+// HasService returns a boolean if a field has been set.
+func (o *InsightProjectJournalCreate) HasService() bool {
+	if o != nil && o.Service != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetService gets a reference to the given string and assigns it to the Service field.
+func (o *InsightProjectJournalCreate) SetService(v string) {
+	o.Service = &v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -169,11 +169,11 @@ func (o InsightProjectJournalCreate) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["name"] = o.Name
 	}
-	if o.Service != nil {
-		toSerialize["service"] = o.Service
-	}
 	if o.Retention != nil {
 		toSerialize["retention"] = o.Retention
+	}
+	if o.Service != nil {
+		toSerialize["service"] = o.Service
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

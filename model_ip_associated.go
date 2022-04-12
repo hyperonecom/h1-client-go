@@ -16,8 +16,8 @@ import (
 
 // IpAssociated struct for IpAssociated
 type IpAssociated struct {
-	Ip *string `json:"ip,omitempty"`
 	Fip *string `json:"fip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 	Netadp *string `json:"netadp,omitempty"`
 }
 
@@ -36,38 +36,6 @@ func NewIpAssociated() *IpAssociated {
 func NewIpAssociatedWithDefaults() *IpAssociated {
 	this := IpAssociated{}
 	return &this
-}
-
-// GetIp returns the Ip field value if set, zero value otherwise.
-func (o *IpAssociated) GetIp() string {
-	if o == nil || o.Ip == nil {
-		var ret string
-		return ret
-	}
-	return *o.Ip
-}
-
-// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IpAssociated) GetIpOk() (*string, bool) {
-	if o == nil || o.Ip == nil {
-		return nil, false
-	}
-	return o.Ip, true
-}
-
-// HasIp returns a boolean if a field has been set.
-func (o *IpAssociated) HasIp() bool {
-	if o != nil && o.Ip != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIp gets a reference to the given string and assigns it to the Ip field.
-func (o *IpAssociated) SetIp(v string) {
-	o.Ip = &v
 }
 
 // GetFip returns the Fip field value if set, zero value otherwise.
@@ -100,6 +68,38 @@ func (o *IpAssociated) HasFip() bool {
 // SetFip gets a reference to the given string and assigns it to the Fip field.
 func (o *IpAssociated) SetFip(v string) {
 	o.Fip = &v
+}
+
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *IpAssociated) GetIp() string {
+	if o == nil || o.Ip == nil {
+		var ret string
+		return ret
+	}
+	return *o.Ip
+}
+
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IpAssociated) GetIpOk() (*string, bool) {
+	if o == nil || o.Ip == nil {
+		return nil, false
+	}
+	return o.Ip, true
+}
+
+// HasIp returns a boolean if a field has been set.
+func (o *IpAssociated) HasIp() bool {
+	if o != nil && o.Ip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *IpAssociated) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetNetadp returns the Netadp field value if set, zero value otherwise.
@@ -136,11 +136,11 @@ func (o *IpAssociated) SetNetadp(v string) {
 
 func (o IpAssociated) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ip != nil {
-		toSerialize["ip"] = o.Ip
-	}
 	if o.Fip != nil {
 		toSerialize["fip"] = o.Fip
+	}
+	if o.Ip != nil {
+		toSerialize["ip"] = o.Ip
 	}
 	if o.Netadp != nil {
 		toSerialize["netadp"] = o.Netadp

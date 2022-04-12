@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Address** | Pointer to **string** |  | [optional] 
 **Network** | Pointer to **string** |  | [optional] 
 **PtrRecord** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
@@ -27,6 +27,31 @@ will change when the set of required properties is changed
 NewNetworkingProjectIpCreateWithDefaults instantiates a new NetworkingProjectIpCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddress
+
+`func (o *NetworkingProjectIpCreate) GetAddress() string`
+
+GetAddress returns the Address field if non-nil, zero value otherwise.
+
+### GetAddressOk
+
+`func (o *NetworkingProjectIpCreate) GetAddressOk() (*string, bool)`
+
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddress
+
+`func (o *NetworkingProjectIpCreate) SetAddress(v string)`
+
+SetAddress sets Address field to given value.
+
+### HasAddress
+
+`func (o *NetworkingProjectIpCreate) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
 
 ### GetNetwork
 
@@ -77,31 +102,6 @@ SetPtrRecord sets PtrRecord field to given value.
 `func (o *NetworkingProjectIpCreate) HasPtrRecord() bool`
 
 HasPtrRecord returns a boolean if a field has been set.
-
-### GetAddress
-
-`func (o *NetworkingProjectIpCreate) GetAddress() string`
-
-GetAddress returns the Address field if non-nil, zero value otherwise.
-
-### GetAddressOk
-
-`func (o *NetworkingProjectIpCreate) GetAddressOk() (*string, bool)`
-
-GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAddress
-
-`func (o *NetworkingProjectIpCreate) SetAddress(v string)`
-
-SetAddress sets Address field to given value.
-
-### HasAddress
-
-`func (o *NetworkingProjectIpCreate) HasAddress() bool`
-
-HasAddress returns a boolean if a field has been set.
 
 ### GetTag
 

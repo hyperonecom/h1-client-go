@@ -16,12 +16,12 @@ import (
 
 // ResourceService struct for ResourceService
 type ResourceService struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Type *string `json:"type,omitempty"`
-	SourceService *string `json:"sourceService,omitempty"`
 	Billing *string `json:"billing,omitempty"`
 	Data *map[string]string `json:"data,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	SourceService *string `json:"sourceService,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // NewResourceService instantiates a new ResourceService object
@@ -39,134 +39,6 @@ func NewResourceService() *ResourceService {
 func NewResourceServiceWithDefaults() *ResourceService {
 	this := ResourceService{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *ResourceService) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceService) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *ResourceService) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ResourceService) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ResourceService) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceService) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ResourceService) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ResourceService) SetName(v string) {
-	o.Name = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *ResourceService) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceService) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *ResourceService) HasType() bool {
-	if o != nil && o.Type != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ResourceService) SetType(v string) {
-	o.Type = &v
-}
-
-// GetSourceService returns the SourceService field value if set, zero value otherwise.
-func (o *ResourceService) GetSourceService() string {
-	if o == nil || o.SourceService == nil {
-		var ret string
-		return ret
-	}
-	return *o.SourceService
-}
-
-// GetSourceServiceOk returns a tuple with the SourceService field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceService) GetSourceServiceOk() (*string, bool) {
-	if o == nil || o.SourceService == nil {
-		return nil, false
-	}
-	return o.SourceService, true
-}
-
-// HasSourceService returns a boolean if a field has been set.
-func (o *ResourceService) HasSourceService() bool {
-	if o != nil && o.SourceService != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceService gets a reference to the given string and assigns it to the SourceService field.
-func (o *ResourceService) SetSourceService(v string) {
-	o.SourceService = &v
 }
 
 // GetBilling returns the Billing field value if set, zero value otherwise.
@@ -233,25 +105,153 @@ func (o *ResourceService) SetData(v map[string]string) {
 	o.Data = &v
 }
 
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ResourceService) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceService) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *ResourceService) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ResourceService) SetId(v string) {
+	o.Id = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ResourceService) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceService) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ResourceService) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ResourceService) SetName(v string) {
+	o.Name = &v
+}
+
+// GetSourceService returns the SourceService field value if set, zero value otherwise.
+func (o *ResourceService) GetSourceService() string {
+	if o == nil || o.SourceService == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceService
+}
+
+// GetSourceServiceOk returns a tuple with the SourceService field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceService) GetSourceServiceOk() (*string, bool) {
+	if o == nil || o.SourceService == nil {
+		return nil, false
+	}
+	return o.SourceService, true
+}
+
+// HasSourceService returns a boolean if a field has been set.
+func (o *ResourceService) HasSourceService() bool {
+	if o != nil && o.SourceService != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceService gets a reference to the given string and assigns it to the SourceService field.
+func (o *ResourceService) SetSourceService(v string) {
+	o.SourceService = &v
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *ResourceService) GetType() string {
+	if o == nil || o.Type == nil {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceService) GetTypeOk() (*string, bool) {
+	if o == nil || o.Type == nil {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *ResourceService) HasType() bool {
+	if o != nil && o.Type != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *ResourceService) SetType(v string) {
+	o.Type = &v
+}
+
 func (o ResourceService) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Billing != nil {
+		toSerialize["billing"] = o.Billing
+	}
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
 	if o.SourceService != nil {
 		toSerialize["sourceService"] = o.SourceService
 	}
-	if o.Billing != nil {
-		toSerialize["billing"] = o.Billing
-	}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

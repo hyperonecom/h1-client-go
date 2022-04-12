@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **InvoiceNo** | Pointer to **string** |  | [optional] 
 **IssueDate** | Pointer to **time.Time** |  | [optional] 
-**Summary** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
+**Summary** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -105,31 +105,6 @@ SetIssueDate sets IssueDate field to given value.
 
 HasIssueDate returns a boolean if a field has been set.
 
-### GetSummary
-
-`func (o *ProformaArray) GetSummary() string`
-
-GetSummary returns the Summary field if non-nil, zero value otherwise.
-
-### GetSummaryOk
-
-`func (o *ProformaArray) GetSummaryOk() (*string, bool)`
-
-GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSummary
-
-`func (o *ProformaArray) SetSummary(v string)`
-
-SetSummary sets Summary field to given value.
-
-### HasSummary
-
-`func (o *ProformaArray) HasSummary() bool`
-
-HasSummary returns a boolean if a field has been set.
-
 ### GetProject
 
 `func (o *ProformaArray) GetProject() string`
@@ -154,6 +129,31 @@ SetProject sets Project field to given value.
 `func (o *ProformaArray) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
+
+### GetSummary
+
+`func (o *ProformaArray) GetSummary() string`
+
+GetSummary returns the Summary field if non-nil, zero value otherwise.
+
+### GetSummaryOk
+
+`func (o *ProformaArray) GetSummaryOk() (*string, bool)`
+
+GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSummary
+
+`func (o *ProformaArray) SetSummary(v string)`
+
+SetSummary sets Summary field to given value.
+
+### HasSummary
+
+`func (o *ProformaArray) HasSummary() bool`
+
+HasSummary returns a boolean if a field has been set.
 
 ### GetUri
 

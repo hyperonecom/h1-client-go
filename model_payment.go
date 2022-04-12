@@ -17,27 +17,28 @@ import (
 
 // Payment struct for Payment
 type Payment struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
-	ModifiedBy *string `json:"modifiedBy,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	CreatedBy *string `json:"createdBy,omitempty"`
-	State *string `json:"state,omitempty"`
-	Project *string `json:"project,omitempty"`
-	Uri *string `json:"uri,omitempty"`
-	CreditsFree *float32 `json:"creditsFree,omitempty"`
-	Credits *float32 `json:"credits,omitempty"`
-	Channel *string `json:"channel,omitempty"`
 	Amount *float32 `json:"amount,omitempty"`
+	Channel *string `json:"channel,omitempty"`
+	CreatedBy *string `json:"createdBy,omitempty"`
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
+	Credits *float32 `json:"credits,omitempty"`
+	CreditsFree *float32 `json:"creditsFree,omitempty"`
+	Id string `json:"id"`
+	ModifiedBy *string `json:"modifiedBy,omitempty"`
+	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Project *string `json:"project,omitempty"`
+	State *string `json:"state,omitempty"`
+	Uri *string `json:"uri,omitempty"`
 }
 
 // NewPayment instantiates a new Payment object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPayment() *Payment {
+func NewPayment(id string) *Payment {
 	this := Payment{}
+	this.Id = id
 	return &this
 }
 
@@ -47,390 +48,6 @@ func NewPayment() *Payment {
 func NewPaymentWithDefaults() *Payment {
 	this := Payment{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *Payment) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *Payment) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Payment) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Payment) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *Payment) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Payment) SetName(v string) {
-	o.Name = &v
-}
-
-// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
-func (o *Payment) GetModifiedOn() time.Time {
-	if o == nil || o.ModifiedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.ModifiedOn
-}
-
-// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetModifiedOnOk() (*time.Time, bool) {
-	if o == nil || o.ModifiedOn == nil {
-		return nil, false
-	}
-	return o.ModifiedOn, true
-}
-
-// HasModifiedOn returns a boolean if a field has been set.
-func (o *Payment) HasModifiedOn() bool {
-	if o != nil && o.ModifiedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
-func (o *Payment) SetModifiedOn(v time.Time) {
-	o.ModifiedOn = &v
-}
-
-// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
-func (o *Payment) GetModifiedBy() string {
-	if o == nil || o.ModifiedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.ModifiedBy
-}
-
-// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetModifiedByOk() (*string, bool) {
-	if o == nil || o.ModifiedBy == nil {
-		return nil, false
-	}
-	return o.ModifiedBy, true
-}
-
-// HasModifiedBy returns a boolean if a field has been set.
-func (o *Payment) HasModifiedBy() bool {
-	if o != nil && o.ModifiedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
-func (o *Payment) SetModifiedBy(v string) {
-	o.ModifiedBy = &v
-}
-
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *Payment) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *Payment) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *Payment) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
-// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *Payment) GetCreatedBy() string {
-	if o == nil || o.CreatedBy == nil {
-		var ret string
-		return ret
-	}
-	return *o.CreatedBy
-}
-
-// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetCreatedByOk() (*string, bool) {
-	if o == nil || o.CreatedBy == nil {
-		return nil, false
-	}
-	return o.CreatedBy, true
-}
-
-// HasCreatedBy returns a boolean if a field has been set.
-func (o *Payment) HasCreatedBy() bool {
-	if o != nil && o.CreatedBy != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
-func (o *Payment) SetCreatedBy(v string) {
-	o.CreatedBy = &v
-}
-
-// GetState returns the State field value if set, zero value otherwise.
-func (o *Payment) GetState() string {
-	if o == nil || o.State == nil {
-		var ret string
-		return ret
-	}
-	return *o.State
-}
-
-// GetStateOk returns a tuple with the State field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetStateOk() (*string, bool) {
-	if o == nil || o.State == nil {
-		return nil, false
-	}
-	return o.State, true
-}
-
-// HasState returns a boolean if a field has been set.
-func (o *Payment) HasState() bool {
-	if o != nil && o.State != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetState gets a reference to the given string and assigns it to the State field.
-func (o *Payment) SetState(v string) {
-	o.State = &v
-}
-
-// GetProject returns the Project field value if set, zero value otherwise.
-func (o *Payment) GetProject() string {
-	if o == nil || o.Project == nil {
-		var ret string
-		return ret
-	}
-	return *o.Project
-}
-
-// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetProjectOk() (*string, bool) {
-	if o == nil || o.Project == nil {
-		return nil, false
-	}
-	return o.Project, true
-}
-
-// HasProject returns a boolean if a field has been set.
-func (o *Payment) HasProject() bool {
-	if o != nil && o.Project != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetProject gets a reference to the given string and assigns it to the Project field.
-func (o *Payment) SetProject(v string) {
-	o.Project = &v
-}
-
-// GetUri returns the Uri field value if set, zero value otherwise.
-func (o *Payment) GetUri() string {
-	if o == nil || o.Uri == nil {
-		var ret string
-		return ret
-	}
-	return *o.Uri
-}
-
-// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetUriOk() (*string, bool) {
-	if o == nil || o.Uri == nil {
-		return nil, false
-	}
-	return o.Uri, true
-}
-
-// HasUri returns a boolean if a field has been set.
-func (o *Payment) HasUri() bool {
-	if o != nil && o.Uri != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUri gets a reference to the given string and assigns it to the Uri field.
-func (o *Payment) SetUri(v string) {
-	o.Uri = &v
-}
-
-// GetCreditsFree returns the CreditsFree field value if set, zero value otherwise.
-func (o *Payment) GetCreditsFree() float32 {
-	if o == nil || o.CreditsFree == nil {
-		var ret float32
-		return ret
-	}
-	return *o.CreditsFree
-}
-
-// GetCreditsFreeOk returns a tuple with the CreditsFree field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetCreditsFreeOk() (*float32, bool) {
-	if o == nil || o.CreditsFree == nil {
-		return nil, false
-	}
-	return o.CreditsFree, true
-}
-
-// HasCreditsFree returns a boolean if a field has been set.
-func (o *Payment) HasCreditsFree() bool {
-	if o != nil && o.CreditsFree != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreditsFree gets a reference to the given float32 and assigns it to the CreditsFree field.
-func (o *Payment) SetCreditsFree(v float32) {
-	o.CreditsFree = &v
-}
-
-// GetCredits returns the Credits field value if set, zero value otherwise.
-func (o *Payment) GetCredits() float32 {
-	if o == nil || o.Credits == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Credits
-}
-
-// GetCreditsOk returns a tuple with the Credits field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetCreditsOk() (*float32, bool) {
-	if o == nil || o.Credits == nil {
-		return nil, false
-	}
-	return o.Credits, true
-}
-
-// HasCredits returns a boolean if a field has been set.
-func (o *Payment) HasCredits() bool {
-	if o != nil && o.Credits != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCredits gets a reference to the given float32 and assigns it to the Credits field.
-func (o *Payment) SetCredits(v float32) {
-	o.Credits = &v
-}
-
-// GetChannel returns the Channel field value if set, zero value otherwise.
-func (o *Payment) GetChannel() string {
-	if o == nil || o.Channel == nil {
-		var ret string
-		return ret
-	}
-	return *o.Channel
-}
-
-// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Payment) GetChannelOk() (*string, bool) {
-	if o == nil || o.Channel == nil {
-		return nil, false
-	}
-	return o.Channel, true
-}
-
-// HasChannel returns a boolean if a field has been set.
-func (o *Payment) HasChannel() bool {
-	if o != nil && o.Channel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChannel gets a reference to the given string and assigns it to the Channel field.
-func (o *Payment) SetChannel(v string) {
-	o.Channel = &v
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
@@ -465,46 +82,422 @@ func (o *Payment) SetAmount(v float32) {
 	o.Amount = &v
 }
 
+// GetChannel returns the Channel field value if set, zero value otherwise.
+func (o *Payment) GetChannel() string {
+	if o == nil || o.Channel == nil {
+		var ret string
+		return ret
+	}
+	return *o.Channel
+}
+
+// GetChannelOk returns a tuple with the Channel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetChannelOk() (*string, bool) {
+	if o == nil || o.Channel == nil {
+		return nil, false
+	}
+	return o.Channel, true
+}
+
+// HasChannel returns a boolean if a field has been set.
+func (o *Payment) HasChannel() bool {
+	if o != nil && o.Channel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetChannel gets a reference to the given string and assigns it to the Channel field.
+func (o *Payment) SetChannel(v string) {
+	o.Channel = &v
+}
+
+// GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
+func (o *Payment) GetCreatedBy() string {
+	if o == nil || o.CreatedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.CreatedBy
+}
+
+// GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetCreatedByOk() (*string, bool) {
+	if o == nil || o.CreatedBy == nil {
+		return nil, false
+	}
+	return o.CreatedBy, true
+}
+
+// HasCreatedBy returns a boolean if a field has been set.
+func (o *Payment) HasCreatedBy() bool {
+	if o != nil && o.CreatedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedBy gets a reference to the given string and assigns it to the CreatedBy field.
+func (o *Payment) SetCreatedBy(v string) {
+	o.CreatedBy = &v
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *Payment) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *Payment) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *Payment) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
+}
+
+// GetCredits returns the Credits field value if set, zero value otherwise.
+func (o *Payment) GetCredits() float32 {
+	if o == nil || o.Credits == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Credits
+}
+
+// GetCreditsOk returns a tuple with the Credits field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetCreditsOk() (*float32, bool) {
+	if o == nil || o.Credits == nil {
+		return nil, false
+	}
+	return o.Credits, true
+}
+
+// HasCredits returns a boolean if a field has been set.
+func (o *Payment) HasCredits() bool {
+	if o != nil && o.Credits != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCredits gets a reference to the given float32 and assigns it to the Credits field.
+func (o *Payment) SetCredits(v float32) {
+	o.Credits = &v
+}
+
+// GetCreditsFree returns the CreditsFree field value if set, zero value otherwise.
+func (o *Payment) GetCreditsFree() float32 {
+	if o == nil || o.CreditsFree == nil {
+		var ret float32
+		return ret
+	}
+	return *o.CreditsFree
+}
+
+// GetCreditsFreeOk returns a tuple with the CreditsFree field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetCreditsFreeOk() (*float32, bool) {
+	if o == nil || o.CreditsFree == nil {
+		return nil, false
+	}
+	return o.CreditsFree, true
+}
+
+// HasCreditsFree returns a boolean if a field has been set.
+func (o *Payment) HasCreditsFree() bool {
+	if o != nil && o.CreditsFree != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreditsFree gets a reference to the given float32 and assigns it to the CreditsFree field.
+func (o *Payment) SetCreditsFree(v float32) {
+	o.CreditsFree = &v
+}
+
+// GetId returns the Id field value
+func (o *Payment) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Payment) GetIdOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Payment) SetId(v string) {
+	o.Id = v
+}
+
+// GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
+func (o *Payment) GetModifiedBy() string {
+	if o == nil || o.ModifiedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.ModifiedBy
+}
+
+// GetModifiedByOk returns a tuple with the ModifiedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetModifiedByOk() (*string, bool) {
+	if o == nil || o.ModifiedBy == nil {
+		return nil, false
+	}
+	return o.ModifiedBy, true
+}
+
+// HasModifiedBy returns a boolean if a field has been set.
+func (o *Payment) HasModifiedBy() bool {
+	if o != nil && o.ModifiedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedBy gets a reference to the given string and assigns it to the ModifiedBy field.
+func (o *Payment) SetModifiedBy(v string) {
+	o.ModifiedBy = &v
+}
+
+// GetModifiedOn returns the ModifiedOn field value if set, zero value otherwise.
+func (o *Payment) GetModifiedOn() time.Time {
+	if o == nil || o.ModifiedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.ModifiedOn
+}
+
+// GetModifiedOnOk returns a tuple with the ModifiedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetModifiedOnOk() (*time.Time, bool) {
+	if o == nil || o.ModifiedOn == nil {
+		return nil, false
+	}
+	return o.ModifiedOn, true
+}
+
+// HasModifiedOn returns a boolean if a field has been set.
+func (o *Payment) HasModifiedOn() bool {
+	if o != nil && o.ModifiedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedOn gets a reference to the given time.Time and assigns it to the ModifiedOn field.
+func (o *Payment) SetModifiedOn(v time.Time) {
+	o.ModifiedOn = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Payment) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Payment) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Payment) SetName(v string) {
+	o.Name = &v
+}
+
+// GetProject returns the Project field value if set, zero value otherwise.
+func (o *Payment) GetProject() string {
+	if o == nil || o.Project == nil {
+		var ret string
+		return ret
+	}
+	return *o.Project
+}
+
+// GetProjectOk returns a tuple with the Project field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetProjectOk() (*string, bool) {
+	if o == nil || o.Project == nil {
+		return nil, false
+	}
+	return o.Project, true
+}
+
+// HasProject returns a boolean if a field has been set.
+func (o *Payment) HasProject() bool {
+	if o != nil && o.Project != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProject gets a reference to the given string and assigns it to the Project field.
+func (o *Payment) SetProject(v string) {
+	o.Project = &v
+}
+
+// GetState returns the State field value if set, zero value otherwise.
+func (o *Payment) GetState() string {
+	if o == nil || o.State == nil {
+		var ret string
+		return ret
+	}
+	return *o.State
+}
+
+// GetStateOk returns a tuple with the State field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetStateOk() (*string, bool) {
+	if o == nil || o.State == nil {
+		return nil, false
+	}
+	return o.State, true
+}
+
+// HasState returns a boolean if a field has been set.
+func (o *Payment) HasState() bool {
+	if o != nil && o.State != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetState gets a reference to the given string and assigns it to the State field.
+func (o *Payment) SetState(v string) {
+	o.State = &v
+}
+
+// GetUri returns the Uri field value if set, zero value otherwise.
+func (o *Payment) GetUri() string {
+	if o == nil || o.Uri == nil {
+		var ret string
+		return ret
+	}
+	return *o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Payment) GetUriOk() (*string, bool) {
+	if o == nil || o.Uri == nil {
+		return nil, false
+	}
+	return o.Uri, true
+}
+
+// HasUri returns a boolean if a field has been set.
+func (o *Payment) HasUri() bool {
+	if o != nil && o.Uri != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given string and assigns it to the Uri field.
+func (o *Payment) SetUri(v string) {
+	o.Uri = &v
+}
+
 func (o Payment) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.ModifiedOn != nil {
-		toSerialize["modifiedOn"] = o.ModifiedOn
-	}
-	if o.ModifiedBy != nil {
-		toSerialize["modifiedBy"] = o.ModifiedBy
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
-	}
-	if o.CreatedBy != nil {
-		toSerialize["createdBy"] = o.CreatedBy
-	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
-	}
-	if o.Project != nil {
-		toSerialize["project"] = o.Project
-	}
-	if o.Uri != nil {
-		toSerialize["uri"] = o.Uri
-	}
-	if o.CreditsFree != nil {
-		toSerialize["creditsFree"] = o.CreditsFree
-	}
-	if o.Credits != nil {
-		toSerialize["credits"] = o.Credits
+	if o.Amount != nil {
+		toSerialize["amount"] = o.Amount
 	}
 	if o.Channel != nil {
 		toSerialize["channel"] = o.Channel
 	}
-	if o.Amount != nil {
-		toSerialize["amount"] = o.Amount
+	if o.CreatedBy != nil {
+		toSerialize["createdBy"] = o.CreatedBy
+	}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
+	if o.Credits != nil {
+		toSerialize["credits"] = o.Credits
+	}
+	if o.CreditsFree != nil {
+		toSerialize["creditsFree"] = o.CreditsFree
+	}
+	if true {
+		toSerialize["id"] = o.Id
+	}
+	if o.ModifiedBy != nil {
+		toSerialize["modifiedBy"] = o.ModifiedBy
+	}
+	if o.ModifiedOn != nil {
+		toSerialize["modifiedOn"] = o.ModifiedOn
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.Project != nil {
+		toSerialize["project"] = o.Project
+	}
+	if o.State != nil {
+		toSerialize["state"] = o.State
+	}
+	if o.Uri != nil {
+		toSerialize["uri"] = o.Uri
 	}
 	return json.Marshal(toSerialize)
 }

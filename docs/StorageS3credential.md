@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccessKeyId** | Pointer to **string** |  | [optional] 
-**SessionToken** | Pointer to **string** |  | [optional] 
-**SecretAccessKey** | Pointer to **string** |  | [optional] 
-**Endpoint** | Pointer to **string** |  | [optional] 
-**Region** | Pointer to **string** |  | [optional] 
-**Location** | Pointer to **string** |  | [optional] 
 **Bucket** | Pointer to **string** |  | [optional] 
+**Endpoint** | Pointer to **string** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
+**Location** | Pointer to **string** |  | [optional] 
+**Region** | Pointer to **string** |  | [optional] 
+**SecretAccessKey** | Pointer to **string** |  | [optional] 
+**SessionToken** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -57,55 +57,30 @@ SetAccessKeyId sets AccessKeyId field to given value.
 
 HasAccessKeyId returns a boolean if a field has been set.
 
-### GetSessionToken
+### GetBucket
 
-`func (o *StorageS3credential) GetSessionToken() string`
+`func (o *StorageS3credential) GetBucket() string`
 
-GetSessionToken returns the SessionToken field if non-nil, zero value otherwise.
+GetBucket returns the Bucket field if non-nil, zero value otherwise.
 
-### GetSessionTokenOk
+### GetBucketOk
 
-`func (o *StorageS3credential) GetSessionTokenOk() (*string, bool)`
+`func (o *StorageS3credential) GetBucketOk() (*string, bool)`
 
-GetSessionTokenOk returns a tuple with the SessionToken field if it's non-nil, zero value otherwise
+GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSessionToken
+### SetBucket
 
-`func (o *StorageS3credential) SetSessionToken(v string)`
+`func (o *StorageS3credential) SetBucket(v string)`
 
-SetSessionToken sets SessionToken field to given value.
+SetBucket sets Bucket field to given value.
 
-### HasSessionToken
+### HasBucket
 
-`func (o *StorageS3credential) HasSessionToken() bool`
+`func (o *StorageS3credential) HasBucket() bool`
 
-HasSessionToken returns a boolean if a field has been set.
-
-### GetSecretAccessKey
-
-`func (o *StorageS3credential) GetSecretAccessKey() string`
-
-GetSecretAccessKey returns the SecretAccessKey field if non-nil, zero value otherwise.
-
-### GetSecretAccessKeyOk
-
-`func (o *StorageS3credential) GetSecretAccessKeyOk() (*string, bool)`
-
-GetSecretAccessKeyOk returns a tuple with the SecretAccessKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecretAccessKey
-
-`func (o *StorageS3credential) SetSecretAccessKey(v string)`
-
-SetSecretAccessKey sets SecretAccessKey field to given value.
-
-### HasSecretAccessKey
-
-`func (o *StorageS3credential) HasSecretAccessKey() bool`
-
-HasSecretAccessKey returns a boolean if a field has been set.
+HasBucket returns a boolean if a field has been set.
 
 ### GetEndpoint
 
@@ -132,30 +107,30 @@ SetEndpoint sets Endpoint field to given value.
 
 HasEndpoint returns a boolean if a field has been set.
 
-### GetRegion
+### GetKey
 
-`func (o *StorageS3credential) GetRegion() string`
+`func (o *StorageS3credential) GetKey() string`
 
-GetRegion returns the Region field if non-nil, zero value otherwise.
+GetKey returns the Key field if non-nil, zero value otherwise.
 
-### GetRegionOk
+### GetKeyOk
 
-`func (o *StorageS3credential) GetRegionOk() (*string, bool)`
+`func (o *StorageS3credential) GetKeyOk() (*string, bool)`
 
-GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRegion
+### SetKey
 
-`func (o *StorageS3credential) SetRegion(v string)`
+`func (o *StorageS3credential) SetKey(v string)`
 
-SetRegion sets Region field to given value.
+SetKey sets Key field to given value.
 
-### HasRegion
+### HasKey
 
-`func (o *StorageS3credential) HasRegion() bool`
+`func (o *StorageS3credential) HasKey() bool`
 
-HasRegion returns a boolean if a field has been set.
+HasKey returns a boolean if a field has been set.
 
 ### GetLocation
 
@@ -182,55 +157,80 @@ SetLocation sets Location field to given value.
 
 HasLocation returns a boolean if a field has been set.
 
-### GetBucket
+### GetRegion
 
-`func (o *StorageS3credential) GetBucket() string`
+`func (o *StorageS3credential) GetRegion() string`
 
-GetBucket returns the Bucket field if non-nil, zero value otherwise.
+GetRegion returns the Region field if non-nil, zero value otherwise.
 
-### GetBucketOk
+### GetRegionOk
 
-`func (o *StorageS3credential) GetBucketOk() (*string, bool)`
+`func (o *StorageS3credential) GetRegionOk() (*string, bool)`
 
-GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBucket
+### SetRegion
 
-`func (o *StorageS3credential) SetBucket(v string)`
+`func (o *StorageS3credential) SetRegion(v string)`
 
-SetBucket sets Bucket field to given value.
+SetRegion sets Region field to given value.
 
-### HasBucket
+### HasRegion
 
-`func (o *StorageS3credential) HasBucket() bool`
+`func (o *StorageS3credential) HasRegion() bool`
 
-HasBucket returns a boolean if a field has been set.
+HasRegion returns a boolean if a field has been set.
 
-### GetKey
+### GetSecretAccessKey
 
-`func (o *StorageS3credential) GetKey() string`
+`func (o *StorageS3credential) GetSecretAccessKey() string`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetSecretAccessKey returns the SecretAccessKey field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetSecretAccessKeyOk
 
-`func (o *StorageS3credential) GetKeyOk() (*string, bool)`
+`func (o *StorageS3credential) GetSecretAccessKeyOk() (*string, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetSecretAccessKeyOk returns a tuple with the SecretAccessKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetSecretAccessKey
 
-`func (o *StorageS3credential) SetKey(v string)`
+`func (o *StorageS3credential) SetSecretAccessKey(v string)`
 
-SetKey sets Key field to given value.
+SetSecretAccessKey sets SecretAccessKey field to given value.
 
-### HasKey
+### HasSecretAccessKey
 
-`func (o *StorageS3credential) HasKey() bool`
+`func (o *StorageS3credential) HasSecretAccessKey() bool`
 
-HasKey returns a boolean if a field has been set.
+HasSecretAccessKey returns a boolean if a field has been set.
+
+### GetSessionToken
+
+`func (o *StorageS3credential) GetSessionToken() string`
+
+GetSessionToken returns the SessionToken field if non-nil, zero value otherwise.
+
+### GetSessionTokenOk
+
+`func (o *StorageS3credential) GetSessionTokenOk() (*string, bool)`
+
+GetSessionTokenOk returns a tuple with the SessionToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionToken
+
+`func (o *StorageS3credential) SetSessionToken(v string)`
+
+SetSessionToken sets SessionToken field to given value.
+
+### HasSessionToken
+
+`func (o *StorageS3credential) HasSessionToken() bool`
+
+HasSessionToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

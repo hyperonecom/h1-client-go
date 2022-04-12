@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**IamProjectBillingList**](IamProjectApi.md#IamProjectBillingList) | **Get** /iam/project/{projectId}/billing | List iam/project.billing
 [**IamProjectCostGet**](IamProjectApi.md#IamProjectCostGet) | **Get** /iam/project/{projectId}/cost/{costId} | Get iam/project.cost
 [**IamProjectCostList**](IamProjectApi.md#IamProjectCostList) | **Get** /iam/project/{projectId}/cost | List iam/project.cost
+[**IamProjectCostSeriesList**](IamProjectApi.md#IamProjectCostSeriesList) | **Get** /iam/project/{projectId}/cost/{costId}/series | List iam/project.series
 [**IamProjectCreate**](IamProjectApi.md#IamProjectCreate) | **Post** /iam/project | Create iam/project
 [**IamProjectCredentialStoreCreate**](IamProjectApi.md#IamProjectCredentialStoreCreate) | **Post** /iam/project/{projectId}/credentialStore | Create iam/project.credentialStore
 [**IamProjectCredentialStoreDelete**](IamProjectApi.md#IamProjectCredentialStoreDelete) | **Delete** /iam/project/{projectId}/credentialStore/{credentialStoreId} | Delete iam/project.credentialStore
@@ -23,6 +24,8 @@ Method | HTTP request | Description
 [**IamProjectInvitationList**](IamProjectApi.md#IamProjectInvitationList) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
 [**IamProjectInvoiceList**](IamProjectApi.md#IamProjectInvoiceList) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
 [**IamProjectList**](IamProjectApi.md#IamProjectList) | **Get** /iam/project | List iam/project
+[**IamProjectNotificationGet**](IamProjectApi.md#IamProjectNotificationGet) | **Get** /iam/project/{projectId}/notification/{notificationId} | Get iam/project.notification
+[**IamProjectNotificationList**](IamProjectApi.md#IamProjectNotificationList) | **Get** /iam/project/{projectId}/notification | List iam/project.notification
 [**IamProjectOwnershipCreate**](IamProjectApi.md#IamProjectOwnershipCreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
 [**IamProjectOwnershipDelete**](IamProjectApi.md#IamProjectOwnershipDelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
 [**IamProjectOwnershipGet**](IamProjectApi.md#IamProjectOwnershipGet) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
@@ -32,6 +35,9 @@ Method | HTTP request | Description
 [**IamProjectQuotaGet**](IamProjectApi.md#IamProjectQuotaGet) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
 [**IamProjectQuotaLimitPatch**](IamProjectApi.md#IamProjectQuotaLimitPatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
 [**IamProjectQuotaList**](IamProjectApi.md#IamProjectQuotaList) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
+[**IamProjectReconciliationGet**](IamProjectApi.md#IamProjectReconciliationGet) | **Get** /iam/project/{projectId}/reconciliation/{reconciliationId} | Get iam/project.reconciliation
+[**IamProjectReconciliationList**](IamProjectApi.md#IamProjectReconciliationList) | **Get** /iam/project/{projectId}/reconciliation | List iam/project.reconciliation
+[**IamProjectReconciliationReportList**](IamProjectApi.md#IamProjectReconciliationReportList) | **Get** /iam/project/{projectId}/reconciliation/{reconciliationId}/report | List iam/project.report
 [**IamProjectServiceGet**](IamProjectApi.md#IamProjectServiceGet) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
 [**IamProjectServiceList**](IamProjectApi.md#IamProjectServiceList) | **Get** /iam/project/{projectId}/service | List iam/project.service
 [**IamProjectTagCreate**](IamProjectApi.md#IamProjectTagCreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
@@ -47,6 +53,7 @@ Method | HTTP request | Description
 [**IamProjectUpdate**](IamProjectApi.md#IamProjectUpdate) | **Patch** /iam/project/{projectId} | Update iam/project
 [**IamProjectUsageGet**](IamProjectApi.md#IamProjectUsageGet) | **Get** /iam/project/{projectId}/usage/{usageId} | Get iam/project.usage
 [**IamProjectUsageList**](IamProjectApi.md#IamProjectUsageList) | **Get** /iam/project/{projectId}/usage | List iam/project.usage
+[**IamProjectUsageSeriesList**](IamProjectApi.md#IamProjectUsageSeriesList) | **Get** /iam/project/{projectId}/usage/{usageId}/series | List iam/project.series
 
 
 
@@ -255,6 +262,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectCostSeriesList
+
+> []Point IamProjectCostSeriesList(ctx, projectId, costId).Timespan(timespan).Execute()
+
+List iam/project.series
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    costId := "costId_example" // string | costId
+    timespan := "timespan_example" // string | timespan (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectCostSeriesList(context.Background(), projectId, costId).Timespan(timespan).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectCostSeriesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectCostSeriesList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectCostSeriesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**costId** | **string** | costId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectCostSeriesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **timespan** | **string** | timespan | 
+
+### Return type
+
+[**[]Point**](Point.md)
 
 ### Authorization
 
@@ -1427,6 +1509,149 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## IamProjectNotificationGet
+
+> Notification IamProjectNotificationGet(ctx, projectId, notificationId).Execute()
+
+Get iam/project.notification
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    notificationId := "notificationId_example" // string | notificationId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectNotificationGet(context.Background(), projectId, notificationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectNotificationGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectNotificationGet`: Notification
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectNotificationGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**notificationId** | **string** | notificationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectNotificationGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**Notification**](Notification.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectNotificationList
+
+> []Notification IamProjectNotificationList(ctx, projectId).Execute()
+
+List iam/project.notification
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectNotificationList(context.Background(), projectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectNotificationList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectNotificationList`: []Notification
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectNotificationList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectNotificationListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]Notification**](Notification.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## IamProjectOwnershipCreate
 
 > Project IamProjectOwnershipCreate(ctx, projectId).IamProjectOwnershipCreate(iamProjectOwnershipCreate).Execute()
@@ -2056,6 +2281,222 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Quota**](Quota.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectReconciliationGet
+
+> Reconciliation IamProjectReconciliationGet(ctx, projectId, reconciliationId).Execute()
+
+Get iam/project.reconciliation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reconciliationId := "reconciliationId_example" // string | reconciliationId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectReconciliationGet(context.Background(), projectId, reconciliationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectReconciliationGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectReconciliationGet`: Reconciliation
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectReconciliationGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**reconciliationId** | **string** | reconciliationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectReconciliationGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**Reconciliation**](Reconciliation.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectReconciliationList
+
+> []Reconciliation IamProjectReconciliationList(ctx, projectId).Execute()
+
+List iam/project.reconciliation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectReconciliationList(context.Background(), projectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectReconciliationList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectReconciliationList`: []Reconciliation
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectReconciliationList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectReconciliationListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**[]Reconciliation**](Reconciliation.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectReconciliationReportList
+
+> []ReconciliationTarget IamProjectReconciliationReportList(ctx, projectId, reconciliationId).Execute()
+
+List iam/project.report
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    reconciliationId := "reconciliationId_example" // string | reconciliationId
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectReconciliationReportList(context.Background(), projectId, reconciliationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectReconciliationReportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectReconciliationReportList`: []ReconciliationTarget
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectReconciliationReportList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**reconciliationId** | **string** | reconciliationId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectReconciliationReportListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**[]ReconciliationTarget**](ReconciliationTarget.md)
 
 ### Authorization
 
@@ -3134,6 +3575,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]Metric**](Metric.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## IamProjectUsageSeriesList
+
+> []Point IamProjectUsageSeriesList(ctx, projectId, usageId).Timespan(timespan).Color(color).Execute()
+
+List iam/project.series
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    projectId := "projectId_example" // string | Project Id
+    usageId := "usageId_example" // string | usageId
+    timespan := "timespan_example" // string | timespan (optional)
+    color := "color_example" // string | color (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IamProjectApi.IamProjectUsageSeriesList(context.Background(), projectId, usageId).Timespan(timespan).Color(color).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IamProjectApi.IamProjectUsageSeriesList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `IamProjectUsageSeriesList`: []Point
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectApi.IamProjectUsageSeriesList`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | Project Id | 
+**usageId** | **string** | usageId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiIamProjectUsageSeriesListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **timespan** | **string** | timespan | 
+ **color** | **string** | color | 
+
+### Return type
+
+[**[]Point**](Point.md)
 
 ### Authorization
 

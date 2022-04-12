@@ -16,9 +16,9 @@ import (
 
 // IamUserAuthorization struct for IamUserAuthorization
 type IamUserAuthorization struct {
+	Application string `json:"application"`
 	Id *string `json:"id,omitempty"`
 	Name string `json:"name"`
-	Application string `json:"application"`
 	Uri *string `json:"uri,omitempty"`
 }
 
@@ -26,10 +26,10 @@ type IamUserAuthorization struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamUserAuthorization(name string, application string) *IamUserAuthorization {
+func NewIamUserAuthorization(application string, name string) *IamUserAuthorization {
 	this := IamUserAuthorization{}
-	this.Name = name
 	this.Application = application
+	this.Name = name
 	return &this
 }
 
@@ -39,6 +39,30 @@ func NewIamUserAuthorization(name string, application string) *IamUserAuthorizat
 func NewIamUserAuthorizationWithDefaults() *IamUserAuthorization {
 	this := IamUserAuthorization{}
 	return &this
+}
+
+// GetApplication returns the Application field value
+func (o *IamUserAuthorization) GetApplication() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Application
+}
+
+// GetApplicationOk returns a tuple with the Application field value
+// and a boolean to check if the value has been set.
+func (o *IamUserAuthorization) GetApplicationOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Application, true
+}
+
+// SetApplication sets field value
+func (o *IamUserAuthorization) SetApplication(v string) {
+	o.Application = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -97,30 +121,6 @@ func (o *IamUserAuthorization) SetName(v string) {
 	o.Name = v
 }
 
-// GetApplication returns the Application field value
-func (o *IamUserAuthorization) GetApplication() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Application
-}
-
-// GetApplicationOk returns a tuple with the Application field value
-// and a boolean to check if the value has been set.
-func (o *IamUserAuthorization) GetApplicationOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Application, true
-}
-
-// SetApplication sets field value
-func (o *IamUserAuthorization) SetApplication(v string) {
-	o.Application = v
-}
-
 // GetUri returns the Uri field value if set, zero value otherwise.
 func (o *IamUserAuthorization) GetUri() string {
 	if o == nil || o.Uri == nil {
@@ -155,14 +155,14 @@ func (o *IamUserAuthorization) SetUri(v string) {
 
 func (o IamUserAuthorization) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["application"] = o.Application
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["application"] = o.Application
 	}
 	if o.Uri != nil {
 		toSerialize["uri"] = o.Uri

@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreatedBy** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**ModifiedBy** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**Project** | Pointer to **string** |  | [optional] 
+**Resource** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
-**Project** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**CreatedBy** | Pointer to **string** |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**ModifiedBy** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
 **Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -33,6 +34,56 @@ will change when the set of required properties is changed
 NewTicketWithDefaults instantiates a new Ticket object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreatedBy
+
+`func (o *Ticket) GetCreatedBy() string`
+
+GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
+
+### GetCreatedByOk
+
+`func (o *Ticket) GetCreatedByOk() (*string, bool)`
+
+GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedBy
+
+`func (o *Ticket) SetCreatedBy(v string)`
+
+SetCreatedBy sets CreatedBy field to given value.
+
+### HasCreatedBy
+
+`func (o *Ticket) HasCreatedBy() bool`
+
+HasCreatedBy returns a boolean if a field has been set.
+
+### GetCreatedOn
+
+`func (o *Ticket) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *Ticket) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *Ticket) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+### HasCreatedOn
+
+`func (o *Ticket) HasCreatedOn() bool`
+
+HasCreatedOn returns a boolean if a field has been set.
 
 ### GetId
 
@@ -59,30 +110,105 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetType
+### GetModifiedBy
 
-`func (o *Ticket) GetType() string`
+`func (o *Ticket) GetModifiedBy() string`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetModifiedByOk
 
-`func (o *Ticket) GetTypeOk() (*string, bool)`
+`func (o *Ticket) GetModifiedByOk() (*string, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetModifiedBy
 
-`func (o *Ticket) SetType(v string)`
+`func (o *Ticket) SetModifiedBy(v string)`
 
-SetType sets Type field to given value.
+SetModifiedBy sets ModifiedBy field to given value.
 
-### HasType
+### HasModifiedBy
 
-`func (o *Ticket) HasType() bool`
+`func (o *Ticket) HasModifiedBy() bool`
 
-HasType returns a boolean if a field has been set.
+HasModifiedBy returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Ticket) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Ticket) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Ticket) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Ticket) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetProject
+
+`func (o *Ticket) GetProject() string`
+
+GetProject returns the Project field if non-nil, zero value otherwise.
+
+### GetProjectOk
+
+`func (o *Ticket) GetProjectOk() (*string, bool)`
+
+GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProject
+
+`func (o *Ticket) SetProject(v string)`
+
+SetProject sets Project field to given value.
+
+### HasProject
+
+`func (o *Ticket) HasProject() bool`
+
+HasProject returns a boolean if a field has been set.
+
+### GetResource
+
+`func (o *Ticket) GetResource() string`
+
+GetResource returns the Resource field if non-nil, zero value otherwise.
+
+### GetResourceOk
+
+`func (o *Ticket) GetResourceOk() (*string, bool)`
+
+GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResource
+
+`func (o *Ticket) SetResource(v string)`
+
+SetResource sets Resource field to given value.
+
+### HasResource
+
+`func (o *Ticket) HasResource() bool`
+
+HasResource returns a boolean if a field has been set.
 
 ### GetState
 
@@ -134,130 +260,30 @@ SetSubject sets Subject field to given value.
 
 HasSubject returns a boolean if a field has been set.
 
-### GetProject
+### GetType
 
-`func (o *Ticket) GetProject() string`
+`func (o *Ticket) GetType() string`
 
-GetProject returns the Project field if non-nil, zero value otherwise.
+GetType returns the Type field if non-nil, zero value otherwise.
 
-### GetProjectOk
+### GetTypeOk
 
-`func (o *Ticket) GetProjectOk() (*string, bool)`
+`func (o *Ticket) GetTypeOk() (*string, bool)`
 
-GetProjectOk returns a tuple with the Project field if it's non-nil, zero value otherwise
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProject
+### SetType
 
-`func (o *Ticket) SetProject(v string)`
+`func (o *Ticket) SetType(v string)`
 
-SetProject sets Project field to given value.
+SetType sets Type field to given value.
 
-### HasProject
+### HasType
 
-`func (o *Ticket) HasProject() bool`
+`func (o *Ticket) HasType() bool`
 
-HasProject returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *Ticket) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *Ticket) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *Ticket) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *Ticket) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
-
-### GetCreatedBy
-
-`func (o *Ticket) GetCreatedBy() string`
-
-GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
-
-### GetCreatedByOk
-
-`func (o *Ticket) GetCreatedByOk() (*string, bool)`
-
-GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedBy
-
-`func (o *Ticket) SetCreatedBy(v string)`
-
-SetCreatedBy sets CreatedBy field to given value.
-
-### HasCreatedBy
-
-`func (o *Ticket) HasCreatedBy() bool`
-
-HasCreatedBy returns a boolean if a field has been set.
-
-### GetModifiedOn
-
-`func (o *Ticket) GetModifiedOn() time.Time`
-
-GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
-
-### GetModifiedOnOk
-
-`func (o *Ticket) GetModifiedOnOk() (*time.Time, bool)`
-
-GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedOn
-
-`func (o *Ticket) SetModifiedOn(v time.Time)`
-
-SetModifiedOn sets ModifiedOn field to given value.
-
-### HasModifiedOn
-
-`func (o *Ticket) HasModifiedOn() bool`
-
-HasModifiedOn returns a boolean if a field has been set.
-
-### GetModifiedBy
-
-`func (o *Ticket) GetModifiedBy() string`
-
-GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
-
-### GetModifiedByOk
-
-`func (o *Ticket) GetModifiedByOk() (*string, bool)`
-
-GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedBy
-
-`func (o *Ticket) SetModifiedBy(v string)`
-
-SetModifiedBy sets ModifiedBy field to given value.
-
-### HasModifiedBy
-
-`func (o *Ticket) HasModifiedBy() bool`
-
-HasModifiedBy returns a boolean if a field has been set.
+HasType returns a boolean if a field has been set.
 
 ### GetUri
 

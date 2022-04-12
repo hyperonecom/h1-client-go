@@ -18,8 +18,8 @@ import (
 type Metric struct {
 	Id string `json:"id"`
 	Name string `json:"name"`
-	Uri string `json:"uri"`
 	Properties *MetricProperties `json:"properties,omitempty"`
+	Uri string `json:"uri"`
 }
 
 // NewMetric instantiates a new Metric object
@@ -90,30 +90,6 @@ func (o *Metric) SetName(v string) {
 	o.Name = v
 }
 
-// GetUri returns the Uri field value
-func (o *Metric) GetUri() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Uri
-}
-
-// GetUriOk returns a tuple with the Uri field value
-// and a boolean to check if the value has been set.
-func (o *Metric) GetUriOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Uri, true
-}
-
-// SetUri sets field value
-func (o *Metric) SetUri(v string) {
-	o.Uri = v
-}
-
 // GetProperties returns the Properties field value if set, zero value otherwise.
 func (o *Metric) GetProperties() MetricProperties {
 	if o == nil || o.Properties == nil {
@@ -146,6 +122,30 @@ func (o *Metric) SetProperties(v MetricProperties) {
 	o.Properties = &v
 }
 
+// GetUri returns the Uri field value
+func (o *Metric) GetUri() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value
+// and a boolean to check if the value has been set.
+func (o *Metric) GetUriOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Uri, true
+}
+
+// SetUri sets field value
+func (o *Metric) SetUri(v string) {
+	o.Uri = v
+}
+
 func (o Metric) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -154,11 +154,11 @@ func (o Metric) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["name"] = o.Name
 	}
-	if true {
-		toSerialize["uri"] = o.Uri
-	}
 	if o.Properties != nil {
 		toSerialize["properties"] = o.Properties
+	}
+	if true {
+		toSerialize["uri"] = o.Uri
 	}
 	return json.Marshal(toSerialize)
 }

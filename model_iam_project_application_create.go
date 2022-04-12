@@ -17,8 +17,8 @@ import (
 // IamProjectApplicationCreate struct for IamProjectApplicationCreate
 type IamProjectApplicationCreate struct {
 	Name string `json:"name"`
-	Service string `json:"service"`
 	Redirect []IamRedirect `json:"redirect,omitempty"`
+	Service string `json:"service"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -65,30 +65,6 @@ func (o *IamProjectApplicationCreate) SetName(v string) {
 	o.Name = v
 }
 
-// GetService returns the Service field value
-func (o *IamProjectApplicationCreate) GetService() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Service
-}
-
-// GetServiceOk returns a tuple with the Service field value
-// and a boolean to check if the value has been set.
-func (o *IamProjectApplicationCreate) GetServiceOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Service, true
-}
-
-// SetService sets field value
-func (o *IamProjectApplicationCreate) SetService(v string) {
-	o.Service = v
-}
-
 // GetRedirect returns the Redirect field value if set, zero value otherwise.
 func (o *IamProjectApplicationCreate) GetRedirect() []IamRedirect {
 	if o == nil || o.Redirect == nil {
@@ -119,6 +95,30 @@ func (o *IamProjectApplicationCreate) HasRedirect() bool {
 // SetRedirect gets a reference to the given []IamRedirect and assigns it to the Redirect field.
 func (o *IamProjectApplicationCreate) SetRedirect(v []IamRedirect) {
 	o.Redirect = v
+}
+
+// GetService returns the Service field value
+func (o *IamProjectApplicationCreate) GetService() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Service
+}
+
+// GetServiceOk returns a tuple with the Service field value
+// and a boolean to check if the value has been set.
+func (o *IamProjectApplicationCreate) GetServiceOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Service, true
+}
+
+// SetService sets field value
+func (o *IamProjectApplicationCreate) SetService(v string) {
+	o.Service = v
 }
 
 // GetTag returns the Tag field value if set, zero value otherwise.
@@ -158,11 +158,11 @@ func (o IamProjectApplicationCreate) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["name"] = o.Name
 	}
-	if true {
-		toSerialize["service"] = o.Service
-	}
 	if o.Redirect != nil {
 		toSerialize["redirect"] = o.Redirect
+	}
+	if true {
+		toSerialize["service"] = o.Service
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

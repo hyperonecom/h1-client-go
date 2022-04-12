@@ -16,15 +16,15 @@ import (
 
 // Billing struct for Billing
 type Billing struct {
+	Charges []BillingCharges `json:"charges,omitempty"`
 	Id *string `json:"id,omitempty"`
+	OneTime *bool `json:"oneTime,omitempty"`
 	Period *string `json:"period,omitempty"`
 	Price *float32 `json:"price,omitempty"`
-	Quantity *float32 `json:"quantity,omitempty"`
 	Project *string `json:"project,omitempty"`
-	OneTime *bool `json:"oneTime,omitempty"`
-	Service *BillingService `json:"service,omitempty"`
+	Quantity *float32 `json:"quantity,omitempty"`
 	Resource *BillingResource `json:"resource,omitempty"`
-	Charges []BillingCharges `json:"charges,omitempty"`
+	Service *BillingService `json:"service,omitempty"`
 }
 
 // NewBilling instantiates a new Billing object
@@ -42,6 +42,38 @@ func NewBilling() *Billing {
 func NewBillingWithDefaults() *Billing {
 	this := Billing{}
 	return &this
+}
+
+// GetCharges returns the Charges field value if set, zero value otherwise.
+func (o *Billing) GetCharges() []BillingCharges {
+	if o == nil || o.Charges == nil {
+		var ret []BillingCharges
+		return ret
+	}
+	return o.Charges
+}
+
+// GetChargesOk returns a tuple with the Charges field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Billing) GetChargesOk() ([]BillingCharges, bool) {
+	if o == nil || o.Charges == nil {
+		return nil, false
+	}
+	return o.Charges, true
+}
+
+// HasCharges returns a boolean if a field has been set.
+func (o *Billing) HasCharges() bool {
+	if o != nil && o.Charges != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharges gets a reference to the given []BillingCharges and assigns it to the Charges field.
+func (o *Billing) SetCharges(v []BillingCharges) {
+	o.Charges = v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -74,6 +106,38 @@ func (o *Billing) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *Billing) SetId(v string) {
 	o.Id = &v
+}
+
+// GetOneTime returns the OneTime field value if set, zero value otherwise.
+func (o *Billing) GetOneTime() bool {
+	if o == nil || o.OneTime == nil {
+		var ret bool
+		return ret
+	}
+	return *o.OneTime
+}
+
+// GetOneTimeOk returns a tuple with the OneTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Billing) GetOneTimeOk() (*bool, bool) {
+	if o == nil || o.OneTime == nil {
+		return nil, false
+	}
+	return o.OneTime, true
+}
+
+// HasOneTime returns a boolean if a field has been set.
+func (o *Billing) HasOneTime() bool {
+	if o != nil && o.OneTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOneTime gets a reference to the given bool and assigns it to the OneTime field.
+func (o *Billing) SetOneTime(v bool) {
+	o.OneTime = &v
 }
 
 // GetPeriod returns the Period field value if set, zero value otherwise.
@@ -140,38 +204,6 @@ func (o *Billing) SetPrice(v float32) {
 	o.Price = &v
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *Billing) GetQuantity() float32 {
-	if o == nil || o.Quantity == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Quantity
-}
-
-// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Billing) GetQuantityOk() (*float32, bool) {
-	if o == nil || o.Quantity == nil {
-		return nil, false
-	}
-	return o.Quantity, true
-}
-
-// HasQuantity returns a boolean if a field has been set.
-func (o *Billing) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetQuantity gets a reference to the given float32 and assigns it to the Quantity field.
-func (o *Billing) SetQuantity(v float32) {
-	o.Quantity = &v
-}
-
 // GetProject returns the Project field value if set, zero value otherwise.
 func (o *Billing) GetProject() string {
 	if o == nil || o.Project == nil {
@@ -204,68 +236,36 @@ func (o *Billing) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetOneTime returns the OneTime field value if set, zero value otherwise.
-func (o *Billing) GetOneTime() bool {
-	if o == nil || o.OneTime == nil {
-		var ret bool
+// GetQuantity returns the Quantity field value if set, zero value otherwise.
+func (o *Billing) GetQuantity() float32 {
+	if o == nil || o.Quantity == nil {
+		var ret float32
 		return ret
 	}
-	return *o.OneTime
+	return *o.Quantity
 }
 
-// GetOneTimeOk returns a tuple with the OneTime field value if set, nil otherwise
+// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Billing) GetOneTimeOk() (*bool, bool) {
-	if o == nil || o.OneTime == nil {
+func (o *Billing) GetQuantityOk() (*float32, bool) {
+	if o == nil || o.Quantity == nil {
 		return nil, false
 	}
-	return o.OneTime, true
+	return o.Quantity, true
 }
 
-// HasOneTime returns a boolean if a field has been set.
-func (o *Billing) HasOneTime() bool {
-	if o != nil && o.OneTime != nil {
+// HasQuantity returns a boolean if a field has been set.
+func (o *Billing) HasQuantity() bool {
+	if o != nil && o.Quantity != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOneTime gets a reference to the given bool and assigns it to the OneTime field.
-func (o *Billing) SetOneTime(v bool) {
-	o.OneTime = &v
-}
-
-// GetService returns the Service field value if set, zero value otherwise.
-func (o *Billing) GetService() BillingService {
-	if o == nil || o.Service == nil {
-		var ret BillingService
-		return ret
-	}
-	return *o.Service
-}
-
-// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Billing) GetServiceOk() (*BillingService, bool) {
-	if o == nil || o.Service == nil {
-		return nil, false
-	}
-	return o.Service, true
-}
-
-// HasService returns a boolean if a field has been set.
-func (o *Billing) HasService() bool {
-	if o != nil && o.Service != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetService gets a reference to the given BillingService and assigns it to the Service field.
-func (o *Billing) SetService(v BillingService) {
-	o.Service = &v
+// SetQuantity gets a reference to the given float32 and assigns it to the Quantity field.
+func (o *Billing) SetQuantity(v float32) {
+	o.Quantity = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -300,42 +300,48 @@ func (o *Billing) SetResource(v BillingResource) {
 	o.Resource = &v
 }
 
-// GetCharges returns the Charges field value if set, zero value otherwise.
-func (o *Billing) GetCharges() []BillingCharges {
-	if o == nil || o.Charges == nil {
-		var ret []BillingCharges
+// GetService returns the Service field value if set, zero value otherwise.
+func (o *Billing) GetService() BillingService {
+	if o == nil || o.Service == nil {
+		var ret BillingService
 		return ret
 	}
-	return o.Charges
+	return *o.Service
 }
 
-// GetChargesOk returns a tuple with the Charges field value if set, nil otherwise
+// GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Billing) GetChargesOk() ([]BillingCharges, bool) {
-	if o == nil || o.Charges == nil {
+func (o *Billing) GetServiceOk() (*BillingService, bool) {
+	if o == nil || o.Service == nil {
 		return nil, false
 	}
-	return o.Charges, true
+	return o.Service, true
 }
 
-// HasCharges returns a boolean if a field has been set.
-func (o *Billing) HasCharges() bool {
-	if o != nil && o.Charges != nil {
+// HasService returns a boolean if a field has been set.
+func (o *Billing) HasService() bool {
+	if o != nil && o.Service != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCharges gets a reference to the given []BillingCharges and assigns it to the Charges field.
-func (o *Billing) SetCharges(v []BillingCharges) {
-	o.Charges = v
+// SetService gets a reference to the given BillingService and assigns it to the Service field.
+func (o *Billing) SetService(v BillingService) {
+	o.Service = &v
 }
 
 func (o Billing) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Charges != nil {
+		toSerialize["charges"] = o.Charges
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.OneTime != nil {
+		toSerialize["oneTime"] = o.OneTime
 	}
 	if o.Period != nil {
 		toSerialize["period"] = o.Period
@@ -343,23 +349,17 @@ func (o Billing) MarshalJSON() ([]byte, error) {
 	if o.Price != nil {
 		toSerialize["price"] = o.Price
 	}
-	if o.Quantity != nil {
-		toSerialize["quantity"] = o.Quantity
-	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
 	}
-	if o.OneTime != nil {
-		toSerialize["oneTime"] = o.OneTime
-	}
-	if o.Service != nil {
-		toSerialize["service"] = o.Service
+	if o.Quantity != nil {
+		toSerialize["quantity"] = o.Quantity
 	}
 	if o.Resource != nil {
 		toSerialize["resource"] = o.Resource
 	}
-	if o.Charges != nil {
-		toSerialize["charges"] = o.Charges
+	if o.Service != nil {
+		toSerialize["service"] = o.Service
 	}
 	return json.Marshal(toSerialize)
 }

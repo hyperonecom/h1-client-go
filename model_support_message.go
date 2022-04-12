@@ -17,12 +17,12 @@ import (
 
 // SupportMessage struct for SupportMessage
 type SupportMessage struct {
+	Data *MessageData `json:"data,omitempty"`
+	Date *time.Time `json:"date,omitempty"`
 	Id *string `json:"id,omitempty"`
+	Origin *string `json:"origin,omitempty"`
 	Type string `json:"type"`
 	User *string `json:"user,omitempty"`
-	Data *MessageData `json:"data,omitempty"`
-	Origin *string `json:"origin,omitempty"`
-	Date *time.Time `json:"date,omitempty"`
 }
 
 // NewSupportMessage instantiates a new SupportMessage object
@@ -41,6 +41,70 @@ func NewSupportMessage(type_ string) *SupportMessage {
 func NewSupportMessageWithDefaults() *SupportMessage {
 	this := SupportMessage{}
 	return &this
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *SupportMessage) GetData() MessageData {
+	if o == nil || o.Data == nil {
+		var ret MessageData
+		return ret
+	}
+	return *o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SupportMessage) GetDataOk() (*MessageData, bool) {
+	if o == nil || o.Data == nil {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *SupportMessage) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given MessageData and assigns it to the Data field.
+func (o *SupportMessage) SetData(v MessageData) {
+	o.Data = &v
+}
+
+// GetDate returns the Date field value if set, zero value otherwise.
+func (o *SupportMessage) GetDate() time.Time {
+	if o == nil || o.Date == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.Date
+}
+
+// GetDateOk returns a tuple with the Date field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SupportMessage) GetDateOk() (*time.Time, bool) {
+	if o == nil || o.Date == nil {
+		return nil, false
+	}
+	return o.Date, true
+}
+
+// HasDate returns a boolean if a field has been set.
+func (o *SupportMessage) HasDate() bool {
+	if o != nil && o.Date != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDate gets a reference to the given time.Time and assigns it to the Date field.
+func (o *SupportMessage) SetDate(v time.Time) {
+	o.Date = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -73,6 +137,38 @@ func (o *SupportMessage) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *SupportMessage) SetId(v string) {
 	o.Id = &v
+}
+
+// GetOrigin returns the Origin field value if set, zero value otherwise.
+func (o *SupportMessage) GetOrigin() string {
+	if o == nil || o.Origin == nil {
+		var ret string
+		return ret
+	}
+	return *o.Origin
+}
+
+// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SupportMessage) GetOriginOk() (*string, bool) {
+	if o == nil || o.Origin == nil {
+		return nil, false
+	}
+	return o.Origin, true
+}
+
+// HasOrigin returns a boolean if a field has been set.
+func (o *SupportMessage) HasOrigin() bool {
+	if o != nil && o.Origin != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOrigin gets a reference to the given string and assigns it to the Origin field.
+func (o *SupportMessage) SetOrigin(v string) {
+	o.Origin = &v
 }
 
 // GetType returns the Type field value
@@ -131,121 +227,25 @@ func (o *SupportMessage) SetUser(v string) {
 	o.User = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *SupportMessage) GetData() MessageData {
-	if o == nil || o.Data == nil {
-		var ret MessageData
-		return ret
-	}
-	return *o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SupportMessage) GetDataOk() (*MessageData, bool) {
-	if o == nil || o.Data == nil {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// HasData returns a boolean if a field has been set.
-func (o *SupportMessage) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given MessageData and assigns it to the Data field.
-func (o *SupportMessage) SetData(v MessageData) {
-	o.Data = &v
-}
-
-// GetOrigin returns the Origin field value if set, zero value otherwise.
-func (o *SupportMessage) GetOrigin() string {
-	if o == nil || o.Origin == nil {
-		var ret string
-		return ret
-	}
-	return *o.Origin
-}
-
-// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SupportMessage) GetOriginOk() (*string, bool) {
-	if o == nil || o.Origin == nil {
-		return nil, false
-	}
-	return o.Origin, true
-}
-
-// HasOrigin returns a boolean if a field has been set.
-func (o *SupportMessage) HasOrigin() bool {
-	if o != nil && o.Origin != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOrigin gets a reference to the given string and assigns it to the Origin field.
-func (o *SupportMessage) SetOrigin(v string) {
-	o.Origin = &v
-}
-
-// GetDate returns the Date field value if set, zero value otherwise.
-func (o *SupportMessage) GetDate() time.Time {
-	if o == nil || o.Date == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.Date
-}
-
-// GetDateOk returns a tuple with the Date field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SupportMessage) GetDateOk() (*time.Time, bool) {
-	if o == nil || o.Date == nil {
-		return nil, false
-	}
-	return o.Date, true
-}
-
-// HasDate returns a boolean if a field has been set.
-func (o *SupportMessage) HasDate() bool {
-	if o != nil && o.Date != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDate gets a reference to the given time.Time and assigns it to the Date field.
-func (o *SupportMessage) SetDate(v time.Time) {
-	o.Date = &v
-}
-
 func (o SupportMessage) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
+	}
+	if o.Date != nil {
+		toSerialize["date"] = o.Date
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.Origin != nil {
+		toSerialize["origin"] = o.Origin
 	}
 	if true {
 		toSerialize["type"] = o.Type
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
-	}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
-	if o.Origin != nil {
-		toSerialize["origin"] = o.Origin
-	}
-	if o.Date != nil {
-		toSerialize["date"] = o.Date
 	}
 	return json.Marshal(toSerialize)
 }

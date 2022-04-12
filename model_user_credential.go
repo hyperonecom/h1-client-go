@@ -17,14 +17,14 @@ import (
 
 // UserCredential struct for UserCredential
 type UserCredential struct {
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
 	CreatedBy *string `json:"createdBy,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
+	Fingerprint *string `json:"fingerprint,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name string `json:"name"`
+	Token *string `json:"token,omitempty"`
 	Type string `json:"type"`
 	Value string `json:"value"`
-	Fingerprint *string `json:"fingerprint,omitempty"`
-	Token *string `json:"token,omitempty"`
 }
 
 // NewUserCredential instantiates a new UserCredential object
@@ -45,62 +45,6 @@ func NewUserCredential(name string, type_ string, value string) *UserCredential 
 func NewUserCredentialWithDefaults() *UserCredential {
 	this := UserCredential{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *UserCredential) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserCredential) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *UserCredential) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *UserCredential) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value
-func (o *UserCredential) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *UserCredential) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *UserCredential) SetName(v string) {
-	o.Name = v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -167,6 +111,126 @@ func (o *UserCredential) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
+// GetFingerprint returns the Fingerprint field value if set, zero value otherwise.
+func (o *UserCredential) GetFingerprint() string {
+	if o == nil || o.Fingerprint == nil {
+		var ret string
+		return ret
+	}
+	return *o.Fingerprint
+}
+
+// GetFingerprintOk returns a tuple with the Fingerprint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserCredential) GetFingerprintOk() (*string, bool) {
+	if o == nil || o.Fingerprint == nil {
+		return nil, false
+	}
+	return o.Fingerprint, true
+}
+
+// HasFingerprint returns a boolean if a field has been set.
+func (o *UserCredential) HasFingerprint() bool {
+	if o != nil && o.Fingerprint != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFingerprint gets a reference to the given string and assigns it to the Fingerprint field.
+func (o *UserCredential) SetFingerprint(v string) {
+	o.Fingerprint = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *UserCredential) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserCredential) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *UserCredential) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *UserCredential) SetId(v string) {
+	o.Id = &v
+}
+
+// GetName returns the Name field value
+func (o *UserCredential) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *UserCredential) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *UserCredential) SetName(v string) {
+	o.Name = v
+}
+
+// GetToken returns the Token field value if set, zero value otherwise.
+func (o *UserCredential) GetToken() string {
+	if o == nil || o.Token == nil {
+		var ret string
+		return ret
+	}
+	return *o.Token
+}
+
+// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserCredential) GetTokenOk() (*string, bool) {
+	if o == nil || o.Token == nil {
+		return nil, false
+	}
+	return o.Token, true
+}
+
+// HasToken returns a boolean if a field has been set.
+func (o *UserCredential) HasToken() bool {
+	if o != nil && o.Token != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToken gets a reference to the given string and assigns it to the Token field.
+func (o *UserCredential) SetToken(v string) {
+	o.Token = &v
+}
+
 // GetType returns the Type field value
 func (o *UserCredential) GetType() string {
 	if o == nil {
@@ -215,95 +279,31 @@ func (o *UserCredential) SetValue(v string) {
 	o.Value = v
 }
 
-// GetFingerprint returns the Fingerprint field value if set, zero value otherwise.
-func (o *UserCredential) GetFingerprint() string {
-	if o == nil || o.Fingerprint == nil {
-		var ret string
-		return ret
-	}
-	return *o.Fingerprint
-}
-
-// GetFingerprintOk returns a tuple with the Fingerprint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserCredential) GetFingerprintOk() (*string, bool) {
-	if o == nil || o.Fingerprint == nil {
-		return nil, false
-	}
-	return o.Fingerprint, true
-}
-
-// HasFingerprint returns a boolean if a field has been set.
-func (o *UserCredential) HasFingerprint() bool {
-	if o != nil && o.Fingerprint != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFingerprint gets a reference to the given string and assigns it to the Fingerprint field.
-func (o *UserCredential) SetFingerprint(v string) {
-	o.Fingerprint = &v
-}
-
-// GetToken returns the Token field value if set, zero value otherwise.
-func (o *UserCredential) GetToken() string {
-	if o == nil || o.Token == nil {
-		var ret string
-		return ret
-	}
-	return *o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UserCredential) GetTokenOk() (*string, bool) {
-	if o == nil || o.Token == nil {
-		return nil, false
-	}
-	return o.Token, true
-}
-
-// HasToken returns a boolean if a field has been set.
-func (o *UserCredential) HasToken() bool {
-	if o != nil && o.Token != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetToken gets a reference to the given string and assigns it to the Token field.
-func (o *UserCredential) SetToken(v string) {
-	o.Token = &v
-}
-
 func (o UserCredential) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
 	if o.CreatedOn != nil {
 		toSerialize["createdOn"] = o.CreatedOn
 	}
+	if o.Fingerprint != nil {
+		toSerialize["fingerprint"] = o.Fingerprint
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	if true {
+		toSerialize["name"] = o.Name
+	}
+	if o.Token != nil {
+		toSerialize["token"] = o.Token
+	}
 	if true {
 		toSerialize["type"] = o.Type
 	}
 	if true {
 		toSerialize["value"] = o.Value
-	}
-	if o.Fingerprint != nil {
-		toSerialize["fingerprint"] = o.Fingerprint
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
 }

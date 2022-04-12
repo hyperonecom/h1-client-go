@@ -16,9 +16,9 @@ import (
 
 // QuotaLimit struct for QuotaLimit
 type QuotaLimit struct {
+	Effective *float32 `json:"effective,omitempty"`
 	Platform *float32 `json:"platform,omitempty"`
 	User *float32 `json:"user,omitempty"`
-	Effective *float32 `json:"effective,omitempty"`
 }
 
 // NewQuotaLimit instantiates a new QuotaLimit object
@@ -36,6 +36,38 @@ func NewQuotaLimit() *QuotaLimit {
 func NewQuotaLimitWithDefaults() *QuotaLimit {
 	this := QuotaLimit{}
 	return &this
+}
+
+// GetEffective returns the Effective field value if set, zero value otherwise.
+func (o *QuotaLimit) GetEffective() float32 {
+	if o == nil || o.Effective == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Effective
+}
+
+// GetEffectiveOk returns a tuple with the Effective field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuotaLimit) GetEffectiveOk() (*float32, bool) {
+	if o == nil || o.Effective == nil {
+		return nil, false
+	}
+	return o.Effective, true
+}
+
+// HasEffective returns a boolean if a field has been set.
+func (o *QuotaLimit) HasEffective() bool {
+	if o != nil && o.Effective != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEffective gets a reference to the given float32 and assigns it to the Effective field.
+func (o *QuotaLimit) SetEffective(v float32) {
+	o.Effective = &v
 }
 
 // GetPlatform returns the Platform field value if set, zero value otherwise.
@@ -102,48 +134,16 @@ func (o *QuotaLimit) SetUser(v float32) {
 	o.User = &v
 }
 
-// GetEffective returns the Effective field value if set, zero value otherwise.
-func (o *QuotaLimit) GetEffective() float32 {
-	if o == nil || o.Effective == nil {
-		var ret float32
-		return ret
-	}
-	return *o.Effective
-}
-
-// GetEffectiveOk returns a tuple with the Effective field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QuotaLimit) GetEffectiveOk() (*float32, bool) {
-	if o == nil || o.Effective == nil {
-		return nil, false
-	}
-	return o.Effective, true
-}
-
-// HasEffective returns a boolean if a field has been set.
-func (o *QuotaLimit) HasEffective() bool {
-	if o != nil && o.Effective != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetEffective gets a reference to the given float32 and assigns it to the Effective field.
-func (o *QuotaLimit) SetEffective(v float32) {
-	o.Effective = &v
-}
-
 func (o QuotaLimit) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Effective != nil {
+		toSerialize["effective"] = o.Effective
+	}
 	if o.Platform != nil {
 		toSerialize["platform"] = o.Platform
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
-	}
-	if o.Effective != nil {
-		toSerialize["effective"] = o.Effective
 	}
 	return json.Marshal(toSerialize)
 }

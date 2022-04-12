@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserName** | **string** |  | 
-**Modulus** | **string** |  | 
 **Exponent** | **string** |  | 
+**Modulus** | **string** |  | 
+**UserName** | **string** |  | 
 
 ## Methods
 
 ### NewComputeProjectVmPasswordReset
 
-`func NewComputeProjectVmPasswordReset(userName string, modulus string, exponent string, ) *ComputeProjectVmPasswordReset`
+`func NewComputeProjectVmPasswordReset(exponent string, modulus string, userName string, ) *ComputeProjectVmPasswordReset`
 
 NewComputeProjectVmPasswordReset instantiates a new ComputeProjectVmPasswordReset object
 This constructor will assign default values to properties that have it defined,
@@ -27,24 +27,24 @@ NewComputeProjectVmPasswordResetWithDefaults instantiates a new ComputeProjectVm
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserName
+### GetExponent
 
-`func (o *ComputeProjectVmPasswordReset) GetUserName() string`
+`func (o *ComputeProjectVmPasswordReset) GetExponent() string`
 
-GetUserName returns the UserName field if non-nil, zero value otherwise.
+GetExponent returns the Exponent field if non-nil, zero value otherwise.
 
-### GetUserNameOk
+### GetExponentOk
 
-`func (o *ComputeProjectVmPasswordReset) GetUserNameOk() (*string, bool)`
+`func (o *ComputeProjectVmPasswordReset) GetExponentOk() (*string, bool)`
 
-GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
+GetExponentOk returns a tuple with the Exponent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserName
+### SetExponent
 
-`func (o *ComputeProjectVmPasswordReset) SetUserName(v string)`
+`func (o *ComputeProjectVmPasswordReset) SetExponent(v string)`
 
-SetUserName sets UserName field to given value.
+SetExponent sets Exponent field to given value.
 
 
 ### GetModulus
@@ -67,24 +67,24 @@ and a boolean to check if the value has been set.
 SetModulus sets Modulus field to given value.
 
 
-### GetExponent
+### GetUserName
 
-`func (o *ComputeProjectVmPasswordReset) GetExponent() string`
+`func (o *ComputeProjectVmPasswordReset) GetUserName() string`
 
-GetExponent returns the Exponent field if non-nil, zero value otherwise.
+GetUserName returns the UserName field if non-nil, zero value otherwise.
 
-### GetExponentOk
+### GetUserNameOk
 
-`func (o *ComputeProjectVmPasswordReset) GetExponentOk() (*string, bool)`
+`func (o *ComputeProjectVmPasswordReset) GetUserNameOk() (*string, bool)`
 
-GetExponentOk returns a tuple with the Exponent field if it's non-nil, zero value otherwise
+GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExponent
+### SetUserName
 
-`func (o *ComputeProjectVmPasswordReset) SetExponent(v string)`
+`func (o *ComputeProjectVmPasswordReset) SetUserName(v string)`
 
-SetExponent sets Exponent field to given value.
+SetUserName sets UserName field to given value.
 
 
 

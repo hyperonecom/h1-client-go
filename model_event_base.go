@@ -17,9 +17,9 @@ import (
 
 // EventBase struct for EventBase
 type EventBase struct {
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	State *string `json:"state,omitempty"`
 }
 
@@ -38,6 +38,38 @@ func NewEventBase() *EventBase {
 func NewEventBaseWithDefaults() *EventBase {
 	this := EventBase{}
 	return &this
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *EventBase) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EventBase) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *EventBase) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *EventBase) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -104,38 +136,6 @@ func (o *EventBase) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *EventBase) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EventBase) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *EventBase) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *EventBase) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
 // GetState returns the State field value if set, zero value otherwise.
 func (o *EventBase) GetState() string {
 	if o == nil || o.State == nil {
@@ -170,14 +170,14 @@ func (o *EventBase) SetState(v string) {
 
 func (o EventBase) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

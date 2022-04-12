@@ -16,25 +16,25 @@ import (
 
 // NetworkingRule struct for NetworkingRule
 type NetworkingRule struct {
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
 	Action string `json:"action"`
-	Priority float32 `json:"priority"`
-	Filter []string `json:"filter"`
 	External []string `json:"external,omitempty"`
+	Filter []string `json:"filter"`
+	Id *string `json:"id,omitempty"`
 	Internal []string `json:"internal,omitempty"`
+	Name string `json:"name"`
+	Priority float32 `json:"priority"`
 }
 
 // NewNetworkingRule instantiates a new NetworkingRule object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkingRule(name string, action string, priority float32, filter []string) *NetworkingRule {
+func NewNetworkingRule(action string, filter []string, name string, priority float32) *NetworkingRule {
 	this := NetworkingRule{}
-	this.Name = name
 	this.Action = action
-	this.Priority = priority
 	this.Filter = filter
+	this.Name = name
+	this.Priority = priority
 	return &this
 }
 
@@ -44,62 +44,6 @@ func NewNetworkingRule(name string, action string, priority float32, filter []st
 func NewNetworkingRuleWithDefaults() *NetworkingRule {
 	this := NetworkingRule{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *NetworkingRule) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingRule) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *NetworkingRule) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *NetworkingRule) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value
-func (o *NetworkingRule) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingRule) GetNameOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *NetworkingRule) SetName(v string) {
-	o.Name = v
 }
 
 // GetAction returns the Action field value
@@ -124,54 +68,6 @@ func (o *NetworkingRule) GetActionOk() (*string, bool) {
 // SetAction sets field value
 func (o *NetworkingRule) SetAction(v string) {
 	o.Action = v
-}
-
-// GetPriority returns the Priority field value
-func (o *NetworkingRule) GetPriority() float32 {
-	if o == nil {
-		var ret float32
-		return ret
-	}
-
-	return o.Priority
-}
-
-// GetPriorityOk returns a tuple with the Priority field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingRule) GetPriorityOk() (*float32, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Priority, true
-}
-
-// SetPriority sets field value
-func (o *NetworkingRule) SetPriority(v float32) {
-	o.Priority = v
-}
-
-// GetFilter returns the Filter field value
-func (o *NetworkingRule) GetFilter() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-
-	return o.Filter
-}
-
-// GetFilterOk returns a tuple with the Filter field value
-// and a boolean to check if the value has been set.
-func (o *NetworkingRule) GetFilterOk() ([]string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.Filter, true
-}
-
-// SetFilter sets field value
-func (o *NetworkingRule) SetFilter(v []string) {
-	o.Filter = v
 }
 
 // GetExternal returns the External field value if set, zero value otherwise.
@@ -206,6 +102,62 @@ func (o *NetworkingRule) SetExternal(v []string) {
 	o.External = v
 }
 
+// GetFilter returns the Filter field value
+func (o *NetworkingRule) GetFilter() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+
+	return o.Filter
+}
+
+// GetFilterOk returns a tuple with the Filter field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingRule) GetFilterOk() ([]string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.Filter, true
+}
+
+// SetFilter sets field value
+func (o *NetworkingRule) SetFilter(v []string) {
+	o.Filter = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *NetworkingRule) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingRule) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *NetworkingRule) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *NetworkingRule) SetId(v string) {
+	o.Id = &v
+}
+
 // GetInternal returns the Internal field value if set, zero value otherwise.
 func (o *NetworkingRule) GetInternal() []string {
 	if o == nil || o.Internal == nil {
@@ -238,28 +190,76 @@ func (o *NetworkingRule) SetInternal(v []string) {
 	o.Internal = v
 }
 
+// GetName returns the Name field value
+func (o *NetworkingRule) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingRule) GetNameOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *NetworkingRule) SetName(v string) {
+	o.Name = v
+}
+
+// GetPriority returns the Priority field value
+func (o *NetworkingRule) GetPriority() float32 {
+	if o == nil {
+		var ret float32
+		return ret
+	}
+
+	return o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value
+// and a boolean to check if the value has been set.
+func (o *NetworkingRule) GetPriorityOk() (*float32, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Priority, true
+}
+
+// SetPriority sets field value
+func (o *NetworkingRule) SetPriority(v float32) {
+	o.Priority = v
+}
+
 func (o NetworkingRule) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["action"] = o.Action
+	}
+	if o.External != nil {
+		toSerialize["external"] = o.External
+	}
+	if true {
+		toSerialize["filter"] = o.Filter
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.Internal != nil {
+		toSerialize["internal"] = o.Internal
 	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if true {
-		toSerialize["action"] = o.Action
-	}
-	if true {
 		toSerialize["priority"] = o.Priority
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if o.External != nil {
-		toSerialize["external"] = o.External
-	}
-	if o.Internal != nil {
-		toSerialize["internal"] = o.Internal
 	}
 	return json.Marshal(toSerialize)
 }

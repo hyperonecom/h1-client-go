@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Cost** | Pointer to **float32** |  | [optional] [readonly] 
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Usage** | Pointer to **float32** |  | [optional] [readonly] 
-**Cost** | Pointer to **float32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -26,6 +26,31 @@ will change when the set of required properties is changed
 NewReconciliationTargetPlanWithDefaults instantiates a new ReconciliationTargetPlan object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCost
+
+`func (o *ReconciliationTargetPlan) GetCost() float32`
+
+GetCost returns the Cost field if non-nil, zero value otherwise.
+
+### GetCostOk
+
+`func (o *ReconciliationTargetPlan) GetCostOk() (*float32, bool)`
+
+GetCostOk returns a tuple with the Cost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCost
+
+`func (o *ReconciliationTargetPlan) SetCost(v float32)`
+
+SetCost sets Cost field to given value.
+
+### HasCost
+
+`func (o *ReconciliationTargetPlan) HasCost() bool`
+
+HasCost returns a boolean if a field has been set.
 
 ### GetId
 
@@ -76,31 +101,6 @@ SetUsage sets Usage field to given value.
 `func (o *ReconciliationTargetPlan) HasUsage() bool`
 
 HasUsage returns a boolean if a field has been set.
-
-### GetCost
-
-`func (o *ReconciliationTargetPlan) GetCost() float32`
-
-GetCost returns the Cost field if non-nil, zero value otherwise.
-
-### GetCostOk
-
-`func (o *ReconciliationTargetPlan) GetCostOk() (*float32, bool)`
-
-GetCostOk returns a tuple with the Cost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCost
-
-`func (o *ReconciliationTargetPlan) SetCost(v float32)`
-
-SetCost sets Cost field to given value.
-
-### HasCost
-
-`func (o *ReconciliationTargetPlan) HasCost() bool`
-
-HasCost returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

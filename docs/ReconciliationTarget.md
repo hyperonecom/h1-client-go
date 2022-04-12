@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Cost** | Pointer to **float32** |  | [optional] [readonly] 
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Kind** | Pointer to **string** |  | [optional] [readonly] 
-**Profile** | Pointer to **string** |  | [optional] [readonly] 
 **Measurement** | Pointer to **string** |  | [optional] [readonly] 
-**Usage** | Pointer to **float32** |  | [optional] [readonly] 
-**Cost** | Pointer to **float32** |  | [optional] [readonly] 
+**Profile** | Pointer to **string** |  | [optional] [readonly] 
 **Resource** | Pointer to [**[]ReconciliationTargetResource**](ReconciliationTargetResource.md) |  | [optional] 
+**Usage** | Pointer to **float32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -30,6 +30,31 @@ will change when the set of required properties is changed
 NewReconciliationTargetWithDefaults instantiates a new ReconciliationTarget object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCost
+
+`func (o *ReconciliationTarget) GetCost() float32`
+
+GetCost returns the Cost field if non-nil, zero value otherwise.
+
+### GetCostOk
+
+`func (o *ReconciliationTarget) GetCostOk() (*float32, bool)`
+
+GetCostOk returns a tuple with the Cost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCost
+
+`func (o *ReconciliationTarget) SetCost(v float32)`
+
+SetCost sets Cost field to given value.
+
+### HasCost
+
+`func (o *ReconciliationTarget) HasCost() bool`
+
+HasCost returns a boolean if a field has been set.
 
 ### GetId
 
@@ -81,31 +106,6 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetProfile
-
-`func (o *ReconciliationTarget) GetProfile() string`
-
-GetProfile returns the Profile field if non-nil, zero value otherwise.
-
-### GetProfileOk
-
-`func (o *ReconciliationTarget) GetProfileOk() (*string, bool)`
-
-GetProfileOk returns a tuple with the Profile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProfile
-
-`func (o *ReconciliationTarget) SetProfile(v string)`
-
-SetProfile sets Profile field to given value.
-
-### HasProfile
-
-`func (o *ReconciliationTarget) HasProfile() bool`
-
-HasProfile returns a boolean if a field has been set.
-
 ### GetMeasurement
 
 `func (o *ReconciliationTarget) GetMeasurement() string`
@@ -131,55 +131,30 @@ SetMeasurement sets Measurement field to given value.
 
 HasMeasurement returns a boolean if a field has been set.
 
-### GetUsage
+### GetProfile
 
-`func (o *ReconciliationTarget) GetUsage() float32`
+`func (o *ReconciliationTarget) GetProfile() string`
 
-GetUsage returns the Usage field if non-nil, zero value otherwise.
+GetProfile returns the Profile field if non-nil, zero value otherwise.
 
-### GetUsageOk
+### GetProfileOk
 
-`func (o *ReconciliationTarget) GetUsageOk() (*float32, bool)`
+`func (o *ReconciliationTarget) GetProfileOk() (*string, bool)`
 
-GetUsageOk returns a tuple with the Usage field if it's non-nil, zero value otherwise
+GetProfileOk returns a tuple with the Profile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsage
+### SetProfile
 
-`func (o *ReconciliationTarget) SetUsage(v float32)`
+`func (o *ReconciliationTarget) SetProfile(v string)`
 
-SetUsage sets Usage field to given value.
+SetProfile sets Profile field to given value.
 
-### HasUsage
+### HasProfile
 
-`func (o *ReconciliationTarget) HasUsage() bool`
+`func (o *ReconciliationTarget) HasProfile() bool`
 
-HasUsage returns a boolean if a field has been set.
-
-### GetCost
-
-`func (o *ReconciliationTarget) GetCost() float32`
-
-GetCost returns the Cost field if non-nil, zero value otherwise.
-
-### GetCostOk
-
-`func (o *ReconciliationTarget) GetCostOk() (*float32, bool)`
-
-GetCostOk returns a tuple with the Cost field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCost
-
-`func (o *ReconciliationTarget) SetCost(v float32)`
-
-SetCost sets Cost field to given value.
-
-### HasCost
-
-`func (o *ReconciliationTarget) HasCost() bool`
-
-HasCost returns a boolean if a field has been set.
+HasProfile returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -205,6 +180,31 @@ SetResource sets Resource field to given value.
 `func (o *ReconciliationTarget) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
+
+### GetUsage
+
+`func (o *ReconciliationTarget) GetUsage() float32`
+
+GetUsage returns the Usage field if non-nil, zero value otherwise.
+
+### GetUsageOk
+
+`func (o *ReconciliationTarget) GetUsageOk() (*float32, bool)`
+
+GetUsageOk returns a tuple with the Usage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsage
+
+`func (o *ReconciliationTarget) SetUsage(v float32)`
+
+SetUsage sets Usage field to given value.
+
+### HasUsage
+
+`func (o *ReconciliationTarget) HasUsage() bool`
+
+HasUsage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

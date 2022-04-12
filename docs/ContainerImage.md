@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**Name** | **string** |  | 
-**Digest** | **string** |  | 
 **CreatedOn** | **time.Time** |  | 
+**Digest** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **ModifiedOn** | **time.Time** |  | 
+**Name** | **string** |  | 
 
 ## Methods
 
 ### NewContainerImage
 
-`func NewContainerImage(name string, digest string, createdOn time.Time, modifiedOn time.Time, ) *ContainerImage`
+`func NewContainerImage(createdOn time.Time, digest string, modifiedOn time.Time, name string, ) *ContainerImage`
 
 NewContainerImage instantiates a new ContainerImage object
 This constructor will assign default values to properties that have it defined,
@@ -28,6 +28,46 @@ will change when the set of required properties is changed
 NewContainerImageWithDefaults instantiates a new ContainerImage object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreatedOn
+
+`func (o *ContainerImage) GetCreatedOn() time.Time`
+
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
+
+### GetCreatedOnOk
+
+`func (o *ContainerImage) GetCreatedOnOk() (*time.Time, bool)`
+
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedOn
+
+`func (o *ContainerImage) SetCreatedOn(v time.Time)`
+
+SetCreatedOn sets CreatedOn field to given value.
+
+
+### GetDigest
+
+`func (o *ContainerImage) GetDigest() string`
+
+GetDigest returns the Digest field if non-nil, zero value otherwise.
+
+### GetDigestOk
+
+`func (o *ContainerImage) GetDigestOk() (*string, bool)`
+
+GetDigestOk returns a tuple with the Digest field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDigest
+
+`func (o *ContainerImage) SetDigest(v string)`
+
+SetDigest sets Digest field to given value.
+
 
 ### GetId
 
@@ -54,66 +94,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *ContainerImage) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ContainerImage) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ContainerImage) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetDigest
-
-`func (o *ContainerImage) GetDigest() string`
-
-GetDigest returns the Digest field if non-nil, zero value otherwise.
-
-### GetDigestOk
-
-`func (o *ContainerImage) GetDigestOk() (*string, bool)`
-
-GetDigestOk returns a tuple with the Digest field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDigest
-
-`func (o *ContainerImage) SetDigest(v string)`
-
-SetDigest sets Digest field to given value.
-
-
-### GetCreatedOn
-
-`func (o *ContainerImage) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *ContainerImage) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *ContainerImage) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-
 ### GetModifiedOn
 
 `func (o *ContainerImage) GetModifiedOn() time.Time`
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *ContainerImage) SetModifiedOn(v time.Time)`
 
 SetModifiedOn sets ModifiedOn field to given value.
+
+
+### GetName
+
+`func (o *ContainerImage) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ContainerImage) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ContainerImage) SetName(v string)`
+
+SetName sets Name field to given value.
 
 
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [readonly] 
 **Email** | **string** |  | 
+**Id** | **string** |  | [readonly] 
 **Resource** | **string** |  | 
 
 ## Methods
 
 ### NewInvitation
 
-`func NewInvitation(id string, email string, resource string, ) *Invitation`
+`func NewInvitation(email string, id string, resource string, ) *Invitation`
 
 NewInvitation instantiates a new Invitation object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewInvitationWithDefaults instantiates a new Invitation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Invitation) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Invitation) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Invitation) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetEmail
 
@@ -65,6 +45,26 @@ and a boolean to check if the value has been set.
 `func (o *Invitation) SetEmail(v string)`
 
 SetEmail sets Email field to given value.
+
+
+### GetId
+
+`func (o *Invitation) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Invitation) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Invitation) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetResource

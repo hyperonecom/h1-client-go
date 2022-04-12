@@ -48,7 +48,7 @@ import (
 func main() {
     organisationId := "organisationId_example" // string | Organisation Id
     policyId := "policyId_example" // string | Policy Id
-    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("Value_example") // IamActorOrGroup | 
+    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("TODO") // IamActorOrGroup | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -347,7 +347,7 @@ import (
 
 func main() {
     organisationId := "organisationId_example" // string | Organisation Id
-    iamProjectPolicyCreate := *openapiclient.NewIamProjectPolicyCreate("Name_example", "Role_example", "Resource_example") // IamProjectPolicyCreate | 
+    iamProjectPolicyCreate := *openapiclient.NewIamProjectPolicyCreate("Name_example", "Resource_example", "Role_example") // IamProjectPolicyCreate | 
     xIdempotencyKey := "xIdempotencyKey_example" // string | Idempotency key (optional)
     xDryRun := "xDryRun_example" // string | Dry run (optional)
 

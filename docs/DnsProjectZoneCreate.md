@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DnsName** | **string** |  | 
 **Name** | **string** |  | 
 **Service** | **string** |  | 
-**DnsName** | **string** |  | 
 **Source** | Pointer to [**ZoneSource**](ZoneSource.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewDnsProjectZoneCreate
 
-`func NewDnsProjectZoneCreate(name string, service string, dnsName string, ) *DnsProjectZoneCreate`
+`func NewDnsProjectZoneCreate(dnsName string, name string, service string, ) *DnsProjectZoneCreate`
 
 NewDnsProjectZoneCreate instantiates a new DnsProjectZoneCreate object
 This constructor will assign default values to properties that have it defined,
@@ -28,6 +28,26 @@ will change when the set of required properties is changed
 NewDnsProjectZoneCreateWithDefaults instantiates a new DnsProjectZoneCreate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDnsName
+
+`func (o *DnsProjectZoneCreate) GetDnsName() string`
+
+GetDnsName returns the DnsName field if non-nil, zero value otherwise.
+
+### GetDnsNameOk
+
+`func (o *DnsProjectZoneCreate) GetDnsNameOk() (*string, bool)`
+
+GetDnsNameOk returns a tuple with the DnsName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnsName
+
+`func (o *DnsProjectZoneCreate) SetDnsName(v string)`
+
+SetDnsName sets DnsName field to given value.
+
 
 ### GetName
 
@@ -67,26 +87,6 @@ and a boolean to check if the value has been set.
 `func (o *DnsProjectZoneCreate) SetService(v string)`
 
 SetService sets Service field to given value.
-
-
-### GetDnsName
-
-`func (o *DnsProjectZoneCreate) GetDnsName() string`
-
-GetDnsName returns the DnsName field if non-nil, zero value otherwise.
-
-### GetDnsNameOk
-
-`func (o *DnsProjectZoneCreate) GetDnsNameOk() (*string, bool)`
-
-GetDnsNameOk returns a tuple with the DnsName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDnsName
-
-`func (o *DnsProjectZoneCreate) SetDnsName(v string)`
-
-SetDnsName sets DnsName field to given value.
 
 
 ### GetSource

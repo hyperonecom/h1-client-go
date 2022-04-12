@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Application** | **string** |  | 
 **Id** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
-**Application** | **string** |  | 
 **Uri** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewIamUserAuthorization
 
-`func NewIamUserAuthorization(name string, application string, ) *IamUserAuthorization`
+`func NewIamUserAuthorization(application string, name string, ) *IamUserAuthorization`
 
 NewIamUserAuthorization instantiates a new IamUserAuthorization object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +27,26 @@ will change when the set of required properties is changed
 NewIamUserAuthorizationWithDefaults instantiates a new IamUserAuthorization object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplication
+
+`func (o *IamUserAuthorization) GetApplication() string`
+
+GetApplication returns the Application field if non-nil, zero value otherwise.
+
+### GetApplicationOk
+
+`func (o *IamUserAuthorization) GetApplicationOk() (*string, bool)`
+
+GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplication
+
+`func (o *IamUserAuthorization) SetApplication(v string)`
+
+SetApplication sets Application field to given value.
+
 
 ### GetId
 
@@ -71,26 +91,6 @@ and a boolean to check if the value has been set.
 `func (o *IamUserAuthorization) SetName(v string)`
 
 SetName sets Name field to given value.
-
-
-### GetApplication
-
-`func (o *IamUserAuthorization) GetApplication() string`
-
-GetApplication returns the Application field if non-nil, zero value otherwise.
-
-### GetApplicationOk
-
-`func (o *IamUserAuthorization) GetApplicationOk() (*string, bool)`
-
-GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplication
-
-`func (o *IamUserAuthorization) SetApplication(v string)`
-
-SetApplication sets Application field to given value.
 
 
 ### GetUri

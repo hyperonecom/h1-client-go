@@ -428,11 +428,17 @@ type ApiSupportProjectTicketListRequest struct {
 	ApiService *SupportProjectTicketApiService
 	projectId string
 	state *string
+	resource *string
 }
 
 // Filter by state
 func (r ApiSupportProjectTicketListRequest) State(state string) ApiSupportProjectTicketListRequest {
 	r.state = &state
+	return r
+}
+// Filter by resource
+func (r ApiSupportProjectTicketListRequest) Resource(resource string) ApiSupportProjectTicketListRequest {
+	r.resource = &resource
 	return r
 }
 
@@ -481,6 +487,9 @@ func (a *SupportProjectTicketApiService) SupportProjectTicketListExecute(r ApiSu
 
 	if r.state != nil {
 		localVarQueryParams.Add("state", parameterToString(*r.state, ""))
+	}
+	if r.resource != nil {
+		localVarQueryParams.Add("resource", parameterToString(*r.resource, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

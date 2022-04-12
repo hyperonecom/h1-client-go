@@ -16,8 +16,8 @@ import (
 
 // ServiceDisplayUnit struct for ServiceDisplayUnit
 type ServiceDisplayUnit struct {
-	Usage *string `json:"usage,omitempty"`
 	Billing *string `json:"billing,omitempty"`
+	Usage *string `json:"usage,omitempty"`
 }
 
 // NewServiceDisplayUnit instantiates a new ServiceDisplayUnit object
@@ -35,38 +35,6 @@ func NewServiceDisplayUnit() *ServiceDisplayUnit {
 func NewServiceDisplayUnitWithDefaults() *ServiceDisplayUnit {
 	this := ServiceDisplayUnit{}
 	return &this
-}
-
-// GetUsage returns the Usage field value if set, zero value otherwise.
-func (o *ServiceDisplayUnit) GetUsage() string {
-	if o == nil || o.Usage == nil {
-		var ret string
-		return ret
-	}
-	return *o.Usage
-}
-
-// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ServiceDisplayUnit) GetUsageOk() (*string, bool) {
-	if o == nil || o.Usage == nil {
-		return nil, false
-	}
-	return o.Usage, true
-}
-
-// HasUsage returns a boolean if a field has been set.
-func (o *ServiceDisplayUnit) HasUsage() bool {
-	if o != nil && o.Usage != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUsage gets a reference to the given string and assigns it to the Usage field.
-func (o *ServiceDisplayUnit) SetUsage(v string) {
-	o.Usage = &v
 }
 
 // GetBilling returns the Billing field value if set, zero value otherwise.
@@ -101,13 +69,45 @@ func (o *ServiceDisplayUnit) SetBilling(v string) {
 	o.Billing = &v
 }
 
+// GetUsage returns the Usage field value if set, zero value otherwise.
+func (o *ServiceDisplayUnit) GetUsage() string {
+	if o == nil || o.Usage == nil {
+		var ret string
+		return ret
+	}
+	return *o.Usage
+}
+
+// GetUsageOk returns a tuple with the Usage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDisplayUnit) GetUsageOk() (*string, bool) {
+	if o == nil || o.Usage == nil {
+		return nil, false
+	}
+	return o.Usage, true
+}
+
+// HasUsage returns a boolean if a field has been set.
+func (o *ServiceDisplayUnit) HasUsage() bool {
+	if o != nil && o.Usage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsage gets a reference to the given string and assigns it to the Usage field.
+func (o *ServiceDisplayUnit) SetUsage(v string) {
+	o.Usage = &v
+}
+
 func (o ServiceDisplayUnit) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Usage != nil {
-		toSerialize["usage"] = o.Usage
-	}
 	if o.Billing != nil {
 		toSerialize["billing"] = o.Billing
+	}
+	if o.Usage != nil {
+		toSerialize["usage"] = o.Usage
 	}
 	return json.Marshal(toSerialize)
 }

@@ -17,10 +17,10 @@ import (
 // Quota struct for Quota
 type Quota struct {
 	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Metric *QuotaMetric `json:"metric,omitempty"`
-	Usage *float32 `json:"usage,omitempty"`
 	Limit *QuotaLimit `json:"limit,omitempty"`
+	Metric *QuotaMetric `json:"metric,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Usage *float32 `json:"usage,omitempty"`
 }
 
 // NewQuota instantiates a new Quota object
@@ -72,36 +72,36 @@ func (o *Quota) SetId(v string) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Quota) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetLimit returns the Limit field value if set, zero value otherwise.
+func (o *Quota) GetLimit() QuotaLimit {
+	if o == nil || o.Limit == nil {
+		var ret QuotaLimit
 		return ret
 	}
-	return *o.Name
+	return *o.Limit
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Quota) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+func (o *Quota) GetLimitOk() (*QuotaLimit, bool) {
+	if o == nil || o.Limit == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Limit, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Quota) HasName() bool {
-	if o != nil && o.Name != nil {
+// HasLimit returns a boolean if a field has been set.
+func (o *Quota) HasLimit() bool {
+	if o != nil && o.Limit != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Quota) SetName(v string) {
-	o.Name = &v
+// SetLimit gets a reference to the given QuotaLimit and assigns it to the Limit field.
+func (o *Quota) SetLimit(v QuotaLimit) {
+	o.Limit = &v
 }
 
 // GetMetric returns the Metric field value if set, zero value otherwise.
@@ -136,6 +136,38 @@ func (o *Quota) SetMetric(v QuotaMetric) {
 	o.Metric = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Quota) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Quota) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Quota) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Quota) SetName(v string) {
+	o.Name = &v
+}
+
 // GetUsage returns the Usage field value if set, zero value otherwise.
 func (o *Quota) GetUsage() float32 {
 	if o == nil || o.Usage == nil {
@@ -168,54 +200,22 @@ func (o *Quota) SetUsage(v float32) {
 	o.Usage = &v
 }
 
-// GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *Quota) GetLimit() QuotaLimit {
-	if o == nil || o.Limit == nil {
-		var ret QuotaLimit
-		return ret
-	}
-	return *o.Limit
-}
-
-// GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Quota) GetLimitOk() (*QuotaLimit, bool) {
-	if o == nil || o.Limit == nil {
-		return nil, false
-	}
-	return o.Limit, true
-}
-
-// HasLimit returns a boolean if a field has been set.
-func (o *Quota) HasLimit() bool {
-	if o != nil && o.Limit != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLimit gets a reference to the given QuotaLimit and assigns it to the Limit field.
-func (o *Quota) SetLimit(v QuotaLimit) {
-	o.Limit = &v
-}
-
 func (o Quota) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
+	if o.Limit != nil {
+		toSerialize["limit"] = o.Limit
 	}
 	if o.Metric != nil {
 		toSerialize["metric"] = o.Metric
 	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
 	if o.Usage != nil {
 		toSerialize["usage"] = o.Usage
-	}
-	if o.Limit != nil {
-		toSerialize["limit"] = o.Limit
 	}
 	return json.Marshal(toSerialize)
 }

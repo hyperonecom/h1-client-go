@@ -16,9 +16,9 @@ import (
 
 // NetworkingProjectIpCreate struct for NetworkingProjectIpCreate
 type NetworkingProjectIpCreate struct {
+	Address *string `json:"address,omitempty"`
 	Network *string `json:"network,omitempty"`
 	PtrRecord *string `json:"ptrRecord,omitempty"`
-	Address *string `json:"address,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 }
 
@@ -37,6 +37,38 @@ func NewNetworkingProjectIpCreate() *NetworkingProjectIpCreate {
 func NewNetworkingProjectIpCreateWithDefaults() *NetworkingProjectIpCreate {
 	this := NetworkingProjectIpCreate{}
 	return &this
+}
+
+// GetAddress returns the Address field value if set, zero value otherwise.
+func (o *NetworkingProjectIpCreate) GetAddress() string {
+	if o == nil || o.Address == nil {
+		var ret string
+		return ret
+	}
+	return *o.Address
+}
+
+// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkingProjectIpCreate) GetAddressOk() (*string, bool) {
+	if o == nil || o.Address == nil {
+		return nil, false
+	}
+	return o.Address, true
+}
+
+// HasAddress returns a boolean if a field has been set.
+func (o *NetworkingProjectIpCreate) HasAddress() bool {
+	if o != nil && o.Address != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAddress gets a reference to the given string and assigns it to the Address field.
+func (o *NetworkingProjectIpCreate) SetAddress(v string) {
+	o.Address = &v
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
@@ -103,38 +135,6 @@ func (o *NetworkingProjectIpCreate) SetPtrRecord(v string) {
 	o.PtrRecord = &v
 }
 
-// GetAddress returns the Address field value if set, zero value otherwise.
-func (o *NetworkingProjectIpCreate) GetAddress() string {
-	if o == nil || o.Address == nil {
-		var ret string
-		return ret
-	}
-	return *o.Address
-}
-
-// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NetworkingProjectIpCreate) GetAddressOk() (*string, bool) {
-	if o == nil || o.Address == nil {
-		return nil, false
-	}
-	return o.Address, true
-}
-
-// HasAddress returns a boolean if a field has been set.
-func (o *NetworkingProjectIpCreate) HasAddress() bool {
-	if o != nil && o.Address != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAddress gets a reference to the given string and assigns it to the Address field.
-func (o *NetworkingProjectIpCreate) SetAddress(v string) {
-	o.Address = &v
-}
-
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *NetworkingProjectIpCreate) GetTag() []Tag {
 	if o == nil || o.Tag == nil {
@@ -169,14 +169,14 @@ func (o *NetworkingProjectIpCreate) SetTag(v []Tag) {
 
 func (o NetworkingProjectIpCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Address != nil {
+		toSerialize["address"] = o.Address
+	}
 	if o.Network != nil {
 		toSerialize["network"] = o.Network
 	}
 	if o.PtrRecord != nil {
 		toSerialize["ptrRecord"] = o.PtrRecord
-	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag

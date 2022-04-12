@@ -48,7 +48,7 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     groupId := "groupId_example" // string | Group Id
-    iamActor := *openapiclient.NewIamActor("Value_example") // IamActor | 
+    iamActor := *openapiclient.NewIamActor("TODO") // IamActor | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

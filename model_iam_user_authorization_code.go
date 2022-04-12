@@ -16,8 +16,8 @@ import (
 
 // IamUserAuthorizationCode struct for IamUserAuthorizationCode
 type IamUserAuthorizationCode struct {
-	Redirect string `json:"redirect"`
 	Nonce *string `json:"nonce,omitempty"`
+	Redirect string `json:"redirect"`
 }
 
 // NewIamUserAuthorizationCode instantiates a new IamUserAuthorizationCode object
@@ -36,30 +36,6 @@ func NewIamUserAuthorizationCode(redirect string) *IamUserAuthorizationCode {
 func NewIamUserAuthorizationCodeWithDefaults() *IamUserAuthorizationCode {
 	this := IamUserAuthorizationCode{}
 	return &this
-}
-
-// GetRedirect returns the Redirect field value
-func (o *IamUserAuthorizationCode) GetRedirect() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Redirect
-}
-
-// GetRedirectOk returns a tuple with the Redirect field value
-// and a boolean to check if the value has been set.
-func (o *IamUserAuthorizationCode) GetRedirectOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Redirect, true
-}
-
-// SetRedirect sets field value
-func (o *IamUserAuthorizationCode) SetRedirect(v string) {
-	o.Redirect = v
 }
 
 // GetNonce returns the Nonce field value if set, zero value otherwise.
@@ -94,13 +70,37 @@ func (o *IamUserAuthorizationCode) SetNonce(v string) {
 	o.Nonce = &v
 }
 
+// GetRedirect returns the Redirect field value
+func (o *IamUserAuthorizationCode) GetRedirect() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Redirect
+}
+
+// GetRedirectOk returns a tuple with the Redirect field value
+// and a boolean to check if the value has been set.
+func (o *IamUserAuthorizationCode) GetRedirectOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Redirect, true
+}
+
+// SetRedirect sets field value
+func (o *IamUserAuthorizationCode) SetRedirect(v string) {
+	o.Redirect = v
+}
+
 func (o IamUserAuthorizationCode) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["redirect"] = o.Redirect
-	}
 	if o.Nonce != nil {
 		toSerialize["nonce"] = o.Nonce
+	}
+	if true {
+		toSerialize["redirect"] = o.Redirect
 	}
 	return json.Marshal(toSerialize)
 }

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
 **Name** | **string** |  | 
-**Uri** | **string** |  | 
 **Properties** | Pointer to [**MetricProperties**](MetricProperties.md) |  | [optional] 
+**Uri** | **string** |  | 
 
 ## Methods
 
@@ -68,26 +68,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetUri
-
-`func (o *Metric) GetUri() string`
-
-GetUri returns the Uri field if non-nil, zero value otherwise.
-
-### GetUriOk
-
-`func (o *Metric) GetUriOk() (*string, bool)`
-
-GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUri
-
-`func (o *Metric) SetUri(v string)`
-
-SetUri sets Uri field to given value.
-
-
 ### GetProperties
 
 `func (o *Metric) GetProperties() MetricProperties`
@@ -112,6 +92,26 @@ SetProperties sets Properties field to given value.
 `func (o *Metric) HasProperties() bool`
 
 HasProperties returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Metric) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Metric) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Metric) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

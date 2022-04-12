@@ -16,21 +16,21 @@ import (
 
 // InvoiceBuyerAddress struct for InvoiceBuyerAddress
 type InvoiceBuyerAddress struct {
-	Street string `json:"street"`
-	Zipcode *string `json:"zipcode,omitempty"`
 	City string `json:"city"`
 	Country string `json:"country"`
+	Street string `json:"street"`
+	Zipcode *string `json:"zipcode,omitempty"`
 }
 
 // NewInvoiceBuyerAddress instantiates a new InvoiceBuyerAddress object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceBuyerAddress(street string, city string, country string) *InvoiceBuyerAddress {
+func NewInvoiceBuyerAddress(city string, country string, street string) *InvoiceBuyerAddress {
 	this := InvoiceBuyerAddress{}
-	this.Street = street
 	this.City = city
 	this.Country = country
+	this.Street = street
 	return &this
 }
 
@@ -40,6 +40,54 @@ func NewInvoiceBuyerAddress(street string, city string, country string) *Invoice
 func NewInvoiceBuyerAddressWithDefaults() *InvoiceBuyerAddress {
 	this := InvoiceBuyerAddress{}
 	return &this
+}
+
+// GetCity returns the City field value
+func (o *InvoiceBuyerAddress) GetCity() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.City
+}
+
+// GetCityOk returns a tuple with the City field value
+// and a boolean to check if the value has been set.
+func (o *InvoiceBuyerAddress) GetCityOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.City, true
+}
+
+// SetCity sets field value
+func (o *InvoiceBuyerAddress) SetCity(v string) {
+	o.City = v
+}
+
+// GetCountry returns the Country field value
+func (o *InvoiceBuyerAddress) GetCountry() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Country
+}
+
+// GetCountryOk returns a tuple with the Country field value
+// and a boolean to check if the value has been set.
+func (o *InvoiceBuyerAddress) GetCountryOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return &o.Country, true
+}
+
+// SetCountry sets field value
+func (o *InvoiceBuyerAddress) SetCountry(v string) {
+	o.Country = v
 }
 
 // GetStreet returns the Street field value
@@ -98,67 +146,19 @@ func (o *InvoiceBuyerAddress) SetZipcode(v string) {
 	o.Zipcode = &v
 }
 
-// GetCity returns the City field value
-func (o *InvoiceBuyerAddress) GetCity() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.City
-}
-
-// GetCityOk returns a tuple with the City field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceBuyerAddress) GetCityOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.City, true
-}
-
-// SetCity sets field value
-func (o *InvoiceBuyerAddress) SetCity(v string) {
-	o.City = v
-}
-
-// GetCountry returns the Country field value
-func (o *InvoiceBuyerAddress) GetCountry() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Country
-}
-
-// GetCountryOk returns a tuple with the Country field value
-// and a boolean to check if the value has been set.
-func (o *InvoiceBuyerAddress) GetCountryOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return &o.Country, true
-}
-
-// SetCountry sets field value
-func (o *InvoiceBuyerAddress) SetCountry(v string) {
-	o.Country = v
-}
-
 func (o InvoiceBuyerAddress) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["street"] = o.Street
-	}
-	if o.Zipcode != nil {
-		toSerialize["zipcode"] = o.Zipcode
-	}
 	if true {
 		toSerialize["city"] = o.City
 	}
 	if true {
 		toSerialize["country"] = o.Country
+	}
+	if true {
+		toSerialize["street"] = o.Street
+	}
+	if o.Zipcode != nil {
+		toSerialize["zipcode"] = o.Zipcode
 	}
 	return json.Marshal(toSerialize)
 }

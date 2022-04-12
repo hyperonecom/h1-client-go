@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Flavour** | Pointer to **string** |  | [optional] 
-**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**ModifiedBy** | Pointer to **string** |  | [optional] 
-**CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **CreatedBy** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **string** |  | [optional] 
+**CreatedOn** | Pointer to **time.Time** |  | [optional] 
+**Flavour** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
+**ModifiedBy** | Pointer to **string** |  | [optional] 
+**ModifiedOn** | Pointer to **time.Time** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
+**State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 
 ## Methods
 
 ### NewApplication
 
-`func NewApplication() *Application`
+`func NewApplication(id string, ) *Application`
 
 NewApplication instantiates a new Application object
 This constructor will assign default values to properties that have it defined,
@@ -33,156 +33,6 @@ will change when the set of required properties is changed
 NewApplicationWithDefaults instantiates a new Application object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *Application) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *Application) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *Application) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *Application) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *Application) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Application) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Application) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *Application) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetFlavour
-
-`func (o *Application) GetFlavour() string`
-
-GetFlavour returns the Flavour field if non-nil, zero value otherwise.
-
-### GetFlavourOk
-
-`func (o *Application) GetFlavourOk() (*string, bool)`
-
-GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFlavour
-
-`func (o *Application) SetFlavour(v string)`
-
-SetFlavour sets Flavour field to given value.
-
-### HasFlavour
-
-`func (o *Application) HasFlavour() bool`
-
-HasFlavour returns a boolean if a field has been set.
-
-### GetModifiedOn
-
-`func (o *Application) GetModifiedOn() time.Time`
-
-GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
-
-### GetModifiedOnOk
-
-`func (o *Application) GetModifiedOnOk() (*time.Time, bool)`
-
-GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedOn
-
-`func (o *Application) SetModifiedOn(v time.Time)`
-
-SetModifiedOn sets ModifiedOn field to given value.
-
-### HasModifiedOn
-
-`func (o *Application) HasModifiedOn() bool`
-
-HasModifiedOn returns a boolean if a field has been set.
-
-### GetModifiedBy
-
-`func (o *Application) GetModifiedBy() string`
-
-GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
-
-### GetModifiedByOk
-
-`func (o *Application) GetModifiedByOk() (*string, bool)`
-
-GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetModifiedBy
-
-`func (o *Application) SetModifiedBy(v string)`
-
-SetModifiedBy sets ModifiedBy field to given value.
-
-### HasModifiedBy
-
-`func (o *Application) HasModifiedBy() bool`
-
-HasModifiedBy returns a boolean if a field has been set.
-
-### GetCreatedOn
-
-`func (o *Application) GetCreatedOn() time.Time`
-
-GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
-
-### GetCreatedOnOk
-
-`func (o *Application) GetCreatedOnOk() (*time.Time, bool)`
-
-GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedOn
-
-`func (o *Application) SetCreatedOn(v time.Time)`
-
-SetCreatedOn sets CreatedOn field to given value.
-
-### HasCreatedOn
-
-`func (o *Application) HasCreatedOn() bool`
-
-HasCreatedOn returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
@@ -209,30 +59,150 @@ SetCreatedBy sets CreatedBy field to given value.
 
 HasCreatedBy returns a boolean if a field has been set.
 
-### GetState
+### GetCreatedOn
 
-`func (o *Application) GetState() string`
+`func (o *Application) GetCreatedOn() time.Time`
 
-GetState returns the State field if non-nil, zero value otherwise.
+GetCreatedOn returns the CreatedOn field if non-nil, zero value otherwise.
 
-### GetStateOk
+### GetCreatedOnOk
 
-`func (o *Application) GetStateOk() (*string, bool)`
+`func (o *Application) GetCreatedOnOk() (*time.Time, bool)`
 
-GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+GetCreatedOnOk returns a tuple with the CreatedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetState
+### SetCreatedOn
 
-`func (o *Application) SetState(v string)`
+`func (o *Application) SetCreatedOn(v time.Time)`
 
-SetState sets State field to given value.
+SetCreatedOn sets CreatedOn field to given value.
 
-### HasState
+### HasCreatedOn
 
-`func (o *Application) HasState() bool`
+`func (o *Application) HasCreatedOn() bool`
 
-HasState returns a boolean if a field has been set.
+HasCreatedOn returns a boolean if a field has been set.
+
+### GetFlavour
+
+`func (o *Application) GetFlavour() string`
+
+GetFlavour returns the Flavour field if non-nil, zero value otherwise.
+
+### GetFlavourOk
+
+`func (o *Application) GetFlavourOk() (*string, bool)`
+
+GetFlavourOk returns a tuple with the Flavour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlavour
+
+`func (o *Application) SetFlavour(v string)`
+
+SetFlavour sets Flavour field to given value.
+
+### HasFlavour
+
+`func (o *Application) HasFlavour() bool`
+
+HasFlavour returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *Application) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *Application) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *Application) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetModifiedBy
+
+`func (o *Application) GetModifiedBy() string`
+
+GetModifiedBy returns the ModifiedBy field if non-nil, zero value otherwise.
+
+### GetModifiedByOk
+
+`func (o *Application) GetModifiedByOk() (*string, bool)`
+
+GetModifiedByOk returns a tuple with the ModifiedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedBy
+
+`func (o *Application) SetModifiedBy(v string)`
+
+SetModifiedBy sets ModifiedBy field to given value.
+
+### HasModifiedBy
+
+`func (o *Application) HasModifiedBy() bool`
+
+HasModifiedBy returns a boolean if a field has been set.
+
+### GetModifiedOn
+
+`func (o *Application) GetModifiedOn() time.Time`
+
+GetModifiedOn returns the ModifiedOn field if non-nil, zero value otherwise.
+
+### GetModifiedOnOk
+
+`func (o *Application) GetModifiedOnOk() (*time.Time, bool)`
+
+GetModifiedOnOk returns a tuple with the ModifiedOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedOn
+
+`func (o *Application) SetModifiedOn(v time.Time)`
+
+SetModifiedOn sets ModifiedOn field to given value.
+
+### HasModifiedOn
+
+`func (o *Application) HasModifiedOn() bool`
+
+HasModifiedOn returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *Application) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *Application) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *Application) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *Application) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetProject
 
@@ -258,6 +228,31 @@ SetProject sets Project field to given value.
 `func (o *Application) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *Application) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *Application) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *Application) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *Application) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetTag
 

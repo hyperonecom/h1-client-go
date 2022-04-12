@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Company** | **string** |  | 
 **Address** | Pointer to [**InvoiceSellerAddress**](InvoiceSellerAddress.md) |  | [optional] 
-**Nip** | **string** |  | 
+**Company** | **string** |  | 
 **Iban** | **string** |  | 
+**Nip** | **string** |  | 
 
 ## Methods
 
 ### NewProformaSeller
 
-`func NewProformaSeller(company string, nip string, iban string, ) *ProformaSeller`
+`func NewProformaSeller(company string, iban string, nip string, ) *ProformaSeller`
 
 NewProformaSeller instantiates a new ProformaSeller object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewProformaSellerWithDefaults instantiates a new ProformaSeller object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCompany
-
-`func (o *ProformaSeller) GetCompany() string`
-
-GetCompany returns the Company field if non-nil, zero value otherwise.
-
-### GetCompanyOk
-
-`func (o *ProformaSeller) GetCompanyOk() (*string, bool)`
-
-GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCompany
-
-`func (o *ProformaSeller) SetCompany(v string)`
-
-SetCompany sets Company field to given value.
-
 
 ### GetAddress
 
@@ -73,24 +53,24 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
-### GetNip
+### GetCompany
 
-`func (o *ProformaSeller) GetNip() string`
+`func (o *ProformaSeller) GetCompany() string`
 
-GetNip returns the Nip field if non-nil, zero value otherwise.
+GetCompany returns the Company field if non-nil, zero value otherwise.
 
-### GetNipOk
+### GetCompanyOk
 
-`func (o *ProformaSeller) GetNipOk() (*string, bool)`
+`func (o *ProformaSeller) GetCompanyOk() (*string, bool)`
 
-GetNipOk returns a tuple with the Nip field if it's non-nil, zero value otherwise
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNip
+### SetCompany
 
-`func (o *ProformaSeller) SetNip(v string)`
+`func (o *ProformaSeller) SetCompany(v string)`
 
-SetNip sets Nip field to given value.
+SetCompany sets Company field to given value.
 
 
 ### GetIban
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *ProformaSeller) SetIban(v string)`
 
 SetIban sets Iban field to given value.
+
+
+### GetNip
+
+`func (o *ProformaSeller) GetNip() string`
+
+GetNip returns the Nip field if non-nil, zero value otherwise.
+
+### GetNipOk
+
+`func (o *ProformaSeller) GetNipOk() (*string, bool)`
+
+GetNipOk returns a tuple with the Nip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNip
+
+`func (o *ProformaSeller) SetNip(v string)`
+
+SetNip sets Nip field to given value.
 
 
 

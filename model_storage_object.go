@@ -17,10 +17,10 @@ import (
 
 // StorageObject struct for StorageObject
 type StorageObject struct {
+	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Size *float32 `json:"size,omitempty"`
-	CreatedOn *time.Time `json:"createdOn,omitempty"`
 }
 
 // NewStorageObject instantiates a new StorageObject object
@@ -38,6 +38,38 @@ func NewStorageObject() *StorageObject {
 func NewStorageObjectWithDefaults() *StorageObject {
 	this := StorageObject{}
 	return &this
+}
+
+// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
+func (o *StorageObject) GetCreatedOn() time.Time {
+	if o == nil || o.CreatedOn == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedOn
+}
+
+// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageObject) GetCreatedOnOk() (*time.Time, bool) {
+	if o == nil || o.CreatedOn == nil {
+		return nil, false
+	}
+	return o.CreatedOn, true
+}
+
+// HasCreatedOn returns a boolean if a field has been set.
+func (o *StorageObject) HasCreatedOn() bool {
+	if o != nil && o.CreatedOn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
+func (o *StorageObject) SetCreatedOn(v time.Time) {
+	o.CreatedOn = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -136,40 +168,11 @@ func (o *StorageObject) SetSize(v float32) {
 	o.Size = &v
 }
 
-// GetCreatedOn returns the CreatedOn field value if set, zero value otherwise.
-func (o *StorageObject) GetCreatedOn() time.Time {
-	if o == nil || o.CreatedOn == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedOn
-}
-
-// GetCreatedOnOk returns a tuple with the CreatedOn field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StorageObject) GetCreatedOnOk() (*time.Time, bool) {
-	if o == nil || o.CreatedOn == nil {
-		return nil, false
-	}
-	return o.CreatedOn, true
-}
-
-// HasCreatedOn returns a boolean if a field has been set.
-func (o *StorageObject) HasCreatedOn() bool {
-	if o != nil && o.CreatedOn != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedOn gets a reference to the given time.Time and assigns it to the CreatedOn field.
-func (o *StorageObject) SetCreatedOn(v time.Time) {
-	o.CreatedOn = &v
-}
-
 func (o StorageObject) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CreatedOn != nil {
+		toSerialize["createdOn"] = o.CreatedOn
+	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
@@ -178,9 +181,6 @@ func (o StorageObject) MarshalJSON() ([]byte, error) {
 	}
 	if o.Size != nil {
 		toSerialize["size"] = o.Size
-	}
-	if o.CreatedOn != nil {
-		toSerialize["createdOn"] = o.CreatedOn
 	}
 	return json.Marshal(toSerialize)
 }
