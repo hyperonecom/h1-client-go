@@ -34613,17 +34613,6 @@ components:
           title: Actor id
           type: string
         value:
-          oneOf:
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/sa\/[a-f0-9]{24}$/
-            title: sa
-            x-resource:
-              kind: iam/sa
-          - pattern: /^\/iam\/user\/.+@.+..+$/
-            title: user
-          - pattern: /^me$/
-            title: me
-            x-const: me
           title: Actor value
           type: string
       required:
@@ -34644,25 +34633,6 @@ components:
           title: Actor_or_group id
           type: string
         value:
-          oneOf:
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/sa\/[a-f0-9]{24}$/
-            title: sa
-            x-resource:
-              kind: iam/sa
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/group\/[a-f0-9]{24}$/
-            title: group
-            x-resource:
-              kind: iam/group
-          - pattern: /^\/iam\/user\/.+@.+..+$/
-            title: user
-          - format: email
-            pattern: ^.+@.+/.+$
-            title: email
-          - pattern: /^me$/
-            title: me
-            x-const: me
           title: Actor_or_group value
           type: string
       required:
