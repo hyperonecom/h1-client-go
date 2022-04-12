@@ -37730,22 +37730,6 @@ components:
           title: Disk size
           type: number
         source:
-          oneOf:
-          - format: uri
-            pattern: ^/storage/
-            title: disk
-            x-permissions:
-            - storage/disk/use
-            x-resource:
-              kind: storage/disk
-              state:
-              - Attached
-              - Detached
-          - format: uri-upload
-            pattern: ^http
-            title: file
-            x-file:
-              accept: .vhdx
           title: Disk source
           type: string
         tag:
