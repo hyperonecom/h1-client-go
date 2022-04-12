@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ## SupportProjectTicketList
 
-> []Ticket SupportProjectTicketList(ctx, projectId).State(state).Resource(resource).Execute()
+> []Ticket SupportProjectTicketList(ctx, projectId).State(state).Execute()
 
 List support/ticket
 
@@ -263,11 +263,10 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     state := "state_example" // string | Filter by state (optional)
-    resource := "resource_example" // string | Filter by resource (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Resource(resource).Execute()
+    resp, r, err := apiClient.SupportProjectTicketApi.SupportProjectTicketList(context.Background(), projectId).State(state).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SupportProjectTicketApi.SupportProjectTicketList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,7 +293,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **state** | **string** | Filter by state | 
- **resource** | **string** | Filter by resource | 
 
 ### Return type
 

@@ -20,7 +20,7 @@ type Service struct {
 	Billing *ServiceBilling `json:"billing,omitempty"`
 	Data *map[string]string `json:"data,omitempty"`
 	Display *ServiceDisplay `json:"display,omitempty"`
-	Id string `json:"id"`
+	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Resource *string `json:"resource,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -31,9 +31,8 @@ type Service struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewService(id string) *Service {
+func NewService() *Service {
 	this := Service{}
-	this.Id = id
 	return &this
 }
 
@@ -173,28 +172,36 @@ func (o *Service) SetDisplay(v ServiceDisplay) {
 	o.Display = &v
 }
 
-// GetId returns the Id field value
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *Service) GetId() string {
-	if o == nil {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Service) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
+// HasId returns a boolean if a field has been set.
+func (o *Service) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *Service) SetId(v string) {
-	o.Id = v
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -339,7 +346,7 @@ func (o Service) MarshalJSON() ([]byte, error) {
 	if o.Display != nil {
 		toSerialize["display"] = o.Display
 	}
-	if true {
+	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {

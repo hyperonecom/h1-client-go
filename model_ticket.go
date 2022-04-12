@@ -23,7 +23,6 @@ type Ticket struct {
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
 	Project *string `json:"project,omitempty"`
-	Resource *string `json:"resource,omitempty"`
 	State *string `json:"state,omitempty"`
 	Subject *string `json:"subject,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -239,38 +238,6 @@ func (o *Ticket) SetProject(v string) {
 	o.Project = &v
 }
 
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *Ticket) GetResource() string {
-	if o == nil || o.Resource == nil {
-		var ret string
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Ticket) GetResourceOk() (*string, bool) {
-	if o == nil || o.Resource == nil {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// HasResource returns a boolean if a field has been set.
-func (o *Ticket) HasResource() bool {
-	if o != nil && o.Resource != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *Ticket) SetResource(v string) {
-	o.Resource = &v
-}
-
 // GetState returns the State field value if set, zero value otherwise.
 func (o *Ticket) GetState() string {
 	if o == nil || o.State == nil {
@@ -418,9 +385,6 @@ func (o Ticket) MarshalJSON() ([]byte, error) {
 	}
 	if o.Project != nil {
 		toSerialize["project"] = o.Project
-	}
-	if o.Resource != nil {
-		toSerialize["resource"] = o.Resource
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**Id** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **Memory** | Pointer to **float32** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewVm
 
-`func NewVm(id string, ) *Vm`
+`func NewVm() *Vm`
 
 NewVm instantiates a new Vm object
 This constructor will assign default values to properties that have it defined,
@@ -182,6 +182,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *Vm) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetMemory
 

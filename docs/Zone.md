@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DnsName** | Pointer to **string** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**Id** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewZone
 
-`func NewZone(id string, ) *Zone`
+`func NewZone() *Zone`
 
 NewZone instantiates a new Zone object
 This constructor will assign default values to properties that have it defined,
@@ -182,6 +182,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *Zone) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetModifiedBy
 

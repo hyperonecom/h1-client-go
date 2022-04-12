@@ -185,7 +185,6 @@ docs/NetworkingProjectNetworkApi.md
 docs/NetworkingProjectNetworkCreate.md
 docs/NetworkingProjectNetworkUpdate.md
 docs/NetworkingRule.md
-docs/Notification.md
 docs/Organisation.md
 docs/OrganisationBilling.md
 docs/OrganisationBilling1.md
@@ -408,7 +407,6 @@ model_networking_project_netgw_update.go
 model_networking_project_network_create.go
 model_networking_project_network_update.go
 model_networking_rule.go
-model_notification.go
 model_organisation.go
 model_organisation_billing.go
 model_organisation_billing_1.go

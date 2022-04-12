@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Billing** | Pointer to [**ServiceBilling**](ServiceBilling.md) |  | [optional] 
 **Data** | Pointer to **map[string]string** |  | [optional] 
 **Display** | Pointer to [**ServiceDisplay**](ServiceDisplay.md) |  | [optional] 
-**Id** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewService
 
-`func NewService(id string, ) *Service`
+`func NewService() *Service`
 
 NewService instantiates a new Service object
 This constructor will assign default values to properties that have it defined,
@@ -152,6 +152,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *Service) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 

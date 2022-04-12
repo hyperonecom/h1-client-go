@@ -17,7 +17,6 @@ import (
 // SupportProjectTicketCreate struct for SupportProjectTicketCreate
 type SupportProjectTicketCreate struct {
 	Message string `json:"message"`
-	Resource *string `json:"resource,omitempty"`
 	Subject string `json:"subject"`
 	Type string `json:"type"`
 }
@@ -64,38 +63,6 @@ func (o *SupportProjectTicketCreate) GetMessageOk() (*string, bool) {
 // SetMessage sets field value
 func (o *SupportProjectTicketCreate) SetMessage(v string) {
 	o.Message = v
-}
-
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *SupportProjectTicketCreate) GetResource() string {
-	if o == nil || o.Resource == nil {
-		var ret string
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SupportProjectTicketCreate) GetResourceOk() (*string, bool) {
-	if o == nil || o.Resource == nil {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// HasResource returns a boolean if a field has been set.
-func (o *SupportProjectTicketCreate) HasResource() bool {
-	if o != nil && o.Resource != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *SupportProjectTicketCreate) SetResource(v string) {
-	o.Resource = &v
 }
 
 // GetSubject returns the Subject field value
@@ -150,9 +117,6 @@ func (o SupportProjectTicketCreate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
 		toSerialize["message"] = o.Message
-	}
-	if o.Resource != nil {
-		toSerialize["resource"] = o.Resource
 	}
 	if true {
 		toSerialize["subject"] = o.Subject

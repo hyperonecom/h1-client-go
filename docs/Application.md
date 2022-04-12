@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
-**Id** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewApplication
 
-`func NewApplication(id string, ) *Application`
+`func NewApplication() *Application`
 
 NewApplication instantiates a new Application object
 This constructor will assign default values to properties that have it defined,
@@ -128,6 +128,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *Application) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetModifiedBy
 

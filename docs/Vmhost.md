@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**Id** | **string** |  | 
+**Id** | Pointer to **string** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewVmhost
 
-`func NewVmhost(id string, ) *Vmhost`
+`func NewVmhost() *Vmhost`
 
 NewVmhost instantiates a new Vmhost object
 This constructor will assign default values to properties that have it defined,
@@ -156,6 +156,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *Vmhost) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetModifiedBy
 

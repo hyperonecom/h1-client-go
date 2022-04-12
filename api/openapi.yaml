@@ -266,10 +266,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -493,10 +489,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -1334,10 +1326,6 @@ paths:
                 assigned.id: $request.path.vmId
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -3372,10 +3360,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -5313,10 +5297,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -7246,90 +7226,6 @@ paths:
       - iam_organisation
       x-permissions:
       - iam/organisation.invoice/download
-  /iam/organisation/{organisationId}/notification:
-    get:
-      description: List iam/organisation.notification
-      operationId: iam_organisation_notification_list
-      parameters:
-      - description: Organisation Id
-        explode: false
-        in: path
-        name: organisationId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/notification'
-                title: Notification collection
-                type: array
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: List iam/organisation.notification
-      tags:
-      - iam_organisation
-      x-permissions:
-      - iam/organisation.notification/list
-  /iam/organisation/{organisationId}/notification/{notificationId}:
-    get:
-      description: Get iam/organisation.notification
-      operationId: iam_organisation_notification_get
-      parameters:
-      - description: Organisation Id
-        explode: false
-        in: path
-        name: organisationId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: notificationId
-        explode: false
-        in: path
-        name: notificationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/notification'
-          description: successful operation
-          links:
-            policy:
-              operationId: iam_organisation_policy_list
-              parameters:
-                resource: $uri
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Get iam/organisation.notification
-      tags:
-      - iam_organisation
-      x-permissions:
-      - iam/organisation.notification/get
   /iam/organisation/{organisationId}/ownership:
     get:
       description: List iam/organisation.ownership
@@ -13043,90 +12939,6 @@ paths:
       - iam_project
       x-permissions:
       - iam/project.invoice/list
-  /iam/project/{projectId}/notification:
-    get:
-      description: List iam/project.notification
-      operationId: iam_project_notification_list
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/notification'
-                title: Notification collection
-                type: array
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: List iam/project.notification
-      tags:
-      - iam_project
-      x-permissions:
-      - iam/project.notification/list
-  /iam/project/{projectId}/notification/{notificationId}:
-    get:
-      description: Get iam/project.notification
-      operationId: iam_project_notification_get
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: notificationId
-        explode: false
-        in: path
-        name: notificationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/notification'
-          description: successful operation
-          links:
-            policy:
-              operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Get iam/project.notification
-      tags:
-      - iam_project
-      x-permissions:
-      - iam/project.notification/get
   /iam/project/{projectId}/ownership:
     get:
       description: List iam/project.ownership
@@ -14450,130 +14262,6 @@ paths:
       summary: Update iam/project.limit
       tags:
       - iam_project
-  /iam/project/{projectId}/reconciliation:
-    get:
-      description: List iam/project.reconciliation
-      operationId: iam_project_reconciliation_list
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/reconciliation'
-                title: Reconciliation collection
-                type: array
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: List iam/project.reconciliation
-      tags:
-      - iam_project
-      x-permissions:
-      - iam/project.reconciliation/list
-  /iam/project/{projectId}/reconciliation/{reconciliationId}:
-    get:
-      description: Get iam/project.reconciliation
-      operationId: iam_project_reconciliation_get
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: reconciliationId
-        explode: false
-        in: path
-        name: reconciliationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/reconciliation'
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: Get iam/project.reconciliation
-      tags:
-      - iam_project
-      x-permissions:
-      - iam/project.reconciliation/get
-  /iam/project/{projectId}/reconciliation/{reconciliationId}/report:
-    get:
-      description: List iam/project.report
-      operationId: iam_project_reconciliation_report_list
-      parameters:
-      - description: Project Id
-        explode: false
-        in: path
-        name: projectId
-        required: true
-        schema:
-          format: ObjectId
-          type: string
-        style: simple
-      - description: reconciliationId
-        explode: false
-        in: path
-        name: reconciliationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/reconciliation.target'
-                title: Reconciliation.target collection
-                type: array
-          description: successful operation
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_400'
-          description: Bad Request
-        "401":
-          description: Access token is missing or invalid
-      summary: List iam/project.report
-      tags:
-      - iam_project
-      x-permissions:
-      - iam/project.report/list
   /iam/project/{projectId}/role:
     get:
       description: List role
@@ -17204,15 +16892,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/user'
           description: successful operation
-          links:
-            organisation:
-              operationId: iam_organisation_list
-              parameters:
-                actor: $uri
-            project:
-              operationId: iam_project_list
-              parameters:
-                actor: $uri
         "400":
           content:
             application/json:
@@ -18116,10 +17795,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -19448,10 +19123,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -21002,10 +20673,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -22190,10 +21857,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -23249,10 +22912,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -24268,10 +23927,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -25128,10 +24783,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -27033,10 +26684,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -27609,10 +27256,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -28995,10 +28638,6 @@ paths:
               operationId: iam_project_policy_list
               parameters:
                 resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
-              parameters:
-                resource: $uri
         "400":
           content:
             application/json:
@@ -29928,10 +29567,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -30951,10 +30586,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -32487,18 +32118,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: Filter by resource
-        explode: true
-        in: query
-        name: resource
-        required: false
-        schema:
-          format: uri
-          pattern: ^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$
-          type: string
-          x-resource:
-            kind: '*'
-        style: form
       responses:
         "200":
           content:
@@ -32616,10 +32235,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -32941,10 +32556,6 @@ paths:
           links:
             policy:
               operationId: iam_project_policy_list
-              parameters:
-                resource: $uri
-            ticket:
-              operationId: support_project_ticket_list
               parameters:
                 resource: $uri
         "400":
@@ -33889,8 +33500,6 @@ components:
           - provider/agent.tag/list
         type:
           type: string
-      required:
-      - id
       type: object
     agent.credential:
       example:
@@ -33999,8 +33608,6 @@ components:
           type: array
           x-permissions:
           - iam/application.tag/list
-      required:
-      - id
       type: object
     application.credential:
       example:
@@ -34238,8 +33845,6 @@ components:
           type: string
           x-resource:
             kind: storage/bucket
-      required:
-      - id
       type: object
     compute_project_replica_create:
       properties:
@@ -34628,8 +34233,6 @@ components:
           type: string
           x-resource:
             kind: compute/vm
-      required:
-      - id
       type: object
     dns.record:
       example:
@@ -34919,8 +34522,6 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
-      required:
-      - id
       type: object
     group:
       example:
@@ -34983,8 +34584,6 @@ components:
           - iam/group.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     hdd:
       properties:
@@ -35024,6 +34623,7 @@ components:
             title: user
           - pattern: /^me$/
             title: me
+            x-const: me
           title: Actor value
           type: string
       required:
@@ -35062,6 +34662,7 @@ components:
             title: email
           - pattern: /^me$/
             title: me
+            x-const: me
           title: Actor_or_group value
           type: string
       required:
@@ -35675,8 +35276,6 @@ components:
           type: string
           x-resource:
             kind: storage/image
-      required:
-      - id
       type: object
     insight_project_journal_create:
       properties:
@@ -35965,8 +35564,6 @@ components:
           type: string
           x-resource:
             kind: networking/ip
-      required:
-      - id
       type: object
     iso:
       example:
@@ -36043,8 +35640,6 @@ components:
           type: string
           x-resource:
             kind: storage/iso
-      required:
-      - id
       type: object
     journal:
       example:
@@ -36120,8 +35715,6 @@ components:
           type: string
           x-resource:
             kind: insight/journal
-      required:
-      - id
       type: object
     journal.credential:
       example:
@@ -36292,8 +35885,6 @@ components:
           - networking/netadp.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     netgw:
       example:
@@ -36373,8 +35964,6 @@ components:
           type: string
           x-resource:
             kind: networking/netgw
-      required:
-      - id
       type: object
     network:
       example:
@@ -36471,8 +36060,6 @@ components:
           type: string
           x-resource:
             kind: networking/network
-      required:
-      - id
       type: object
     networking.rule:
       example:
@@ -36801,26 +36388,6 @@ components:
           x-permissions:
           - networking/network.name/update
       type: object
-    notification:
-      example:
-        name: name
-        description: description
-        id: id
-      properties:
-        description:
-          title: Notification description
-          type: string
-        id:
-          title: Notification id
-          type: string
-        name:
-          title: Notification name
-          type: string
-      required:
-      - description
-      - id
-      - name
-      type: object
     organisation:
       example:
         bankAccount: bankAccount
@@ -36879,8 +36446,6 @@ components:
           type: string
         uri:
           type: string
-      required:
-      - id
       type: object
     organisation.billing:
       properties:
@@ -36974,8 +36539,6 @@ components:
           type: string
         uri:
           type: string
-      required:
-      - id
       type: object
     point:
       example:
@@ -37074,8 +36637,6 @@ components:
           - iam/policy.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     proforma:
       example:
@@ -37224,8 +36785,6 @@ components:
           - iam/project.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     project.billing:
       properties:
@@ -37355,8 +36914,6 @@ components:
         state:
           title: Resource state
           type: string
-      required:
-      - id
       type: object
     provider.agent.resource.event:
       example:
@@ -37481,10 +37038,6 @@ components:
           type: number
       type: object
     reconciliation:
-      example:
-        profile: profile
-        name: name
-        id: id
       properties:
         id:
           readOnly: true
@@ -37500,32 +37053,6 @@ components:
           type: string
       type: object
     reconciliation.target:
-      example:
-        cost: 0.8008281904610115
-        resource:
-        - usage: 5.962133916683182
-          id: id
-          plan:
-          - cost: 6.027456183070403
-            usage: 1.4658129805029452
-            id: id
-          - cost: 6.027456183070403
-            usage: 1.4658129805029452
-            id: id
-        - usage: 5.962133916683182
-          id: id
-          plan:
-          - cost: 6.027456183070403
-            usage: 1.4658129805029452
-            id: id
-          - cost: 6.027456183070403
-            usage: 1.4658129805029452
-            id: id
-        kind: kind
-        profile: profile
-        usage: 5.637376656633329
-        id: id
-        measurement: measurement
       properties:
         cost:
           readOnly: true
@@ -37629,8 +37156,6 @@ components:
           type: string
           x-resource:
             kind: container/registry
-      required:
-      - id
       type: object
     registry.credential:
       example:
@@ -37758,8 +37283,6 @@ components:
           type: string
           x-resource:
             kind: compute/replica
-      required:
-      - id
       type: object
     resource:
       example:
@@ -37921,8 +37444,6 @@ components:
           - iam/role.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     sa:
       example:
@@ -37985,8 +37506,6 @@ components:
           - iam/sa.tag/list
         uri:
           type: string
-      required:
-      - id
       type: object
     sa.credential:
       example:
@@ -38098,8 +37617,6 @@ components:
           type: string
         uri:
           type: string
-      required:
-      - id
       type: object
     storage.object:
       example:
@@ -38215,8 +37732,6 @@ components:
         uri:
           title: Snapshot uri
           type: string
-      required:
-      - id
       type: object
     storage_project_bucket_upload:
       properties:
@@ -38578,13 +38093,6 @@ components:
           format: text
           title: Ticket message
           type: string
-        resource:
-          format: uri
-          pattern: ^\/(?<namespace>[a-z]+)(\/(?<location>[a-z0-9-]+))?\/(?<parent>(project|organisation))\/(?<parentId>[a-f0-9]{24})(\/(?<type>[a-z]+))?(\/(?<resource>[a-f0-9]{24}))?(?<subresource>(\/[a-z0-9]+)+)?$
-          title: Ticket resource
-          type: string
-          x-resource:
-            kind: '*'
         subject:
           title: Ticket subject
           type: string
@@ -38630,7 +38138,6 @@ components:
       example:
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: https://openapi-generator.tech
-        resource: resource
         subject: subject
         project: https://openapi-generator.tech
         modifiedBy: https://openapi-generator.tech
@@ -38663,8 +38170,6 @@ components:
           type: string
           x-resource:
             kind: iam/project
-        resource:
-          type: string
         state:
           enum:
           - open
@@ -38873,8 +38378,6 @@ components:
           type: string
           x-resource:
             kind: storage/vault
-      required:
-      - id
       type: object
     vault.credential:
       example:
@@ -39023,8 +38526,6 @@ components:
         userMetadata:
           format: base64
           type: string
-      required:
-      - id
       type: object
     vmhost:
       example:
@@ -39102,8 +38603,6 @@ components:
           type: string
           x-resource:
             kind: vmhost/instance
-      required:
-      - id
       type: object
     zone:
       example:
@@ -39184,8 +38683,6 @@ components:
           type: string
           x-resource:
             kind: dns/zone
-      required:
-      - id
       type: object
     inline_response_400:
       properties:
@@ -39853,10 +39350,6 @@ components:
       title: Quota metric
       type: object
     reconciliation_target_plan:
-      example:
-        cost: 6.027456183070403
-        usage: 1.4658129805029452
-        id: id
       properties:
         cost:
           readOnly: true
@@ -39872,16 +39365,6 @@ components:
           type: number
       type: object
     reconciliation_target_resource:
-      example:
-        usage: 5.962133916683182
-        id: id
-        plan:
-        - cost: 6.027456183070403
-          usage: 1.4658129805029452
-          id: id
-        - cost: 6.027456183070403
-          usage: 1.4658129805029452
-          id: id
       properties:
         id:
           readOnly: true
@@ -40192,9 +39675,6 @@ components:
             iam/organisation.invoice/get: ""
             iam/organisation.invoice/list: ""
             iam/organisation.name/update: ""
-            iam/organisation.notification/get: ""
-            iam/organisation.notification/list: ""
-            iam/organisation.notification/read: ""
             iam/organisation.ownership/create: ""
             iam/organisation.ownership/delete: ""
             iam/organisation.ownership/get: ""
@@ -40245,9 +39725,6 @@ components:
             iam/project.invitation/list: ""
             iam/project.invoice/list: ""
             iam/project.name/update: ""
-            iam/project.notification/get: ""
-            iam/project.notification/list: ""
-            iam/project.notification/read: ""
             iam/project.ownership/create: ""
             iam/project.ownership/delete: ""
             iam/project.ownership/get: ""
@@ -40257,9 +39734,6 @@ components:
             iam/project.quota.user/update: ""
             iam/project.quota/get: ""
             iam/project.quota/list: ""
-            iam/project.reconciliation/get: ""
-            iam/project.reconciliation/list: ""
-            iam/project.report/list: ""
             iam/project.series/list: ""
             iam/project.service/get: ""
             iam/project.service/list: ""

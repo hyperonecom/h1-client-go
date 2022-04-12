@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Message** | **string** |  | 
-**Resource** | Pointer to **string** |  | [optional] 
 **Subject** | **string** |  | 
 **Type** | **string** |  | 
 
@@ -47,31 +46,6 @@ and a boolean to check if the value has been set.
 
 SetMessage sets Message field to given value.
 
-
-### GetResource
-
-`func (o *SupportProjectTicketCreate) GetResource() string`
-
-GetResource returns the Resource field if non-nil, zero value otherwise.
-
-### GetResourceOk
-
-`func (o *SupportProjectTicketCreate) GetResourceOk() (*string, bool)`
-
-GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResource
-
-`func (o *SupportProjectTicketCreate) SetResource(v string)`
-
-SetResource sets Resource field to given value.
-
-### HasResource
-
-`func (o *SupportProjectTicketCreate) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
 
 ### GetSubject
 

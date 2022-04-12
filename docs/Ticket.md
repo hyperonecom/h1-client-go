@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -184,31 +183,6 @@ SetProject sets Project field to given value.
 `func (o *Ticket) HasProject() bool`
 
 HasProject returns a boolean if a field has been set.
-
-### GetResource
-
-`func (o *Ticket) GetResource() string`
-
-GetResource returns the Resource field if non-nil, zero value otherwise.
-
-### GetResourceOk
-
-`func (o *Ticket) GetResourceOk() (*string, bool)`
-
-GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResource
-
-`func (o *Ticket) SetResource(v string)`
-
-SetResource sets Resource field to given value.
-
-### HasResource
-
-`func (o *Ticket) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
 
 ### GetState
 

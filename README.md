@@ -195,8 +195,6 @@ Class | Method | HTTP request | Description
 *IamOrganisationApi* | [**IamOrganisationInvoiceGet**](docs/IamOrganisationApi.md#iamorganisationinvoiceget) | **Get** /iam/organisation/{organisationId}/invoice/{invoiceId} | Get iam/organisation.invoice
 *IamOrganisationApi* | [**IamOrganisationInvoiceList**](docs/IamOrganisationApi.md#iamorganisationinvoicelist) | **Get** /iam/organisation/{organisationId}/invoice | List iam/organisation.invoice
 *IamOrganisationApi* | [**IamOrganisationList**](docs/IamOrganisationApi.md#iamorganisationlist) | **Get** /iam/organisation | List iam/organisation
-*IamOrganisationApi* | [**IamOrganisationNotificationGet**](docs/IamOrganisationApi.md#iamorganisationnotificationget) | **Get** /iam/organisation/{organisationId}/notification/{notificationId} | Get iam/organisation.notification
-*IamOrganisationApi* | [**IamOrganisationNotificationList**](docs/IamOrganisationApi.md#iamorganisationnotificationlist) | **Get** /iam/organisation/{organisationId}/notification | List iam/organisation.notification
 *IamOrganisationApi* | [**IamOrganisationOwnershipCreate**](docs/IamOrganisationApi.md#iamorganisationownershipcreate) | **Post** /iam/organisation/{organisationId}/ownership | Create iam/organisation.ownership
 *IamOrganisationApi* | [**IamOrganisationOwnershipDelete**](docs/IamOrganisationApi.md#iamorganisationownershipdelete) | **Delete** /iam/organisation/{organisationId}/ownership/{ownershipId} | Delete iam/organisation.ownership
 *IamOrganisationApi* | [**IamOrganisationOwnershipGet**](docs/IamOrganisationApi.md#iamorganisationownershipget) | **Get** /iam/organisation/{organisationId}/ownership/{ownershipId} | Get iam/organisation.ownership
@@ -271,8 +269,6 @@ Class | Method | HTTP request | Description
 *IamProjectApi* | [**IamProjectInvitationList**](docs/IamProjectApi.md#iamprojectinvitationlist) | **Get** /iam/project/{projectId}/invitation | List iam/project.invitation
 *IamProjectApi* | [**IamProjectInvoiceList**](docs/IamProjectApi.md#iamprojectinvoicelist) | **Get** /iam/project/{projectId}/invoice | List iam/project.invoice
 *IamProjectApi* | [**IamProjectList**](docs/IamProjectApi.md#iamprojectlist) | **Get** /iam/project | List iam/project
-*IamProjectApi* | [**IamProjectNotificationGet**](docs/IamProjectApi.md#iamprojectnotificationget) | **Get** /iam/project/{projectId}/notification/{notificationId} | Get iam/project.notification
-*IamProjectApi* | [**IamProjectNotificationList**](docs/IamProjectApi.md#iamprojectnotificationlist) | **Get** /iam/project/{projectId}/notification | List iam/project.notification
 *IamProjectApi* | [**IamProjectOwnershipCreate**](docs/IamProjectApi.md#iamprojectownershipcreate) | **Post** /iam/project/{projectId}/ownership | Create iam/project.ownership
 *IamProjectApi* | [**IamProjectOwnershipDelete**](docs/IamProjectApi.md#iamprojectownershipdelete) | **Delete** /iam/project/{projectId}/ownership/{ownershipId} | Delete iam/project.ownership
 *IamProjectApi* | [**IamProjectOwnershipGet**](docs/IamProjectApi.md#iamprojectownershipget) | **Get** /iam/project/{projectId}/ownership/{ownershipId} | Get iam/project.ownership
@@ -282,9 +278,6 @@ Class | Method | HTTP request | Description
 *IamProjectApi* | [**IamProjectQuotaGet**](docs/IamProjectApi.md#iamprojectquotaget) | **Get** /iam/project/{projectId}/quota/{quotaId} | Get iam/project.quota
 *IamProjectApi* | [**IamProjectQuotaLimitPatch**](docs/IamProjectApi.md#iamprojectquotalimitpatch) | **Patch** /iam/project/{projectId}/quota/{quotaId}/limit | Update iam/project.limit
 *IamProjectApi* | [**IamProjectQuotaList**](docs/IamProjectApi.md#iamprojectquotalist) | **Get** /iam/project/{projectId}/quota | List iam/project.quota
-*IamProjectApi* | [**IamProjectReconciliationGet**](docs/IamProjectApi.md#iamprojectreconciliationget) | **Get** /iam/project/{projectId}/reconciliation/{reconciliationId} | Get iam/project.reconciliation
-*IamProjectApi* | [**IamProjectReconciliationList**](docs/IamProjectApi.md#iamprojectreconciliationlist) | **Get** /iam/project/{projectId}/reconciliation | List iam/project.reconciliation
-*IamProjectApi* | [**IamProjectReconciliationReportList**](docs/IamProjectApi.md#iamprojectreconciliationreportlist) | **Get** /iam/project/{projectId}/reconciliation/{reconciliationId}/report | List iam/project.report
 *IamProjectApi* | [**IamProjectServiceGet**](docs/IamProjectApi.md#iamprojectserviceget) | **Get** /iam/project/{projectId}/service/{serviceId} | Get iam/project.service
 *IamProjectApi* | [**IamProjectServiceList**](docs/IamProjectApi.md#iamprojectservicelist) | **Get** /iam/project/{projectId}/service | List iam/project.service
 *IamProjectApi* | [**IamProjectTagCreate**](docs/IamProjectApi.md#iamprojecttagcreate) | **Post** /iam/project/{projectId}/tag | Create iam/project.tag
@@ -800,7 +793,6 @@ Class | Method | HTTP request | Description
  - [NetworkingProjectNetworkCreate](docs/NetworkingProjectNetworkCreate.md)
  - [NetworkingProjectNetworkUpdate](docs/NetworkingProjectNetworkUpdate.md)
  - [NetworkingRule](docs/NetworkingRule.md)
- - [Notification](docs/Notification.md)
  - [Organisation](docs/Organisation.md)
  - [OrganisationBilling](docs/OrganisationBilling.md)
  - [OrganisationBilling1](docs/OrganisationBilling1.md)
@@ -1054,9 +1046,6 @@ r, err := client.Service.Operation(auth, args)
  - **iam/organisation.invoice/get**: 
  - **iam/organisation.invoice/list**: 
  - **iam/organisation.name/update**: 
- - **iam/organisation.notification/get**: 
- - **iam/organisation.notification/list**: 
- - **iam/organisation.notification/read**: 
  - **iam/organisation.ownership/create**: 
  - **iam/organisation.ownership/delete**: 
  - **iam/organisation.ownership/get**: 
@@ -1107,9 +1096,6 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project.invitation/list**: 
  - **iam/project.invoice/list**: 
  - **iam/project.name/update**: 
- - **iam/project.notification/get**: 
- - **iam/project.notification/list**: 
- - **iam/project.notification/read**: 
  - **iam/project.ownership/create**: 
  - **iam/project.ownership/delete**: 
  - **iam/project.ownership/get**: 
@@ -1119,9 +1105,6 @@ r, err := client.Service.Operation(auth, args)
  - **iam/project.quota.user/update**: 
  - **iam/project.quota/get**: 
  - **iam/project.quota/list**: 
- - **iam/project.reconciliation/get**: 
- - **iam/project.reconciliation/list**: 
- - **iam/project.report/list**: 
  - **iam/project.series/list**: 
  - **iam/project.service/get**: 
  - **iam/project.service/list**: 
