@@ -24,7 +24,7 @@ type Registry struct {
 	Id string `json:"id"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Project *string `json:"project,omitempty"`
 	SizeUsed *float32 `json:"sizeUsed,omitempty"`
 	State *string `json:"state,omitempty"`
@@ -36,9 +36,10 @@ type Registry struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRegistry(id string) *Registry {
+func NewRegistry(id string, name string) *Registry {
 	this := Registry{}
 	this.Id = id
+	this.Name = name
 	return &this
 }
 
@@ -266,36 +267,28 @@ func (o *Registry) SetModifiedOn(v time.Time) {
 	o.ModifiedOn = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *Registry) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Registry) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Registry) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *Registry) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetProject returns the Project field value if set, zero value otherwise.
@@ -481,7 +474,7 @@ func (o Registry) MarshalJSON() ([]byte, error) {
 	if o.ModifiedOn != nil {
 		toSerialize["modifiedOn"] = o.ModifiedOn
 	}
-	if o.Name != nil {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if o.Project != nil {

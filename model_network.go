@@ -27,7 +27,7 @@ type Network struct {
 	Id string `json:"id"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Netgw *string `json:"netgw,omitempty"`
 	Project *string `json:"project,omitempty"`
 	State *string `json:"state,omitempty"`
@@ -40,9 +40,10 @@ type Network struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetwork(id string) *Network {
+func NewNetwork(id string, name string) *Network {
 	this := Network{}
 	this.Id = id
+	this.Name = name
 	return &this
 }
 
@@ -366,36 +367,28 @@ func (o *Network) SetModifiedOn(v time.Time) {
 	o.ModifiedOn = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *Network) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Network) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Network) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *Network) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNetgw returns the Netgw field value if set, zero value otherwise.
@@ -622,7 +615,7 @@ func (o Network) MarshalJSON() ([]byte, error) {
 	if o.ModifiedOn != nil {
 		toSerialize["modifiedOn"] = o.ModifiedOn
 	}
-	if o.Name != nil {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if o.Netgw != nil {

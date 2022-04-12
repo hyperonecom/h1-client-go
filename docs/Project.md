@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Organisation** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewProject
 
-`func NewProject(id string, ) *Project`
+`func NewProject(id string, name string, ) *Project`
 
 NewProject instantiates a new Project object
 This constructor will assign default values to properties that have it defined,
@@ -251,11 +251,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Project) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOrganisation
 

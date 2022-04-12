@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Project** | Pointer to **string** |  | [optional] 
 **Size** | Pointer to **float32** |  | [optional] 
 **SizeUsed** | Pointer to **float32** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewVault
 
-`func NewVault(id string, ) *Vault`
+`func NewVault(id string, name string, ) *Vault`
 
 NewVault instantiates a new Vault object
 This constructor will assign default values to properties that have it defined,
@@ -227,11 +227,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Vault) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetProject
 

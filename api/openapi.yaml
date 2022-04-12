@@ -33508,6 +33508,7 @@ components:
             kind: provider/agent
       required:
       - id
+      - name
       type: object
     agent.credential:
       example:
@@ -33621,6 +33622,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     application.credential:
       example:
@@ -33860,6 +33862,7 @@ components:
             kind: storage/bucket
       required:
       - id
+      - name
       type: object
     compute_project_replica_create:
       properties:
@@ -34250,6 +34253,7 @@ components:
             kind: compute/vm
       required:
       - id
+      - name
       type: object
     dns.record:
       example:
@@ -34541,6 +34545,7 @@ components:
             kind: networking/firewall
       required:
       - id
+      - name
       type: object
     group:
       example:
@@ -34605,6 +34610,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     hdd:
       properties:
@@ -35269,6 +35275,7 @@ components:
             kind: storage/image
       required:
       - id
+      - name
       type: object
     insight_project_journal_create:
       properties:
@@ -35559,6 +35566,7 @@ components:
             kind: networking/ip
       required:
       - id
+      - name
       type: object
     iso:
       example:
@@ -35637,6 +35645,7 @@ components:
             kind: storage/iso
       required:
       - id
+      - name
       type: object
     journal:
       example:
@@ -35714,6 +35723,7 @@ components:
             kind: insight/journal
       required:
       - id
+      - name
       type: object
     journal.credential:
       example:
@@ -35886,6 +35896,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     netgw:
       example:
@@ -35967,6 +35978,7 @@ components:
             kind: networking/netgw
       required:
       - id
+      - name
       type: object
     network:
       example:
@@ -36065,6 +36077,7 @@ components:
             kind: networking/network
       required:
       - id
+      - name
       type: object
     networking.rule:
       example:
@@ -36453,6 +36466,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     organisation.billing:
       properties:
@@ -36648,6 +36662,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     proforma:
       example:
@@ -36798,6 +36813,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     project.billing:
       properties:
@@ -37173,6 +37189,7 @@ components:
             kind: container/registry
       required:
       - id
+      - name
       type: object
     registry.credential:
       example:
@@ -37302,6 +37319,7 @@ components:
             kind: compute/replica
       required:
       - id
+      - name
       type: object
     resource:
       example:
@@ -37465,6 +37483,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     sa:
       example:
@@ -37529,6 +37548,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     sa.credential:
       example:
@@ -37759,6 +37779,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     storage_project_bucket_upload:
       properties:
@@ -38391,6 +38412,7 @@ components:
             kind: storage/vault
       required:
       - id
+      - name
       type: object
     vault.credential:
       example:
@@ -38547,6 +38569,7 @@ components:
           type: string
       required:
       - id
+      - name
       type: object
     vmhost:
       example:
@@ -38626,6 +38649,7 @@ components:
             kind: vmhost/instance
       required:
       - id
+      - name
       type: object
     zone:
       example:
@@ -38708,6 +38732,7 @@ components:
             kind: dns/zone
       required:
       - id
+      - name
       type: object
     inline_response_400:
       properties:

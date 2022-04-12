@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Organisation** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewPolicy
 
-`func NewPolicy(id string, ) *Policy`
+`func NewPolicy(id string, name string, ) *Policy`
 
 NewPolicy instantiates a new Policy object
 This constructor will assign default values to properties that have it defined,
@@ -202,11 +202,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Policy) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOrganisation
 

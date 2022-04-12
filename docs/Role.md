@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Organisation** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewRole
 
-`func NewRole(id string, ) *Role`
+`func NewRole(id string, name string, ) *Role`
 
 NewRole instantiates a new Role object
 This constructor will assign default values to properties that have it defined,
@@ -200,11 +200,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Role) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOrganisation
 
