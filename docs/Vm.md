@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
 **UserMetadata** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -357,6 +358,31 @@ SetTag sets Tag field to given value.
 `func (o *Vm) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Vm) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Vm) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Vm) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Vm) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
 
 ### GetUserMetadata
 

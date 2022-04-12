@@ -33456,6 +33456,7 @@ components:
           key: key
         type: type
         createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: https://openapi-generator.tech
       properties:
         createdBy:
           format: uri
@@ -33500,6 +33501,11 @@ components:
           - provider/agent.tag/list
         type:
           type: string
+        uri:
+          format: uri
+          type: string
+          x-resource:
+            kind: provider/agent
       required:
       - id
       type: object
@@ -33570,6 +33576,7 @@ components:
           value: value
           key: key
         createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: uri
       properties:
         createdBy:
           format: uri
@@ -33610,6 +33617,8 @@ components:
           type: array
           x-permissions:
           - iam/application.tag/list
+        uri:
+          type: string
       required:
       - id
       type: object
@@ -38442,6 +38451,7 @@ components:
         cpu: 0.8008281904610115
         project: https://openapi-generator.tech
         createdOn: 2000-01-23T04:56:07.000+00:00
+        uri: https://openapi-generator.tech
         modifiedOn: 2000-01-23T04:56:07.000+00:00
         createdBy: https://openapi-generator.tech
         name: name
@@ -38527,6 +38537,11 @@ components:
           type: array
           x-permissions:
           - compute/vm.tag/list
+        uri:
+          format: uri
+          type: string
+          x-resource:
+            kind: compute/vm
         userMetadata:
           format: base64
           type: string

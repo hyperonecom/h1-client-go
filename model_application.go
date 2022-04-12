@@ -27,6 +27,7 @@ type Application struct {
 	Project *string `json:"project,omitempty"`
 	State *string `json:"state,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
+	Uri *string `json:"uri,omitempty"`
 }
 
 // NewApplication instantiates a new Application object
@@ -359,6 +360,38 @@ func (o *Application) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetUri returns the Uri field value if set, zero value otherwise.
+func (o *Application) GetUri() string {
+	if o == nil || o.Uri == nil {
+		var ret string
+		return ret
+	}
+	return *o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Application) GetUriOk() (*string, bool) {
+	if o == nil || o.Uri == nil {
+		return nil, false
+	}
+	return o.Uri, true
+}
+
+// HasUri returns a boolean if a field has been set.
+func (o *Application) HasUri() bool {
+	if o != nil && o.Uri != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given string and assigns it to the Uri field.
+func (o *Application) SetUri(v string) {
+	o.Uri = &v
+}
+
 func (o Application) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CreatedBy != nil {
@@ -390,6 +423,9 @@ func (o Application) MarshalJSON() ([]byte, error) {
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if o.Uri != nil {
+		toSerialize["uri"] = o.Uri
 	}
 	return json.Marshal(toSerialize)
 }

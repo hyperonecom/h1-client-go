@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Project** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
+**Uri** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -278,6 +279,31 @@ SetTag sets Tag field to given value.
 `func (o *Application) HasTag() bool`
 
 HasTag returns a boolean if a field has been set.
+
+### GetUri
+
+`func (o *Application) GetUri() string`
+
+GetUri returns the Uri field if non-nil, zero value otherwise.
+
+### GetUriOk
+
+`func (o *Application) GetUriOk() (*string, bool)`
+
+GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUri
+
+`func (o *Application) SetUri(v string)`
+
+SetUri sets Uri field to given value.
+
+### HasUri
+
+`func (o *Application) HasUri() bool`
+
+HasUri returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

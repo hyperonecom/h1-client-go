@@ -30,6 +30,7 @@ type Vm struct {
 	Project *string `json:"project,omitempty"`
 	State *string `json:"state,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
+	Uri *string `json:"uri,omitempty"`
 	UserMetadata *string `json:"userMetadata,omitempty"`
 }
 
@@ -459,6 +460,38 @@ func (o *Vm) SetTag(v []Tag) {
 	o.Tag = v
 }
 
+// GetUri returns the Uri field value if set, zero value otherwise.
+func (o *Vm) GetUri() string {
+	if o == nil || o.Uri == nil {
+		var ret string
+		return ret
+	}
+	return *o.Uri
+}
+
+// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Vm) GetUriOk() (*string, bool) {
+	if o == nil || o.Uri == nil {
+		return nil, false
+	}
+	return o.Uri, true
+}
+
+// HasUri returns a boolean if a field has been set.
+func (o *Vm) HasUri() bool {
+	if o != nil && o.Uri != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUri gets a reference to the given string and assigns it to the Uri field.
+func (o *Vm) SetUri(v string) {
+	o.Uri = &v
+}
+
 // GetUserMetadata returns the UserMetadata field value if set, zero value otherwise.
 func (o *Vm) GetUserMetadata() string {
 	if o == nil || o.UserMetadata == nil {
@@ -531,6 +564,9 @@ func (o Vm) MarshalJSON() ([]byte, error) {
 	}
 	if o.Tag != nil {
 		toSerialize["tag"] = o.Tag
+	}
+	if o.Uri != nil {
+		toSerialize["uri"] = o.Uri
 	}
 	if o.UserMetadata != nil {
 		toSerialize["userMetadata"] = o.UserMetadata
