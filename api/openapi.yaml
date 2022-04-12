@@ -33500,6 +33500,8 @@ components:
           - provider/agent.tag/list
         type:
           type: string
+      required:
+      - id
       type: object
     agent.credential:
       example:
@@ -33608,6 +33610,8 @@ components:
           type: array
           x-permissions:
           - iam/application.tag/list
+      required:
+      - id
       type: object
     application.credential:
       example:
@@ -33845,6 +33849,8 @@ components:
           type: string
           x-resource:
             kind: storage/bucket
+      required:
+      - id
       type: object
     compute_project_replica_create:
       properties:
@@ -34233,6 +34239,8 @@ components:
           type: string
           x-resource:
             kind: compute/vm
+      required:
+      - id
       type: object
     dns.record:
       example:
@@ -34522,6 +34530,8 @@ components:
           type: string
           x-resource:
             kind: networking/firewall
+      required:
+      - id
       type: object
     group:
       example:
@@ -34584,6 +34594,8 @@ components:
           - iam/group.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     hdd:
       properties:
@@ -35246,6 +35258,8 @@ components:
           type: string
           x-resource:
             kind: storage/image
+      required:
+      - id
       type: object
     insight_project_journal_create:
       properties:
@@ -35534,6 +35548,8 @@ components:
           type: string
           x-resource:
             kind: networking/ip
+      required:
+      - id
       type: object
     iso:
       example:
@@ -35610,6 +35626,8 @@ components:
           type: string
           x-resource:
             kind: storage/iso
+      required:
+      - id
       type: object
     journal:
       example:
@@ -35685,6 +35703,8 @@ components:
           type: string
           x-resource:
             kind: insight/journal
+      required:
+      - id
       type: object
     journal.credential:
       example:
@@ -35855,6 +35875,8 @@ components:
           - networking/netadp.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     netgw:
       example:
@@ -35934,6 +35956,8 @@ components:
           type: string
           x-resource:
             kind: networking/netgw
+      required:
+      - id
       type: object
     network:
       example:
@@ -36030,6 +36054,8 @@ components:
           type: string
           x-resource:
             kind: networking/network
+      required:
+      - id
       type: object
     networking.rule:
       example:
@@ -36416,6 +36442,8 @@ components:
           type: string
         uri:
           type: string
+      required:
+      - id
       type: object
     organisation.billing:
       properties:
@@ -36509,6 +36537,8 @@ components:
           type: string
         uri:
           type: string
+      required:
+      - id
       type: object
     point:
       example:
@@ -36607,6 +36637,8 @@ components:
           - iam/policy.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     proforma:
       example:
@@ -36755,6 +36787,8 @@ components:
           - iam/project.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     project.billing:
       properties:
@@ -36884,6 +36918,8 @@ components:
         state:
           title: Resource state
           type: string
+      required:
+      - id
       type: object
     provider.agent.resource.event:
       example:
@@ -37126,6 +37162,8 @@ components:
           type: string
           x-resource:
             kind: container/registry
+      required:
+      - id
       type: object
     registry.credential:
       example:
@@ -37253,6 +37291,8 @@ components:
           type: string
           x-resource:
             kind: compute/replica
+      required:
+      - id
       type: object
     resource:
       example:
@@ -37414,6 +37454,8 @@ components:
           - iam/role.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     sa:
       example:
@@ -37476,6 +37518,8 @@ components:
           - iam/sa.tag/list
         uri:
           type: string
+      required:
+      - id
       type: object
     sa.credential:
       example:
@@ -37587,6 +37631,8 @@ components:
           type: string
         uri:
           type: string
+      required:
+      - id
       type: object
     storage.object:
       example:
@@ -37702,6 +37748,8 @@ components:
         uri:
           title: Snapshot uri
           type: string
+      required:
+      - id
       type: object
     storage_project_bucket_upload:
       properties:
@@ -38332,6 +38380,8 @@ components:
           type: string
           x-resource:
             kind: storage/vault
+      required:
+      - id
       type: object
     vault.credential:
       example:
@@ -38480,6 +38530,8 @@ components:
         userMetadata:
           format: base64
           type: string
+      required:
+      - id
       type: object
     vmhost:
       example:
@@ -38557,6 +38609,8 @@ components:
           type: string
           x-resource:
             kind: vmhost/instance
+      required:
+      - id
       type: object
     zone:
       example:
@@ -38637,6 +38691,8 @@ components:
           type: string
           x-resource:
             kind: dns/zone
+      required:
+      - id
       type: object
     inline_response_400:
       properties:

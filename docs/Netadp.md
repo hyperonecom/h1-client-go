@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Firewall** | Pointer to **string** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **Macaddress** | Pointer to **string** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewNetadp
 
-`func NewNetadp() *Netadp`
+`func NewNetadp(id string, ) *Netadp`
 
 NewNetadp instantiates a new Netadp object
 This constructor will assign default values to properties that have it defined,
@@ -210,11 +210,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Netadp) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetMacaddress
 

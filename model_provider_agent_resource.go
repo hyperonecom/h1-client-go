@@ -18,7 +18,7 @@ import (
 // ProviderAgentResource struct for ProviderAgentResource
 type ProviderAgentResource struct {
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	Name *string `json:"name,omitempty"`
 	Project *string `json:"project,omitempty"`
 	Resource *string `json:"resource,omitempty"`
@@ -29,8 +29,9 @@ type ProviderAgentResource struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProviderAgentResource() *ProviderAgentResource {
+func NewProviderAgentResource(id string) *ProviderAgentResource {
 	this := ProviderAgentResource{}
+	this.Id = id
 	return &this
 }
 
@@ -74,36 +75,28 @@ func (o *ProviderAgentResource) SetCreatedOn(v time.Time) {
 	o.CreatedOn = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ProviderAgentResource) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ProviderAgentResource) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ProviderAgentResource) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ProviderAgentResource) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -239,7 +232,7 @@ func (o ProviderAgentResource) MarshalJSON() ([]byte, error) {
 	if o.CreatedOn != nil {
 		toSerialize["createdOn"] = o.CreatedOn
 	}
-	if o.Id != nil {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {

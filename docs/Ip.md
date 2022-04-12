@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Fqdn** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewIp
 
-`func NewIp() *Ip`
+`func NewIp(id string, ) *Ip`
 
 NewIp instantiates a new Ip object
 This constructor will assign default values to properties that have it defined,
@@ -211,11 +211,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Ip) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetModifiedBy
 

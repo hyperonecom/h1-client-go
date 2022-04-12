@@ -22,7 +22,7 @@ type Vm struct {
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Flavour *string `json:"flavour,omitempty"`
 	Fqdn *string `json:"fqdn,omitempty"`
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	Memory *float32 `json:"memory,omitempty"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
@@ -37,8 +37,9 @@ type Vm struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVm() *Vm {
+func NewVm(id string) *Vm {
 	this := Vm{}
+	this.Id = id
 	return &this
 }
 
@@ -210,36 +211,28 @@ func (o *Vm) SetFqdn(v string) {
 	o.Fqdn = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *Vm) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *Vm) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Vm) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *Vm) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetMemory returns the Memory field value if set, zero value otherwise.
@@ -515,7 +508,7 @@ func (o Vm) MarshalJSON() ([]byte, error) {
 	if o.Fqdn != nil {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if o.Id != nil {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if o.Memory != nil {

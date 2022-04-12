@@ -24,7 +24,7 @@ type Network struct {
 	Firewall *string `json:"firewall,omitempty"`
 	Flavour *string `json:"flavour,omitempty"`
 	Gateway *string `json:"gateway,omitempty"`
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -40,8 +40,9 @@ type Network struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetwork() *Network {
+func NewNetwork(id string) *Network {
 	this := Network{}
+	this.Id = id
 	return &this
 }
 
@@ -277,36 +278,28 @@ func (o *Network) SetGateway(v string) {
 	o.Gateway = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *Network) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *Network) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Network) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *Network) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetModifiedBy returns the ModifiedBy field value if set, zero value otherwise.
@@ -620,7 +613,7 @@ func (o Network) MarshalJSON() ([]byte, error) {
 	if o.Gateway != nil {
 		toSerialize["gateway"] = o.Gateway
 	}
-	if o.Id != nil {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if o.ModifiedBy != nil {

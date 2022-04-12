@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to **string** |  | [optional] 
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **Metadata** | Pointer to [**IsoMetadata**](IsoMetadata.md) |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewIso
 
-`func NewIso() *Iso`
+`func NewIso(id string, ) *Iso`
 
 NewIso instantiates a new Iso object
 This constructor will assign default values to properties that have it defined,
@@ -131,11 +131,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Iso) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetMetadata
 

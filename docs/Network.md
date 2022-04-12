@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Firewall** | Pointer to **string** |  | [optional] 
 **Flavour** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **ModifiedOn** | Pointer to **time.Time** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewNetwork
 
-`func NewNetwork() *Network`
+`func NewNetwork(id string, ) *Network`
 
 NewNetwork instantiates a new Network object
 This constructor will assign default values to properties that have it defined,
@@ -235,11 +235,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Network) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetModifiedBy
 

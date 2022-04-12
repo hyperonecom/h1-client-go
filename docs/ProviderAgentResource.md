@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedOn** | Pointer to **time.Time** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **Name** | Pointer to **string** |  | [optional] 
 **Project** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewProviderAgentResource
 
-`func NewProviderAgentResource() *ProviderAgentResource`
+`func NewProviderAgentResource(id string, ) *ProviderAgentResource`
 
 NewProviderAgentResource instantiates a new ProviderAgentResource object
 This constructor will assign default values to properties that have it defined,
@@ -74,11 +74,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ProviderAgentResource) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetName
 

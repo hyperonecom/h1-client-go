@@ -20,7 +20,7 @@ type Iso struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	CreatedOn *time.Time `json:"createdOn,omitempty"`
 	Flavour *string `json:"flavour,omitempty"`
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	Metadata *IsoMetadata `json:"metadata,omitempty"`
 	ModifiedBy *string `json:"modifiedBy,omitempty"`
 	ModifiedOn *time.Time `json:"modifiedOn,omitempty"`
@@ -36,8 +36,9 @@ type Iso struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIso() *Iso {
+func NewIso(id string) *Iso {
 	this := Iso{}
+	this.Id = id
 	return &this
 }
 
@@ -145,36 +146,28 @@ func (o *Iso) SetFlavour(v string) {
 	o.Flavour = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *Iso) GetId() string {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *Iso) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *Iso) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *Iso) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -476,7 +469,7 @@ func (o Iso) MarshalJSON() ([]byte, error) {
 	if o.Flavour != nil {
 		toSerialize["flavour"] = o.Flavour
 	}
-	if o.Id != nil {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if o.Metadata != nil {
