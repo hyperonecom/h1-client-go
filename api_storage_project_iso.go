@@ -179,7 +179,7 @@ type ApiStorageProjectIsoDeleteRequest struct {
 }
 
 
-func (r ApiStorageProjectIsoDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiStorageProjectIsoDeleteRequest) Execute() (*Iso, *http.Response, error) {
 	return r.ApiService.StorageProjectIsoDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *StorageProjectIsoApiService) StorageProjectIsoDelete(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *StorageProjectIsoApiService) StorageProjectIsoDeleteExecute(r ApiStorageProjectIsoDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Iso
+func (a *StorageProjectIsoApiService) StorageProjectIsoDeleteExecute(r ApiStorageProjectIsoDeleteRequest) (*Iso, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Iso
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectIsoApiService.StorageProjectIsoDelete")

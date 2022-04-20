@@ -179,7 +179,7 @@ type ApiNetworkingProjectNetadpDeleteRequest struct {
 }
 
 
-func (r ApiNetworkingProjectNetadpDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiNetworkingProjectNetadpDeleteRequest) Execute() (*Netadp, *http.Response, error) {
 	return r.ApiService.NetworkingProjectNetadpDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *NetworkingProjectNetadpApiService) NetworkingProjectNetadpDelete(ctx co
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *NetworkingProjectNetadpApiService) NetworkingProjectNetadpDeleteExecute(r ApiNetworkingProjectNetadpDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Netadp
+func (a *NetworkingProjectNetadpApiService) NetworkingProjectNetadpDeleteExecute(r ApiNetworkingProjectNetadpDeleteRequest) (*Netadp, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Netadp
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkingProjectNetadpApiService.NetworkingProjectNetadpDelete")

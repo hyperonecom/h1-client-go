@@ -806,7 +806,7 @@ type ApiContainerProjectRegistryDeleteRequest struct {
 }
 
 
-func (r ApiContainerProjectRegistryDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiContainerProjectRegistryDeleteRequest) Execute() (*Registry, *http.Response, error) {
 	return r.ApiService.ContainerProjectRegistryDeleteExecute(r)
 }
 
@@ -832,13 +832,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDelete(ctx 
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecute(r ApiContainerProjectRegistryDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Registry
+func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecute(r ApiContainerProjectRegistryDeleteRequest) (*Registry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Registry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainerProjectRegistryApiService.ContainerProjectRegistryDelete")

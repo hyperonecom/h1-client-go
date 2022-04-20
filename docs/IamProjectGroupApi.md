@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectGroupDelete
 
-> InlineResponseDefault IamProjectGroupDelete(ctx, projectId, groupId).Execute()
+> Group IamProjectGroupDelete(ctx, projectId, groupId).Execute()
 
 Delete iam/group
 
@@ -432,7 +432,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectGroupApi.IamProjectGroupDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectGroupDelete`: InlineResponseDefault
+    // response from `IamProjectGroupDelete`: Group
     fmt.Fprintf(os.Stdout, "Response from `IamProjectGroupApi.IamProjectGroupDelete`: %v\n", resp)
 }
 ```
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Group**](Group.md)
 
 ### Authorization
 

@@ -544,7 +544,7 @@ type ApiComputeProjectVmDeleteRequest struct {
 }
 
 
-func (r ApiComputeProjectVmDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiComputeProjectVmDeleteRequest) Execute() (*Vm, *http.Response, error) {
 	return r.ApiService.ComputeProjectVmDeleteExecute(r)
 }
 
@@ -570,13 +570,13 @@ func (a *ComputeProjectVmApiService) ComputeProjectVmDelete(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *ComputeProjectVmApiService) ComputeProjectVmDeleteExecute(r ApiComputeProjectVmDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Vm
+func (a *ComputeProjectVmApiService) ComputeProjectVmDeleteExecute(r ApiComputeProjectVmDeleteRequest) (*Vm, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Vm
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComputeProjectVmApiService.ComputeProjectVmDelete")

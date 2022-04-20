@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## InsightProjectJournalDelete
 
-> InlineResponseDefault InsightProjectJournalDelete(ctx, projectId, locationId, journalId).Execute()
+> Journal InsightProjectJournalDelete(ctx, projectId, locationId, journalId).Execute()
 
 Delete insight/journal
 
@@ -532,7 +532,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `InsightProjectJournalDelete`: InlineResponseDefault
+    // response from `InsightProjectJournalDelete`: Journal
     fmt.Fprintf(os.Stdout, "Response from `InsightProjectJournalApi.InsightProjectJournalDelete`: %v\n", resp)
 }
 ```
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Journal**](Journal.md)
 
 ### Authorization
 

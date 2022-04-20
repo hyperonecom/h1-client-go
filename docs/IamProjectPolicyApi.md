@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyDelete
 
-> InlineResponseDefault IamProjectPolicyDelete(ctx, projectId, policyId).Execute()
+> Policy IamProjectPolicyDelete(ctx, projectId, policyId).Execute()
 
 Delete iam/policy
 
@@ -432,7 +432,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectPolicyDelete`: InlineResponseDefault
+    // response from `IamProjectPolicyDelete`: Policy
     fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyDelete`: %v\n", resp)
 }
 ```
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Policy**](Policy.md)
 
 ### Authorization
 

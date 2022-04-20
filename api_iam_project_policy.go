@@ -652,7 +652,7 @@ type ApiIamProjectPolicyDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectPolicyDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamProjectPolicyDeleteRequest) Execute() (*Policy, *http.Response, error) {
 	return r.ApiService.IamProjectPolicyDeleteExecute(r)
 }
 
@@ -676,13 +676,13 @@ func (a *IamProjectPolicyApiService) IamProjectPolicyDelete(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamProjectPolicyApiService) IamProjectPolicyDeleteExecute(r ApiIamProjectPolicyDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Policy
+func (a *IamProjectPolicyApiService) IamProjectPolicyDeleteExecute(r ApiIamProjectPolicyDeleteRequest) (*Policy, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Policy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectPolicyApiService.IamProjectPolicyDelete")

@@ -179,7 +179,7 @@ type ApiNetworkingProjectNetworkDeleteRequest struct {
 }
 
 
-func (r ApiNetworkingProjectNetworkDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiNetworkingProjectNetworkDeleteRequest) Execute() (*Network, *http.Response, error) {
 	return r.ApiService.NetworkingProjectNetworkDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *NetworkingProjectNetworkApiService) NetworkingProjectNetworkDelete(ctx 
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *NetworkingProjectNetworkApiService) NetworkingProjectNetworkDeleteExecute(r ApiNetworkingProjectNetworkDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Network
+func (a *NetworkingProjectNetworkApiService) NetworkingProjectNetworkDeleteExecute(r ApiNetworkingProjectNetworkDeleteRequest) (*Network, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Network
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkingProjectNetworkApiService.NetworkingProjectNetworkDelete")

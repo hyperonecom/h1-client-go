@@ -808,7 +808,7 @@ type ApiInsightProjectJournalDeleteRequest struct {
 }
 
 
-func (r ApiInsightProjectJournalDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiInsightProjectJournalDeleteRequest) Execute() (*Journal, *http.Response, error) {
 	return r.ApiService.InsightProjectJournalDeleteExecute(r)
 }
 
@@ -834,13 +834,13 @@ func (a *InsightProjectJournalApiService) InsightProjectJournalDelete(ctx contex
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *InsightProjectJournalApiService) InsightProjectJournalDeleteExecute(r ApiInsightProjectJournalDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Journal
+func (a *InsightProjectJournalApiService) InsightProjectJournalDeleteExecute(r ApiInsightProjectJournalDeleteRequest) (*Journal, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Journal
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InsightProjectJournalApiService.InsightProjectJournalDelete")

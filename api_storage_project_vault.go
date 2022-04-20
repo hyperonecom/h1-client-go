@@ -1053,7 +1053,7 @@ func (r ApiStorageProjectVaultDeleteRequest) StorageProjectVaultDelete(storagePr
 	return r
 }
 
-func (r ApiStorageProjectVaultDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiStorageProjectVaultDeleteRequest) Execute() (*Vault, *http.Response, error) {
 	return r.ApiService.StorageProjectVaultDeleteExecute(r)
 }
 
@@ -1079,13 +1079,13 @@ func (a *StorageProjectVaultApiService) StorageProjectVaultDelete(ctx context.Co
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *StorageProjectVaultApiService) StorageProjectVaultDeleteExecute(r ApiStorageProjectVaultDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Vault
+func (a *StorageProjectVaultApiService) StorageProjectVaultDeleteExecute(r ApiStorageProjectVaultDeleteRequest) (*Vault, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Vault
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectVaultApiService.StorageProjectVaultDelete")

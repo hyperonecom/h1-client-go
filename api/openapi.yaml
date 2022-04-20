@@ -426,6 +426,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replica'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -1224,6 +1232,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vm'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -3202,6 +3218,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registry'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -5078,6 +5102,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/zone'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -6466,6 +6498,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/organisation'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -7427,6 +7467,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/policy'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -8456,6 +8504,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/role'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -9585,6 +9641,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/project'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -9879,6 +9943,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/application'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -11543,6 +11615,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/group'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -12822,6 +12902,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/policy'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -13886,6 +13974,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/role'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -14841,6 +14937,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sa'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -16231,6 +16335,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -17072,6 +17184,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/journal'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -18358,6 +18478,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/firewall'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -19856,6 +19984,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ip'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -21000,6 +21136,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netadp'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -22025,6 +22169,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/netgw'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -23000,6 +23152,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/network'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -23838,6 +23998,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/agent'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -26231,6 +26399,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disk'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -27565,6 +27741,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/image'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -28470,6 +28654,14 @@ paths:
           type: string
         style: simple
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/iso'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:
@@ -29456,6 +29648,14 @@ paths:
               $ref: '#/components/schemas/storage_project_vault_delete'
         required: true
       responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault'
+          description: operation queued
+        "204":
+          description: No Content
         default:
           content:
             application/json:

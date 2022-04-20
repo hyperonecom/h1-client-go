@@ -179,7 +179,7 @@ type ApiDnsProjectZoneDeleteRequest struct {
 }
 
 
-func (r ApiDnsProjectZoneDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiDnsProjectZoneDeleteRequest) Execute() (*Zone, *http.Response, error) {
 	return r.ApiService.DnsProjectZoneDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *DnsProjectZoneApiService) DnsProjectZoneDelete(ctx context.Context, pro
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *DnsProjectZoneApiService) DnsProjectZoneDeleteExecute(r ApiDnsProjectZoneDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Zone
+func (a *DnsProjectZoneApiService) DnsProjectZoneDeleteExecute(r ApiDnsProjectZoneDeleteRequest) (*Zone, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Zone
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnsProjectZoneApiService.DnsProjectZoneDelete")

@@ -179,7 +179,7 @@ type ApiStorageProjectDiskDeleteRequest struct {
 }
 
 
-func (r ApiStorageProjectDiskDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiStorageProjectDiskDeleteRequest) Execute() (*Disk, *http.Response, error) {
 	return r.ApiService.StorageProjectDiskDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *StorageProjectDiskApiService) StorageProjectDiskDelete(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *StorageProjectDiskApiService) StorageProjectDiskDeleteExecute(r ApiStorageProjectDiskDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Disk
+func (a *StorageProjectDiskApiService) StorageProjectDiskDeleteExecute(r ApiStorageProjectDiskDeleteRequest) (*Disk, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Disk
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageProjectDiskApiService.StorageProjectDiskDelete")

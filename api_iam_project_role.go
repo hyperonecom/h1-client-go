@@ -174,7 +174,7 @@ type ApiIamProjectRoleDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectRoleDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamProjectRoleDeleteRequest) Execute() (*Role, *http.Response, error) {
 	return r.ApiService.IamProjectRoleDeleteExecute(r)
 }
 
@@ -198,13 +198,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleDelete(ctx context.Context, pro
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRoleDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Role
+func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRoleDeleteRequest) (*Role, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Role
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectRoleApiService.IamProjectRoleDelete")

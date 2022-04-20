@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ## StorageProjectIsoDelete
 
-> InlineResponseDefault StorageProjectIsoDelete(ctx, projectId, locationId, isoId).Execute()
+> Iso StorageProjectIsoDelete(ctx, projectId, locationId, isoId).Execute()
 
 Delete storage/iso
 
@@ -134,7 +134,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectIsoApi.StorageProjectIsoDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `StorageProjectIsoDelete`: InlineResponseDefault
+    // response from `StorageProjectIsoDelete`: Iso
     fmt.Fprintf(os.Stdout, "Response from `StorageProjectIsoApi.StorageProjectIsoDelete`: %v\n", resp)
 }
 ```
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Iso**](Iso.md)
 
 ### Authorization
 

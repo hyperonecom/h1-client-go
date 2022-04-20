@@ -179,7 +179,7 @@ type ApiComputeProjectReplicaDeleteRequest struct {
 }
 
 
-func (r ApiComputeProjectReplicaDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiComputeProjectReplicaDeleteRequest) Execute() (*Replica, *http.Response, error) {
 	return r.ApiService.ComputeProjectReplicaDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *ComputeProjectReplicaApiService) ComputeProjectReplicaDelete(ctx contex
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *ComputeProjectReplicaApiService) ComputeProjectReplicaDeleteExecute(r ApiComputeProjectReplicaDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Replica
+func (a *ComputeProjectReplicaApiService) ComputeProjectReplicaDeleteExecute(r ApiComputeProjectReplicaDeleteRequest) (*Replica, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Replica
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComputeProjectReplicaApiService.ComputeProjectReplicaDelete")

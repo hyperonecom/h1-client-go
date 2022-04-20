@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectSaDelete
 
-> InlineResponseDefault IamProjectSaDelete(ctx, projectId, saId).Execute()
+> Sa IamProjectSaDelete(ctx, projectId, saId).Execute()
 
 Delete iam/sa
 
@@ -511,7 +511,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectSaApi.IamProjectSaDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamProjectSaDelete`: InlineResponseDefault
+    // response from `IamProjectSaDelete`: Sa
     fmt.Fprintf(os.Stdout, "Response from `IamProjectSaApi.IamProjectSaDelete`: %v\n", resp)
 }
 ```
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Sa**](Sa.md)
 
 ### Authorization
 

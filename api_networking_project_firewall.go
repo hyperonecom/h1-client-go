@@ -179,7 +179,7 @@ type ApiNetworkingProjectFirewallDeleteRequest struct {
 }
 
 
-func (r ApiNetworkingProjectFirewallDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiNetworkingProjectFirewallDeleteRequest) Execute() (*Firewall, *http.Response, error) {
 	return r.ApiService.NetworkingProjectFirewallDeleteExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *NetworkingProjectFirewallApiService) NetworkingProjectFirewallDelete(ct
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *NetworkingProjectFirewallApiService) NetworkingProjectFirewallDeleteExecute(r ApiNetworkingProjectFirewallDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Firewall
+func (a *NetworkingProjectFirewallApiService) NetworkingProjectFirewallDeleteExecute(r ApiNetworkingProjectFirewallDeleteRequest) (*Firewall, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Firewall
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkingProjectFirewallApiService.NetworkingProjectFirewallDelete")

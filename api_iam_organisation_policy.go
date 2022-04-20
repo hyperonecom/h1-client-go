@@ -652,7 +652,7 @@ type ApiIamOrganisationPolicyDeleteRequest struct {
 }
 
 
-func (r ApiIamOrganisationPolicyDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamOrganisationPolicyDeleteRequest) Execute() (*Policy, *http.Response, error) {
 	return r.ApiService.IamOrganisationPolicyDeleteExecute(r)
 }
 
@@ -676,13 +676,13 @@ func (a *IamOrganisationPolicyApiService) IamOrganisationPolicyDelete(ctx contex
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamOrganisationPolicyApiService) IamOrganisationPolicyDeleteExecute(r ApiIamOrganisationPolicyDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Policy
+func (a *IamOrganisationPolicyApiService) IamOrganisationPolicyDeleteExecute(r ApiIamOrganisationPolicyDeleteRequest) (*Policy, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Policy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamOrganisationPolicyApiService.IamOrganisationPolicyDelete")

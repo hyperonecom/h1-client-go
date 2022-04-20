@@ -781,7 +781,7 @@ type ApiIamProjectApplicationDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectApplicationDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamProjectApplicationDeleteRequest) Execute() (*Application, *http.Response, error) {
 	return r.ApiService.IamProjectApplicationDeleteExecute(r)
 }
 
@@ -805,13 +805,13 @@ func (a *IamProjectApplicationApiService) IamProjectApplicationDelete(ctx contex
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamProjectApplicationApiService) IamProjectApplicationDeleteExecute(r ApiIamProjectApplicationDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Application
+func (a *IamProjectApplicationApiService) IamProjectApplicationDeleteExecute(r ApiIamProjectApplicationDeleteRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Application
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectApplicationApiService.IamProjectApplicationDelete")

@@ -1538,7 +1538,7 @@ type ApiIamUserDeleteRequest struct {
 }
 
 
-func (r ApiIamUserDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamUserDeleteRequest) Execute() (*User, *http.Response, error) {
 	return r.ApiService.IamUserDeleteExecute(r)
 }
 
@@ -1560,13 +1560,13 @@ func (a *IamUserApiService) IamUserDelete(ctx context.Context, userId string) Ap
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamUserApiService) IamUserDeleteExecute(r ApiIamUserDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return User
+func (a *IamUserApiService) IamUserDeleteExecute(r ApiIamUserDeleteRequest) (*User, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *User
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserApiService.IamUserDelete")

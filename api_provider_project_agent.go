@@ -806,7 +806,7 @@ type ApiProviderProjectAgentDeleteRequest struct {
 }
 
 
-func (r ApiProviderProjectAgentDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiProviderProjectAgentDeleteRequest) Execute() (*Agent, *http.Response, error) {
 	return r.ApiService.ProviderProjectAgentDeleteExecute(r)
 }
 
@@ -832,13 +832,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentDelete(ctx context.
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r ApiProviderProjectAgentDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Agent
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r ApiProviderProjectAgentDeleteRequest) (*Agent, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Agent
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProviderProjectAgentApiService.ProviderProjectAgentDelete")

@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ## IamOrganisationDelete
 
-> InlineResponseDefault IamOrganisationDelete(ctx, organisationId).Execute()
+> Organisation IamOrganisationDelete(ctx, organisationId).Execute()
 
 Delete iam/organisation
 
@@ -215,7 +215,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamOrganisationApi.IamOrganisationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `IamOrganisationDelete`: InlineResponseDefault
+    // response from `IamOrganisationDelete`: Organisation
     fmt.Fprintf(os.Stdout, "Response from `IamOrganisationApi.IamOrganisationDelete`: %v\n", resp)
 }
 ```
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 

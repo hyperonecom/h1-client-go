@@ -652,7 +652,7 @@ type ApiIamProjectGroupDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectGroupDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
+func (r ApiIamProjectGroupDeleteRequest) Execute() (*Group, *http.Response, error) {
 	return r.ApiService.IamProjectGroupDeleteExecute(r)
 }
 
@@ -676,13 +676,13 @@ func (a *IamProjectGroupApiService) IamProjectGroupDelete(ctx context.Context, p
 }
 
 // Execute executes the request
-//  @return InlineResponseDefault
-func (a *IamProjectGroupApiService) IamProjectGroupDeleteExecute(r ApiIamProjectGroupDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
+//  @return Group
+func (a *IamProjectGroupApiService) IamProjectGroupDeleteExecute(r ApiIamProjectGroupDeleteRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponseDefault
+		localVarReturnValue  *Group
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectGroupApiService.IamProjectGroupDelete")
