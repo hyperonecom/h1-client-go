@@ -144,16 +144,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleCreateExecute(r ApiIamProjectRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -177,7 +174,7 @@ type ApiIamProjectRoleDeleteRequest struct {
 }
 
 
-func (r ApiIamProjectRoleDeleteRequest) Execute() (*http.Response, error) {
+func (r ApiIamProjectRoleDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
 	return r.ApiService.IamProjectRoleDeleteExecute(r)
 }
 
@@ -201,16 +198,18 @@ func (a *IamProjectRoleApiService) IamProjectRoleDelete(ctx context.Context, pro
 }
 
 // Execute executes the request
-func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRoleDeleteRequest) (*http.Response, error) {
+//  @return InlineResponseDefault
+func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRoleDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *InlineResponseDefault
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamProjectRoleApiService.IamProjectRoleDelete")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/iam/project/{projectId}/role/{roleId}"
@@ -240,19 +239,19 @@ func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRo
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -260,20 +259,26 @@ func (a *IamProjectRoleApiService) IamProjectRoleDeleteExecute(r ApiIamProjectRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiIamProjectRoleEventGetRequest struct {
@@ -373,16 +378,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleEventGetExecute(r ApiIamProject
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -509,16 +511,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleEventListExecute(r ApiIamProjec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -627,16 +626,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleGetExecute(r ApiIamProjectRoleG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -768,16 +764,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleListExecute(r ApiIamProjectRole
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -896,16 +889,13 @@ func (a *IamProjectRoleApiService) IamProjectRolePermissionCreateExecute(r ApiIa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1018,16 +1008,13 @@ func (a *IamProjectRoleApiService) IamProjectRolePermissionDeleteExecute(r ApiIa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1140,16 +1127,13 @@ func (a *IamProjectRoleApiService) IamProjectRolePermissionGetExecute(r ApiIamPr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1258,16 +1242,13 @@ func (a *IamProjectRoleApiService) IamProjectRolePermissionListExecute(r ApiIamP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1386,16 +1367,13 @@ func (a *IamProjectRoleApiService) IamProjectRolePermissionPutExecute(r ApiIamPr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1508,16 +1486,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleServiceGetExecute(r ApiIamProje
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1626,16 +1601,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleServiceListExecute(r ApiIamProj
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1754,16 +1726,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleTagCreateExecute(r ApiIamProjec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1874,16 +1843,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleTagDeleteExecute(r ApiIamProjec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1987,16 +1953,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleTagGetExecute(r ApiIamProjectRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2105,16 +2068,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleTagListExecute(r ApiIamProjectR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2233,16 +2193,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleTagPutExecute(r ApiIamProjectRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2361,16 +2318,13 @@ func (a *IamProjectRoleApiService) IamProjectRoleUpdateExecute(r ApiIamProjectRo
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

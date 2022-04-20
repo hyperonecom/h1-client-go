@@ -48,7 +48,7 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     groupId := "groupId_example" // string | Group Id
-    iamActor := *openapiclient.NewIamActor("Value_example") // IamActor | 
+    iamActor := *openapiclient.NewIamActor("TODO") // IamActor | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectGroupDelete
 
-> IamProjectGroupDelete(ctx, projectId, groupId).Execute()
+> InlineResponseDefault IamProjectGroupDelete(ctx, projectId, groupId).Execute()
 
 Delete iam/group
 
@@ -432,6 +432,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectGroupApi.IamProjectGroupDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `IamProjectGroupDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectGroupApi.IamProjectGroupDelete`: %v\n", resp)
 }
 ```
 
@@ -456,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

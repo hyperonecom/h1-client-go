@@ -967,7 +967,7 @@ Name | Type | Description  | Notes
 
 ## IamUserDelete
 
-> IamUserDelete(ctx, userId).Execute()
+> InlineResponseDefault IamUserDelete(ctx, userId).Execute()
 
 Delete iam/user
 
@@ -995,6 +995,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamUserApi.IamUserDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `IamUserDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `IamUserApi.IamUserDelete`: %v\n", resp)
 }
 ```
 
@@ -1017,7 +1019,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

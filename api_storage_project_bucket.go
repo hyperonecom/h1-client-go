@@ -124,16 +124,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketGetExecute(r ApiSto
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -242,16 +239,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketListExecute(r ApiSt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -366,16 +360,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketObjectDeleteExecute
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -481,16 +472,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketObjectDownloadExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -598,16 +586,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketObjectGetExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -720,16 +705,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketObjectListExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -870,16 +852,13 @@ func (a *StorageProjectBucketApiService) StorageProjectBucketUploadExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -148,16 +148,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCreateExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -280,16 +277,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCredentialCreateExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -406,16 +400,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCredentialDeleteExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -532,16 +523,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCredentialGetExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -654,16 +642,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCredentialListExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -790,16 +775,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentCredentialPatchExec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -824,7 +806,7 @@ type ApiProviderProjectAgentDeleteRequest struct {
 }
 
 
-func (r ApiProviderProjectAgentDeleteRequest) Execute() (*http.Response, error) {
+func (r ApiProviderProjectAgentDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
 	return r.ApiService.ProviderProjectAgentDeleteExecute(r)
 }
 
@@ -850,16 +832,18 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentDelete(ctx context.
 }
 
 // Execute executes the request
-func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r ApiProviderProjectAgentDeleteRequest) (*http.Response, error) {
+//  @return InlineResponseDefault
+func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r ApiProviderProjectAgentDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *InlineResponseDefault
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProviderProjectAgentApiService.ProviderProjectAgentDelete")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/provider/{locationId}/project/{projectId}/agent/{agentId}"
@@ -890,19 +874,19 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r Api
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -910,20 +894,26 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentDeleteExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiProviderProjectAgentEnabledServiceCreateRequest struct {
@@ -1033,16 +1023,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEnabledServiceCreat
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1159,16 +1146,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEnabledServiceDelet
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1285,16 +1269,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEnabledServiceGetEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1407,16 +1388,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEnabledServiceListE
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1533,16 +1511,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEventGetExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1673,16 +1648,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentEventListExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1795,16 +1767,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentGetExecute(r ApiPro
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1935,16 +1904,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentInspectExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2089,16 +2055,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentListExecute(r ApiPr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2233,16 +2196,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceEventListEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2359,16 +2319,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceGetExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2485,16 +2442,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceInspectExec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2607,16 +2561,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceListExecute
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2733,16 +2684,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentResourceRecreateExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2859,16 +2807,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentServiceGetExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2981,16 +2926,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentServiceListExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3121,16 +3063,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentStartExecute(r ApiP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3261,16 +3200,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentSuspendExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3393,16 +3329,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTagCreateExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3517,16 +3450,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTagDeleteExecute(r 
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3634,16 +3564,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTagGetExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3756,16 +3683,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTagListExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3888,16 +3812,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTagPutExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4038,16 +3959,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentTransferExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4170,16 +4088,13 @@ func (a *ProviderProjectAgentApiService) ProviderProjectAgentUpdateExecute(r Api
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

@@ -152,16 +152,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwAttachExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -298,16 +295,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwCreateExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -332,7 +326,7 @@ type ApiNetworkingProjectNetgwDeleteRequest struct {
 }
 
 
-func (r ApiNetworkingProjectNetgwDeleteRequest) Execute() (*http.Response, error) {
+func (r ApiNetworkingProjectNetgwDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
 	return r.ApiService.NetworkingProjectNetgwDeleteExecute(r)
 }
 
@@ -358,16 +352,18 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDelete(ctx cont
 }
 
 // Execute executes the request
-func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDeleteExecute(r ApiNetworkingProjectNetgwDeleteRequest) (*http.Response, error) {
+//  @return InlineResponseDefault
+func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDeleteExecute(r ApiNetworkingProjectNetgwDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *InlineResponseDefault
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworkingProjectNetgwApiService.NetworkingProjectNetgwDelete")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/networking/{locationId}/project/{projectId}/netgw/{netgwId}"
@@ -398,19 +394,19 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDeleteExecute(r
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -418,20 +414,26 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDeleteExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiNetworkingProjectNetgwDetachRequest struct {
@@ -549,16 +551,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwDetachExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -675,16 +674,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwEventGetExecute
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -815,16 +811,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwEventListExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -937,16 +930,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwGetExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1082,16 +1072,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwListExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1208,16 +1195,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwServiceGetExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1330,16 +1314,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwServiceListExec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1462,16 +1443,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwTagCreateExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1586,16 +1564,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwTagDeleteExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1703,16 +1678,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwTagGetExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1825,16 +1797,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwTagListExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1957,16 +1926,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwTagPutExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2089,16 +2055,13 @@ func (a *NetworkingProjectNetgwApiService) NetworkingProjectNetgwUpdateExecute(r
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

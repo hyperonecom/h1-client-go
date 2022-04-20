@@ -148,16 +148,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCreateExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -280,16 +277,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCredentialC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -406,16 +400,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCredentialD
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -532,16 +523,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCredentialG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -654,16 +642,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCredentialL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -790,16 +775,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryCredentialP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -824,7 +806,7 @@ type ApiContainerProjectRegistryDeleteRequest struct {
 }
 
 
-func (r ApiContainerProjectRegistryDeleteRequest) Execute() (*http.Response, error) {
+func (r ApiContainerProjectRegistryDeleteRequest) Execute() (*InlineResponseDefault, *http.Response, error) {
 	return r.ApiService.ContainerProjectRegistryDeleteExecute(r)
 }
 
@@ -850,16 +832,18 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDelete(ctx 
 }
 
 // Execute executes the request
-func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecute(r ApiContainerProjectRegistryDeleteRequest) (*http.Response, error) {
+//  @return InlineResponseDefault
+func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecute(r ApiContainerProjectRegistryDeleteRequest) (*InlineResponseDefault, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *InlineResponseDefault
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainerProjectRegistryApiService.ContainerProjectRegistryDelete")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/container/{locationId}/project/{projectId}/registry/{registryId}"
@@ -890,19 +874,19 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecu
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -910,20 +894,26 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDeleteExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
+				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiContainerProjectRegistryDomainCreateRequest struct {
@@ -1033,16 +1023,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDomainCreat
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1157,16 +1144,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDomainDelet
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1274,16 +1258,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDomainGetEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1396,16 +1377,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryDomainListE
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1522,16 +1500,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryEventGetExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1662,16 +1637,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryEventListEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1784,16 +1756,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryGetExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1929,16 +1898,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryListExecute
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2055,16 +2021,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryRepositoryG
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2183,16 +2146,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryRepositoryI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2304,16 +2264,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryRepositoryI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2430,16 +2387,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryRepositoryI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2552,16 +2506,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryRepositoryL
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2678,16 +2629,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryServiceGetE
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2800,16 +2748,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryServiceList
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2940,16 +2885,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryStartExecut
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3080,16 +3022,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryStopExecute
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3212,16 +3151,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTagCreateEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3336,16 +3272,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTagDeleteEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3453,16 +3386,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTagGetExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3575,16 +3505,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTagListExec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3707,16 +3634,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTagPutExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3857,16 +3781,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryTransferExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3989,16 +3910,13 @@ func (a *ContainerProjectRegistryApiService) ContainerProjectRegistryUpdateExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v InlineResponseDefault
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
 			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

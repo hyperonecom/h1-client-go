@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ## ContainerProjectRegistryDelete
 
-> ContainerProjectRegistryDelete(ctx, projectId, locationId, registryId).Execute()
+> InlineResponseDefault ContainerProjectRegistryDelete(ctx, projectId, locationId, registryId).Execute()
 
 Delete container/registry
 
@@ -542,6 +542,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ContainerProjectRegistryApi.ContainerProjectRegistryDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ContainerProjectRegistryDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `ContainerProjectRegistryApi.ContainerProjectRegistryDelete`: %v\n", resp)
 }
 ```
 
@@ -568,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

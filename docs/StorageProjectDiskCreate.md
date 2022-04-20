@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Service** | **string** |  | 
 **Size** | **float32** |  | 
-**Source** | Pointer to **string** |  | [optional] 
+**Source** | Pointer to [**OneOfAnyTypeAnyType**](oneOf&lt;AnyType,AnyType&gt;.md) |  | [optional] 
 **Tag** | Pointer to [**[]Tag**](Tag.md) |  | [optional] 
 **Vm** | Pointer to **string** |  | [optional] 
 
@@ -92,20 +92,20 @@ SetSize sets Size field to given value.
 
 ### GetSource
 
-`func (o *StorageProjectDiskCreate) GetSource() string`
+`func (o *StorageProjectDiskCreate) GetSource() OneOfAnyTypeAnyType`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *StorageProjectDiskCreate) GetSourceOk() (*string, bool)`
+`func (o *StorageProjectDiskCreate) GetSourceOk() (*OneOfAnyTypeAnyType, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *StorageProjectDiskCreate) SetSource(v string)`
+`func (o *StorageProjectDiskCreate) SetSource(v OneOfAnyTypeAnyType)`
 
 SetSource sets Source field to given value.
 

@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectVmDelete
 
-> ComputeProjectVmDelete(ctx, projectId, locationId, vmId).Execute()
+> InlineResponseDefault ComputeProjectVmDelete(ctx, projectId, locationId, vmId).Execute()
 
 Delete compute/vm
 
@@ -383,6 +383,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectVmApi.ComputeProjectVmDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ComputeProjectVmDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectVmApi.ComputeProjectVmDelete`: %v\n", resp)
 }
 ```
 
@@ -409,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 ## ProviderProjectAgentDelete
 
-> ProviderProjectAgentDelete(ctx, projectId, locationId, agentId).Execute()
+> InlineResponseDefault ProviderProjectAgentDelete(ctx, projectId, locationId, agentId).Execute()
 
 Delete provider/agent
 
@@ -543,6 +543,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProviderProjectAgentApi.ProviderProjectAgentDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ProviderProjectAgentDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `ProviderProjectAgentApi.ProviderProjectAgentDelete`: %v\n", resp)
 }
 ```
 
@@ -569,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

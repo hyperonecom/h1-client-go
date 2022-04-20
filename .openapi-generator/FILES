@@ -134,7 +134,8 @@ docs/IamUserCredentialPatch.md
 docs/IamUserUpdate.md
 docs/Image.md
 docs/InlineResponse200.md
-docs/InlineResponse400.md
+docs/InlineResponseDefault.md
+docs/InlineResponseDefaultOperation.md
 docs/InsightProjectJournalApi.md
 docs/InsightProjectJournalCreate.md
 docs/InsightProjectJournalCredentialPatch.md
@@ -362,7 +363,8 @@ model_iam_user_credential_patch.go
 model_iam_user_update.go
 model_image.go
 model_inline_response_200.go
-model_inline_response_400.go
+model_inline_response_default.go
+model_inline_response_default_operation.go
 model_insight_project_journal_create.go
 model_insight_project_journal_credential_patch.go
 model_insight_project_journal_transfer.go

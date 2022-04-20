@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ## DnsProjectZoneDelete
 
-> DnsProjectZoneDelete(ctx, projectId, locationId, zoneId).Execute()
+> InlineResponseDefault DnsProjectZoneDelete(ctx, projectId, locationId, zoneId).Execute()
 
 Delete dns/zone
 
@@ -142,6 +142,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DnsProjectZoneApi.DnsProjectZoneDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `DnsProjectZoneDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `DnsProjectZoneApi.DnsProjectZoneDelete`: %v\n", resp)
 }
 ```
 
@@ -168,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

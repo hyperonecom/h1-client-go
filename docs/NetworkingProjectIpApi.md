@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectIpDelete
 
-> NetworkingProjectIpDelete(ctx, projectId, locationId, ipId).Execute()
+> InlineResponseDefault NetworkingProjectIpDelete(ctx, projectId, locationId, ipId).Execute()
 
 Delete networking/ip
 
@@ -218,6 +218,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectIpApi.NetworkingProjectIpDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `NetworkingProjectIpDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectIpApi.NetworkingProjectIpDelete`: %v\n", resp)
 }
 ```
 
@@ -244,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ## StorageProjectImageDelete
 
-> StorageProjectImageDelete(ctx, projectId, locationId, imageId).Execute()
+> InlineResponseDefault StorageProjectImageDelete(ctx, projectId, locationId, imageId).Execute()
 
 Delete storage/image
 
@@ -133,6 +133,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectImageApi.StorageProjectImageDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `StorageProjectImageDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectImageApi.StorageProjectImageDelete`: %v\n", resp)
 }
 ```
 
@@ -159,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

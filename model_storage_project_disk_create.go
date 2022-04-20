@@ -19,7 +19,7 @@ type StorageProjectDiskCreate struct {
 	Name string `json:"name"`
 	Service string `json:"service"`
 	Size float32 `json:"size"`
-	Source *string `json:"source,omitempty"`
+	Source *OneOfAnyTypeAnyType `json:"source,omitempty"`
 	Tag []Tag `json:"tag,omitempty"`
 	Vm *string `json:"vm,omitempty"`
 }
@@ -117,9 +117,9 @@ func (o *StorageProjectDiskCreate) SetSize(v float32) {
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
-func (o *StorageProjectDiskCreate) GetSource() string {
+func (o *StorageProjectDiskCreate) GetSource() OneOfAnyTypeAnyType {
 	if o == nil || o.Source == nil {
-		var ret string
+		var ret OneOfAnyTypeAnyType
 		return ret
 	}
 	return *o.Source
@@ -127,7 +127,7 @@ func (o *StorageProjectDiskCreate) GetSource() string {
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageProjectDiskCreate) GetSourceOk() (*string, bool) {
+func (o *StorageProjectDiskCreate) GetSourceOk() (*OneOfAnyTypeAnyType, bool) {
 	if o == nil || o.Source == nil {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *StorageProjectDiskCreate) HasSource() bool {
 	return false
 }
 
-// SetSource gets a reference to the given string and assigns it to the Source field.
-func (o *StorageProjectDiskCreate) SetSource(v string) {
+// SetSource gets a reference to the given OneOfAnyTypeAnyType and assigns it to the Source field.
+func (o *StorageProjectDiskCreate) SetSource(v OneOfAnyTypeAnyType) {
 	o.Source = &v
 }
 

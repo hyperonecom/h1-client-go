@@ -17,14 +17,14 @@ import (
 // IamActorOrGroup struct for IamActorOrGroup
 type IamActorOrGroup struct {
 	Id *string `json:"id,omitempty"`
-	Value string `json:"value"`
+	Value OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType `json:"value"`
 }
 
 // NewIamActorOrGroup instantiates a new IamActorOrGroup object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIamActorOrGroup(value string) *IamActorOrGroup {
+func NewIamActorOrGroup(value OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType) *IamActorOrGroup {
 	this := IamActorOrGroup{}
 	this.Value = value
 	return &this
@@ -71,9 +71,9 @@ func (o *IamActorOrGroup) SetId(v string) {
 }
 
 // GetValue returns the Value field value
-func (o *IamActorOrGroup) GetValue() string {
+func (o *IamActorOrGroup) GetValue() OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType {
 	if o == nil {
-		var ret string
+		var ret OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType
 		return ret
 	}
 
@@ -82,7 +82,7 @@ func (o *IamActorOrGroup) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *IamActorOrGroup) GetValueOk() (*string, bool) {
+func (o *IamActorOrGroup) GetValueOk() (*OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -90,7 +90,7 @@ func (o *IamActorOrGroup) GetValueOk() (*string, bool) {
 }
 
 // SetValue sets field value
-func (o *IamActorOrGroup) SetValue(v string) {
+func (o *IamActorOrGroup) SetValue(v OneOfAnyTypeAnyTypeAnyTypeAnyTypeAnyType) {
 	o.Value = v
 }
 

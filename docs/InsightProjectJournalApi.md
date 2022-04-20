@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## InsightProjectJournalDelete
 
-> InsightProjectJournalDelete(ctx, projectId, locationId, journalId).Execute()
+> InlineResponseDefault InsightProjectJournalDelete(ctx, projectId, locationId, journalId).Execute()
 
 Delete insight/journal
 
@@ -532,6 +532,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `InsightProjectJournalDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `InsightProjectJournalApi.InsightProjectJournalDelete`: %v\n", resp)
 }
 ```
 
@@ -558,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 
@@ -890,7 +892,7 @@ Name | Type | Description  | Notes
 
 ## InsightProjectJournalLogGet
 
-> InsightProjectJournalLogGet(ctx, projectId, locationId, journalId).Since(since).Until(until).Follow(follow).Tail(tail).Tag(tag).Execute()
+> InlineResponseDefault InsightProjectJournalLogGet(ctx, projectId, locationId, journalId).Since(since).Until(until).Follow(follow).Tail(tail).Tag(tag).Execute()
 
 Get insight/journal.log
 
@@ -926,6 +928,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightProjectJournalApi.InsightProjectJournalLogGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `InsightProjectJournalLogGet`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `InsightProjectJournalApi.InsightProjectJournalLogGet`: %v\n", resp)
 }
 ```
 
@@ -957,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

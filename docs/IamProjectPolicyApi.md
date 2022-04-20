@@ -48,7 +48,7 @@ import (
 func main() {
     projectId := "projectId_example" // string | Project Id
     policyId := "policyId_example" // string | Policy Id
-    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("Value_example") // IamActorOrGroup | 
+    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("TODO") // IamActorOrGroup | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ## IamProjectPolicyDelete
 
-> IamProjectPolicyDelete(ctx, projectId, policyId).Execute()
+> InlineResponseDefault IamProjectPolicyDelete(ctx, projectId, policyId).Execute()
 
 Delete iam/policy
 
@@ -432,6 +432,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamProjectPolicyApi.IamProjectPolicyDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `IamProjectPolicyDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `IamProjectPolicyApi.IamProjectPolicyDelete`: %v\n", resp)
 }
 ```
 
@@ -456,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

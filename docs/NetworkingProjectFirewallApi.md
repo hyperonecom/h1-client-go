@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectFirewallDelete
 
-> NetworkingProjectFirewallDelete(ctx, projectId, locationId, firewallId).Execute()
+> InlineResponseDefault NetworkingProjectFirewallDelete(ctx, projectId, locationId, firewallId).Execute()
 
 Delete networking/firewall
 
@@ -143,6 +143,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `NetworkingProjectFirewallDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectFirewallApi.NetworkingProjectFirewallDelete`: %v\n", resp)
 }
 ```
 
@@ -169,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

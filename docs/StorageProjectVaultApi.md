@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ## StorageProjectVaultDelete
 
-> StorageProjectVaultDelete(ctx, projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
+> InlineResponseDefault StorageProjectVaultDelete(ctx, projectId, locationId, vaultId).StorageProjectVaultDelete(storageProjectVaultDelete).Execute()
 
 Delete storage/vault
 
@@ -695,6 +695,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectVaultApi.StorageProjectVaultDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `StorageProjectVaultDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectVaultApi.StorageProjectVaultDelete`: %v\n", resp)
 }
 ```
 
@@ -722,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

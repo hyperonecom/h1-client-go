@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ## NetworkingProjectNetadpDelete
 
-> NetworkingProjectNetadpDelete(ctx, projectId, locationId, netadpId).Execute()
+> InlineResponseDefault NetworkingProjectNetadpDelete(ctx, projectId, locationId, netadpId).Execute()
 
 Delete networking/netadp
 
@@ -135,6 +135,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `NetworkingProjectNetadpDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `NetworkingProjectNetadpApi.NetworkingProjectNetadpDelete`: %v\n", resp)
 }
 ```
 
@@ -161,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

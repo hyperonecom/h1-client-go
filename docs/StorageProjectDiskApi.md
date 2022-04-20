@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ## StorageProjectDiskDelete
 
-> StorageProjectDiskDelete(ctx, projectId, locationId, diskId).Execute()
+> InlineResponseDefault StorageProjectDiskDelete(ctx, projectId, locationId, diskId).Execute()
 
 Delete storage/disk
 
@@ -139,6 +139,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StorageProjectDiskApi.StorageProjectDiskDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `StorageProjectDiskDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `StorageProjectDiskApi.StorageProjectDiskDelete`: %v\n", resp)
 }
 ```
 
@@ -165,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 

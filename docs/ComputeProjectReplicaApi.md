@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## ComputeProjectReplicaDelete
 
-> ComputeProjectReplicaDelete(ctx, projectId, locationId, replicaId).Execute()
+> InlineResponseDefault ComputeProjectReplicaDelete(ctx, projectId, locationId, replicaId).Execute()
 
 Delete compute/replica
 
@@ -132,6 +132,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ComputeProjectReplicaApi.ComputeProjectReplicaDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ComputeProjectReplicaDelete`: InlineResponseDefault
+    fmt.Fprintf(os.Stdout, "Response from `ComputeProjectReplicaApi.ComputeProjectReplicaDelete`: %v\n", resp)
 }
 ```
 
@@ -158,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**InlineResponseDefault**](InlineResponseDefault.md)
 
 ### Authorization
 
