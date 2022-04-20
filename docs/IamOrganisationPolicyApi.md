@@ -48,7 +48,7 @@ import (
 func main() {
     organisationId := "organisationId_example" // string | Organisation Id
     policyId := "policyId_example" // string | Policy Id
-    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("TODO") // IamActorOrGroup | 
+    iamActorOrGroup := *openapiclient.NewIamActorOrGroup("Value_example") // IamActorOrGroup | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

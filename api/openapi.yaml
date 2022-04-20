@@ -33479,17 +33479,6 @@ components:
           type: string
         value:
           format: uri
-          oneOf:
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/sa\/[a-f0-9]{24}$/
-            title: sa
-            x-resource:
-              kind: iam/sa
-          - pattern: /^\/iam\/user\/.+@.+..+$/
-            title: user
-          - pattern: /^me$/
-            title: me
-            x-const: me
           title: Actor value
           type: string
           x-resource:
@@ -33513,25 +33502,6 @@ components:
           type: string
         value:
           format: uri
-          oneOf:
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/sa\/[a-f0-9]{24}$/
-            title: sa
-            x-resource:
-              kind: iam/sa
-          - format: uri
-            pattern: /^\/iam\/project\/[a-f0-9]{24}\/group\/[a-f0-9]{24}$/
-            title: group
-            x-resource:
-              kind: iam/group
-          - pattern: /^\/iam\/user\/.+@.+..+$/
-            title: user
-          - format: email
-            pattern: ^.+@.+/.+$
-            title: email
-          - pattern: /^me$/
-            title: me
-            x-const: me
           title: Actor_or_group value
           type: string
           x-resource:
@@ -36682,22 +36652,6 @@ components:
           title: Disk size
           type: number
         source:
-          oneOf:
-          - format: uri
-            pattern: ^/storage/
-            title: disk
-            x-permissions:
-            - storage/disk/use
-            x-resource:
-              kind: storage/disk
-              state:
-              - Attached
-              - Detached
-          - format: uri-upload
-            pattern: ^http
-            title: file
-            x-file:
-              accept: .vhdx
           title: Disk source
           type: string
         tag:
